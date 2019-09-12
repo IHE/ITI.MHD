@@ -9,7 +9,7 @@
 	The IHE MHD Profile text is Normative, this conformance resource is Informative.
 		</div>
 	</text>
-	<url value="http://ihe.net/fhir/StructureDefinition/IHE_MHD_Query_Comprehensive_DocumentReference" />
+	<url value="http://ihe.net/fhir/ihe.mhd.fhir/StructureDefinition/IHE_MHD_Query_Comprehensive_DocumentReference" />
 	<name value="IHE_MHD_Query_Comprehensive_DocumentReference" />
 	<title value="IHE MHD Profile on DocumentReference (DocumentEntry) from a Query with Comprehensive Metadata (aka XDS-on-FHIR), see Table 3:4.3.2.1-3." />
 	<status value="active" />
@@ -37,7 +37,7 @@
 	<kind value="resource" />
 	<abstract value="false" />
 	<type value="DocumentReference" />
-	<baseDefinition value="http://ihe.net/fhir/StructureDefinition/IHE_MHD_Provide_Comprehensive_DocumentReference" />
+	<baseDefinition value="http://ihe.net/fhir/ihe.mhd.fhir/StructureDefinition/IHE_MHD_Provide_Comprehensive_DocumentReference" />
 	<derivation value="constraint" />
 	<differential>
     <element id="DocumentReference.identifier">

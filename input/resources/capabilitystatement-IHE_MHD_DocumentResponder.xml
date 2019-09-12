@@ -9,7 +9,7 @@
 	The IHE MHD Profile text is Normative, this conformance resource is Informative.
 		</div>
 	</text>
-	<url value="http://ihe.net/fhir/CapabilityStatement/IHE_MHD_DocumentResponder"/>
+	<url value="http://ihe.net/fhir/ihe.mhd.fhir/CapabilityStatement/IHE_MHD_DocumentResponder"/>
 	<name value="IHE_MHD_DocumentResponder"/>
 	<title value="IHE ITI Mobile access to Health Documents (MHD) - Document Responder (server)"/>
 	<status value="active"/>
@@ -41,7 +41,7 @@
 		<mode value="server"/>
 		<resource>
 			<type value="DocumentReference"/>
-			<profile value="http://ihe.net/fhir/StructureDefinition/IHE_MHD_Query_Minimal_DocumentReference"/>
+			<profile value="http://ihe.net/fhir/ihe.mhd.fhir/StructureDefinition/IHE_MHD_Query_Minimal_DocumentReference"/>
 			<interaction>
 				<code value="read"/>
 			</interaction>
@@ -147,7 +147,7 @@
 		</resource>
 		<resource>
 			<type value="DocumentManifest"/>
-			<profile value="http://ihe.net/fhir/StructureDefinition/IHE_MHD_Minimal_DocumentManifest"/>
+			<profile value="http://ihe.net/fhir/ihe.mhd.fhir/StructureDefinition/IHE_MHD_Minimal_DocumentManifest"/>
 			<interaction>
 				<code value="read"/>
 			</interaction>
@@ -205,7 +205,7 @@
 		</resource>
 		<resource>
 			<type value="List"/>
-			<profile value="http://ihe.net/fhir/StructureDefinition/IHE_MHD_List"/>
+			<profile value="http://ihe.net/fhir/ihe.mhd.fhir/StructureDefinition/IHE_MHD_List"/>
 			<interaction>
 				<code value="read"/>
 			</interaction>

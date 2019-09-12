@@ -8,7 +8,7 @@
     IHE IT Infrastructure Technical Framework Supplement <a href="http://wiki.ihe.net/index.php/Mobile_access_to_Health_Documents_(MHD)">Mobile access to Health Documents (MHD) Rev. 3.1</a>.
 	The IHE MHD Profile text is Normative, this conformance resource is Informative.</div>
 	</text>
-	<url value="http://ihe.net/fhir/StructureDefinition/IHE_MHD_Minimal_DocumentManifest" />
+	<url value="http://ihe.net/fhir/ihe.mhd.fhir/StructureDefinition/IHE_MHD_Minimal_DocumentManifest" />
 	<name value="IHE_MHD_Minimal_DocumentManifest" />
 	<title value="IHE MHD Profile on DocumentManifest for Minimal Metadata (SubmissionSet)" />
 	<status value="active" />
@@ -92,10 +92,10 @@
 			<path value="DocumentManifest.content" />
 			<type>
 				<code value="Reference" />
-				<targetProfile value="http://ihe.net/fhir/StructureDefinition/IHE_MHD_ProvideDocumentBundle_Minimal" />
-				<targetProfile value="http://ihe.net/fhir/StructureDefinition/IHE_MHD_Query_Minimal_DocumentReference" />
+				<targetProfile value="http://ihe.net/fhir/ihe.mhd.fhir/StructureDefinition/IHE_MHD_ProvideDocumentBundle_Minimal" />
+				<targetProfile value="http://ihe.net/fhir/ihe.mhd.fhir/StructureDefinition/IHE_MHD_Query_Minimal_DocumentReference" />
 				<targetProfile value="http://hl7.org/fhir/StructureDefinition/DocumentReference" />
-				<targetProfile value="http://ihe.net/fhir/StructureDefinition/IHE_MHD_List" />
+				<targetProfile value="http://ihe.net/fhir/ihe.mhd.fhir/StructureDefinition/IHE_MHD_List" />
 			</type>
 		</element>
 		<element id="DocumentManifest.related">

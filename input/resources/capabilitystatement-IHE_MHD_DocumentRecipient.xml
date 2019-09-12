@@ -9,7 +9,7 @@
 	The IHE MHD Profile text is Normative, this conformance resource is Informative.
 		</div>
 	</text>
-	<url value="http://ihe.net/fhir/CapabilityStatement/IHE_MHD_DocumentRecipient"/>
+	<url value="http://ihe.net/fhir/ihe.mhd.fhir/CapabilityStatement/IHE_MHD_DocumentRecipient"/>
 	<name value="IHE_MHD_DocumentRecipient"/>
 	<title value="IHE ITI Mobile access to Health Documents (MHD) - Document Recipient"/>
 	<status value="active" />
@@ -44,11 +44,11 @@
 		</security>
 		<interaction>
 			<code value="transaction"/>
-			<documentation value="http://ihe.net/fhir/StructureDefinition/IHE_MHD_ProvideDocumentBundle_Minimal"/>
+			<documentation value="http://ihe.net/fhir/ihe.mhd.fhir/StructureDefinition/IHE_MHD_ProvideDocumentBundle_Minimal"/>
 		</interaction>
 		<interaction>
 			<code value="transaction"/>
-			<documentation value="http://ihe.net/fhir/StructureDefinition/IHE_MHD_ProvideDocumentBundle_Comprehensive"/>
+			<documentation value="http://ihe.net/fhir/ihe.mhd.fhir/StructureDefinition/IHE_MHD_ProvideDocumentBundle_Comprehensive"/>
 		</interaction>
 	</rest>
 </CapabilityStatement>

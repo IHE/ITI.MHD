@@ -12,7 +12,7 @@
 	The actual list of codes is intended to be extensible.
 	</div></text>
 
-  <url value="http://ihe.net/fhir/ValueSet/IHE.formatcode.vs"/>
+  <url value="http://ihe.net/fhir/ihe.mhd.fhir/ValueSet/IHE.formatcode.vs"/>
   <identifier>
     <system value="urn:ietf:rfc:3986"/>
     <value value="urn:oid:1.3.6.1.4.1.19376.1.2.7.1"/>

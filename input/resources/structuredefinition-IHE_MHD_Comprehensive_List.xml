@@ -8,7 +8,7 @@
     IHE IT Infrastructure Technical Framework Supplement <a href="http://wiki.ihe.net/index.php/Mobile_access_to_Health_Documents_(MHD)">Mobile access to Health Documents (MHD) Rev. 3.1</a>. 
 	The IHE MHD Profile text is Normative, this conformance resource is Informative.</div>
 	</text>
-	<url value="http://ihe.net/fhir/StructureDefinition/IHE_MHD_Comprehensive_List" />
+	<url value="http://ihe.net/fhir/ihe.mhd.fhir/StructureDefinition/IHE_MHD_Comprehensive_List" />
 	<name value="IHE_MHD_Comprehensive_List" />
 	<title value="IHE MHD Profile on List with Comprehensive Metadata (Folder)" />
 	<status value="active" />
@@ -36,7 +36,7 @@
 	<kind value="resource" />
 	<abstract value="false" />
 	<type value="List" />
-	<baseDefinition value="http://ihe.net/fhir/StructureDefinition/IHE_MHD_Minimal_List" />
+	<baseDefinition value="http://ihe.net/fhir/ihe.mhd.fhir/StructureDefinition/IHE_MHD_Minimal_List" />
 	<derivation value="constraint" />
 	<differential>
 		<element id="List.title">
