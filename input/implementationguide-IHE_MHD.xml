@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ImplementationGuide xmlns="http://hl7.org/fhir">
-    <id value="ihe.mhd" />
+    <id value="ihe.mhd.fhir" />
 	<text>
 		<status value="additional" />
 		<div xmlns="http://www.w3.org/1999/xhtml">
@@ -9,7 +9,7 @@
 	The IHE MHD Profile text is Normative, this conformance resource is Informative.
 		</div>
 	</text>
-	<url value="http://ihe.net/fhir/ImplementationGuide/IHE_MHD" />
+	<url value="http://ihe.net/fhir/ihe.mhd.fhir" />
 	<name value="IHE_MHD" />
 	<status value="active" />
 	<experimental value="false" />

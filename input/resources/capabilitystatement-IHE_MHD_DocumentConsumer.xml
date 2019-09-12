@@ -55,8 +55,8 @@
 				<documentation value="Logical id of this artifact"/>
 			</searchParam>
 			<searchParam>
-				<name value="_lastUpdated"/>
-				<definition value="http://hl7.org/fhir/SearchParameter/DocumentReference-_lastUpdated"/>
+				<name value="_lastupdated"/>
+				<definition value="http://hl7.org/fhir/SearchParameter/DocumentReference-_lastupdated"/>
 				<type value="date"/>
 				<documentation value="When the resource version last changed"/>
 			</searchParam>
@@ -155,8 +155,8 @@
 				<code value="search-type"/>
 			</interaction>
 			<searchParam>
-				<name value="_lastUpdated"/>
-				<definition value="http://hl7.org/fhir/SearchParameter/DocumentManifest-_lastUpdated"/>
+				<name value="_lastupdated"/>
+				<definition value="http://hl7.org/fhir/SearchParameter/DocumentManifest-_lastupdated"/>
 				<type value="date"/>
 				<documentation value="When the resource version last changed"/>
 			</searchParam>
