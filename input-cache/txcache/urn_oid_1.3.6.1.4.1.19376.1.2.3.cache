@@ -1,0 +1,13 @@
+-------------------------------------------------------------------------------------
+{"hierarchical" : true, "valueSet" :{
+  "resourceType" : "ValueSet",
+  "compose" : {
+    "include" : [{
+      "system" : "urn:oid:1.3.6.1.4.1.19376.1.2.3"
+    }]
+  }
+}}####
+e: {
+  "error" : "Error from server: Unable to provide support for code system urn:oid:1.3.6.1.4.1.19376.1.2.3"
+}
+-------------------------------------------------------------------------------------
