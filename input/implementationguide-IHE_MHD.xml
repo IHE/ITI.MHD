@@ -9,7 +9,7 @@
 	The IHE MHD Profile text is Normative, this conformance resource is Informative.
 		</div>
 	</text>
-	<url value="http://ihe.net/fhir/ihe.mhd.fhir" />
+	<url value="http://ihe.net/fhir/ihe.mhd.fhir/ImplementationGuide/ihe.mhd.fhir" />
 	<name value="IHE_MHD" />
 	<status value="active" />
 	<experimental value="false" />
