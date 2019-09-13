@@ -71,7 +71,7 @@ The IHE MHD Profile text is Normative, this conformance resource is Informative.
 		</resource>
 		<resource>
 			<reference>
-			<reference value="http://ihe.net/fhir/StructureDefinition/structuredefinition_IHE_MHD_Query_Minimal_DocumentReference" />
+			<reference value="http://ihe.net/fhir/StructureDefinition/IHE_MHD_Query_Minimal_DocumentReference" />
 			</reference>
 		</resource>
 		<resource>

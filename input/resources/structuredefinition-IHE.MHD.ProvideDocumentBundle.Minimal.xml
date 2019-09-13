@@ -79,8 +79,8 @@
 			<min value="1" />
 			<type>
 				<code value="Resource" />
-				<profile value="http://ihe.net/fhir/ihe.mhd.fhir/StructureDefinition/IHE_MHD_Minimal_DocumentManifest" />
-				<profile value="http://ihe.net/fhir/ihe.mhd.fhir/StructureDefinition/IHE_MHD_Comprehensive_DocumentManifest" />
+				<profile value="http://ihe.net/fhir/ihe.mhd.fhir/StructureDefinition/IHE.MHD.Minimal.DocumentManifest" />
+				<profile value="http://ihe.net/fhir/ihe.mhd.fhir/StructureDefinition/IHE.MHD.Comprehensive.DocumentManifest" />
 			</type>
 		</element>
 		<element id="Bundle.entry:DocumentManifest.request">
@@ -106,8 +106,8 @@
 			<min value="1" />
 			<type>
 				<code value="Resource" />
-				<profile value="http://ihe.net/fhir/ihe.mhd.fhir/StructureDefinition/IHE_MHD_Provide_Minimal_DocumentReference" />
-				<profile value="http://ihe.net/fhir/ihe.mhd.fhir/StructureDefinition/IHE_MHD_Provide_Comprehensive_DocumentReference" />
+				<profile value="http://ihe.net/fhir/ihe.mhd.fhir/StructureDefinition/IHE.MHD.Provide.Minimal.DocumentReference" />
+				<profile value="http://ihe.net/fhir/ihe.mhd.fhir/StructureDefinition/IHE.MHD.Provide.Comprehensive.DocumentReference" />
 			</type>
 		</element>
 		<element id="Bundle.entry:DocumentReference.request">
@@ -132,8 +132,8 @@
 			<min value="1" />
 			<type>
 				<code value="Resource" />
-				<profile value="http://ihe.net/fhir/ihe.mhd.fhir/StructureDefinition/IHE_MHD_Minimal_List" />
-				<profile value="http://ihe.net/fhir/ihe.mhd.fhir/StructureDefinition/IHE_MHD_Comprehensive_List" />
+				<profile value="http://ihe.net/fhir/ihe.mhd.fhir/StructureDefinition/IHE.MHD.Minimal.List" />
+				<profile value="http://ihe.net/fhir/ihe.mhd.fhir/StructureDefinition/IHE.MHD.Comprehensive.List" />
 			</type>
 		</element>
 		<element id="Bundle.entry:List.request">

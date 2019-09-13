@@ -42,7 +42,8 @@
 		<mode value="client"/>
 		<resource>
 			<type value="DocumentReference"/>
-			<profile value="http://ihe.net/fhir/ihe.mhd.fhir/StructureDefinition/IHE_MHD_Query_Minimal_DocumentReference"/>
+			<!-- need to pick minimal or comprehensive -->
+			<profile value="http://ihe.net/fhir/ihe.mhd.fhir/StructureDefinition/IHE.MHD.Query.Minimal.DocumentReference"/>
 			<interaction>
 				<code value="read"/>
 			</interaction>
@@ -148,7 +149,8 @@
 		</resource>
 		<resource>
 			<type value="DocumentManifest"/>
-			<profile value="http://ihe.net/fhir/ihe.mhd.fhir/StructureDefinition/IHE_MHD_Minimal_DocumentManifest"/>
+			<!-- need to pick minimal or comprehensive -->
+			<profile value="http://ihe.net/fhir/ihe.mhd.fhir/StructureDefinition/IHE.MHD.Minimal.DocumentManifest"/>
 			<interaction>
 				<code value="read"/>
 			</interaction>
@@ -212,7 +214,8 @@
 		</resource>
 		<resource>
 			<type value="List"/>
-			<profile value="http://ihe.net/fhir/ihe.mhd.fhir/StructureDefinition/IHE_MHD_List"/>
+			<!-- need to pick minimal or comprehensive -->
+			<profile value="http://ihe.net/fhir/ihe.mhd.fhir/StructureDefinition/IHE.MHD.Minimal.List"/>
 			<interaction>
 				<code value="read"/>
 			</interaction>

@@ -42,7 +42,10 @@
 		<mode value="server"/>
 		<resource>
 			<type value="DocumentReference"/>
-			<profile value="http://ihe.net/fhir/ihe.mhd.fhir/StructureDefinition/IHE_MHD_Query_Minimal_DocumentReference"/>
+			<!-- all DocumentReference MUST be conformant with Minimal -->
+			<profile value="http://ihe.net/fhir/ihe.mhd.fhir/StructureDefinition/IHE.MHD.Query.Minimal.DocumentReference"/>
+			<!-- some may also be conformant with Comprehensive -->
+			<supportedProfile value="http://ihe.net/fhir/ihe.mhd.fhir/StructureDefinition/IHE.MHD.Query.Comprehensive.DocumentReference"/>
 			<interaction>
 				<code value="read"/>
 			</interaction>
@@ -148,7 +151,10 @@
 		</resource>
 		<resource>
 			<type value="DocumentManifest"/>
-			<profile value="http://ihe.net/fhir/ihe.mhd.fhir/StructureDefinition/IHE_MHD_Minimal_DocumentManifest"/>
+			<!-- All DocumentManifest must be conformant with Minimal -->
+			<profile value="http://ihe.net/fhir/ihe.mhd.fhir/StructureDefinition/IHE.MHD.Minimal.DocumentManifest"/>
+			<!-- Some may be conformant with Comprensive -->
+			<profile value="http://ihe.net/fhir/ihe.mhd.fhir/StructureDefinition/IHE.MHD.Comprehensive.DocumentManifest"/>
 			<interaction>
 				<code value="read"/>
 			</interaction>
@@ -212,7 +218,8 @@
 		</resource>
 		<resource>
 			<type value="List"/>
-			<profile value="http://ihe.net/fhir/ihe.mhd.fhir/StructureDefinition/IHE_MHD_List"/>
+			<profile value="http://ihe.net/fhir/ihe.mhd.fhir/StructureDefinition/IHE.MHD.Minimal.List"/>
+			<supportedProfile value="http://ihe.net/fhir/ihe.mhd.fhir/StructureDefinition/IHE.MHD.Comprehensive.List"/>
 			<interaction>
 				<code value="read"/>
 			</interaction>

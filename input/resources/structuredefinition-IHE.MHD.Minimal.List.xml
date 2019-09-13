@@ -111,8 +111,8 @@
 			<max value="1" />
 			<type>
 				<code value="Reference" />
-				<targetProfile value="http://ihe.net/fhir/ihe.mhd.fhir/StructureDefinition/IHE_MHD_Query_Minimal_DocumentReference" />
-				<targetProfile value="http://ihe.net/fhir/ihe.mhd.fhir/StructureDefinition/IHE_MHD_Query_Comprehensive_DocumentReference" />
+				<targetProfile value="http://ihe.net/fhir/ihe.mhd.fhir/StructureDefinition/IHE.MHD.Query.Minimal.DocumentReference" />
+				<targetProfile value="http://ihe.net/fhir/ihe.mhd.fhir/StructureDefinition/IHE.MHD.Query.Comprehensive.DocumentReference" />
 				<targetProfile value="http://hl7.org/fhir/StructureDefinition/DocumentReference" />
 			</type>
 		</element>

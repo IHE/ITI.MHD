@@ -45,11 +45,11 @@
 		</security>
 		<interaction>
 			<code value="transaction"/>
-			<documentation value="http://ihe.net/fhir/ihe.mhd.fhir/StructureDefinition/IHE_MHD_ProvideDocumentBundle_Minimal"/>
+			<documentation value="http://ihe.net/fhir/ihe.mhd.fhir/StructureDefinition/IHE.MHD.ProvideDocumentBundle.Minimal"/>
 		</interaction>
 		<interaction>
 			<code value="transaction"/>
-			<documentation value="http://ihe.net/fhir/ihe.mhd.fhir/StructureDefinition/IHE_MHD_ProvideDocumentBundle_Comprehensive"/>
+			<documentation value="http://ihe.net/fhir/ihe.mhd.fhir/StructureDefinition/IHE.MHD.ProvideDocumentBundle.Comprehensive"/>
 		</interaction>
 	</rest>
 </CapabilityStatement>
