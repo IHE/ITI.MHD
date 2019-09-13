@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ValueSet xmlns="http://hl7.org/fhir">
+	<id value="IHE.formatcode.vs" />
 
       <text>
     <status value="additional" /><div xmlns="http://www.w3.org/1999/xhtml">
@@ -22,7 +23,7 @@
   <title value="IHE ValueSet of Format Codes for use with Document Sharing"/>
   <status value="active"/>
   <experimental value="false"/>
-  <date value="2019-07-05"/>
+	<date value="2019-09-13" />
   <publisher value="IHE"/>
   	<contact> 
 		<name value="IHE"/> 

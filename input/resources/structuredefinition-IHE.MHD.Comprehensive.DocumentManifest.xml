@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <StructureDefinition xmlns="http://hl7.org/fhir">
+	<id value="IHE.MHD.Comprehensive.DocumentManifest" />
 
 	<text>
 		<status value="additional" />
@@ -8,12 +9,12 @@
     IHE IT Infrastructure Technical Framework Supplement <a href="http://wiki.ihe.net/index.php/Mobile_access_to_Health_Documents_(MHD)">Mobile access to Health Documents (MHD) Rev. 3.1</a>.
 	The IHE MHD Profile text is Normative, this conformance resource is Informative.</div>
 	</text>
-	<url value="http://ihe.net/fhir/ihe.mhd.fhir/StructureDefinition/IHE_MHD_Comprehensive_DocumentManifest" />
+	<url value="http://ihe.net/fhir/ihe.mhd.fhir/StructureDefinition/IHE.MHD.Comprehensive.DocumentManifest" />
 	<name value="IHE_MHD_Comprehensive_DocumentManifest" />
 	<title value="IHE MHD Profile on DocumentManifest for Comprehensive Metadata (SubmissionSet)" />
 	<status value="active" />
 	<experimental value="false" />
-	<date value="2019-07-05" />
+	<date value="2019-09-13" />
 	<publisher value="Integrating the Healthcare Enterprise (IHE)" />
 	<contact>
 		<name value="IHE" />

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CapabilityStatement xmlns="http://hl7.org/fhir">
+	<id value="IHE.MHD.DocumentResponder" />
 
 	<text>
 		<status value="additional" />
@@ -9,12 +10,12 @@
 	The IHE MHD Profile text is Normative, this conformance resource is Informative.
 		</div>
 	</text>
-	<url value="http://ihe.net/fhir/ihe.mhd.fhir/CapabilityStatement/IHE_MHD_DocumentResponder"/>
+	<url value="http://ihe.net/fhir/ihe.mhd.fhir/CapabilityStatement/IHE.MHD.DocumentResponder"/>
 	<name value="IHE_MHD_DocumentResponder"/>
 	<title value="IHE ITI Mobile access to Health Documents (MHD) - Document Responder (server)"/>
 	<status value="active"/>
 	<experimental value="false"/>
-	<date value="2019-07-05" />
+	<date value="2019-09-13" />
 	<publisher value="IHE"/>
 	<contact>
 		<name value="IHE"/>
@@ -50,13 +51,13 @@
 			</interaction>
 			<searchParam>
 				<name value="_id"/>
-				<definition value="http://hl7.org/fhir/SearchParameter/DocumentReference-_id"/>
+				<definition value="http://hl7.org/fhir/SearchParameter/Resource-id"/>
 				<type value="token"/>
 				<documentation value="Logical id of this artifact"/>
 			</searchParam>
 			<searchParam>
 				<name value="_lastUpdated"/>
-				<definition value="http://hl7.org/fhir/SearchParameter/DocumentReference-_lastUpdated"/>
+				<definition value="http://hl7.org/fhir/SearchParameter/Resource-lastUpdated"/>
 				<type value="date"/>
 				<documentation value="When the resource version last changed"/>
 			</searchParam>
@@ -98,13 +99,13 @@
 			</searchParam>
 			<searchParam>
 				<name value="identifier"/>
-				<definition value="http://hl7.org/fhir/SearchParameter/DocumentReference-identifier"/>
+				<definition value="http://hl7.org/fhir/SearchParameter/clinical-identifier"/>
 				<type value="token"/>
 				<documentation value="The identifier for this DocumentReference"/>
 			</searchParam>
 			<searchParam>
 				<name value="patient"/>
-				<definition value="http://hl7.org/fhir/SearchParameter/DocumentReference-patient"/>
+				<definition value="http://hl7.org/fhir/SearchParameter/clinical-patient"/>
 				<type value="reference"/>
 				<documentation value="Who/what is the subject of the document"/>
 			</searchParam>
@@ -140,7 +141,7 @@
 			</searchParam>
 			<searchParam>
 				<name value="type"/>
-				<definition value="http://hl7.org/fhir/SearchParameter/DocumentReference-type"/>
+				<definition value="http://hl7.org/fhir/SearchParameter/clinical-type"/>
 				<type value="token"/>
 				<documentation value="Kind of document (LOINC if possible)"/>
 			</searchParam>
@@ -155,8 +156,14 @@
 				<code value="search-type"/>
 			</interaction>
 			<searchParam>
+				<name value="_id"/>
+				<definition value="http://hl7.org/fhir/SearchParameter/Resource-id"/>
+				<type value="token"/>
+				<documentation value="Logical id of this artifact"/>
+			</searchParam>
+			<searchParam>
 				<name value="_lastUpdated"/>
-				<definition value="http://hl7.org/fhir/SearchParameter/DocumentManifest-_lastUpdated"/>
+				<definition value="http://hl7.org/fhir/SearchParameter/Resource-lastUpdated"/>
 				<type value="date"/>
 				<documentation value="When the resource version last changed"/>
 			</searchParam>
@@ -174,7 +181,7 @@
 			</searchParam>
 			<searchParam>
 				<name value="patient"/>
-				<definition value="http://hl7.org/fhir/SearchParameter/DocumentManifest-patient"/>
+				<definition value="http://hl7.org/fhir/SearchParameter/clinical-patient"/>
 				<type value="reference"/>
 				<documentation value="The subject of the set of documents"/>
 			</searchParam>
@@ -198,7 +205,7 @@
 			</searchParam>
 			<searchParam>
 				<name value="type"/>
-				<definition value="http://hl7.org/fhir/SearchParameter/DocumentManifest-type"/>
+				<definition value="http://hl7.org/fhir/SearchParameter/clinical-type"/>
 				<type value="token"/>
 				<documentation value="Kind of document set"/>
 			</searchParam>

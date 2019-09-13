@@ -1,20 +1,21 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <StructureDefinition xmlns="http://hl7.org/fhir">
+	<id value="IHE.MHD.ProvideDocuemntBundle.Comprehensive" />
 
 	<text>
 		<status value="additional" />
 		<div xmlns="http://www.w3.org/1999/xhtml">
-	StructureDefinition for Provide Document Bundle (ITI-65) transaction between the MHD Document Source and the MHD Document Recipient with Minimal metadata compliance in the 
+	StructureDefinition for Provide Document Bundle (ITI-65) transaction between the MHD Document Source and the MHD Document Recipient with Comprehensive (XDS-on-FHIR) metadata compliance in the 
     IHE IT Infrastructure Technical Framework Supplement <a href="http://wiki.ihe.net/index.php/Mobile_access_to_Health_Documents_(MHD)">Mobile access to Health Documents (MHD) Rev. 3.1</a>.
 	The IHE MHD Profile text is Normative, this conformance resource is Informative.
 		</div>
 	</text>
-	<url value="http://ihe.net/fhir/ihe.mhd.fhir/StructureDefinition/IHE_MHD_ProvideDocumentBundle_Minimal" />
-	<name value="IHE_MHD_ProvideDocumentBundle_Minimal" />
-	<title value="IHE MHD profile on Provide Document Bundle (ITI-65) transaction with Minimal Metadata" />
+	<url value="http://ihe.net/fhir/ihe.mhd.fhir/StructureDefinition/IHE.MHD.ProvideDocumentBundle.Comprehensive" />
+	<name value="IHE_MHD_ProvideDocumentBundle_Comprehensive" />
+	<title value="IHE MHD profile on Provide Document Bundle (ITI-65) transaction with Comprehensive Metadata" />
 	<status value="active" />
 	<experimental value="false" />
-	<date value="2019-07-05" />
+	<date value="2019-09-13" />
 	<publisher value="Integrating the Healthcare Enterprise (IHE)" />
 	<contact>
 		<name value="IHE" />
@@ -79,7 +80,6 @@
 			<min value="1" />
 			<type>
 				<code value="Resource" />
-				<profile value="http://ihe.net/fhir/ihe.mhd.fhir/StructureDefinition/IHE_MHD_Minimal_DocumentManifest" />
 				<profile value="http://ihe.net/fhir/ihe.mhd.fhir/StructureDefinition/IHE_MHD_Comprehensive_DocumentManifest" />
 			</type>
 		</element>
@@ -106,7 +106,6 @@
 			<min value="1" />
 			<type>
 				<code value="Resource" />
-				<profile value="http://ihe.net/fhir/ihe.mhd.fhir/StructureDefinition/IHE_MHD_Provide_Minimal_DocumentReference" />
 				<profile value="http://ihe.net/fhir/ihe.mhd.fhir/StructureDefinition/IHE_MHD_Provide_Comprehensive_DocumentReference" />
 			</type>
 		</element>
@@ -132,7 +131,6 @@
 			<min value="1" />
 			<type>
 				<code value="Resource" />
-				<profile value="http://ihe.net/fhir/ihe.mhd.fhir/StructureDefinition/IHE_MHD_Minimal_List" />
 				<profile value="http://ihe.net/fhir/ihe.mhd.fhir/StructureDefinition/IHE_MHD_Comprehensive_List" />
 			</type>
 		</element>

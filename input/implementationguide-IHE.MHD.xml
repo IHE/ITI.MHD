@@ -4,16 +4,16 @@
 	<text>
 		<status value="additional" />
 		<div xmlns="http://www.w3.org/1999/xhtml">
-	ImplementationGuide for  
-    IHE IT Infrastructure Technical Framework Supplement <a href="http://wiki.ihe.net/index.php/Mobile_access_to_Health_Documents_(MHD)">Mobile access to Health Documents (MHD) Rev. 3.1</a>. 
-	The IHE MHD Profile text is Normative, this conformance resource is Informative.
+ImplementationGuide for  
+IHE IT Infrastructure Technical Framework Supplement <a href="http://wiki.ihe.net/index.php/Mobile_access_to_Health_Documents_(MHD)">Mobile access to Health Documents (MHD) Rev. 3.1</a>. 
+The IHE MHD Profile text is Normative, this conformance resource is Informative.
 		</div>
 	</text>
 	<url value="http://ihe.net/fhir/ihe.mhd.fhir/ImplementationGuide/ihe.mhd.fhir" />
 	<name value="IHE_MHD" />
 	<status value="active" />
 	<experimental value="false" />
-	<date value="2019-07-05" />
+	<date value="2019-09-13" />
 	<publisher value="Integrating the Healthcare Enterprise (IHE)" />
 	<contact>
 		<name value="IHE" />
@@ -45,44 +45,10 @@
       <name value="Name you want in artifact list"/>
       <description value="Description you want in artifact list"/>
     </resource>-->
-    <page>
-      <!-- The root will always be toc.html - the template will force it if you don't do it -->
-      <nameUrl value="toc.html"/>
-      <title value="Table of Contents"/>
-      <generation value="html"/>
-      <page>
-        <nameUrl value="index.html"/>
-        <title value="MyIG Home Page"/>
-        <generation value="html"/>
-      </page>
-      <page>
-        <nameUrl value="background.html"/>
-        <title value="Background"/>
-        <generation value="html"/>
-      </page>
-      <page>
-        <nameUrl value="spec.html"/>
-        <title value="Detailed Specification"/>
-        <generation value="markdown"/>
-      </page>
-      <page>
-        <nameUrl value="downloads.html"/>
-        <title value="Useful Downloads"/>
-        <generation value="html"/>
-      </page>
-      <page>
-        <nameUrl value="changes.html"/>
-        <title value="IG Change History"/>
-        <generation value="html"/>
-      </page>
-    </page>
-  </definition>
 
+	<!--  TODO bring these in for check/ballance once the names are figured out
 
-	
-	<!--
-	<manifest>
-		<rendering value="http://wiki.ihe.net/index.php/Mobile_access_to_Health_Documents_(MHD)" />
+	<resource>
 		<resource>
 			<reference>
 			<reference value="http://ihe.net/fhir/StructureDefinition/IHE_MHD_ProvideDocumentBundle_Minimal" />
@@ -163,6 +129,40 @@
 			<reference value="http://ihe.net/fhir/ValueSet/IHE.FormatCode.vs" />
 			</reference>
 		</resource>
-	</manifest>
+	</resource>
 -->
+    <page>
+      <!-- The root will always be toc.html - the template will force it if you don't do it -->
+      <nameUrl value="toc.html"/>
+      <title value="Table of Contents"/>
+      <generation value="html"/>
+      <page>
+        <nameUrl value="index.html"/>
+        <title value="MyIG Home Page"/>
+        <generation value="html"/>
+      </page>
+      <page>
+        <nameUrl value="background.html"/>
+        <title value="Background"/>
+        <generation value="html"/>
+      </page>
+      <page>
+        <nameUrl value="spec.html"/>
+        <title value="Detailed Specification"/>
+        <generation value="markdown"/>
+      </page>
+      <page>
+        <nameUrl value="downloads.html"/>
+        <title value="Useful Downloads"/>
+        <generation value="html"/>
+      </page>
+      <page>
+        <nameUrl value="changes.html"/>
+        <title value="IG Change History"/>
+        <generation value="html"/>
+      </page>
+    </page>
+  </definition>
+
+
 </ImplementationGuide>

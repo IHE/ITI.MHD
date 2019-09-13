@@ -1,20 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CapabilityStatement xmlns="http://hl7.org/fhir">
+	<id value="IHE.MHD.DocumentRecipient" />
 
 	<text>
 		<status value="additional" />
 		<div xmlns="http://www.w3.org/1999/xhtml">
-	This CapabilityStatement describes the Document Source actor in the  
+	This CapabilityStatement describes the Document Recipient actor in the  
     IHE <a href="http://wiki.ihe.net/index.php/Mobile_access_to_Health_Documents_(MHD)">Mobile access to Health Documents (MHD) Rev. 3.1</a> Profile. 
 	The IHE MHD Profile text is Normative, this conformance resource is Informative.
 		</div>
 	</text>
-	<url value="http://ihe.net/fhir/ihe.mhd.fhir/CapabilityStatement/IHE_MHD_DocumentSource"/>
-	<name value="IHE_MHD_DocumentSource"/>
-	<title value="IHE ITI Mobile access to Health Documents (MHD) - Document Source (publisher)"/>
+	<url value="http://ihe.net/fhir/ihe.mhd.fhir/CapabilityStatement/IHE.MHD.DocumentRecipient"/>
+	<name value="IHE_MHD_DocumentRecipient"/>
+	<title value="IHE ITI Mobile access to Health Documents (MHD) - Document Recipient"/>
 	<status value="active" />
 	<experimental value="false"/>
-	<date value="2019-07-05" />
+	<date value="2019-09-13" />
 	<publisher value="IHE"/>
 	<contact> 
 		<name value="IHE"/> 
@@ -30,7 +31,7 @@
 			<value value="JohnMoehrke@gmail.com" />
 		</telecom>
 	</contact>
-	<description value="This CapabilityStatement describes the Document Source actor in the IHE Mobile access to Health Documents (MHD) Rev. 2.3 Profile. See http://wiki.ihe.net/index.php/Mobile_access_to_Health_Documents_(MHD). The IHE MHD Profile text is Normative, this conformance resource is Informative." />
+	<description value="This CapabilityStatement describes the Document Recipient actor in the IHE Mobile access to Health Documents (MHD) Rev. 3.1 Profile. See http://wiki.ihe.net/index.php/Mobile_access_to_Health_Documents_(MHD). The IHE MHD Profile text is Normative, this conformance resource is Informative." />
 
 	<copyright value="IHE http://www.ihe.net/Governance/#Intellectual_Property"/>
 	<kind value="requirements"/>
@@ -38,7 +39,7 @@
 	<format value="application/fhir+xml"/>
 	<format value="application/fhir+json"/>
 	<rest>
-		<mode value="client"/>
+		<mode value="server"/>
 		<security>
 			<description value="Recommend IUA or SMART"/>
 		</security>
