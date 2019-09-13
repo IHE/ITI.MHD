@@ -37,7 +37,7 @@
   <kind value="resource" />
   <abstract value="false" />
   <type value="DocumentReference" />
-  <baseDefinition value="http://ihe.net/fhir/ihe.mhd.fhir/StructureDefinition/IHE_MHD_Provide_Minimal_DocumentReference" />
+  <baseDefinition value="http://ihe.net/fhir/ihe.mhd.fhir/StructureDefinition/IHE.MHD.Provide.Minimal.DocumentReference" />
   <derivation value="constraint" />
   <differential>
     <element id="DocumentReference.identifier">

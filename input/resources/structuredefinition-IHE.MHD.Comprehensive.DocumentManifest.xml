@@ -37,7 +37,7 @@
 	<kind value="resource" />
 	<abstract value="false" />
 	<type value="DocumentManifest" />
-	<baseDefinition value="http://ihe.net/fhir/ihe.mhd.fhir/StructureDefinition/IHE_MHD_Minimal_DocumentManifest" />
+	<baseDefinition value="http://ihe.net/fhir/ihe.mhd.fhir/StructureDefinition/IHE.MHD.Minimal.DocumentManifest" />
 	<derivation value="constraint" />
 	<differential>
 		<element id="DocumentManifest.type">

@@ -38,7 +38,7 @@
 	<kind value="resource" />
 	<abstract value="false" />
 	<type value="DocumentReference" />
-	<baseDefinition value="http://ihe.net/fhir/ihe.mhd.fhir/StructureDefinition/IHE_MHD_Provide_Comprehensive_DocumentReference" />
+	<baseDefinition value="http://ihe.net/fhir/ihe.mhd.fhir/StructureDefinition/IHE.MHD.Provide.Comprehensive.DocumentReference" />
 	<derivation value="constraint" />
 	<differential>
     <element id="DocumentReference.identifier">

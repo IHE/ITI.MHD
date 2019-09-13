@@ -37,7 +37,7 @@
 	<kind value="resource" />
 	<abstract value="false" />
 	<type value="List" />
-	<baseDefinition value="http://ihe.net/fhir/ihe.mhd.fhir/StructureDefinition/IHE_MHD_Minimal_List" />
+	<baseDefinition value="http://ihe.net/fhir/ihe.mhd.fhir/StructureDefinition/IHE.MHD.Minimal.List" />
 	<derivation value="constraint" />
 	<differential>
 		<element id="List.title">

@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <StructureDefinition xmlns="http://hl7.org/fhir">
-	<id value="IHE.MHD.ProvideDocuemntBundle.Minimal" />
+	<id value="IHE.MHD.ProvideDocumentBundle.Minimal" />
 	<text>
 		<status value="additional" />
 		<div xmlns="http://www.w3.org/1999/xhtml">
