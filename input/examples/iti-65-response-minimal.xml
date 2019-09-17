@@ -1,37 +1,38 @@
 <Bundle 
-    xmlns="http://hl7.org/fhir">
-    <id value="iti-65-response-minimal"/>
-    <!--<meta>
-         just for triggering validation purposes, not required in implementations 
-        <profile value="http://ihe.net/fhir/StructureDefinition/IHE.MHD.ITI-65.Response" /> -->
-    </meta>
-    <type value="transaction-response"/>
-    <link>
-        <relation value="self"/>
-        <url value="http://hapi.fhir.org/baseDstu3"/>
-    </link>
-    <entry>
-        <response>
-            <status value="201 Created"/>
-            <location value="DocumentReference/3538602/_history/1"/>
-            <etag value="1"/>
-            <lastModified value="2018-05-13T13:13:00.509+00:00"/>
-        </response>
-    </entry>
-    <entry>
-        <response>
-            <status value="201 Created"/>
-            <location value="DocumentManifest/3538603/_history/1"/>
-            <etag value="1"/>
-            <lastModified value="2018-05-13T13:13:00.512+00:00"/>
-        </response>
-    </entry>
-    <entry>
-        <response>
-            <status value="201 Created"/>
-            <location value="Binary/3538604/_history/1"/>
-            <etag value="1"/>
-            <lastModified value="2018-05-13T13:13:00.512+00:00"/>
-        </response>
-    </entry>
+  xmlns="http://hl7.org/fhir">
+  <id value="iti-65-response-minimal"/>
+  <!--
+  <meta>
+    <profile value="http://ihe.net/fhir/StructureDefinition/IHE.MHD.ITI-65.Response"/>
+  </meta>
+  -->
+  <type value="transaction-response"/>
+  <link>
+    <relation value="self"/>
+    <url value="http://hapi.fhir.org/baseDstu3"/>
+  </link>
+  <entry>
+    <response>
+      <status value="201 Created"/>
+      <location value="DocumentReference/3538602/_history/1"/>
+      <etag value="1"/>
+      <lastModified value="2018-05-13T13:13:00.509+00:00"/>
+    </response>
+  </entry>
+  <entry>
+    <response>
+      <status value="201 Created"/>
+      <location value="DocumentManifest/3538603/_history/1"/>
+      <etag value="1"/>
+      <lastModified value="2018-05-13T13:13:00.512+00:00"/>
+    </response>
+  </entry>
+  <entry>
+    <response>
+      <status value="201 Created"/>
+      <location value="Binary/3538604/_history/1"/>
+      <etag value="1"/>
+      <lastModified value="2018-05-13T13:13:00.512+00:00"/>
+    </response>
+  </entry>
 </Bundle>
