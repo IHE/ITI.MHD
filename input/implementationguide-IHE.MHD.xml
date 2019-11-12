@@ -33,7 +33,7 @@ The IHE MHD Profile text is Normative, this conformance resource is Informative.
 
 	<copyright value="IHE http://www.ihe.net/Governance/#Intellectual_Property" />
 	<packageId value="ihe.mhd.fhir" />
-	<fhirVersion value="4.0.0" />
+	<fhirVersion value="4.0.1" />
 	
 	 <definition>
     <!-- You don't need to define any groupings.  The IGPublisher will define them for you.  You only need to do so if your IG is 'special' and it's
