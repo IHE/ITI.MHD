@@ -47,7 +47,7 @@
   POSSIBILITY OF SUCH DAMAGE.
   
 
-  Generated on Thu, Nov 7, 2019 13:06+0000 for FHIR v4.1.0 
+  Generated on Wed, Nov 13, 2019 04:05+0000 for FHIR v4.1.0 
 -->
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://hl7.org/fhir" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:xml="http://www.w3.org/XML/1998/namespace" targetNamespace="http://hl7.org/fhir" elementFormDefault="qualified" version="4.1.0">
   <!-- Note: When using this schema with some tools, it may also be necessary to declare xmlns:xml="http://www.w3.org/XML/1998/namespace", however this causes performance issues with other tools and thus is not in the base schemas. -->
@@ -11801,12 +11801,12 @@ into another (possibly the same) biological entity.</xs:documentation>
   </xs:complexType>
   <xs:element name="ClinicalUseIssue" type="ClinicalUseIssue">
     <xs:annotation>
-      <xs:documentation xml:lang="en">A single item of clinical particulars - an indication, contraindication, interaction etc. for a medicinal product.</xs:documentation>
+      <xs:documentation xml:lang="en">A single usage issue - either an indication, contraindication, interaction or an undesirable effect for a medicinal product, medication, device or procedure.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:complexType name="ClinicalUseIssue">
     <xs:annotation>
-      <xs:documentation xml:lang="en">A single item of clinical particulars - an indication, contraindication, interaction etc. for a medicinal product.</xs:documentation>
+      <xs:documentation xml:lang="en">A single usage issue - either an indication, contraindication, interaction or an undesirable effect for a medicinal product, medication, device or procedure.</xs:documentation>
       <xs:documentation xml:lang="en">If the element is present, it must have either a @value, an @id, or extensions</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
@@ -11832,7 +11832,7 @@ into another (possibly the same) biological entity.</xs:documentation>
               <xs:documentation xml:lang="en">General description.</xs:documentation>
            </xs:annotation>
           </xs:element>
-          <xs:element name="description" minOccurs="0" maxOccurs="1" type="string">
+          <xs:element name="description" minOccurs="0" maxOccurs="1" type="markdown">
             <xs:annotation>
               <xs:documentation xml:lang="en">General description.</xs:documentation>
            </xs:annotation>
@@ -11868,7 +11868,7 @@ into another (possibly the same) biological entity.</xs:documentation>
   </xs:complexType>
   <xs:complexType name="ClinicalUseIssue.Contraindication">
     <xs:annotation>
-      <xs:documentation xml:lang="en">A single item of clinical particulars - an indication, contraindication, interaction etc. for a medicinal product.</xs:documentation>
+      <xs:documentation xml:lang="en">A single usage issue - either an indication, contraindication, interaction or an undesirable effect for a medicinal product, medication, device or procedure.</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
       <xs:extension base="BackboneElement">
@@ -11904,7 +11904,7 @@ into another (possibly the same) biological entity.</xs:documentation>
   </xs:complexType>
   <xs:complexType name="ClinicalUseIssue.OtherTherapy">
     <xs:annotation>
-      <xs:documentation xml:lang="en">A single item of clinical particulars - an indication, contraindication, interaction etc. for a medicinal product.</xs:documentation>
+      <xs:documentation xml:lang="en">A single usage issue - either an indication, contraindication, interaction or an undesirable effect for a medicinal product, medication, device or procedure.</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
       <xs:extension base="BackboneElement">
@@ -11927,7 +11927,7 @@ into another (possibly the same) biological entity.</xs:documentation>
   </xs:complexType>
   <xs:complexType name="ClinicalUseIssue.Indication">
     <xs:annotation>
-      <xs:documentation xml:lang="en">A single item of clinical particulars - an indication, contraindication, interaction etc. for a medicinal product.</xs:documentation>
+      <xs:documentation xml:lang="en">A single usage issue - either an indication, contraindication, interaction or an undesirable effect for a medicinal product, medication, device or procedure.</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
       <xs:extension base="BackboneElement">
@@ -11973,7 +11973,7 @@ into another (possibly the same) biological entity.</xs:documentation>
   </xs:complexType>
   <xs:complexType name="ClinicalUseIssue.Interaction">
     <xs:annotation>
-      <xs:documentation xml:lang="en">A single item of clinical particulars - an indication, contraindication, interaction etc. for a medicinal product.</xs:documentation>
+      <xs:documentation xml:lang="en">A single usage issue - either an indication, contraindication, interaction or an undesirable effect for a medicinal product, medication, device or procedure.</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
       <xs:extension base="BackboneElement">
@@ -12009,7 +12009,7 @@ into another (possibly the same) biological entity.</xs:documentation>
   </xs:complexType>
   <xs:complexType name="ClinicalUseIssue.Interactant">
     <xs:annotation>
-      <xs:documentation xml:lang="en">A single item of clinical particulars - an indication, contraindication, interaction etc. for a medicinal product.</xs:documentation>
+      <xs:documentation xml:lang="en">A single usage issue - either an indication, contraindication, interaction or an undesirable effect for a medicinal product, medication, device or procedure.</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
       <xs:extension base="BackboneElement">
@@ -12027,7 +12027,7 @@ into another (possibly the same) biological entity.</xs:documentation>
   </xs:complexType>
   <xs:complexType name="ClinicalUseIssue.UndesirableEffect">
     <xs:annotation>
-      <xs:documentation xml:lang="en">A single item of clinical particulars - an indication, contraindication, interaction etc. for a medicinal product.</xs:documentation>
+      <xs:documentation xml:lang="en">A single usage issue - either an indication, contraindication, interaction or an undesirable effect for a medicinal product, medication, device or procedure.</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
       <xs:extension base="BackboneElement">
@@ -14359,14 +14359,24 @@ into another (possibly the same) biological entity.</xs:documentation>
               <xs:documentation xml:lang="en">Has the instruction been verified.</xs:documentation>
            </xs:annotation>
           </xs:element>
+          <xs:element name="verificationType" minOccurs="0" maxOccurs="1" type="CodeableConcept">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">Extensible list of verification type starting with verification and re-validation.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="verifiedBy" minOccurs="0" maxOccurs="1" type="Reference">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">The person who conducted the verification/validation of the Grantee decision.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
           <xs:element name="verifiedWith" minOccurs="0" maxOccurs="1" type="Reference">
             <xs:annotation>
               <xs:documentation xml:lang="en">Who verified the instruction (Patient, Relative or other Authorized Person).</xs:documentation>
            </xs:annotation>
           </xs:element>
-          <xs:element name="verificationDate" minOccurs="0" maxOccurs="1" type="dateTime">
+          <xs:element name="verificationDate" minOccurs="0" maxOccurs="unbounded" type="dateTime">
             <xs:annotation>
-              <xs:documentation xml:lang="en">Date verification was collected.</xs:documentation>
+              <xs:documentation xml:lang="en">Date(s) verification was collected.</xs:documentation>
            </xs:annotation>
           </xs:element>
         </xs:sequence>
@@ -34464,7 +34474,7 @@ For resource issues, this will be a simple XPath limited to element names, repet
           </xs:element>
           <xs:element name="containedItem" type="PackagedProductDefinition.ContainedItem" minOccurs="0" maxOccurs="unbounded">
             <xs:annotation>
-              <xs:documentation xml:lang="en">The item(s) within the packaging).</xs:documentation>
+              <xs:documentation xml:lang="en">The item(s) within the packaging.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="package" type="PackagedProductDefinition.Package" minOccurs="0" maxOccurs="unbounded">
@@ -37293,7 +37303,7 @@ Deceased patients may also be marked as inactive for the same reasons, but may b
               <xs:documentation xml:lang="en">Type of this authorization, for example drug marketing approval, orphan drug designation.</xs:documentation>
            </xs:annotation>
           </xs:element>
-          <xs:element name="description" minOccurs="0" maxOccurs="1" type="string">
+          <xs:element name="description" minOccurs="0" maxOccurs="1" type="markdown">
             <xs:annotation>
               <xs:documentation xml:lang="en">General textual supporting information.</xs:documentation>
            </xs:annotation>
@@ -41137,7 +41147,7 @@ Deceased patients may also be marked as inactive for the same reasons, but may b
               <xs:documentation xml:lang="en">If the substance applies to only human or veterinary use.</xs:documentation>
            </xs:annotation>
           </xs:element>
-          <xs:element name="description" minOccurs="0" maxOccurs="1" type="string">
+          <xs:element name="description" minOccurs="0" maxOccurs="1" type="markdown">
             <xs:annotation>
               <xs:documentation xml:lang="en">Textual description of the substance.</xs:documentation>
            </xs:annotation>
