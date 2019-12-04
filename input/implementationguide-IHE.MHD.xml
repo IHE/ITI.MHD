@@ -13,7 +13,7 @@ The IHE MHD Profile text is Normative, this conformance resource is Informative.
 	<name value="IHE_MHD" />
 	<status value="active" />
 	<experimental value="false" />
-	<date value="2019-09-13" />
+	<date value="2019-11-08" />
 	<publisher value="Integrating the Healthcare Enterprise (IHE)" />
 	<contact>
 		<name value="IHE" />
