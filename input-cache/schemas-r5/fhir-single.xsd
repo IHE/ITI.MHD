@@ -47,7 +47,7 @@
   POSSIBILITY OF SUCH DAMAGE.
   
 
-  Generated on Wed, Nov 13, 2019 04:05+0000 for FHIR v4.1.0 
+  Generated on Fri, Dec 6, 2019 13:07+0000 for FHIR v4.1.0 
 -->
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://hl7.org/fhir" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:xml="http://www.w3.org/XML/1998/namespace" targetNamespace="http://hl7.org/fhir" elementFormDefault="qualified" version="4.1.0">
   <!-- Note: When using this schema with some tools, it may also be necessary to declare xmlns:xml="http://www.w3.org/XML/1998/namespace", however this causes performance issues with other tools and thus is not in the base schemas. -->
@@ -2658,6 +2658,28 @@ The type is the Canonical URL of Resource Definition that is the type this refer
          <xs:attribute name="value" type="ExpressionLanguage-list" use="optional"/>
        </xs:extension>
      </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="CodeableReference">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">A reference to a resource (by instance), or instead, a reference to a cencept defined in a terminology or ontology (by class).</xs:documentation>
+      <xs:documentation xml:lang="en">If the element is present, it must have a value for at least one of the defined elements, an @id referenced from the Narrative, or extensions</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="Element">
+        <xs:sequence>
+          <xs:element name="concept" type="CodeableConcept" minOccurs="0" maxOccurs="1">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">A reference to a concept - e.g. the information is identified by it's general classto the degree of precision found in the terminology.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="reference" type="Reference" minOccurs="0" maxOccurs="1">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">A reference to a resource the provides exact details about the information being referenced.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
   </xs:complexType>
   <xs:complexType name="Signature">
     <xs:annotation>
@@ -30371,14 +30393,9 @@ UDILabelName | UserFriendlyName | PatientReportedName | ManufactureDeviceName | 
               <xs:documentation xml:lang="en">The person who entered the order on behalf of another individual for example in the case of a verbal or a telephone order.</xs:documentation>
            </xs:annotation>
           </xs:element>
-          <xs:element name="reasonCode" minOccurs="0" maxOccurs="unbounded" type="CodeableConcept">
+          <xs:element name="reason" minOccurs="0" maxOccurs="unbounded" type="CodeableReference">
             <xs:annotation>
               <xs:documentation xml:lang="en">The reason or the indication for ordering or not ordering the medication.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="reasonReference" minOccurs="0" maxOccurs="unbounded" type="Reference">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">Condition or observation that supports why the medication was ordered.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="instantiatesCanonical" minOccurs="0" maxOccurs="unbounded" type="canonical">
@@ -30848,7 +30865,7 @@ The primary difference between a medicationusage and a medicationadministration 
               <xs:documentation xml:lang="en">If this medicine applies to human or veterinary uses.</xs:documentation>
            </xs:annotation>
           </xs:element>
-          <xs:element name="description" minOccurs="0" maxOccurs="1" type="string">
+          <xs:element name="description" minOccurs="0" maxOccurs="1" type="markdown">
             <xs:annotation>
               <xs:documentation xml:lang="en">General description of this product.</xs:documentation>
            </xs:annotation>
@@ -30933,7 +30950,7 @@ The primary difference between a medicationusage and a medicationadministration 
               <xs:documentation xml:lang="en">The product's name, including full name and possibly coded parts.</xs:documentation>
            </xs:annotation>
           </xs:element>
-          <xs:element name="crossReference" minOccurs="0" maxOccurs="unbounded" type="Identifier">
+          <xs:element name="crossReference" type="MedicinalProductDefinition.CrossReference" minOccurs="0" maxOccurs="unbounded">
             <xs:annotation>
               <xs:documentation xml:lang="en">Reference to another product, e.g. for linking authorised to investigational product.</xs:documentation>
            </xs:annotation>
@@ -30941,11 +30958,6 @@ The primary difference between a medicationusage and a medicationadministration 
           <xs:element name="manufacturingBusinessOperation" type="MedicinalProductDefinition.ManufacturingBusinessOperation" minOccurs="0" maxOccurs="unbounded">
             <xs:annotation>
               <xs:documentation xml:lang="en">An operation applied to the product, for manufacturing or adminsitrative purpose.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="specialDesignation" type="MedicinalProductDefinition.SpecialDesignation" minOccurs="0" maxOccurs="unbounded">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">Indicates if the medicinal product has an orphan designation for the treatment of a rare disease.</xs:documentation>
            </xs:annotation>
           </xs:element>
         </xs:sequence>
@@ -31051,6 +31063,29 @@ The primary difference between a medicationusage and a medicationadministration 
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
+  <xs:complexType name="MedicinalProductDefinition.CrossReference">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">Detailed definition of a medicinal product, typically for uses other than direct patient care (e.g. regulatory use).</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="BackboneElement">
+        <xs:sequence>
+          <xs:choice minOccurs="1" maxOccurs="1" >
+            <xs:annotation>
+              <xs:documentation xml:lang="en">Reference to another product, e.g. for linking authorised to investigational product.</xs:documentation>
+            </xs:annotation>
+            <xs:element name="productIdentifier" type="Identifier"/>
+            <xs:element name="productReference" type="Reference"/>
+          </xs:choice>
+          <xs:element name="type" minOccurs="0" maxOccurs="1" type="Coding">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">The type of relationship, for instance branded to generic, product to development product (investigational), parallel import version.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
   <xs:complexType name="MedicinalProductDefinition.ManufacturingBusinessOperation">
     <xs:annotation>
       <xs:documentation xml:lang="en">Detailed definition of a medicinal product, typically for uses other than direct patient care (e.g. regulatory use).</xs:documentation>
@@ -31058,24 +31093,16 @@ The primary difference between a medicationusage and a medicationadministration 
     <xs:complexContent>
       <xs:extension base="BackboneElement">
         <xs:sequence>
-          <xs:element name="operationType" minOccurs="0" maxOccurs="1" type="CodeableConcept">
+          <xs:choice minOccurs="0" maxOccurs="1" >
             <xs:annotation>
-              <xs:documentation xml:lang="en">The type of manufacturing operation e.g. manufacturing itself, re-packaging.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="authorisationReferenceNumber" minOccurs="0" maxOccurs="1" type="Identifier">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">Regulatory authorization reference number.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
+              <xs:documentation xml:lang="en">The type of manufacturing operation e.g. manufacturing itself, re-packaging. This may be a subtype of some other wider scope of authorized operation, referenced by the authorization attribute.</xs:documentation>
+            </xs:annotation>
+            <xs:element name="typeCoding" type="Coding"/>
+            <xs:element name="typeReference" type="Reference"/>
+          </xs:choice>
           <xs:element name="effectiveDate" minOccurs="0" maxOccurs="1" type="Period">
             <xs:annotation>
-              <xs:documentation xml:lang="en">Regulatory authorization date.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="confidentialityIndicator" minOccurs="0" maxOccurs="1" type="CodeableConcept">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">To indicate if this proces is commercially confidential.</xs:documentation>
+              <xs:documentation xml:lang="en">Date range of applicability.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="manufacturer" minOccurs="0" maxOccurs="unbounded" type="Reference">
@@ -31083,57 +31110,14 @@ The primary difference between a medicationusage and a medicationadministration 
               <xs:documentation xml:lang="en">The manufacturer or establishment associated with the process.</xs:documentation>
            </xs:annotation>
           </xs:element>
-          <xs:element name="regulator" minOccurs="0" maxOccurs="1" type="Reference">
+          <xs:element name="authorization" minOccurs="0" maxOccurs="1" type="Reference">
             <xs:annotation>
-              <xs:documentation xml:lang="en">A regulator which oversees the operation.</xs:documentation>
+              <xs:documentation xml:lang="en">An authorization for this process, either as a logical reference, holding just an identifier, or a full refererence to a resource that captures the details. The authorization mayu possibly apply to several products or a wider scope of process of which this is a part.</xs:documentation>
            </xs:annotation>
           </xs:element>
-        </xs:sequence>
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
-  <xs:complexType name="MedicinalProductDefinition.SpecialDesignation">
-    <xs:annotation>
-      <xs:documentation xml:lang="en">Detailed definition of a medicinal product, typically for uses other than direct patient care (e.g. regulatory use).</xs:documentation>
-    </xs:annotation>
-    <xs:complexContent>
-      <xs:extension base="BackboneElement">
-        <xs:sequence>
-          <xs:element name="identifier" minOccurs="0" maxOccurs="unbounded" type="Identifier">
+          <xs:element name="confidentialityIndicator" minOccurs="0" maxOccurs="1" type="CodeableConcept">
             <xs:annotation>
-              <xs:documentation xml:lang="en">Identifier for the designation, or procedure number.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="type" minOccurs="0" maxOccurs="1" type="CodeableConcept">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">The type of special designation, e.g. orphan drug, minor use.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="intendedUse" minOccurs="0" maxOccurs="1" type="CodeableConcept">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">The intended use of the product, e.g. prevention, treatment.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:choice minOccurs="0" maxOccurs="1" >
-            <xs:annotation>
-              <xs:documentation xml:lang="en">Condition for which the medicinal use applies.</xs:documentation>
-            </xs:annotation>
-            <xs:element name="indicationCodeableConcept" type="CodeableConcept"/>
-            <xs:element name="indicationReference" type="Reference"/>
-          </xs:choice>
-          <xs:element name="status" minOccurs="0" maxOccurs="1" type="CodeableConcept">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">For example granted, pending, expired or withdrawn.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="date" minOccurs="0" maxOccurs="1" type="dateTime">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">Date when the designation was granted.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="species" minOccurs="0" maxOccurs="1" type="CodeableConcept">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">Animal species for which this applies.</xs:documentation>
+              <xs:documentation xml:lang="en">To indicate if this proces is commercially confidential.</xs:documentation>
            </xs:annotation>
           </xs:element>
         </xs:sequence>
@@ -40766,7 +40750,7 @@ Deceased patients may also be marked as inactive for the same reasons, but may b
               <xs:documentation xml:lang="en">The time for the server to turn the subscription off.</xs:documentation>
            </xs:annotation>
           </xs:element>
-          <xs:element name="reason" minOccurs="1" maxOccurs="1" type="string">
+          <xs:element name="reason" minOccurs="0" maxOccurs="1" type="string">
             <xs:annotation>
               <xs:documentation xml:lang="en">A description of why this subscription is defined.</xs:documentation>
            </xs:annotation>
@@ -40783,7 +40767,7 @@ Deceased patients may also be marked as inactive for the same reasons, but may b
           </xs:element>
           <xs:element name="eventCount" minOccurs="0" maxOccurs="1" type="unsignedInt">
             <xs:annotation>
-              <xs:documentation xml:lang="en">A record of  the number of events for which the server has attempted delivery on this subscription (i.e., the number of events that occurred while the subscription is in an &quot;active&quot; or &quot;error&quot; state -- not &quot;requested&quot; or &quot;off&quot;).   Server Initializes to 0 for a new subscription.  Repeated attempts at delivery of the *same* event notification do not increment this counter.</xs:documentation>
+              <xs:documentation xml:lang="en">A record of  the number of events for which the server has attempted delivery on this subscription (i.e., the number of events that occurred while the subscription is in an &quot;active&quot; or &quot;error&quot; state -- not &quot;requested&quot; or &quot;off&quot;).   Server Initializes to 0 for a new subscription.  Repeated attempts at delivery of the *same* event notification do not increment this counter.  Valid values are unsigned integers (0+).  The decmial type is used to ensure that counts can grow larger than 32-bit values.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="channel" type="Subscription.Channel" minOccurs="1" maxOccurs="1">
@@ -40866,7 +40850,7 @@ Deceased patients may also be marked as inactive for the same reasons, but may b
         <xs:sequence>
           <xs:element name="contentType" minOccurs="0" maxOccurs="1" type="code">
             <xs:annotation>
-              <xs:documentation xml:lang="en">The mime type to send the payload in - either application/fhir+xml, or application/fhir+json. The mime type &quot;text/plain&quot; may also be used for Email and SMS subscriptions.</xs:documentation>
+              <xs:documentation xml:lang="en">The mime type to send the payload in - either application/fhir+xml, or application/fhir+json. The MIME types &quot;text/plain&quot; and &quot;text/html&quot; may also be used for Email subscriptions.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="content" minOccurs="0" maxOccurs="1" type="SubscriptionPayloadContent">
@@ -45177,7 +45161,7 @@ Deceased patients may also be marked as inactive for the same reasons, but may b
           </xs:element>
           <xs:element name="canFilterBy" type="Topic.CanFilterBy" minOccurs="0" maxOccurs="unbounded">
             <xs:annotation>
-              <xs:documentation xml:lang="en">List of properties by which messages on the topic can be filtered.</xs:documentation>
+              <xs:documentation xml:lang="en">List of properties by which Subscriptions on the topic can be filtered.</xs:documentation>
            </xs:annotation>
           </xs:element>
         </xs:sequence>
