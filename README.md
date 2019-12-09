@@ -5,16 +5,24 @@ The IHE MHD Profile text is Normative, this conformance resource is Informative.
 
 This Continuous Build will appear http://build.fhir.org/ig/IHE/ITI.MHD/branches/master/index.html
 
+Note that these conformance resources are NOT the ones used by Bill's test tools for USA Connectathon. The conformance resources here have been modified to fit the rules of the IG build tooling. The change is to the filename, name, and id. These differences are unfortunate. Most importantly is the canonical URI of each structure definition is a different value.
+
+Bills test tooling for MHD at IHE Connectathon in USA in January
+    https://github.com/usnistgov/asbestos
+    
 Done
 1. Import all conformance resources and correct as needed
 1. filenames must go back to using period not underbar
 1. canonical must go back to using period not underbar
+1. some examples from Bill's test bench, and from Oliver. 
+1. published using the IHE template
 
 TODO
-1. Add narrative
-1. Add examples (Bill, Oliver, US-Core)
-1. add ATNA mapping? or profile? or example?
-1. update to IHE template
+1. Add narrative body from volume 1
+1. Add narrative to the conformance resources
+1. Add narrative to the examples
+1. Add examples from US-Core, or elsewhere?
+1. add ATNA mapping? or profile? or example? or just point at Gazelle? or get FHIR structureDefinitions from Gazelle?
 1. make sure there is a page for security, privacy, provenance, safety, error handling, dependency, 
 
 IHE issues
