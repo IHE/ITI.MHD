@@ -1,92 +1,88 @@
-<Bundle 
-  xmlns="http://hl7.org/fhir">
-  <meta>
-  <!-- query response bundle is not profiled -->
-          <security>
-            <system value="http://hl7.org/fhir/v3/ActReason"/>
-            <code value="HTEST"/>
-            <display value="test health data"/>
-        </security>
-</meta>
-<id value="iti-66-response"/>
-  <type value="searchset"/>
-  <total value="1"/>
-  <link>
-    <relation value="self"/>
-    <url value="http://hapi.fhir.org/baseDstu3/DocumentManifest?patient=Patient%2Fexample"/>
-  </link>
-  <entry>
-    <fullUrl value="http://hapi.fhir.org/baseDstu3/DocumentManifest/3538603"/>
-    <resource>
-      <DocumentManifest 
-        xmlns="http://hl7.org/fhir">
-        <id value="3538603"/>
-        <meta>
-          <versionId value="1"/>
-          <lastUpdated value="2018-05-13T13:13:00.504+00:00"/>
-    <profile value="http://ihe.net/fhir/ihe.mhd.fhir/StructureDefinition/IHE.MHD.Comprehensive.DocumentManifest"/>
-        <security>
-            <system value="http://hl7.org/fhir/v3/ActReason"/>
-            <code value="HTEST"/>
-            <display value="test health data"/>
-        </security>
-        </meta>
-        <text>
-          <status value="generated"/>
-          <div 
-            xmlns="http://www.w3.org/1999/xhtml">Text 
-          </div>
-        </text>
-        <contained>
-          <Practitioner 
-            xmlns="http://hl7.org/fhir">
-            <id value="a1"/>
-            <name>
-              <family value="Dopplemeyer"/>
-              <given value="Sherry"/>
-            </name>
-            <telecom>
-              <system value="email"/>
-              <value value="john.doe@healthcare.example.org"/>
-            </telecom>
-          </Practitioner>
-        </contained>
-        <masterIdentifier>
-          <system value="http://example.org/documents"/>
-          <value value="23425234234-2346"/>
-        </masterIdentifier>
-        <identifier>
-          <system value="http://example.org/documents"/>
-          <value value="23425234234-2347"/>
-        </identifier>
-        <status value="current"/>
-        <type>
-          <coding>
-            <system value="urn:oid:1.3.6.1.4.1.21367.2017.3"/>
-            <code value="34746-8"/>
-            <display value="Nursing Evaluation and Management Note"/>
-          </coding>
-          <text value="History and Physical"/>
-        </type>
-        <subject>
-          <reference value="Patient/example"/>
-        </subject>
-        <created value="2004-12-25T23:50:50-05:00"/>
-        <author>
-          <reference value="#a1"/>
-        </author>
-        <recipient>
-          <reference value="#a1"/>
-        </recipient>
-        <source value="urn:oid:1.3.6.1.4.1.21367.2009.1.2.1"/>
-        <description value="Physical"/>
-        <content>
-          <reference value="DocumentReference/iti-66-docref"/>
-        </content>
-      </DocumentManifest>
-    </resource>
-    <search>
-      <mode value="match"/>
-    </search>
-  </entry>
+<Bundle xmlns="http://hl7.org/fhir">
+	<id value="iti-66-response"/>
+	<meta>
+		<!-- query response bundle is not profiled -->
+		<security>
+			<system value="http://terminology.hl7.org/CodeSystem/v3-ActReason"/>
+			<code value="HTEST"/>
+			<display value="test health data"/>
+		</security>
+	</meta>
+	<type value="searchset"/>
+	<total value="1"/>
+	<link>
+		<relation value="self"/>
+		<url value="http://hapi.fhir.org/baseDstu3/DocumentManifest?patient=Patient%2Fexample"/>
+	</link>
+	<entry>
+		<fullUrl value="http://hapi.fhir.org/baseDstu3/DocumentManifest/3538603"/>
+		<resource>
+			<DocumentManifest>
+				<id value="3538603"/>
+				<meta>
+					<versionId value="1"/>
+					<lastUpdated value="2018-05-13T13:13:00.504+00:00"/>
+					<profile value="http://ihe.net/fhir/ihe.mhd.fhir/StructureDefinition/IHE.MHD.Comprehensive.DocumentManifest"/>
+					<security>
+						<system value="http://terminology.hl7.org/CodeSystem/v3-ActReason"/>
+						<code value="HTEST"/>
+						<display value="test health data"/>
+					</security>
+				</meta>
+				<text>
+					<status value="generated"/>
+					<div xmlns="http://www.w3.org/1999/xhtml">Text 
+					</div>
+				</text>
+				<contained>
+					<Practitioner>
+						<id value="a1"/>
+						<name>
+							<family value="Dopplemeyer"/>
+							<given value="Sherry"/>
+						</name>
+						<telecom>
+							<system value="email"/>
+							<value value="john.doe@healthcare.example.org"/>
+						</telecom>
+					</Practitioner>
+				</contained>
+				<masterIdentifier>
+					<system value="http://example.org/documents"/>
+					<value value="23425234234-2346"/>
+				</masterIdentifier>
+				<identifier>
+					<system value="http://example.org/documents"/>
+					<value value="23425234234-2347"/>
+				</identifier>
+				<status value="current"/>
+				<type>
+					<coding>
+						<system value="urn:oid:1.3.6.1.4.1.21367.2017.3"/>
+						<code value="34746-8"/>
+						<display value="Nursing Evaluation and Management Note"/>
+					</coding>
+					<text value="History and Physical"/>
+				</type>
+				<subject>
+					<reference value="Patient/example"/>
+				</subject>
+				<created value="2004-12-25T23:50:50-05:00"/>
+				<author>
+					<reference value="#a1"/>
+				</author>
+				<recipient>
+					<reference value="#a1"/>
+				</recipient>
+				<source value="urn:oid:1.3.6.1.4.1.21367.2009.1.2.1"/>
+				<description value="Physical"/>
+				<content>
+					<reference value="DocumentReference/iti-66-docref"/>
+				</content>
+			</DocumentManifest>
+		</resource>
+		<search>
+			<mode value="match"/>
+		</search>
+	</entry>
 </Bundle>

@@ -10,6 +10,7 @@
 	The IHE MHD Profile text is Normative, this conformance resource is Informative.</div>
 	</text>
 	<url value="http://ihe.net/fhir/ihe.mhd.fhir/StructureDefinition/IHE.MHD.Minimal.List" />
+	<version value="3.1.1" />
 	<name value="IHE_MHD_Minimal_List" />
 	<title value="IHE MHD Profile on List with Minimal Metadata (Folder)" />
 	<status value="active" />

@@ -10,6 +10,7 @@
 	The IHE MHD Profile text is Normative, this conformance resource is Informative.</div>
 	</text>
 	<url value="http://ihe.net/fhir/ihe.mhd.fhir/StructureDefinition/IHE.MHD.Minimal.DocumentManifest" />
+	<version value="3.1.1" />
 	<name value="IHE_MHD_Minimal_DocumentManifest" />
 	<title value="IHE MHD Profile on DocumentManifest for Minimal Metadata (SubmissionSet)" />
 	<status value="active" />
@@ -93,7 +94,7 @@
 			<path value="DocumentManifest.content" />
 			<type>
 				<code value="Reference" />
-				<targetProfile value="http://ihe.net/fhir/ihe.mhd.fhir/StructureDefinition/IHE.MHD.ProvideDocumentBundle_Minimal" />
+				<targetProfile value="http://ihe.net/fhir/ihe.mhd.fhir/StructureDefinition/IHE.MHD.ProvideDocumentBundle.Minimal" />
 				<targetProfile value="http://ihe.net/fhir/ihe.mhd.fhir/StructureDefinition/IHE.MHD.Query.Minimal.DocumentReference" />
 				<targetProfile value="http://hl7.org/fhir/StructureDefinition/DocumentReference" />
 				<targetProfile value="http://ihe.net/fhir/ihe.mhd.fhir/StructureDefinition/IHE.MHD.Minimal.List" />

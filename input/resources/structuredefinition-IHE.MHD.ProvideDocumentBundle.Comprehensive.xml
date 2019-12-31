@@ -11,6 +11,7 @@
 		</div>
 	</text>
 	<url value="http://ihe.net/fhir/ihe.mhd.fhir/StructureDefinition/IHE.MHD.ProvideDocumentBundle.Comprehensive" />
+	<version value="3.1.1" />
 	<name value="IHE_MHD_ProvideDocumentBundle_Comprehensive" />
 	<title value="IHE MHD profile on Provide Document Bundle (ITI-65) transaction with Comprehensive Metadata" />
 	<status value="active" />
@@ -46,8 +47,8 @@
 			<short value="ITI-65" />
 			<definition value="IHE MHD Provide Document Bundle transaction" />
 			<min value="1" />
-			<max value="1" />
-			<fixedUri value="http://ihe.net/fhir/tag/iti-65" />
+		<!--	<max value="1" /> -->
+			<fixedCanonical value="http://ihe.net/fhir/tag/iti-65" />
 		</element>
 		<element id="Bundle.type">
 			<path value="Bundle.type" />

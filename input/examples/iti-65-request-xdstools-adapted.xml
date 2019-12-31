@@ -1,229 +1,251 @@
-<Bundle 
-  xmlns="http://hl7.org/fhir">
-  <id value="iti-65-request-xdstools-adapted"/>
-  <meta>
-    <lastUpdated value="2013-07-01T13:11:33Z"/>
-    <profile value="http://ihe.net/fhir/tag/iti-65"/>
-        <profile value="http://ihe.net/fhir/ihe.mhd.fhir/StructureDefinition/IHE.MHD.ProvideDocumentBundle.Comprehensive"/>
-        <security>
-            <system value="http://hl7.org/fhir/v3/ActReason"/>
-            <code value="HTEST"/>
-            <display value="test health data"/>
-        </security>
-  </meta>
-  <type value="transaction"/>
-  <entry>
-    <fullUrl value="urn:uuid:3fdc72f4-a11d-4a9d-9260-a9f745779e1d"/>
-    <resource>
-      <DocumentReference 
-        xmlns="http://hl7.org/fhir">
-			    <meta>
-                    <profile value="http://ihe.net/fhir/StructureDefinition/IHE.MHD.Provide.Comprehensive.DocumentReference"/>
-        <security>
-            <system value="http://hl7.org/fhir/v3/ActReason"/>
-            <code value="HTEST"/>
-            <display value="test health data"/>
-        </security>
+<Bundle xmlns="http://hl7.org/fhir">
+	<id value="iti-65-request-xdstools-adapted"/>
+	<meta>
+		<lastUpdated value="2013-07-01T13:11:33Z"/>
+		<profile value="http://ihe.net/fhir/tag/iti-65"/>
+		<profile value="http://ihe.net/fhir/ihe.mhd.fhir/StructureDefinition/IHE.MHD.ProvideDocumentBundle.Comprehensive"/>
+		<security>
+			<system value="http://terminology.hl7.org/CodeSystem/v3-ActReason"/>
+			<code value="HTEST"/>
+			<display value="test health data"/>
+		</security>
+	</meta>
+	<type value="transaction"/>
+	<entry>
+		<fullUrl value="urn:uuid:3fdc72f4-a11d-4a9d-9260-a9f745779e1d"/>
+		<resource>
+			<DocumentReference>
+				<meta>
+					<profile value="http://ihe.net/fhir/ihe.mhd.fhir/StructureDefinition/IHE.MHD.Provide.Comprehensive.DocumentReference"/>
+					<security>
+						<system value="http://terminology.hl7.org/CodeSystem/v3-ActReason"/>
+						<code value="HTEST"/>
+						<display value="test health data"/>
+					</security>
 				</meta>
-        <text>
-          <status value="generated"/>
-          <div 
-            xmlns="http://www.w3.org/1999/xhtml">
-            <a href="http://localhost:9556/svc/fhir/Binary/1e404af3-077f-4bee-b7a6-a9be97e1ce32">Document: urn:oid:129.6.58.92.88336 </a>
-          </div>
-        </text>
-        <contained>
-          <Practitioner 
-            xmlns="http://hl7.org/fhir">
-            <id value="a3"/>
-            <name>
-              <use value="usual"/>
-              <family value="Smitty"/>
-              <given value="Gerald"/>
-            </name>
-          </Practitioner>
-        </contained>
-        <contained>
-          <Practitioner 
-            xmlns="http://hl7.org/fhir">
-            <id value="a4"/>
-            <name>
-              <use value="usual"/>
-              <family value="Dopplemeyer"/>
-              <given value="Sherry"/>
-            </name>
-          </Practitioner>
-        </contained>
-        <masterIdentifier>
-          <system value="urn:ietf:rfc:3986"/>
-          <value value="urn:oid:1.2.129.6.58.92.88336"/>
-        </masterIdentifier>
-        <status value="current"/>
-        <type>
-          <coding>
-            <system value="urn:oid:1.3.6.1.4.1.21367.2017.3"/>
-            <code value="34133-9"/>
-            <display value="Summary of Episode Note"/>
-          </coding>
-        </type>
-        <category>
-          <coding>
-            <system value="urn:ihe:cat:classCode"/>
-            <code value="REPORTS"/>
-            <display value="Reports"/>
-          </coding>
-        </category>
-        <subject>
-          <reference value="http://localhost:8080/xdstools6/fsim/default__fhir_support/fhir/Patient/9effb7e7-19a7-4a8e-a185-9fb5e17a0514"/>
-        </subject>
-        <date value="2013-07-01T23:11:33+10:00"/>
-        <author>
-          <reference value="#a3"/>
-        </author>
-        <author>
-          <reference value="#a4"/>
-        </author>
-        <description value="Physical"/>
-        <securityLabel>
-          <coding>
-            <system value="urn:oid:1.3.6.1.4.1.21367.2017.3"/>
-            <code value="N"/>
-            <display value="normal"/>
-          </coding>
-        </securityLabel>
-        <content>
-          <attachment>
-            <contentType value="text/plain"/>
-            <language value="en-US"/>
-            <url value="urn:uid:1e404af3-077f-4bee-b7a6-a9be97e1ce32"/>
-          </attachment>
-          <format>
-            <system value="urn:oid:1.3.6.1.4.1.21367.2017.3"/>
-            <code value="urn:ihe:iti:appc:2016:consent"/>
-          </format>
-        </content>
-        <context>
-          <period>
-            <start value="2004-12-23T08:00:00+10:00"/>
-            <end value="2004-12-23T08:01:00+10:00"/>
-          </period>
-          <facilityType>
-            <coding>
-              <system value="urn:oid:1.3.6.1.4.1.21367.2017.3"/>
-              <code value="39350007"/>
-              <display value="Private physicians group office"/>
-            </coding>
-          </facilityType>
-          <practiceSetting>
-            <coding>
-              <system value="urn:oid:1.3.6.1.4.1.21367.2017.3"/>
-              <code value="419192003"/>
-              <display value="Internal Medicine"/>
-            </coding>
-          </practiceSetting>
-          <sourcePatientInfo>
-            <reference value="http://localhost:8080/xdstools6/fsim/default__fhir_support/fhir/Patient/9effb7e7-19a7-4a8e-a185-9fb5e17a0514"/>
-          </sourcePatientInfo>
-        </context>
-      </DocumentReference>
-    </resource>
-    <request>
-      <method value="POST"/>
-      <url value="DocumentReference"/>
-    </request>
-  </entry>
-  <entry>
-    <fullUrl value="urn:uuid:3fdc72f4-a11d-4a9d-9260-a9f745779e1e"/>
-    <resource>
-      <DocumentManifest 
-        xmlns="http://hl7.org/fhir">
-  			    <meta>
-                    <profile value="http://ihe.net/fhir/StructureDefinition/IHE.MHD.Comprehensive.DocumentManifest"/>
-        <security>
-            <system value="http://hl7.org/fhir/v3/ActReason"/>
-            <code value="HTEST"/>
-            <display value="test health data"/>
-        </security>
+				<text>
+					<status value="generated"/>
+					<div xmlns="http://www.w3.org/1999/xhtml">
+						<a href="http://localhost:9556/svc/fhir/Binary/1e404af3-077f-4bee-b7a6-a9be97e1ce32">Document: urn:oid:129.6.58.92.88336 </a>
+					</div>
+				</text>
+				<contained>
+					<Practitioner>
+						<id value="a3"/>
+						<name>
+							<use value="usual"/>
+							<family value="Smitty"/>
+							<given value="Gerald"/>
+						</name>
+					</Practitioner>
+				</contained>
+				<contained>
+					<Practitioner>
+						<id value="a4"/>
+						<name>
+							<use value="usual"/>
+							<family value="Dopplemeyer"/>
+							<given value="Sherry"/>
+						</name>
+					</Practitioner>
+				</contained>
+				<contained>
+					<Patient>
+						<id value="a5"/>
+						<name>
+							<use value="usual"/>
+							<family value="Smith"/>
+							<given value="Jack"/>
+						</name>
+						<name>
+							<use value="official"/>
+							<family value="Smith"/>
+							<given value="John"/>
+							<given value="Jacob"/>
+							<given value="Jingleheimer"/>
+							<period>
+								<end value="2001-01-01"/>
+							</period>
+						</name>
+						<name>
+							<use value="official"/>
+							<family value="Smith"/>
+							<given value="John"/>
+							<given value="Jacob"/>
+							<given value="Jingleheimer"/>
+							<period>
+								<start value="2001-01-01"/>
+							</period>    
+						</name>
+					</Patient>
+				</contained>
+				<masterIdentifier>
+					<system value="urn:ietf:rfc:3986"/>
+					<value value="urn:oid:1.2.129.6.58.92.88336"/>
+				</masterIdentifier>
+				<status value="current"/>
+				<type>
+					<coding>
+						<system value="http://loinc.org"/>
+						<code value="34133-9"/>
+						<display value="Summary of Episode Note"/>
+					</coding>
+				</type>
+				<category>
+					<coding>
+						<system value="urn:ihe:cat:classCode"/>
+						<code value="REPORTS"/>
+						<display value="Reports"/>
+					</coding>
+				</category>
+				<subject>
+					<reference value="Patient/example"/>
+				</subject>
+				<date value="2013-07-01T23:11:33+10:00"/>
+				<author>
+					<reference value="#a3"/>
+				</author>
+				<author>
+					<reference value="#a4"/>
+				</author>
+				<description value="Physical"/>
+				<securityLabel>
+					<coding>
+						<system value="urn:oid:1.3.6.1.4.1.21367.2017.3"/>
+						<code value="N"/>
+						<display value="normal"/>
+					</coding>
+				</securityLabel>
+				<content>
+					<attachment>
+						<contentType value="text/plain"/>
+						<language value="en-US"/>
+						<url value="urn:uid:1e404af3-077f-4bee-b7a6-a9be97e1ce32"/>
+						<creation value="2004-12-23T08:01:00+10:00"/>
+					</attachment>
+					<format>
+						<system value="http://ihe.net/fhir/ValueSet/IHE.formatcode.cs"/> 
+						<code value="urn:ihe:iti:appc:2016:consent"/>
+					</format>
+				</content>
+				<context>
+					<period>
+						<start value="2004-12-23T08:00:00+10:00"/>
+						<end value="2004-12-23T08:01:00+10:00"/>
+					</period>
+					<facilityType>
+						<coding>
+							<system value="urn:oid:1.3.6.1.4.1.21367.2017.3"/>
+							<code value="39350007"/>
+							<display value="Private physicians group office"/>
+						</coding>
+					</facilityType>
+					<practiceSetting>
+						<coding>
+							<system value="urn:oid:1.3.6.1.4.1.21367.2017.3"/>
+							<code value="419192003"/>
+							<display value="Internal Medicine"/>
+						</coding>
+					</practiceSetting>
+					<sourcePatientInfo>
+						<reference value="#a5"/>
+					</sourcePatientInfo>
+				</context>
+			</DocumentReference>
+		</resource>
+		<request>
+			<method value="POST"/>
+			<url value="DocumentReference"/>
+		</request>
+	</entry>
+	<entry>
+		<fullUrl value="urn:uuid:3fdc72f4-a11d-4a9d-9260-a9f745779e1e"/>
+		<resource>
+			<DocumentManifest>
+				<meta>
+					<profile value="http://ihe.net/fhir/ihe.mhd.fhir/StructureDefinition/IHE.MHD.Comprehensive.DocumentManifest"/>
+					<security>
+						<system value="http://terminology.hl7.org/CodeSystem/v3-ActReason"/>
+						<code value="HTEST"/>
+						<display value="test health data"/>
+					</security>
 				</meta>
-       <text>
-          <status value="generated"/>
-          <div 
-            xmlns="http://www.w3.org/1999/xhtml">Text 
-          </div>
-        </text>
-        <contained>
-          <Practitioner 
-            xmlns="http://hl7.org/fhir">
-            <id value="a1"/>
-            <name>
-              <family value="Dopplemeyer"/>
-              <given value="Sherry"/>
-            </name>
-            <telecom>
-              <system value="email"/>
-              <value value="john.doe@healthcare.example.org"/>
-            </telecom>
-          </Practitioner>
-        </contained>
-        <masterIdentifier>
-          <system value="http://example.org/documents"/>
-          <value value="23425234234-2346"/>
-        </masterIdentifier>
-        <identifier>
-          <system value="http://example.org/documents"/>
-          <value value="23425234234-2347"/>
-        </identifier>
-        <status value="current"/>
-        <type>
-          <coding>
-            <system value="urn:oid:1.3.6.1.4.1.21367.2017.3"/>
-            <code value="34746-8"/>
-            <display value="Nursing Evaluation and Management Note"/>
-          </coding>
-          <text value="History and Physical"/>
-        </type>
-        <subject>
-          <reference value="http://localhost:8080/xdstools6/fsim/default__fhir_support/fhir/Patient/9effb7e7-19a7-4a8e-a185-9fb5e17a0514"/>
-        </subject>
-        <created value="2004-12-25T23:50:50-05:00"/>
-        <author>
-          <reference value="#a1"/>
-        </author>
-        <recipient>
-          <reference value="#a1"/>
-        </recipient>
-        <source value="urn:oid:1.3.6.1.4.1.21367.2009.1.2.1"/>
-        <description value="Physical"/>
-        <content>
-          <reference value="urn:uuid:3fdc72f4-a11d-4a9d-9260-a9f745779e1d"/>
-        </content>
-      </DocumentManifest>
-    </resource>
-    <request>
-      <method value="POST"/>
-      <url value="DocumentManifest"/>
-    </request>
-  </entry>
-  <entry>
-    <fullUrl value="urn:uuid:1e404af3-077f-4bee-b7a6-a9be97e1ce32"/>
-    <resource>
-      <Binary 
-        xmlns="http://hl7.org/fhir">
-        <meta>
-          <lastUpdated value="2013-07-01T13:11:33Z"/>
-        <security>
-            <system value="http://hl7.org/fhir/v3/ActReason"/>
-            <code value="HTEST"/>
-            <display value="test health data"/>
-        </security>
-        </meta>
-        <contentType value="text/plain"/>
-        <data value="YXNkYXNkYXNkYXNkYXNk"/>
-      </Binary>
-    </resource>
-    <request>
-      <method value="POST"/>
-      <url value="Binary"/>
-    </request>
-  </entry>
+				<text>
+					<status value="generated"/>
+					<div xmlns="http://www.w3.org/1999/xhtml">Text 
+					</div>
+				</text>
+				<contained>
+					<Practitioner>
+						<id value="a1"/>
+						<name>
+							<family value="Dopplemeyer"/>
+							<given value="Sherry"/>
+						</name>
+						<telecom>
+							<system value="email"/>
+							<value value="john.doe@healthcare.example.org"/>
+						</telecom>
+					</Practitioner>
+				</contained>
+				<masterIdentifier>
+					<system value="http://example.org/documents"/>
+					<value value="23425234234-2346"/>
+				</masterIdentifier>
+				<identifier>
+					<system value="http://example.org/documents"/>
+					<value value="23425234234-2347"/>
+				</identifier>
+				<status value="current"/>
+				<type>
+					<coding>
+						<system value="urn:oid:1.3.6.1.4.1.21367.2017.3"/>
+						<code value="34746-8"/>
+						<display value="Nursing Evaluation and Management Note"/>
+					</coding>
+					<text value="History and Physical"/>
+				</type>
+				<subject>
+					<reference value="Patient/example"/>
+				</subject>
+				<created value="2004-12-25T23:50:50-05:00"/>
+				<author>
+					<reference value="#a1"/>
+				</author>
+				<recipient>
+					<reference value="#a1"/>
+				</recipient>
+				<source value="urn:oid:1.3.6.1.4.1.21367.2009.1.2.1"/>
+				<description value="Physical"/>
+				<content>
+					<reference value="urn:uuid:3fdc72f4-a11d-4a9d-9260-a9f745779e1d"/>
+				</content>
+			</DocumentManifest>
+		</resource>
+		<request>
+			<method value="POST"/>
+			<url value="DocumentManifest"/>
+		</request>
+	</entry>
+	<entry>
+		<fullUrl value="urn:uuid:1e404af3-077f-4bee-b7a6-a9be97e1ce32"/>
+		<resource>
+			<Binary>
+				<meta>
+					<lastUpdated value="2013-07-01T13:11:33Z"/>
+					<security>
+						<system value="http://terminology.hl7.org/CodeSystem/v3-ActReason"/>
+						<code value="HTEST"/>
+						<display value="test health data"/>
+					</security>
+				</meta>
+				<contentType value="text/plain"/>
+				<data value="YXNkYXNkYXNkYXNkYXNk"/>
+			</Binary>
+		</resource>
+		<request>
+			<method value="POST"/>
+			<url value="Binary"/>
+		</request>
+	</entry>
 </Bundle>

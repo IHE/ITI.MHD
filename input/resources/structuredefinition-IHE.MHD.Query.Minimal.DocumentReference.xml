@@ -11,6 +11,7 @@
 		</div>
   </text>
   <url value="http://ihe.net/fhir/ihe.mhd.fhir/StructureDefinition/IHE.MHD.Query.Minimal.DocumentReference" />
+	<version value="3.1.1" />
   <name value="IHE_MHD_Query_Minimal_DocumentReference" />
   <title value="IHE MHD Profile on DocumentReference (DocumentEntry) from a Query with Minimal Metadata, see Table 3:4.3.2.1-3." />
   <status value="active" />

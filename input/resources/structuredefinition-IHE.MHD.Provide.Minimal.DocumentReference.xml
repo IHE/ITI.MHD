@@ -11,6 +11,7 @@
 		</div>
 	</text>
 	<url value="http://ihe.net/fhir/ihe.mhd.fhir/StructureDefinition/IHE.MHD.Provide.Minimal.DocumentReference" />
+	<version value="3.1.1" />
 	<name value="IHE_MHD_Provide_Minimal_DocumentReference" />
 	<title value="IHE MHD Profile on DocumentReference (DocumentEntry) when used in the Provide Transaction with Minimal Metadata, see Table 3:4.3.1-3." />
 	<status value="active" />
@@ -178,6 +179,7 @@
 		<element id="DocumentReference.content.format">
 			<path value="DocumentReference.content.format" />
 			<mustSupport value="true" />
+			<!--
 			<binding>
 				<extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName">
 					<valueString value="DocumentFormat" />
@@ -185,6 +187,7 @@
 				<strength value="preferred" />
 				<valueSet value="http://ihe.net/fhir/ihe.mhd.fhir/ValueSet/IHE.formatcode.vs" />
 			</binding>
+			-->
 		</element>
 		<element id="DocumentReference.context">
 			<path value="DocumentReference.context" />
