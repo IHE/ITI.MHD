@@ -47,9 +47,9 @@
   POSSIBILITY OF SUCH DAMAGE.
   
 
-  Generated on Mon, Dec 30, 2019 23:07+0000 for FHIR v4.1.0 
+  Generated on Tue, Dec 31, 2019 07:05+0000 for FHIR v4.2.0 
 -->
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://hl7.org/fhir" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:xml="http://www.w3.org/XML/1998/namespace" targetNamespace="http://hl7.org/fhir" elementFormDefault="qualified" version="4.1.0">
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://hl7.org/fhir" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:xml="http://www.w3.org/XML/1998/namespace" targetNamespace="http://hl7.org/fhir" elementFormDefault="qualified" version="4.2.0">
   <!-- Note: When using this schema with some tools, it may also be necessary to declare xmlns:xml="http://www.w3.org/XML/1998/namespace", however this causes performance issues with other tools and thus is not in the base schemas. -->
   <xs:import namespace="http://www.w3.org/XML/1998/namespace" schemaLocation="xml.xsd"/>
   <xs:import namespace="http://www.w3.org/1999/xhtml" schemaLocation="fhir-xhtml.xsd"/>
@@ -4479,6 +4479,11 @@ Modifier extensions SHALL NOT change the meaning of any elements on Resource or 
       <xs:enumeration value="4.1.0">
         <xs:annotation>
           <xs:documentation xml:lang="en">4.1.0</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="4.2.0">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">4.2.0</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
     </xs:restriction>
@@ -25059,7 +25064,7 @@ UDILabelName | UserFriendlyName | PatientReportedName | ManufactureDeviceName | 
           </xs:element>
           <xs:element name="fhirVersion" minOccurs="1" maxOccurs="unbounded" type="FHIRVersion">
             <xs:annotation>
-              <xs:documentation xml:lang="en">The version(s) of the FHIR specification that this ImplementationGuide targets - e.g. describes how to use. The value of this element is the formal version of the specification, without the revision number, e.g. [publication].[major].[minor], which is 4.1.0. for this version.</xs:documentation>
+              <xs:documentation xml:lang="en">The version(s) of the FHIR specification that this ImplementationGuide targets - e.g. describes how to use. The value of this element is the formal version of the specification, without the revision number, e.g. [publication].[major].[minor], which is 4.2.0. for this version.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="dependsOn" type="ImplementationGuide.DependsOn" minOccurs="0" maxOccurs="unbounded">
@@ -39742,7 +39747,7 @@ Deceased patients may also be marked as inactive for the same reasons, but may b
           </xs:element>
           <xs:element name="fhirVersion" minOccurs="0" maxOccurs="1" type="FHIRVersion">
             <xs:annotation>
-              <xs:documentation xml:lang="en">The version of the FHIR specification on which this StructureDefinition is based - this is the formal version of the specification, without the revision number, e.g. [publication].[major].[minor], which is 4.1.0. for this version.</xs:documentation>
+              <xs:documentation xml:lang="en">The version of the FHIR specification on which this StructureDefinition is based - this is the formal version of the specification, without the revision number, e.g. [publication].[major].[minor], which is 4.2.0. for this version.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="mapping" type="StructureDefinition.Mapping" minOccurs="0" maxOccurs="unbounded">

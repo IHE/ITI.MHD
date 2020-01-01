@@ -16,7 +16,7 @@
 	<title value="IHE MHD profile on Provide Document Bundle (ITI-65) transaction with Comprehensive Metadata" />
 	<status value="active" />
 	<experimental value="false" />
-	<date value="2019-09-13" />
+	<date value="2019-12-31" />
 	<publisher value="Integrating the Healthcare Enterprise (IHE)" />
 	<contact>
 		<name value="IHE" />
@@ -42,86 +42,83 @@
 	<baseDefinition value="http://hl7.org/fhir/StructureDefinition/Bundle" />
 	<derivation value="constraint" />
 	<differential>
-		<element id="Bundle.meta.profile">
-			<path value="Bundle.meta.profile" />
-			<short value="ITI-65" />
-			<definition value="IHE MHD Provide Document Bundle transaction" />
-			<min value="1" />
-		<!--	<max value="1" /> -->
-			<fixedCanonical value="http://ihe.net/fhir/tag/iti-65" />
-		</element>
+<!-- transaction type of a Bundle -->
 		<element id="Bundle.type">
 			<path value="Bundle.type" />
 			<short value="transaction" />
 			<fixedCode value="transaction" />
 		</element>
+<!-- bundle meta profile must have at-least iti-65 -->
+		<element id="Bundle.meta.profile">
+			<path value="Bundle.meta.profile" />
+			<slicing>
+				<discriminator>
+					<type value="value" />
+					<path value="$this" />
+				</discriminator>
+				<rules value="open"/>
+			</slicing>
+		</element>
+		<element>
+			<path value="Bundle.meta.profile"/>
+			<sliceName value="iti-65"/>
+			<min value="1"/>
+			<max value="1"/>
+			<fixedCanonical value="http://ihe.net/fhir/tag/iti-65" />
+		</element>
+<!-- slice definition for the Bundle content -->
 		<element id="Bundle.entry">
 			<path value="Bundle.entry" />
 			<slicing>
 				<discriminator>
-					<type value="type" />
+					<type value="profile" />
 					<path value="resource" />
 				</discriminator>
+				<description value="Everything in a proper Bundle"/>
+				<ordered value="false"/>
+				<!-- could set this closed, but then someone can't add the Patient resource in the Bundle like one might want to do in a pure push use-case -->
 				<rules value="open" />
 			</slicing>
 		</element>
-		<element id="Bundle.entry:DocumentManifest">
+<!-- Binary 0..* -->
+		<element id="Bundle.entry:Binary">
 			<path value="Bundle.entry" />
-			<sliceName value="DocumentManifest" />
-			<short value="DocumentManifest" />
-			<min value="1" />
-			<max value="1" />
+			<sliceName value="Binary" />
+			<short value="Binary" />
+			<definition value="Entry for the actual document in a Binary resource." />
+			<alias value="document"/>
+			<min value="0"/>
+			<max value="*"/>
 		</element>
-		<element id="Bundle.entry:DocumentManifest.fullUrl">
+		<element id="Bundle.entry:Binary.fullUrl">
 			<path value="Bundle.entry.fullUrl" />
 			<min value="1" />
 		</element>
-		<element id="Bundle.entry:DocumentManifest.resource">
+		<element id="Bundle.entry:Binary.resource">
 			<path value="Bundle.entry.resource" />
 			<min value="1" />
 			<type>
 				<code value="Resource" />
-				<profile value="http://ihe.net/fhir/ihe.mhd.fhir/StructureDefinition/IHE.MHD.Comprehensive.DocumentManifest" />
+				<profile value="http://hl7.org/fhir/StructureDefinition/Binary" />
 			</type>
 		</element>
-		<element id="Bundle.entry:DocumentManifest.request">
+		<element id="Bundle.entry:Binary.request">
 			<path value="Bundle.entry.request" />
 			<min value="1" />
 		</element>
-		<element id="Bundle.entry:DocumentManifest.request.method">
+		<element id="Bundle.entry:Binary.request.method">
 			<path value="Bundle.entry.request.method" />
 			<fixedCode value="POST" />
 		</element>
-		<element id="Bundle.entry:DocumentReference">
-			<path value="Bundle.entry" />
-			<sliceName value="DocumentReference" />
-			<short value="DocumentReference" />
-			<min value="1" />
-		</element>
-		<element id="Bundle.entry:DocumentReference.fullUrl">
-			<path value="Bundle.entry.fullUrl" />
-			<min value="1" />
-		</element>
-		<element id="Bundle.entry:DocumentReference.resource">
-			<path value="Bundle.entry.resource" />
-			<min value="1" />
-			<type>
-				<code value="Resource" />
-				<profile value="http://ihe.net/fhir/ihe.mhd.fhir/StructureDefinition/IHE.MHD.Provide.Comprehensive.DocumentReference" />
-			</type>
-		</element>
-		<element id="Bundle.entry:DocumentReference.request">
-			<path value="Bundle.entry.request" />
-			<min value="1" />
-		</element>
-		<element id="Bundle.entry:DocumentReference.request.method">
-			<path value="Bundle.entry.request.method" />
-			<fixedCode value="POST" />
-		</element>
+<!-- List 0..* -->
 		<element id="Bundle.entry:List">
 			<path value="Bundle.entry" />
 			<sliceName value="List" />
 			<short value="List" />
+			<definition value="Folder(s) defined or updated in the bundle."/>
+			<alias value="Folder"/>
+			<min value="0"/>
+			<max value="*"/>
 		</element>
 		<element id="Bundle.entry:List.fullUrl">
 			<path value="Bundle.entry.fullUrl" />
@@ -143,29 +140,63 @@
 			<path value="Bundle.entry.request.method" />
 			<fixedCode value="POST" />
 		</element>
-		<element id="Bundle.entry:Binary">
+<!--DocumentReference 0..* -->
+		<element id="Bundle.entry:DocumentReference">
 			<path value="Bundle.entry" />
-			<sliceName value="Binary" />
-			<short value="Binary" />
-			<definition value="Entry for the actual document in a Binary resource." />
+			<sliceName value="DocumentReference" />
+			<short value="DocumentReference" />
+			<definition value="DocumentReference(s) defined or updated in the bundle."/>
+			<alias value="DocumentEntry"/>
+			<min value="0" />
+			<max value="*"/>
 		</element>
-		<element id="Bundle.entry:Binary.fullUrl">
+		<element id="Bundle.entry:DocumentReference.fullUrl">
 			<path value="Bundle.entry.fullUrl" />
 			<min value="1" />
 		</element>
-		<element id="Bundle.entry:Binary.resource">
+		<element id="Bundle.entry:DocumentReference.resource">
 			<path value="Bundle.entry.resource" />
 			<min value="1" />
 			<type>
 				<code value="Resource" />
-				<profile value="http://hl7.org/fhir/StructureDefinition/Binary" />
+				<profile value="http://ihe.net/fhir/ihe.mhd.fhir/StructureDefinition/IHE.MHD.Provide.Comprehensive.DocumentReference" />
 			</type>
 		</element>
-		<element id="Bundle.entry:Binary.request">
+		<element id="Bundle.entry:DocumentReference.request">
 			<path value="Bundle.entry.request" />
 			<min value="1" />
 		</element>
-		<element id="Bundle.entry:Binary.request.method">
+		<element id="Bundle.entry:DocumentReference.request.method">
+			<path value="Bundle.entry.request.method" />
+			<fixedCode value="POST" />
+		</element>
+<!-- DocumentManifest 1..1 -->
+		<element id="Bundle.entry:DocumentManifest">
+			<path value="Bundle.entry" />
+			<sliceName value="DocumentManifest" />
+			<short value="DocumentManifest" />
+			<definition value="The DocumentManifest defining this submission."/>
+			<alias value="SubmissionSet" />
+			<min value="1" />
+			<max value="1" />
+		</element>
+		<element id="Bundle.entry:DocumentManifest.fullUrl">
+			<path value="Bundle.entry.fullUrl" />
+			<min value="1" />
+		</element>
+		<element id="Bundle.entry:DocumentManifest.resource">
+			<path value="Bundle.entry.resource" />
+			<min value="1" />
+			<type>
+				<code value="Resource" />
+				<profile value="http://ihe.net/fhir/ihe.mhd.fhir/StructureDefinition/IHE.MHD.Comprehensive.DocumentManifest" />
+			</type>
+		</element>
+		<element id="Bundle.entry:DocumentManifest.request">
+			<path value="Bundle.entry.request" />
+			<min value="1" />
+		</element>
+		<element id="Bundle.entry:DocumentManifest.request.method">
 			<path value="Bundle.entry.request.method" />
 			<fixedCode value="POST" />
 		</element>

@@ -1,4 +1,5 @@
 <Bundle xmlns="http://hl7.org/fhir">
+<!-- This example bundle is modified from the FHIR Core DocumentReference example - xds-example.xml - to be more properly compliant with MHD -->
 	<id value="iti-65-request-xdstools-adapted"/>
 	<meta>
 		<lastUpdated value="2013-07-01T13:11:33Z"/>
@@ -11,6 +12,27 @@
 		</security>
 	</meta>
 	<type value="transaction"/>
+	<entry>
+		<fullUrl value="urn:uuid:1e404af3-077f-4bee-b7a6-a9be97e1ce32"/>
+		<resource>
+			<Binary>
+				<meta>
+					<lastUpdated value="2013-07-01T13:11:33Z"/>
+					<security>
+						<system value="http://terminology.hl7.org/CodeSystem/v3-ActReason"/>
+						<code value="HTEST"/>
+						<display value="test health data"/>
+					</security>
+				</meta>
+				<contentType value="text/plain"/>
+				<data value="YXNkYXNkYXNkYXNkYXNk"/>
+			</Binary>
+		</resource>
+		<request>
+			<method value="POST"/>
+			<url value="Binary"/>
+		</request>
+	</entry>
 	<entry>
 		<fullUrl value="urn:uuid:3fdc72f4-a11d-4a9d-9260-a9f745779e1d"/>
 		<resource>
@@ -120,7 +142,7 @@
 					<attachment>
 						<contentType value="text/plain"/>
 						<language value="en-US"/>
-						<url value="urn:uid:1e404af3-077f-4bee-b7a6-a9be97e1ce32"/>
+						<url value="urn:uuid:1e404af3-077f-4bee-b7a6-a9be97e1ce32"/>
 						<creation value="2004-12-23T08:01:00+10:00"/>
 					</attachment>
 					<format>
@@ -225,27 +247,6 @@
 		<request>
 			<method value="POST"/>
 			<url value="DocumentManifest"/>
-		</request>
-	</entry>
-	<entry>
-		<fullUrl value="urn:uuid:1e404af3-077f-4bee-b7a6-a9be97e1ce32"/>
-		<resource>
-			<Binary>
-				<meta>
-					<lastUpdated value="2013-07-01T13:11:33Z"/>
-					<security>
-						<system value="http://terminology.hl7.org/CodeSystem/v3-ActReason"/>
-						<code value="HTEST"/>
-						<display value="test health data"/>
-					</security>
-				</meta>
-				<contentType value="text/plain"/>
-				<data value="YXNkYXNkYXNkYXNkYXNk"/>
-			</Binary>
-		</resource>
-		<request>
-			<method value="POST"/>
-			<url value="Binary"/>
 		</request>
 	</entry>
 </Bundle>

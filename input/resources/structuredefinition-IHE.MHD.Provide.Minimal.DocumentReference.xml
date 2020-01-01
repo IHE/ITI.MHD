@@ -16,7 +16,7 @@
 	<title value="IHE MHD Profile on DocumentReference (DocumentEntry) when used in the Provide Transaction with Minimal Metadata, see Table 3:4.3.1-3." />
 	<status value="active" />
 	<experimental value="false" />
-	<date value="2019-09-13" />
+	<date value="2019-12-31" />
 	<publisher value="Integrating the Healthcare Enterprise (IHE)" />
 	<contact>
 		<name value="IHE" />
@@ -179,7 +179,7 @@
 		<element id="DocumentReference.content.format">
 			<path value="DocumentReference.content.format" />
 			<mustSupport value="true" />
-			<!--
+			<!-- just let the core FHIR spec DocumentReference formatCode be used. IHE should not further refine this.
 			<binding>
 				<extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName">
 					<valueString value="DocumentFormat" />
