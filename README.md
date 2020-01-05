@@ -21,6 +21,7 @@ This Continuous Build will appear http://build.fhir.org/ig/IHE/ITI.MHD/branches/
 1. add ATNA mapping? or profile? or example? or just point at Gazelle? or get FHIR structureDefinitions from Gazelle?
 1. make sure there is a page for security, privacy, provenance, safety, error handling, dependency, 
 1. bring in the test scripts from Bill's test infrastructure
+1. get the DependsOn on FormatCode IG working
 
 ## IHE issues
 
