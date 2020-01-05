@@ -47,7 +47,7 @@
   POSSIBILITY OF SUCH DAMAGE.
   
 
-  Generated on Fri, Jan 3, 2020 15:58+0000 for FHIR v4.2.0 
+  Generated on Sat, Jan 4, 2020 07:45+0000 for FHIR v4.2.0 
 -->
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://hl7.org/fhir" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:xml="http://www.w3.org/XML/1998/namespace" targetNamespace="http://hl7.org/fhir" elementFormDefault="qualified" version="4.2.0">
   <!-- Note: When using this schema with some tools, it may also be necessary to declare xmlns:xml="http://www.w3.org/XML/1998/namespace", however this causes performance issues with other tools and thus is not in the base schemas. -->
@@ -5506,7 +5506,7 @@ A coverage may only be responsible for specific types of charges, and the sequen
           </xs:element>
           <xs:element name="encounter" minOccurs="0" maxOccurs="1" type="Reference">
             <xs:annotation>
-              <xs:documentation xml:lang="en">The Encounter during which AdverseEvent was created or to which the creation of this record is tightly associated.</xs:documentation>
+              <xs:documentation xml:lang="en">The Encounter associated with the start of the AdverseEvent.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:choice minOccurs="0" maxOccurs="1" >
