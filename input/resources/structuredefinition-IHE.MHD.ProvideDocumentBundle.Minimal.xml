@@ -15,7 +15,7 @@
 	<title value="IHE MHD profile on Provide Document Bundle (ITI-65) transaction with Minimal Metadata" />
 	<status value="active" />
 	<experimental value="false" />
-	<date value="2019-12-31" />
+	<date value="2020-01-06" />
 	<publisher value="Integrating the Healthcare Enterprise (IHE)" />
 	<contact>
 		<name value="IHE" />
@@ -75,9 +75,39 @@
 				</discriminator>
 				<description value="Everything in a proper Bundle"/>
 				<ordered value="false"/>
-				<!-- could set this closed, but then someone can't add the Patient resource in the Bundle like one might want to do in a pure push use-case -->
+				<!-- TODO: This should be closed, but because of the warnings on DocumentReference not being found I need to leave it open -->
 				<rules value="open" />
 			</slicing>
+		</element>
+<!-- Patient 0..1 -->
+		<element id="Bundle.entry:Patient">
+			<path value="Bundle.entry" />
+			<sliceName value="Patient" />
+			<short value="Patient" />
+			<definition value="Patient defined or updated in the bundle."/>
+			<alias value="Patient"/>
+			<min value="0"/>
+			<max value="1"/>
+		</element>
+		<element id="Bundle.entry:Patient.fullUrl">
+			<path value="Bundle.entry.fullUrl" />
+			<min value="1" />
+		</element>
+		<element id="Bundle.entry:Patient.resource">
+			<path value="Bundle.entry.resource" />
+			<min value="1" />
+			<type>
+				<code value="Resource" />
+				<profile value="http://hl7.org/fhir/StructureDefinition/Patient" />
+			</type>
+		</element>
+		<element id="Bundle.entry:Patient.request">
+			<path value="Bundle.entry.request" />
+			<min value="1" />
+		</element>
+		<element id="Bundle.entry:Patient.request.method">
+			<path value="Bundle.entry.request.method" />
+			<fixedCode value="POST" />
 		</element>
 <!-- Binary 0..* -->
 		<element id="Bundle.entry:Binary">
@@ -158,7 +188,7 @@
 			<min value="1" />
 			<type>
 				<code value="Resource" />
-				<profile value="http://ihe.net/fhir/ihe.mhd.fhir/StructureDefinition/IHE.MHD.Provide.Minimal.DocumentReference" />
+				<profile value="http://ihe.net/fhir/ihe.mhd.fhir/StructureDefinition/IHE.MHD.Provide.Minimal.DocumentReference" /> 
 			</type>
 		</element>
 		<element id="Bundle.entry:DocumentReference.request">

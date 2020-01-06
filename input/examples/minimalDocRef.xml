@@ -17,21 +17,10 @@
 	<subject>
 		<reference value="Patient/example"/>
 	</subject>
-	<date value="2013-07-01T23:11:33+10:00"/>
-	<securityLabel>
-		<coding>
-			<system value="http://terminology.hl7.org/CodeSystem/v3-Confidentiality"/>
-			<code value="N"/>
-			<display value="normal"/>
-		</coding>
-	</securityLabel>
 	<content>
 		<attachment>
 			<contentType value="text/plain"/>
-			<language value="en-US"/>
-
 			<url value="urn:uuid:3fdc72f4-a11d-4a9d-9260-a9f745779e03"/>
-			<creation value= "2004-12-23T08:01:00+10:00"/>
 		</attachment>
 	</content>
 </DocumentReference>
