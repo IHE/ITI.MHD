@@ -22,6 +22,7 @@ This Continuous Build will appear http://build.fhir.org/ig/IHE/ITI.MHD/branches/
 1. make sure there is a page for security, privacy, provenance, safety, error handling, dependency, 
 1. bring in the test scripts from Bill's test infrastructure
 1. get the DependsOn on FormatCode IG working
+1. The profiling of a Bundle seems to not be the same as for Resources. Thus I have added a more simple bundle "degenerate". This is not enforcing the full MHD Provide transaction requirements.
 
 ## IHE issues
 
