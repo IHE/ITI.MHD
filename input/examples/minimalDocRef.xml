@@ -11,7 +11,7 @@
 	</meta>
 	<masterIdentifier>
 		<system value="urn:ietf:rfc:3986"/>
-		<value value="urn:oid:1.2.129.6.58.92.88336.4"/>
+		<value value="urn:oid:1.2.129.6.58.92.88336.4.4"/>
 	</masterIdentifier>
 	<status value="current"/>
 	<subject>
@@ -20,7 +20,8 @@
 	<content>
 		<attachment>
 			<contentType value="text/plain"/>
-			<url value="urn:uuid:3fdc72f4-a11d-4a9d-9260-a9f745779e03"/>
+			<!-- externally hosted document. Made the URL look like it might be a FHIR server, but does not need to be -->
+			<url value="http://repository.example.org/fhir/Binary/documentSample"/>
 		</attachment>
 	</content>
 </DocumentReference>

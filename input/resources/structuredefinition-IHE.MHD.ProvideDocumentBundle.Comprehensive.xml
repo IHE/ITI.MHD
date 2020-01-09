@@ -80,6 +80,7 @@
 				<rules value="open" />
 			</slicing>
 		</element>
+<!-- Patient 0..1 - didn't include as it is not typically included in comprehensive mode as comprehensive is mostly used with XDS-on-FHIR -->
 <!-- Binary 0..* -->
 		<element id="Bundle.entry:Binary">
 			<path value="Bundle.entry" />
@@ -100,6 +101,7 @@
 			<type>
 				<code value="Resource" />
 				<profile value="http://hl7.org/fhir/StructureDefinition/Binary" />
+				<aggregation value="bundled" />
 			</type>
 		</element>
 		<element id="Bundle.entry:Binary.request">
@@ -130,6 +132,7 @@
 			<type>
 				<code value="Resource" />
 				<profile value="http://ihe.net/fhir/ihe.mhd.fhir/StructureDefinition/IHE.MHD.Comprehensive.List" />
+				<aggregation value="bundled" />
 			</type>
 		</element>
 		<element id="Bundle.entry:List.request">
@@ -160,6 +163,7 @@
 			<type>
 				<code value="Resource" />
 				<profile value="http://ihe.net/fhir/ihe.mhd.fhir/StructureDefinition/IHE.MHD.Provide.Comprehensive.DocumentReference" />
+				<aggregation value="bundled" />
 			</type>
 		</element>
 		<element id="Bundle.entry:DocumentReference.request">
@@ -190,6 +194,7 @@
 			<type>
 				<code value="Resource" />
 				<profile value="http://ihe.net/fhir/ihe.mhd.fhir/StructureDefinition/IHE.MHD.Comprehensive.DocumentManifest" />
+				<aggregation value="bundled" />
 			</type>
 		</element>
 		<element id="Bundle.entry:DocumentManifest.request">

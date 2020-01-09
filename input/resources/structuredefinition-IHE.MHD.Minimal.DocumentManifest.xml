@@ -69,6 +69,8 @@
 			<type>
 				<code value="Reference" />
 				<targetProfile value="http://hl7.org/fhir/StructureDefinition/Patient" />
+				<aggregation value="referenced" />
+				<aggregation value="bundled" />
 			</type>
 		</element>
 		<element id="DocumentManifest.created">
@@ -94,16 +96,15 @@
 			<path value="DocumentManifest.content" />
 			<type>
 				<code value="Reference" />
-<!-- query is not really part of Provide requirement, but it would be nice if we could include. But this throws an warning from IG build
+				<!-- this should be saying that as long as the reference matches at-least one of these it is okay. But seems to not like it when multiples match -->
+				<targetProfile value="http://ihe.net/fhir/ihe.mhd.fhir/StructureDefinition/IHE.MHD.Query.Comprehensive.DocumentReference" />
 				<targetProfile value="http://ihe.net/fhir/ihe.mhd.fhir/StructureDefinition/IHE.MHD.Query.Minimal.DocumentReference" />
--->				
-<!-- TODO: having both comprehensive and minimal seems to cause IG warnings
-Found multiple matching profiles among choices: ; [http://ihe.net/fhir/ihe.mhd.fhir/StructureDefinition/IHE.MHD.Provide.Comprehensive.DocumentReference, http://ihe.net/fhir/ihe.mhd.fhir/StructureDefinition/IHE.MHD.Provide.Minimal.DocumentReference]
-
 				<targetProfile value="http://ihe.net/fhir/ihe.mhd.fhir/StructureDefinition/IHE.MHD.Provide.Comprehensive.DocumentReference" />
--->
 				<targetProfile value="http://ihe.net/fhir/ihe.mhd.fhir/StructureDefinition/IHE.MHD.Provide.Minimal.DocumentReference" />
+				<targetProfile value="http://ihe.net/fhir/ihe.mhd.fhir/StructureDefinition/IHE.MHD.Comprehensive.List" />
 				<targetProfile value="http://ihe.net/fhir/ihe.mhd.fhir/StructureDefinition/IHE.MHD.Minimal.List" />
+				<aggregation value="referenced" />
+				<aggregation value="bundled" />
 			</type>
 		</element>
 		<element id="DocumentManifest.related">

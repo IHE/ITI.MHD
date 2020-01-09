@@ -4,7 +4,7 @@
 	<meta>
 		<lastUpdated value="2013-07-01T13:11:33Z"/>
 		<profile value="http://ihe.net/fhir/tag/iti-65"/>
-		<profile value="http://ihe.net/fhir/ihe.mhd.fhir/StructureDefinition/IHE.MHD.ProvideDocumentBundle.Minimal"/>
+<!--		<profile value="http://ihe.net/fhir/ihe.mhd.fhir/StructureDefinition/IHE.MHD.ProvideDocumentBundle.Minimal"/> -->
 		<security>
 			<system value="http://terminology.hl7.org/CodeSystem/v3-ActReason"/>
 			<code value="HTEST"/>
@@ -55,7 +55,12 @@
 				</note>
 				<entry>
 					<item>
-						<reference value="DocumentReference/iti-66-docref"/>
+						<reference value="urn:uuid:1e404af3-077f-4bee-b7a6-a9be97e1ce01"/>
+					</item>
+				</entry>
+				<entry>
+					<item>
+						<reference value="urn:uuid:1e404af3-077f-4bee-b7a6-a9be97e1ce31"/>
 					</item>
 				</entry>
 			</List>
@@ -63,6 +68,28 @@
 		<request>
 			<method value="POST"/>
 			<url value="urn:uuid:1e404af3-077f-4bee-b7a6-a9be97e1ce02"/>
+		</request>
+	</entry>
+	<entry>
+		<fullUrl value="urn:uuid:3fdc72f4-a11d-4a9d-9260-a9f745779e03"/>
+		<resource>
+			<Binary>
+				<meta>
+					<lastUpdated value="2013-07-01T13:11:33Z"/>
+					<security>
+						<system value="http://terminology.hl7.org/CodeSystem/v3-ActReason"/>
+						<code value="HTEST"/>
+						<display value="test health data"/>
+					</security>
+				</meta>
+				<contentType value="text/plain"/>
+				<!-- Hello World! -->
+				<data value="SGVsbG8gV29ybGQhCg=="/>
+			</Binary>
+		</resource>
+		<request>
+			<method value="POST"/>
+			<url value="urn:uuid:3fdc72f4-a11d-4a9d-9260-a9f745779e03"/>
 		</request>
 	</entry>
 	<entry>
@@ -114,6 +141,28 @@
 		</request>
 	</entry>
 	<entry>
+		<fullUrl value="urn:uuid:3fdc72f4-a11d-4a9d-9260-a9f745779e17"/>
+		<resource>
+			<Binary>
+				<meta>
+					<lastUpdated value="2013-07-01T13:11:33Z"/>
+					<security>
+						<system value="http://terminology.hl7.org/CodeSystem/v3-ActReason"/>
+						<code value="HTEST"/>
+						<display value="test health data"/>
+					</security>
+				</meta>
+				<contentType value="text/plain"/>
+				<!-- 5 paragraphs of Lorem Ipsum garbage -->
+				<data value="TG9yZW0gaXBzdW0gZG9sb3Igc2l0IGFtZXQsIGNvbnNlY3RldHVyIGFkaXBpc2NpbmcgZWxpdC4gRG9uZWMgcHJldGl1bSBvcm5hcmUganVzdG8gdmVzdGlidWx1bSB2ZXN0aWJ1bHVtLiBTZWQgYWMgbmlzbCBtYWxlc3VhZGEsIGNvbmd1ZSBkb2xvciBhdCwgY29uc2VxdWF0IGFudGUuIExvcmVtIGlwc3VtIGRvbG9yIHNpdCBhbWV0LCBjb25zZWN0ZXR1ciBhZGlwaXNjaW5nIGVsaXQuIEludGVnZXIgZWxlaWZlbmQgdHVycGlzIGZhY2lsaXNpcyBlbGl0IHRyaXN0aXF1ZSBmYWNpbGlzaXMuIFF1aXNxdWUgZGljdHVtIG5lcXVlIGEgZHVpIGxhY2luaWEsIHNlZCB2b2x1dHBhdCB2ZWxpdCBkYXBpYnVzLiBNYWVjZW5hcyBzb2xsaWNpdHVkaW4gdmVoaWN1bGEgbGFjdXMsIGV0IGVsZW1lbnR1bSB1cm5hIHRlbXB1cyBub24uIERvbmVjIHJ1dHJ1bSB2ZXN0aWJ1bHVtIG5pc2wuIE1vcmJpIHZlbCBsaWd1bGEgY29uc2VjdGV0dXIgbmliaCBpbXBlcmRpZXQgYWNjdW1zYW4uIE1hdXJpcyBpZCBsZW8gbWF1cmlzLiBNYWVjZW5hcyBtYWxlc3VhZGEgdnVscHV0YXRlIG1heGltdXMuIE51bmMgcG9zdWVyZSBzZW1wZXIganVzdG8gZWdldCB1bHRyaWNlcy4gUGhhc2VsbHVzIHRpbmNpZHVudCBtZXR1cyBlZ2V0IG5pYmggdWx0cmljZXMgaW50ZXJkdW0uIE1hdXJpcyBwb3J0YSBhbnRlIGxhY3VzLCBldSB0ZW1wdXMgZXJhdCBjb252YWxsaXMgcHJldGl1bS4gRXRpYW0gdm9sdXRwYXQgbm9uIGRvbG9yIGVnZXQgc29sbGljaXR1ZGluLiBTdXNwZW5kaXNzZSBpbiB1bHRyaWNlcyBsZWN0dXMuCgpNb3JiaSBwaGFyZXRyYSwgZG9sb3Igbm9uIHVsdHJpY2llcyBjb25zZXF1YXQsIGVyb3MgbmliaCBsYWNpbmlhIGxlbywgZXUgbWFsZXN1YWRhIG1ldHVzIGZlbGlzIG5lYyBudW5jLiBEdWlzIHZhcml1cyBhbnRlIHNlZCB1cm5hIGNvbnNlY3RldHVyIGNvbW1vZG8uIE51bGxhbSB2ZXN0aWJ1bHVtIHJ1dHJ1bSBsdWN0dXMuIEFsaXF1YW0gbWFnbmEgZmVsaXMsIHBvcnRhIHF1aXMgc29sbGljaXR1ZGluIHZlbCwgdGluY2lkdW50IGF0IGF1Z3VlLiBQcmFlc2VudCB1bHRyaWNlcyB2ZWwgbWkgZXUgYWxpcXVhbS4gUXVpc3F1ZSBhYyBlcmF0IG1hZ25hLiBBZW5lYW4gdXQgYWxpcXVhbSBuZXF1ZSwgbmVjIGRpY3R1bSBpcHN1bS4gUHJvaW4gdmFyaXVzIGRvbG9yIG9yY2ksIG5lYyBzY2VsZXJpc3F1ZSBudW5jIGludGVyZHVtIGluLiBQcm9pbiB1bHRyaWNpZXMgYXQgZXN0IHNlZCBtYXR0aXMuIFV0IGluIHJ1dHJ1bSBtZXR1cy4gTnVsbGEgbW9sZXN0aWUsIGF1Z3VlIHZpdGFlIGVnZXN0YXMgbW9sZXN0aWUsIHF1YW0gYXVndWUgbG9ib3J0aXMgZWxpdCwgZXUgc2NlbGVyaXNxdWUgbGFjdXMgbGFjdXMgcGVsbGVudGVzcXVlIGV4LgoKRG9uZWMgZXUgdWx0cmljaWVzIGxhY3VzLiBBZW5lYW4gYWMgbW9sbGlzIGVuaW0uIER1aXMgZXVpc21vZCB0aW5jaWR1bnQgZG9sb3IsIG5lYyBjb25kaW1lbnR1bSByaXN1cyBoZW5kcmVyaXQgdXQuIFBoYXNlbGx1cyB2YXJpdXMgdmVsIG9kaW8gYSB2ZXN0aWJ1bHVtLiBOdWxsYW0gbWF4aW11cyB0ZWxsdXMgcHVydXMsIHNpdCBhbWV0IGxhb3JlZXQgbWFzc2EgZGljdHVtIHF1aXMuIEFlbmVhbiBhYyBhcmN1IGxvYm9ydGlzLCBwaGFyZXRyYSBudWxsYSB2ZWwsIHRlbXB1cyBtYXNzYS4gSW50ZWdlciB2aXRhZSBleCBsb3JlbS4gUHJvaW4gbmVjIG9yY2kgbm9uIHVybmEgcGVsbGVudGVzcXVlIGNvbnZhbGxpcyBldCBhYyBlcm9zLiBEdWlzIG5lYyB0dXJwaXMgYSBleCB2aXZlcnJhIG1hbGVzdWFkYS4gTWF1cmlzIGF1Y3RvciB1cm5hIGF1Z3VlLCB2ZWwgcGVsbGVudGVzcXVlIGVyYXQgbW9sbGlzIHZpdGFlLiBGdXNjZSBhYyBsYWN1cyBsZW8uIE51bGxhIHVsdHJpY2llcyByaXN1cyBhIHVybmEgdnVscHV0YXRlIGJpYmVuZHVtLiBOdWxsYSBhIGxpZ3VsYSBhdCBtYXVyaXMgdmVuZW5hdGlzIHJ1dHJ1bSBldSB0ZW1wdXMgb2Rpby4gRG9uZWMgYSBwdXJ1cyBsZWN0dXMuIENyYXMgdGluY2lkdW50IGxlY3R1cyBmYWNpbGlzaXMsIGJsYW5kaXQgb3JjaSBub24sIHRlbXB1cyBlbmltLiBWaXZhbXVzIHNvZGFsZXMgZmluaWJ1cyBsYWN1cyBhIHBoYXJldHJhLgoKUXVpc3F1ZSB2ZW5lbmF0aXMgdGluY2lkdW50IHB1cnVzIGF0IHBvc3VlcmUuIE1hdXJpcyBsZW8gbnVsbGEsIG9ybmFyZSB2ZWwgbGFjdXMgZXUsIGlhY3VsaXMgdGVtcG9yIGF1Z3VlLiBFdGlhbSBlZ2VzdGFzIHZhcml1cyBtb2xsaXMuIFZpdmFtdXMgYW50ZSBtYXVyaXMsIHRpbmNpZHVudCBpZCBsYW9yZWV0IGEsIGF1Y3RvciBuZWMgZmVsaXMuIENsYXNzIGFwdGVudCB0YWNpdGkgc29jaW9zcXUgYWQgbGl0b3JhIHRvcnF1ZW50IHBlciBjb251YmlhIG5vc3RyYSwgcGVyIGluY2VwdG9zIGhpbWVuYWVvcy4gQ3VyYWJpdHVyIGxlY3R1cyB2ZWxpdCwgZmV1Z2lhdCBhYyBvcmNpIHZlbCwgaW50ZXJkdW0gbGFjaW5pYSBuZXF1ZS4gU2VkIGNvbnNlcXVhdCwgaXBzdW0gdml0YWUgc2VtcGVyIHNvbGxpY2l0dWRpbiwgdHVycGlzIG9yY2kgZGFwaWJ1cyBqdXN0bywgaW4gbHVjdHVzIHR1cnBpcyBhdWd1ZSBlZ2V0IG5pc2wuIFBlbGxlbnRlc3F1ZSBjb25zZXF1YXQgbmlzbCBxdWFtLCBub24gbWF0dGlzIGxpYmVybyB2aXZlcnJhIG5lYy4gVXQgY29udmFsbGlzIHNlbSBpZCBsZW8gc29kYWxlcywgdXQgZmluaWJ1cyBkb2xvciB0ZW1wdXMuIEFlbmVhbiB1bHRyaWNpZXMgbGFjdXMgZGlhbSwgdXQgY29udmFsbGlzIG5lcXVlIG1hbGVzdWFkYSBpYWN1bGlzLiBJbiBzY2VsZXJpc3F1ZSBudW5jIG5lYyBjb21tb2RvIGF1Y3Rvci4gRHVpcyB0b3J0b3IgZG9sb3IsIGFjY3Vtc2FuIHF1aXMgcHJldGl1bSBpbiwgc29sbGljaXR1ZGluIGV0IGxvcmVtLiBJbnRlZ2VyIGFjIHRvcnRvciBlbGl0LiBOYW0gYWMgZXJhdCBvcmNpLiBTZWQgbWF0dGlzIGFsaXF1ZXQgbGlndWxhLiBDdXJhYml0dXIgcGVsbGVudGVzcXVlIGlhY3VsaXMgdmVsaXQgZXUgbG9ib3J0aXMuCgpJbnRlcmR1bSBldCBtYWxlc3VhZGEgZmFtZXMgYWMgYW50ZSBpcHN1bSBwcmltaXMgaW4gZmF1Y2lidXMuIFByYWVzZW50IGFjY3Vtc2FuIHRvcnRvciBwcmV0aXVtIG5pYmggcG9ydHRpdG9yIGZhY2lsaXNpcy4gUHJhZXNlbnQgZXVpc21vZCBvcmNpIHZpdGFlIGVmZmljaXR1ciBmaW5pYnVzLiBOdWxsYW0gYXQgaW1wZXJkaWV0IHF1YW0uIER1aXMgZmF1Y2lidXMgZXJvcyBlcm9zLCBhIG1heGltdXMgZGlhbSBwZWxsZW50ZXNxdWUgZWdldC4gQWxpcXVhbSBlbGl0IGVyYXQsIGhlbmRyZXJpdCB2ZWwgbWFzc2Egbm9uLCBzb2xsaWNpdHVkaW4gY29uc2VxdWF0IGFudGUuIFNlZCBkYXBpYnVzIHR1cnBpcyBzZWQgYXVjdG9yIHN1c2NpcGl0LiBFdGlhbSBtYXhpbXVzIHB1cnVzIGF0IGR1aSBsYW9yZWV0IHNvZGFsZXMu"/>
+			</Binary>
+		</resource>
+		<request>
+			<method value="POST"/>
+			<url value="urn:uuid:3fdc72f4-a11d-4a9d-9260-a9f745779e17"/>
+		</request>
+	</entry>
+	<entry>
 		<fullUrl value="urn:uuid:1e404af3-077f-4bee-b7a6-a9be97e1ce31"/>
 		<resource>
 			<DocumentReference>
@@ -129,13 +178,10 @@
 					<system value="urn:ietf:rfc:3986"/>
 					<value value="urn:oid:1.2.129.6.58.92.88336.5"/>
 				</masterIdentifier>
-				
 				<identifier>
 					<system value="urn:ietf:rfc:3986"/>
 					<value value="urn:oid:1.2.129.6.58.92.88336.5.1"/>
-				</identifier>
-
-				
+				</identifier>				
 				<status value="current"/>
 				<subject>
 					<reference value="Patient/example"/>
@@ -200,12 +246,15 @@
 				<source value="urn:oid:1.3.6.1.4.1.21367.2009.1.2.1"/>
 				<description value="Physical"/>
 				<content>
+				<!-- the first documentReference -->
 					<reference value="urn:uuid:1e404af3-077f-4bee-b7a6-a9be97e1ce01"/>
 				</content>
 				<content>
+				<!-- the second documentReference -->
 					<reference value="urn:uuid:1e404af3-077f-4bee-b7a6-a9be97e1ce31"/>
 				</content>
 				<content>
+				<!-- the List in this bundle -->
 					<reference value="urn:uuid:1e404af3-077f-4bee-b7a6-a9be97e1ce02"/>
 				</content>
 			</DocumentManifest>
@@ -213,50 +262,6 @@
 		<request>
 			<method value="POST"/>
 			<url value="urn:uuid:3fdc72f4-a11d-4a9d-9260-a9f745779e02"/>
-		</request>
-	</entry>
-	<entry>
-		<fullUrl value="urn:uuid:3fdc72f4-a11d-4a9d-9260-a9f745779e03"/>
-		<resource>
-			<Binary>
-				<meta>
-					<lastUpdated value="2013-07-01T13:11:33Z"/>
-					<security>
-						<system value="http://terminology.hl7.org/CodeSystem/v3-ActReason"/>
-						<code value="HTEST"/>
-						<display value="test health data"/>
-					</security>
-				</meta>
-				<contentType value="text/plain"/>
-				<!-- Hello World! -->
-				<data value="SGVsbG8gV29ybGQhCg=="/>
-			</Binary>
-		</resource>
-		<request>
-			<method value="POST"/>
-			<url value="urn:uuid:3fdc72f4-a11d-4a9d-9260-a9f745779e03"/>
-		</request>
-	</entry>
-	<entry>
-		<fullUrl value="urn:uuid:3fdc72f4-a11d-4a9d-9260-a9f745779e17"/>
-		<resource>
-			<Binary>
-				<meta>
-					<lastUpdated value="2013-07-01T13:11:33Z"/>
-					<security>
-						<system value="http://terminology.hl7.org/CodeSystem/v3-ActReason"/>
-						<code value="HTEST"/>
-						<display value="test health data"/>
-					</security>
-				</meta>
-				<contentType value="text/plain"/>
-				<!-- 5 paragraphs of Lorem Ipsum garbage -->
-				<data value="TG9yZW0gaXBzdW0gZG9sb3Igc2l0IGFtZXQsIGNvbnNlY3RldHVyIGFkaXBpc2NpbmcgZWxpdC4gRG9uZWMgcHJldGl1bSBvcm5hcmUganVzdG8gdmVzdGlidWx1bSB2ZXN0aWJ1bHVtLiBTZWQgYWMgbmlzbCBtYWxlc3VhZGEsIGNvbmd1ZSBkb2xvciBhdCwgY29uc2VxdWF0IGFudGUuIExvcmVtIGlwc3VtIGRvbG9yIHNpdCBhbWV0LCBjb25zZWN0ZXR1ciBhZGlwaXNjaW5nIGVsaXQuIEludGVnZXIgZWxlaWZlbmQgdHVycGlzIGZhY2lsaXNpcyBlbGl0IHRyaXN0aXF1ZSBmYWNpbGlzaXMuIFF1aXNxdWUgZGljdHVtIG5lcXVlIGEgZHVpIGxhY2luaWEsIHNlZCB2b2x1dHBhdCB2ZWxpdCBkYXBpYnVzLiBNYWVjZW5hcyBzb2xsaWNpdHVkaW4gdmVoaWN1bGEgbGFjdXMsIGV0IGVsZW1lbnR1bSB1cm5hIHRlbXB1cyBub24uIERvbmVjIHJ1dHJ1bSB2ZXN0aWJ1bHVtIG5pc2wuIE1vcmJpIHZlbCBsaWd1bGEgY29uc2VjdGV0dXIgbmliaCBpbXBlcmRpZXQgYWNjdW1zYW4uIE1hdXJpcyBpZCBsZW8gbWF1cmlzLiBNYWVjZW5hcyBtYWxlc3VhZGEgdnVscHV0YXRlIG1heGltdXMuIE51bmMgcG9zdWVyZSBzZW1wZXIganVzdG8gZWdldCB1bHRyaWNlcy4gUGhhc2VsbHVzIHRpbmNpZHVudCBtZXR1cyBlZ2V0IG5pYmggdWx0cmljZXMgaW50ZXJkdW0uIE1hdXJpcyBwb3J0YSBhbnRlIGxhY3VzLCBldSB0ZW1wdXMgZXJhdCBjb252YWxsaXMgcHJldGl1bS4gRXRpYW0gdm9sdXRwYXQgbm9uIGRvbG9yIGVnZXQgc29sbGljaXR1ZGluLiBTdXNwZW5kaXNzZSBpbiB1bHRyaWNlcyBsZWN0dXMuCgpNb3JiaSBwaGFyZXRyYSwgZG9sb3Igbm9uIHVsdHJpY2llcyBjb25zZXF1YXQsIGVyb3MgbmliaCBsYWNpbmlhIGxlbywgZXUgbWFsZXN1YWRhIG1ldHVzIGZlbGlzIG5lYyBudW5jLiBEdWlzIHZhcml1cyBhbnRlIHNlZCB1cm5hIGNvbnNlY3RldHVyIGNvbW1vZG8uIE51bGxhbSB2ZXN0aWJ1bHVtIHJ1dHJ1bSBsdWN0dXMuIEFsaXF1YW0gbWFnbmEgZmVsaXMsIHBvcnRhIHF1aXMgc29sbGljaXR1ZGluIHZlbCwgdGluY2lkdW50IGF0IGF1Z3VlLiBQcmFlc2VudCB1bHRyaWNlcyB2ZWwgbWkgZXUgYWxpcXVhbS4gUXVpc3F1ZSBhYyBlcmF0IG1hZ25hLiBBZW5lYW4gdXQgYWxpcXVhbSBuZXF1ZSwgbmVjIGRpY3R1bSBpcHN1bS4gUHJvaW4gdmFyaXVzIGRvbG9yIG9yY2ksIG5lYyBzY2VsZXJpc3F1ZSBudW5jIGludGVyZHVtIGluLiBQcm9pbiB1bHRyaWNpZXMgYXQgZXN0IHNlZCBtYXR0aXMuIFV0IGluIHJ1dHJ1bSBtZXR1cy4gTnVsbGEgbW9sZXN0aWUsIGF1Z3VlIHZpdGFlIGVnZXN0YXMgbW9sZXN0aWUsIHF1YW0gYXVndWUgbG9ib3J0aXMgZWxpdCwgZXUgc2NlbGVyaXNxdWUgbGFjdXMgbGFjdXMgcGVsbGVudGVzcXVlIGV4LgoKRG9uZWMgZXUgdWx0cmljaWVzIGxhY3VzLiBBZW5lYW4gYWMgbW9sbGlzIGVuaW0uIER1aXMgZXVpc21vZCB0aW5jaWR1bnQgZG9sb3IsIG5lYyBjb25kaW1lbnR1bSByaXN1cyBoZW5kcmVyaXQgdXQuIFBoYXNlbGx1cyB2YXJpdXMgdmVsIG9kaW8gYSB2ZXN0aWJ1bHVtLiBOdWxsYW0gbWF4aW11cyB0ZWxsdXMgcHVydXMsIHNpdCBhbWV0IGxhb3JlZXQgbWFzc2EgZGljdHVtIHF1aXMuIEFlbmVhbiBhYyBhcmN1IGxvYm9ydGlzLCBwaGFyZXRyYSBudWxsYSB2ZWwsIHRlbXB1cyBtYXNzYS4gSW50ZWdlciB2aXRhZSBleCBsb3JlbS4gUHJvaW4gbmVjIG9yY2kgbm9uIHVybmEgcGVsbGVudGVzcXVlIGNvbnZhbGxpcyBldCBhYyBlcm9zLiBEdWlzIG5lYyB0dXJwaXMgYSBleCB2aXZlcnJhIG1hbGVzdWFkYS4gTWF1cmlzIGF1Y3RvciB1cm5hIGF1Z3VlLCB2ZWwgcGVsbGVudGVzcXVlIGVyYXQgbW9sbGlzIHZpdGFlLiBGdXNjZSBhYyBsYWN1cyBsZW8uIE51bGxhIHVsdHJpY2llcyByaXN1cyBhIHVybmEgdnVscHV0YXRlIGJpYmVuZHVtLiBOdWxsYSBhIGxpZ3VsYSBhdCBtYXVyaXMgdmVuZW5hdGlzIHJ1dHJ1bSBldSB0ZW1wdXMgb2Rpby4gRG9uZWMgYSBwdXJ1cyBsZWN0dXMuIENyYXMgdGluY2lkdW50IGxlY3R1cyBmYWNpbGlzaXMsIGJsYW5kaXQgb3JjaSBub24sIHRlbXB1cyBlbmltLiBWaXZhbXVzIHNvZGFsZXMgZmluaWJ1cyBsYWN1cyBhIHBoYXJldHJhLgoKUXVpc3F1ZSB2ZW5lbmF0aXMgdGluY2lkdW50IHB1cnVzIGF0IHBvc3VlcmUuIE1hdXJpcyBsZW8gbnVsbGEsIG9ybmFyZSB2ZWwgbGFjdXMgZXUsIGlhY3VsaXMgdGVtcG9yIGF1Z3VlLiBFdGlhbSBlZ2VzdGFzIHZhcml1cyBtb2xsaXMuIFZpdmFtdXMgYW50ZSBtYXVyaXMsIHRpbmNpZHVudCBpZCBsYW9yZWV0IGEsIGF1Y3RvciBuZWMgZmVsaXMuIENsYXNzIGFwdGVudCB0YWNpdGkgc29jaW9zcXUgYWQgbGl0b3JhIHRvcnF1ZW50IHBlciBjb251YmlhIG5vc3RyYSwgcGVyIGluY2VwdG9zIGhpbWVuYWVvcy4gQ3VyYWJpdHVyIGxlY3R1cyB2ZWxpdCwgZmV1Z2lhdCBhYyBvcmNpIHZlbCwgaW50ZXJkdW0gbGFjaW5pYSBuZXF1ZS4gU2VkIGNvbnNlcXVhdCwgaXBzdW0gdml0YWUgc2VtcGVyIHNvbGxpY2l0dWRpbiwgdHVycGlzIG9yY2kgZGFwaWJ1cyBqdXN0bywgaW4gbHVjdHVzIHR1cnBpcyBhdWd1ZSBlZ2V0IG5pc2wuIFBlbGxlbnRlc3F1ZSBjb25zZXF1YXQgbmlzbCBxdWFtLCBub24gbWF0dGlzIGxpYmVybyB2aXZlcnJhIG5lYy4gVXQgY29udmFsbGlzIHNlbSBpZCBsZW8gc29kYWxlcywgdXQgZmluaWJ1cyBkb2xvciB0ZW1wdXMuIEFlbmVhbiB1bHRyaWNpZXMgbGFjdXMgZGlhbSwgdXQgY29udmFsbGlzIG5lcXVlIG1hbGVzdWFkYSBpYWN1bGlzLiBJbiBzY2VsZXJpc3F1ZSBudW5jIG5lYyBjb21tb2RvIGF1Y3Rvci4gRHVpcyB0b3J0b3IgZG9sb3IsIGFjY3Vtc2FuIHF1aXMgcHJldGl1bSBpbiwgc29sbGljaXR1ZGluIGV0IGxvcmVtLiBJbnRlZ2VyIGFjIHRvcnRvciBlbGl0LiBOYW0gYWMgZXJhdCBvcmNpLiBTZWQgbWF0dGlzIGFsaXF1ZXQgbGlndWxhLiBDdXJhYml0dXIgcGVsbGVudGVzcXVlIGlhY3VsaXMgdmVsaXQgZXUgbG9ib3J0aXMuCgpJbnRlcmR1bSBldCBtYWxlc3VhZGEgZmFtZXMgYWMgYW50ZSBpcHN1bSBwcmltaXMgaW4gZmF1Y2lidXMuIFByYWVzZW50IGFjY3Vtc2FuIHRvcnRvciBwcmV0aXVtIG5pYmggcG9ydHRpdG9yIGZhY2lsaXNpcy4gUHJhZXNlbnQgZXVpc21vZCBvcmNpIHZpdGFlIGVmZmljaXR1ciBmaW5pYnVzLiBOdWxsYW0gYXQgaW1wZXJkaWV0IHF1YW0uIER1aXMgZmF1Y2lidXMgZXJvcyBlcm9zLCBhIG1heGltdXMgZGlhbSBwZWxsZW50ZXNxdWUgZWdldC4gQWxpcXVhbSBlbGl0IGVyYXQsIGhlbmRyZXJpdCB2ZWwgbWFzc2Egbm9uLCBzb2xsaWNpdHVkaW4gY29uc2VxdWF0IGFudGUuIFNlZCBkYXBpYnVzIHR1cnBpcyBzZWQgYXVjdG9yIHN1c2NpcGl0LiBFdGlhbSBtYXhpbXVzIHB1cnVzIGF0IGR1aSBsYW9yZWV0IHNvZGFsZXMu"/>
-			</Binary>
-		</resource>
-		<request>
-			<method value="POST"/>
-			<url value="urn:uuid:3fdc72f4-a11d-4a9d-9260-a9f745779e17"/>
 		</request>
 	</entry>
 </Bundle>

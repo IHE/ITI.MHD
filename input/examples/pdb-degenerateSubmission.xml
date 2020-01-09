@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Bundle xmlns="http://hl7.org/fhir" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir ../../input-cache/schemas-r5/fhir-single.xsd">
 <!-- Minimal bundle with one Document Manifest with one document -->
-	<id value="pdb-minimalSubmission"/>
+	<id value="pdb-degenerateSubmission"/>
 	<meta>
 		<lastUpdated value="2013-07-01T13:11:33Z"/>
 		<!-- ITI-65 is required by IHE MHD to indicate this specific transaction -->
 		<profile value="http://ihe.net/fhir/tag/iti-65"/>
 		<!-- this profile would not normally be indicated, but is in the example for the Implementation Guide -->
-<!--		<profile value="http://ihe.net/fhir/ihe.mhd.fhir/StructureDefinition/IHE.MHD.ProvideDocumentBundle.Minimal"/> -->
+		<profile value="http://ihe.net/fhir/ihe.mhd.fhir/StructureDefinition/IHE.MHD.ProvideDocumentBundle.Degenerate"/> 
 		<security>
 			<!-- tagging examples as example data -->
 			<system value="http://terminology.hl7.org/CodeSystem/v3-ActReason"/>
@@ -17,7 +17,7 @@
 	</meta>
 	<type value="transaction"/>
 	<entry>
-		<fullUrl value="urn:uuid:3fdc72f4-a11d-4a9d-9260-a9f745779e03"/>
+		<fullUrl value="urn:uuid:3fdc72f4-a11d-4a9d-9260-d9f745779e03"/>
 		<resource>
 			<Binary>
 				<meta>
@@ -34,16 +34,14 @@
 		</resource>
 		<request>
 			<method value="POST"/>
-			<url value="urn:uuid:3fdc72f4-a11d-4a9d-9260-a9f745779e03"/>
+			<url value="urn:uuid:3fdc72f4-a11d-4a9d-9260-d9f745779e03"/>
 		</request>
 	</entry>
 	<entry>
-		<fullUrl value="urn:uuid:1e404af3-077f-4bee-b7a6-a9be97e1ce01"/>
+		<fullUrl value="urn:uuid:1e404af3-077f-4bee-b7a6-d9be97e1ce01"/>
 		<resource>
 			<DocumentReference>
 				<meta>
-					<!-- This is not normally needed but is included for the Implementation Guide -->
-					<profile value="http://ihe.net/fhir/ihe.mhd.fhir/StructureDefinition/IHE.MHD.Provide.Minimal.DocumentReference"/>  
 					<security>
 						<system value="http://terminology.hl7.org/CodeSystem/v3-ActReason"/>
 						<code value="HTEST"/>
@@ -56,7 +54,7 @@
 				</text>
 				<masterIdentifier>
 					<system value="urn:ietf:rfc:3986"/>
-					<value value="urn:oid:1.2.129.6.58.92.88336.4"/>
+					<value value="urn:oid:1.2.129.6.58.92.88336.7"/>
 				</masterIdentifier>
 				<status value="current"/>
 				<subject>
@@ -65,22 +63,21 @@
 				<content>
 					<attachment>
 						<contentType value="text/plain"/>
-						<url value="urn:uuid:3fdc72f4-a11d-4a9d-9260-a9f745779e03"/>
+						<url value="urn:uuid:3fdc72f4-a11d-4a9d-9260-d9f745779e03"/>
 					</attachment>
 				</content>
 			</DocumentReference>
 		</resource>
 		<request>
 			<method value="POST"/>
-			<url value="urn:uuid:1e404af3-077f-4bee-b7a6-a9be97e1ce01"/>
+			<url value="urn:uuid:1e404af3-077f-4bee-b7a6-d9be97e1ce01"/>
 		</request>
 	</entry>
 	<entry>
-		<fullUrl value="urn:uuid:3fdc72f4-a11d-4a9d-9260-a9f745779e02"/>
+		<fullUrl value="urn:uuid:3fdc72f4-a11d-4a9d-9260-d9f745779e02"/>
 		<resource>
 			<DocumentManifest>
 				<meta>
-					<profile value="http://ihe.net/fhir/ihe.mhd.fhir/StructureDefinition/IHE.MHD.Minimal.DocumentManifest"/>  
 					<security>
 						<system value="http://terminology.hl7.org/CodeSystem/v3-ActReason"/>
 						<code value="HTEST"/>
@@ -93,11 +90,11 @@
 				</text>
 				<masterIdentifier>
 					<system value="urn:ietf:rfc:3986"/>
-					<value value="urn:oid:1.2.129.6.58.92.88337.4"/>
+					<value value="urn:oid:1.2.129.6.58.92.88337.8"/>
 				</masterIdentifier>
 				<identifier>
 					<system value="http://example.org/documents"/>
-					<value value="23425234234-23478"/>
+					<value value="23425234234-23478-8"/>
 				</identifier>
 				<status value="current"/>
 				<subject>
@@ -106,13 +103,13 @@
 				<created value="2004-12-25T23:50:50-05:00"/>
 				<source value="urn:oid:1.3.6.1.4.1.21367.2009.1.2.1"/>
 				<content>
-					<reference value="urn:uuid:1e404af3-077f-4bee-b7a6-a9be97e1ce01"/>
+					<reference value="urn:uuid:1e404af3-077f-4bee-b7a6-d9be97e1ce01"/>
 				</content>
 			</DocumentManifest>
 		</resource>
 		<request>
 			<method value="POST"/>
-			<url value="urn:uuid:3fdc72f4-a11d-4a9d-9260-a9f745779e02"/>
+			<url value="urn:uuid:3fdc72f4-a11d-4a9d-9260-d9f745779e02"/>
 		</request>
 	</entry>
 </Bundle>
