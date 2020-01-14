@@ -18,7 +18,7 @@ The IHE MHD Profile text is Normative, this conformance resource is Informative.
 	<name value="IHE_MHD" />
 	<status value="active" />
 	<experimental value="false" />
-	<date value="2019-11-08" />
+	<date value="2020-01-14" />
 	<publisher value="Integrating the Healthcare Enterprise (IHE)" />
 	<contact>
 		<name value="IHE" />
@@ -40,7 +40,7 @@ The IHE MHD Profile text is Normative, this conformance resource is Informative.
 	<packageId value="ihe.mhd.fhir" />
 	<fhirVersion value="4.0.1" />
 	<dependsOn>
-		<uri value="http://ihe.net/fhir/ihe.formatcode.fhir" />
+		<uri value="http://ihe.net/fhir/ihe.formatcode.fhir/ImplementationGuide/ihe.formatcode.fhir" />
 		<version value="current"/>
 	</dependsOn>
 

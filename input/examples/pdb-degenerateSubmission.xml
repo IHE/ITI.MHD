@@ -78,6 +78,7 @@
 		<resource>
 			<DocumentManifest>
 				<meta>
+					<profile value="http://ihe.net/fhir/ihe.mhd.fhir/StructureDefinition/IHE.MHD.Minimal.DocumentManifest" />
 					<security>
 						<system value="http://terminology.hl7.org/CodeSystem/v3-ActReason"/>
 						<code value="HTEST"/>

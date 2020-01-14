@@ -47,7 +47,7 @@
   POSSIBILITY OF SUCH DAMAGE.
   
 
-  Generated on Thu, Jan 9, 2020 20:41+0000 for FHIR v4.2.0 
+  Generated on Tue, Jan 14, 2020 23:28+0000 for FHIR v4.2.0 
 -->
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://hl7.org/fhir" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:xml="http://www.w3.org/XML/1998/namespace" targetNamespace="http://hl7.org/fhir" elementFormDefault="qualified" version="4.2.0">
   <!-- Note: When using this schema with some tools, it may also be necessary to declare xmlns:xml="http://www.w3.org/XML/1998/namespace", however this causes performance issues with other tools and thus is not in the base schemas. -->
@@ -34476,7 +34476,7 @@ For resource issues, this will be a simple XPath limited to element names, repet
               <xs:documentation xml:lang="en">The physical type of the container of the medicine.</xs:documentation>
            </xs:annotation>
           </xs:element>
-          <xs:element name="quantity" minOccurs="0" maxOccurs="1" type="Quantity">
+          <xs:element name="quantity" minOccurs="0" maxOccurs="1" type="integer">
             <xs:annotation>
               <xs:documentation xml:lang="en">The quantity of this package in the medicinal product, at the current level of packaging. If specified, the outermost level is always 1.</xs:documentation>
            </xs:annotation>
@@ -37302,12 +37302,12 @@ Deceased patients may also be marked as inactive for the same reasons, but may b
   </xs:complexType>
   <xs:element name="RegulatedAuthorization" type="RegulatedAuthorization">
     <xs:annotation>
-      <xs:documentation xml:lang="en">The regulatory authorization of a medicinal product.</xs:documentation>
+      <xs:documentation xml:lang="en">The regulatory authorization of a medicinal product, device or process.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:complexType name="RegulatedAuthorization">
     <xs:annotation>
-      <xs:documentation xml:lang="en">The regulatory authorization of a medicinal product.</xs:documentation>
+      <xs:documentation xml:lang="en">The regulatory authorization of a medicinal product, device or process.</xs:documentation>
       <xs:documentation xml:lang="en">If the element is present, it must have either a @value, an @id, or extensions</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
@@ -37325,7 +37325,12 @@ Deceased patients may also be marked as inactive for the same reasons, but may b
           </xs:element>
           <xs:element name="type" minOccurs="0" maxOccurs="1" type="CodeableConcept">
             <xs:annotation>
-              <xs:documentation xml:lang="en">Type of this authorization, for example drug marketing approval, orphan drug designation.</xs:documentation>
+              <xs:documentation xml:lang="en">Overall type of this authorization, for example drug marketing approval, orphan drug designation.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="value" minOccurs="0" maxOccurs="1" type="CodeableConcept">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">The specific authorised result, for cases where several states can be authorised, such as &quot;granted&quot;, &quot;granted schedule A&quot;, &quot;designated - category B&quot;.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="description" minOccurs="0" maxOccurs="1" type="markdown">
@@ -37340,7 +37345,7 @@ Deceased patients may also be marked as inactive for the same reasons, but may b
           </xs:element>
           <xs:element name="status" minOccurs="0" maxOccurs="1" type="CodeableConcept">
             <xs:annotation>
-              <xs:documentation xml:lang="en">The status of the marketing authorization.</xs:documentation>
+              <xs:documentation xml:lang="en">The procedural status of the marketing authorization process.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="statusDate" minOccurs="0" maxOccurs="1" type="dateTime">
@@ -37355,7 +37360,7 @@ Deceased patients may also be marked as inactive for the same reasons, but may b
           </xs:element>
           <xs:element name="basis" minOccurs="0" maxOccurs="unbounded" type="CodeableConcept">
             <xs:annotation>
-              <xs:documentation xml:lang="en">The legal framework against which this authorization is granted, or other reasons for it.</xs:documentation>
+              <xs:documentation xml:lang="en">The legal or regulatory framework against which this authorization is granted, or other reasons for it.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="relatedDate" type="RegulatedAuthorization.RelatedDate" minOccurs="0" maxOccurs="unbounded">
@@ -37389,7 +37394,7 @@ Deceased patients may also be marked as inactive for the same reasons, but may b
   </xs:complexType>
   <xs:complexType name="RegulatedAuthorization.RelatedDate">
     <xs:annotation>
-      <xs:documentation xml:lang="en">The regulatory authorization of a medicinal product.</xs:documentation>
+      <xs:documentation xml:lang="en">The regulatory authorization of a medicinal product, device or process.</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
       <xs:extension base="BackboneElement">
@@ -37412,7 +37417,7 @@ Deceased patients may also be marked as inactive for the same reasons, but may b
   </xs:complexType>
   <xs:complexType name="RegulatedAuthorization.Case">
     <xs:annotation>
-      <xs:documentation xml:lang="en">The regulatory authorization of a medicinal product.</xs:documentation>
+      <xs:documentation xml:lang="en">The regulatory authorization of a medicinal product, device or process.</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
       <xs:extension base="BackboneElement">

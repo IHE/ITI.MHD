@@ -39,10 +39,9 @@
 				<title value="title of the folder"/>
 				<code>
 					<coding>
-						<system value="urn:ihe:cat:classCode"/>
-						<!-- connectathon codes -->
-						<code value="REPORTS"/>
-						<display value="Reports"/>
+						<system value="http://loinc.org"/>
+						<code value="11488-4"/>
+						<display value="Consult Note"/>
 					</coding>
 				</code>
 				<subject>

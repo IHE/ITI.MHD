@@ -99,7 +99,6 @@
 			<type>
 				<code value="Reference" />
 				<profile value="http://hl7.org/fhir/StructureDefinition/Patient" />
-				<aggregation value="bundled" />
 			</type>
 		</element>
 		<element id="Bundle.entry:Patient.request">
@@ -130,7 +129,6 @@
 			<type>
 				<code value="Reference" />
 				<profile value="http://hl7.org/fhir/StructureDefinition/Binary" />
-				<aggregation value="bundled" />
 			</type>
 		</element>
 		<element id="Bundle.entry:Binary.request">
@@ -164,7 +162,6 @@
 <!-- TODO: should be specific to an MHD list
 				<profile value="http://ihe.net/fhir/ihe.mhd.fhir/StructureDefinition/IHE.MHD.Minimal.List" />
 -->
-				<aggregation value="bundled" />
 			</type>
 		</element>
 		<element id="Bundle.entry:List.request">
@@ -198,7 +195,6 @@
 <!-- TODO: should be specific to an MHD DocumentReference
 				<profile value="http://ihe.net/fhir/ihe.mhd.fhir/StructureDefinition/IHE.MHD.Provide.Minimal.DocumentReference" /> 
 -->
-				<aggregation value="bundled" />
 			</type>
 		</element>
 		<element id="Bundle.entry:DocumentReference.request">
@@ -232,7 +228,6 @@
 <!-- TODO: should be specific to MHD manifest
 				<profile value="http://ihe.net/fhir/ihe.mhd.fhir/StructureDefinition/IHE.MHD.Minimal.DocumentManifest" />
 -->
-				<aggregation value="bundled" />
 			</type>
 		</element>
 		<element id="Bundle.entry:DocumentManifest.request">

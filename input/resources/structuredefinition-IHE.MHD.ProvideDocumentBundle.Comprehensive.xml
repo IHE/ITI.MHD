@@ -72,7 +72,7 @@
 			<slicing>
 				<discriminator>
 					<type value="profile" />
-					<path value="resource" />
+					<path value="$this.resource" />
 				</discriminator>
 				<description value="Everything in a proper Bundle"/>
 				<ordered value="false"/>
@@ -101,7 +101,6 @@
 			<type>
 				<code value="Resource" />
 				<profile value="http://hl7.org/fhir/StructureDefinition/Binary" />
-				<aggregation value="bundled" />
 			</type>
 		</element>
 		<element id="Bundle.entry:Binary.request">
@@ -132,7 +131,6 @@
 			<type>
 				<code value="Resource" />
 				<profile value="http://ihe.net/fhir/ihe.mhd.fhir/StructureDefinition/IHE.MHD.Comprehensive.List" />
-				<aggregation value="bundled" />
 			</type>
 		</element>
 		<element id="Bundle.entry:List.request">
@@ -163,7 +161,6 @@
 			<type>
 				<code value="Resource" />
 				<profile value="http://ihe.net/fhir/ihe.mhd.fhir/StructureDefinition/IHE.MHD.Provide.Comprehensive.DocumentReference" />
-				<aggregation value="bundled" />
 			</type>
 		</element>
 		<element id="Bundle.entry:DocumentReference.request">
@@ -194,7 +191,6 @@
 			<type>
 				<code value="Resource" />
 				<profile value="http://ihe.net/fhir/ihe.mhd.fhir/StructureDefinition/IHE.MHD.Comprehensive.DocumentManifest" />
-				<aggregation value="bundled" />
 			</type>
 		</element>
 		<element id="Bundle.entry:DocumentManifest.request">

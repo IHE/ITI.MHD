@@ -58,11 +58,11 @@
 				<status value="current"/>
 				<type>
 					<coding>
-						<system value="urn:oid:1.3.6.1.4.1.21367.2017.3"/>
-						<code value="34746-8"/>
-						<display value="Nursing Evaluation and Management Note"/>
+						<system value="http://loinc.org"/>
+						<code value="11369-6"/>
+						<display value="History of Immunization Narrative"/>
 					</coding>
-					<text value="History and Physical"/>
+					<text value="History of Immunization"/>
 				</type>
 				<subject>
 					<reference value="Patient/example"/>
@@ -75,7 +75,7 @@
 					<reference value="#a1"/>
 				</recipient>
 				<source value="urn:oid:1.3.6.1.4.1.21367.2009.1.2.1"/>
-				<description value="Physical"/>
+				<description value="Immunization History"/>
 				<content>
 					<reference value="DocumentReference/iti-66-docref"/>
 				</content>

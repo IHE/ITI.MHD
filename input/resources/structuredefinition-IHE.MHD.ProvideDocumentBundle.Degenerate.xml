@@ -65,36 +65,53 @@
 			<max value="1"/>
 			<fixedCanonical value="http://ihe.net/fhir/tag/iti-65" />
 		</element>
-<!-- DocumentManifest 1..1 -->
-		<element id="Bundle.entry:DocumentManifest">
+<!-- slice definition for the Bundle content -->
+		<element id="Bundle.entry">
 			<path value="Bundle.entry" />
+			<slicing>
+				<discriminator>
+					<type value="profile" />
+					<path value="$this.resource" />
+				</discriminator>
+				<description value="Everything in a proper Bundle"/>
+				<ordered value="false"/>
+				<!-- TODO: This should be closed, but because of the warnings on DocumentReference not being found I need to leave it open -->
+				<rules value="open" />
+			</slicing>
+		</element>
+
+<!-- DocumentManifest 1..1 -->
+		<element id="Bundle.entry:ManifestSlice">
+			<path value="Bundle.entry" />
+			<sliceName value="ManifestSlice" />
+			<short value="Manifest Slice" />
 			<definition value="The DocumentManifest defining this submission."/>
 			<alias value="SubmissionSet" />
 			<min value="1" />
 			<max value="1" />
 		</element>
-		<element id="Bundle.entry:DocumentManifest.fullUrl">
+		<element id="Bundle.entry:ManifestSlice.fullUrl">
 			<path value="Bundle.entry.fullUrl" />
 			<min value="1" />
 		</element>
-		<element id="Bundle.entry:DocumentManifest.resource">
+		<element id="Bundle.entry:ManifestSlice.resource">
 			<path value="Bundle.entry.resource" />
 			<min value="1" />
 			<type>
 				<code value="Reference" />
 				<profile value="http://hl7.org/fhir/StructureDefinition/DocumentManifest" />
+<!-- TODO: should be specific to MHD manifest
 				<profile value="http://ihe.net/fhir/ihe.mhd.fhir/StructureDefinition/IHE.MHD.Minimal.DocumentManifest" />
-				<aggregation value="bundled" />
+-->
 			</type>
 		</element>
-		<element id="Bundle.entry:DocumentManifest.request">
+		<element id="Bundle.entry:ManifestSlice.request">
 			<path value="Bundle.entry.request" />
 			<min value="1" />
 		</element>
-		<element id="Bundle.entry:DocumentManifest.request.method">
+		<element id="Bundle.entry:ManifestSlice.request.method">
 			<path value="Bundle.entry.request.method" />
 			<fixedCode value="POST" />
 		</element>
 	</differential>
-	
 </StructureDefinition>
