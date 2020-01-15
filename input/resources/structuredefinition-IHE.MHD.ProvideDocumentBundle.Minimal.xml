@@ -97,7 +97,7 @@
 			<path value="Bundle.entry.resource" />
 			<min value="1" />
 			<type>
-				<code value="Reference" />
+				<code value="Resource" />
 				<profile value="http://hl7.org/fhir/StructureDefinition/Patient" />
 			</type>
 		</element>
@@ -127,7 +127,7 @@
 			<path value="Bundle.entry.resource" />
 			<min value="1" />
 			<type>
-				<code value="Reference" />
+				<code value="Resource" />
 				<profile value="http://hl7.org/fhir/StructureDefinition/Binary" />
 			</type>
 		</element>
@@ -157,7 +157,7 @@
 			<path value="Bundle.entry.resource" />
 			<min value="1" />
 			<type>
-				<code value="Reference" />
+				<code value="Resource" />
 				<profile value="http://hl7.org/fhir/StructureDefinition/List" />
 <!-- TODO: should be specific to an MHD list
 				<profile value="http://ihe.net/fhir/ihe.mhd.fhir/StructureDefinition/IHE.MHD.Minimal.List" />
@@ -190,7 +190,7 @@
 			<path value="Bundle.entry.resource" />
 			<min value="1" />
 			<type>
-				<code value="Reference" />
+				<code value="Resource" />
 				<profile value="http://hl7.org/fhir/StructureDefinition/DocumentReference" />
 <!-- TODO: should be specific to an MHD DocumentReference
 				<profile value="http://ihe.net/fhir/ihe.mhd.fhir/StructureDefinition/IHE.MHD.Provide.Minimal.DocumentReference" /> 
@@ -223,7 +223,7 @@
 			<path value="Bundle.entry.resource" />
 			<min value="1" />
 			<type>
-				<code value="Reference" />
+				<code value="Resource" />
 				<profile value="http://hl7.org/fhir/StructureDefinition/DocumentManifest" />
 <!-- TODO: should be specific to MHD manifest
 				<profile value="http://ihe.net/fhir/ihe.mhd.fhir/StructureDefinition/IHE.MHD.Minimal.DocumentManifest" />

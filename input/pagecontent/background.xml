@@ -16,7 +16,7 @@
 <br />
 	specification flows down to more specific specification.
 <br />
-    <img src="Manifest.png" width="800" height="800" alt="A) Arrows DocumentManifest Profiles"/>
+    <img src="Manifest.png" width="640" height="360" alt="A) Arrows DocumentManifest Profiles"/>
 <br />
 	</p>
 
@@ -25,7 +25,7 @@
 <br />
 	specification encompasses the lesser specification with added constraints.
 <br />
-    <img src="ManifestNest.png" width="800" height="800" alt="B) Nested DocumentManifest Profiles"/>
+    <img src="ManifestNest.png" width="640" height="360" alt="B) Nested DocumentManifest Profiles"/>
 <br />
 	</p>
 
@@ -34,7 +34,7 @@
 <br />
 	specification is takes the previous specification adds some new constraints to become a bigger specification flowing down
 <br />
-    <img src="ManifestStack.png" width="800" height="800" alt="C) Stacked DocumentManifest Profiles"/>
+    <img src="ManifestStack.png" width="640" height="360" alt="C) Stacked DocumentManifest Profiles"/>
 <br />
 	</p>
 
@@ -43,7 +43,7 @@
 <br />
 	specification in Venn diagram form showing that the inner specifications are a subset of the outer
 <br />
-    <img src="ManifestVenn.png" width="800" height="800" alt="D) Venn DocumentManifest Profiles"/>
+    <img src="ManifestVenn.png" width="640" height="360" alt="D) Venn DocumentManifest Profiles"/>
 <br />
 	</p>
 
