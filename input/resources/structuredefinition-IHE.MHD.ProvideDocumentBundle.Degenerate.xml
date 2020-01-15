@@ -88,27 +88,14 @@
 			<min value="1" />
 			<max value="1" />
 		</element>
-		<element id="Bundle.entry:DocumentManifest.fullUrl">
-			<path value="Bundle.entry.fullUrl" />
-			<min value="1" />
-		</element>
-		<element id="Bundle.entry:DocumentManifest.resource">
+		<element id="Bundle.entry:DocumentManifest.resource" >
 			<path value="Bundle.entry.resource" />
 			<min value="1" />
+			<max value="1" />
 			<type>
 				<code value="Resource" />
-				<profile value="http://hl7.org/fhir/StructureDefinition/DocumentManifest" />
 				<profile value="http://ihe.net/fhir/ihe.mhd.fhir/StructureDefinition/IHE.MHD.Minimal.DocumentManifest" />
-
 			</type>
-		</element>
-		<element id="Bundle.entry:DocumentManifest.request">
-			<path value="Bundle.entry.request" />
-			<min value="1" />
-		</element>
-		<element id="Bundle.entry:DocumentManifest.request.method">
-			<path value="Bundle.entry.request.method" />
-			<fixedCode value="POST" />
 		</element>
 	</differential>
 </StructureDefinition>

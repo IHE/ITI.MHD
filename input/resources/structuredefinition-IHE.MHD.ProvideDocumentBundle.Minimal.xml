@@ -75,8 +75,7 @@
 				</discriminator>
 				<description value="Everything in a proper Bundle"/>
 				<ordered value="false"/>
-				<!-- TODO: This should be closed, but because of the warnings on DocumentReference not being found I need to leave it open -->
-				<rules value="open" />
+				<rules value="closed" />
 			</slicing>
 		</element>
 <!-- Patient 0..1 -->
@@ -158,10 +157,7 @@
 			<min value="1" />
 			<type>
 				<code value="Resource" />
-				<profile value="http://hl7.org/fhir/StructureDefinition/List" />
-<!-- TODO: should be specific to an MHD list
 				<profile value="http://ihe.net/fhir/ihe.mhd.fhir/StructureDefinition/IHE.MHD.Minimal.List" />
--->
 			</type>
 		</element>
 		<element id="Bundle.entry:List.request">
@@ -191,10 +187,8 @@
 			<min value="1" />
 			<type>
 				<code value="Resource" />
-				<profile value="http://hl7.org/fhir/StructureDefinition/DocumentReference" />
-<!-- TODO: should be specific to an MHD DocumentReference
 				<profile value="http://ihe.net/fhir/ihe.mhd.fhir/StructureDefinition/IHE.MHD.Provide.Minimal.DocumentReference" /> 
--->
+
 			</type>
 		</element>
 		<element id="Bundle.entry:DocumentReference.request">
@@ -224,10 +218,7 @@
 			<min value="1" />
 			<type>
 				<code value="Resource" />
-				<profile value="http://hl7.org/fhir/StructureDefinition/DocumentManifest" />
-<!-- TODO: should be specific to MHD manifest
 				<profile value="http://ihe.net/fhir/ihe.mhd.fhir/StructureDefinition/IHE.MHD.Minimal.DocumentManifest" />
--->
 			</type>
 		</element>
 		<element id="Bundle.entry:DocumentManifest.request">
