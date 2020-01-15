@@ -70,7 +70,7 @@
 			<path value="Bundle.entry" />
 			<slicing>
 				<discriminator>
-					<type value="profile" />
+					<type value="type" />
 					<path value="$this.resource" />
 				</discriminator>
 				<description value="Everything in a proper Bundle"/>
@@ -79,8 +79,6 @@
 				<rules value="open" />
 			</slicing>
 		</element>
-
-<!-- DocumentManifest 1..1 -->
 		<element id="Bundle.entry:ManifestSlice">
 			<path value="Bundle.entry" />
 			<sliceName value="ManifestSlice" />
@@ -90,28 +88,13 @@
 			<min value="1" />
 			<max value="1" />
 		</element>
-		<element id="Bundle.entry:ManifestSlice.fullUrl">
-			<path value="Bundle.entry.fullUrl" />
-			<min value="1" />
-		</element>
 		<element id="Bundle.entry:ManifestSlice.resource">
 			<path value="Bundle.entry.resource" />
 			<min value="1" />
 			<type>
 				<code value="Reference" />
-				<profile value="http://hl7.org/fhir/StructureDefinition/DocumentManifest" />
-<!-- TODO: should be specific to MHD manifest
 				<profile value="http://ihe.net/fhir/ihe.mhd.fhir/StructureDefinition/IHE.MHD.Minimal.DocumentManifest" />
--->
 			</type>
-		</element>
-		<element id="Bundle.entry:ManifestSlice.request">
-			<path value="Bundle.entry.request" />
-			<min value="1" />
-		</element>
-		<element id="Bundle.entry:ManifestSlice.request.method">
-			<path value="Bundle.entry.request.method" />
-			<fixedCode value="POST" />
 		</element>
 	</differential>
 </StructureDefinition>
