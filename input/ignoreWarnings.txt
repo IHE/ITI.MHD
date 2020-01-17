@@ -1,1 +1,1 @@
-StructureDefinition reference "http://ihe.net/fhir/tag/iti-65" could not be resolved
+Profile reference 'http://ihe.net/fhir/tag/iti-65' could not be resolved, so has not been checked

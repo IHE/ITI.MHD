@@ -14,6 +14,59 @@
 	</meta>
 	<type value="transaction"/>
 	<entry>
+		<fullUrl value="urn:uuid:1e404af3-077f-4bee-b7a6-a9be97e1ce02"/>
+		<resource>
+
+			<List xmlns="http://hl7.org/fhir">
+				<!--	<id value="listFolder"/> -->
+				<meta>
+					<profile value="http://ihe.net/fhir/ihe.mhd.fhir/StructureDefinition/IHE.MHD.Comprehensive.List"/>
+					<security>
+						<system value="http://terminology.hl7.org/CodeSystem/v3-ActReason"/>
+						<code value="HTEST"/>
+						<display value="test health data"/>
+					</security>
+				</meta>
+				<text>
+					<status value="generated"/>
+					<div xmlns="http://www.w3.org/1999/xhtml">Folder</div>
+				</text>
+				<identifier>
+					<system value="urn:ietf:rfc:3986"/>
+					<value value="urn:oid:1.2.129.6.58.92.88336.21"/>
+				</identifier>
+				<status value="current"/>
+				<mode value="working"/>
+				<title value="title of the folder"/>
+				<code>
+					<coding>
+						<system value="http://loinc.org"/>
+						<code value="11488-4"/>
+						<display value="Consult Note"/>
+					</coding>
+				</code>
+				<subject>
+					<reference value="Patient/example"/>
+				</subject>
+				<date value="2012-11-25T22:17:00+11:00"/>
+
+				<note>
+					<text value="notes on folder"/>
+				</note>
+				<entry>
+					<item>
+						<reference value="urn:uuid:1e404af3-077f-4bee-b7a6-a9be97e1ce01"/>
+					</item>
+				</entry>
+
+			</List>
+		</resource>	
+		<request>
+			<method value="POST"/>
+			<url value="urn:uuid:1e404af3-077f-4bee-b7a6-a9be97e1ce02"/>
+		</request>
+	</entry>
+	<entry>
 		<fullUrl value="urn:uuid:1e404af3-077f-4bee-b7a6-a9be97e1ce01"/>
 		<resource>
 			<DocumentReference>
@@ -120,6 +173,10 @@
 				<description value="Accident Physical"/>
 				<content>
 					<reference value="urn:uuid:1e404af3-077f-4bee-b7a6-a9be97e1ce01"/>
+				</content>
+				
+				<content>
+					<reference value="urn:uuid:1e404af3-077f-4bee-b7a6-a9be97e1ce02"/>
 				</content>
 			</DocumentManifest>
 		</resource>

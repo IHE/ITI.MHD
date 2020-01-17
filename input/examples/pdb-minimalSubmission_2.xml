@@ -37,6 +37,7 @@
 				<status value="current"/>
 				<mode value="working"/>
 				<title value="title of the folder"/>
+<!-- minimal doesn't require code
 				<code>
 					<coding>
 						<system value="http://loinc.org"/>
@@ -44,6 +45,7 @@
 						<display value="Consult Note"/>
 					</coding>
 				</code>
+-->
 				<subject>
 					<reference value="Patient/example"/>
 				</subject>

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <List xmlns="http://hl7.org/fhir">
-	<id value="listFolder"/>
+	<id value="listFolder-c"/>
 	<meta>
-		<profile value="http://ihe.net/fhir/ihe.mhd.fhir/StructureDefinition/IHE.MHD.Minimal.List"/>
+		<profile value="http://ihe.net/fhir/ihe.mhd.fhir/StructureDefinition/IHE.MHD.Comprehensive.List"/>
 		<security>
 			<system value="http://terminology.hl7.org/CodeSystem/v3-ActReason"/>
 			<code value="HTEST"/>
@@ -11,7 +11,7 @@
 	</meta>
 	<text>
 		<status value="generated"/>
-		<div xmlns="http://www.w3.org/1999/xhtml">Folder</div>
+		<div xmlns="http://www.w3.org/1999/xhtml">Folder Comprehensive constraints</div>
 	</text>
 	<identifier>
 		<system value="urn:ietf:rfc:3986"/>
@@ -19,7 +19,14 @@
 	</identifier>
 	<status value="current"/>
 	<mode value="working"/>
-	<title value="example folder with minimal elements" />
+	<title value="title of the folder"/>
+	<code>
+		<coding>
+			<system value="http://loinc.org"/>
+			<code value="11488-4"/>
+			<display value="Consult Note"/>
+		</coding>
+	</code>
 	<subject>
 		<reference value="Patient/example"/>
 	</subject>
