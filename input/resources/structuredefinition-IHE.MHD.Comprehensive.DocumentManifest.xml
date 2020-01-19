@@ -10,12 +10,12 @@
 	The IHE MHD Profile text is Normative, this conformance resource is Informative.</div>
 	</text>
 	<url value="http://ihe.net/fhir/ihe.mhd.fhir/StructureDefinition/IHE.MHD.Comprehensive.DocumentManifest" />
-	<version value="3.1.1" />
+	<version value="3.1.2" />
 	<name value="IHE_MHD_Comprehensive_DocumentManifest" />
 	<title value="IHE MHD Profile on DocumentManifest for Comprehensive Metadata (SubmissionSet)" />
 	<status value="active" />
 	<experimental value="false" />
-	<date value="2019-09-13" />
+	<date value="2019-09-19" />
 	<publisher value="Integrating the Healthcare Enterprise (IHE)" />
 	<contact>
 		<name value="IHE" />
@@ -49,5 +49,16 @@
 			<path value="DocumentManifest.subject" />
 			<min value="1" />
 		</element>
+		<element id="DocumentManifest.content">
+			<path value="DocumentManifest.content" />
+			<type>
+				<code value="Reference" />
+				<targetProfile value="http://ihe.net/fhir/ihe.mhd.fhir/StructureDefinition/IHE.MHD.Provide.Comprehensive.DocumentReference" />
+				<targetProfile value="http://ihe.net/fhir/ihe.mhd.fhir/StructureDefinition/IHE.MHD.Comprehensive.List" />
+				<aggregation value="referenced" />
+				<aggregation value="bundled" />
+			</type>
+		</element>
+		
 	</differential>
 </StructureDefinition>
