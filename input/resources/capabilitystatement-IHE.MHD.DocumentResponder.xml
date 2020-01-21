@@ -154,7 +154,7 @@
 			<!-- All DocumentManifest must be conformant with Minimal -->
 			<profile value="http://ihe.net/fhir/ihe.mhd.fhir/StructureDefinition/IHE.MHD.Minimal.DocumentManifest"/>
 			<!-- Some may be conformant with Comprensive -->
-			<profile value="http://ihe.net/fhir/ihe.mhd.fhir/StructureDefinition/IHE.MHD.Comprehensive.DocumentManifest"/>
+			<supportedProfile value="http://ihe.net/fhir/ihe.mhd.fhir/StructureDefinition/IHE.MHD.Comprehensive.DocumentManifest"/>
 			<interaction>
 				<code value="read"/>
 			</interaction>

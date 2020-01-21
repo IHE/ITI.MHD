@@ -7,7 +7,7 @@
 		<!-- ITI-65 is required by IHE MHD to indicate this specific transaction -->
 		<profile value="http://ihe.net/fhir/tag/iti-65"/>
 		<!-- this profile would not normally be indicated, but is in the example for the Implementation Guide -->
-<!--		<profile value="http://ihe.net/fhir/ihe.mhd.fhir/StructureDefinition/IHE.MHD.ProvideDocumentBundle.Minimal"/> -->
+		<profile value="http://ihe.net/fhir/ihe.mhd.fhir/StructureDefinition/IHE.MHD.ProvideDocumentBundle.Minimal"/> 
 		<security>
 			<!-- tagging examples as example data -->
 			<system value="http://terminology.hl7.org/CodeSystem/v3-ActReason"/>

@@ -41,14 +41,8 @@
 	<baseDefinition value="http://hl7.org/fhir/StructureDefinition/Bundle" />
 	<derivation value="constraint" />
 	<differential>
-<!-- transaction type of a Bundle -->
-		<element id="Bundle.type">
-			<path value="Bundle.type" />
-			<short value="transaction" />
-			<fixedCode value="transaction" />
-		</element>
 <!-- bundle meta profile must have at-least iti-65 -->
-		<element id="Bundle.meta.profile">
+		<element id="Bundle.meta.profile.slice">
 			<path value="Bundle.meta.profile" />
 			<slicing>
 				<discriminator>
@@ -58,12 +52,26 @@
 				<rules value="open"/>
 			</slicing>
 		</element>
-		<element>
+		<element id="Bundle.meta.profile.ihe">
 			<path value="Bundle.meta.profile"/>
 			<sliceName value="iti-65"/>
 			<min value="1"/>
 			<max value="1"/>
 			<fixedCanonical value="http://ihe.net/fhir/tag/iti-65" />
+		</element>
+	<!-- minimal bundle must say it is a minimal bundle -->
+		<element id="Bundle.meta.profile.profile">
+			<path value="Bundle.meta.profile"/>
+			<sliceName value="ProvideDocumentBundleMinimal"/>
+			<min value="1"/>
+			<max value="1"/>
+			<fixedCanonical value="http://ihe.net/fhir/ihe.mhd.fhir/StructureDefinition/IHE.MHD.ProvideDocumentBundle.Minimal" />
+		</element>
+<!-- transaction type of a Bundle -->
+		<element id="Bundle.type">
+			<path value="Bundle.type" />
+			<short value="transaction" />
+			<fixedCode value="transaction" />
 		</element>
 <!-- slice definition for the Bundle content -->
 		<element id="Bundle.entry">
@@ -157,6 +165,9 @@
 			<min value="1" />
 			<type>
 				<code value="Resource" />
+<!-- Allowed to have comprehensive, but not needed to be conformant. So they are not included here to simplify the profile validation rules
+				<profile value="http://ihe.net/fhir/ihe.mhd.fhir/StructureDefinition/IHE.MHD.Comprehensive.List" />
+-->
 				<profile value="http://ihe.net/fhir/ihe.mhd.fhir/StructureDefinition/IHE.MHD.Minimal.List" />
 			</type>
 		</element>
@@ -187,8 +198,10 @@
 			<min value="1" />
 			<type>
 				<code value="Resource" />
+<!-- Allowed to have comprehensive, but not needed to be conformant. So they are not included here to simplify the profile validation rules
+				<profile value="http://ihe.net/fhir/ihe.mhd.fhir/StructureDefinition/IHE.MHD.Provide.Comprehensive.DocumentReference" /> 
+-->
 				<profile value="http://ihe.net/fhir/ihe.mhd.fhir/StructureDefinition/IHE.MHD.Provide.Minimal.DocumentReference" /> 
-
 			</type>
 		</element>
 		<element id="Bundle.entry:DocumentReference.request">
@@ -218,6 +231,9 @@
 			<min value="1" />
 			<type>
 				<code value="Resource" />
+<!-- Allowed to have comprehensive, but not needed to be conformant. So they are not included here to simplify the profile validation rules
+				<profile value="http://ihe.net/fhir/ihe.mhd.fhir/StructureDefinition/IHE.MHD.Comprehensive.DocumentManifest" />
+-->
 				<profile value="http://ihe.net/fhir/ihe.mhd.fhir/StructureDefinition/IHE.MHD.Minimal.DocumentManifest" />
 			</type>
 		</element>

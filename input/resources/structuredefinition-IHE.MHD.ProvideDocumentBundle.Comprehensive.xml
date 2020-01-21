@@ -42,14 +42,8 @@
 	<baseDefinition value="http://hl7.org/fhir/StructureDefinition/Bundle" />
 	<derivation value="constraint" />
 	<differential>
-<!-- transaction type of a Bundle -->
-		<element id="Bundle.type">
-			<path value="Bundle.type" />
-			<short value="transaction" />
-			<fixedCode value="transaction" />
-		</element>
 <!-- bundle meta profile must have at-least iti-65 -->
-		<element id="Bundle.meta.profile">
+		<element id="Bundle.meta.profile.slice">
 			<path value="Bundle.meta.profile" />
 			<slicing>
 				<discriminator>
@@ -59,12 +53,28 @@
 				<rules value="open"/>
 			</slicing>
 		</element>
-		<element>
+		<element id="Bundle.meta.profile.iti">
 			<path value="Bundle.meta.profile"/>
 			<sliceName value="iti-65"/>
 			<min value="1"/>
 			<max value="1"/>
 			<fixedCanonical value="http://ihe.net/fhir/tag/iti-65" />
+		</element>
+	<!-- comprehensie bundle must NOT say it is a minimal bundle -->
+<!-- TODO how do I test that minimal is not defined?
+		<element id="Bundle.meta.profile.profile">
+			<path value="Bundle.meta.profile"/>
+			<sliceName value="ProvideDocumentBundleMinimal"/>
+			<min value="1"/>
+			<max value="1"/>
+			<fixedCanonical value="http://ihe.net/fhir/ihe.mhd.fhir/StructureDefinition/IHE.MHD.ProvideDocumentBundle.Minimal" />
+		</element>
+-->
+<!-- transaction type of a Bundle -->
+		<element id="Bundle.type">
+			<path value="Bundle.type" />
+			<short value="transaction" />
+			<fixedCode value="transaction" />
 		</element>
 <!-- slice definition for the Bundle content -->
 		<element id="Bundle.entry">

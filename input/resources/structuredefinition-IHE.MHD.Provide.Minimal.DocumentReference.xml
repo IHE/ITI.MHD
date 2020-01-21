@@ -60,7 +60,7 @@
 		<element id="DocumentReference.status">
 			<path value="DocumentReference.status" />
 			<comment value="approved -&gt; status=current&#xD;&#xA;deprecated -&gt; status=superseded" />
-			<mustSupport value="false" />
+			<!-- manditory by FHIR core -->
 		</element>
 		<element id="DocumentReference.docStatus">
 			<path value="DocumentReference.docStatus" />

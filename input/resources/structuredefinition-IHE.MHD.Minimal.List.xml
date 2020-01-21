@@ -171,9 +171,9 @@
 			<min value="1" />
 			<type>
 				<code value="Reference" />
-				<targetProfile value="http://ihe.net/fhir/ihe.mhd.fhir/StructureDefinition/IHE.MHD.Query.Comprehensive.DocumentReference" />
-				<targetProfile value="http://ihe.net/fhir/ihe.mhd.fhir/StructureDefinition/IHE.MHD.Query.Minimal.DocumentReference" />
+<!-- Allowed to have comprehensive, but not needed to be conformant. So they are not included here to simplify the profile validation rules
 				<targetProfile value="http://ihe.net/fhir/ihe.mhd.fhir/StructureDefinition/IHE.MHD.Provide.Comprehensive.DocumentReference" />
+-->
 				<targetProfile value="http://ihe.net/fhir/ihe.mhd.fhir/StructureDefinition/IHE.MHD.Provide.Minimal.DocumentReference" />
 				<aggregation value="referenced" />
 				<aggregation value="bundled" />

@@ -1,1 +1,3 @@
 Profile reference 'http://ihe.net/fhir/tag/iti-65' could not be resolved, so has not been checked
+The Coding provided is not in the value set http://hl7.org/fhir/ValueSet/formatcodes, and a code is recommended to come from this value set. (error message = Not in value set http://hl7.org/fhir/ValueSet/formatcodes)
+Found multiple matching profiles for urn:uuid:1e404af3-077f-4bee-b7a6-a9be97e1ce01 among choices: http://ihe.net/fhir/ihe.mhd.fhir/StructureDefinition/IHE.MHD.Provide.Minimal.DocumentReference, http://ihe.net/fhir/ihe.mhd.fhir/StructureDefinition/IHE.MHD.Provide.Comprehensive.DocumentReference

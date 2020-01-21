@@ -59,6 +59,7 @@
 		<element id="DocumentManifest.status">
 			<path value="DocumentManifest.status" />
 			<comment value="approved -&gt; status=current" />
+			<!-- manditory by FHIR core -->
 		</element>
 		<element id="DocumentManifest.type">
 			<path value="DocumentManifest.type" />
@@ -96,6 +97,10 @@
 			<path value="DocumentManifest.content" />
 			<type>
 				<code value="Reference" />
+<!-- Allowed to have comprehensive, but not needed to be conformant. So they are not included here to simplify the profile validation rules
+				<targetProfile value="http://ihe.net/fhir/ihe.mhd.fhir/StructureDefinition/IHE.MHD.Provide.Comprehensive.DocumentReference" />
+				<targetProfile value="http://ihe.net/fhir/ihe.mhd.fhir/StructureDefinition/IHE.MHD.Comprehensive.List" />
+-->
 				<targetProfile value="http://ihe.net/fhir/ihe.mhd.fhir/StructureDefinition/IHE.MHD.Provide.Minimal.DocumentReference" />
 				<targetProfile value="http://ihe.net/fhir/ihe.mhd.fhir/StructureDefinition/IHE.MHD.Minimal.List" />
 				<aggregation value="referenced" />

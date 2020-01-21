@@ -4,7 +4,7 @@
 	<meta>
 		<lastUpdated value="2013-07-01T13:11:33Z"/>
 		<profile value="http://ihe.net/fhir/tag/iti-65"/>
-<!--		<profile value="http://ihe.net/fhir/ihe.mhd.fhir/StructureDefinition/IHE.MHD.ProvideDocumentBundle.Minimal"/> -->
+		<profile value="http://ihe.net/fhir/ihe.mhd.fhir/StructureDefinition/IHE.MHD.ProvideDocumentBundle.Minimal"/> 
 		<security>
 			<system value="http://terminology.hl7.org/CodeSystem/v3-ActReason"/>
 			<code value="HTEST"/>
