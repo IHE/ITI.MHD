@@ -28,14 +28,20 @@
 						<code value="HTEST"/>
 						<display value="test health data"/>
 					</security>
+					<security>
+						<system value="http://terminology.hl7.org/CodeSystem/v3-Confidentiality"/>
+						<code value="U"/>
+						<display value="unrestricted"/>
+						<!-- as the file is the MHD profile text -->
+					</security>
 				</meta>
 				<text>
 					<status value="generated"/>
-					<div xmlns="http://www.w3.org/1999/xhtml">Minimal Document Reference in minimal manifest with one document</div>
+					<div xmlns="http://www.w3.org/1999/xhtml">Minimal Document Reference in minimal manifest with one document. Where the document is the MHD supplement published on the IHE web site.</div>
 				</text>
 				<masterIdentifier>
-					<system value="urn:ietf:rfc:3986"/>
-					<value value="urn:oid:1.2.129.6.58.92.88336.4"/>
+					<system value="urn:ihe:profiles"/>
+					<value value="MHD"/>
 				</masterIdentifier>
 				<status value="current"/>
 				<subject>
@@ -43,9 +49,8 @@
 				</subject>
 				<content>
 					<attachment>
-						<contentType value="text/plain"/>
-						<!-- externally hosted document. Made the URL look like it might be a FHIR server, but does not need to be -->
-						<url value="http://repository.example.org/fhir/Binary/documentSample"/>
+						<contentType value="application/pdf"/>
+						<url value="https://www.ihe.net/uploadedFiles/Documents/ITI/IHE_ITI_Suppl_MHD.pdf"/>
 					</attachment>
 				</content>
 			</DocumentReference>
