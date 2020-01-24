@@ -39,7 +39,7 @@ The IHE MHD Profile text is Normative, this conformance resource is Informative.
 	<copyright value="IHE http://www.ihe.net/Governance/#Intellectual_Property" />
 	<packageId value="ihe.mhd.fhir" />
 	<fhirVersion value="4.0.1" />
-	<dependsOn>
+	<dependsOn id="IHEformatcode">
 		<uri value="http://ihe.net/fhir/ihe.formatcode.fhir/ImplementationGuide/ihe.formatcode.fhir" />
 		<version value="current"/>
 	</dependsOn>

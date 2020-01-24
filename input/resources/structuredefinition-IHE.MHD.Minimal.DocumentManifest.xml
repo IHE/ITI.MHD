@@ -15,7 +15,7 @@
 	<title value="IHE MHD Profile on DocumentManifest for Minimal Metadata (SubmissionSet)" />
 	<status value="active" />
 	<experimental value="false" />
-	<date value="2020-01-19" />
+	<date value="2020-01-23" />
 	<publisher value="Integrating the Healthcare Enterprise (IHE)" />
 	<contact>
 		<name value="IHE" />
@@ -83,8 +83,7 @@
 			<comment value="Contained resource of type Practitioner or Organization with:&#xD;&#xA;* authorInstitution: Organization&#xD;&#xA;For Practionioner, also with:&#xD;&#xA;* authorPerson: Practitioner.identifier and Practitioner.name&#xD;&#xA;* authorRole:—Not supported in STU3&#xD;&#xA;* authorSpecialty: Practitioner.qualification&#xD;&#xA;* authorTelecommunication: Practitioner.telecom" />
 			<type>
 				<code value="Reference" />
-				<targetProfile value="http://hl7.org/fhir/StructureDefinition/Practitioner" />
-				<targetProfile value="http://hl7.org/fhir/StructureDefinition/Organization" />
+<!-- not clear that a device would be a source of a Folder, but also not clear it can't be -->
 				<aggregation value="contained" />
 			</type>
 			<mustSupport value="true" />
