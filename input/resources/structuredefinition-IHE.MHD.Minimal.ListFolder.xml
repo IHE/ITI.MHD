@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="utf-8"?>
+<StructureDefinition xmlns="http://hl7.org/fhir">
+	<id value="IHE.MHD.Minimal.ListFolder" />
+
+	<text>
+		<status value="additional" />
+		<div xmlns="http://www.w3.org/1999/xhtml">
+	StructureDefinition for List Resource supporting XDS Folders in the 
+    IHE IT Infrastructure Technical Framework Supplement <a href="http://wiki.ihe.net/index.php/Mobile_access_to_Health_Documents_(MHD)">Mobile access to Health Documents (MHD) Rev. 3.1</a>. 
+	The IHE MHD Profile text is Normative, this conformance resource is Informative.</div>
+	</text>
+	<url value="http://ihe.net/fhir/ihe.mhd.fhir/StructureDefinition/IHE.MHD.Minimal.ListFolder" />
+	<version value="3.1.1" />
+	<name value="IHE_MHD_Minimal_ListFolder" />
+	<title value="IHE MHD Profile on List with Minimal Metadata (Folder)" />
+	<status value="active" />
+	<experimental value="false" />
+	<date value="2020-01-08" />
+	<publisher value="Integrating the Healthcare Enterprise (IHE)" />
+	<contact>
+		<name value="IHE" />
+		<telecom>
+			<system value="url" />
+			<value value="http://ihe.net" />
+		</telecom>
+	</contact>
+	<contact>
+		<name value="John Moehrke" />
+		<telecom>
+			<system value="email" />
+			<value value="JohnMoehrke@gmail.com" />
+		</telecom>
+	</contact>
+	<description value="Profile on List for use as a Document Folder based on IHE IT Infrastructure Technical Framework Supplement - Mobile access to Health Documents (MHD) Rev. 3.1.  See http://wiki.ihe.net/index.php/Mobile_access_to_Health_Documents_(MHD)  The IHE MHD Profile text is Normative, this conformance resource is Informative." />
+
+	<copyright value="IHE http://www.ihe.net/Governance/#Intellectual_Property" />
+	<fhirVersion value="4.0.0" />
+	<mapping>
+		<identity value="XDS-Folder" />
+		<uri value="http://ihe.net/fhir/ihe.mhd.fhir" />
+		<name value="XDS Folder" />
+	</mapping>
+	<kind value="resource" />
+	<abstract value="false" />
+	<type value="List" />
+	<baseDefinition value="http://hl7.org/fhir/StructureDefinition/List" />
+	<derivation value="constraint" />
+	<differential>
+		<!-- possibly could check that Minimal metadata would be in profile -->
+
+		<element id="List.extension.slice">
+			<path value="List.extension"/>
+			<slicing>
+				<discriminator>
+					<type value="value"/>
+					<path value="url"/>
+				</discriminator>
+				<ordered value="false"/>
+				<rules value="open"/>
+			</slicing>
+		</element>
+		<element id="List.extension.reasonCode">
+			<path value="List.extension"/>
+			<sliceName value="reasonCode"/>
+			<short value="reasonCode"/>
+			<definition value="The reason code for the Folder"/>
+			<min value="1"/>
+			<max value="*"/>
+			<type>
+				<code value="Extension"/>
+				<profile value="http://hl7.org/fhir/StructureDefinition/workflow-reasonCode"/>
+			</type>
+			<isModifier value="false"/>
+			<mapping>
+				<identity value="XDS-Folder" />
+				<map value="Folder.codeList" />
+			</mapping>
+		</element>
+
+		<element id="List.identifier">
+			<path value="List.identifier" />
+			<requirements value="When the List.identifier carries the entryUUID then the List.identifier.use shall be ‘official’; and the uniqueId then the List.identifier.use shall be&#xD;&#xA;‘usual’." />
+			<min value="1" />
+			<mapping>
+				<identity value="XDS-Folder" />
+				<map value="Folder.entryUUID + Folder.uniqueId" />
+			</mapping>
+		</element>
+		<element id="List.status">
+			<path value="List.status" />
+			<requirements value="approved status=current. Other status values are allowed but are not defined in this mapping to XDS." />
+			<mapping>
+				<identity value="XDS-Folder" />
+				<map value="Folder.availabilityStatus" />
+			</mapping>
+		</element>
+		<element id="List.mode">
+			<path value="List.mode" />
+			<requirements value="shall be ‘working’" />
+			<fixedCode value="working" />
+			<mapping>
+				<identity value="XDS-Folder" />
+				<map value="fixed at working" />
+			</mapping>
+		</element>
+		<element id="List.title">
+			<path value="List.title" />
+			<min value="1" />
+			<mapping>
+				<identity value="XDS-Folder" />
+				<map value="Folder.title" />
+			</mapping>
+		</element>
+		<element id="List.code">
+			<path value="List.code" />
+			<requirements value="shall be fixed 'urn:ihe:iti:mhd:2020, folder'." />
+			<min value="1"/>
+			<max value="1"/>
+			<fixedCodeableConcept>
+				<coding>                       
+					<system value="urn:ihe:iti:mhd:2020" />      
+					<code value="folder" />          
+					<display value="Folder as a FHIR List" />  
+				</coding>        			
+			</fixedCodeableConcept>
+			<mapping>
+				<identity value="XDS-Folder" />
+				<map value="fixed to indicate type of List is folder" />
+			</mapping>
+		</element>
+		<element id="List.subject">
+			<path value="List.subject" />
+			<comment value="URL Points to an existing Patient resource representing Affinity Domain Patient." />
+			<type>
+				<code value="Reference" />
+				<targetProfile value="http://hl7.org/fhir/StructureDefinition/Patient" />
+				<aggregation value="referenced" />
+				<aggregation value="bundled" />
+			</type>
+			<mapping>
+				<identity value="XDS-Folder" />
+				<map value="Folder.patientId as a Reference(Patient)" />
+			</mapping>
+		</element>
+		<element id="List.encounter">
+			<path value="List.encounter" />
+			<comment value="These HL7 FHIR elements are not used in XDS, therefore would not be present. Document Consumers should be robust to these elements holding values." />
+			<max value="0" />
+			<mapping>
+				<identity value="XDS-Folder" />
+				<map value="N/A" />
+			</mapping>
+		</element>
+		<element id="List.date">
+			<path value="List.date" />
+			<comment value="The value of lastUpdateTime for the Folder." />
+			<max value="1" />
+			<mapping>
+				<identity value="XDS-Folder" />
+				<map value="Folder.lastUpdateTime" />
+			</mapping>
+		</element>
+		<element id="List.source">
+			<path value="List.source" />
+			<comment value="These HL7 FHIR elements are not used in XDS, therefore would not be present. Document Consumers should be robust to these elements holding values." />
+			<max value="0" />
+			<mapping>
+				<identity value="XDS-Folder" />
+				<map value="N/A" />
+			</mapping>
+		</element>
+		<element id="List.orderedBy">
+			<path value="List.orderedBy" />
+			<comment value="These HL7 FHIR elements are not used in XDS, therefore would not be present. Document Consumers should be robust to these elements holding values." />
+			<max value="0" />
+			<mapping>
+				<identity value="XDS-Folder" />
+				<map value="N/A" />
+			</mapping>
+		</element>
+		<element id="List.note">
+			<path value="List.note" />
+			<comment value="The folder comments." />
+			<max value="1" />
+			<mapping>
+				<identity value="XDS-Folder" />
+				<map value="Folder.comments" />
+			</mapping>
+		</element>
+		<element id="List.entry.flag">
+			<path value="List.entry.flag" />
+			<comment value="These HL7 FHIR elements are not used in XDS, therefore would not be present. Document Consumers should be robust to these elements holding values." />
+			<max value="0" />
+			<mapping>
+				<identity value="XDS-Folder" />
+				<map value="N/A" />
+			</mapping>
+		</element>
+		<element id="List.entry.deleted">
+			<path value="List.entry.deleted" />
+			<comment value="These HL7 FHIR elements are not used in XDS, therefore would not be present. Document Consumers should be robust to these elements holding values." />
+			<max value="0" />
+			<mapping>
+				<identity value="XDS-Folder" />
+				<map value="N/A" />
+			</mapping>
+		</element>
+		<element id="List.entry.date">
+			<path value="List.entry.date" />
+			<comment value="These HL7 FHIR elements are not used in XDS, therefore would not be present. Document Consumers should be robust to these elements holding values." />
+			<max value="0" />
+			<mapping>
+				<identity value="XDS-Folder" />
+				<map value="N/A" />
+			</mapping>
+		</element>
+		<element id="List.entry.item">
+			<path value="List.entry.item" />
+			<min value="1" />
+			<type>
+				<code value="Reference" />
+<!-- Allowed to have comprehensive, but not needed to be conformant. So they are not included here to simplify the profile validation rules
+				<targetProfile value="http://ihe.net/fhir/ihe.mhd.fhir/StructureDefinition/IHE.MHD.Provide.Comprehensive.DocumentReference" />
+-->
+				<targetProfile value="http://ihe.net/fhir/ihe.mhd.fhir/StructureDefinition/IHE.MHD.Provide.Minimal.DocumentReference" />
+				<aggregation value="referenced" />
+				<aggregation value="bundled" />
+			</type>
+			<mapping>
+				<identity value="XDS-Folder" />
+				<map value="Folder DocumentReference contents" />
+			</mapping>
+		</element>
+		<element id="List.emptyReason">
+			<path value="List.emptyReason" />
+			<comment value="These HL7 FHIR elements are not used in XDS, therefore would not be present. Document Consumers should be robust to these elements holding values." />
+			<max value="0" />
+			<mapping>
+				<identity value="XDS-Folder" />
+				<map value="N/A" />
+			</mapping>
+		</element>
+	</differential>
+</StructureDefinition>

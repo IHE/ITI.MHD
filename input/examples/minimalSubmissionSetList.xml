@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<List xmlns="http://hl7.org/fhir" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir ../../input-cache/schemas-r5/fhir-single.xsd">
+	<id value="minimalSubmissionSetList"/>
+	<meta>
+
+		<profile value="http://ihe.net/fhir/ihe.mhd.fhir/StructureDefinition/IHE.MHD.Minimal.ListManifest"/>
+
+		<security>
+			<system value="http://terminology.hl7.org/CodeSystem/v3-ActReason"/>
+			<code value="HTEST"/>
+			<display value="test health data"/>
+		</security>
+	</meta>
+	<text>
+		<status value="generated"/>
+		<div xmlns="http://www.w3.org/1999/xhtml">Comment</div>
+	</text>
+
+	<extension url="http://hl7.org/fhir/StructureDefinition/workflow-reasonCode">
+		<valueCodeableConcept>
+			<coding>
+				<system value="urn:ihe:iti:mhd:2020"/>
+				<code value="SubmissionSet" />
+			</coding>
+		</valueCodeableConcept>
+	</extension>
+
+	<identifier>
+		<system value="urn:ietf:rfc:3986"/>
+		<value value="urn:oid:1.2.129.6.58.92.88337.4"/>
+		<use value="official" />
+	</identifier>
+	<identifier>
+		<system value="http://example.org/documents"/>
+		<value value="23425234234-23470"/>
+		<use value="usual" />
+	</identifier>
+	<status value="current"/>
+	<mode value="working"/>
+	<title value="Physical"/>
+	<code>
+		<coding>
+			<system value="urn:ihe:iti:mhd:2020"/>
+			<code value="SubmissionSet" />
+		</coding>
+	</code>
+	<subject>
+		<reference value="Patient/example"/>
+	</subject>
+	<date value="2004-12-25T23:50:50-05:00"/>
+	<source value="Organization/example"/>
+	<content>
+		<reference value="DocumentReference/example"/>
+	</content>
+	<content>
+		<reference value="List/example"/>
+	</content>
+</List>
