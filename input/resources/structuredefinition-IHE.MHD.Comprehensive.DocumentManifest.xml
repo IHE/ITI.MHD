@@ -12,7 +12,7 @@
 	<url value="http://ihe.net/fhir/ihe.mhd.fhir/StructureDefinition/IHE.MHD.Comprehensive.DocumentManifest" />
 	<version value="3.1.2" />
 	<name value="IHE_MHD_Comprehensive_DocumentManifest" />
-	<title value="IHE MHD Profile on DocumentManifest for Comprehensive Metadata (SubmissionSet)" />
+	<title value="Comprehensive DocumentManifest (SubmissionSet)" />
 	<status value="active" />
 	<experimental value="false" />
 	<date value="2019-09-19" />

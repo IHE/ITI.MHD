@@ -12,7 +12,7 @@
 	<url value="http://ihe.net/fhir/ihe.mhd.fhir/StructureDefinition/IHE.MHD.Minimal.DocumentManifest" />
 	<version value="3.1.2" />
 	<name value="IHE_MHD_Minimal_DocumentManifest" />
-	<title value="IHE MHD Profile on DocumentManifest for Minimal Metadata (SubmissionSet)" />
+	<title value="Minimal DocumentManifest (SubmissionSet)" />
 	<status value="active" />
 	<experimental value="false" />
 	<date value="2020-01-23" />

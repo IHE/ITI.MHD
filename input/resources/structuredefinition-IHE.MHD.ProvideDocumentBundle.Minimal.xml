@@ -12,7 +12,7 @@
 	<url value="http://ihe.net/fhir/ihe.mhd.fhir/StructureDefinition/IHE.MHD.ProvideDocumentBundle.Minimal" />
 	<version value="3.1.1" />
 	<name value="IHE_MHD_ProvideDocumentBundle_Minimal" />
-	<title value="IHE MHD profile on Provide Document Bundle (ITI-65) transaction with Minimal Metadata" />
+	<title value="Provide Minimal Document Bundle" />
 	<status value="active" />
 	<experimental value="false" />
 	<date value="2020-01-06" />

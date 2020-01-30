@@ -10,7 +10,7 @@
 	<url value="http://ihe.net/fhir/ihe.mhd.fhir/StructureDefinition/IHE.MHD.Minimal.ListManifest" />
 	<version value="3.1.1" />
 	<name value="IHE_MHD_Minimal_ListManifest" />
-	<title value="Experimental use of List resource List Resource supporting XDS SubmissionSet (without DocumentManifest)" />
+	<title value="Experimental Minimal List Manifest" />
 	<status value="active" />
 	<experimental value="true" />
 	<date value="2020-01-23" />

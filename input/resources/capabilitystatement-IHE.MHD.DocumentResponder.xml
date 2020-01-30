@@ -12,7 +12,7 @@
 	</text>
 	<url value="http://ihe.net/fhir/ihe.mhd.fhir/CapabilityStatement/IHE.MHD.DocumentResponder"/>
 	<name value="IHE_MHD_DocumentResponder"/>
-	<title value="IHE ITI Mobile access to Health Documents (MHD) - Document Responder (server)"/>
+	<title value="Document Responder (server)"/>
 	<status value="active"/>
 	<experimental value="false"/>
 	<date value="2019-09-13" />

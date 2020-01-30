@@ -12,7 +12,7 @@
 	<url value="http://ihe.net/fhir/ihe.mhd.fhir/StructureDefinition/IHE.MHD.Minimal.List" />
 	<version value="3.1.1" />
 	<name value="IHE_MHD_Minimal_List" />
-	<title value="IHE MHD Profile on List with Minimal Metadata (Folder)" />
+	<title value="Minimal List Folder" />
 	<status value="active" />
 	<experimental value="false" />
 	<date value="2020-01-08" />

@@ -12,7 +12,7 @@
 	<url value="http://ihe.net/fhir/ihe.mhd.fhir/StructureDefinition/IHE.MHD.Comprehensive.List" />
 	<version value="3.1.1" />
 	<name value="IHE_MHD_Comprehensive_List" />
-	<title value="IHE MHD Profile on List with Comprehensive Metadata (Folder)" />
+	<title value="Comprehensive List (Folder)" />
 	<status value="active" />
 	<experimental value="false" />
 	<date value="2019-09-13" />

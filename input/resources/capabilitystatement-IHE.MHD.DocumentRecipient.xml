@@ -12,7 +12,7 @@
 	</text>
 	<url value="http://ihe.net/fhir/ihe.mhd.fhir/CapabilityStatement/IHE.MHD.DocumentRecipient"/>
 	<name value="IHE_MHD_DocumentRecipient"/>
-	<title value="IHE ITI Mobile access to Health Documents (MHD) - Document Recipient"/>
+	<title value="Document Recipient"/>
 	<status value="active" />
 	<experimental value="false"/>
 	<date value="2019-09-13" />

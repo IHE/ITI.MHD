@@ -13,7 +13,7 @@
 	<url value="http://ihe.net/fhir/ihe.mhd.fhir/StructureDefinition/IHE.MHD.ProvideDocumentBundle.Comprehensive" />
 	<version value="3.1.1" />
 	<name value="IHE_MHD_ProvideDocumentBundle_Comprehensive" />
-	<title value="IHE MHD profile on Provide Document Bundle (ITI-65) transaction with Comprehensive Metadata" />
+	<title value="Provide Comphrensive Document Bundle" />
 	<status value="active" />
 	<experimental value="false" />
 	<date value="2020-01-06" />

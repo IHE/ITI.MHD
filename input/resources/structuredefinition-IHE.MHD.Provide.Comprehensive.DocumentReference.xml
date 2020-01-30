@@ -13,7 +13,7 @@
 	<url value="http://ihe.net/fhir/ihe.mhd.fhir/StructureDefinition/IHE.MHD.Provide.Comprehensive.DocumentReference" />
 	<version value="3.1.1" />
 	<name value="IHE_MHD_Provide_Comprehensive_DocumentReference" />
-	<title value="IHE MHD Profile on DocumentReference (DocumentEntry) when used in the Provide Transaction with Comprehensive (aka XDS-on-FHIR) Metadata." />
+	<title value="Provide Comprehensive DocumentReference" />
 	<status value="active" />
 	<experimental value="false" />
 	<date value="2019-09-13" />

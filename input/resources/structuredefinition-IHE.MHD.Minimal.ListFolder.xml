@@ -10,7 +10,7 @@
 	<url value="http://ihe.net/fhir/ihe.mhd.fhir/StructureDefinition/IHE.MHD.Minimal.ListFolder" />
 	<version value="3.1.1" />
 	<name value="IHE_MHD_Minimal_ListFolder" />
-	<title value="Experimental StructureDefinition for List Resource supporting XDS Folders (without DocumentManifest)." />
+	<title value="Experimental Minimal List Folder." />
 	<status value="active" />
 	<experimental value="false" />
 	<date value="2020-01-08" />
