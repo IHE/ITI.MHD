@@ -32,7 +32,7 @@
 			<value value="JohnMoehrke@gmail.com" />
 		</telecom>
 	</contact>
-	<description value="Profile on DocumentReference based on IHE IT Infrastructure Technical Framework Supplement - Mobile access to Health Documents (MHD) Rev. 3.1.  See http://wiki.ihe.net/index.php/Mobile_access_to_Health_Documents_(MHD)   The IHE MHD Profile text is Normative, this conformance resource is Informative." />
+	<description value="IHE MHD Profile on DocumentReference (DocumentEntry) when used in the Provide Transaction with Comprehensive (aka XDS-on-FHIR) Metadata." />
 
 	<copyright value="IHE http://www.ihe.net/Governance/#Intellectual_Property" />
 	<fhirVersion value="4.0.0" />

@@ -10,7 +10,7 @@
 	<url value="http://ihe.net/fhir/ihe.mhd.fhir/StructureDefinition/IHE.MHD.Minimal.ListFolder" />
 	<version value="3.1.1" />
 	<name value="IHE_MHD_Minimal_ListFolder" />
-	<title value="IHE MHD Profile on List with Minimal Metadata (Folder)" />
+	<title value="Experimental StructureDefinition for List Resource supporting XDS Folders (without DocumentManifest)." />
 	<status value="active" />
 	<experimental value="false" />
 	<date value="2020-01-08" />
@@ -29,7 +29,7 @@
 			<value value="JohnMoehrke@gmail.com" />
 		</telecom>
 	</contact>
-	<description value="Profile on List for use as a Document Folder based on IHE IT Infrastructure Technical Framework Supplement - Mobile access to Health Documents (MHD) Rev. 3.1.  See http://wiki.ihe.net/index.php/Mobile_access_to_Health_Documents_(MHD)  The IHE MHD Profile text is Normative, this conformance resource is Informative." />
+	<description value="Experimental StructureDefinition for List Resource supporting XDS Folders (without DocumentManifest)." />
 
 	<copyright value="IHE http://www.ihe.net/Governance/#Intellectual_Property" />
 	<fhirVersion value="4.0.0" />
