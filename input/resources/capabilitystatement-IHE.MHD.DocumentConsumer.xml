@@ -143,7 +143,7 @@
 			<searchParam>
 				<name value="type"/>
 				<definition value="http://hl7.org/fhir/SearchParameter/clinical-patient"/>
-				<type value="token"/>
+				<type value="reference"/>
 				<documentation value="Kind of document (LOINC if possible)"/>
 			</searchParam>
 		</resource>
