@@ -57,12 +57,12 @@
 				<rules value="open"/>
 			</slicing>
 		</element>
-		<element id="List.extension.reasonCode">
+		<element id="List.extension.workflow-reasonCode">
 			<path value="List.extension"/>
-			<sliceName value="reasonCode"/>
+			<sliceName value="workflow-reasonCode"/>
 			<short value="reasonCode"/>
 			<definition value="The reason code for the SubmissionSet"/>
-			<min value="1"/>
+			<min value="0"/>
 			<max value="*"/>
 			<type>
 				<code value="Extension"/>
@@ -129,7 +129,6 @@
 		<element id="List.subject">
 			<path value="List.subject" />
 			<comment value="URL Points to an existing Patient resource representing Affinity Domain Patient." />
-			<min value="1" />
 			<type>
 				<code value="Reference" />
 				<targetProfile value="http://hl7.org/fhir/StructureDefinition/Patient" />

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <List xmlns="http://hl7.org/fhir" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir ../../input-cache/schemas-r5/fhir-single.xsd">
-	<id value="minimalSubmissionSetList"/>
+	<id value="minimalSubmissionSetList2"/>
 	<meta>
 
 		<profile value="http://ihe.net/fhir/ihe.mhd.fhir/StructureDefinition/IHE.MHD.Minimal.ListManifest"/>
@@ -19,21 +19,22 @@
 	<extension url="http://hl7.org/fhir/StructureDefinition/workflow-reasonCode">
 		<valueCodeableConcept>
 			<coding>
-				<system value="urn:ihe:iti:mhd:2020"/>
-				<code value="SubmissionSet" />
+						<system value="http://snomed.info/sct"/>
+						<code value="225728007"/>
+						<display value="Accident and Emergency department"/>
 			</coding>
 		</valueCodeableConcept>
 	</extension>
 
 	<identifier>
+		<use value="official" />
 		<system value="urn:ietf:rfc:3986"/>
 		<value value="urn:oid:1.2.129.6.58.92.88337.4"/>
-		<use value="official" />
 	</identifier>
 	<identifier>
+		<use value="usual" />
 		<system value="http://example.org/documents"/>
 		<value value="23425234234-23470"/>
-		<use value="usual" />
 	</identifier>
 	<status value="current"/>
 	<mode value="working"/>
@@ -48,11 +49,17 @@
 		<reference value="Patient/example"/>
 	</subject>
 	<date value="2004-12-25T23:50:50-05:00"/>
-	<source value="Organization/example"/>
-	<content>
+	<source>
+		<reference value="Organization/example"/>
+	</source>
+	<entry>
+		<item>
 		<reference value="DocumentReference/example"/>
-	</content>
-	<content>
+		</item>
+	</entry>
+	<entry>
+		<item>
 		<reference value="List/example"/>
-	</content>
+		</item>
+	</entry>
 </List>
