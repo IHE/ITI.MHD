@@ -41,8 +41,9 @@
 	<title value="Physical"/>
 	<code>
 		<coding>
-			<system value="urn:ihe:iti:mhd:2020"/>
-			<code value="SubmissionSet" />
+			<system value="http://ihe.net/fhir/ihe.mhd.fhir/CodeSystem/MHDlistTypes"/>
+			<code value="submissionset" />
+			<display value="" />
 		</coding>
 	</code>
 	<subject>

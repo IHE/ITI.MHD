@@ -111,13 +111,13 @@
 		</element>
 		<element id="List.code">
 			<path value="List.code" />
-			<requirements value="shall be fixed 'urn:ihe:iti:mhd:2020 submissionSet'." />
+			<requirements value="shall be fixed 'http://ihe.net/fhir/ihe.mhd.fhir/CodeSystem/MHDlistTypes#submissionSet'." />
 			<min value="1"/>
 			<max value="1"/>
 			<fixedCodeableConcept>
 				<coding>                       
-					<system value="urn:ihe:iti:mhd:2020" />      
-					<code value="submissionSet" />          
+					<system value="http://ihe.net/fhir/ihe.mhd.fhir/CodeSystem/MHDlistTypes" />      
+					<code value="submissionset" />          
 					<display value="SubmissionSet as a FHIR List" />  
 				</coding>        			
 			</fixedCodeableConcept>
