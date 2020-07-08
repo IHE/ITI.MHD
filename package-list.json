@@ -1,12 +1,12 @@
 {
- "package-id" : "hl7.fhir.uv.myig",
- "title" : "Your User Friendly Name for MyIG Here", 
- "canonical" : "http://hl7.org/fhir/uv/myig", 
- "introduction" : "The introduction that should appear in the FHIR IG registry",
+ "package-id" : "IHE.ITI.MHD",
+ "title" : "MHD Implementation Guide for R4", 
+ "canonical" : "http://ihe.net/fhir/ITI.MHD", 
+ "introduction" : "Mobile Health Documents is an API to a Documet Sharing environment like XDS, XCA, or MHDS; and also includes PUSH models compatible with XDR, and XCDR.",
  "list" : [{
   "version" : "current",
   "desc" : "Continuous Integration Build (latest in version control)",
-  "path" : "http://hl7.org/fhir/ig/HL7/myig",
+  "path" : "http://ihe.net/fhir/ITI.MHD",
   "status" : "ci-build",
   "current" : true
  },{
