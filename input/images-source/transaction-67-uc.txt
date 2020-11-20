@@ -1,0 +1,8 @@
+@startuml
+
+agent "Document Consumer" as DocumentConsumer
+agent "Document Responder" as DocumentResponder
+usecase (Find Document References) as (ITI-67)
+DocumentConsumer --> (ITI-67)
+DocumentResponder --> (ITI-67)
+@enduml

@@ -1,0 +1,8 @@
+@startuml
+agent "Document Source" as DocumentSource
+agent "Document Consumer" as DocumentConsumer
+agent "Document Responder" as DocumentResponder
+agent "Document Recipient" as DocumentRecipient
+DocumentConsumer -- DocumentResponder : "Find Document Lists [ITI-66] ↓\nFind Documet References [ITI-67] ↓\nRetrieve Document [ITI-68]"
+DocumentSource -- DocumentRecipient : "Provide Document Bundle [ITI-65] ↓"
+@enduml

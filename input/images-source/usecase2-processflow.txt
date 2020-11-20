@@ -1,0 +1,24 @@
+@startuml
+hide footbox
+actor "Consumer of Documents"
+participant "Document Consumer" as DocumentConsumer
+participant "Document Responder" as DocumentResponder
+"Consumer of Documents" -> "DocumentConsumer" : 1. User Initiates Search
+activate "Consumer of Documents"
+activate "DocumentConsumer"
+"DocumentConsumer" -> "DocumentResponder" : 2. Query for available documents
+activate "DocumentResponder"
+return
+deactivate "DocumentResponder"
+"DocumentConsumer" --> "Consumer of Documents" : 3. Display Results
+deactivate "DocumentConsumer"
+"Consumer of Documents" -> "DocumentConsumer" : 4. User refines specific documents of interest
+activate "DocumentConsumer"
+"DocumentConsumer" -> "DocumentResponder" : 5. Retrieve selected documents
+activate "DocumentResponder"
+return
+deactivate "DocumentResponder"
+"DocumentConsumer" --> "Consumer of Documents" : 6. Display document contents
+deactivate "Consumer of Documents"
+deactivate "DocumentConsumer"
+@enduml

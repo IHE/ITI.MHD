@@ -1,0 +1,9 @@
+input/images/Thumbs.db
+input/examples
+input/profiles
+input/vocabulary
+temp/
+template/
+input-cache/
+output/
+fsh-generated/

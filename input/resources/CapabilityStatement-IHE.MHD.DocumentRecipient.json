@@ -1,0 +1,61 @@
+{
+  "resourceType": "CapabilityStatement",
+  "id": "IHE.MHD.DocumentRecipient",
+  "text": {
+    "status": "additional",
+    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">\n\tThis CapabilityStatement describes the Document Recipient actor in the  \n    IHE <a href=\"http://wiki.ihe.net/index.php/Mobile_access_to_Health_Documents_(MHD)\">Mobile access to Health Documents (MHD) Rev. 3.1</a> Profile. \n\tThe IHE MHD Profile text is Normative, this conformance resource is Informative.\n\t\t</div>"
+  },
+  "url": "http://ihe.net/fhir/ihe.mhd.fhir/CapabilityStatement/IHE.MHD.DocumentRecipient",
+  "name": "IHE_MHD_DocumentRecipient",
+  "title": "Document Recipient",
+  "status": "active",
+  "experimental": false,
+  "date": "2019-09-13T00:00:00-05:00",
+  "publisher": "Integrating the Healthcare Enterprise (IHE)",
+  "contact": [
+    {
+      "name": "IHE",
+      "telecom": [
+        {
+          "system": "url",
+          "value": "http://ihe.net"
+        }
+      ]
+    },
+    {
+      "name": "John Moehrke",
+      "telecom": [
+        {
+          "system": "email",
+          "value": "JohnMoehrke@gmail.com"
+        }
+      ]
+    }
+  ],
+  "description": "IHE ITI Mobile access to Health Documents (MHD) - Document Recipient.",
+  "copyright": "IHE http://www.ihe.net/Governance/#Intellectual_Property",
+  "kind": "requirements",
+  "fhirVersion": "4.0.0",
+  "format": [
+    "application/fhir+xml",
+    "application/fhir+json"
+  ],
+  "rest": [
+    {
+      "mode": "server",
+      "security": {
+        "description": "Recommend IUA or SMART"
+      },
+      "interaction": [
+        {
+          "code": "transaction",
+          "documentation": "http://ihe.net/fhir/ihe.mhd.fhir/StructureDefinition/IHE.MHD.ProvideDocumentBundle.Minimal"
+        },
+        {
+          "code": "transaction",
+          "documentation": "http://ihe.net/fhir/ihe.mhd.fhir/StructureDefinition/IHE.MHD.ProvideDocumentBundle.Comprehensive"
+        }
+      ]
+    }
+  ]
+}

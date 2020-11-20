@@ -1,0 +1,8 @@
+@startuml
+
+agent "Document Source" as DocumentSource
+agent "Document Responder" as DocumentResponder
+usecase (Provide Document Bundle) as (ITI-65)
+DocumentSource --> (ITI-65)
+DocumentResponder --> (ITI-65)
+@enduml

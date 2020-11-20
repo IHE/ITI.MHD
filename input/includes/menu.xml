@@ -1,0 +1,73 @@
+<ul xmlns="http://www.w3.org/1999/xhtml" class="nav navbar-nav">
+  <li><a href="index.html">MHD Home</a></li>
+  <li><a href="toc.html">Table of Contents</a></li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Overview<b class="caret">
+      </b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="1_overview.html">Overview</a>
+      </li>
+      <li>
+        <a href="2_actors_and_transactions.html">Actors and Transactions</a>
+      </li>
+      <li>
+        <a href="3_security_considerations.html">Security Considerations</a>
+      </li>
+      <li>
+        <a href="4_grouping.html">Cross Profile Considerations</a>
+      </li>
+    </ul>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Transactions<b class="caret">
+      </b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="transaction-65.html">Provide Document Bundle [ITI-65]</a>
+      </li>
+      <li>
+        <a href="transaction-66.html">Find Document Lists [ITI-66]</a>
+      </li>
+      <li>
+        <a href="transaction-67.html">Find Document References [ITI-67]</a>
+      </li>
+      <li>
+        <a href="transaction-68.html">Retrieve Document [ITI-68]</a>
+      </li>
+    </ul>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Other<b class="caret">
+      </b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="metadata_maps.html">FHIR Representation of Document Sharing Metadata</a>
+      </li>
+      <li>
+        <a href="appendix_e.html">E: FHIR Identifier Type for CX</a>
+      </li>
+      <li>
+        <a href="appendix_z.html">Z: FHIR Common IHE Constraints</a>
+      </li>
+      <li>
+        <a href="testplan.html">Test Plan</a>
+      </li>
+    </ul>
+  </li>
+  <li><a href="artifacts.html">Artifact Index</a></li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Support<b class="caret">
+      </b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a target="_blank" href="{{site.data.fhir.path}}index.html">FHIR Spec <img src="external.png" style="text-align: baseline"/></a>
+      </li>
+
+    </ul>
+  </li>
+</ul>      

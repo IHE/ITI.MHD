@@ -1,0 +1,11 @@
+@startuml
+hide footbox
+participant "Document Source" as DocumentSource
+participant "Document Recipient" as DocumentRecipient
+"DocumentSource" -> "DocumentRecipient" : 1. Document Source Initiates Publication Request
+activate "DocumentSource"
+activate "DocumentRecipient"
+"DocumentRecipient" --> "DocumentSource" : 2. Documents are Published
+deactivate "DocumentSource"
+deactivate "DocumentRecipient"
+@enduml
