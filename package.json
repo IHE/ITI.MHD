@@ -1,0 +1,24 @@
+{
+  "name": "IHE.ITI.MHD",
+  "version": "0.1.0",
+  "canonical": "http://ihe.net/fhir/ihe.mhd.fhir",
+  "url": "http://ihe.net/fhir/ihe.mhd.fhir",
+  "title": "MHD Sushi Implementation Guide",
+  "description": "An example of how FSH can be used to create an IG about fish",
+  "dependencies": {
+    "hl7.fhir.r4.core": "4.0.1"
+  },
+  "keywords": [
+    "MHD",
+    "Document Sharing"
+  ],
+  "language": "en",
+  "author": "IHE",
+  "maintainers": [
+    {
+      "name": "John Moehrke",
+      "email": "john.moehrke@gmail.com"
+    }
+  ],
+  "license": "CC-By-4.0"
+}
