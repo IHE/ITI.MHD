@@ -1,6 +1,7 @@
 ## Appendix E Usage of the CX Data Type in PID-3 Patient Identifier List
 
-EDITOR: Add the following new section to the end of ITI TF-2x: Appendix E Usage of the CX Data Type in PID-3 Patient Identifier List
+| EDITOR: Add the following new section to the end of ITI TF-2x: Appendix E Usage of the CX Data Type in PID-3 Patient Identifier List |
+|-----------------------------------------|
 
 ### FHIR Identifier Type
 

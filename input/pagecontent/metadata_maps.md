@@ -16,7 +16,7 @@ Table 4.5.1.1-1 provides a mapping of Document Sharing DocumentEntry attributes 
 
 Note: FHIR contains an informative mapping that is intended to be equivalent to Table 4.5.1.1-1. The informative FHIR mapping can be found at http://hl7.org/fhir/R4/documentreference-mappings.html#xds.
 
-TODO: Using FSH include mapping, and thus can just include the IG renderng of the mapping
+TODO: Using FSH include mapping, and thus can just include the IG rendering of the mapping
 
 ##### DocumentReference StructureDefinition
 The conformance requirements are different between a Provide Document Bundle [ITI-65] transaction and a Find Document References [ITI-67] transaction, and between Minimal Metadata and Comprehensive Metadata.

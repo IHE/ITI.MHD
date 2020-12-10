@@ -9,6 +9,7 @@ The Find Document Manifests [ITI-66] transaction is used to find DocumentManifes
 ### Actors Roles
 
 **Table: Actor Roles**
+
 |Actor | Role |
 |-------------------+--------------------------|
 | [Document Consumer](2_actors_and_transactions.html#document-consumer)     | Requests a list of DocumentManifest Resources, matching the supplied set of criteria, from the Document Responder |
@@ -19,8 +20,10 @@ The Find Document Manifests [ITI-66] transaction is used to find DocumentManifes
 **FHIR-R4** [HL7 FHIR Release 4.0](http://www.hl7.org/FHIR/R4)
 
 ### Interactions
-        
-![Figure: Find Document Lists Interactions](transaction-66-seq.svg "Figure: Find Document Lists Interactions")
+
+<div>
+{%include transaction-66-seq.svg%}
+</div>
 
 <div style="clear: left"/>
 

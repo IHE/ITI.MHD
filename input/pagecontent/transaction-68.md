@@ -7,6 +7,7 @@ The Retrieve Document [ITI-68] transaction is used by the Document Consumer to r
 ### Actors Roles
 
 **Table: Actor Roles**
+
 |Actor | Role |
 |-------------------+--------------------------|
 | [Document Consumer](2_actors_and_transactions.html#document-consumer)    | Requests a document from the Document Responder |
@@ -17,8 +18,10 @@ The Retrieve Document [ITI-68] transaction is used by the Document Consumer to r
 **FHIR-R4** [HL7 FHIR Release 4.0](http://www.hl7.org/FHIR/R4)
 
 ### Interactions
-        
-![Figure: Retrieve Document Interactions](transaction-68-seq.svg "Figure: Retrieve Document  Interactions")
+
+<div>
+{%include transaction-68-seq.svg%}
+</div>
 
 <div style="clear: left"/>
 

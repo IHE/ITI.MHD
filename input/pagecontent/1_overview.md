@@ -65,7 +65,9 @@ This use case presumes that the sending mobile device knows the location of the 
 #### Publication of new documents Process Flow
 The publication of a new document(s) is done using the Provide Document Bundle [ITI-65](transaction-65.html) transaction, which carries both the document and its metadata. This transaction is analogous to an XDS Provide and Register Document Set-b [ITI-41] transaction.
 
-![Figure: Use Case 1 process flow](usecase1-processflow.svg "Figure: Use Case 1 process flow")
+<div>
+{%include usecase1-processflow.svg%}
+</div>
 
 <div style="clear: left"/>
 
@@ -83,8 +85,9 @@ Alternatively, the Find Document Manifest [ITI-66](transaction-66.html) transact
 
 The Retrieve Document [ITI-68](transaction-68.html) transaction is used to get the document itself.
 
-![Figure: Use Case 2 process flow](usecase2-processflow.svg "Figure: Use Case 2 process flow")
-
+<div>
+{%include usecase2-processflow.svg%}
+</div>
 <div style="clear: left"/>
 
 **Figure: Use Case 2 Process Flow**

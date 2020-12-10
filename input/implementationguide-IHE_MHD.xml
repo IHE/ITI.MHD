@@ -169,7 +169,7 @@ The IHE MHD Profile text is Normative, this conformance resource is Informative.
       </page>
       <page>
         <nameUrl value="4_grouping.html"/>
-        <title value="Grouping"/>
+        <title value="MHD Cross Profile Considerations"/>
         <generation value="markdown"/>
       </page>
       <page>

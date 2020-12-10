@@ -7,6 +7,7 @@ The Provide Document Bundle [ITI-65] transaction passes a Provide Document Bundl
 ### Actors Roles
 
 **Table: Actor Roles**
+
 |Actor | Role |
 |-------------------+--------------------------|
 | [Document Source](2_actors_and_transactions.html#document-source)    | Sends documents and metadata to the Document Recipient |
@@ -17,8 +18,10 @@ The Provide Document Bundle [ITI-65] transaction passes a Provide Document Bundl
 **FHIR-R4** [HL7 FHIR Release 4.0](http://www.hl7.org/FHIR/R4)
 
 ### Interactions
-        
-![Figure: Provide Document Bundle Interactions](transaction-65-seq.svg "Figure: Provide Document Bundle Interactions")
+
+<div>
+{%include transaction-65-seq.svg%}
+</div>
 
 <div style="clear: left"/>
 
