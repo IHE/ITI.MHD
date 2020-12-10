@@ -7,7 +7,7 @@ This IG has converted from DocumentManifest to use of List for both SubmissionSe
  
 The IHE MHD Profile text is Normative, this IG publication is Informative.
 
-This Continuous Build will appear http://build.fhir.org/ig/JohnMoehrke/MHD-fsh/branches/master/index.html
+This Continuous Build will appear http://build.fhir.org/ig/IHE/ITI.MHD/branches/master/index.html
 
 ## Done
 
