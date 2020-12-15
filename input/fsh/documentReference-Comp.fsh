@@ -1,7 +1,7 @@
 // equivilant to MHD Comprehensive DocuentReference
 Profile:        ComprehensiveDocumentReference
 Parent:         MinimalDocumentReference
-Id:             IHE.MHD.Comprenensive.DocumentReference
+Id:             IHE.MHD.Comprehensive.DocumentReference
 Title:          "MHD Comprehensive DocumentReference"
 Description:    "A profile on the DocumentReference resource for MHD Comprehensive."
 * ^version = "3.1.1"
