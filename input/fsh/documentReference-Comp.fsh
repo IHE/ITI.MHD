@@ -1,4 +1,4 @@
-// equivilant to MHD Comprehensive DocuentReference
+// equivilant to MHD Comprehensive DocumentReference
 Profile:        ComprehensiveDocumentReference
 Parent:         MinimalDocumentReference
 Id:             IHE.MHD.Comprehensive.DocumentReference
@@ -18,7 +18,7 @@ Description:    "A profile on the DocumentReference resource for MHD Comprehensi
 // mappings are yet to be implemented in sushi
 
 * type 1..1
-* category 1..*
+* category 1..1
 * subject 1..1
 * date 1..1
 * securityLabel 1..*

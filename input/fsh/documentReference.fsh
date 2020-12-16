@@ -20,7 +20,7 @@ Description:    "A profile on the DocumentReference resource for MHD."
 * masterIdentifier 1..1
 * docStatus 0..0
 * type MS
-* category MS
+* category 0..1 MS
 * subject 0..1
 * subject only Reference(Patient)
 * date MS
