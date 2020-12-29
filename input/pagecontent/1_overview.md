@@ -90,11 +90,22 @@ The Retrieve Document [ITI-68](transaction-68.html) transaction is used to get t
 </div>
 <div style="clear: left"/>
 
-**Figure: Use Case 2 Process Flow**
+**Figure 33.4.3.2-1: Basic Process Flow in MHD Profile**
 
 ### Mapping to RESTful operators
 The MHD Profile defines a set of transactions against FHIR Resources. These are summarized in Table 33.4.4-1. MHD does not use any additional extended or custom methods.
 
-TODO insert table
+**Table 33.4.4-1: REST Methods and Resources**
 
-**Footnotes**
+| HTTP<br/>Method | Transactions on <br/> DocumentReference | Transactions on <br/> List | Transactions on Binary <br/> (document) |
+|--------|----------------------------------|------------------------------|----------------------------|
+| GET    | Find Document Reference [ITI-67] | Find Document Lists [ITI-66] | Retrieve Document [ITI-68] |
+| PUT    | Not Specified                    | Not Specified                | Not Specified              |
+| POST   | Provide Document Bundle [ITI-65] | Provide Document Bundle [ITI-65] | Provide Document Bundle [ITI-65] |
+| DELETE | Not Specified                    | Not Specified                | Not Specified              |
+| UPDATE | Not Specified                    | Not Specified                | Not Specified              |
+| HEAD   | Not Specified                    | Not Specified                | Not Specified              |
+| OPTIONS| Not Specified                    | Not Specified                | Not Specified              |
+| TRACE  | Not Specified                    | Not Specified                | Not Specified              |
+
+Note: Items are marked Not Specified because the MHD Profile is focused on core Document Sharing (XDS, XDR, etc) capability and not trying to address the larger use-case of metadata update.

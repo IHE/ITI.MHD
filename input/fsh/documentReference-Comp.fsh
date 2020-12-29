@@ -1,4 +1,4 @@
-// equivilant to MHD Comprehensive DocumentReference
+// equivalent to MHD Comprehensive DocumentReference
 Profile:        ComprehensiveDocumentReference
 Parent:         MinimalDocumentReference
 Id:             IHE.MHD.Comprehensive.DocumentReference
