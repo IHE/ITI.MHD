@@ -1,7 +1,7 @@
 id: ihe.mhd.fhir
-canonical: http://profiles.ihe.net/iti/ihe.mhd.fhir
+canonical: http://ihe.net/fhir/ihe.mhd.fhir
 name: ihe.mhd.fhir
-version: 0.2.0
+version: 3.3.0
 fhirVersion: 4.0.1
 status: active
 FSHOnly: true

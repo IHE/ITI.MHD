@@ -13,7 +13,7 @@ Description: "Audit Example for a Provide Bundle Transaction from source perspec
 * source.observer.display = "model number ABC, serial number 1234"
 * source.type = http://terminology.hl7.org/CodeSystem/security-source-type#1 "User Device"
 * agent[0].type = http://terminology.hl7.org/CodeSystem/v3-RoleClass#PAT "Patient"
-* agent[0].who = Reference(Patient-patient-example)
+* agent[0].who = Reference(Patient/ex-patient)
 * agent[0].requestor = true
 * agent[1].type = http://dicom.nema.org/resources/ontology/DCM#110153 "Source Role ID"
 * agent[1].who.display = "model number ABC, serial number 1234"
@@ -26,8 +26,8 @@ Description: "Audit Example for a Provide Bundle Transaction from source perspec
 * agent[2].network.type = http://hl7.org/fhir/network-type#5 "URI"
 * entity[0].type = http://terminology.hl7.org/CodeSystem/audit-entity-type#1 "Person"
 * entity[0].role = http://terminology.hl7.org/CodeSystem/object-role#1 "Patient"
-* entity[0].what = Reference(Patient-patient-example)
+* entity[0].what = Reference(Patient/ex-patient)
 * entity[1].type = http://terminology.hl7.org/CodeSystem/audit-entity-type#2 "System Object"
 * entity[1].role = http://terminology.hl7.org/CodeSystem/object-role#20 "Job"
 // TODO: can this be used on the client since the submission set is not yet created? Or are we forcing the submission identifier for official (the entry UUID)? or should this be the Bundle.id?
-* entity[1].what = Reference(ex-minimalSubmissionSetList)
+* entity[1].what = Reference(List/ex-minimalSubmissionSetList)

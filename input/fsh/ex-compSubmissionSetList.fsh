@@ -3,7 +3,7 @@ InstanceOf: IHE.MHD.Comprehensive.ListManifest
 Title: "Example Comprehensive List Manifest"
 Description:      "SubmissionSet in List resource conforming only to Comprehensive metadata"
 * meta.security = http://terminology.hl7.org/CodeSystem/v3-ActReason#HTEST
-* subject = Reference(Patient/example)
+* subject = Reference(Patient/ex-patient)
 * identifier[0].system = "urn:ietf:rfc:3986"
 * identifier[0].value = "urn:oid:1.2.129.6.58.92.88337.4"
 * identifier[0].use = #official
@@ -15,8 +15,7 @@ Description:      "SubmissionSet in List resource conforming only to Comprehensi
 * title = "Example SubmissionSet for comprehensive metadata"
 * code = MHDlistTypes#submissionset
 * date = 2004-12-25T23:50:50-05:00
-* source = Reference(Organization/example)
-* entry[0].item = Reference(DocumentReference/example)
-* entry[1].item = Reference(List/example)
-* extension[TypeOfList][0].valueCodeableConcept = http://snomed.info/sct#225728007
-* extension[TypeOfList][1].valueCodeableConcept = http://snomed.info/sct#284548004
+* entry[0].item = Reference(DocumentReference/ex-documentreference)
+* entry[1].item = Reference(List/ex-minimalFolderList)
+* extension[TypeOfList].valueCodeableConcept = http://snomed.info/sct#225728007
+* extension[sourceOrg].valueReference = Reference(Organization/ex-organization)

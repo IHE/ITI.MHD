@@ -10,10 +10,10 @@ Description: "Audit Example for a Provide Bundle Transaction as recorded at the 
 * recorded = 2020-04-29T09:49:00.000Z
 * outcome = http://terminology.hl7.org/CodeSystem/audit-event-outcome#0 "Success"
 * source.site = "server.example.com"
-* source.observer = Reference(Device-device-example)
+* source.observer = Reference(Device/ex-device)
 * source.type = http://terminology.hl7.org/CodeSystem/security-source-type#4 "Application Server"
 * agent[0].type = http://dicom.nema.org/resources/ontology/DCM#110152 "Destination Role ID"
-* agent[0].who = Reference(Device-device-example)
+* agent[0].who = Reference(Device/ex-device)
 * agent[0].requestor = false
 * agent[0].network.address = "http://server.example.com/fhir"
 * agent[0].network.type = http://hl7.org/fhir/network-type#5 "URI"
@@ -24,7 +24,7 @@ Description: "Audit Example for a Provide Bundle Transaction as recorded at the 
 * agent[1].network.type = http://hl7.org/fhir/network-type#2 "IP Address"
 * entity[0].type = http://terminology.hl7.org/CodeSystem/audit-entity-type#1 "Person"
 * entity[0].role = http://terminology.hl7.org/CodeSystem/object-role#1 "Patient"
-* entity[0].what = Reference(Patient-patient-example)
+* entity[0].what = Reference(Patient/ex-patient)
 * entity[1].type = http://terminology.hl7.org/CodeSystem/audit-entity-type#2 "System Object"
 * entity[1].role = http://terminology.hl7.org/CodeSystem/object-role#20 "Job"
-* entity[1].what = Reference(ex-minimalSubmissionSetList)
+* entity[1].what = Reference(List/ex-minimalSubmissionSetList)

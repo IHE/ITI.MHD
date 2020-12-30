@@ -14,7 +14,6 @@ Description:      "Folder in List resource conforming only to Minimal metadata"
 * title = "Example Folder with minimal metadata"
 * code = MHDlistTypes#folder
 * date = 2004-12-25T23:50:50-05:00
-* source = Reference(example-organization)
-* entry[0].item = Reference(example-documentreference)
-* entry[1].item = Reference(example-documentreference2)
+* entry[0].item = Reference(DocumentReference/ex-documentreference)
+* entry[1].item = Reference(DocumentReference/ex-documentreference2)
 * extension[TypeOfList].valueCodeableConcept = http://snomed.info/sct#225728007

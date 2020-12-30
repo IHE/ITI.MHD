@@ -17,6 +17,8 @@ This Continuous Build will appear http://build.fhir.org/ig/IHE/ITI.MHD/branches/
 1. some examples from Bill's test bench, and from Oliver. 
 1. published using the IHE template
 1. Add narrative body from volume 1
+1. Update text from version 3.1 of MHD to version 3.2
+1. Added an extension to support SubmissionSet sourceId as List.source does not allow Organization (or RelatedPerson) https://jira.hl7.org/browse/FHIR-30154
 
 ## TODO
 1. Add narrative to the conformance resources -- note conformance resource is not supported in FSH, and the FSH complier required JSON disallowing XML conformance resource. 
@@ -31,14 +33,15 @@ This Continuous Build will appear http://build.fhir.org/ig/IHE/ITI.MHD/branches/
 1. provide DocumentReference examples
 1. Provide bundle examples
 1. Add query parameter for ihe type
-1. Update text from version 3.1 of MHD to version 3.2
 1. make hotlinks as appropriate out of all references to Technical Framework profiles.ihe.net
+1. various other TODO tags found in the source input
+1. cleanup all build warnings and info (moving to ignore warnings anything that is proven to be acceptable)
 
 ## IHE issues
 
 1. canonical url -- should we include realm in the URI like hl7?
 1. why do we need to add .fhir at the end of all profile id?
-1. figure out how to better handle persistant section numbers and references. Today I left in orginal numbers most of the time. Today I only changed a few to markdown links for experimentation.
+1. figure out how to better handle persistent section numbers and references. Today I left in original numbers most of the time. Today I only changed a few to markdown links for experimentation.
 
 ## Test
 
