@@ -17,5 +17,5 @@ Description:      "SubmissionSet in List resource conforming only to Comprehensi
 * date = 2004-12-25T23:50:50-05:00
 * entry[0].item = Reference(DocumentReference/ex-documentreference)
 * entry[1].item = Reference(List/ex-minimalFolderList)
-* extension[TypeOfList].valueCodeableConcept = http://snomed.info/sct#225728007
+* extension[typeOfList].valueCodeableConcept = http://snomed.info/sct#225728007
 * extension[sourceOrg].valueReference = Reference(Organization/ex-organization)

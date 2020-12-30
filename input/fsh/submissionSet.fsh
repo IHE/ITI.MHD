@@ -43,6 +43,7 @@ Description:    "A profile on the List resource for MHD UnContained Comprehensiv
 //TODO: figure out how to increase cardinality to mandate this extension
 * extension[TypeOfList] 1..1
 
+
 // equivalent to MHD Comprehensive List Manifest Contained
 Profile:        SubmissionSetComprehensive
 Parent:         IHE.MHD.UnContained.Comprehensive.ListManifest
