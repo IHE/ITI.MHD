@@ -40,7 +40,8 @@ Id:             IHE.MHD.UnContained.Comprehensive.ListManifest
 Title:          "MHD UnContained Comprehensive SubmissionSet in List"
 Description:    "A profile on the List resource for MHD UnContained Comprehensive SubmissionSet."
 * subject 1..1
-//* extension[TypeOfList] 1..1
+//TODO: figure out how to increase cardinality to mandate this extension
+* extension[TypeOfList] 1..1
 
 // equivalent to MHD Comprehensive List Manifest Contained
 Profile:        SubmissionSetComprehensive
