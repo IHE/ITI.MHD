@@ -67,7 +67,7 @@ The Document Consumer shall include search parameter patient or patient.identifi
 :This parameter, of type date, specifies the time when the document was created. Note: The DocumentReference Resource does not yet have a query parameter for creationTime of the document; it has only a date element which is the creation date/time of the DocumentReference. For FHIR R4 we align these two elements so that query will function. See FHIR http://hl7.org/fhir/R4/search.html#date for use of the date search type.
 
 **author.given** and **author.family** 
-:These parameters, of type string, specify the name parts of the author person which is associated with the DocumentReference Resource, or in Document Sharing nomenclature, the author of the Document Entry. See ITI TF-2x: Appendix Z.2.3 for use of the string data type. 
+:These parameters, of type string, specify the name parts of the author person, which is associated with the DocumentReference Resource, or in Document Sharing nomenclature, the author of the Document Entry. See ITI TF-2x: Appendix Z.2.3 for use of the string data type. 
 
 **category** 
 :This parameter, of type token, specifies the general classification of the DocumentReference Resource, or in Document Sharing nomenclature, the classCode of the Document Entry. See ITI TF-2x: Appendix Z.2.2 for additional constraints on the use of the token search parameter type.

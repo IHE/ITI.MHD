@@ -55,7 +55,7 @@ The FHIR Bundle.meta.profile shall have the following value depending on the use
 * Comprehensive Metadata: http://ihe.net/fhir/StructureDefinition/IHE_MHD_Provide_Comprehensive_DocumentBundle
 * Minimal Metadata: http://ihe.net/fhir/StructureDefinition/IHE_MHD_Provide_Minimal_DocumentBundle
 
-All resources that are indicated as ‘contained’ in ITI TF-3: 4.5.1 shall be contained using the FHIR contained method (see http://hl7.org/fhir/R4/references.html#contained).
+When resources are ‘contained’ (see ITI TF-3: 4.5.1), they shall be contained using the FHIR contained method (see http://hl7.org/fhir/R4/references.html#contained).
 
 When the DocumentReference.content.attachment.url points at a Binary Resource, the Binary Resource shall be in the Bundle. See FHIR Resolving references in Bundles at http://hl7.org/fhir/R4/bundle.html#references.
 
@@ -63,7 +63,7 @@ When the DocumentReference.content.attachment.url points at a Binary Resource, t
 
 All DocumentReference.subject, List.subject, and DocumentManifest.subject values shall be References to a FHIR Patient Resource identified by an absolute external reference (URL). This value may be obtained through use of PDQm or PIXm, or by some other means. The Patient Resource needs to be accessible to both the Document Source and the Document Recipient.
 
-When sourcePatientInfo is provided, the DocumentReference.context.sourcePatientInfo shall be a reference to a “contained” Patient Resource. That is, the source patient info is encoded in a Patient Resource within the DocumentReference.contained element (see http://hl7.org/fhir/R4/references.html#contained).
+When the [UnContained Reference Option](2_actors_and_transactions.html#uncontained-reference-option) is used, there is no need to populate the sourcePatientInfo element. Otherwise, when sourcePatientInfo is provided, the DocumentReference.context.sourcePatientInfo shall be a reference to a “contained” Patient Resource. That is, the source patient info is encoded in a Patient Resource within the DocumentReference.contained element (see http://hl7.org/fhir/R4/references.html#contained).
 
 ###### Replace, Transform, Signs, and Append Associations
 
@@ -87,7 +87,7 @@ If the Document Recipient encounters any errors or if any validation fails, the 
 
 If the Provide Document Bundle Message contains a DocumentReference Resource with a relatesTo element and the Document Recipient does not support the relatesTo.code value, it shall return a warning message, as indicated in Table 3.65.4.1.3-1.
 
-Table 3.65.4.1.3-1: Warning message when relatesTo code is not supported
+*Table 3.65.4.1.3-1: Warning message when relatesTo code is not supported*
 
 |relatesTo.code |	Warning |
 |---------------|-----------|
@@ -123,9 +123,9 @@ This message shall be sent when a success or error condition needs to be communi
 
 ##### Message Semantics
 
-To enable the Document Source to know the outcome of processing the transaction, and the identities assigned to the resources by the Document Recipient, the Document Recipient shall return a Bundle, with type set to transaction-response, that contains one entry for each entry in the request, in the same order as received, with the Bundle.entry.response.outcome indicating the results of processing the entry (such as a PartialFolderContentNotProcessed warning). The Document Recipient shall comply with FHIR http://hl7.org/fhir/R4/bundle.html#transaction-response and http://hl7.org/fhir/R4/http.html#transaction-response. 
+To enable the Document Source to know the outcome of processing the transaction, and the identities assigned to the resources by the Document Recipient, the Document Recipient shall return a Bundle, with type set to transaction-response, that contains one entry for each entry in the request, in the same order as received, with the Bundle.entry.response.outcome indicating the results of processing the entry warnings such as PartialFolderContentNotProcessed shall be reported in `Bundle.entry.response.outcome`. The Document Recipient shall comply with FHIR http://hl7.org/fhir/R4/bundle.html#transaction-response and http://hl7.org/fhir/R4/http.html#transaction-response. 
 
-To indicate success the overall http 200 response is used. The Bundle.entry.response.status shall be “201” to indicate the Resource has been created; the .location element shall be populated, and the .etag element may be populated when the Document Recipient supports FHIR resource versioning.
+To indicate success the overall http `200` response is used. The Bundle.entry.response.status shall be `201` to indicate the Resource has been created; the `.location` element shall be populated, and the `.etag` element may be populated when the Document Recipient supports FHIR resource versioning.
 
 ##### Expected Actions
 

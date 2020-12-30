@@ -188,34 +188,46 @@ between options when applicable are specified in notes.
         
                 <tr>
                 
-                    <td rowspan='1'>Document Source</td>
+                    <td rowspan='2'>Document Source</td>
                 
                 <td><a href="#comprehensive-metadata-option">Comprehensive Metadata</a></td>
                 </tr>
-            
                 <tr>
                 
-                    <td rowspan='2'>Document Recipient</td>
+                <td><a href="#uncontained-option">UnContained Reference</a></td>
+                </tr>
+
+                <tr>
+                
+                    <td rowspan='3'>Document Recipient</td>
                 
                 <td><a href="#comprehensive-metadata-option">Comprehensive Metadata</a></td>
                 </tr>
                 <tr>
                 
                 <td><a href="#xds-on-fhir-option">XDS on FHIR</a></td>
+                </tr>
+                <tr>
+                
+                <td><a href="#uncontained-option">UnContained Reference</a></td>
                 </tr>
                         
                 <tr>
                 
                     <td rowspan='1'>Document Consumer</td>
                 
-                <td>No options defined</td>
+                <td><a href="#uncontained-option">UnContained Reference</a></td>
                 </tr>
             
                 <tr>
                 
-                    <td rowspan='1'>Document Responder</td>
+                    <td rowspan='2'>Document Responder</td>
                                 
                 <td><a href="#xds-on-fhir-option">XDS on FHIR</a></td>
+                </tr>
+                <tr>
+                
+                <td><a href="#uncontained-option">UnContained Reference</a></td>
                 </tr>
     </tbody>
 </table>
@@ -226,7 +238,7 @@ The options in this guide are describe in more detail the sections below.
 #### Comprehensive Metadata Option
 
 Support of this option assures that the Document Source will provide comprehensive metadata. Comprehensive metadata fulfill the cardinality requirements of XDS. 
-A Document Source that supports this option will provide metadata consistent with the additional document sharing requirements for an XDS Document Source described in ITI TF-3: 4.3.1- Submission Metadata Attribute Optionality and ITI TF-3:4.5.1 Metadata Object Types mapped to FHIR.
+A Document Source that supports this option will provide metadata consistent with the additional document sharing requirements for an XDS Document Source described in ITI TF-3: 4.3.1- Submission Metadata Attribute Optionality and ITI TF-3: 4.5.1 Metadata Object Types mapped to FHIR.
 A Document Recipient that supports this option will require that any metadata provided is consistent with the additional document sharing requirements for an XDS Document Source described in ITI TF-3: 4.3.1- Submission Metadata Attribute Optionality.
 
 #### XDS on FHIR Option
@@ -234,6 +246,15 @@ A Document Recipient that supports this option will require that any metadata pr
 The Document Recipient that supports this option shall be able to be grouped with an XDS Document Source so that any publication request is passed on to that XDS environment. See ITI TF-2c: 3.65.4.1.3 “Expected Actions” and ITI TF-2c: 3.65.4.1.3.1. The grouped XDS Document Source shall implement the Document Replacement, Option, Document Addendum Option, Document Transformation Option, and Folder Management Option to ensure that these functionalities can be transferred from the MHD Document Source through to the XDS Document Registry.
 The Document Responder that supports this option shall be able to be grouped with an XDS Document Consumer so that any query or retrieve requests can be passed on to, and responded to, by an XDS environment. See ITI TF-2c: 3.66.4.1.3.1 and ITI TF-2c: 3.67.4.1.3.1. 
 
+The XDS on FHIR Option is not compatible with the [UnContained Reference Option](#uncontained-reference-option). A system may be able to support both options, but only one will be able to be used at a given deployment.
+
+#### UnContained Reference Option
+
+The UnContained Reference Option recognizes that a Community may choose to longitudinally maintain their provider and patient directories, for example, an mCSD Care Services Selective Supplier and PMIR Patient Identity Manager. When this longitudinal consistency is managed, then the author, authenticator, sourcePatientInfo, and author entries do not need to be a contained copy of the information known at the time of publication (ITI-65) since a Reference to the information in these directories will be valid over the full lifecycle of the entries. 
+
+The actors that support the UnContained References Option shall be able to create and consume full URL values in the DocumentReference.author, the DocumentReference.authenticator, the DocumentReference.context.sourcePatientInfo, and the DocumentManifest.author. This requirement encourages the persisting of the information at the time the document is published. 
+
+The UnContained Reference Option is not compatible with the [XDS on FHIR Option](#xds-on-fhir-option). A system may be able to support both options, but only one will be able to be used at a given deployment.
 
 ### Transaction Descriptions
 The transactions in this profile are summarized in the sections below.

@@ -1,7 +1,7 @@
-# ITI.MHD Sushi
-this GITHUB repository is experimental!
+# ITI.MHD 
+this GITHUB repository is under development by ITI Technical committee. 
 
-ImplementationGuide for IHE IT Infrastructure Technical Framework Supplement http://wiki.ihe.net/index.php/Mobile_access_to_Health_Documents_(MHD) Mobile access to Health Documents (MHD) Rev. 3.1.
+ImplementationGuide for IHE IT Infrastructure Technical Framework Supplement http://wiki.ihe.net/index.php/Mobile_access_to_Health_Documents_(MHD) Mobile access to Health Documents (MHD) Rev. 3.2.
 
 This IG has converted from DocumentManifest to use of List for both SubmissionSet and Folder
  
@@ -31,12 +31,13 @@ This Continuous Build will appear http://build.fhir.org/ig/IHE/ITI.MHD/branches/
 1. provide DocumentReference examples
 1. Provide bundle examples
 1. Add query parameter for ihe type
+1. Update text from version 3.1 of MHD to version 3.2
+1. make hotlinks as appropriate out of all references to Technical Framework profiles.ihe.net
 
 ## IHE issues
 
 1. canonical url -- should we include realm in the URI like hl7?
 1. why do we need to add .fhir at the end of all profile id?
-1. need template git repository with layout for IHE --- reflect the current supplement template in sample-ig
 1. figure out how to better handle persistant section numbers and references. Today I left in orginal numbers most of the time. Today I only changed a few to markdown links for experimentation.
 
 ## Test
