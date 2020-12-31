@@ -2,7 +2,7 @@
 Profile:        MinimalDocumentReference
 Parent:         DocumentReference
 Id:             IHE.MHD.Minimal.DocumentReference
-Title:          "MHD Minimal DocumentReference"
+Title:          "MHD DocumentReference Minimal"
 Description:    "A profile on the DocumentReference resource for MHD."
 * masterIdentifier 1..1
 * docStatus 0..0
@@ -27,11 +27,11 @@ Description:    "A profile on the DocumentReference resource for MHD."
 * context.facilityType MS
 * context.practiceSetting MS
 
-// equivalent to MHD Comprehensive DocumentReference - uncontained
-Profile:        ComprehensiveUnContainedDocumentReference
-Parent:         MinimalDocumentReference
-Id:             IHE.MHD.ComprehensiveUnContained.DocumentReference
-Title:          "MHD Comprehensive DocumentReference"
+// equivalent to MHD DocumentReference Comprehensive UnContained
+Profile:        UnContainedComprehensiveDocumentReference
+Parent:         IHE.MHD.Minimal.DocumentReference
+Id:             IHE.MHD.UnContained.Comprehensive.DocumentReference
+Title:          "MHD DocumentReference Comprehensive UnContained"
 Description:    "A profile on the DocumentReference resource for MHD Comprehensive."
 * type 1..1
 * category 1..1
@@ -45,10 +45,10 @@ Description:    "A profile on the DocumentReference resource for MHD Comprehensi
 * context.practiceSetting 1..1
 
 // equivalent to MHD Comprehensive DocumentReference - contained
-Profile:        ComprehensiveContainedDocumentReference
-Parent:         ComprehensiveUnContainedDocumentReference
-Id:             IHE.MHD.ComprehensiveContained.DocumentReference
-Title:          "MHD Comprehensive Contained DocumentReference"
+Profile:        ComprehensiveDocumentReference
+Parent:         IHE.MHD.UnContained.Comprehensive.DocumentReference
+Id:             IHE.MHD.Comprehensive.DocumentReference
+Title:          "MHD DocumentReference Comprehensive"
 Description:    "A profile on the DocumentReference resource for MHD Comprehensive Contained (not UnContained)."
 * author ^type.aggregation = #contained
 * authenticator ^type.aggregation = #contained
@@ -56,6 +56,6 @@ Description:    "A profile on the DocumentReference resource for MHD Comprehensi
 
 // TODO: Finish mappings to XDS 
 Mapping: DocumentEntry-Mapping
-Source:	ComprehensiveContainedDocumentReference
+Source:	MinimalDocumentReference
 Target: "XDS"
 Title: "XDS and MHD Mapping"

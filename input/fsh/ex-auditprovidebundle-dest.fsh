@@ -27,4 +27,4 @@ Description: "Audit Example for a Provide Bundle Transaction as recorded at the 
 * entity[0].what = Reference(Patient/ex-patient)
 * entity[1].type = http://terminology.hl7.org/CodeSystem/audit-entity-type#2 "System Object"
 * entity[1].role = http://terminology.hl7.org/CodeSystem/object-role#20 "Job"
-* entity[1].what = Reference(List/ex-minimalSubmissionSetList)
+* entity[1].what = Reference(List/ex-minimalSubmissionSet)

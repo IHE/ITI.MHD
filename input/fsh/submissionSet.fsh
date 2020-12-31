@@ -1,62 +1,96 @@
-// equivalent to MHD Minimal List Manifest
+// equivalent to MHD Minimal SubmissionSet
 Profile:        SubmissionSet
 Parent:         List
-Id:             IHE.MHD.Minimal.ListManifest
-Title:          "MHD SubmissionSet in List"
+Id:             IHE.MHD.Minimal.SubmissionSet
+Title:          "MHD SubmissionSet Minimal"
 Description:    "A profile on the List resource for MHD SubmissionSet."
-* extension contains TypeOfList named typeOfList 0..1
-* extension contains SourceOrg named sourceOrg 0..1
-* identifier 0..*
+* extension contains ContentTypeCode named contentTypeCode 0..1 MS
+* extension contains SourceId named sourceId 1..1
+* extension contains IntendedRecipient named intendedRecipient 0..1
+* identifier 2..*
 //* status
 * mode = #working
-* title 1..1
+* title 0..1
+// code is used ONLY to switch between folder and submissionSet
 * code 1..1 
 * code = MHDlistTypes#submissionset
-* subject 0..1
+* subject 0..1 MS
 * subject only Reference(Patient)
 * encounter 0..0
 * date 1..1
-* source 0..0
+// source is author
+* source 0..1 MS
 * orderedBy 0..0
-* note 0..0
+* note 0..1
+//*entry 
 * entry.flag 0..0
 * entry.deleted 0..0
 * entry.date 0..0
-* entry.item 1..1
 * entry.item only Reference(DocumentReference or List)
 * emptyReason 0..0
 
-Extension: SourceOrg
-Id: ihe-sourceOrg
+Extension: ContentTypeCode
+Id: ihe-submissionSet-contentTypeCode
+Title: "Clinical content type of the submissionSet"
+Description: "Expresses contentType of submissionSet. Usually expressed in LOINC or SNOMED."
+* value[x] only CodeableConcept
+
+Extension: SourceId
+Id: ihe-sourceId
 Title: "Publisher organization of the SubmissionSet"
-Description: "holds the identity of the organization that submitted the SubmissionSet"
-* value[x] only Reference(Organization)
+Description: "The globally unique, immutable, identifier of the entity that contributed the SubmissionSet. When a broker is involved in sending SubmissionSets from a collection of client systems, it shall use a different sourceId for submissions from each separate system to allow for tracking. The format of the identifier is an OID
+"
+* value[x] only Identifier
+
+Extension: IntendedRecipient
+Id: ihe-intendedRecipient
+Title: "Intended recipient of the SubmissionSet"
+Description: "holds the identity of the organization or person the SubmissionSet is intended. For XDR and eMail (e.g. Direct) this tends to be a Practitioner or Patient with a telecom holding an email, but this is not strictly required."
+* value[x] only Reference(Practitioner or Organization or Patient or RelatedPerson or Group or Device or Location)
 
 
-// equivalent to MHD UnContained Comprehensive List Manifest
-Profile:        SubmissionSetUnContainedComprehensive
-Parent:         IHE.MHD.Minimal.ListManifest
-Id:             IHE.MHD.UnContained.Comprehensive.ListManifest
-Title:          "MHD UnContained Comprehensive SubmissionSet in List"
+// equivalent to MHD SubmissionSet Comprehensive UnContained
+Profile:        SubmissionSetComprehensiveUnContained
+Parent:         IHE.MHD.Minimal.SubmissionSet
+Id:             IHE.MHD.UnContained.Comprehensive.SubmissionSet
+Title:          "MHD SubmissionSet Comprehensive UnContained"
 Description:    "A profile on the List resource for MHD UnContained Comprehensive SubmissionSet."
 * subject 1..1
-//TODO: figure out how to increase cardinality to mandate this extension
-* extension[TypeOfList] 1..1
+* extension[contentTypeCode] 1..1
 
 
-// equivalent to MHD Comprehensive List Manifest Contained
+// equivalent to MHD Comprehensive SubmissionSet Contained
 Profile:        SubmissionSetComprehensive
-Parent:         IHE.MHD.UnContained.Comprehensive.ListManifest
-Id:             IHE.MHD.Comprehensive.ListManifest
-Title:          "MHD Comprehensive SubmissionSet in List"
+Parent:         IHE.MHD.UnContained.Comprehensive.SubmissionSet
+Id:             IHE.MHD.Comprehensive.SubmissionSet
+Title:          "MHD SubmissionSet Comprehensive"
 Description:    "A profile on the List resource for MHD Comprehensive SubmissionSet."
 * source ^type.aggregation = #contained
-* entry.item ^type.aggregation = #referenced
 
-// TODO: Finish mappings to XDS 
+// mappings to XDS 
 Mapping: SubmissionSet-Mapping
-Source:	SubmissionSet
+Source:	IHE.MHD.Minimal.SubmissionSet
 Target: "XDS"
 Title: "XDS and MHD Mapping"
-* identifier -> "SubmissionSet.entryUUID"
+* -> "XDS SubmissionSet" "Used in the context of the IHE MHD ImplementationGuide"
+* meta.profile -> "SubmissionSet.limitedMetadata"
+* extension[sourceId] -> "SubmissionSet.sourceId"
+* extension[intendedRecipient] -> "SubmissionSet.intendedRecipient"
+* extension[contentTypeCode] -> "SubmissionSet.contentTypeCode"
+* identifier -> "SubmissionSet.entryUUID and SubmissionSet.uniqueId"
+* status -> "SubmissionSet.availabilityStatus"
+* mode -> "shall be 'working'"
+* title -> "SubmissionSet.title"
+* code -> "shall be 'submissionset'"
+* subject -> "SubmissionSet.patientId"
+* encounter -> "n/a"
+* date -> "SubmissionSet.submissionTime"
+* source -> "SubmissionSet.author"
+* orderedBy -> "n/a"
+* note -> "SubmissionSet.comments"
+* entry.flag -> "n/a"
+* entry.deleted -> "n/a"
+* entry.date -> "n/a"
+* entry.item -> "references to DocumentReference(s) and Folder List(s)"
+* emptyReason -> "n/a"
 

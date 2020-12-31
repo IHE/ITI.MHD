@@ -30,4 +30,4 @@ Description: "Audit Example for a Provide Bundle Transaction from source perspec
 * entity[1].type = http://terminology.hl7.org/CodeSystem/audit-entity-type#2 "System Object"
 * entity[1].role = http://terminology.hl7.org/CodeSystem/object-role#20 "Job"
 // TODO: can this be used on the client since the submission set is not yet created? Or are we forcing the submission identifier for official (the entry UUID)? or should this be the Bundle.id?
-* entity[1].what = Reference(List/ex-minimalSubmissionSetList)
+* entity[1].what = Reference(List/ex-minimalSubmissionSet)
