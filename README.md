@@ -19,7 +19,8 @@ This Continuous Build will appear http://build.fhir.org/ig/IHE/ITI.MHD/branches/
 1. Add narrative body from volume 1
 1. Update text from version 3.1 of MHD to version 3.2
 1. Added an extension to support SubmissionSet sourceId as List.source does not allow Organization (or RelatedPerson) https://jira.hl7.org/browse/FHIR-30154
-1. Add Mapping and Confirm cardionality and MS support for Folder and SubmissionSet
+1. Add Mapping and Confirm cardinality and MS support for Folder and SubmissionSet
+1. Add mapping and confirm cardinality and MS support for DocumentReference
 
 ## TODO
 1. Add narrative to the conformance resources -- note conformance resource is not supported in FSH, and the FSH complier required JSON disallowing XML conformance resource. 

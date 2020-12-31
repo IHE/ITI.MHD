@@ -3,7 +3,13 @@ Profile:        SubmissionSet
 Parent:         List
 Id:             IHE.MHD.Minimal.SubmissionSet
 Title:          "MHD SubmissionSet Minimal"
-Description:    "A profile on the List resource for MHD SubmissionSet."
+Description:    "A profile on the List resource for MHD SubmissionSet.
+* MHD is based on the [IHE Document Sharing](https://profiles.ihe.net/ITI/HIE-Whitepaper/index.html) model, 
+* the [3:4.1 Abstract Metadata Model](https://profiles.ihe.net/ITI/TF/Volume3/ch-4.1.html#4.1), and 
+* the use defined here is FHIR List for use as a SubmissionSet implementation of the 
+* ebRIM implementation at [3:4.2.3.3 SubmissionSet Attributes](https://profiles.ihe.net/ITI/TF/Volume3/ch-4.2.html#4.2.3.3).
+* with use-cases and constraints found in [3:4.3 Additional Document Sharing Requirements](https://profiles.ihe.net/ITI/TF/Volume3/ch-4.3.html#4.3) 
+"
 * extension contains ContentTypeCode named contentTypeCode 0..1 MS
 * extension contains SourceId named sourceId 1..1
 * extension contains IntendedRecipient named intendedRecipient 0..1
@@ -38,8 +44,7 @@ Description: "Expresses contentType of submissionSet. Usually expressed in LOINC
 Extension: SourceId
 Id: ihe-sourceId
 Title: "Publisher organization of the SubmissionSet"
-Description: "The globally unique, immutable, identifier of the entity that contributed the SubmissionSet. When a broker is involved in sending SubmissionSets from a collection of client systems, it shall use a different sourceId for submissions from each separate system to allow for tracking. The format of the identifier is an OID
-"
+Description: "The globally unique, immutable, identifier of the entity that contributed the SubmissionSet. When a broker is involved in sending SubmissionSets from a collection of client systems, it shall use a different sourceId for submissions from each separate system to allow for tracking. The format of the identifier is an OID."
 * value[x] only Identifier
 
 Extension: IntendedRecipient
@@ -54,7 +59,13 @@ Profile:        SubmissionSetComprehensiveUnContained
 Parent:         IHE.MHD.Minimal.SubmissionSet
 Id:             IHE.MHD.UnContained.Comprehensive.SubmissionSet
 Title:          "MHD SubmissionSet Comprehensive UnContained"
-Description:    "A profile on the List resource for MHD UnContained Comprehensive SubmissionSet."
+Description:    "A profile on the List resource for MHD UnContained Comprehensive SubmissionSet.
+* MHD is based on the [IHE Document Sharing](https://profiles.ihe.net/ITI/HIE-Whitepaper/index.html) model, 
+* the [3:4.1 Abstract Metadata Model](https://profiles.ihe.net/ITI/TF/Volume3/ch-4.1.html#4.1), and 
+* the use defined here is FHIR List for use as a SubmissionSet implementation of the 
+* ebRIM implementation at [3:4.2.3.3 SubmissionSet Attributes](https://profiles.ihe.net/ITI/TF/Volume3/ch-4.2.html#4.2.3.3).
+* with use-cases and constraints found in [3:4.3 Additional Document Sharing Requirements](https://profiles.ihe.net/ITI/TF/Volume3/ch-4.3.html#4.3) 
+"
 * subject 1..1
 * extension[contentTypeCode] 1..1
 
@@ -64,7 +75,13 @@ Profile:        SubmissionSetComprehensive
 Parent:         IHE.MHD.UnContained.Comprehensive.SubmissionSet
 Id:             IHE.MHD.Comprehensive.SubmissionSet
 Title:          "MHD SubmissionSet Comprehensive"
-Description:    "A profile on the List resource for MHD Comprehensive SubmissionSet."
+Description:    "A profile on the List resource for MHD Comprehensive SubmissionSet.
+* MHD is based on the [IHE Document Sharing](https://profiles.ihe.net/ITI/HIE-Whitepaper/index.html) model, 
+* the [3:4.1 Abstract Metadata Model](https://profiles.ihe.net/ITI/TF/Volume3/ch-4.1.html#4.1), and 
+* the use defined here is FHIR List for use as a SubmissionSet implementation of the 
+* ebRIM implementation at [3:4.2.3.3 SubmissionSet Attributes](https://profiles.ihe.net/ITI/TF/Volume3/ch-4.2.html#4.2.3.3).
+* with use-cases and constraints found in [3:4.3 Additional Document Sharing Requirements](https://profiles.ihe.net/ITI/TF/Volume3/ch-4.3.html#4.3) 
+"
 * source ^type.aggregation = #contained
 
 // mappings to XDS 
