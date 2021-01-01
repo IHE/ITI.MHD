@@ -100,9 +100,11 @@ Description: "Example of a Comprehensive DocumentReference resource. This is ful
 * context.practiceSetting =  http://snomed.info/sct#408467006
 * content.format = http://ihe.net/fhir/ValueSet/IHE.FormatCode.codesystem#urn:ihe:iti:xds-sd:text:2008
 // optional elements
-* author = Reference(in-practitioner)
-* authenticator = Reference(in-practitioner)
+* author = Reference(in-author)
+* authenticator = Reference(in-author)
 * context.sourcePatientInfo = Reference(in-patient)
+* contained[0] = in-author
+* contained[1] = in-patient
 * context.period.start = 2020-12-31T23:50:50-05:00
 * context.period.end = 2020-12-31T23:50:50-05:00
 * context.event = http://terminology.hl7.org/CodeSystem/v3-ActCode#ACCTRECEIVABLE
@@ -123,10 +125,11 @@ Description: "Dummy inline patient example for completeness sake. No actual use 
 Usage: #inline
 * meta.security = http://terminology.hl7.org/CodeSystem/v3-ActReason#HTEST
 
-Instance: in-practitioner
+Instance: in-author
 InstanceOf: Practitioner
 Title: "Dummy inline Practitioner example"
 Description: "Dummy inline Practitioner example for completeness sake. No actual use of this resource other than an example target"
+Usage: #inline
 * meta.security = http://terminology.hl7.org/CodeSystem/v3-ActReason#HTEST
 * telecom.system = #email
 * telecom.value = "JohnMoehrke@gmail.com"

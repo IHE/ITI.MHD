@@ -88,9 +88,8 @@ Description:      "SubmissionSet in List resource conforming fully to UnContaine
 * extension[intendedRecipient].valueReference = Reference(Practitioner/ex-practitioner)
 * source = Reference(ex-practitioner)
 
-
 Instance:   ex-compSubmissionSetFull
-InstanceOf: IHE.MHD.Comprehensive.SubmissionSet
+InstanceOf: IHE.MHD.Minimal.SubmissionSet
 Title: "Example Comprehensive Full SubmissionSet"
 Description:      "SubmissionSet in List resource conforming fully to Comprehensive metadata. This has all elements fully populated."
 * meta.security = http://terminology.hl7.org/CodeSystem/v3-ActReason#HTEST
@@ -109,16 +108,19 @@ Description:      "SubmissionSet in List resource conforming fully to Comprehens
 * entry[0].item = Reference(DocumentReference/ex-documentreference)
 //TODO: Reported a bug in the IG builder https://chat.fhir.org/#narrow/stream/179252-IG-creation/topic/List.2Eitem.20that.20is.20a.20list
 //* entry[1].item = Reference(List/ex-list)
+* contained[0] = in-sender
+* source = Reference(in-sender)
 * extension[contentTypeCode].valueCodeableConcept = http://snomed.info/sct#225728007
 * extension[sourceId].valueIdentifier.value = "urn:oid:1.2.3.4"
-* extension[intendedRecipient].valueReference = Reference(Practitioner/ex-practitioner)
-* source = Reference(in-practitioner)
+* extension[intendedRecipient].valueReference = Reference(ex-practitioner)
 
-Instance: in-practitioner
+
+Instance: in-sender
 InstanceOf: Practitioner
 Usage: #inline
 * meta.security = http://terminology.hl7.org/CodeSystem/v3-ActReason#HTEST
 * telecom.system = #email
 * telecom.value = "JohnMoehrke@gmail.com"
+
 
 
