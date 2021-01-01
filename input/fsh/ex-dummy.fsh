@@ -58,3 +58,4 @@ Description: "Dummy Practitioner example for completeness sake. No actual use of
 * meta.security = http://terminology.hl7.org/CodeSystem/v3-ActReason#HTEST
 * telecom.system = #email
 * telecom.value = "JohnMoehrke@gmail.com"
+

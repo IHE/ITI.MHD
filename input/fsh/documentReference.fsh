@@ -1,4 +1,4 @@
-// equivalent to MHD Minimal DocuentReference
+// equivalent to MHD Minimal DocumentReference
 Profile:        MinimalDocumentReference
 Parent:         DocumentReference
 Id:             IHE.MHD.Minimal.DocumentReference

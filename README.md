@@ -21,6 +21,7 @@ This Continuous Build will appear http://build.fhir.org/ig/IHE/ITI.MHD/branches/
 1. Added an extension to support SubmissionSet sourceId as List.source does not allow Organization (or RelatedPerson) https://jira.hl7.org/browse/FHIR-30154
 1. Add Mapping and Confirm cardinality and MS support for Folder and SubmissionSet
 1. Add mapping and confirm cardinality and MS support for DocumentReference
+1. Create DocumentReference examples covering all profiles
 
 ## TODO
 1. Add narrative to the conformance resources -- note conformance resource is not supported in FSH, and the FSH complier required JSON disallowing XML conformance resource. 
@@ -32,7 +33,6 @@ This Continuous Build will appear http://build.fhir.org/ig/IHE/ITI.MHD/branches/
 1. The profiling of a Bundle seems to not be the same as for Resources. Thus I have added a more simple bundle "degenerate". This is not enforcing the full MHD Provide transaction requirements.
 1. Convert Folder and SubmissionSet narrative to the use of List. Narrative today is mostly right out of existing MHD and thus uses DocumentManifest.
 1. Finish the audit events for Find Lists, Find Documents, and Retrieve Document
-1. provide DocumentReference examples
 1. Provide bundle examples
 1. Add query parameter for ihe type
 1. make hotlinks as appropriate out of all references to Technical Framework profiles.ihe.net
