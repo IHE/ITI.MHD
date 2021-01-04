@@ -123,14 +123,13 @@ InstanceOf: Patient
 Title:      "Dummy inline Patient example"
 Description: "Dummy inline patient example for completeness sake. No actual use of this resource other than an example target"
 Usage: #inline
-* meta.security = http://terminology.hl7.org/CodeSystem/v3-ActReason#HTEST
+
 
 Instance: in-author
 InstanceOf: Practitioner
 Title: "Dummy inline Practitioner example"
 Description: "Dummy inline Practitioner example for completeness sake. No actual use of this resource other than an example target"
 Usage: #inline
-* meta.security = http://terminology.hl7.org/CodeSystem/v3-ActReason#HTEST
 * telecom.system = #email
 * telecom.value = "JohnMoehrke@gmail.com"
 

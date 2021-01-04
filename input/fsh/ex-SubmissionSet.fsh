@@ -118,7 +118,6 @@ Description:      "SubmissionSet in List resource conforming fully to Comprehens
 Instance: in-sender
 InstanceOf: Practitioner
 Usage: #inline
-* meta.security = http://terminology.hl7.org/CodeSystem/v3-ActReason#HTEST
 * telecom.system = #email
 * telecom.value = "JohnMoehrke@gmail.com"
 
