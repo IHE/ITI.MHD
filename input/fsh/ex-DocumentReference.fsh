@@ -34,6 +34,7 @@ Description: "Example of a Comprehensive DocumentReference resource. This is min
 * context.facilityType = http://snomed.info/sct#82242000
 * context.practiceSetting =  http://snomed.info/sct#408467006
 * content.format = http://ihe.net/fhir/ValueSet/IHE.FormatCode.codesystem#urn:ihe:iti:xds-sd:text:2008
+* context.sourcePatientInfo = Reference(Patient/ex-patient)
 
 Instance:   ex-DocumentReferenceUnContainedFully
 InstanceOf: IHE.MHD.UnContained.Comprehensive.DocumentReference
