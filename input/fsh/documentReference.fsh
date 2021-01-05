@@ -65,8 +65,10 @@ Description:    "A profile on the DocumentReference resource for MHD with Compre
 * content.attachment.language 1..1
 * content.attachment.creation 1..1
 * content.format 1..1
+* context 1..1
 * context.facilityType 1..1
 * context.practiceSetting 1..1
+* context.sourcePatientInfo 1..1 
 
 // equivalent to MHD Comprehensive DocumentReference - contained
 Profile:        ComprehensiveDocumentReference
