@@ -50,7 +50,7 @@ Table 3-1: MHD Implementation Guide - Actors and Transactions
 <tr class="even">
                         
 <td rowspan="1">
-<a href="2_actors_and_transactions.html#Document Recipient">Document Recipient</a>
+<a href="2_actors_and_transactions.html#document-recipient">Document Recipient</a>
 </td>
                         
 <td>
@@ -194,7 +194,7 @@ between options when applicable are specified in notes.
                 </tr>
                 <tr>
                 
-                <td><a href="#uncontained-option">UnContained Reference</a></td>
+                <td><a href="#uncontained-reference-option">UnContained Reference</a></td>
                 </tr>
 
                 <tr>
@@ -209,14 +209,14 @@ between options when applicable are specified in notes.
                 </tr>
                 <tr>
                 
-                <td><a href="#uncontained-option">UnContained Reference</a></td>
+                <td><a href="#uncontained-reference-option">UnContained Reference</a></td>
                 </tr>
                         
                 <tr>
                 
                     <td rowspan='1'>Document Consumer</td>
                 
-                <td><a href="#uncontained-option">UnContained Reference</a></td>
+                <td><a href="#uncontained-reference-option">UnContained Reference</a></td>
                 </tr>
             
                 <tr>
@@ -227,7 +227,7 @@ between options when applicable are specified in notes.
                 </tr>
                 <tr>
                 
-                <td><a href="#uncontained-option">UnContained Reference</a></td>
+                <td><a href="#uncontained-reference-option">UnContained Reference</a></td>
                 </tr>
     </tbody>
 </table>

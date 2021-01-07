@@ -136,8 +136,8 @@ The Document Source processes the results according to application-defined rules
 ### CapabilityStatement Resource
 
 Document Recipient implementing this transaction shall provide a CapabilityStatement Resource as described in [ITI TF-2x: Appendix Z.3](appendix_z.html#capability) indicating the transaction has been implemented. 
-* Requirements CapabilityStatement for [Document Source](IHE.MHD.DocumentSource.html)
-* Requirements CapabilityStatement for [Document Recipient](IHE.MHD.DocumentRecipient.html)
+* Requirements CapabilityStatement for [Document Source](CapabilityStatement-IHE.MHD.DocumentSource.html)
+* Requirements CapabilityStatement for [Document Recipient](CapabilityStatement-IHE.MHD.DocumentRecipient.html)
 
 ### Security Considerations
 
@@ -149,8 +149,8 @@ The security audit criteria are similar to those for the Provide and Register Do
 
 ##### Document Source Audit 
 
-The Document Source when grouped with ATNA Secure Node or Secure Application actor shall be able to record a [Provide Audit Bundle Source Audit Event Log](IHE.MHD.ProvideBundle.Audit.Source.html). [Audit Example for a Provide Bundle Transaction from source perspective](ex-auditProvideBundle-source.html) 
+The Document Source when grouped with ATNA Secure Node or Secure Application actor shall be able to record a [Provide Audit Bundle Source Audit Event Log](StructureDefinition-IHE.MHD.ProvideBundle.Audit.Source.html). [Audit Example for a Provide Bundle Transaction from source perspective](AuditEvent-ex-auditProvideBundle-source.html) 
 
 ##### Document Recipient Audit 
 
-The Document Recipient when grouped with ATNA Secure Node or Secure Application actor shall be able to record a [Provide Audit Bundle Recipient Audit Event Log](IHE.MHD.ProvideBundle.Audit.Recipient.html). [Audit Example for a Provide Bundle Transaction from recipient perspective](ex-auditProvideBundle-dest.html) 
+The Document Recipient when grouped with ATNA Secure Node or Secure Application actor shall be able to record a [Provide Audit Bundle Recipient Audit Event Log](StructureDefinition-IHE.MHD.ProvideBundle.Audit.Recipient.html). [Audit Example for a Provide Bundle Transaction from recipient perspective](AuditEvent-ex-auditProvideBundle-recipient.html) 

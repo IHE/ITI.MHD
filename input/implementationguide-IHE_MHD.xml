@@ -19,7 +19,7 @@ The IHE MHD Profile text is Normative, this conformance resource is Informative.
 	<name value="IHE_MHD" />
 	<status value="active" />
 	<experimental value="false" />
-	<date value="2020-12-30" />
+	<date value="2021-01-07" />
 	<publisher value="Integrating the Healthcare Enterprise (IHE)" />
 	<contact>
 		<name value="IHE" />
@@ -40,12 +40,12 @@ The IHE MHD Profile text is Normative, this conformance resource is Informative.
 	<copyright value="IHE http://www.ihe.net/Governance/#Intellectual_Property" />
 	<packageId value="ihe.mhd.fhir" />
 	<fhirVersion value="4.0.1" />
-	<!--
+	<!-- 
 	<dependsOn id="IHEformatcode">
 		<uri value="http://ihe.net/fhir/ihe.formatcode.fhir/ImplementationGuide/ihe.formatcode.fhir" />
 		<version value="current"/>
 	</dependsOn>
--->
+ -->
 	 <definition>
     <!-- You don't need to define any groupings.  The IGPublisher will define them for you.  You only need to do so if your IG is 'special' and it's
       inappropriate to use the defaults.  Feel free to provide feedback about the defaults... -->
@@ -232,9 +232,6 @@ The IHE MHD Profile text is Normative, this conformance resource is Informative.
 			<code value="autoload-resources" />
 			<value value="true" />
 		</parameter>
-		<parameter>
-			<code value="path-suppressed-warnings" />
-			<value value="ignoreWarnings.md" />
-		</parameter>
+
 </definition>
 </ImplementationGuide>

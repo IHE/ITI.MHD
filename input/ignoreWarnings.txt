@@ -1,0 +1,9 @@
+== Suppressed Messages ==
+# show DICOM system is okay
+Code System URI 'urn:ihe:event-type-code' is unknown so the code cannot be validated
+
+# resources used for validation
+INFORMATION: AuditEvent/ex-auditProvideBundle-source: AuditEvent: Validate resource against profile http://hl7.org/fhir/StructureDefinition/AuditEvent
+INFORMATION: AuditEvent/ex-auditProvideBundle-source: AuditEvent.subtype[0]: Code System URI 'urn:ihe:event-type-code' is unknown so the code cannot be validated
+INFORMATION: AuditEvent/ex-auditProvideBundle-source: AuditEvent: Validate resource against profile http://ihe.net/fhir/ihe.mhd.fhir/StructureDefinition/IHE.MHD.ProvideBundle.Audit.Source - listed in meta
+

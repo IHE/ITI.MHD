@@ -164,8 +164,8 @@ The Document Consumer shall process the results according to application-defined
 #### CapabilityStatement Resource
 
 Document Responders implementing this transaction shall provide a CapabilityStatement Resource as described in [ITI TF-2x: Appendix Z.3](appendix_z.html#capability) indicating the transaction has been implemented. 
-* Requirements CapabilityStatement for [Document Consumer](IHE.MHD.DocumentConsumer.html)
-* Requirements CapabilityStatement for [Document Responder](IHE.MHD.DocumentResponder.html)
+* Requirements CapabilityStatement for [Document Consumer](CapabilityStatement-IHE.MHD.DocumentConsumer.html)
+* Requirements CapabilityStatement for [Document Responder](CapabilityStatement-IHE.MHD.DocumentResponder.html)
 
 
 ### Security Considerations
@@ -180,8 +180,8 @@ The security audit criteria are similar to those for the Registry Stored Query [
 
 ##### Document Consumer Audit
 
-The Document Consumer when grouped with ATNA Secure Node or Secure Application actor shall be able to record a [Find Document Lists Consumer Audit Event Log](IHE.MHD.FindLists.Audit.Consumer.html). [Audit Example for a Find Document Lists transaction from consumer perspective](ex-auditFindLists-consumer.html) 
+The Document Consumer when grouped with ATNA Secure Node or Secure Application actor shall be able to record a [Find Document Lists Consumer Audit Event Log](StructureDefinition-IHE.MHD.FindDocumentLists.Audit.Consumer.html). [Audit Example for a Find Document Lists transaction from consumer perspective](AuditEvent-ex-auditFindDocumentLists-consumer.html) 
 
 ##### Document Responder Audit
 
-The Document Responder when grouped with ATNA Secure Node or Secure Application actor shall be able to record a [Find Document Lists Responder Audit Event Log](IHE.MHD.FindLists.Audit.Responder.html). [Audit Example for a Find Documet Lists Transaction from responder perspective](ex-auditProvideBundle-responder.html) 
+The Document Responder when grouped with ATNA Secure Node or Secure Application actor shall be able to record a [Find Document Lists Responder Audit Event Log](StructureDefinition-IHE.MHD.FindDocumentLists.Audit.Responder.html). [Audit Example for a Find Document Lists Transaction from responder perspective](AuditEvent-ex-auditFindDocumentLists-responder.html) 

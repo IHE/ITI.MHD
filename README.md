@@ -22,6 +22,7 @@ This Continuous Build will appear http://build.fhir.org/ig/IHE/ITI.MHD/branches/
 1. Add Mapping and Confirm cardinality and MS support for Folder and SubmissionSet
 1. Add mapping and confirm cardinality and MS support for DocumentReference
 1. Create DocumentReference examples covering all profiles
+1. create profiles and simple examples for all AuditEvents 
 
 ## TODO
 1. Add narrative to the conformance resources -- note conformance resource is not supported in FSH, and the FSH complier required JSON disallowing XML conformance resource. 
@@ -29,7 +30,7 @@ This Continuous Build will appear http://build.fhir.org/ig/IHE/ITI.MHD/branches/
 1. Add examples from US-Core, or elsewhere?
 1. make sure there is a page for security, privacy, provenance, safety, error handling, dependency, 
 1. bring in the test scripts from Bill's test infrastructure
-1. get the DependsOn on FormatCode IG working
+1. get the DependsOn on FormatCode IG working (suspect the formatcode IG is not fully registered, asked Grahame for help)
 1. The profiling of a Bundle seems to not be the same as for Resources. Thus I have added a more simple bundle "degenerate". This is not enforcing the full MHD Provide transaction requirements.
 1. Convert Folder and SubmissionSet narrative to the use of List. Narrative today is mostly right out of existing MHD and thus uses DocumentManifest.
 1. Finish the audit events for Find Lists, Find Documents, and Retrieve Document
