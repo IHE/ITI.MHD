@@ -27,10 +27,10 @@ Description:    "Defines constraints on the Document Consumer AuditEvent Resourc
 	documentConsumer 1..1 and
 	documentResponder 1..1 
 	// may be many including app identity, user identity, etc
-* agent[documentConsumer].type = DCM#11053 "Source Role ID"
+* agent[documentConsumer].type = DCM#110153 "Source Role ID"
 * agent[documentConsumer].who 1..1
 * agent[documentConsumer].network 1..1
-* agent[documentResponder].type = DCM#11052 "Destination Role ID"
+* agent[documentResponder].type = DCM#110152 "Destination Role ID"
 * agent[documentResponder].who 1..1
 * agent[documentResponder].network 1..1
 * entity 2..2
@@ -82,10 +82,10 @@ Description:    "Defines constraints on the Document Responder AuditEvent Resour
 	documentConsumer 1..1 and
 	documentResponder 1..1 
 	// may be many including app identity, user identity, etc
-* agent[documentConsumer].type = DCM#11053 "Source Role ID"
+* agent[documentConsumer].type = DCM#110153 "Source Role ID"
 * agent[documentConsumer].who 1..1
 * agent[documentConsumer].network 1..1
-* agent[documentResponder].type = DCM#11052 "Destination Role ID"
+* agent[documentResponder].type = DCM#110152 "Destination Role ID"
 * agent[documentResponder].who 1..1
 * agent[documentResponder].network 1..1
 * entity 2..2

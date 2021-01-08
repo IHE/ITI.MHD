@@ -27,7 +27,7 @@ Description: "Audit Example for a Retrieve Document Transaction as recorded at t
 * entity[0].role = http://terminology.hl7.org/CodeSystem/object-role#1 "Patient"
 * entity[0].what = Reference(Patient/ex-patient)
 * entity[1].type = http://terminology.hl7.org/CodeSystem/audit-entity-type#2 "System Object"
-* entity[1].role = http://terminology.hl7.org/CodeSystem/object-role#20 "Job"
+* entity[1].role = http://terminology.hl7.org/CodeSystem/object-role#3 "Report"
 * entity[1].what.reference = "http://example.org/blah/blah.pdf"
 
 
@@ -64,6 +64,6 @@ Description: "Audit Example for a Retrieve Document Transaction from responder p
 * entity[0].role = http://terminology.hl7.org/CodeSystem/object-role#1 "Patient"
 * entity[0].what = Reference(Patient/ex-patient)
 * entity[1].type = http://terminology.hl7.org/CodeSystem/audit-entity-type#2 "System Object"
-* entity[1].role = http://terminology.hl7.org/CodeSystem/object-role#20 "Job"
+* entity[1].role = http://terminology.hl7.org/CodeSystem/object-role#3 "Report"
 * entity[1].what.reference = "http://example.org/blah/blah.pdf"
 
