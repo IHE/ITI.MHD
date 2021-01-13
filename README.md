@@ -23,6 +23,9 @@ This Continuous Build will appear http://build.fhir.org/ig/IHE/ITI.MHD/branches/
 1. Add mapping and confirm cardinality and MS support for DocumentReference
 1. Create DocumentReference examples covering all profiles
 1. create profiles and simple examples for all AuditEvents 
+1. Finish the audit events for Find Lists, Find Documents, and Retrieve Document
+1. Finish profile for Provide Document Bundles
+1. Add an example of a minimal Document Bundle
 
 ## TODO
 1. Add narrative to the conformance resources -- note conformance resource is not supported in FSH, and the FSH complier required JSON disallowing XML conformance resource. 
@@ -31,10 +34,8 @@ This Continuous Build will appear http://build.fhir.org/ig/IHE/ITI.MHD/branches/
 1. make sure there is a page for security, privacy, provenance, safety, error handling, dependency, 
 1. bring in the test scripts from Bill's test infrastructure
 1. get the DependsOn on FormatCode IG working (suspect the formatcode IG is not fully registered, asked Grahame for help)
-1. The profiling of a Bundle seems to not be the same as for Resources. Thus I have added a more simple bundle "degenerate". This is not enforcing the full MHD Provide transaction requirements.
 1. Convert Folder and SubmissionSet narrative to the use of List. Narrative today is mostly right out of existing MHD and thus uses DocumentManifest.
-1. Finish the audit events for Find Lists, Find Documents, and Retrieve Document
-1. Provide bundle examples
+1. Full complement of Provide bundle examples
 1. Add query parameter for ihe type
 1. make hotlinks as appropriate out of all references to Technical Framework profiles.ihe.net
 1. various other TODO tags found in the source input

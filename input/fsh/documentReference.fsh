@@ -11,7 +11,6 @@ Description:    "A profile on the DocumentReference resource for MHD with minima
 * with use-cases and constraints found in [3:4.3 Additional Document Sharing Requirements](https://profiles.ihe.net/ITI/TF/Volume3/ch-4.3.html#4.3) 
 "
 * masterIdentifier 1..1
-// identifier (entryUUID) is indicated as always required, but is it not optional in a Provide transaction
 * identifier 1..*
 * status 1..1
 * docStatus 0..0
