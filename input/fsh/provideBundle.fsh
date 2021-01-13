@@ -20,7 +20,7 @@ Description:    "A profile on the Bundle transaction for Provide Document resour
 * type = #transaction
 * entry ^slicing.discriminator.type = #profile
 * entry ^slicing.discriminator.path = "resource"
-* entry ^slicing.rules = #closed
+* entry ^slicing.rules = #open
 * entry ^slicing.description = "Slicing based on the profile conformance of the entry"
 * entry and entry.resource MS
 * entry contains 
