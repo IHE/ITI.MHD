@@ -18,10 +18,10 @@ Description: "Example of a minimal Provide Document Bundle. "
 * entry[DocumentRefs].resource = 593cd04e-b696-45c1-bc32-39e55a340a46
 * entry[DocumentRefs].request.url = "DocumentReference"
 * entry[DocumentRefs].request.method = #POST
-* entry[3].fullUrl = "urn:uuid:593cd04e-b696-45c1-bc32-39e55a340a49"
-* entry[3].resource = 593cd04e-b696-45c1-bc32-39e55a340a49
-* entry[3].request.url = "Patient"
-* entry[3].request.method = #POST
+* entry[+].fullUrl = "urn:uuid:593cd04e-b696-45c1-bc32-39e55a340a49"
+* entry[=].resource = 593cd04e-b696-45c1-bc32-39e55a340a49
+* entry[=].request.url = "Patient"
+* entry[=].request.method = #POST
 
 
 Instance:   593cd04e-b696-45c1-bc32-39e55a340a44
@@ -30,18 +30,18 @@ Title:      "SubmissionSet for Minimal metadata in a bundle"
 Description: "Example of a minimal submissionSet in List resource used in a bundle."
 //Usage: #inline
 * meta.security = http://terminology.hl7.org/CodeSystem/v3-ActReason#HTEST
-* identifier[0].system = "urn:ietf:rfc:3986"
-* identifier[0].value = "urn:oid:1.2.129.6.58.92.88337.5"
-* identifier[0].use = #official
-* identifier[1].system = "http://example.org/documents"
-* identifier[1].value = "23425234-23470-5"
-* identifier[1].use = #usual
+* identifier[+].system = "urn:ietf:rfc:3986"
+* identifier[=].value = "urn:oid:1.2.129.6.58.92.88337.5"
+* identifier[=].use = #official
+* identifier[+].system = "http://example.org/documents"
+* identifier[=].value = "23425234-23470-5"
+* identifier[=].use = #usual
 * status = #current
 * mode = #working
 * code = MHDlistTypes#submissionset
 * date = 2004-12-25T23:50:50-05:00
-* entry[0].item = Reference(urn:uuid:593cd04e-b696-45c1-bc32-39e55a340a45)
-* entry[1].item = Reference(urn:uuid:593cd04e-b696-45c1-bc32-39e55a340a46)
+* entry[+].item = Reference(urn:uuid:593cd04e-b696-45c1-bc32-39e55a340a45)
+* entry[=].item = Reference(urn:uuid:593cd04e-b696-45c1-bc32-39e55a340a46)
 * extension[sourceId].valueIdentifier.value = "urn:oid:1.2.3.4"
 
 
@@ -65,16 +65,16 @@ Title: "Example Minimal Folder"
 Description:      "Folder in List resource conforming only to Minimal metadata"
 //Usage: #inline
 * meta.security = http://terminology.hl7.org/CodeSystem/v3-ActReason#HTEST
-* identifier[0].system = "urn:ietf:rfc:3986"
-* identifier[0].value = "urn:oid:1.2.129.6.58.92.88337.4"
-* identifier[0].use = #official
-* identifier[1].system = "http://example.org/documents"
-* identifier[1].value = "23425234-23470"
-* identifier[1].use = #usual
+* identifier[+].system = "urn:ietf:rfc:3986"
+* identifier[=].value = "urn:oid:1.2.129.6.58.92.88337.4"
+* identifier[=].use = #official
+* identifier[+].system = "http://example.org/documents"
+* identifier[=].value = "23425234-23470"
+* identifier[=].use = #usual
 * status = #current
 * mode = #working
 * code = MHDlistTypes#folder
-* entry[0].item = Reference(urn:uuid:593cd04e-b696-45c1-bc32-39e55a340a46)
+* entry[+].item = Reference(urn:uuid:593cd04e-b696-45c1-bc32-39e55a340a46)
 
 Instance:   593cd04e-b696-45c1-bc32-39e55a340a49
 InstanceOf: Patient

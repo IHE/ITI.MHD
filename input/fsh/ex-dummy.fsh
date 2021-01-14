@@ -2,7 +2,31 @@ Instance:   ex-patient
 InstanceOf: Patient
 Title:      "Dummy Patient example"
 Description: "Dummy patient example for completeness sake. No actual use of this resource other than an example target"
+// history - http://playgroundjungle.com/2018/02/origins-of-john-jacob-jingleheimer-schmidt.html
 * meta.security = http://terminology.hl7.org/CodeSystem/v3-ActReason#HTEST
+* name[+].use = #usual
+* name[=].family = "Smith"
+* name[=].given = "John"
+* name[+].use = #old
+* name[=].family = "Schnidt"
+* name[=].given[+] = "John"
+* name[=].given[+] = "Jacob"
+* name[=].given[+] = "Jingle"
+* name[=].given[+] = "Heimer"
+* name[=].period.end = "1960"
+* name[+].use = #official
+* name[=].family = "Smith"
+* name[=].given[+] = "John"
+* name[=].given[+] = "Jacob"
+* name[=].given[+] = "Jingleheimer"
+* name[=].period.start = "1960-01-01"
+* name[+].use = #nickname
+* name[=].family = "Smith"
+* name[=].given = "Jack"
+* gender = #other
+* birthDate = "1923-07-25"
+* address.state = "WI"
+* address.country = "USA"
 
 Instance:   ex-device
 InstanceOf: Device
@@ -84,10 +108,10 @@ Description: "Example of a minimal Provide Document Bundle."
 * entry[Lists].fullUrl = "urn:uuid:593cd04e-b696-45c1-bc32-39e55a340a48"
 * entry[Lists].request.url = "List"
 * entry[Lists].request.method = #POST
-* entry[1].resource = 593cd04e-b696-45c1-bc32-39e55a340a47
-* entry[1].fullUrl = "urn:uuid:593cd04e-b696-45c1-bc32-39e55a340a47"
-* entry[1].request.url = "DocumentReference"
-* entry[1].request.method = #POST
+* entry[+].resource = 593cd04e-b696-45c1-bc32-39e55a340a47
+* entry[=].fullUrl = "urn:uuid:593cd04e-b696-45c1-bc32-39e55a340a47"
+* entry[=].request.url = "DocumentReference"
+* entry[=].request.method = #POST
 
 Instance: 593cd04e-b696-45c1-bc32-39e55a340a48
 InstanceOf: List
