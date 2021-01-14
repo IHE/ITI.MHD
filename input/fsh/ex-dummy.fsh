@@ -107,6 +107,54 @@ Description: "Dummy DocumentReference example for completeness sake. No actual u
 * content.attachment.title = "Hello World"
 
 
+Profile:        DummyProvideDocumentBundle
+Parent:         Bundle
+Id:             IHE.MHD.Dummy.ProvideBundle
+Title:          "MHD Dummy Provide Document Bundle"
+Description:    "A profile on the Bundle transaction for Provide Document resources with Dummy metadata for MHD.
+* all resources are just core FHIR resources
+* shall be a Bundle
+* shall be a Transaction
+* shall have one or more List resources
+* may have one or more DocumentReference
+* may have one or more Binary
+* may have one or more Patient
+* can not have anything else (closed)
+"
+* type = #transaction
+* entry ^slicing.discriminator.type = #type
+* entry ^slicing.discriminator.path = "resource"
+* entry ^slicing.rules = #closed
+* entry ^slicing.description = "Slicing based on the resource type of the entry"
+* entry contains 
+    Lists 1..* and
+    DocRefs 0..* and
+    Bin 0..* and
+    Pat 0..1
+* entry[Lists].resource only List
+* entry[Lists] ^short = "SubmissionSet and Folders"
+* entry[Lists] ^definition = "The SubmissionSet and Folders defines who submitted it, why they submitted it, when they submitted, what is in it, and where it is destine."
+* entry[Lists].request.method = #POST
+* entry[Lists].request.url 1..1
+* entry[Lists].fullUrl 1..1
+* entry[DocRefs].resource only DocumentReference
+* entry[DocRefs] ^short = "DocumentReference resources"
+* entry[DocRefs] ^definition = "The DocumentReference resources to be published or pushed."
+* entry[DocRefs].request.method = #POST
+* entry[DocRefs].request.url 1..1
+* entry[DocRefs].fullUrl 1..1
+* entry[Bin].resource only Binary
+* entry[Bin] ^short = "Binary resources"
+* entry[Bin] ^definition = "The document bits in a Binary resources to be published or pushed."
+* entry[Bin].request.method = #POST
+* entry[Bin].request.url 1..1
+* entry[Bin].fullUrl 1..1
+* entry[Pat].resource only Patient
+* entry[Pat] ^short = "Patient"
+* entry[Pat] ^definition = "The Patient is unusual, and only allowed in PUSH scenarios."
+* entry[Pat].request.method = #POST
+* entry[Pat].request.url 1..1
+* entry[Pat].fullUrl 1..1
 
 
 
