@@ -80,25 +80,25 @@ Description: "Example of a minimal Provide Document Bundle."
 * meta.security = http://terminology.hl7.org/CodeSystem/v3-ActReason#HTEST
 * type = #transaction
 * timestamp = 2020-11-24T23:50:50-05:00
-* entry[Lists].resource = ex-b-list
-* entry[Lists].fullUrl = "http://www.example.org/fhir/List/593cd04e-b696-45c1-bc32-39e55a340a48"
+* entry[Lists].resource = 593cd04e-b696-45c1-bc32-39e55a340a48
+* entry[Lists].fullUrl = "urn:uuid:593cd04e-b696-45c1-bc32-39e55a340a48"
 * entry[Lists].request.url = "List"
 * entry[Lists].request.method = #POST
-* entry[1].resource = ex-b-documentreference
-* entry[1].fullUrl = "http://www.example.org/fhir/DocumentReference/593cd04e-b696-45c1-bc32-39e55a340a47"
+* entry[1].resource = 593cd04e-b696-45c1-bc32-39e55a340a47
+* entry[1].fullUrl = "urn:uuid:593cd04e-b696-45c1-bc32-39e55a340a47"
 * entry[1].request.url = "DocumentReference"
 * entry[1].request.method = #POST
 
-Instance: ex-b-list
+Instance: 593cd04e-b696-45c1-bc32-39e55a340a48
 InstanceOf: List
 Title: "Dummy List example"
 Description: "Dummy List example for completeness sake. No actual use of this resource other than an example target"
 * meta.security = http://terminology.hl7.org/CodeSystem/v3-ActReason#HTEST
 * status = #current
 * mode = #working
-* entry.item = Reference(ex-b-documentreference)
+* entry.item = Reference(urn:uuid:593cd04e-b696-45c1-bc32-39e55a340a47)
 
-Instance: ex-b-documentreference
+Instance: 593cd04e-b696-45c1-bc32-39e55a340a47
 InstanceOf: DocumentReference
 Title: "Dummy DocumentReference example"
 Description: "Dummy DocumentReference example for completeness sake. No actual use of this resource other than an example target"
