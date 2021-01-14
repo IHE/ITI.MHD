@@ -69,7 +69,7 @@ Description:    "A profile on the Bundle transaction for Provide Document resour
 "
 * entry ^slicing.discriminator.type = #profile
 * entry ^slicing.discriminator.path = "resource"
-* entry ^slicing.rules = #closed
+* entry ^slicing.rules = #open
 * entry ^slicing.description = "Slicing based on the profile conformance of the entry"
 * entry contains 
     SubmissionSet 1..1 and
@@ -79,25 +79,13 @@ Description:    "A profile on the Bundle transaction for Provide Document resour
     IHE.MHD.Minimal.SubmissionSet or
     IHE.MHD.UnContained.Comprehensive.SubmissionSet or
     IHE.MHD.Comprehensive.SubmissionSet
-* entry[SubmissionSet] ^short = "the SubmissionSet"
-* entry[SubmissionSet] ^definition = "The SubmissionSet defines who submitted it, why they submitted it, when they submitted, what is in it, and where it is destine."
-* entry[SubmissionSet].request 1..1
-* entry[SubmissionSet].request.method = #POST
 * entry[DocumentRefs].resource only 
     IHE.MHD.Minimal.DocumentReference or
     IHE.MHD.UnContained.Comprehensive.DocumentReference or
     IHE.MHD.Comprehensive.DocumentReference
-* entry[DocumentRefs] ^short = "the DocumentReference resources"
-* entry[DocumentRefs] ^definition = "any and all DocumentReference that are part of the SubmissionSet. These might be new, replacements, or other associations"
-* entry[DocumentRefs].request 1..1
-* entry[DocumentRefs].request.method = #POST
 * entry[Folders].resource only 
     IHE.MHD.Minimal.Folder or
     IHE.MHD.Comprehensive.Folder
-* entry[Folders] ^short = "Folders"
-* entry[Folders] ^definition = "any Folders being created or updated"
-* entry[Folders].request 1..1
-* entry[Folders].request.method = #POST
 
 
 Profile:        UnContainedComprehensiveProvideDocumentBundle
@@ -116,7 +104,7 @@ Description:    "A profile on the Bundle transaction for Provide Document resour
 "
 * entry ^slicing.discriminator.type = #profile
 * entry ^slicing.discriminator.path = "resource"
-* entry ^slicing.rules = #closed
+* entry ^slicing.rules = #open
 * entry ^slicing.description = "Slicing based on the profile conformance of the entry"
 * entry contains 
     SubmissionSet 1..1 and
@@ -125,24 +113,11 @@ Description:    "A profile on the Bundle transaction for Provide Document resour
 * entry[SubmissionSet].resource only
     IHE.MHD.UnContained.Comprehensive.SubmissionSet or
     IHE.MHD.Comprehensive.SubmissionSet
-* entry[SubmissionSet] ^short = "the SubmissionSet"
-* entry[SubmissionSet] ^definition = "The SubmissionSet defines who submitted it, why they submitted it, when they submitted, what is in it, and where it is destine."
-* entry[SubmissionSet].request 1..1
-* entry[SubmissionSet].request.method = #POST
 * entry[DocumentRefs].resource only 
     IHE.MHD.UnContained.Comprehensive.DocumentReference or
     IHE.MHD.Comprehensive.DocumentReference
-* entry[DocumentRefs] ^short = "the DocumentReference resources"
-* entry[DocumentRefs] ^definition = "any and all DocumentReference that are part of the SubmissionSet. These might be new, replacements, or other associations"
-* entry[DocumentRefs].request 1..1
-* entry[DocumentRefs].request.method = #POST
 * entry[Folders].resource only 
     IHE.MHD.Comprehensive.Folder
-* entry[Folders] ^short = "Folders"
-* entry[Folders] ^definition = "any Folders being created or updated"
-* entry[Folders].request 1..1
-* entry[Folders].request.method = #POST
-
 
 
 Profile:        ComprehensiveProvideDocumentBundle
@@ -162,27 +137,16 @@ Description:    "A profile on the Bundle transaction for Provide Document resour
 "
 * entry ^slicing.discriminator.type = #profile
 * entry ^slicing.discriminator.path = "resource"
-* entry ^slicing.rules = #closed
+* entry ^slicing.rules = #open
 * entry ^slicing.description = "Slicing based on the profile conformance of the entry"
-* entry contains 
+* entry contains
     SubmissionSet 1..1 and
     DocumentRefs 0..* and
-    Folders 0..* 
+    Folders 0..*
 * entry[SubmissionSet].resource only
     IHE.MHD.Comprehensive.SubmissionSet
-* entry[SubmissionSet] ^short = "the SubmissionSet"
-* entry[SubmissionSet] ^definition = "The SubmissionSet defines who submitted it, why they submitted it, when they submitted, what is in it, and where it is destine."
-* entry[SubmissionSet].request 1..1
-* entry[SubmissionSet].request.method = #POST
-* entry[DocumentRefs].resource only 
+* entry[DocumentRefs].resource only
     IHE.MHD.Comprehensive.DocumentReference
-* entry[DocumentRefs] ^short = "the DocumentReference resources"
-* entry[DocumentRefs] ^definition = "any and all DocumentReference that are part of the SubmissionSet. These might be new, replacements, or other associations"
-* entry[DocumentRefs].request 1..1
-* entry[DocumentRefs].request.method = #POST
-* entry[Folders].resource only 
+* entry[Folders].resource only
     IHE.MHD.Comprehensive.Folder
-* entry[Folders] ^short = "Folders"
-* entry[Folders] ^definition = "any Folders being created or updated"
-* entry[Folders].request 1..1
-* entry[Folders].request.method = #POST
+
