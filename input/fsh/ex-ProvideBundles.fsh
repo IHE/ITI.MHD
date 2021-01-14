@@ -38,8 +38,8 @@ Description: "Example of a minimal submissionSet in List resource used in a bund
 * mode = #working
 * code = MHDlistTypes#submissionset
 * date = 2004-12-25T23:50:50-05:00
-* entry[SubmissionSet].item = Reference(ex-b-minimalFolder)
-* entry[DocumentRefs].item = Reference(ex-b-minimalDocumentReference)
+* entry[0].item = Reference(ex-b-minimalFolder)
+* entry[1].item = Reference(ex-b-minimalDocumentReference)
 * extension[sourceId].valueIdentifier.value = "urn:oid:1.2.3.4"
 
 
