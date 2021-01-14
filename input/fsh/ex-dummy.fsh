@@ -78,7 +78,6 @@ Description:    "A profile on the Bundle transaction for Provide Document resour
 * shall be a Bundle
 * shall be a Transaction
 * shall have one or more List resources
-* may have one or more DocumentReference resources
 "
 * type = #transaction
 * entry ^slicing.discriminator.type = #type
@@ -103,10 +102,10 @@ Description: "Example of a minimal Provide Document Bundle."
 //* meta.security = http://terminology.hl7.org/CodeSystem/v3-ActReason#HTEST
 * type = #transaction
 * timestamp = 2020-11-24T23:50:50-05:00
-* entry[0].resource = ex-b-list
-* entry[0].fullUrl = "http://www.example.org/fhir/List/593cd04e-b696-45c1-bc32-39e55a340a48"
-* entry[0].request.url = "List"
-* entry[0].request.method = #POST
+* entry[Lists].resource = ex-b-list
+* entry[Lists].fullUrl = "http://www.example.org/fhir/List/593cd04e-b696-45c1-bc32-39e55a340a48"
+* entry[Lists].request.url = "List"
+* entry[Lists].request.method = #POST
 * entry[1].resource = ex-b-documentreference
 * entry[1].fullUrl = "http://www.example.org/fhir/DocumentReference/593cd04e-b696-45c1-bc32-39e55a340a47"
 * entry[1].request.url = "DocumentReference"
