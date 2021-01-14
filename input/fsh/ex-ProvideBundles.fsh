@@ -2,7 +2,7 @@ Instance:   ex-minimalProvideDocumentBundle
 InstanceOf: IHE.MHD.Minimal.ProvideBundle
 Title:      "Provide Document Bundle with Minimal metadata"
 Description: "Example of a minimal Provide Document Bundle. "
-* meta.security = http://terminology.hl7.org/CodeSystem/v3-ActReason#HTEST
+//* meta.security = http://terminology.hl7.org/CodeSystem/v3-ActReason#HTEST
 * type = #transaction
 * timestamp = 2020-11-24T23:50:50-05:00
 * entry[SubmissionSet].fullUrl = "http://www.example.org/fhir/List/593cd04e-b696-45c1-bc32-39e55a340a44"
@@ -17,13 +17,17 @@ Description: "Example of a minimal Provide Document Bundle. "
 * entry[DocumentRefs].resource = ex-b-DocumentReferenceMinimal
 * entry[DocumentRefs].request.url = "DocumentReference"
 * entry[DocumentRefs].request.method = #POST
+* entry[3].resource = ex-b-patient
+* entry[3].request.url = "Patient"
+* entry[3].request.method = #POST
+* entry[3].fullUrl = "http://www.example.org/fhir/Patient/593cd04e-b696-45c1-bc32-39e55a340a49"
 
 
 Instance:   ex-b-minimalSubmissionSet
 InstanceOf: IHE.MHD.Minimal.SubmissionSet
 Title:      "SubmissionSet for Minimal metadata"
 Description: "Example of a minimal submissionSet in List resource. "
-* meta.security = http://terminology.hl7.org/CodeSystem/v3-ActReason#HTEST
+//* meta.security = http://terminology.hl7.org/CodeSystem/v3-ActReason#HTEST
 * identifier[0].system = "urn:ietf:rfc:3986"
 * identifier[0].value = "urn:oid:1.2.129.6.58.92.88337.5"
 * identifier[0].use = #official
@@ -43,7 +47,7 @@ Instance:   ex-b-DocumentReferenceMinimal
 InstanceOf: IHE.MHD.Minimal.DocumentReference
 Title:      "DocumentReference for Minimal metadata"
 Description: "Example of a minimal DocumentReference resource. This is very unlikely to be acceptable anywhere, but it is the minimum required."
-* meta.security = http://terminology.hl7.org/CodeSystem/v3-ActReason#HTEST
+//* meta.security = http://terminology.hl7.org/CodeSystem/v3-ActReason#HTEST
 * masterIdentifier.system = "urn:ietf:rfc:3986"
 * masterIdentifier.value = "urn:oid:1.2.840.113556.1.8000.2554.53432.348.12973.17740.34205.4355.50220.62012"
 * identifier.system = "urn:ietf:rfc:3986"
@@ -56,7 +60,7 @@ Instance:   ex-b-minimalFolder
 InstanceOf: IHE.MHD.Minimal.Folder
 Title: "Example Minimal Folder"
 Description:      "Folder in List resource conforming only to Minimal metadata"
-* meta.security = http://terminology.hl7.org/CodeSystem/v3-ActReason#HTEST
+//* meta.security = http://terminology.hl7.org/CodeSystem/v3-ActReason#HTEST
 * identifier[0].system = "urn:ietf:rfc:3986"
 * identifier[0].value = "urn:oid:1.2.129.6.58.92.88337.4"
 * identifier[0].use = #official
@@ -68,3 +72,8 @@ Description:      "Folder in List resource conforming only to Minimal metadata"
 * code = MHDlistTypes#folder
 * entry[0].item = Reference(ex-documentreference)
 
+Instance:   ex-b-patient
+InstanceOf: Patient
+Title:      "Dummy Patient example"
+Description: "Dummy patient example for completeness sake. No actual use of this resource other than an example target"
+//* meta.security = http://terminology.hl7.org/CodeSystem/v3-ActReason#HTEST
