@@ -61,7 +61,7 @@ The FHIR Bundle.meta.profile shall have the following value depending on the use
   * may have one or more [Binary](http://hl7.org/fhir/R4/binary.html)
   * may have one or more [Folder type List](StructureDefinition-IHE.MHD.Comprehensive.Folder.html)
   * may have one [Patient](http://hl7.org/fhir/R4/patient.html)
-* [Minimal Metadata](IHE_MHD_Provide_Minimal_DocumentBundle): `	http://ihe.net/fhir/ihe.mhd.fhir/StructureDefinition/IHE.MHD.Minimal.ProvideBundle`
+* [Minimal Metadata](IHE.MHD.Provide.Minimal.ProvideBundle.html): `http://ihe.net/fhir/ihe.mhd.fhir/StructureDefinition/IHE.MHD.Minimal.ProvideBundle`
   * shall be a Transaction Bundle
   * all resources may be marked minimal, comprehensive, or unContained
   * shall have a [SubmissionSet type List](StructureDefinition-IHE.MHD.Minimal.SubmissionSet.html)
@@ -69,7 +69,7 @@ The FHIR Bundle.meta.profile shall have the following value depending on the use
   * may have one or more [Binary](http://hl7.org/fhir/R4/binary.html)
   * may have one or more [Folder type List](StructureDefinition-IHE.MHD.Minimal.Folder.html)
   * may have one [Patient](http://hl7.org/fhir/R4/patient.html)
-* [UnContained Comprehensive Metadata](StructureDefinition-IHE.MHD.UnContained.Comprehensive.ProvideBundle.html) Bundle profile
+* [UnContained Comprehensive Metadata](StructureDefinition-IHE.MHD.UnContained.Comprehensive.ProvideBundle.html): `http://ihe.net/fhir/ihe.mhd.fhir/StructureDefinition/IHE.MHD.UnContained.Comprehensive.ProvideBundle` 
   * Note that Minimal Metadata does not require containment, so UnContained Minimal is the same as Minimal Metadata
   * Note that UnContained only applies to DocumentReference and SubmissionSet type Lists; so the following apply
   * [Submission Set UnContained](StructureDefinition-IHE.MHD.UnContained.Comprehensive.SubmissionSet.html)

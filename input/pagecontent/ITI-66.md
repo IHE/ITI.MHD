@@ -60,16 +60,16 @@ The Document Consumer shall include search parameter patient or patient.identifi
 :This parameter is of type Reference(Patient). The Document Consumer may get this reference through the use of the [PDQm](https://profiles.ihe.net/ITI/TF/Volume1/ch-38.html) or [PIXm](https://profiles.ihe.net/ITI/TF/Volume1/ch-41.html) Profiles, or by some other method. When the patient parameter is used, the Patient reference would need to be accessible to both the Document Consumer and the Document Responder.
 
 **patient.identifier** 
-:This parameter, of type token, specifies an identifier associated with the patient to which the List Resource is assigned. See [ITI TF-2x: Appendix Z.2](appendix_z.html#query-parmeters) for use of the token data type for identifiers. 
+:This parameter, of type token, specifies an identifier associated with the patient to which the List Resource is assigned. See [ITI TF-2x: Appendix Z.2](appendix_z.html#query-parameters) for use of the token data type for identifiers. 
 
 **created** 
 :This parameter, of type date, specifies the time when the List was created. See FHIR http://hl7.org/fhir/R4/search.html#date for use of the date search type.
 
 **author.given and author.family** 
-:These parameters, of type string, specify the name parts of the author person which is associated with the List. See [ITI TF-2x: Appendix Z.2](appendix_z.html#query-parmeters) for use of the string data type.
+:These parameters, of type string, specify the name parts of the author person which is associated with the List. See [ITI TF-2x: Appendix Z.2](appendix_z.html#query-parameters) for use of the string data type.
 
 **identifier** 
-:This parameter, of type token, specifies an identifier for this List. The search results represent the results of a search on List.masterIdentifier and List.identifier. See [ITI TF-2x: Appendix Z.2](appendix_z.html#query-parmeters) for additional constraints on the use of the token search parameter type. 
+:This parameter, of type token, specifies an identifier for this List. The search results represent the results of a search on List.masterIdentifier and List.identifier. See [ITI TF-2x: Appendix Z.2](appendix_z.html#query-parameters) for additional constraints on the use of the token search parameter type. 
 
 TODO fix this search parameter
 
