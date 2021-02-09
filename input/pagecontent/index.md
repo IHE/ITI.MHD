@@ -12,10 +12,10 @@ This guide is organized into four main sections:
    3. [Cross Profile Considerations](4_grouping.html)
 
 2. Volume II: Transaction Detail
-   1. [Provide Document Bundle [ITI-65]](transaction-65.html)
-   2. [Find Document Lists [ITI-66]](transaction-66.html)
-   3. [Find Document References [ITI-67]](transaction-67.html)
-   4. [Retrieve Document [ITI-68]](transaction-68.html)
+   1. [Provide Document Bundle [ITI-65]](ITI-65.html)
+   2. [Find Document Lists [ITI-66]](ITI-66.html)
+   3. [Find Document References [ITI-67]](ITI-67.html)
+   4. [Retrieve Document [ITI-68]](ITI-68.html)
 
 3. Volume III: Metadata
    1. [FHIR Representation](metadata_maps.html)

@@ -20,7 +20,7 @@ The Provide Document Bundle [ITI-65] transaction passes a Provide Document Bundl
 ### Interactions
 
 <div>
-{%include transaction-65-seq.svg%}
+{%include ITI-65-seq.svg%}
 </div>
 
 <div style="clear: left"/>

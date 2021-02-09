@@ -17,7 +17,7 @@ The documented [mapping of the metadata elements](StructureDefinition-IHE.MHD.Mi
 Note: FHIR contains an informative mapping that is intended to be equivalent and can be found at http://hl7.org/fhir/R4/documentreference-mappings.html#xds. For the purposes of IHE MHD conformance the mapping documented here (in IHE) are normative.
 
 ##### DocumentReference StructureDefinition
-The conformance requirements are different between a Provide Document Bundle [ITI-65](transaction-65) transaction and a Find Document References [ITI-67](transaction-67) transaction, and between Minimal Metadata, Comprehensive Metadata, and UnContained Metadata.
+The conformance requirements are different between a Provide Document Bundle [ITI-65](ITI-65.html) transaction and a Find Document References [ITI-67](ITI-67.html) transaction, and between Minimal Metadata, Comprehensive Metadata, and UnContained Metadata.
 
 The conformance requirements are different between Comprehensive, minimal, and UnContained metadata. The canonical URI is found as the "Defining URL:":
 * [Comprehensive DocumentReference Metadata](StructureDefinition-IHE.MHD.Comprehensive.DocumentReference.html)
@@ -38,7 +38,7 @@ The conformance requirements are different between Comprehensive, Minimal, and U
 * [Minimal SubmissionSet Metadata](StructureDefinition-IHE.MHD.Minimal.SubmissionSet.html)
 * Minimal SubmissionSet Metadata does not include `contained` requirements
 
-Resources are not required to carry the meta.profile element and may only carry the profile element defined for the Provide Document Bundle [ITI-65](transaction-65) transaction, as the Receiver is not required to add the profile tags. The value of the meta.profile is a soft indicator of conformance expectation. Receivers may choose to validate actual conformance and fail transactions due to non-conformance.
+Resources are not required to carry the meta.profile element and may only carry the profile element defined for the Provide Document Bundle [ITI-65](ITI-65.html) transaction, as the Receiver is not required to add the profile tags. The value of the meta.profile is a soft indicator of conformance expectation. Receivers may choose to validate actual conformance and fail transactions due to non-conformance.
 
 #### Folder Metadata Attributes {#folder}
 
@@ -53,4 +53,4 @@ The conformance requirements are different between Comprehensive and Minimal met
 * [Minimal Folder Metadata](StructureDefinition-IHE.MHD.Minimal.Folder.html)
 * Minimal Folder Metadata does not include `contained` requirements
 
-Resources are not required to carry the meta.profile element and may only carry the profile element defined for the Provide Document Bundle [ITI-65](transaction-65) transaction, as the Receiver is not required to add the profile tags. The value of the meta.profile is a soft indicator of conformance expectation. Receivers may choose to validate actual conformance and fail transactions due to non-conformance.
+Resources are not required to carry the meta.profile element and may only carry the profile element defined for the Provide Document Bundle [ITI-65](ITI-65.html) transaction, as the Receiver is not required to add the profile tags. The value of the meta.profile is a soft indicator of conformance expectation. Receivers may choose to validate actual conformance and fail transactions due to non-conformance.

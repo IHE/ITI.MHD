@@ -20,7 +20,7 @@ The Retrieve Document [ITI-68] transaction is used by the Document Consumer to r
 ### Interactions
 
 <div>
-{%include transaction-68-seq.svg%}
+{%include ITI-68-seq.svg%}
 </div>
 
 <div style="clear: left"/>

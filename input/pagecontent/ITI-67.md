@@ -20,7 +20,7 @@ The Find Document References transaction is used to find DocumentReference Resou
 ### Interactions
 
 <div>
-{%include transaction-67-seq.svg%}
+{%include ITI-67-seq.svg%}
 </div>
 
 <div style="clear: left"/>
@@ -182,7 +182,7 @@ Resource Bundling shall comply with the guidelines in [ITI TF-2x: Appendix Z.1](
 
 **Document location**
 
-The Document Responder shall place into the DocumentReference.content.attachment.url element a full URL that can be used by the Document Consumer to retrieve the document using the Retrieve Document [ITI-68](transaction-68) transaction. IHE does not specify the format of the URL. There are many ways to encode this URL that allow for easy processing on a [Retrieve Document](transaction-68) transaction. Some examples are to encode homeCommunityId, repositoryUniqueId, uniqueId, and patientId into the URL. This could be done in many ways including using character separators or directory separators. In this way, the Document Responder can support many communities, and/or many repositories. 
+The Document Responder shall place into the DocumentReference.content.attachment.url element a full URL that can be used by the Document Consumer to retrieve the document using the Retrieve Document [ITI-68](ITI-68.html) transaction. IHE does not specify the format of the URL. There are many ways to encode this URL that allow for easy processing on a [Retrieve Document](ITI-68.html) transaction. Some examples are to encode homeCommunityId, repositoryUniqueId, uniqueId, and patientId into the URL. This could be done in many ways including using character separators or directory separators. In this way, the Document Responder can support many communities, and/or many repositories. 
 
 An informative StructureDefinition is outlined for [MHD Find Document References Comprehensive Response Message](StructureDefinition-IHE.MHD.FindDocumentReferencesComprehensiveResponseMessage.html), with an [example](StructureDefinition-IHE.MHD.FindDocumentReferencesComprehensiveResponseMessage-examples.html).
 

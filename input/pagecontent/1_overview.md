@@ -33,13 +33,13 @@ The [Mobile Cross-Enterprise Document Data Element Extraction (mXDE)](https://pr
 
 * Transactions
 
-  - [Provide Document Bundle ITI-65](transaction-65.html)
+  - [Provide Document Bundle ITI-65](ITI-65.html)
 
-  - [Find Document Manifests ITI-66](transaction-66.html)
+  - [Find Document Manifests ITI-66](ITI-66.html)
 
-  - [Find Document References ITI-67](transaction-67.html)
+  - [Find Document References ITI-67](ITI-67.html)
 
-  - [Retrieve Document ITI-68](transaction-68.html)
+  - [Retrieve Document ITI-68](ITI-68.html)
 
 ## MHD Overview
 The MHD Profile enables sharing of patient documents to, or from, mobile or constrained devices. Other IHE profiles, chiefly Cross-Enterprise Document Sharing (XDS), describe sharing of patient document in less constrained environments, and many of the concepts from those profiles are applicable to the MHD environment. For more information on IHE Document Sharing, see [Health Information Exchange: Enabling Document Sharing Using IHE Profiles](https://profiles.ihe.net/ITI/HIE-Whitepaper/index.html) whitepaper.
@@ -66,7 +66,7 @@ This use case presumes that the mobile device knows or discovers the patient ide
 This use case presumes that the sending mobile device knows the location of the receiving URL endpoints, likely through a configuration setting, or through a workflow driven by a web interface.
 
 #### Publication of new documents Process Flow
-The publication of a new document(s) is done using the Provide Document Bundle [ITI-65](transaction-65.html) transaction, which carries both the document and its metadata. This transaction is analogous to an XDS Provide and Register Document Set-b [ITI-41](https://profiles.ihe.net/ITI/TF/Volume2/ITI-41.html) transaction.
+The publication of a new document(s) is done using the Provide Document Bundle [ITI-65](ITI-65.html) transaction, which carries both the document and its metadata. This transaction is analogous to an XDS Provide and Register Document Set-b [ITI-41](https://profiles.ihe.net/ITI/TF/Volume2/ITI-41.html) transaction.
 
 <div>
 {%include usecase1-processflow.svg%}
@@ -82,11 +82,11 @@ The publication of a new document(s) is done using the Provide Document Bundle [
 In this use case, the mobile device needs access to existing documents. For example, a mobile device involved in a workflow needs to determine the current state of the workflow, or the mobile device needs to discover the most current medical summary. 
 
 #### Discovery Retrieval of existing documents Process Flow
-The Find Document References [ITI-67](transaction-67.html) transaction is used to issue parameterized queries that result in a list of DocumentReference Resources, where a DocumentReference Resource carries the XDS DocumentEntry metadata, which is metadata about a document.
+The Find Document References [ITI-67](ITI-67.html) transaction is used to issue parameterized queries that result in a list of DocumentReference Resources, where a DocumentReference Resource carries the XDS DocumentEntry metadata, which is metadata about a document.
 
-Alternatively, the Find Document Manifest [ITI-66](transaction-66.html) transaction is used to issue parameterized queries that result in a set of DocumentManifest Resources, where a DocumentManifest Resource carries the XDS SubmissionSet metadata, which is a container for a set of DocumentEntry objects that were published as a set.
+Alternatively, the Find Document Manifest [ITI-66](ITI-66.html) transaction is used to issue parameterized queries that result in a set of DocumentManifest Resources, where a DocumentManifest Resource carries the XDS SubmissionSet metadata, which is a container for a set of DocumentEntry objects that were published as a set.
 
-The Retrieve Document [ITI-68](transaction-68.html) transaction is used to get the document itself.
+The Retrieve Document [ITI-68](ITI-68.html) transaction is used to get the document itself.
 
 <div>
 {%include usecase2-processflow.svg%}

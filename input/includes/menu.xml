@@ -26,16 +26,16 @@
     </a>
     <ul class="dropdown-menu">
       <li>
-        <a href="transaction-65.html">Provide Document Bundle [ITI-65]</a>
+        <a href="ITI-65.html">Provide Document Bundle [ITI-65]</a>
       </li>
       <li>
-        <a href="transaction-66.html">Find Document Lists [ITI-66]</a>
+        <a href="ITI-66.html">Find Document Lists [ITI-66]</a>
       </li>
       <li>
-        <a href="transaction-67.html">Find Document References [ITI-67]</a>
+        <a href="ITI-67.html">Find Document References [ITI-67]</a>
       </li>
       <li>
-        <a href="transaction-68.html">Retrieve Document [ITI-68]</a>
+        <a href="ITI-68.html">Retrieve Document [ITI-68]</a>
       </li>
     </ul>
   </li>

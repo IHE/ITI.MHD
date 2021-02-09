@@ -25,7 +25,7 @@ The result of the query is a Bundle containing List Resources that match the que
 ### Interactions
 
 <div>
-{%include transaction-66-seq.svg%}
+{%include ITI-66-seq.svg%}
 </div>
 
 <div style="clear: left"/>

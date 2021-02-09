@@ -38,7 +38,7 @@ Table 3-1: MHD Implementation Guide - Actors and Transactions
 </td>
                         
 <td>
-<a href='transaction-65.html'>
+<a href='ITI-65.html'>
                         Provide Document Bundle [ITI-65]
 </a>
 </td>
@@ -54,7 +54,7 @@ Table 3-1: MHD Implementation Guide - Actors and Transactions
 </td>
                         
 <td>
-<a href='transaction-65.html'>
+<a href='ITI-65.html'>
                         Provide Document Bundle [ITI-65]
 </a>
 </td>
@@ -72,7 +72,7 @@ Table 3-1: MHD Implementation Guide - Actors and Transactions
 </td>
                         
 <td>
-<a href='transaction-66.html'>
+<a href='ITI-66.html'>
                         Find Document Lists [ITI-66]
 </a>
 </td>
@@ -84,7 +84,7 @@ Table 3-1: MHD Implementation Guide - Actors and Transactions
 <tr class="odd">
                         
 <td>
-<a href='transaction-67.html'>
+<a href='ITI-67.html'>
                         Find Document References [ITI-67]
 </a>
 </td>
@@ -96,7 +96,7 @@ Table 3-1: MHD Implementation Guide - Actors and Transactions
 <tr class="even">
                         
 <td>
-<a href='transaction-68.html'>
+<a href='ITI-68.html'>
                         Retrieve Document [ITI-68]
 </a>
 </td>
@@ -113,7 +113,7 @@ Table 3-1: MHD Implementation Guide - Actors and Transactions
 </td>
                         
 <td>
-<a href='transaction-66.html'>
+<a href='ITI-66.html'>
                         Find Document Lists [ITI-66]
 </a>
 </td>
@@ -125,7 +125,7 @@ Table 3-1: MHD Implementation Guide - Actors and Transactions
 <tr class="even">
                         
 <td>
-<a href='transaction-67.html'>
+<a href='ITI-67.html'>
                         Find Document References [ITI-67]
 </a>
 </td>
@@ -137,7 +137,7 @@ Table 3-1: MHD Implementation Guide - Actors and Transactions
 <tr class="odd">
                         
 <td>
-<a href='transaction-68.html'>
+<a href='ITI-68.html'>
                         Retrieve Document [ITI-68]
 </a>
 </td>
@@ -245,15 +245,15 @@ A Document Recipient that supports this option will require that any metadata pr
 
 #### XDS on FHIR Option
 
-The Document Recipient that supports this option shall be able to be grouped with an [XDS](https://profiles.ihe.net/ITI/TF/Volume1/ch-10.html) [Document Source](https://profiles.ihe.net/ITI/TF/Volume1/ch-10.html#10.1.1.1) so that any publication request is passed on to that XDS environment. See the transaction specific requirements outlined in [ITI-65 XDS on FHIR Option](transaction-65.html#xds-on-fhir-option). The grouped XDS Document Source shall implement the [Document Replacement Option](https://profiles.ihe.net/ITI/TF/Volume1/ch-10.html#10.2.1), [Document Addendum Option](https://profiles.ihe.net/ITI/TF/Volume1/ch-10.html#10.2.2), [Document Transformation Option](https://profiles.ihe.net/ITI/TF/Volume1/ch-10.html#10.2.3), and [Folder Management Option](https://profiles.ihe.net/ITI/TF/Volume1/ch-10.html#10.2.4) to ensure that these functionalities can be transferred from the MHD Document Source through to the [XDS Document Registry](https://profiles.ihe.net/ITI/TF/Volume1/ch-10.html#10.1.1.3).
+The Document Recipient that supports this option shall be able to be grouped with an [XDS](https://profiles.ihe.net/ITI/TF/Volume1/ch-10.html) [Document Source](https://profiles.ihe.net/ITI/TF/Volume1/ch-10.html#10.1.1.1) so that any publication request is passed on to that XDS environment. See the transaction specific requirements outlined in [ITI-65 XDS on FHIR Option](ITI-65.html#xds-on-fhir-option). The grouped XDS Document Source shall implement the [Document Replacement Option](https://profiles.ihe.net/ITI/TF/Volume1/ch-10.html#10.2.1), [Document Addendum Option](https://profiles.ihe.net/ITI/TF/Volume1/ch-10.html#10.2.2), [Document Transformation Option](https://profiles.ihe.net/ITI/TF/Volume1/ch-10.html#10.2.3), and [Folder Management Option](https://profiles.ihe.net/ITI/TF/Volume1/ch-10.html#10.2.4) to ensure that these functionalities can be transferred from the MHD Document Source through to the [XDS Document Registry](https://profiles.ihe.net/ITI/TF/Volume1/ch-10.html#10.1.1.3).
 
-The Document Responder that supports this option shall be able to be grouped with an [XDS Document Consumer](https://profiles.ihe.net/ITI/TF/Volume1/ch-10.html#10.1.1.2) so that any query or retrieve requests can be passed on to, and responded to, by an XDS environment. The transaction specific requirements are outlined in [ITI-66 XDS on FHIR Options](transaction-66.html#xds-on-fhir-option) and [ITI-67 XDS on FHIR Option](transaction-67.html#xds-on-fhir-option). 
+The Document Responder that supports this option shall be able to be grouped with an [XDS Document Consumer](https://profiles.ihe.net/ITI/TF/Volume1/ch-10.html#10.1.1.2) so that any query or retrieve requests can be passed on to, and responded to, by an XDS environment. The transaction specific requirements are outlined in [ITI-66 XDS on FHIR Options](ITI-66.html#xds-on-fhir-option) and [ITI-67 XDS on FHIR Option](ITI-67.html#xds-on-fhir-option). 
 
 The [XDS on FHIR Option](#xds-on-fhir-option) is not compatible with the [UnContained Reference Option](#uncontained-reference-option). A system may be able to support both options, but only one will be able to be used at a given deployment.
 
 #### UnContained Reference Option
 
-The [UnContained Reference Option](#uncontained-reference-option) recognizes that a Community may choose to longitudinally maintain their provider and patient directories, for example, an [mCSD](https://profiles.ihe.net/ITI/TF/Volume1/ch-46.html) Care Services Selective Supplier and [PMIR](https://profiles.ihe.net/ITI/TF/Volume1/ch-49.html) Patient Identity Manager. When this longitudinal consistency is managed, then the author, authenticator, sourcePatientInfo, and author entries do not need to be a contained copy of the information known at the time of publication [ITI-65](transaction-65.html) since a Reference to the information in these directories will be valid over the full lifecycle of the entries. 
+The [UnContained Reference Option](#uncontained-reference-option) recognizes that a Community may choose to longitudinally maintain their provider and patient directories, for example, an [mCSD](https://profiles.ihe.net/ITI/TF/Volume1/ch-46.html) Care Services Selective Supplier and [PMIR](https://profiles.ihe.net/ITI/TF/Volume1/ch-49.html) Patient Identity Manager. When this longitudinal consistency is managed, then the author, authenticator, sourcePatientInfo, and author entries do not need to be a contained copy of the information known at the time of publication [ITI-65](ITI-65.html) since a Reference to the information in these directories will be valid over the full lifecycle of the entries. 
 
 The actors that support the [UnContained Reference Option](#uncontained-reference-option) shall be able to create and consume full URL values in the DocumentReference.author, the DocumentReference.authenticator, the DocumentReference.context.sourcePatientInfo, and the DocumentManifest.author. This requirement encourages the persisting of the information at the time the document is published. 
 
@@ -266,22 +266,22 @@ The transactions in this profile are summarized in the sections below.
 
 This transaction is used to transfer documents and metadata and is analogous to a [Provide and Register Document Set-b ITI-41](https://profiles.ihe.net/ITI/TF/Volume2/ITI-41.html) transaction.
 
-For more details see the detailed [ITI-65 transaction description](transaction-65.html)
+For more details see the detailed [ITI-65 transaction description](ITI-65.html)
 
 #### Find Document Lists
 
 This transaction is used to issue parameterize queries that result in a List resource representing a SubmissionSet or a Folder.
 
-For more details see the detailed [ITI-66 transaction description](transaction-66.html)
+For more details see the detailed [ITI-66 transaction description](ITI-66.html)
 
 #### Find Document References
 
 This transaction is used to issue parameterized queries that result in a list of Document Reference resources.
 
-For more details see the detailed [ITI-67 transaction description](transaction-67.html)
+For more details see the detailed [ITI-67 transaction description](ITI-67.html)
 
 #### Retrieve Document
 
 This transaction is used to get documents.
 
-For more details see the detailed [ITI-68 transaction description](transaction-68.html)
+For more details see the detailed [ITI-68 transaction description](ITI-68.html)
