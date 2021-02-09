@@ -10,7 +10,7 @@ Description:    "A profile on the List resource for MHD use as a Folder with min
 * ebRIM implementation at [3:4.2.3.4 Folder Attributes](https://profiles.ihe.net/ITI/TF/Volume3/ch-4.2.html#4.2.3.4).
 * with use-cases and constraints found in [3:4.3 Additional Document Sharing Requirements](https://profiles.ihe.net/ITI/TF/Volume3/ch-4.3.html#4.3) 
 "
-* extension contains CodeList named codeList 0..* MS
+* extension contains DesignationType named designationType 0..* MS
 * identifier 2..*
 //* status 
 * mode = #working
@@ -31,11 +31,6 @@ Description:    "A profile on the List resource for MHD use as a Folder with min
 * entry.item only Reference(DocumentReference)
 * emptyReason 0..0
 
-Extension: CodeList
-Id: ihe-folder-codelist
-Title: "Clinical type of the Folder"
-Description: "Expresses type of Folder. Usually expressed in LOINC or SNOMED."
-* value[x] only CodeableConcept
 
 // Note there is no impact of UnContained on a folder
 // equivalent to MHD Comprehensive List Folder 
@@ -51,7 +46,7 @@ Description:    "A profile on the List resource for MHD Comprehensive Metadata F
 * with use-cases and constraints found in [3:4.3 Additional Document Sharing Requirements](https://profiles.ihe.net/ITI/TF/Volume3/ch-4.3.html#4.3) 
 "
 * subject 1..1
-* extension[codeList] 1..*
+* extension[designationType] 1..*
 * title 1..1
 
 //  mappings to XDS 
@@ -61,7 +56,7 @@ Target: "XDS"
 Title: "XDS and MHD Mapping"
 * -> "XDS Folder" "Used in the context of the IHE MHD ImplementationGuide"
 * meta.profile -> "Folder.limitedMetadata"
-* extension[codeList] -> "Folder.codeList"
+* extension[designationType] -> "Folder.codeList"
 * identifier -> "Folder.entryUUID and Folder.uniqueId"
 * status -> "Folder.availabilityStatus"
 * mode -> "shall be 'working'"

@@ -34,5 +34,5 @@ Description:      "Folder in List resource conforming only to Comprehensive meta
 * date = 2004-12-25T23:50:50-05:00
 * entry[0].item = Reference(DocumentReference/ex-documentreference)
 * entry[1].item = Reference(DocumentReference/ex-documentreference2)
-* extension[codeList][0].valueCodeableConcept = http://snomed.info/sct#225728007
-* extension[codeList][1].valueCodeableConcept = http://snomed.info/sct#284548004
+* extension[designationType][0].valueCodeableConcept = http://snomed.info/sct#225728007
+* extension[designationType][1].valueCodeableConcept = http://snomed.info/sct#284548004

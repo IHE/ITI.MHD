@@ -71,7 +71,7 @@ Table 3.68.4.2.2-1: HTTP Error Response Codes and Suggested Text
 |HTTP request specified is otherwise not a legal value	| 403 Forbidden/Request Type Not Supported |
 
 
-The Document Responder may return other HTTP Status Codes. Guidance on handling Access Denied related to use of 200, 403 and 404 can be found in ITI TF-2x: Appendix Z.7.
+The Document Responder may return other HTTP Status Codes. Guidance on handling Access Denied related to use of 200, 403 and 404 can be found in [ITI TF-2x: Appendix Z.7](appendix_z.html#FHIRsecurity).
 
 The Document Responder should complement the returned error code with a human readable description of the error condition.
 

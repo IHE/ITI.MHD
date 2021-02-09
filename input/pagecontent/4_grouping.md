@@ -8,7 +8,7 @@ Other proxy architectures to XDS are possible such as grouped with an XDS Integr
 
 When the MHD Document Responder is acting as a proxy for an XDS environment, it could be grouped with an XDS Document Consumer. In this way, the MHD Find Document Manifests [ITI-66], Find Document References [ITI-67], and Retrieve Document [ITI-68] transactions will be supported in the system using the appropriate XDS Registry Stored Query [ITI-18] and Retrieve Document Set-b [ITI-43] transactions. This proxy would be configured to support a designated set of mobile devices and the security model defined by the hosting organization. The proxy might fill in missing metadata information, convert user authentication credentials, and fully implement the IHE ATNA Secure Node or Secure Application Actors.
 
-Not diagrammed here is how PDQm and/or PIXm could similarly be used and implemented.
+Not diagrammed here is how [PDQm](https://profiles.ihe.net/ITI/TF/Volume1/ch-38.html) and/or [PIXm](https://profiles.ihe.net/ITI/TF/Volume1/ch-41.html) could similarly be used and implemented.
 
 These two environments are illustrated in Figure 3.66.1-1.
 

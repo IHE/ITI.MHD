@@ -1,24 +1,19 @@
 ## Appendix Z - FHIR Implementation Materials
 
-There is a set of profiles in IHE using the HL7 FHIR standard, including Patient Demographics Query for Mobile (PDQm), Patient Identifier Cross-reference for Mobile (PIXm), and Mobile Health Document (MHD). These profiles define a lightweight RESTful interface using technologies readily available to mobile applications and lightweight browser based applications. There is some common explanation and profiling provided in this supplement as a new Appendix Z and update of Appendix E in ITI Technical Framework Volume 2x.
+There is a set of profiles in IHE using the HL7 FHIR standard, including Patient [Demographics Query for Mobile (PDQm)](https://profiles.ihe.net/ITI/TF/Volume1/ch-38.html), [Patient Identifier Cross-reference for Mobile (PIXm)](https://profiles.ihe.net/ITI/TF/Volume1/ch-41.html), and [Mobile Health Document (MHD)](https://profiles.ihe.net/ITI/TF/Volume1/ch-33.html). These profiles define a lightweight RESTful interface using technologies readily available to mobile applications and lightweight browser based applications. There is some common explanation and profiling provided in this supplement as a new Appendix Z and update of [Appendix E](appendix_e.html) in [ITI Technical Framework Volume 2](https://profiles.ihe.net/ITI/TF/Volume2/index.html).
 
 The HL7 FHIR standard has several overarching concepts, which should be profiled consistently throughout any mobile/lightweight IHE transactions using FHIR. IHE profiles FHIR, like any other standard, in ways that narrow the standard for specific use-cases. IHE profiles are intended to be proper subsets of the standard and are not intended to be incompatible. 
 
 We discuss here how IHE profiles the FHIR standard such as Resources, Datatypes, Valuesets, Extensions, Transactions, Query Parameters, CapabilityStatement, etc.
 
-References
+*References*
 
-HL7 FHIR	HL7 FHIR standard R4  http://hl7.org/fhir/R4/index.html 
-
-RFC2616	Hypertext Transfer Protocol – HTTP/1.1
-
-RFC7540	Hypertext Transfer Protocol – HTTP/2
-
-RFC3986	Uniform Resource Identifier (URI): Generic Syntax
-
-RFC4627	The application/json Media Type for JavaScript Object Notation (JSON)
-
-RFC6585	Additional HTTP Status Codes
+* [HL7 FHIR](https://hl7.org/fhir/R4/index.html)	HL7 FHIR standard R4  
+* [RFC2616](https://tools.ietf.org/html/rfc2616)	Hypertext Transfer Protocol – HTTP/1.1
+* [RFC7540](https://tools.ietf.org/html/rfc7540)	Hypertext Transfer Protocol – HTTP/2
+* [RFC3986](https://tools.ietf.org/html/rfc3986)	Uniform Resource Identifier (URI): Generic Syntax
+* [RFC4627](https://tools.ietf.org/html/rfc4627)	The application/json Media Type for JavaScript Object Notation (JSON)
+* [RFC6585](https://tools.ietf.org/html/rfc6585)	Additional HTTP Status Codes
 
 ### Resource Bundles
 Any operation that results in, or requires submission of, a collection of resources is done via a Resource Bundle mechanism. A FHIR Bundle Resource is a collection of resources that are related, for example, the result of a search operation, or a collection of historical versions of a resource.
@@ -116,9 +111,9 @@ The FHIR Identifier type introduces a new mechanism for conveying the originatin
 
 Both the value and system shall be populated.
 
-When the value is a globally unique value, the system value shall be “urn:ietf:rfc:3986”. 
+When the value is a globally unique value, the system value shall be `urn:ietf:rfc:3986`. 
 
-A value that is an OID shall be represented as a URI with scheme “urn:oid:”, for example:
+A value that is an OID shall be represented as a URI with scheme `urn:oid:`, for example:
 ```
 {
 "system": "urn:ietf:rfc:3986",
@@ -126,7 +121,7 @@ A value that is an OID shall be represented as a URI with scheme “urn:oid:”,
 }
 ```
 
-A value that is a UUID shall be represented as a URI with a scheme “urn:uuid:”, for example:
+A value that is a UUID shall be represented as a URI with a scheme `urn:uuid:`, for example:
 ```
 {
 "system": "urn:ietf:rfc:3986",
@@ -138,7 +133,7 @@ A value that is a UUID shall be represented as a URI with a scheme “urn:uuid:�
 
 In HL7 version 3, uniqueId can be expressed as a root, or as a root plus extension. 
 
-When converting an HL7 version 3 uniqueId to FHIR, if no extension is provided, the root shall be placed into the Identifier.value, and the Identifier.system shall be set to “urn:ietf:rfc:3986”. For example, the HL7 version 3 value
+When converting an HL7 version 3 uniqueId to FHIR, if no extension is provided, the root shall be placed into the Identifier.value, and the Identifier.system shall be set to `urn:ietf:rfc:3986`. For example, the HL7 version 3 value
 ```
 <identifier root="1.2.826.0.1.3680043.2.1611.1.2.32884.10619.27943.27629.41504" />
 ```

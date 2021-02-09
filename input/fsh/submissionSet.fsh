@@ -10,7 +10,7 @@ Description:    "A profile on the List resource for MHD SubmissionSet.
 * ebRIM implementation at [3:4.2.3.3 SubmissionSet Attributes](https://profiles.ihe.net/ITI/TF/Volume3/ch-4.2.html#4.2.3.3).
 * with use-cases and constraints found in [3:4.3 Additional Document Sharing Requirements](https://profiles.ihe.net/ITI/TF/Volume3/ch-4.3.html#4.3) 
 "
-* extension contains ContentTypeCode named contentTypeCode 0..1 MS
+* extension contains DesignationType named designationType 0..1 MS
 * extension contains SourceId named sourceId 1..1
 * extension contains IntendedRecipient named intendedRecipient 0..1
 * identifier 2..*
@@ -35,11 +35,12 @@ Description:    "A profile on the List resource for MHD SubmissionSet.
 * entry.item only Reference(DocumentReference or List)
 * emptyReason 0..0
 
-Extension: ContentTypeCode
-Id: ihe-submissionSet-contentTypeCode
-Title: "Clinical content type of the submissionSet"
-Description: "Expresses contentType of submissionSet. Usually expressed in LOINC or SNOMED."
+Extension: DesignationType
+Id: ihe-designationType
+Title: "Clinical code of the List"
+Description: "Expresses contentType of submissionSet or the codeList of a Folder. Usually expressed in LOINC or SNOMED."
 * value[x] only CodeableConcept
+
 
 Extension: SourceId
 Id: ihe-sourceId
@@ -67,7 +68,7 @@ Description:    "A profile on the List resource for MHD UnContained Comprehensiv
 * with use-cases and constraints found in [3:4.3 Additional Document Sharing Requirements](https://profiles.ihe.net/ITI/TF/Volume3/ch-4.3.html#4.3) 
 "
 * subject 1..1
-* extension[contentTypeCode] 1..1
+* extension[designationType] 1..1
 
 
 // equivalent to MHD Comprehensive SubmissionSet Contained
@@ -93,7 +94,7 @@ Title: "XDS and MHD Mapping"
 * meta.profile -> "SubmissionSet.limitedMetadata"
 * extension[sourceId] -> "SubmissionSet.sourceId"
 * extension[intendedRecipient] -> "SubmissionSet.intendedRecipient"
-* extension[contentTypeCode] -> "SubmissionSet.contentTypeCode"
+* extension[designationType] -> "SubmissionSet.contentTypeCode"
 * identifier -> "SubmissionSet.entryUUID and SubmissionSet.uniqueId"
 * status -> "SubmissionSet.availabilityStatus"
 * mode -> "shall be 'working'"

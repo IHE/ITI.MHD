@@ -37,13 +37,13 @@ When the Document Consumer needs to discover DocumentReference Resources matchin
 
 ##### Message Semantics
 
-The Document Consumer executes an HTTP GET against the Document Responder’s DocumentReference URL. The search target follows the FHIR HTTP specification, addressing the DocumentReference Resource http://hl7.org/fhir/R4/http.html:
+The Document Consumer executes an HTTP GET against the Document Responders DocumentReference URL. The search target follows the FHIR HTTP specification, addressing the DocumentReference Resource http://hl7.org/fhir/R4/http.html:
 ```
 [base]/DocumentReference?<query>
 ```
 This URL is configurable by the Document Responder and is subject to the following constraints: 
 
-The <query> represents a series of encoded name-value pairs representing the filter for the query, as specified in Section 3.67.4.1.2.1, as well as control parameters to modify the behavior of the Document Responder such as response format, or pagination.
+The <query> represents a series of encoded name-value pairs representing the filter for the query, as specified in Section [Query Search Parameters](#query-search-parameters), as well as control parameters to modify the behavior of the Document Responder such as response format, or pagination.
 
 ###### Query Search Parameters
 
@@ -52,46 +52,46 @@ The Document Consumer may supply, and the Document Responder shall be capable of
 The Document Consumer shall include search parameter patient or patient.identifier, and status. The other parameters described below are optional. The Document Responder must implement the parameters described below. The Document Responder may choose to support additional query parameters beyond the subset listed below. Any additional query parameters supported shall be supported according to the core FHIR specification. Such additional parameters are considered out of scope for this transaction. Any additional parameters not supported should be ignored. See http://hl7.org/fhir/R4/search.html#errors. 
 
 **patient** 
-:This parameter is of type Reference(Patient). The Document Consumer may get this reference using the PDQm or PIXm Profile. When the patient parameter is used, the Patient reference would need to be accessible to both the Document Consumer and the Document Responder.
+:This parameter is of type Reference(Patient). The Document Consumer may get this reference using the [PDQm](https://profiles.ihe.net/ITI/TF/Volume1/ch-38.html) or [PIXm](https://profiles.ihe.net/ITI/TF/Volume1/ch-41.html) Profile. When the patient parameter is used, the Patient reference would need to be accessible to both the Document Consumer and the Document Responder.
 
 **patient.identifier** 
-:This parameter, of type token, specifies an identifier associated with the patient to which the DocumentReference Resource is assigned.  See ITI TF-2x: Appendix Z.2.2 for additional constraints on the use of the token search parameter type. 
+:This parameter, of type token, specifies an identifier associated with the patient to which the DocumentReference Resource is assigned.  See [ITI TF-2x: Appendix Z.2](appendix_z.html#query-parmeters) for additional constraints on the use of the token search parameter type. 
 
 **status** 
 :This parameter, of type token, specifies the status of the DocumentReference Resource, or in Document Sharing nomenclature, the availabilityStatus of the Document Entry. The Document Consumer shall populate the identifier portion of the token using one of the short codes in Table 3.67.4.1.2.1-1. The system portion of the token shall not be populated.
 
 **identifier** 
-:This parameter, of type token, specifies an identifier for this DocumentReference and/or the contained document. The search results represent the results of a search on DocumentReference.masterIdentifier and DocumentReference.identifier. See ITI TF-2x: Appendix Z.2.2 for additional constraints on the use of the token search parameter type. 
+:This parameter, of type token, specifies an identifier for this DocumentReference and/or the contained document. The search results represent the results of a search on DocumentReference.masterIdentifier and DocumentReference.identifier. See [ITI TF-2x: Appendix Z.2](appendix_z.html#query-parmeters) for additional constraints on the use of the token search parameter type. 
 
 **date**
 :This parameter, of type date, specifies the time when the document was created. Note: The DocumentReference Resource does not yet have a query parameter for creationTime of the document; it has only a date element which is the creation date/time of the DocumentReference. For FHIR R4 we align these two elements so that query will function. See FHIR http://hl7.org/fhir/R4/search.html#date for use of the date search type.
 
 **author.given** and **author.family** 
-:These parameters, of type string, specify the name parts of the author person, which is associated with the DocumentReference Resource, or in Document Sharing nomenclature, the author of the Document Entry. See ITI TF-2x: Appendix Z.2.3 for use of the string data type. 
+:These parameters, of type string, specify the name parts of the author person, which is associated with the DocumentReference Resource, or in Document Sharing nomenclature, the author of the Document Entry. See [ITI TF-2x: Appendix Z.2](appendix_z.html#query-parmeters) for use of the string data type. 
 
 **category** 
-:This parameter, of type token, specifies the general classification of the DocumentReference Resource, or in Document Sharing nomenclature, the classCode of the Document Entry. See ITI TF-2x: Appendix Z.2.2 for additional constraints on the use of the token search parameter type.
+:This parameter, of type token, specifies the general classification of the DocumentReference Resource, or in Document Sharing nomenclature, the classCode of the Document Entry. See [ITI TF-2x: Appendix Z.2](appendix_z.html#query-parmeters) for additional constraints on the use of the token search parameter type.
 
 **type** 
-:This parameter, of type token, specifies the specific type of the DocumentReference resource or in Document Sharing nomenclature, the typeCode of the Document Entry. See ITI TF-2x: Appendix Z.2 for additional constraints on the use of the token search parameter type.
+:This parameter, of type token, specifies the specific type of the DocumentReference resource or in Document Sharing nomenclature, the typeCode of the Document Entry. See [ITI TF-2x: Appendix Z.2](appendix_z.html#query-parmeters) for additional constraints on the use of the token search parameter type.
 
 **setting** 
-:This parameter, of type token, specifies the specific practice setting of the DocumentReference Resource, or in Document Sharing nomenclature, the practiceSettingCode of the Document Entry. See ITI TF-2x: Appendix Z.2 for additional constraints on the use of the token search parameter type.
+:This parameter, of type token, specifies the specific practice setting of the DocumentReference Resource, or in Document Sharing nomenclature, the practiceSettingCode of the Document Entry. See [ITI TF-2x: Appendix Z.2](appendix_z.html#query-parmeters) for additional constraints on the use of the token search parameter type.
 
 **period** 
 :This parameter, of type date, represents the time of service that is being documented by the DocumentReference. The period search parameter specifies an interval which the time of service overlaps. In Document Sharing nomenclature, this query parameter represents from/to parameters for the serviceStartTime and serviceStopTime of the Document Entry. See FHIR http://hl7.org/fhir/R4/search.html#date for use of the date search type.
 
 **facility** 
-:This parameter, of type token, specifies the kind of facility found in DocumentReference.context.facilityType, or in Document Sharing nomenclature, the healthcareFacilityTypeCode of the Document Entry. See ITI TF-2x: Appendix Z.2.2 for additional constraints on the use of the token search parameter type.
+:This parameter, of type token, specifies the kind of facility found in DocumentReference.context.facilityType, or in Document Sharing nomenclature, the healthcareFacilityTypeCode of the Document Entry. See [ITI TF-2x: Appendix Z.2](appendix_z.html#query-parmeters) for additional constraints on the use of the token search parameter type.
 
 **event**  
-:This parameter, of type token, specifies the main clinical acts documented by the DocumentReference Resource, or in Document Sharing nomenclature, the eventCodeList of the Document Entry. See ITI TF-2x: Appendix Z.2.2 for additional constraints on the use of the token search parameter type.
+:This parameter, of type token, specifies the main clinical acts documented by the DocumentReference Resource, or in Document Sharing nomenclature, the eventCodeList of the Document Entry. See [ITI TF-2x: Appendix Z.2](appendix_z.html#query-parmeters) for additional constraints on the use of the token search parameter type.
 
 **security-label** 
-:This parameter, of type token, specifies the security labels of the document referenced by DocumentReference Resource, or in Document Sharing nomenclature, the confidentialityCode of the Document Entry. See ITI TF-2x: Appendix Z.2.2 for additional constraints on the use of the token search parameter type.
+:This parameter, of type token, specifies the security labels of the document referenced by DocumentReference Resource, or in Document Sharing nomenclature, the confidentialityCode of the Document Entry. See [ITI TF-2x: Appendix Z.2](appendix_z.html#query-parmeters) for additional constraints on the use of the token search parameter type.
 
 **format** 
-:This parameter, of type token, specifies the format of the DocumentReference Resource, or in Document Sharing nomenclature, the formatCode of the Document Entry. See ITI TF-2x: Appendix Z.2.2 for additional constraints on the use of the token search parameter type.
+:This parameter, of type token, specifies the format of the DocumentReference Resource, or in Document Sharing nomenclature, the formatCode of the Document Entry. See [ITI TF-2x: Appendix Z.2](appendix_z.html#query-parmeters) for additional constraints on the use of the token search parameter type.
 
 **related**
 :This parameter, of type reference, represents other identifiers associated with the DocumentReference Resource, or in Document Sharing nomenclature, the referenceIdList of the Document Entry. 
@@ -101,7 +101,7 @@ The Document Consumer shall include search parameter patient or patient.identifi
 
 The FHIR standard provides encodings for responses as either XML or JSON. The Document Responder shall support both message encodings, whilst the Document Consumer shall support one and may support both.
 
-See ITI TF-2x: Appendix Z.6 for details. 
+See [ITI TF-2x: Appendix Z.6](appendix_z.html#populating-the-expected-response-format) for details. 
 
 ##### Expected Actions
 
@@ -109,7 +109,7 @@ The Document Responder shall process the query to discover the DocumentReference
 
 ###### XDS on FHIR Option
 
-The Document Responder is grouped with an XDS Document Consumer when it supports the “XDS on FHIR” Option. The Document Responder shall map the query parameters as listed in Table 3.67.4.1.3-1 and shall execute a Registry Stored Query [ITI-18] for FindDocuments or FindDocumentsByReferenceIdList (see ITI TF-2a: 3.18.4.1.2.3.7.1 and 3.18.4.1.2.3.7.14). All of the query parameters in Table 3.67.4.1.3-1 shall be supported by the Document Responder. No additional query parameters as defined in FHIR are required of the Document Responder, but they may be offered.
+The Document Responder is grouped with an XDS Document Consumer when it supports the [XDS on FHIR](2_actors_and_transactions.html#xds-on-fhir-option) Option. The Document Responder shall map the query parameters as listed in Table 3.67.4.1.3-1 and shall execute a Registry Stored Query [ITI-18] for FindDocuments or FindDocumentsByReferenceIdList (see ITI TF-2a: 3.18.4.1.2.3.7.1 and 3.18.4.1.2.3.7.14). All of the query parameters in Table 3.67.4.1.3-1 shall be supported by the Document Responder. No additional query parameters as defined in FHIR are required of the Document Responder, but they may be offered.
 
 **Table 3.67.4.1.3-1: ITI-18 FindDocuments Query Parameter Mapping**
 
@@ -162,33 +162,35 @@ The Document Responder completed processing of the Find Document Reference Reque
 
 ##### Message Semantics
 
-Based on the query results, the Document Responder will either return an error or success. Guidance on handling Access Denied related to use of 200, 403 and 404 can be found in ITI TF-2x: Appendix Z.7. 
+Based on the query results, the Document Responder will either return an error or success. Guidance on handling Access Denied related to use of 200, 403 and 404 can be found in [ITI TF-2x: Appendix Z.7](appendix_z.html#FHIRsecurity). 
 
 When the Document Responder needs to report an error, it shall use HTTP error response codes and should include a FHIR OperationOutcome with more details on the failure. See FHIR http://hl7.org/fhir/R4/http.html and http://hl7.org/fhir/R4/operationoutcome.html.
 
 If the Find Document References message is processed successfully, whether or not any DocumentReference Resources are found, the HTTP status code shall be 200. The Find Document References Response message shall be a Bundle Resource containing zero or more DocumentReference Resources. If the Document Responder is sending warnings, the Bundle Resource shall also contain an OperationOutcome Resource that contains those warnings.
 
-The response shall adhere to the FHIR Bundle constraints specified in ITI TF-2x: Appendix Z.1. 
+The response shall adhere to the FHIR Bundle constraints specified in [ITI TF-2x: Appendix Z.1](appendix_z.html). 
 
 ###### DocumentReference Resource Contents
 
 The DocumentReference Resources returned shall be compliant with the FHIR specification http://hl7.org/fhir/R4/documentreference.html
 
-The DocumentReference Resources returned will be compliant with ITI TF-3: 4.5.1.1 for the IHE restrictions on DocumentReference Resource and for a mapping from IHE Document Sharing profiles (e.g., XDS) to FHIR. Document Consumers should be robust to receiving DocumentReference Resources that are not IHE compliant.
+The DocumentReference Resources returned will be compliant with the [MHD metadata](metadata_maps.html) for the IHE restrictions on DocumentReference Resource and for a mapping from IHE Document Sharing profiles (e.g., XDS) to FHIR. Document Consumers should be robust to receiving DocumentReference Resources that are not IHE compliant.
 
 ###### Resource Bundling
 
-Resource Bundling shall comply with the guidelines in ITI TF-2x: Appendix Z.1. 
+Resource Bundling shall comply with the guidelines in [ITI TF-2x: Appendix Z.1](appendix_z.html). 
 
 **Document location**
 
-The Document Responder shall place into the DocumentReference.content.attachment.url element a full URL that can be used by the Document Consumer to retrieve the document using the Retrieve Document [ITI-68] transaction. IHE does not specify the format of the URL. There are many ways to encode this URL that allow for easy processing on a Retrieve Document transaction. Some examples are to encode homeCommunityId, repositoryUniqueId, uniqueId, and patientId into the URL. This could be done in many ways including using character separators or directory separators. In this way, the Document Responder can support many communities, and/or many repositories. 
+The Document Responder shall place into the DocumentReference.content.attachment.url element a full URL that can be used by the Document Consumer to retrieve the document using the Retrieve Document [ITI-68](transaction-68) transaction. IHE does not specify the format of the URL. There are many ways to encode this URL that allow for easy processing on a [Retrieve Document](transaction-68) transaction. Some examples are to encode homeCommunityId, repositoryUniqueId, uniqueId, and patientId into the URL. This could be done in many ways including using character separators or directory separators. In this way, the Document Responder can support many communities, and/or many repositories. 
+
+An informative StructureDefinition is outlined for [MHD Find Document References Comprehensive Response Message](StructureDefinition-IHE.MHD.FindDocumentReferencesComprehensiveResponseMessage.html), with an [example](StructureDefinition-IHE.MHD.FindDocumentReferencesComprehensiveResponseMessage-examples.html).
 
 ##### Expected Actions
 
 If the Document Responder returns an HTTP redirect response (HTTP status codes 301, 302, 303, or 307), the Document Consumer shall follow the redirect, but may stop processing if it detects a loop. See RFC7231 Section 6.4 Redirection 3xx.
 
-The Document Consumer shall process the results according to application-defined rules. The Document Consumer should be robust as the response may contain DocumentReference Resources that match the query parameters but are not compliant with the DocumentReference constraints defined in ITI TF-3: 4.5.
+The Document Consumer shall process the results according to application-defined rules. The Document Consumer should be robust as the response may contain DocumentReference Resources that match the query parameters but are not compliant with the DocumentReference constraints defined here.
 
 #### CapabilityStatement Resource
 
@@ -206,7 +208,7 @@ Given that the Document Responder is responsible for the URL placed into Documen
 
 #### Security Audit Considerations
 
-The security audit criteria are similar to those for the Registry Stored Query [ITI-18] transaction. Grouping a Document Consumer or Document Responder with an ATNA Secure Node or Secure Application is recommended, but not mandated. 
+The security audit criteria are similar to those for the Registry Stored Query [ITI-18](https://profiles.ihe.net/ITI/TF/Volume2/ITI-18.html#3.18.5) transaction. Grouping a Document Consumer or Document Responder with an [ATNA](https://profiles.ihe.net/ITI/TF/Volume1/ch-9.html) Secure Node or Secure Application is recommended, but not mandated. 
 
 ##### Document Consumer Audit
 

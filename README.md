@@ -44,6 +44,7 @@ This Continuous Build will appear http://build.fhir.org/ig/IHE/ITI.MHD/branches/
 ## IHE issues
 
 1. canonical url -- should we include realm in the URI like hl7?
+1. the canonical urls have changed from '_' to '.'. Is this a problem, should this be done, should this be undone?
 1. why do we need to add .fhir at the end of all profile id?
 1. figure out how to better handle persistent section numbers and references. Today I left in original numbers most of the time. Today I only changed a few to markdown links for experimentation.
 

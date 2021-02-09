@@ -37,7 +37,7 @@ Description:      "SubmissionSet in List resource conforming minimally to Compre
 * entry[0].item = Reference(DocumentReference/ex-documentreference)
 //TODO: Reported a bug in the IG builder https://chat.fhir.org/#narrow/stream/179252-IG-creation/topic/List.2Eitem.20that.20is.20a.20list
 //* entry[1].item = Reference(List/ex-list)
-* extension[contentTypeCode].valueCodeableConcept = http://snomed.info/sct#225728007
+* extension[designationType].valueCodeableConcept = http://snomed.info/sct#225728007
 * extension[sourceId].valueIdentifier.value = "urn:oid:1.2.3.4"
 
 Instance:   ex-compEmailPackage
@@ -58,7 +58,7 @@ Description:      "SubmissionSet in List resource conforming Comprehensive metad
 * code = MHDlistTypes#submissionset
 * date = 2004-12-25T23:50:50-05:00
 * entry[0].item = Reference(DocumentReference/ex-documentreference)
-* extension[contentTypeCode].valueCodeableConcept = http://snomed.info/sct#225728007
+* extension[designationType].valueCodeableConcept = http://snomed.info/sct#225728007
 * extension[sourceId].valueIdentifier.value = "urn:oid:1.2.3.4"
 * extension[intendedRecipient].valueReference = Reference(Practitioner/ex-practitioner)
 
@@ -83,7 +83,7 @@ Description:      "SubmissionSet in List resource conforming fully to UnContaine
 * entry[0].item = Reference(DocumentReference/ex-documentreference)
 //TODO: Reported a bug in the IG builder https://chat.fhir.org/#narrow/stream/179252-IG-creation/topic/List.2Eitem.20that.20is.20a.20list
 //* entry[1].item = Reference(List/ex-list)
-* extension[contentTypeCode].valueCodeableConcept = http://snomed.info/sct#225728007
+* extension[designationType].valueCodeableConcept = http://snomed.info/sct#225728007
 * extension[sourceId].valueIdentifier.value = "urn:oid:1.2.3.4"
 * extension[intendedRecipient].valueReference = Reference(Practitioner/ex-practitioner)
 * source = Reference(ex-practitioner)
@@ -110,7 +110,7 @@ Description:      "SubmissionSet in List resource conforming fully to Comprehens
 //* entry[1].item = Reference(List/ex-list)
 * contained[0] = in-sender
 * source = Reference(in-sender)
-* extension[contentTypeCode].valueCodeableConcept = http://snomed.info/sct#225728007
+* extension[designationType].valueCodeableConcept = http://snomed.info/sct#225728007
 * extension[sourceId].valueIdentifier.value = "urn:oid:1.2.3.4"
 * extension[intendedRecipient].valueReference = Reference(ex-practitioner)
 
