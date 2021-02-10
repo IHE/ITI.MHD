@@ -56,6 +56,8 @@ The Document Consumer may supply, and the Document Responder shall be capable of
 
 The Document Consumer shall include search parameter patient or patient.identifier, type, and status. The other parameters described below are optional. The Document Responder shall implement the parameters described below. The Document Responder may choose to support additional query parameters beyond the subset listed below. Any additional query parameters supported shall be supported according to the core FHIR specification. Such additional parameters are considered out of scope for this transaction. Any additional parameters not supported should be ignored. See http://hl7.org/fhir/R4/search.html#errors.
 
+Defined [SearchParameter/List-DesignationType](SearchParameter-List-DesignationType.html) for [designationType extension codeableConcept](StructureDefinition-ihe-designationType.html) shall be supported by Document Responder.
+
 **patient** 
 :This parameter is of type Reference(Patient). The Document Consumer may get this reference through the use of the [PDQm](https://profiles.ihe.net/ITI/TF/Volume1/ch-38.html) or [PIXm](https://profiles.ihe.net/ITI/TF/Volume1/ch-41.html) Profiles, or by some other method. When the patient parameter is used, the Patient reference would need to be accessible to both the Document Consumer and the Document Responder.
 
@@ -71,10 +73,8 @@ The Document Consumer shall include search parameter patient or patient.identifi
 **identifier** 
 :This parameter, of type token, specifies an identifier for this List. The search results represent the results of a search on List.masterIdentifier and List.identifier. See [ITI TF-2x: Appendix Z.2](appendix_z.html#query-parameters) for additional constraints on the use of the token search parameter type. 
 
-TODO fix this search parameter
-
-**ihe-designationType**
-:This parameter, of type token, specifies the designation type of the List. The value of the designation type element indicates the clinical purpose of the SubmissionSet or Folder.
+**designationType**
+:This IHE extension on parameters defined as [SearchParameter/List-DesignationType](SearchParameter-List-DesignationType.html), of type token, specifies the designation type of the List. The value of the designation type element indicates the clinical purpose of the SubmissionSet or Folder. 
 
 **type** 
 :This parameter, of type token, specifies the type.coding value supplied in the List Resource. The value of the type element indicates the List of type SubmissionSet or Folder as indicated
