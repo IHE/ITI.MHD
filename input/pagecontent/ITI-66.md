@@ -74,7 +74,7 @@ Defined [SearchParameter/List-DesignationType](SearchParameter-List-DesignationT
 :This parameter, of type token, specifies an identifier for this List. The search results represent the results of a search on List.masterIdentifier and List.identifier. See [ITI TF-2x: Appendix Z.2](appendix_z.html#query-parameters) for additional constraints on the use of the token search parameter type. 
 
 **designationType**
-:This IHE extension on parameters defined as [SearchParameter/List-DesignationType](SearchParameter-List-DesignationType.html), of type token, specifies the designation type of the List. The value of the designation type element indicates the clinical purpose of the SubmissionSet or Folder. 
+:This IHE extension on parameters defined as [SearchParameter/List-DesignationType](SearchParameter-List-DesignationType.html), of type token, specifies the designation type of the List. The value of the designation type element indicates the clinical purpose of the SubmissionSet or Folder. Note that servers that do not support this extended search parameter will ignore it, and thus return more results than expected.
 
 **type** 
 :This parameter, of type token, specifies the type.coding value supplied in the List Resource. The value of the type element indicates the List of type SubmissionSet or Folder as indicated
@@ -96,6 +96,18 @@ Defined [SearchParameter/List-DesignationType](SearchParameter-List-DesignationT
 The FHIR standard provides encodings for responses as either XML or JSON. The Document Responder shall support both message encodings, whilst the Document Consumer shall support one and may support both.
 
 See [ITI TF-2x: Appendix Z.6](appendix_z.html#populating-the-expected-response-format) for details. 
+
+###### Example GET
+
+For example given:
+* FHIR server root is `http://test.fhir.org/R4/fhir
+* Patient id is `9876`
+* looking for a SubmissionSet
+* with clinical code from loinc of 1234-5
+
+```
+GET test.fhir.net/R4/fhir/List?patient=9876&code=submissionset&designationType=http://loinc.org|1234-5
+```
 
 ##### Expected Actions
 

@@ -1,6 +1,6 @@
 // equivalent to MHD Minimal Folder
 Profile:        Folder
-Parent:         List
+Parent:         MhdList
 Id:             IHE.MHD.Minimal.Folder
 Title:          "MHD Folder Minimal"
 Description:    "A profile on the List resource for MHD use as a Folder with minimal metadata constraints. 
@@ -10,12 +10,11 @@ Description:    "A profile on the List resource for MHD use as a Folder with min
 * ebRIM implementation at [3:4.2.3.4 Folder Attributes](https://profiles.ihe.net/ITI/TF/Volume3/ch-4.2.html#4.2.3.4).
 * with use-cases and constraints found in [3:4.3 Additional Document Sharing Requirements](https://profiles.ihe.net/ITI/TF/Volume3/ch-4.3.html#4.3) 
 "
-* extension contains DesignationType named designationType 0..* MS
+* extension[designationType] 0..* MS
 * identifier 2..*
 //* status 
 * mode = #working
 * title 0..1
-* code 1..1 
 * code = MHDlistTypes#folder
 * subject 0..1 MS
 * subject only Reference(Patient)

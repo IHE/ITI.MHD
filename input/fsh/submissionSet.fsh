@@ -1,6 +1,6 @@
 // equivalent to MHD Minimal SubmissionSet
 Profile:        SubmissionSet
-Parent:         List
+Parent:         MhdList
 Id:             IHE.MHD.Minimal.SubmissionSet
 Title:          "MHD SubmissionSet Minimal"
 Description:    "A profile on the List resource for MHD SubmissionSet.
@@ -10,15 +10,13 @@ Description:    "A profile on the List resource for MHD SubmissionSet.
 * ebRIM implementation at [3:4.2.3.3 SubmissionSet Attributes](https://profiles.ihe.net/ITI/TF/Volume3/ch-4.2.html#4.2.3.3).
 * with use-cases and constraints found in [3:4.3 Additional Document Sharing Requirements](https://profiles.ihe.net/ITI/TF/Volume3/ch-4.3.html#4.3) 
 "
-* extension contains DesignationType named designationType 0..1 MS
+* extension[designationType] 0..1 MS
 * extension contains SourceId named sourceId 1..1
 * extension contains IntendedRecipient named intendedRecipient 0..1
 * identifier 2..*
 //* status
 * mode = #working
 * title 0..1
-// code is used ONLY to switch between folder and submissionSet
-* code 1..1 
 * code = MHDlistTypes#submissionset
 * subject 0..1 MS
 * subject only Reference(Patient)
@@ -34,12 +32,6 @@ Description:    "A profile on the List resource for MHD SubmissionSet.
 * entry.date 0..0
 * entry.item only Reference(DocumentReference or List)
 * emptyReason 0..0
-
-Extension: DesignationType
-Id: ihe-designationType
-Title: "Clinical code of the List"
-Description: "Expresses contentType of submissionSet or the codeList of a Folder. Usually expressed in LOINC or SNOMED."
-* value[x] only CodeableConcept
 
 
 Extension: SourceId
