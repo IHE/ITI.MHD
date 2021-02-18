@@ -35,7 +35,7 @@ The [Mobile Cross-Enterprise Document Data Element Extraction (mXDE)](https://pr
 
   - [Provide Document Bundle ITI-65](ITI-65.html)
 
-  - [Find Document Manifests ITI-66](ITI-66.html)
+  - [Find Document Lists ITI-66](ITI-66.html)
 
   - [Find Document References ITI-67](ITI-67.html)
 
@@ -84,7 +84,7 @@ In this use case, the mobile device needs access to existing documents. For exam
 #### Discovery Retrieval of existing documents Process Flow
 The Find Document References [ITI-67](ITI-67.html) transaction is used to issue parameterized queries that result in a list of DocumentReference Resources, where a DocumentReference Resource carries the XDS DocumentEntry metadata, which is metadata about a document.
 
-Alternatively, the Find Document Manifest [ITI-66](ITI-66.html) transaction is used to issue parameterized queries that result in a set of DocumentManifest Resources, where a DocumentManifest Resource carries the XDS SubmissionSet metadata, which is a container for a set of DocumentEntry objects that were published as a set.
+Alternatively, the Find Document Lists [ITI-66](ITI-66.html) transaction is used to issue parameterized queries that result in a set of List Resources, where a List Resource carries the XDS SubmissionSet metadata for a set of DocumentEntry objects that were published as a set, or XDS Folder metadata for a setof DocumentEntry objects that are said to be members of the same grouping.
 
 The Retrieve Document [ITI-68](ITI-68.html) transaction is used to get the document itself.
 

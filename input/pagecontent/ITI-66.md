@@ -170,7 +170,7 @@ would translate to:
 ```
 #### Find Document Lists Response message
 
-The Document Responder returns a HTTP Status code appropriate to the processing as well as a list of the matching document manifest resources.
+The Document Responder returns a HTTP Status code appropriate to the processing as well as a list of the matching document list resources.
 
 ##### Trigger Events
 
