@@ -199,22 +199,22 @@ The IHE MHD Profile text is Normative, this conformance resource is Informative.
       </page>
       <page>
         <nameUrl value="ITI-65.html"/>
-        <title value="Transaction ITI-65"/>
+        <title value="Provide Document Bundle [ITI-65]"/>
         <generation value="markdown"/>
       </page>
       <page>
         <nameUrl value="ITI-66.html"/>
-        <title value="Transaction ITI-66"/>
+        <title value="Find Document Lists [ITI-66]"/>
         <generation value="markdown"/>
       </page>
       <page>
         <nameUrl value="ITI-67.html"/>
-        <title value="Transaction ITI-67"/>
+        <title value="Find Document References [ITI-67]"/>
         <generation value="markdown"/>
       </page>
       <page>
         <nameUrl value="ITI-68.html"/>
-        <title value="Transaction ITI-68"/>
+        <title value="Retrieve Document [ITI-68]"/>
         <generation value="markdown"/>
       </page>
     </page>

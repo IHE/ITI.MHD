@@ -190,7 +190,7 @@ The response shall adhere to the FHIR Bundle constraints specified in [ITI TF-2x
 
 The List Resources returned shall be compliant with the FHIR specification http://hl7.org/fhir/R4/List.html
 
-The List Resources returned will be compliant with ITI TF-3: 4.5.1.2 for IHE restrictions on the List Resource and for a mapping of ebXML attributes to List elements. Document Consumers should be robust to receiving List Resources that are not IHE compliant.
+The List Resources returned will be compliant with the [IHE restrictions on the List Resource](metadata_maps.html) and for a mapping of ebXML attributes to List elements to [SubmissionSet](metadata_maps.html#submissionSet) and to [Folder](metadata_maps.html#folder). Document Consumers should be robust to receiving List Resources that are not IHE compliant.
 
 ##### Expected Actions
 

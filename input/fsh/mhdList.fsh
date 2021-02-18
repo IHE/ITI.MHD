@@ -26,7 +26,6 @@ Title: "search on the IHE defined extension for designationType"
 * status = #active
 * code = #designationType
 * base = #List
-//* expression = "extension(DesignationType).valueCodeableConcept"
 * expression = "(extension('http://ihe.net/fhir/ihe.mhd.fhir/StructureDefinition/DesignationType').value as CodeableConcept)"
 * type = #token
 

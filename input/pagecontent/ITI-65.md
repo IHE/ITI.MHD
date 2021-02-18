@@ -41,15 +41,15 @@ The Document Source shall initiate a FHIR “transaction” using a “create”
 
 The media type of the HTTP body shall be either application/fhir+json or application/fhir+xml.
 
-See http://hl7.org/fhir/R4/http.html#transaction for complete requirements of a transaction. See http://hl7.org/fhir/R4/bundle-transaction.html for example of a transaction bundle.
+See [http://hl7.org/fhir/R4/http.html#transaction](http://hl7.org/fhir/R4/http.html#transaction) for complete requirements of a transaction. See [http://hl7.org/fhir/R4/bundle-transaction.html](http://hl7.org/fhir/R4/bundle-transaction.html) for example of a transaction bundle.
 
-The Provide Document Bundle message is sent to the base URL as defined in FHIR. See http://hl7.org/fhir/R4/http.html for the definition of “HTTP” access methods and “base”.
+The Provide Document Bundle message is sent to the base URL as defined in FHIR. See [http://hl7.org/fhir/R4/http.html](http://hl7.org/fhir/R4/http.html) for the definition of “HTTP” access methods and “base”.
 
 The Document Source shall assure all FHIR resource elements are consistent with the Document Sharing metadata requirements as specified for attributes ITI TF-3: Table 4.3.1-3 “Sending Actor Metadata Attribute Optionality”. The Document Source that supports the [Comprehensive Metadata](2_actors_and_transactions.html#xds-on-fhir-option) or the [XDS on FHIR](2_actors_and_transactions.html#xds-on-fhir-option) Options shall assure consistency with column “XDS DS”; otherwise, the Document Source shall assure consistency with column “XDR MS”. The Document Source shall not provide any entryUUID values.
 
 ###### Bundle Resources
 
-For complete information on constructing a FHIR Bundle Resource, see http://hl7.org/fhir/R4/bundle.html
+For complete information on constructing a FHIR Bundle Resource, see [http://hl7.org/fhir/R4/bundle.html](http://hl7.org/fhir/R4/bundle.html)
 
 The FHIR Bundle.meta.profile shall have the following value depending on the use of Comprehensive metadata, Minimal metadata, or UnContained metadata: 
 * [Comprehensive Metadata](StructureDefinition-IHE.MHD.Comprehensive.ProvideBundle.html): `http://ihe.net/fhir/ihe.mhd.fhir/StructureDefinition/IHE.MHD.Comprehensive.ProvideBundle`

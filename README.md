@@ -29,25 +29,33 @@ This Continuous Build will appear http://build.fhir.org/ig/IHE/ITI.MHD/branches/
 1. Convert Folder and SubmissionSet narrative to the use of List. Narrative today is mostly right out of existing MHD and thus uses DocumentManifest.
 1. make hotlinks as appropriate out of all references to Technical Framework profiles.ihe.net
 1. Add query parameter for ihe type 
+1. example of a GET request that uses the extended query parameter
 
 ## TODO
 1. Add narrative to the conformance resources -- note conformance resource is not supported in FSH, and the FSH complier required JSON disallowing XML conformance resource. 
 1. Add narrative to the examples
 1. Add examples from US-Core, or elsewhere?
-1. make sure there is a page for security, privacy, provenance, safety, error handling, dependency, 
 1. bring in the test scripts from Bill's test infrastructure
 1. get the DependsOn on FormatCode IG working (suspect the formatcode IG is not fully registered, asked Grahame for help)
 1. Full complement of Provide bundle examples
 1. various other TODO tags found in the source input
 1. cleanup all build warnings and info (moving to ignore warnings anything that is proven to be acceptable)
-1. example of a GET request that uses the extended query parameter
+1. capability statements to new List use away from DocumentManifest 
+1. Define Must-Support, should this be in appendix Z
+1. make all fhir http references into proper markdown URL
+1. add to vol3 content a mapping between XDS https://profiles.ihe.net/ITI/TF/Volume3/ch-4.2.html#4.2.4.1 and FHIR OperationOutcome. 
+1. example needed - add a new document to a existing Folder
+1. example needed - add a existing document to an existing Folder
+1. example needed - a new submission set to include existing document
+1. example not needed - a new submission set to include existing document from a different patient (mother / child use-case)
+1. example needed - replace a document
+1. example needed - push to a recipient
 
 ## IHE issues
 
 1. canonical url -- should we include realm in the URI like hl7?
-1. the canonical urls have changed from '_' to '.'. Is this a problem, should this be done, should this be undone?
 1. why do we need to add .fhir at the end of all profile id?
-1. figure out how to better handle persistent section numbers and references. Today I left in original numbers most of the time. Today I only changed a few to markdown links for experimentation.
+1. handle persistent section numbers and references. Today I left in original numbers most of the time. Today I only changed a few to markdown links for experimentation.
 
 ## Test
 

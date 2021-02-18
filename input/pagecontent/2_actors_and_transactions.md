@@ -158,7 +158,7 @@ The actors in this profile are described in more detail in the sections below.
 
 The Document Source is the producer and publisher of documents and metadata.
 
-##### Document Consumer
+#### Document Consumer
 
 The Document Consumer queries for document metadata meeting certain criteria and may retrieve selected documents.
 

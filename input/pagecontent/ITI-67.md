@@ -174,7 +174,7 @@ The response shall adhere to the FHIR Bundle constraints specified in [ITI TF-2x
 
 The DocumentReference Resources returned shall be compliant with the FHIR specification http://hl7.org/fhir/R4/documentreference.html
 
-The DocumentReference Resources returned will be compliant with the [MHD metadata](metadata_maps.html) for the IHE restrictions on DocumentReference Resource and for a mapping from IHE Document Sharing profiles (e.g., XDS) to FHIR. Document Consumers should be robust to receiving DocumentReference Resources that are not IHE compliant.
+The DocumentReference Resources returned will be compliant with the [MHD metadata](metadata_maps.html) for the IHE restrictions on DocumentReference Resource and for a [mapping to DocumentEntry](metadata_maps.html#documentEntry) from IHE Document Sharing profiles (e.g., XDS) to FHIR. Document Consumers should be robust to receiving DocumentReference Resources that are not IHE compliant.
 
 ###### Resource Bundling
 

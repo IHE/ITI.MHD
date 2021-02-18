@@ -7,6 +7,7 @@ Description:    "A profile on the Bundle transaction for Provide Document resour
 * all resources may be marked minimal, comprehensive, or unContained
 * shall be a Bundle
 * shall be a Transaction
+* each bundle entry request shall be a POST (create)
 * shall have a SubmissionSet
 * may have one or more DocumentReference
 * may have one or more Binary
@@ -70,6 +71,7 @@ Description:    "A profile on the Bundle transaction for Provide Document resour
 * all resources must be Comprehensive other than the Containment requirement
 * shall be a Bundle
 * shall be a Transaction
+* each bundle entry request shall be a POST (create)
 * shall have a SubmissionSet
 * may have one or more DocumentReference
 * may have one or more Binary
@@ -99,6 +101,7 @@ Description:    "A profile on the Bundle transaction for Provide Document resour
 * all resources must be Comprehensive 
 * shall be a Bundle
 * shall be a Transaction
+* each bundle entry request shall be a POST (create)
 * shall have a SubmissionSet
 * may have one or more DocumentReference
 * may have one or more Binary
