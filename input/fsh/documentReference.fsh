@@ -35,7 +35,7 @@ Description:    "A profile on the DocumentReference resource for MHD with minima
 * content.attachment.title 0..1
 * content.attachment.creation 0..1 MS
 * content.format 0..1 MS
-// TODO: content format best from  IHE FormatCodes valueset
+* content.format from http://ihe.net/fhir/ihe.formatcode.fhir/ValueSet/formatcode (preferred)
 * context.encounter 0..0
 * context.event 0..*
 * context.period 0..1 MS

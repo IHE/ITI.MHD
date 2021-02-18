@@ -40,108 +40,14 @@ The IHE MHD Profile text is Normative, this conformance resource is Informative.
 	<copyright value="IHE http://www.ihe.net/Governance/#Intellectual_Property" />
 	<packageId value="ihe.mhd.fhir" />
 	<fhirVersion value="4.0.1" />
-	<!-- 
 	<dependsOn id="IHEformatcode">
-		<uri value="http://ihe.net/fhir/ihe.formatcode.fhir/ImplementationGuide/ihe.formatcode.fhir" />
+		<uri value="http://profiles.ihe.net/fhir/ihe.formatcode.fhir" />
 		<version value="current"/>
 	</dependsOn>
- -->
+
 	 <definition>
-    <!-- You don't need to define any groupings.  The IGPublisher will define them for you.  You only need to do so if your IG is 'special' and it's
-      inappropriate to use the defaults.  Feel free to provide feedback about the defaults... -->
-    <!--    <resource>
-      <reference>
-        <reference value="StructureDefinition/structuredefinition-somePatientProfile"/>
-      </reference>
-      <name value="Name you want in artifact list"/>
-      <description value="Description you want in artifact list"/>
-    </resource>-->
 
-	<!--  TODO bring these in for check/ballance once the names are figured out
 
-	<resource>
-		<resource>
-			<reference>
-			<reference value="http://ihe.net/fhir/StructureDefinition/IHE_MHD_ProvideDocumentBundle_Minimal" />
-			</reference>
-		</resource>
-		<resource>
-			<reference>
-			<reference value="http://ihe.net/fhir/StructureDefinition/IHE_MHD_ProvideDocumentBundle_Comprehensive" />
-			</reference>
-		</resource>
-		<resource>
-			<reference>
-			<reference value="http://ihe.net/fhir/StructureDefinition/IHE_MHD_Provide_Minimal_DocumentReference" />
-			</reference>
-		</resource>
-		<resource>
-			<reference>
-			<reference value="http://ihe.net/fhir/StructureDefinition/IHE_MHD_Provide_Comprehensive_DocumentReference" />
-			</reference>
-		</resource>
-		<resource>
-			<reference>
-			<reference value="http://ihe.net/fhir/StructureDefinition/IHE_MHD_Query_Minimal_DocumentReference" />
-			</reference>
-		</resource>
-		<resource>
-			<reference>
-			<reference value="http://ihe.net/fhir/StructureDefinition/IHE_MHD_Query_Comprehensive_DocumentReference" />
-			</reference>
-		</resource>
-		<resource>
-			<reference>
-			<reference value="http://ihe.net/fhir/StructureDefinition/IHE_MHD_Minimal_DocumentManifest" />
-			</reference>
-		</resource>
-		<resource>
-			<reference>
-			<reference value="http://ihe.net/fhir/StructureDefinition/IHE_MHD_Comprehensive_DocumentManifest" />
-			</reference>
-		</resource>
-		<resource>
-			<reference>
-			<reference value="http://ihe.net/fhir/StructureDefinition/IHE_MHD_Minimal_List" />
-			</reference>
-		</resource>
-		<resource>
-			<reference>
-			<reference value="http://ihe.net/fhir/StructureDefinition/IHE_MHD_Comprehensive_List" />
-			</reference>
-		</resource>
-		<resource>
-			<reference>
-			<reference value="http://ihe.net/fhir/CapabilityStatement/IHE_MHD_DocumentSource" />
-			</reference>
-		</resource>
-		<resource>
-			<reference>
-			<reference value="http://ihe.net/fhir/CapabilityStatement/IHE_MHD_DocumentConsumer" />
-			</reference>
-		</resource>
-		<resource>
-			<reference>
-			<reference value="http://ihe.net/fhir/CapabilityStatement/IHE_MHD_DocumentRecipient" />
-			</reference>
-		</resource>
-		<resource>
-			<reference>
-			<reference value="http://ihe.net/fhir/CapabilityStatement/IHE_MHD_DocumentResponder" />
-			</reference>
-		</resource>
-		<resource>
-			<reference>
-			<reference value="http://ihe.net/fhir/CodeSystem/IHE.FormatCode.cs" />
-			</reference>
-		</resource>
-		<resource>
-			<reference>
-			<reference value="http://ihe.net/fhir/ValueSet/IHE.FormatCode.vs" />
-			</reference>
-		</resource>
-	</resource>
--->
     <page>
       <!-- The root will always be toc.html - the template will force it if you don't do it -->
       <nameUrl value="toc.html"/>

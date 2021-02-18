@@ -54,6 +54,7 @@ For complete information on constructing a FHIR Bundle Resource, see [http://hl7
 The FHIR Bundle.meta.profile shall have the following value depending on the use of Comprehensive metadata, Minimal metadata, or UnContained metadata: 
 * [Comprehensive Metadata](StructureDefinition-IHE.MHD.Comprehensive.ProvideBundle.html): `http://ihe.net/fhir/ihe.mhd.fhir/StructureDefinition/IHE.MHD.Comprehensive.ProvideBundle`
   * shall be a Transaction Bundle
+  * each bundle entry request shall be POST (create)
   * all resources may be marked comprehensive
   * all resources shall be compliant with comprehensive constraints
   * shall have a [SubmissionSet type List](StructureDefinition-IHE.MHD.Comprehensive.SubmissionSet.html)
@@ -63,6 +64,7 @@ The FHIR Bundle.meta.profile shall have the following value depending on the use
   * may have one [Patient](http://hl7.org/fhir/R4/patient.html)
 * [Minimal Metadata](IHE.MHD.Minimal.ProvideBundle.html): `http://ihe.net/fhir/ihe.mhd.fhir/StructureDefinition/IHE.MHD.Minimal.ProvideBundle`
   * shall be a Transaction Bundle
+  * each bundle entry request shall be POST (create)
   * all resources may be marked minimal, comprehensive, or unContained
   * shall have a [SubmissionSet type List](StructureDefinition-IHE.MHD.Minimal.SubmissionSet.html)
   * may have one or more [DocumentReference](StructureDefinition-IHE.MHD.Minimal.DocumentReference.html)
@@ -72,8 +74,15 @@ The FHIR Bundle.meta.profile shall have the following value depending on the use
 * [UnContained Comprehensive Metadata](StructureDefinition-IHE.MHD.UnContained.Comprehensive.ProvideBundle.html): `http://ihe.net/fhir/ihe.mhd.fhir/StructureDefinition/IHE.MHD.UnContained.Comprehensive.ProvideBundle` 
   * Note that Minimal Metadata does not require containment, so UnContained Minimal is the same as Minimal Metadata
   * Note that UnContained only applies to DocumentReference and SubmissionSet type Lists; so the following apply
-  * [Submission Set UnContained](StructureDefinition-IHE.MHD.UnContained.Comprehensive.SubmissionSet.html)
-  * [DocumentReference UnContained](StructureDefinition-IHE.MHD.UnContained.Comprehensive.DocumentReference.html)
+  * shall be a Transaction Bundle
+  * each bundle entry request shall be POST (create)
+  * all resources may be marked comprehensive
+  * all resources shall be compliant with comprehensive constraints
+  * shall have a [Submission Set UnContained](StructureDefinition-IHE.MHD.UnContained.Comprehensive.SubmissionSet.html)
+  * may have one or more [DocumentReference UnContained](StructureDefinition-IHE.MHD.UnContained.Comprehensive.DocumentReference.html)
+  * may have one or more [Binary](http://hl7.org/fhir/R4/binary.html)
+  * may have one or more [Folder type List](StructureDefinition-IHE.MHD.Comprehensive.Folder.html)
+  * may have one [Patient](http://hl7.org/fhir/R4/patient.html)
 
 When resources are `contained` (see ITI TF-3: 4.5.1), they shall be contained using the FHIR contained method (see http://hl7.org/fhir/R4/references.html#contained).
 
