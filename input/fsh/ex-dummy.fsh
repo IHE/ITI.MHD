@@ -96,11 +96,10 @@ Description: "Dummy Practitioner example for completeness sake. No actual use of
 
 
 
-// TODO: This is intended to be a dummy example that is not compliant but is structurally right. That is it is made up of the right kinds of FHIR resources, but not of the MHD profiles
 Instance:   ex-dummyProvideDocumentBundle
 InstanceOf: DummyProvideDocumentBundle
 Title:      "Dummy Provide Document Bundle with Minimal metadata"
-Description: "Example of a minimal Provide Document Bundle."
+Description: "Example of a Provide Document Bundle transaction made up of the right FHIR resources, but these FHIR resources are not compliant with the MHD constraints. A robust Document Recipient is allowed to consume this if it has business rules that allow it."
 * meta.security = http://terminology.hl7.org/CodeSystem/v3-ActReason#HTEST
 * type = #transaction
 * timestamp = 2020-11-24T23:50:50-05:00

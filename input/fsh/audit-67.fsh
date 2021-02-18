@@ -1,4 +1,3 @@
-//TODO fill in the actual profiling details rather than just comments
 Profile:        AuditFindDocumentReferencesConsumer
 Parent:         AuditEvent
 Id:             IHE.MHD.FindDocumentReferences.Audit.Consumer

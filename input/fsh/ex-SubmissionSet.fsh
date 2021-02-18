@@ -35,8 +35,7 @@ Description:      "SubmissionSet in List resource conforming minimally to Compre
 * code = MHDlistTypes#submissionset
 * date = 2004-12-25T23:50:50-05:00
 * entry[0].item = Reference(DocumentReference/ex-documentreference)
-//TODO: Reported a bug in the IG builder https://chat.fhir.org/#narrow/stream/179252-IG-creation/topic/List.2Eitem.20that.20is.20a.20list
-//* entry[1].item = Reference(List/ex-list)
+* entry[1].item = Reference(List/ex-list)
 * extension[designationType].valueCodeableConcept = http://snomed.info/sct#225728007
 * extension[sourceId].valueIdentifier.value = "urn:oid:1.2.3.4"
 
@@ -81,8 +80,7 @@ Description:      "SubmissionSet in List resource conforming fully to UnContaine
 * code = MHDlistTypes#submissionset
 * date = 2004-12-25T23:50:50-05:00
 * entry[0].item = Reference(DocumentReference/ex-documentreference)
-//TODO: Reported a bug in the IG builder https://chat.fhir.org/#narrow/stream/179252-IG-creation/topic/List.2Eitem.20that.20is.20a.20list
-//* entry[1].item = Reference(List/ex-list)
+* entry[1].item = Reference(List/ex-list)
 * extension[designationType].valueCodeableConcept = http://snomed.info/sct#225728007
 * extension[sourceId].valueIdentifier.value = "urn:oid:1.2.3.4"
 * extension[intendedRecipient].valueReference = Reference(Practitioner/ex-practitioner)
@@ -106,8 +104,7 @@ Description:      "SubmissionSet in List resource conforming fully to Comprehens
 * code = MHDlistTypes#submissionset
 * date = 2004-12-25T23:50:50-05:00
 * entry[0].item = Reference(DocumentReference/ex-documentreference)
-//TODO: Reported a bug in the IG builder https://chat.fhir.org/#narrow/stream/179252-IG-creation/topic/List.2Eitem.20that.20is.20a.20list
-//* entry[1].item = Reference(List/ex-list)
+* entry[1].item = Reference(List/ex-list)
 * contained[0] = in-sender
 * source = Reference(in-sender)
 * extension[designationType].valueCodeableConcept = http://snomed.info/sct#225728007

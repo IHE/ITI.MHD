@@ -42,7 +42,7 @@ When the Document Consumer needs to discover List Resources matching various met
 
 ##### Message Semantics
 
-The Document Consumer executes an HTTP GET against the Document Responder List endpoint. The search target follows the FHIR HTTP specification, addressing the List Resource http://hl7.org/fhir/R4/http.html:
+The Document Consumer executes an HTTP GET against the Document Responder List endpoint. The search target follows the FHIR HTTP specification, addressing the List Resource [http://hl7.org/fhir/R4/http.html](http://hl7.org/fhir/R4/http.html):
 ```
 [base]/List?<query>
 ```
@@ -54,33 +54,31 @@ The <query> represents a series of encoded name-value pairs representing the fil
 
 The Document Consumer may supply, and the Document Responder shall be capable of processing all query parameters listed below. All query parameter values shall be appropriately encoded per RFC3986 “percent” encoding rules. Note that percent encoding does restrict the character set to a subset of ASCII characters which is used for encoding all other characters used in the URL.
 
-The Document Consumer shall include search parameter patient or patient.identifier, type, and status. The other parameters described below are optional. The Document Responder shall implement the parameters described below. The Document Responder may choose to support additional query parameters beyond the subset listed below. Any additional query parameters supported shall be supported according to the core FHIR specification. Such additional parameters are considered out of scope for this transaction. Any additional parameters not supported should be ignored. See http://hl7.org/fhir/R4/search.html#errors.
+The Document Consumer shall include search parameter *subject* or *subject.identifier*, *code*, and *status*. The other parameters described below are optional. The Document Responder shall implement the parameters described below. The Document Responder may choose to support additional query parameters beyond the subset listed below. Any additional query parameters supported shall be supported according to the core FHIR specification. Such additional parameters are considered out of scope for this transaction. Any additional parameters not supported should be ignored. See [http://hl7.org/fhir/R4/search.html#errors](http://hl7.org/fhir/R4/search.html#errors).
 
-Defined [SearchParameter/List-DesignationType](SearchParameter-List-DesignationType.html) for [designationType extension codeableConcept](StructureDefinition-ihe-designationType.html) shall be supported by Document Responder.
+**code** 
+:This parameter, of type token, specifies the code.coding value supplied in the List Resource. The value of the code element indicates the List of type SubmissionSet or Folder as indicated
 
-**patient** 
-:This parameter is of type Reference(Patient). The Document Consumer may get this reference through the use of the [PDQm](https://profiles.ihe.net/ITI/TF/Volume1/ch-38.html) or [PIXm](https://profiles.ihe.net/ITI/TF/Volume1/ch-41.html) Profiles, or by some other method. When the patient parameter is used, the Patient reference would need to be accessible to both the Document Consumer and the Document Responder.
-
-**patient.identifier** 
-:This parameter, of type token, specifies an identifier associated with the patient to which the List Resource is assigned. See [ITI TF-2x: Appendix Z.2](appendix_z.html#query-parameters) for use of the token data type for identifiers. 
-
-**created** 
-:This parameter, of type date, specifies the time when the List was created. See FHIR http://hl7.org/fhir/R4/search.html#date for use of the date search type.
-
-**author.given and author.family** 
-:These parameters, of type string, specify the name parts of the author person which is associated with the List. See [ITI TF-2x: Appendix Z.2](appendix_z.html#query-parameters) for use of the string data type.
-
-**identifier** 
-:This parameter, of type token, specifies an identifier for this List. The search results represent the results of a search on List.masterIdentifier and List.identifier. See [ITI TF-2x: Appendix Z.2](appendix_z.html#query-parameters) for additional constraints on the use of the token search parameter type. 
+**date** 
+:This parameter, of type date, specifies the time when the List was created. See FHIR [http://hl7.org/fhir/R4/search.html#date](http://hl7.org/fhir/R4/search.html#date) for use of the date search type.
 
 **designationType**
 :This IHE extension on parameters defined as [SearchParameter/List-DesignationType](SearchParameter-List-DesignationType.html), of type token, specifies the designation type of the List. The value of the designation type element indicates the clinical purpose of the SubmissionSet or Folder. Note that servers that do not support this extended search parameter will ignore it, and thus return more results than expected.
 
-**type** 
-:This parameter, of type token, specifies the type.coding value supplied in the List Resource. The value of the type element indicates the List of type SubmissionSet or Folder as indicated
+**identifier** 
+:This parameter, of type token, specifies an identifier for this List. The search results represent the results of a search on List.masterIdentifier and List.identifier. See [ITI TF-2x: Appendix Z.2](appendix_z.html#query-parameters) for additional constraints on the use of the token search parameter type. 
 
-**source**
-:This parameter, of type uri, specifies the source value supplied in the List Resource. See FHIR http://hl7.org/fhir/R4/search.html#uri for use of the uri search type.
+**subject** 
+:This parameter is of type Reference(Patient). The Document Consumer may get this reference through the use of the [PDQm](https://profiles.ihe.net/ITI/TF/Volume1/ch-38.html) or [PIXm](https://profiles.ihe.net/ITI/TF/Volume1/ch-41.html) Profiles, or by some other method. When the patient parameter is used, the Patient reference would need to be accessible to both the Document Consumer and the Document Responder.
+
+**subject.identifier** 
+:This parameter, of type token, specifies an identifier associated with the patient to which the List Resource is assigned. See [ITI TF-2x: Appendix Z.2](appendix_z.html#query-parameters) for use of the token data type for identifiers. 
+
+**source.given and source.family** 
+:These parameters, of type string, specify the name parts of the author person which is associated with the List. See [ITI TF-2x: Appendix Z.2](appendix_z.html#query-parameters) for use of the string data type.
+
+**sourceId**
+:This IHE extension on parameters defined as [SearchParameter/List-SourceId](SearchParameter-List-SourceId.html), of type reference, specifies the source (author) value supplied in the List Resource. 
 
 **status**
 :This parameter, of type token, specifies the status of the List. If included in the query, the Document Consumer shall populate the code portion of the token with one of the codes in the following *Table 3.66.4.1.2.1-1: Values for code for status of List*. The system portion of the token shall not be populated.
@@ -100,7 +98,7 @@ See [ITI TF-2x: Appendix Z.6](appendix_z.html#populating-the-expected-response-f
 ###### Example GET
 
 For example given:
-* FHIR server root is `http://test.fhir.org/R4/fhir
+* FHIR server root is `http://test.fhir.org/R4/fhir`
 * Patient id is `9876`
 * looking for a SubmissionSet
 * with clinical code from loinc of 1234-5
@@ -120,13 +118,13 @@ The Document Responder is grouped with an XDS Document Consumer when it supports
 Table 3.66.4.1.3-1: FindSubmissionSets Query Parameter Mapping
 
 |ITI-66 Parameter Name	| ITI-18 Parameter Name |
-|type | "submissionset" |
-|patient or patient.identifier	| $XDSSubmissionSetPatientId |
-|created Note 1	| $XDSSubmissionSetSubmissionTimeFrom |
-|created Note 2	| $XDSSubmissionSetSubmissionTimeTo |
-|author.given / author.family	| $XDSSubmissionSetAuthorPerson |
-|ihe-designationType | $XDSSubmissionSetContentType |
-|source	| $XDSSubmissionSetSourceId |
+|code | "submissionset" |
+|subject or subject.identifier	| $XDSSubmissionSetPatientId |
+|date Note 1	| $XDSSubmissionSetSubmissionTimeFrom |
+|date Note 2	| $XDSSubmissionSetSubmissionTimeTo |
+|source.given / source.family	| $XDSSubmissionSetAuthorPerson |
+|designationType | $XDSSubmissionSetContentType |
+|sourceId	| $XDSSubmissionSetSourceId |
 |status	| $XDSSubmissionSetStatus |
 
 Note 1: This FindSubmissionSets parameter is used when the greater than parameter modifier is used on the created parameter.
@@ -136,11 +134,11 @@ Note 2: This FindSubmissionSets parameter is used when the less than parameter m
 Table 3.66.4.1.3-2: FindFolders Query Parameter Mapping
 
 |ITI-66 Parameter Name	| ITI-18 Parameter Name |
-| type | "folder" |
-|patient or patient.identifier	| $XDSFolderPatientId |
-|created Note 1	| $XDSFolderLastUpdateTimeFrom |
-|created Note 2	| $XDSFolderLastUpdateTimeTo |
-|ihe-designatinoType | $XDSFolderCodeList |
+|code | "folder" |
+|subject or subject.identifier	| $XDSFolderPatientId |
+|date Note 1	| $XDSFolderLastUpdateTimeFrom |
+|date Note 2	| $XDSFolderLastUpdateTimeTo |
+|designationType | $XDSFolderCodeList |
 |status	| $XDSFolderStatus |
 
 Note 1: This FindFolder parameter is used when the greater than parameter modifier is used on the created parameter.
@@ -151,7 +149,7 @@ Note 2: This FindFolder parameter is used when the less than parameter modifier 
 
 **Translation of Token Parameter**
 
-Query parameters of type token are used to represent codes and identifiers. See https://www.hl7.org/fhir/R4/search.html#token. 
+Query parameters of type token are used to represent codes and identifiers. See [https://www.hl7.org/fhir/R4/search.html#token](https://www.hl7.org/fhir/R4/search.html#token). 
 
 The manner in which the Document Responder translates these parameters to ebXML to support the Registry Stored Query [ITI-18] transaction will depend on the type of the corresponding parameter within the FindSubmissionSets stored query (see ITI TF-2a: 3.18.4.1.2.3.7.2). 
 * If the token parameter translates to a codified stored query parameter, then the Document Responder shall represent the token parameter in the stored query as: `<Value>('code^^system')</Value>`
@@ -160,9 +158,9 @@ The manner in which the Document Responder translates these parameters to ebXML 
 
 **Translation of Name Components**
 
-Query parameters representing a name, for example `author.given` and `author.family` shall be translated to an appropriate XCN instance in the ebXML query. For example: 
+Query parameters representing a name, for example `source.given` and `source.family` shall be translated to an appropriate XCN instance in the ebXML query. For example: 
 ```
-…&author.given=Marcus&author.family=Welby
+…&source.given=Marcus&source.family=Welby
 ```
 would translate to:
 ```
@@ -180,7 +178,7 @@ The Document Responder completed processing of the Find Document Lists message.
 
 Based on the query results, the Document Responder will either return an error or success. Guidance on handling Access Denied related to use of 200, 403 and 404 can be found in [ITI TF-2x: Appendix Z.7](appendix_z.html#FHIRsecurity).
 
-When the Document Responder needs to report an error, it shall use HTTP error response codes and should include a FHIR OperationOutcome with more details on the failure. See FHIR http://hl7.org/fhir/R4/http.html and http://hl7.org/fhir/R4/operationoutcome.html.
+When the Document Responder needs to report an error, it shall use HTTP error response codes and should include a FHIR OperationOutcome with more details on the failure. See FHIR [http://hl7.org/fhir/R4/http.html](http://hl7.org/fhir/R4/http.html) and [http://hl7.org/fhir/R4/operationoutcome.html](http://hl7.org/fhir/R4/operationoutcome.html).
 
 If the Find Document Lists message is processed successfully, whether or not any List Resources are found, the HTTP status code shall be 200. The Find Document Lists Response message shall be a Bundle Resource containing zero or more List Resources. If the Document Responder is sending warnings, the Bundle Resource shall also contain an OperationOutcome Resource that contains those warnings.
 
@@ -188,7 +186,7 @@ The response shall adhere to the FHIR Bundle constraints specified in [ITI TF-2x
 
 **List Resource Contents**
 
-The List Resources returned shall be compliant with the FHIR specification http://hl7.org/fhir/R4/List.html
+The List Resources returned shall be compliant with the FHIR specification [http://hl7.org/fhir/R4/list.html](http://hl7.org/fhir/R4/list.html)
 
 The List Resources returned will be compliant with the [IHE restrictions on the List Resource](metadata_maps.html) and for a mapping of ebXML attributes to List elements to [SubmissionSet](metadata_maps.html#submissionSet) and to [Folder](metadata_maps.html#folder). Document Consumers should be robust to receiving List Resources that are not IHE compliant.
 

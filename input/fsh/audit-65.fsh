@@ -48,7 +48,7 @@ Description:    "Defines constraints on the AuditEvent Resource to record when a
 * entity[submissionSet].type = http://terminology.hl7.org/CodeSystem/audit-entity-type#2 "System Object"
 * entity[submissionSet].role = http://terminology.hl7.org/CodeSystem/object-role#20 "Job"
 * entity[submissionSet].what 1..1
-* entity[submissionSet].what only Reference(List) // TODO, should this be more specific to MHD SubmissionSet?
+* entity[submissionSet].what only Reference(List) 
 
 
 Profile:        AuditProvideBundleSource
@@ -101,5 +101,5 @@ Description:    "Defines constraints on the AuditEvent Resource to record when a
 * entity[submissionSet].type = http://terminology.hl7.org/CodeSystem/audit-entity-type#2 "System Object"
 * entity[submissionSet].role = http://terminology.hl7.org/CodeSystem/object-role#20 "Job"
 * entity[submissionSet].what 1..1
-* entity[submissionSet].what only Reference(List) // TODO, should this be more specific to MHD SubmissionSet?
+* entity[submissionSet].what only Reference(List) 
 

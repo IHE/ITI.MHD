@@ -55,48 +55,46 @@ The FHIR Bundle.meta.profile shall have the following value depending on the use
 * [Comprehensive Metadata](StructureDefinition-IHE.MHD.Comprehensive.ProvideBundle.html): `http://ihe.net/fhir/ihe.mhd.fhir/StructureDefinition/IHE.MHD.Comprehensive.ProvideBundle`
   * shall be a Transaction Bundle
   * each bundle entry request shall be POST (create)
-  * all resources may be marked comprehensive
-  * all resources shall be compliant with comprehensive constraints
-  * shall have a [SubmissionSet type List](StructureDefinition-IHE.MHD.Comprehensive.SubmissionSet.html)
-  * may have one or more [DocumentReference](StructureDefinition-IHE.MHD.Comprehensive.DocumentReference.html)
+  * all resources shall be compliant with comprehensive constraints, they may be marked comprehensive
+  * shall have a [SubmissionSet type List](StructureDefinition-IHE.MHD.Comprehensive.SubmissionSet.html) that is comprehensive
+  * may have one or more [DocumentReference](StructureDefinition-IHE.MHD.Comprehensive.DocumentReference.html) that is comprehensive
   * may have one or more [Binary](http://hl7.org/fhir/R4/binary.html)
-  * may have one or more [Folder type List](StructureDefinition-IHE.MHD.Comprehensive.Folder.html)
+  * may have one or more [Folder type List](StructureDefinition-IHE.MHD.Comprehensive.Folder.html) that is comprehensive
   * may have one [Patient](http://hl7.org/fhir/R4/patient.html)
 * [Minimal Metadata](IHE.MHD.Minimal.ProvideBundle.html): `http://ihe.net/fhir/ihe.mhd.fhir/StructureDefinition/IHE.MHD.Minimal.ProvideBundle`
   * shall be a Transaction Bundle
   * each bundle entry request shall be POST (create)
-  * all resources may be marked minimal, comprehensive, or unContained
-  * shall have a [SubmissionSet type List](StructureDefinition-IHE.MHD.Minimal.SubmissionSet.html)
-  * may have one or more [DocumentReference](StructureDefinition-IHE.MHD.Minimal.DocumentReference.html)
+  * all resources shall be compliant with minimal constaints, they may be marked minimal, comprehensive, or unContained
+  * shall have a [SubmissionSet type List](StructureDefinition-IHE.MHD.Minimal.SubmissionSet.html) that is either minimal, comprehensive, or unContained
+  * may have one or more [DocumentReference](StructureDefinition-IHE.MHD.Minimal.DocumentReference.html) that is either minimal, comprehensive, or unContained
   * may have one or more [Binary](http://hl7.org/fhir/R4/binary.html)
-  * may have one or more [Folder type List](StructureDefinition-IHE.MHD.Minimal.Folder.html)
+  * may have one or more [Folder type List](StructureDefinition-IHE.MHD.Minimal.Folder.html) that is either minimal, comprehensive, or unContained
   * may have one [Patient](http://hl7.org/fhir/R4/patient.html)
 * [UnContained Comprehensive Metadata](StructureDefinition-IHE.MHD.UnContained.Comprehensive.ProvideBundle.html): `http://ihe.net/fhir/ihe.mhd.fhir/StructureDefinition/IHE.MHD.UnContained.Comprehensive.ProvideBundle` 
   * Note that Minimal Metadata does not require containment, so UnContained Minimal is the same as Minimal Metadata
   * Note that UnContained only applies to DocumentReference and SubmissionSet type Lists; so the following apply
   * shall be a Transaction Bundle
   * each bundle entry request shall be POST (create)
-  * all resources may be marked comprehensive
-  * all resources shall be compliant with comprehensive constraints
+  * all resources shall be compliant with comprehensive unContained constraints, they may be marked comprehensive unContained
   * shall have a [Submission Set UnContained](StructureDefinition-IHE.MHD.UnContained.Comprehensive.SubmissionSet.html)
   * may have one or more [DocumentReference UnContained](StructureDefinition-IHE.MHD.UnContained.Comprehensive.DocumentReference.html)
   * may have one or more [Binary](http://hl7.org/fhir/R4/binary.html)
   * may have one or more [Folder type List](StructureDefinition-IHE.MHD.Comprehensive.Folder.html)
   * may have one [Patient](http://hl7.org/fhir/R4/patient.html)
 
-When resources are `contained` (see ITI TF-3: 4.5.1), they shall be contained using the FHIR contained method (see http://hl7.org/fhir/R4/references.html#contained).
+When resources are `contained` (see ITI TF-3: 4.5.1), they shall be contained using the FHIR contained method (see [http://hl7.org/fhir/R4/references.html#contained](http://hl7.org/fhir/R4/references.html#contained) ).
 
-When the DocumentReference.content.attachment.url points at a Binary Resource, the Binary Resource shall be in the Bundle. See FHIR Resolving references in Bundles at http://hl7.org/fhir/R4/bundle.html#references.
+When the DocumentReference.content.attachment.url points at a Binary Resource, the Binary Resource shall be in the Bundle. See FHIR Resolving references in Bundles at [http://hl7.org/fhir/R4/bundle.html#references](http://hl7.org/fhir/R4/bundle.html#references).
 
 ###### Patient Identity
 
 All DocumentReference.subject, and List.subject values shall be References to a FHIR Patient Resource. This value may be a relative reference to a Patient Resource within the Bundle or an absolute external reference (URL). This value should be an absolute external reference that may be obtained through use of [PDQm](https://profiles.ihe.net/ITI/TF/Volume1/ch-38.html) or [PIXm](https://profiles.ihe.net/ITI/TF/Volume1/ch-41.html), or by some other means. The Patient Resource needs to be accessible to both the Document Source and the Document Recipient.
 
-When the [UnContained Reference Option](2_actors_and_transactions.html#uncontained-reference-option) is used, there is no need to populate the sourcePatientInfo element. Otherwise, when sourcePatientInfo is provided, the DocumentReference.context.sourcePatientInfo shall be a reference to a “contained” Patient Resource. That is, the source patient info is encoded in a Patient Resource within the DocumentReference.contained element (see http://hl7.org/fhir/R4/references.html#contained).
+When the [UnContained Reference Option](2_actors_and_transactions.html#uncontained-reference-option) is used, there is no need to populate the sourcePatientInfo element. Otherwise, when sourcePatientInfo is provided, the DocumentReference.context.sourcePatientInfo shall be a reference to a “contained” Patient Resource. That is, the source patient info is encoded in a Patient Resource within the DocumentReference.contained element (see [http://hl7.org/fhir/R4/references.html#contained](http://hl7.org/fhir/R4/references.html#contained) ).
 
 ###### Replace, Transform, Signs, and Append Associations
 
-The DocumentReference.relatesTo element indicates an association between DocumentReference resources. The relatesTo.target element in the provided DocumentReference points at the pre-existing DocumentReference that is being replaced, transformed, signed, or appended. The relatesTo.code element in the provided DocumentReference shall be the appropriate relationship type code defined in http://hl7.org/fhir/R4/valueset-document-relationship-type.html. 
+The DocumentReference.relatesTo element indicates an association between DocumentReference resources. The relatesTo.target element in the provided DocumentReference points at the pre-existing DocumentReference that is being replaced, transformed, signed, or appended. The relatesTo.code element in the provided DocumentReference shall be the appropriate relationship type code defined in [http://hl7.org/fhir/R4/valueset-document-relationship-type.html](http://hl7.org/fhir/R4/valueset-document-relationship-type.html). 
 
 ##### Expected Actions
 
@@ -104,11 +102,13 @@ The Document Recipient shall accept both media types `application/fhir+json` and
 
 On receipt of the submission, the Document Recipient shall validate the resources and respond with one of the HTTP codes defined in the response [Message Semantics](#message-semantics-1). 
 
-The Document Recipient shall process the bundle atomically, analogous to both the Provide and Register Document Set-b [ITI-41] transaction and FHIR “transaction” as specified in http://hl7.org/fhir/R4/http.html#transaction . 
+The Document Recipient shall process the bundle atomically, analogous to both the Provide and Register Document Set-b [ITI-41] transaction and FHIR “transaction” as specified in [http://hl7.org/fhir/R4/http.html#transaction](http://hl7.org/fhir/R4/http.html#transaction) . 
 
-The Document Recipient shall validate the bundle first against the FHIR specification. Guidance on what FHIR considers a valid Resource can be found at http://hl7.org/fhir/R4/validation.html. 
+The Document Recipient shall validate the bundle first against the FHIR specification. Guidance on what FHIR considers a valid Resource can be found at [http://hl7.org/fhir/R4/validation.html](http://hl7.org/fhir/R4/validation.html). 
 
-The Document Recipient shall verify the FHIR resource elements for consistency with the Document Sharing metadata requirements as specified for attributes [ITI TF-3: Table 4.3.1-3: “Sending Actor Metadata Attribute Optionality”](https://profiles.ihe.net/ITI/TF/Volume3/ch-4.3.html#4.3.1). The Document Recipient that supports the “Comprehensive Metadata” or the “XDS on FHIR” Option shall validate against column “XDS DS”; otherwise the Document Recipient shall validate against column “XDR MS”. 
+The Document Recipient should verify the FHIR resource elements for consistency with the Document Sharing metadata requirements as specified for attributes [ITI TF-3: Table 4.3.1-3: “Sending Actor Metadata Attribute Optionality”](https://profiles.ihe.net/ITI/TF/Volume3/ch-4.3.html#4.3.1). The Document Recipient that supports the “Comprehensive Metadata” or the “XDS on FHIR” Option shall validate against column “XDS DS”; otherwise the Document Recipient should validate against column “XDR MS”.  
+
+A Document Recipient is allowed to be robust to non-compliant resources that violate the the Document Sharing metadata requirements. 
 
 If necessary for processing, the Document Recipient shall retrieve Resources referenced by absolute URLs in the FHIR Bundle Resource.
 
@@ -130,7 +130,7 @@ If the Provide Document Bundle Message contains a Folder type List Resource and 
 
 The MHD Document Recipient is grouped with an XDS Document Source when it supports the [XDS on FHIR Option](2_actors_and_transactions.html#xds-on-fhir-option) Option. The Document Recipient shall transform the Bundle content into a proper message for the Provide and Register Document Set-b [ITI-41](https://profiles.ihe.net/ITI/TF/Volume2/ITI-41.html) transaction. The Document Recipient shall create appropriate metadata from Resources in the FHIR Bundle Resource, including SubmissionSet, DocumentEntry, and Associations. 
 
-If the Provide Document Bundle Message contains a DocumentReference with a relatesTo element that has a code equal to "replaces" (as defined in http://hl7.org/fhir/R4/valueset-document-relationship-type.html), the XDS Document Source shall include a corresponding RPLC Association in the Submission Set for the Provide and Register Document Set-b [ITI-41](https://profiles.ihe.net/ITI/TF/Volume2/ITI-41.html) transaction. 
+If the Provide Document Bundle Message contains a DocumentReference with a relatesTo element that has a code equal to "replaces" (as defined in [http://hl7.org/fhir/R4/valueset-document-relationship-type.html](http://hl7.org/fhir/R4/valueset-document-relationship-type.html) ), the XDS Document Source shall include a corresponding RPLC Association in the Submission Set for the Provide and Register Document Set-b [ITI-41](https://profiles.ihe.net/ITI/TF/Volume2/ITI-41.html) transaction. 
 
 If the Provide Document Bundle Message contains a DocumentReference with a relatesTo element that has a code equal to "transforms", the XDS Document Source shall include a corresponding XFRM Association in the Submission Set for the Provide and Register Document Set-b [ITI-41](https://profiles.ihe.net/ITI/TF/Volume2/ITI-41.html) transaction. 
 
@@ -144,7 +144,7 @@ Upon successful conversion of the FHIR Bundle to XDS Document Sharing metadata, 
 
 #### Provide Document Bundle Response Message
 
-The Document Recipient returns a HTTP Status code appropriate to the processing outcome, conforming to the transaction specification requirements as specified in http://hl7.org/fhir/R4/http.html#transaction 
+The Document Recipient returns a HTTP Status code appropriate to the processing outcome, conforming to the transaction specification requirements as specified in [http://hl7.org/fhir/R4/http.html#transaction](http://hl7.org/fhir/R4/http.html#transaction) 
 
 ##### Trigger Events
 
@@ -152,7 +152,7 @@ This message shall be sent when a success or error condition needs to be communi
 
 ##### Message Semantics
 
-To enable the Document Source to know the outcome of processing the transaction, and the identities assigned to the resources by the Document Recipient, the Document Recipient shall return a Bundle, with type set to transaction-response, that contains one entry for each entry in the request, in the same order as received, with the Bundle.entry.response.outcome indicating the results of processing the entry warnings such as PartialFolderContentNotProcessed shall be reported in `Bundle.entry.response.outcome`. The Document Recipient shall comply with FHIR http://hl7.org/fhir/R4/bundle.html#transaction-response and http://hl7.org/fhir/R4/http.html#transaction-response. 
+To enable the Document Source to know the outcome of processing the transaction, and the identities assigned to the resources by the Document Recipient, the Document Recipient shall return a Bundle, with type set to transaction-response, that contains one entry for each entry in the request, in the same order as received, with the Bundle.entry.response.outcome indicating the results of processing the entry warnings such as PartialFolderContentNotProcessed shall be reported in `Bundle.entry.response.outcome`. The Document Recipient shall comply with FHIR [http://hl7.org/fhir/R4/bundle.html#transaction-response](http://hl7.org/fhir/R4/bundle.html#transaction-response) and [http://hl7.org/fhir/R4/http.html#transaction-response](http://hl7.org/fhir/R4/http.html#transaction-response). 
 
 To indicate success the overall http `200` response is used. The Bundle.entry.response.status shall be `201` to indicate the Resource has been created; the `.location` element shall be populated, and the `.etag` element may be populated when the Document Recipient supports FHIR resource versioning.
 

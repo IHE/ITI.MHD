@@ -22,7 +22,7 @@ Description: "Example of a minimal Provide Document Bundle. "
 * entry[=].resource = 593cd04e-b696-45c1-bc32-39e55a340a49
 * entry[=].request.url = "Patient"
 * entry[=].request.method = #POST
-
+// TODO: This example has a Patient in the bundle, therefore it would be best if the other resources pointed at this Patient
 
 Instance:   593cd04e-b696-45c1-bc32-39e55a340a44
 InstanceOf: IHE.MHD.Minimal.SubmissionSet

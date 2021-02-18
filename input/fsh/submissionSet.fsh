@@ -40,6 +40,20 @@ Title: "Publisher organization of the SubmissionSet"
 Description: "The globally unique, immutable, identifier of the entity that contributed the SubmissionSet. When a broker is involved in sending SubmissionSets from a collection of client systems, it shall use a different sourceId for submissions from each separate system to allow for tracking. The format of the identifier is an OID."
 * value[x] only Identifier
 
+
+Instance: List-SourceId
+InstanceOf: SearchParameter
+Title: "search on the IHE defined extension for SourceId"
+* url = "http://ihe.net/fhir/ihe.mhd.fhir/SearchParameter/List-SourceId"
+* description = "This SearchParameter enables finding Lists by the SourceId of a submissionSet."
+* name = "SourceId"
+* status = #active
+* code = #sourceId
+* base = #List
+* expression = "(extension('http://ihe.net/fhir/ihe.mhd.fhir/StructureDefinition/SourceId').value as Reference)"
+* type = #reference
+
+
 Extension: IntendedRecipient
 Id: ihe-intendedRecipient
 Title: "Intended recipient of the SubmissionSet"

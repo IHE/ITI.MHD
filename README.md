@@ -30,20 +30,23 @@ This Continuous Build will appear http://build.fhir.org/ig/IHE/ITI.MHD/branches/
 1. make hotlinks as appropriate out of all references to Technical Framework profiles.ihe.net
 1. Add query parameter for ihe type 
 1. example of a GET request that uses the extended query parameter
+1. get the DependsOn on FormatCode IG working (suspect the formatcode IG is not fully registered, asked Grahame for help)
 
 ## TODO
 1. Add narrative to the conformance resources -- note conformance resource is not supported in FSH, and the FSH complier required JSON disallowing XML conformance resource. 
 1. Add narrative to the examples
 1. Add examples from US-Core, or elsewhere?
 1. bring in the test scripts from Bill's test infrastructure
-1. get the DependsOn on FormatCode IG working (suspect the formatcode IG is not fully registered, asked Grahame for help)
-1. Full complement of Provide bundle examples
 1. various other TODO tags found in the source input
 1. cleanup all build warnings and info (moving to ignore warnings anything that is proven to be acceptable)
 1. capability statements to new List use away from DocumentManifest 
+1. capability statements need to somehow distinguish between minimal, uncontained, and comprehensive.
 1. Define Must-Support, should this be in appendix Z
 1. make all fhir http references into proper markdown URL
 1. add to vol3 content a mapping between XDS https://profiles.ihe.net/ITI/TF/Volume3/ch-4.2.html#4.2.4.1 and FHIR OperationOutcome. 
+1. add an extension on source for a source that is Organization (sourceOrg), and add narrative to ITI-65 that when the author is an Organization this extension is to be used. No query is needed as XDS query is only against author person. update MHD_055.
+1. add to mappings page a mapping between XDS RegistryError and FHIR OperationOutcome. At the element level, and also addressing OperationOutcome.issue.code vocabulary could be mapped to the XDS error vocabulary.
+1. Full complement of Provide bundle examples
 1. example needed - add a new document to a existing Folder
 1. example needed - add a existing document to an existing Folder
 1. example needed - a new submission set to include existing document

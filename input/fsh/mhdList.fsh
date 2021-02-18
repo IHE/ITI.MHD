@@ -21,7 +21,7 @@ Instance: List-DesignationType
 InstanceOf: SearchParameter
 Title: "search on the IHE defined extension for designationType"
 * url = "http://ihe.net/fhir/ihe.mhd.fhir/SearchParameter/List-DesignationType"
-* description = "This SearchParameter enables finding Lists by the designationType of code submissionSet or folder.."
+* description = "This SearchParameter enables finding Lists by the designationType code in a submissionSet or folder."
 * name = "DesignationType"
 * status = #active
 * code = #designationType
@@ -30,8 +30,6 @@ Title: "search on the IHE defined extension for designationType"
 * type = #token
 
 CodeSystem:  MHDlistTypes 
-// TODO: Need to have a way to define the system canonical URI
-// url: urn:ihe:iti:mhd:2020
 Title: "MHD List Types"
 Description:  "To use the List resource for two different use-cases we define a code-system with the types of List needed in MHD"
 * #folder "Folder as a FHIR List"
