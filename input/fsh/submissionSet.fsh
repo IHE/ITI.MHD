@@ -24,6 +24,7 @@ Description:    "A profile on the List resource for MHD SubmissionSet.
 * date 1..1
 // source is author
 * source 0..1 MS
+* source.extension contains AuthorOrg named authorOrg 0..1
 * orderedBy 0..0
 * note 0..1
 //*entry 
@@ -36,9 +37,15 @@ Description:    "A profile on the List resource for MHD SubmissionSet.
 
 Extension: SourceId
 Id: ihe-sourceId
-Title: "Publisher organization of the SubmissionSet"
+Title: "Publisher organization identity of the SubmissionSet"
 Description: "The globally unique, immutable, identifier of the entity that contributed the SubmissionSet. When a broker is involved in sending SubmissionSets from a collection of client systems, it shall use a different sourceId for submissions from each separate system to allow for tracking. The format of the identifier is an OID."
 * value[x] only Identifier
+
+Extension: AuthorOrg
+Id: ihe-authorOrg
+Title: "Author organization of the SubmissionSet"
+Description: "When the author of the SubmissionSet is an Organization, this extension shall be used."
+* value[x] only Reference(Organization)
 
 
 Instance: List-SourceId
@@ -101,6 +108,7 @@ Title: "XDS and MHD Mapping"
 * extension[sourceId] -> "SubmissionSet.sourceId"
 * extension[intendedRecipient] -> "SubmissionSet.intendedRecipient"
 * extension[designationType] -> "SubmissionSet.contentTypeCode"
+* source.extension[authorOrg] -> "SubmissionSet.author when the author is an Organization"
 * identifier -> "SubmissionSet.entryUUID and SubmissionSet.uniqueId"
 * status -> "SubmissionSet.availabilityStatus"
 * mode -> "shall be 'working'"

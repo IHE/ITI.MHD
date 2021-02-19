@@ -1,10 +1,10 @@
 {
   "name": "IHE.ITI.MHD",
-  "version": "0.1.0",
+  "version": "0.4.0",
   "canonical": "http://ihe.net/fhir/ihe.mhd.fhir",
   "url": "http://ihe.net/fhir/ihe.mhd.fhir",
-  "title": "MHD Sushi Implementation Guide",
-  "description": "An example of how FSH can be used to create an IG about fish",
+  "title": "MHD Implementation Guide",
+  "description": "The Mobile access to Health Documents (MHD) Profile defines one standardized interface to health documents (a.k.a. an Application Programming Interface (API)) for use by mobile devices so that deployment of mobile applications is more consistent and reusable. The transactions defined here leverage the document content- and format-agnostic metadata concepts from XDS but simplify them for access in constrained environments including mobile devices. ",
   "dependencies": {
     "hl7.fhir.r4.core": "4.0.1"
   },

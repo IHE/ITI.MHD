@@ -54,3 +54,8 @@ The conformance requirements are different between Comprehensive and Minimal met
 * Minimal Folder Metadata does not include `contained` requirements
 
 Resources are not required to carry the meta.profile element and may only carry the profile element defined for the Provide Document Bundle [ITI-65](ITI-65.html) transaction, as the Receiver is not required to add the profile tags. The value of the meta.profile is a soft indicator of conformance expectation. Receivers may choose to validate actual conformance and fail transactions due to non-conformance.
+
+
+
+**[Previous](ITI-68.html) /   [Next](appendix_e.html)**
+

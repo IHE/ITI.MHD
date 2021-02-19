@@ -32,17 +32,27 @@ This Continuous Build will appear http://build.fhir.org/ig/IHE/ITI.MHD/branches/
 1. example of a GET request that uses the extended query parameter
 1. get the DependsOn on FormatCode IG working (suspect the formatcode IG is not fully registered, asked Grahame for help)
 1. make all fhir http references into proper markdown URL
+1. Given the breaking change (DocumentManifest -> List) should this be versioned as 4.0
+1. Define Must-Support, should this be in appendix Z
+1. should we have a link from one page to the next? If so, what does that look like? (Check with Lloyd and Jose, there is possibly something already in the works)
+1. add figure / table numbers as if they are in the right header number space
+1. Write up an open issue explaining header numbers are not aligned with their eventual locations in volume 1 and 2
 
 ## TODO
+
 1. various other TODO tags found in the source input
 1. cleanup all build warnings and info (moving to ignore warnings anything that is proven to be acceptable)
-1. capability statements need narrative
 1. capability statements to new List use away from DocumentManifest 
-1. capability statements need to somehow distinguish between minimal, uncontained, and comprehensive.
-1. Define Must-Support, should this be in appendix Z
+1. setup for public comment submission (issues and form)
+
+Create residual open issues, and create a summary of changes since 3.2
+
+### could be open issues if not done
+
 1. add an extension on source for a source that is Organization (sourceOrg), and add narrative to ITI-65 that when the author is an Organization this extension is to be used. No query is needed as XDS query is only against author person. update MHD_055.
 1. add to mappings page a mapping between XDS RegistryError and FHIR OperationOutcome. At the element level, and also addressing OperationOutcome.issue.code vocabulary could be mapped to the XDS error vocabulary. between XDS https://profiles.ihe.net/ITI/TF/Volume3/ch-4.2.html#4.2.4.1 and FHIR OperationOutcome. 
-1. should we have a link from one page to the next? If so, what does that look like?
+1. capability statements need narrative
+1. capability statements need to somehow distinguish between minimal, uncontained, and comprehensive.
 
 
 ### Examples

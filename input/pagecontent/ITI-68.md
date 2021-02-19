@@ -106,3 +106,8 @@ The Document Consumer when grouped with ATNA Secure Node or Secure Application a
 ##### Document Responder Audit
 
 The Document Responder when grouped with ATNA Secure Node or Secure Application actor shall be able to record a [Retrieve Document Responder Audit Event Log](StructureDefinition-IHE.MHD.RetrieveDocument.Audit.Responder.html). [Audit Example for a Find Document Lists Transaction from responder perspective](AuditEvent-ex-auditRetrieveDocument-responder.html) 
+
+
+
+**[Previous](ITI-67.html) /   [Next](metadata_maps.html)**
+

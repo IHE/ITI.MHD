@@ -1,11 +1,11 @@
 
 The Mobile access to Health Documents (MHD) Profile defines one standardized interface to [health document sharing](https://profiles.ihe.net/ITI/HIE-Whitepaper/index.html) (a.k.a. an Application Programming Interface (API)) for use by mobile devices so that deployment of mobile applications is more consistent and reusable. The transactions defined here leverage the [document content- and format-agnostic metadata concepts](https://profiles.ihe.net/ITI/TF/Volume3/index.html#4) that were initially developed for [XDS](https://profiles.ihe.net/ITI/TF/Volume1/ch-10.html) but simplify them for access in constrained environments including mobile devices. The following figure is a high-level view of using MHD with a document sharing environment.
 
-![Figure: General MHD Diagram](Figure1.png "Figure: General MHD Diagram")
+![Figure: General MHD Diagram](Figure1.png "Figure 33-1: General MHD Diagram")
 
 <div style="clear: left"/>
 
-**Figure: General MHD Diagram**
+**Figure 33-1: General MHD Diagram**
 
 The MHD Profile can be used as an [API to a Document Sharing exchange using XDS](4_grouping.html#mhd-actor-grouped-with-xds-infrastructure) or [XCA](4_grouping.html#mhd-actors-grouped-with-xca-infrastructure). The MHD Profile is used by the [MHDS Document Sharing]() solution. The MHD Profile can be used in [push solutions](1_overview.html#publication-of-new-documents-use-case-description) alone or as an API to solutions like XDR or XDM. These are further elaborated in [Cross Profile Considerations](4_grouping.html)
 
@@ -82,7 +82,7 @@ The publication of a new document(s) is done using the Provide Document Bundle [
 
 <div style="clear: left"/>
 
-**Figure: Use Case 1 Process Flow**
+**Figure 33.4.2.2-1: Use Case 1 Process Flow**
 
 ### Use Case 2: Discovery and Retrieval of existing documents
 
@@ -120,3 +120,7 @@ The MHD Profile defines a set of transactions against FHIR Resources. These are 
 | TRACE  | Not Specified                    | Not Specified                | Not Specified              |
 
 Note: Items are marked Not Specified because the MHD Profile is focused on core Document Sharing (XDS, XDR, etc) capability and not trying to address the larger use-case of metadata update.
+
+
+**[Previous](index.html)   /   [Next](2_actors_and_transactions.html)**
+

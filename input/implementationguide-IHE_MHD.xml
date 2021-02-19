@@ -5,7 +5,7 @@
 		<status value="additional" />
 		<div xmlns="http://www.w3.org/1999/xhtml">
 ImplementationGuide for  
-IHE IT Infrastructure Technical Framework Supplement <a href="http://wiki.ihe.net/index.php/Mobile_access_to_Health_Documents_(MHD)">Mobile access to Health Documents (MHD) Rev. 3.3</a>. 
+IHE IT Infrastructure Technical Framework Supplement <a href="http://wiki.ihe.net/index.php/Mobile_access_to_Health_Documents_(MHD)">Mobile access to Health Documents (MHD) Rev. 4.0</a>. 
 The IHE MHD Profile text is Normative, this conformance resource is Informative.
 		</div>
 	</text>
@@ -15,11 +15,11 @@ The IHE MHD Profile text is Normative, this conformance resource is Informative.
 	</extension>
 -->
 	<url value="http://ihe.net/fhir/ihe.mhd.fhir/ImplementationGuide/ihe.mhd.fhir" />
-	<version value="3.3.0" />
+	<version value="4.0.0 - final draft" />
 	<name value="IHE_MHD" />
 	<status value="active" />
 	<experimental value="false" />
-	<date value="2021-01-07" />
+	<date value="2021-02-18" />
 	<publisher value="Integrating the Healthcare Enterprise (IHE)" />
 	<contact>
 		<name value="IHE" />
@@ -35,7 +35,7 @@ The IHE MHD Profile text is Normative, this conformance resource is Informative.
 			<value value="JohnMoehrke@gmail.com" />
 		</telecom>
 	</contact>
-	<description value="Implementation Guide for the IHE Mobile access to Health Documents (MHD) Rev. 3.1.  See http://wiki.ihe.net/index.php/Mobile_access_to_Health_Documents_(MHD)  The IHE MHD Profile text is Normative, this conformance resource is Informative." />
+	<description value="Implementation Guide for the IHE Mobile access to Health Documents (MHD) Rev. 4.0." />
 
 	<copyright value="IHE http://www.ihe.net/Governance/#Intellectual_Property" />
 	<packageId value="ihe.mhd.fhir" />

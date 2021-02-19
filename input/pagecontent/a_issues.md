@@ -1,10 +1,18 @@
+### Significant changes since MHD Version 3.2
+* Due to Breaking changes this version of MHD is Version 4.0
+* Canonical URLs are different, using '.' rather than '_' as the underbar is not allowed in Canonical URLs
+* DocumentManifest has been replaced by List. Thus both SubmissionSet and Folder are supported with List Resource
+* To support use of List a few extensions have been added, and a few query parameters defined for those extensions
+* A full set of conformance resources and examples
+* Define AuditEvent using profiling and examples
+* Hyperlinked to https://profiles.ihe.net publication of ITI specifications
+* import IHE published FormatCode vocabulary from [IHE FormatCode Implementation Guide](https://profiles.ihe.net/fhir/ihe.formatcode.fhir/index.html)
+
 ### Issues
 
 #### Open Issues
 
-* MHD_039: How important are Folders? We could support Document Source  Document Recipient ability to create and update Folders. To support Document Consumer  Document Responder support of folders would require adding another Transaction for Find Folders, or some other method that the Document Consumer obtains knowledge of the Folder (such as through _include). Are folders really important today, or have they been replaced by the ReferenceIdList?
-* MHD_044: There is more detail in an XDS error on Provide and Register Document Set-b that is not obvious how to translate into the FHIR response [ITI-65]. Suggestions welcome.
-* MHD_051: More of the [ITI-18] queries could be utilized with the addition of the identifier FHIR parameter, however this would then present combinations of query parameters at the MHD (FHIR) API that are not simple transforms to [ITI-18] queries. For example, a Document Consumer provides both identifier query parameter, and another query parameter. At this time, MHD is focused on the most likely queries that a ‘mobile’ client would need, and these are satisfied with FindDocuments and FindSubmissionSets alone. Trial Implementation experience should be provided to IHE ITI Technical Committee in view of the need for other query parameters. Additional query parameters are allowed by MHD, they are simply not required of servers to do anything other than ignore the additional query parameters.
+* MHD_060: Header numbers are auto assigned by the Implementation Guide building tools, and thus are not the numbers in the IHE Volumes that they should be. This should be fixed by Trial Implementation.
 * CP-ITI-1100: Need a way to find DocumentReference that hold attachments with a specified creation date/time. For the time during FHIR R4, we have guided the implementer to use the .date element to hold the created date/time. This solution requires careful duplication of the date value in both date and the attachment. This duplication enables use of the elements and query against date. The .date element in FHIR is defined as when the DocumentReference was created, which might be later than the document creation date/time. GF#19823 requested query parameter for the attachment created date/time for R5
 * MHD_053: Note that there is an emerging issue that FHIR has not addressed and that is how distributed systems behave, and how Patient links affect recorded data. Thus, it is difficult to determine today that the response Bundle content all will be pointing at the exact same Patient, although they should all be referring to the same human.
 * CP-ITI-1116: Dissonance between FHIR concept of Transaction, and XDS Provide and Register transaction. This is partially addressed in CP-ITI-1095 regarding PartialFolderContentNotProcessed. In that a Document Responder is allowed to fail the full transaction according to FHIR transaction rules but is also allowed to soft warn. The soft warn would most likely be needed when implementing XDS-on-FHIR, as the XDS actors will have returned warnings. Thus, the Document Recipient must be allowed to return these soft warnings. In this case the MHD Document Recipient can’t undo the XDS transaction, so it must be allowed to return success with warnings.
@@ -14,7 +22,10 @@
 
 #### Closed Issues
 
-* Resolved in 3.3 (first IG build)
+* Resolved in 4.0 (first IG build)
+* MHD_051: More of the [ITI-18] queries could be utilized with the addition of the identifier FHIR parameter, however this would then present combinations of query parameters at the MHD (FHIR) API that are not simple transforms to [ITI-18] queries. For example, a Document Consumer provides both identifier query parameter, and another query parameter. At this time, MHD is focused on the most likely queries that a ‘mobile’ client would need, and these are satisfied with FindDocuments, FindFolders, and FindSubmissionSets alone. Trial Implementation experience should be provided to IHE ITI Technical Committee in view of the need for other query parameters. Additional query parameters are allowed by MHD, they are simply not required of servers to do anything other than ignore the additional query parameters.
+* MHD_039: How important are Folders? We could support Document Source  Document Recipient ability to create and update Folders. To support Document Consumer  Document Responder support of folders would require adding another Transaction for Find Folders, or some other method that the Document Consumer obtains knowledge of the Folder (such as through _include). Are folders really important today, or have they been replaced by the ReferenceIdList?
+* MHD_044: There is more detail in an XDS error on Provide and Register Document Set-b that is not obvious how to translate into the FHIR response [ITI-65]. Suggestions welcome.
 * MHD_059: Note that Comprehensive constraints leave intendedRecipient as optional, where in XDR intendedRecipient is R2. This distinction was not considered sufficient to add the complexity to the profiles, and recognizes that in a PUSH use-case (XDR) where an intendedRecipent is known that it will be populated and that thus the distinction of R2 vs O is a non-issue.
 * MHD_052: Need an element in List to hold contentCodeList element from XDS. Previous versions of MHD put this into the .code element. However, the .code element is 0..1, and intended to identify the kind of List. See GF#19822 requested for R5.
 * MHD_056:  the canonical urls have changed from '_' to '.'. The definition in FHIR for an "id" does not allow '_', but does allow '.'. The id value is the unique part of the defining canonical URL.
@@ -53,3 +64,8 @@
 * MHD_030: Include support for ReferenceIdList
 * MHD_034: MHD updated in 2020 includes an “UnContained References Option” to enable use-cases where known references are managed over their lifecycle and thus contained is not helpful. This option identifies sourcePatientInfo, Authenticator, and Author resources within the DocumentReference, and DocumentManifest.
 * MHD_035: FHIR does not provide an ad-hoc metadata extension mechanism like custom slots in XDS. 
+
+
+
+**[Previous](testplan.html) /   [Next](index.html)**
+

@@ -202,3 +202,13 @@ The following terms refer to the values used in the OPT column of tables in ITI 
 **C**	Conditional. There is a stated condition associated with the element. When the condition is true, a sending application shall send the element.
 
 **X**	Not supported. A sending application shall not populate the element. A receiving application may, if the element is received, ignore the information conveyed by the element, or may raise an error due to the presence of the element.
+
+### IHE use of "Must Support"
+
+FHIR has a flag that can appear "true" on elements in a StructureDefinition called *Must Support*. In an IHE Profile (Implementation Guide) when a *Must Support* is used, it means at least the same as **R2** defined [above](#profiling-conventions-for-constraints-on-fhir). This is an indicates that the element is required to be populated when the sending application has the information. Further details are defined [above](#profiling-conventions-for-constraints-on-fhir) for **R2**.
+
+This definition of *Must Support* may be further constrained by Actor, Transaction, or Content refinements. 
+
+
+**[Previous](appendix_e.html) /   [Next](testplan.html)**
+

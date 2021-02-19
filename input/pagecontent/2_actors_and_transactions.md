@@ -5,11 +5,11 @@ Figure below shows the actors directly
 involved in the MHD 
 Profile and the relevant transactions between them.
 
-![Figure: MHD Actor Diagram](ActorsAndTransactions.svg "Figure: MHD Actor Diagram")
+![Figure 33.1-1: MHD Actor Diagram](ActorsAndTransactions.svg "Figure: MHD Actor Diagram")
 
 <div style="clear: left"/>
 
-**Figure: MHD Actor Diagram**
+**Figure33.1-1: MHD Actor Diagram**
 
 Table 3-1 lists the transactions for each actor directly involved in the MHD Implementation Guide. To claim compliance with this guide, an actor shall
 support all required transactions (labeled "R") and may support the
@@ -19,7 +19,7 @@ optional transactions (labeled "O").
 <table border="1" borderspacing="0" style='border: 1px solid black; border-collapse: collapse'>
 <caption>
 <b>
-Table 3-1: MHD Implementation Guide - Actors and Transactions
+Table 33.1-1: MHD Implementation Guide - Actors and Transactions
 </b>
 </caption>
 <thead>
@@ -177,7 +177,7 @@ Options that may be selected for each actor in this implementation guide, are li
 between options when applicable are specified in notes.
 
 <table border="1" style="border: 1px solid black; border-collapse: collapse">
-    <caption><b>Table 3.2-1 Actor Options</b></caption>
+    <caption><b>Table 33.2-1 Actor Options</b></caption>
     <thead>
         <tr style="background: gray;" class="odd">
             <td>Actor</td>
@@ -285,3 +285,7 @@ For more details see the detailed [ITI-67 transaction description](ITI-67.html)
 This transaction is used to get documents.
 
 For more details see the detailed [ITI-68 transaction description](ITI-68.html)
+
+
+**[Previous](1_overview.html) /   [Next](3_security_considerations.html)**
+
