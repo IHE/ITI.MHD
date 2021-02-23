@@ -39,9 +39,13 @@ INFORMATION: ImplementationGuide/ihe.mhd.fhir: ImplementationGuide: Validate res
 
 # Capability Statements
 INFORMATION: CapabilityStatement/IHE.MHD.DocumentConsumer: CapabilityStatement: Validate resource against profile http://hl7.org/fhir/StructureDefinition/CapabilityStatement
-INFORMATION: CapabilityStatement/IHE.MHD.DocumentRecipient: CapabilityStatement: Validate resource against profile http://hl7.org/fhir/StructureDefinition/CapabilityStatement
 INFORMATION: CapabilityStatement/IHE.MHD.DocumentResponder: CapabilityStatement: Validate resource against profile http://hl7.org/fhir/StructureDefinition/CapabilityStatement
 INFORMATION: CapabilityStatement/IHE.MHD.DocumentSource: CapabilityStatement: Validate resource against profile http://hl7.org/fhir/StructureDefinition/CapabilityStatement
+INFORMATION: CapabilityStatement/IHE.MHD.DocumentSource.Comprehensive: CapabilityStatement: Validate resource against profile http://hl7.org/fhir/StructureDefinition/CapabilityStatement
+INFORMATION: CapabilityStatement/IHE.MHD.DocumentSource.UnContained: CapabilityStatement: Validate resource against profile http://hl7.org/fhir/StructureDefinition/CapabilityStatement
+INFORMATION: CapabilityStatement/IHE.MHD.DocumentRecipient.Comprehensive: CapabilityStatement: Validate resource against profile http://hl7.org/fhir/StructureDefinition/CapabilityStatement
+INFORMATION: CapabilityStatement/IHE.MHD.DocumentRecipient.UnContained: CapabilityStatement: Validate resource against profile http://hl7.org/fhir/StructureDefinition/CapabilityStatement
+INFORMATION: CapabilityStatement/IHE.MHD.DocumentRecipient: CapabilityStatement: Validate resource against profile http://hl7.org/fhir/StructureDefinition/CapabilityStatement
 
 # profiles for MHD that have examples
 Validate resource against profile http://ihe.net/fhir/ihe.mhd.fhir/StructureDefinition/IHE.MHD.Minimal.SubmissionSet - listed in meta
@@ -77,3 +81,4 @@ Validate resource against profile http://hl7.org/fhir/StructureDefinition/AuditE
 Validate resource against profile http://hl7.org/fhir/StructureDefinition/CodeSystem
 Validate resource against profile http://hl7.org/fhir/StructureDefinition/Device
 Validate resource against profile http://hl7.org/fhir/StructureDefinition/SearchParameter
+Validate resource against profile http://hl7.org/fhir/StructureDefinition/ValueSet

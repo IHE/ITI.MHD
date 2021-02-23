@@ -12,6 +12,7 @@ The Provide Document Bundle [ITI-65] transaction passes a Provide Document Bundl
 |-------------------+--------------------------|
 | [Document Source](2_actors_and_transactions.html#document-source)    | Sends documents and metadata to the Document Recipient |
 | [Document Recipient](2_actors_and_transactions.html#document-recipient) | Accepts the document and metadata sent from the Document Source |
+{: .grid}
 
 ### Referenced Standards
 
@@ -123,6 +124,7 @@ If the Provide Document Bundle Message contains a DocumentReference Resource wit
 |replaces	 | PartialReplaceContentNotProcessed |
 |transforms	 | PartialTransformContentNotProcessed |
 |appends	 | PartialAppendContentNotProcessed |
+{: .grid}
 
 If the Provide Document Bundle Message contains a Folder type List Resource and the Document Recipient does not support the Folder type List Resource (aka, Folders), the Document Recipient shall either fail the whole transaction or may ignore the Folder type List, continuing processing of the transaction, and return a “PartialFolderContentNotProcessed” warning. 
 
@@ -164,9 +166,16 @@ The Document Source processes the results according to application-defined rules
 
 ### CapabilityStatement Resource
 
-Document Recipient implementing this transaction shall provide a CapabilityStatement Resource as described in [ITI TF-2x: Appendix Z.3](appendix_z.html#capability) indicating the transaction has been implemented. 
-* Requirements CapabilityStatement for [Document Source](CapabilityStatement-IHE.MHD.DocumentSource.html)
-* Requirements CapabilityStatement for [Document Recipient](CapabilityStatement-IHE.MHD.DocumentRecipient.html)
+Document Recipient shall provide a CapabilityStatement Resource as described in [ITI TF-2x: Appendix Z.3](appendix_z.html#capability) indicating the transaction has been implemented. 
+* General Requirements CapabilityStatement for [Document Recipient](CapabilityStatement-IHE.MHD.DocumentRecipient.html). This indicates that either no options are declared or that all options are declared.
+* Requirements CapabilityStatement for [Document Recipient Comprehensive](CapabilityStatement-IHE.MHD.DocumentRecipient.Comprehensive.html). This indicates that the Comprehensive Option is declared. Note that XDS-on-FHIR Option requires Comprehensive and thus this Requirements CapabilityStatement applies to XDS-on-FHIR also.
+* Requirements CapabilityStatement for [Document Recipient UnContained](CapabilityStatement-IHE.MHD.DocumentRecipient.UnContained.html). This indicates that the UnContained Option is declared.
+
+Document Source should provide a CapabilityStatement Resource as described in [ITI TF-2x: Appendix Z.3](appendix_z.html#capability) indicating the transaction has been implemented. 
+* General Requirements CapabilityStatement for [Document Source](CapabilityStatement-IHE.MHD.DocumentSource.html). This indicates that either no options are declared or that all options are declared.
+* Requirements CapabilityStatement for [Document Source Comprehensive](CapabilityStatement-IHE.MHD.DocumentSource.Comprehensive.html). This indicates that the Comprehensive Option is declared. Note that XDS-on-FHIR Option requires Comprehensive and thus this Requirements CapabilityStatement applies to XDS-on-FHIR also.
+* Requirements CapabilityStatement for [Document Source UnContained](CapabilityStatement-IHE.MHD.DocumentSource.UnContained.html). This indicates that the UnContained Option is declared.
+
 
 ### Security Considerations
 

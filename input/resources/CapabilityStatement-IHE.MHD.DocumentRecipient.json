@@ -3,14 +3,14 @@
   "id": "IHE.MHD.DocumentRecipient",
   "text": {
     "status": "additional",
-    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">\n\tThis CapabilityStatement describes the Document Recipient actor in the  \n    IHE <a href=\"http://wiki.ihe.net/index.php/Mobile_access_to_Health_Documents_(MHD)\">Mobile access to Health Documents (MHD) Rev. 3.1</a> Profile. \n\tThe IHE MHD Profile text is Normative, this conformance resource is Informative.\n\t\t</div>"
+    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">\n\tThis Requirements CapabilityStatement describes the <a href=\"2_actors_and_transactions.html#document-recipient\">Document Recipient actor</a> with no declared Options.\n\t</div>"
   },
   "url": "http://ihe.net/fhir/ihe.mhd.fhir/CapabilityStatement/IHE.MHD.DocumentRecipient",
   "name": "IHE_MHD_DocumentRecipient",
   "title": "Document Recipient",
   "status": "active",
   "experimental": false,
-  "date": "2019-09-13T00:00:00-05:00",
+  "date": "2021-02-22T00:00:00-05:00",
   "publisher": "Integrating the Healthcare Enterprise (IHE)",
   "contact": [
     {
@@ -32,7 +32,7 @@
       ]
     }
   ],
-  "description": "IHE ITI Mobile access to Health Documents (MHD) - Document Recipient.",
+  "description": "IHE ITI Mobile access to Health Documents (MHD) - Document Recipient - with no declared Options or all declared Options.",
   "copyright": "IHE http://www.ihe.net/Governance/#Intellectual_Property",
   "kind": "requirements",
   "fhirVersion": "4.0.0",
@@ -49,11 +49,15 @@
       "interaction": [
         {
           "code": "transaction",
-          "documentation": "http://ihe.net/fhir/ihe.mhd.fhir/StructureDefinition/IHE.MHD.ProvideDocumentBundle.Minimal"
+          "documentation": "http://ihe.net/fhir/ihe.mhd.fhir/StructureDefinition/IHE.MHD.Minimal.ProvideBundle"
         },
         {
           "code": "transaction",
-          "documentation": "http://ihe.net/fhir/ihe.mhd.fhir/StructureDefinition/IHE.MHD.ProvideDocumentBundle.Comprehensive"
+          "documentation": "http://ihe.net/fhir/ihe.mhd.fhir/StructureDefinition/IHE.MHD.UnContained.Comprehensive.ProvideBundle"
+        },
+        {
+          "code": "transaction",
+          "documentation": "http://ihe.net/fhir/ihe.mhd.fhir/StructureDefinition/IHE.MHD.Comprehensive.ProvideBundle"
         }
       ]
     }

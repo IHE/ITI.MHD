@@ -1,9 +1,10 @@
 Profile:        AuditRetrieveDocumentConsumer
 Parent:         AuditEvent
 Id:             IHE.MHD.RetrieveDocument.Audit.Consumer
-Title:          "Audit Event for Retrieve Document Transaction"
-Description:    "Defines constraints on the Document Consumer AuditEvent Resource to record when a Retrieve Document Transaction happens.
+Title:          "Audit Event for Retrieve Document Transaction at Document Consumer"
+Description:    "Defines constraints on the Document Consumer AuditEvent Resource to record when a Retrieve Document Transaction happens, as recorded by the Document Consumer.
 * Import event
+* shall have the source as itself
 * shall have a document consumer agent
 * shall have a document responder agent
 * may have user, app, organization agent(s)
@@ -18,6 +19,7 @@ Description:    "Defines constraints on the Document Consumer AuditEvent Resourc
 * outcome 1..1
 * outcomeDesc MS // encouraged
 // source is already required
+// TODO: add somehow that the source must be the same as the agent[documentConsumer]
 * agent 2..*
 * agent ^slicing.discriminator.type = #pattern
 * agent ^slicing.discriminator.path = "type"
@@ -56,9 +58,10 @@ Description:    "Defines constraints on the Document Consumer AuditEvent Resourc
 Profile:        AuditRetrieveDocumentResponder
 Parent:         AuditEvent
 Id:             IHE.MHD.RetrieveDocument.Audit.Responder
-Title:          "Audit Event for Retrieve Document Transaction"
-Description:    "Defines constraints on the Document Responder AuditEvent Resource to record when a Retrieve Document Transaction happens.
+Title:          "Audit Event for Retrieve Document Transaction at the Document Responder"
+Description:    "Defines constraints on the Document Responder AuditEvent Resource to record when a Retrieve Document Transaction happens, as recorded by the Document Responder.
 * Export event
+* shall have the source as itself
 * shall have a document consumer agent
 * shall have a document responder agent
 * may have user, app, organization agent(s)
@@ -73,6 +76,7 @@ Description:    "Defines constraints on the Document Responder AuditEvent Resour
 * outcome 1..1
 * outcomeDesc MS // encouraged
 // source is already required
+// TODO: add somehow that the source must be the same as the agent[documentResponder]
 * agent 2..*
 * agent ^slicing.discriminator.type = #pattern
 * agent ^slicing.discriminator.path = "type"

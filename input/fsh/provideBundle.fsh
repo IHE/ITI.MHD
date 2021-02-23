@@ -14,10 +14,7 @@ Description:    "A profile on the Bundle transaction for Provide Document resour
 * may have one or more Folder
 * may have one Patient
 "
-// not clear that meta.profile needs to be profiled when the requirement is that this profile is mentioned.
 * meta.profile 1..*
-// TODO confirm this profile URI
-//* meta.profile = http://ihe.net/fhir/StructureDefinition/IHE.MHD.Minimal.ProvideBundle
 * type = #transaction
 * entry ^slicing.discriminator.type = #profile
 * entry ^slicing.discriminator.path = "resource"
@@ -78,9 +75,6 @@ Description:    "A profile on the Bundle transaction for Provide Document resour
 * may have one or more Folder
 * may have one Patient
 "
-// not clear that meta.profile needs to be profiled when the requirement is that this profile is mentioned.
-// TODO confirm this profile URI
-//* meta.profile = http://ihe.net/fhir/StructureDefinition/IHE.MHD.Minimal.ProvideBundle
 * entry[SubmissionSet].resource only
     IHE.MHD.UnContained.Comprehensive.SubmissionSet or
     IHE.MHD.Comprehensive.SubmissionSet
@@ -108,9 +102,6 @@ Description:    "A profile on the Bundle transaction for Provide Document resour
 * may have one or more Folder
 * may have one Patient
 "
-// not clear that meta.profile needs to be profiled when the requirement is that this profile is mentioned.
-// TODO confirm this profile URI
-//* meta.profile = http://ihe.net/fhir/StructureDefinition/IHE.MHD.Minimal.ProvideBundle
 * entry[SubmissionSet].resource only
     IHE.MHD.Comprehensive.SubmissionSet
 * entry[DocumentRefs].resource only 

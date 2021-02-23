@@ -1,13 +1,13 @@
 {
   "resourceType": "CapabilityStatement",
-  "id": "IHE.MHD.DocumentSource",
+  "id": "IHE.MHD.DocumentRecipient.Comprehensive",
   "text": {
     "status": "additional",
-    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">\n\tThis Requirements CapabilityStatement describes the <a href=\"2_actors_and_transactions.html#document-source\">Document Source actor</a> with no declared Options.\n\t</div>"
+    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">\n\tThis Requirements CapabilityStatement describes the <a href=\"2_actors_and_transactions.html#document-recipient\">Document Recipient actor</a> with Comprehensive declared Option.\n\t</div>"
   },
-  "url": "http://ihe.net/fhir/ihe.mhd.fhir/CapabilityStatement/IHE.MHD.DocumentSource",
-  "name": "IHE_MHD_DocumentSource",
-  "title": "Document Source (publisher)",
+  "url": "http://ihe.net/fhir/ihe.mhd.fhir/CapabilityStatement/IHE.MHD.DocumentRecipient.Comprehensive",
+  "name": "IHE_MHD_DocumentRecipient_Comprehensive",
+  "title": "Document Recipient implementing Comprehensive Option",
   "status": "active",
   "experimental": false,
   "date": "2021-02-22T00:00:00-05:00",
@@ -32,7 +32,7 @@
       ]
     }
   ],
-  "description": "IHE ITI Mobile access to Health Documents (MHD) - Document Source (publisher) - with no declared Options or all declared Options.",
+  "description": "IHE ITI Mobile access to Health Documents (MHD) - Document Recipient - with Comprehensive declared Option.",
   "copyright": "IHE http://www.ihe.net/Governance/#Intellectual_Property",
   "kind": "requirements",
   "fhirVersion": "4.0.0",
@@ -42,19 +42,11 @@
   ],
   "rest": [
     {
-      "mode": "client",
+      "mode": "server",
       "security": {
         "description": "Recommend IUA or SMART"
       },
       "interaction": [
-        {
-          "code": "transaction",
-          "documentation": "http://ihe.net/fhir/ihe.mhd.fhir/StructureDefinition/IHE.MHD.Minimal.ProvideBundle"
-        },
-        {
-          "code": "transaction",
-          "documentation": "http://ihe.net/fhir/ihe.mhd.fhir/StructureDefinition/IHE.MHD.UnContained.Comprehensive.ProvideBundle"
-        },
         {
           "code": "transaction",
           "documentation": "http://ihe.net/fhir/ihe.mhd.fhir/StructureDefinition/IHE.MHD.Comprehensive.ProvideBundle"

@@ -41,7 +41,7 @@ The IHE MHD Profile text is Normative, this conformance resource is Informative.
 	<packageId value="ihe.mhd.fhir" />
 	<fhirVersion value="4.0.1" />
 	<dependsOn id="IHEformatcode">
-		<uri value="http://profiles.ihe.net/fhir/ihe.formatcode.fhir" />
+		<uri value="http://profiles.ihe.net/fhir/ihe.formatcode.fhir/ImplementationGuide/ihe.formatcode.fhir" />
 		<version value="current"/>
 	</dependsOn>
 

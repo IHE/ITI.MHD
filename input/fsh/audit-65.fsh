@@ -4,6 +4,7 @@ Id:             IHE.MHD.ProvideBundle.Audit.Recipient
 Title:          "Audit Event for Provide Bundle Transaction at Recipient"
 Description:    "Defines constraints on the AuditEvent Resource to record when a Provide Bundle Transaction happens at the Recipient.
 * Import event
+* shall have source of itself
 * shall have a document source agent
 * shall have a document recipient agent
 * may have user, app, organization agent(s)
@@ -18,6 +19,7 @@ Description:    "Defines constraints on the AuditEvent Resource to record when a
 * outcome 1..1
 * outcomeDesc MS // encouraged
 // source is already required
+// TODO: add somehow that the source must be the same as the agent[documentRecipient]
 * agent 2..*
 * agent ^slicing.discriminator.type = #pattern
 * agent ^slicing.discriminator.path = "type"
@@ -57,6 +59,7 @@ Id:             IHE.MHD.ProvideBundle.Audit.Source
 Title:          "Audit Event for Provide Bundle Transaction at Source"
 Description:    "Defines constraints on the AuditEvent Resource to record when a Provide Bundle Transaction happens at the Source.
 * Import event
+* shall have source of itself
 * shall have a document source agent
 * shall have a document recipient agent
 * may have user, app, organization agent(s)
@@ -71,6 +74,7 @@ Description:    "Defines constraints on the AuditEvent Resource to record when a
 * outcome 1..1
 * outcomeDesc MS // encouraged
 // source is already required
+// TODO: add somehow that the source must be the same as the agent[documentSource]
 * agent 2..*
 * agent ^slicing.discriminator.type = #pattern
 * agent ^slicing.discriminator.path = "type"
