@@ -12,6 +12,7 @@
 
 #### Open Issues
 
+* MHD_061: The new IUA supplement includes guidance on use of OAuth scopes when grouped with MHD. That text seems should be brought into this IG, but it is unclear where this text should be maintained going forward. For now this text is left only in IUA, but after public comment this text will likely be brought into MHD.  see https://profiles.ihe.net/ITI/IUA/index.html#33-mhd-profile
 * MHD_060: Header numbers are auto assigned by the Implementation Guide building tools, and thus are not the numbers in the IHE Volumes that they should be. This should be fixed by Trial Implementation.
 * CP-ITI-1100: Need a way to find DocumentReference that hold attachments with a specified creation date/time. For the time during FHIR R4, we have guided the implementer to use the .date element to hold the created date/time. This solution requires careful duplication of the date value in both date and the attachment. This duplication enables use of the elements and query against date. The .date element in FHIR is defined as when the DocumentReference was created, which might be later than the document creation date/time. GF#19823 requested query parameter for the attachment created date/time for R5
 * MHD_053: Note that there is an emerging issue that FHIR has not addressed and that is how distributed systems behave, and how Patient links affect recorded data. Thus, it is difficult to determine today that the response Bundle content all will be pointing at the exact same Patient, although they should all be referring to the same human.

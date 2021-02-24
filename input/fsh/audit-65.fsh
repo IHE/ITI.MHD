@@ -18,8 +18,7 @@ Description:    "Defines constraints on the AuditEvent Resource to record when a
 * recorded 1..1 // already required
 * outcome 1..1
 * outcomeDesc MS // encouraged
-// source is already required
-// TODO: add somehow that the source must be the same as the agent[documentRecipient]
+// source is already required, see invariant val-audit-source use
 * agent 2..*
 * agent ^slicing.discriminator.type = #pattern
 * agent ^slicing.discriminator.path = "type"
@@ -34,6 +33,7 @@ Description:    "Defines constraints on the AuditEvent Resource to record when a
 * agent[documentSource].network 1..1
 * agent[documentRecipient].type = DCM#110152 "Destination Role ID"
 * agent[documentRecipient].who 1..1
+* agent[documentRecipient] obeys val-audit-source
 * agent[documentRecipient].network 1..1
 * entity 2..2
 * entity ^slicing.discriminator.type = #pattern
@@ -52,6 +52,10 @@ Description:    "Defines constraints on the AuditEvent Resource to record when a
 * entity[submissionSet].what 1..1
 * entity[submissionSet].what only Reference(List) 
 
+Invariant: val-audit-source
+Description: "The Audit Source is this agent too."
+Expression: "$this.who = %resource.source.observer"
+Severity: #error
 
 Profile:        AuditProvideBundleSource
 Parent:         AuditEvent
@@ -73,8 +77,7 @@ Description:    "Defines constraints on the AuditEvent Resource to record when a
 * recorded 1..1 // already required
 * outcome 1..1
 * outcomeDesc MS // encouraged
-// source is already required
-// TODO: add somehow that the source must be the same as the agent[documentSource]
+// source is already required, see invariant val-audit-source use
 * agent 2..*
 * agent ^slicing.discriminator.type = #pattern
 * agent ^slicing.discriminator.path = "type"
@@ -86,6 +89,7 @@ Description:    "Defines constraints on the AuditEvent Resource to record when a
 	// may be many including app identity, user identity, etc
 * agent[documentSource].type = DCM#110153 "Source Role ID"
 * agent[documentSource].who 1..1
+* agent[documentSource] obeys val-audit-source
 * agent[documentSource].network 1..1
 * agent[documentRecipient].type = DCM#110152 "Destination Role ID"
 * agent[documentRecipient].who 1..1

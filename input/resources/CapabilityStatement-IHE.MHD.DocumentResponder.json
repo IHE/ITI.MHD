@@ -3,7 +3,7 @@
   "id": "IHE.MHD.DocumentResponder",
   "text": {
     "status": "additional",
-    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">\n\tThis CapabilityStatement describes the Document Responder actor in the  \n    IHE <a href=\"http://wiki.ihe.net/index.php/Mobile_access_to_Health_Documents_(MHD)\">Mobile access to Health Documents (MHD) Rev. 3.1</a> Profile. \n\tThe IHE MHD Profile text is Normative, this conformance resource is Informative.\n\t\t</div>"
+    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">\n\tThis Requirements CapabilityStatement describes the <a href=\"2_actors_and_transactions.html#document-responder\">Document Responder actor</a>.\n\t</div>"
   },
   "url": "http://ihe.net/fhir/ihe.mhd.fhir/CapabilityStatement/IHE.MHD.DocumentResponder",
   "name": "IHE_MHD_DocumentResponder",
@@ -46,9 +46,10 @@
       "resource": [
         {
           "type": "DocumentReference",
-          "profile": "http://ihe.net/fhir/ihe.mhd.fhir/StructureDefinition/IHE.MHD.Query.Minimal.DocumentReference",
+          "profile": "http://ihe.net/fhir/ihe.mhd.fhir/StructureDefinition/IHE.MHD.Minimal.DocumentReference",
           "supportedProfile": [
-            "http://ihe.net/fhir/ihe.mhd.fhir/StructureDefinition/IHE.MHD.Query.Comprehensive.DocumentReference"
+            "http://ihe.net/fhir/ihe.mhd.fhir/StructureDefinition/IHE.MHD.Comprehensive.DocumentReference",
+            "http://ihe.net/fhir/ihe.mhd.fhir/StructureDefinition/IHE.MHD.UnContained.DocumentReference"
           ],
           "interaction": [
             {
@@ -158,10 +159,14 @@
           ]
         },
         {
-          "type": "DocumentManifest",
-          "profile": "http://ihe.net/fhir/ihe.mhd.fhir/StructureDefinition/IHE.MHD.Minimal.DocumentManifest",
+          "type": "List",
+          "profile": "http://ihe.net/fhir/ihe.mhd.fhir/StructureDefinition/IHE.MHD.List",
           "supportedProfile": [
-            "http://ihe.net/fhir/ihe.mhd.fhir/StructureDefinition/IHE.MHD.Comprehensive.DocumentManifest"
+            "http://ihe.net/fhir/ihe.mhd.fhir/StructureDefinition/IHE.MHD.UnContained.Comprehensive.SubmissionSet",
+			"http://ihe.net/fhir/ihe.mhd.fhir/StructureDefinition/IHE.MHD.Comprehensive.SubmissionSet",
+            "http://ihe.net/fhir/ihe.mhd.fhir/StructureDefinition/IHE.MHD.Minimal.SubmissionSet",
+			"http://ihe.net/fhir/ihe.mhd.fhir/StructureDefinition/IHE.MHD.Comprehensive.Folder",
+			"http://ihe.net/fhir/ihe.mhd.fhir/StructureDefinition/IHE.MHD.Minimal.Folder"
           ],
           "interaction": [
             {
@@ -179,64 +184,58 @@
               "documentation": "Logical id of this artifact"
             },
             {
-              "name": "_lastUpdated",
+              "name": "_lastupdated",
               "definition": "http://hl7.org/fhir/SearchParameter/Resource-lastUpdated",
               "type": "date",
               "documentation": "When the resource version last changed"
             },
             {
-              "name": "author",
-              "definition": "http://hl7.org/fhir/SearchParameter/DocumentManifest-author",
-              "type": "reference",
-              "documentation": "Who and/or what authored the manifest"
+              "name": "code",
+              "definition": "http://hl7.org/fhir/SearchParameter/clinical-code",
+              "type": "token",
+              "documentation": "This parameter, of type token, specifies the code.coding value supplied in the List Resource. The value of the code element indicates the List of type SubmissionSet or Folder as indicated."
             },
             {
-              "name": "created",
-              "definition": "http://hl7.org/fhir/SearchParameter/DocumentManifest-created",
+              "name": "date",
+              "definition": "http://hl7.org/fhir/SearchParameter/clinical-date",
               "type": "date",
-              "documentation": "When this document manifest created"
+              "documentation": "This parameter, of type date, specifies the time when the List was created."
             },
             {
-              "name": "patient",
+              "name": "identifier",
+              "definition": "http://hl7.org/fhir/SearchParameter/clinical-identifier",
+              "type": "token",
+              "documentation": "This parameter, of type token, specifies an identifier for this List. The search results represent the results of a search on List.masterIdentifier and List.identifier. See ITI TF-2x: Appendix Z.2 for additional constraints on the use of the token search parameter type."
+            },
+            {
+              "name": "subject",
               "definition": "http://hl7.org/fhir/SearchParameter/clinical-patient",
               "type": "reference",
-              "documentation": "The subject of the set of documents"
-            },
-            {
-              "name": "recipient",
-              "definition": "http://hl7.org/fhir/SearchParameter/DocumentManifest-recipient",
-              "type": "reference",
-              "documentation": "Intended to get notified about this set of documents"
+              "documentation": "This parameter is of type Reference(Patient). The Document Consumer may get this reference through the use of the PDQm or PIXm Profiles, or by some other method. When the patient parameter is used, the Patient reference would need to be accessible to both the Document Consumer and the Document Responder."
             },
             {
               "name": "source",
-              "definition": "http://hl7.org/fhir/SearchParameter/DocumentManifest-source",
-              "type": "uri",
-              "documentation": "The source system/application/software"
+              "definition": "http://hl7.org/fhir/SearchParameter/List-source",
+              "type": "reference",
+              "documentation": "These parameters, of type string, specify the name parts of the author person which is associated with the List. See ITI TF-2x: Appendix Z.2 for use of the string data type."
             },
             {
               "name": "status",
-              "definition": "http://hl7.org/fhir/SearchParameter/DocumentManifest-status",
+              "definition": "http://hl7.org/fhir/SearchParameter/List-status",
               "type": "token",
-              "documentation": "current | superseded | entered-in-error"
+              "documentation": "This parameter, of type token, specifies the status of the List. If included in the query, the Document Consumer shall populate the code portion of the token with one of the codes in the following Table 3.66.4.1.2.1-1: Values for code for status of List. The system portion of the token shall not be populated."
             },
             {
-              "name": "type",
-              "definition": "http://hl7.org/fhir/SearchParameter/clinical-type",
+              "name": "designationType",
+              "definition": "http://ihe.net/fhir/ihe.mhd.fhir/SearchParameter/List-DesignationType",
               "type": "token",
-              "documentation": "Kind of document set"
-            }
-          ]
-        },
-        {
-          "type": "List",
-          "profile": "http://ihe.net/fhir/ihe.mhd.fhir/StructureDefinition/IHE.MHD.Minimal.List",
-          "supportedProfile": [
-            "http://ihe.net/fhir/ihe.mhd.fhir/StructureDefinition/IHE.MHD.Comprehensive.List"
-          ],
-          "interaction": [
+              "documentation": "This IHE extension on parameters defined as SearchParameter/List-DesignationType, of type token, specifies the designation type of the List. The value of the designation type element indicates the clinical purpose of the SubmissionSet or Folder. Note that servers that do not support this extended search parameter will ignore it, and thus return more results than expected."
+            },
             {
-              "code": "read"
+              "name": "sourceId",
+              "definition": "http://ihe.net/fhir/ihe.mhd.fhir/SearchParameter/List-SourceId",
+              "type": "reference",
+              "documentation": "This IHE extension on parameters defined as SearchParameter/List-SourceId, of type reference, specifies the source (author) value supplied in the List Resource."
             }
           ]
         },

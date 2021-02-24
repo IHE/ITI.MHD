@@ -18,8 +18,7 @@ Description:    "Defines constraints on the Document Consumer AuditEvent Resourc
 * recorded 1..1 // already required
 * outcome 1..1
 * outcomeDesc MS // encouraged
-// source is already required
-// TODO: add somehow that the source must be the same as the agent[documentConsumer]
+// source is already required, see invariant val-audit-source use
 * agent 2..*
 * agent ^slicing.discriminator.type = #pattern
 * agent ^slicing.discriminator.path = "type"
@@ -31,6 +30,7 @@ Description:    "Defines constraints on the Document Consumer AuditEvent Resourc
 	// may be many including app identity, user identity, etc
 * agent[documentConsumer].type = DCM#110153 "Source Role ID"
 * agent[documentConsumer].who 1..1
+* agent[documentConsumer] obeys val-audit-source
 * agent[documentConsumer].network 1..1
 * agent[documentResponder].type = DCM#110152 "Destination Role ID"
 * agent[documentResponder].who 1..1
@@ -75,8 +75,7 @@ Description:    "Defines constraints on the Document Responder AuditEvent Resour
 * recorded 1..1 // already required
 * outcome 1..1
 * outcomeDesc MS // encouraged
-// source is already required
-// TODO: add somehow that the source must be the same as the agent[documentResponder]
+// source is already required, see invariant val-audit-source use
 * agent 2..*
 * agent ^slicing.discriminator.type = #pattern
 * agent ^slicing.discriminator.path = "type"
@@ -91,6 +90,7 @@ Description:    "Defines constraints on the Document Responder AuditEvent Resour
 * agent[documentConsumer].network 1..1
 * agent[documentResponder].type = DCM#110152 "Destination Role ID"
 * agent[documentResponder].who 1..1
+* agent[documentResponder] obeys val-audit-source
 * agent[documentResponder].network 1..1
 * entity 2..2
 * entity ^slicing.discriminator.type = #pattern

@@ -48,6 +48,7 @@ Description: "Dummy DocumentReference example for completeness sake. No actual u
 * meta.security = http://terminology.hl7.org/CodeSystem/v3-ActReason#HTEST
 * status = #current
 * content.attachment.title = "Hello World"
+* content.attachment.contentType = #text/plain
 
 Instance: ex-documentreference2
 InstanceOf: DocumentReference
@@ -58,6 +59,7 @@ Description: "Dummy DocumentReference 2 example for completeness sake. No actual
 // TODO: figure out how to get Binary attachments in sushi
 //* content.attachment.url = "Binary/ex-b-binary"
 * content.attachment.title = "Hello World"
+* content.attachment.contentType = #text/plain
 
 Instance: ex-b-binary
 InstanceOf: Binary
@@ -128,6 +130,7 @@ Description: "Dummy DocumentReference example for completeness sake. No actual u
 * meta.security = http://terminology.hl7.org/CodeSystem/v3-ActReason#HTEST
 * status = #current
 * content.attachment.title = "Hello World"
+* content.attachment.contentType = #text/plain
 
 
 Profile:        DummyProvideDocumentBundle

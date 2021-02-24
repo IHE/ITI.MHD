@@ -156,20 +156,27 @@ The actors in this profile are described in more detail in the sections below.
 
 #### Document Source
 
-The Document Source is the producer and publisher of documents and metadata.
+The Document Source is the producer and publisher of SubmissionSet, Folder, DocumentReference, and documents to a Document Recipient.
+* [Document Source](CapabilityStatement-IHE.MHD.DocumentSource.html) with no options or all options
+* [Document Source implementing Comprehensive Metadata Option](CapabilityStatement-IHE.MHD.DocumentSource.Comprehensive.html)
+* [Document Source implementing UnContained Reference Option](CapabilityStatement-IHE.MHD.DocumentSource.UnContained.html)
 
 #### Document Consumer
 
-The Document Consumer queries for document metadata meeting certain criteria and may retrieve selected documents.
+The Document Consumer queries Document Responder for SubmissionSet, Folder, and DocumentReference metadata meeting certain criteria and may retrieve selected documents.
+* [Document Consumer](CapabilityStatement-IHE.MHD.DocumentConsumer.html)
 
 #### Document Recipient
 
-The Document Recipient receives documents and metadata sent by another actor.
+The Document Recipient receives documents and metadata sent by the Document Source.
+* [Document Recipient](CapabilityStatement-IHE.MHD.DocumentRecipient.html) with no options or all options
+* [Document Recipient implementing Comprehensive Metadata Option](CapabilityStatement-IHE.MHD.DocumentRecipient.Comprehensive.html)
+* [Document Recipient implementing UnContained Reference Option](CapabilityStatement-IHE.MHD.DocumentRecipient.UnContained.html)
 
 #### Document Responder
 
-The Document Responder sends documents and/or metadata in response to a request from another actor.        
-
+The Document Responder responds with SubmissionSet, Folder, and DocumentReference metadata in response to a search request; and responds with documents in response to a retrieve request; from a Document Consumer.        
+* [Document Responder](CapabilityStatement-IHE.MHD.DocumentResponder.html) with no options or all options
 
 ### Actor Options
 

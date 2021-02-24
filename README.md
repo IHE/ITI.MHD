@@ -37,15 +37,16 @@ This Continuous Build will appear http://build.fhir.org/ig/IHE/ITI.MHD/branches/
 1. should we have a link from one page to the next? If so, what does that look like? (Check with Lloyd and Jose, there is possibly something already in the works)
 1. add figure / table numbers as if they are in the right header number space
 1. Write up an open issue explaining header numbers are not aligned with their eventual locations in volume 1 and 2
+1. capability statements to new List use away from DocumentManifest 
+1. various other TODO tags found in the source input
+1. clean as many build warnings as possible
+1. Open Issue: should the text against the MHD profile found in the IUA supplement be brought into the MHD IG? Seems the reader would benefit.
+1. Create residual open issues, and create a summary of changes since 3.2
 
 ## TODO
 
-1. various other TODO tags found in the source input
-1. cleanup all build warnings and info (moving to ignore warnings anything that is proven to be acceptable)
-1. capability statements to new List use away from DocumentManifest 
 1. setup for public comment submission (issues and form)
 
-Create residual open issues, and create a summary of changes since 3.2
 
 ### could be open issues if not done
 

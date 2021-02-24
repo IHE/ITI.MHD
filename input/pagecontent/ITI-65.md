@@ -62,7 +62,7 @@ The FHIR Bundle.meta.profile shall have the following value depending on the use
   * may have one or more [Binary](http://hl7.org/fhir/R4/binary.html)
   * may have one or more [Folder type List](StructureDefinition-IHE.MHD.Comprehensive.Folder.html) that is comprehensive
   * may have one [Patient](http://hl7.org/fhir/R4/patient.html)
-* [Minimal Metadata](IHE.MHD.Minimal.ProvideBundle.html): `http://ihe.net/fhir/ihe.mhd.fhir/StructureDefinition/IHE.MHD.Minimal.ProvideBundle`
+* [Minimal Metadata](StructureDefinition-IHE.MHD.Minimal.ProvideBundle.html): `http://ihe.net/fhir/ihe.mhd.fhir/StructureDefinition/IHE.MHD.Minimal.ProvideBundle`
   * shall be a Transaction Bundle
   * each bundle entry request shall be POST (create)
   * all resources shall be compliant with minimal constaints, they may be marked minimal, comprehensive, or unContained

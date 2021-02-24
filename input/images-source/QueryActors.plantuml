@@ -1,0 +1,5 @@
+@startuml
+agent "Document Consumer" as DocumentConsumer
+agent "Document Responder" as DocumentResponder
+DocumentConsumer -- DocumentResponder : "Find Document Lists [ITI-66] ↓\nFind Document References [ITI-67] ↓\nRetrieve Document [ITI-68]"
+@enduml
