@@ -17,6 +17,7 @@ The result of the query is a Bundle containing List Resources that match the que
 |-------------------+--------------------------|
 | [Document Consumer](2_actors_and_transactions.html#document-consumer)     | Requests a List Resources, matching the supplied set of criteria, from the Document Responder |
 | [Document Responder](2_actors_and_transactions.html#document-responder) | Returns List Resources that match the search criteria provided by the Document Consumer |
+{: .grid}
 
 ### Referenced Standards
 
@@ -88,6 +89,7 @@ The Document Consumer shall include search parameter *subject* or *subject.ident
 |Code	| ebRIM Code |
 |current	| urn:oasis:names:tc:ebxml-regrep:StatusType:Approved |
 |superseded	| urn:oasis:names:tc:ebxml-regrep:StatusType:Deprecated |
+{: .grid}
 
 ###### Populating Expected Response Format
 
@@ -126,6 +128,7 @@ Table 3.66.4.1.3-1: FindSubmissionSets Query Parameter Mapping
 |designationType | $XDSSubmissionSetContentType |
 |sourceId	| $XDSSubmissionSetSourceId |
 |status	| $XDSSubmissionSetStatus |
+{: .grid}
 
 Note 1: This FindSubmissionSets parameter is used when the greater than parameter modifier is used on the created parameter.
 
@@ -140,6 +143,7 @@ Table 3.66.4.1.3-2: FindFolders Query Parameter Mapping
 |date Note 2	| $XDSFolderLastUpdateTimeTo |
 |designationType | $XDSFolderCodeList |
 |status	| $XDSFolderStatus |
+{: .grid}
 
 Note 1: This FindFolder parameter is used when the greater than parameter modifier is used on the created parameter.
 

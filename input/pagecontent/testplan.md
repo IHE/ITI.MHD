@@ -1,3 +1,5 @@
+** This page on Test Plan is a prototype. It is not fully written. It has not been reviewed by committee. Comments are welcome. **
+
 The overall MHD is an API between four actors, with no expectation or mandate of the function to be provided by the data communicated. Ths the tests that can be executed are limited to the functionality of the system-under-test (SUT). Where that SUT has a function, it can be tested. 
 
 The overall success of MHD testing is limited by the infrastructure that MHD is connected to. For example where the Document Responder and Document Recipient are grouped with XDS or MHDS infrastructure, then the Document Consumer and Document Source can be more fully tested. 
@@ -59,8 +61,8 @@ Unit Tests in this context is where a SUT is tested against a simulator or valid
 
 Integration Tests in this context is where two SUT of paired actors test against each other. In this case the subset of tests that can be tested is the intersection. Testing only this intersection is necessary but not sufficient. The testing must also include the capability of the client (Document Source or Document Consumer) to exercise the test scenarios that this SUT can test, to determine that failure-modes are handled properly by both SUT.
 
-## Cucumber
-TODO: Write specific Cucumber statements, might use external tooling?
+## Gherkin
+TODO: Write specific Gherkin statements, might use external tooling?
 
 
 **[Previous](appendix_z.html) / [Next](a_issues.html)**

@@ -12,6 +12,7 @@ The Retrieve Document [ITI-68] transaction is used by the Document Consumer to r
 |-------------------+--------------------------|
 | [Document Consumer](2_actors_and_transactions.html#document-consumer)    | Requests a document from the Document Responder |
 | [Document Responder](2_actors_and_transactions.html#document-responder) | Serves the document to the Document Consumer |
+{: .grid}
 
 ### Referenced Standards
 
@@ -69,7 +70,7 @@ Table 3.68.4.2.2-1: HTTP Error Response Codes and Suggested Text
 |Document is Deprecated or not available	| 410 Gone (or 404 when 410 is unacceptable due to security/privacy policy) |
 |Document Responder unable to format document in content types listed the 'Accept' field	| 406 Not Acceptable |
 |HTTP request specified is otherwise not a legal value	| 403 Forbidden/Request Type Not Supported |
-
+{: .grid}
 
 The Document Responder may return other HTTP Status Codes. Guidance on handling Access Denied related to use of 200, 403 and 404 can be found in [ITI TF-2x: Appendix Z.7](appendix_z.html#FHIRsecurity).
 

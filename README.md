@@ -68,6 +68,8 @@ This Continuous Build will appear http://build.fhir.org/ig/IHE/ITI.MHD/branches/
   1. example not needed - a new submission set to include existing document from a different patient (mother / child use-case)
   1. example needed - replace a document
   1. example needed - push to a recipient
+1. Example of an Provide bundle response
+
 
 ## IHE issues
 

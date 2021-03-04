@@ -7,11 +7,18 @@
 * Define AuditEvent using profiling and examples
 * Hyperlinked to https://profiles.ihe.net publication of ITI specifications
 * import IHE published FormatCode vocabulary from [IHE FormatCode Implementation Guide](https://profiles.ihe.net/fhir/ihe.formatcode.fhir/index.html)
+* this publication includes the content from the Appendix Z supplement
+* this publication includes a prototype of a test plan. This page is not complete.
+
+Please review the open issues and provide your response to the questions and statements
 
 ### Issues
 
 #### Open Issues
 
+* MHD_063: Should MHD defined CapabilityStatement requirements so that a client can determine that the server supports MHD and which MHD server actor? Today we do require servers to support metadata endpoint returning their CapabilityStatment, but do not require it to contain anything specifically. We could first require that the CapabilityStatment.implementationGuide be populated with MHD canonical IG URL. We could additionally require specific .transaction values for DocumentRecipient, and .rest.resource.supportedProfile for DocumentResponder. Might we need an extension in .transaction to be more specific for Document Recipient? Should a DocumentRecipient need to publish that it is capable of receiving a create/update on these .rest resources (which we only defined thru the transaction, not individually REST)? Might we add an extension on CapabilityStatement.implementationGuide to hold the actor name and options? -- with no objection this is likely to be added as a server requirement.
+* MHD_064: Should ITI-65 be an Operation rather than a Transaction? This might make MHD_063 easier?
+* MHD_062: Should the structureDefinition profiles forbid modifier extensions? It seems we have no reason for modifierExtensions, and modifierExtensions are allowed to radically change the meaning of the resource. -- with no objection this is likely to be added as a constraint.
 * MHD_061: The new IUA supplement includes guidance on use of OAuth scopes when grouped with MHD. That text seems should be brought into this IG, but it is unclear where this text should be maintained going forward. For now this text is left only in IUA, but after public comment this text will likely be brought into MHD.  see https://profiles.ihe.net/ITI/IUA/index.html#33-mhd-profile
 * MHD_060: Header numbers are auto assigned by the Implementation Guide building tools, and thus are not the numbers in the IHE Volumes that they should be. This should be fixed by Trial Implementation.
 * CP-ITI-1100: Need a way to find DocumentReference that hold attachments with a specified creation date/time. For the time during FHIR R4, we have guided the implementer to use the .date element to hold the created date/time. This solution requires careful duplication of the date value in both date and the attachment. This duplication enables use of the elements and query against date. The .date element in FHIR is defined as when the DocumentReference was created, which might be later than the document creation date/time. GF#19823 requested query parameter for the attachment created date/time for R5

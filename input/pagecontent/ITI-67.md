@@ -12,6 +12,7 @@ The Find Document References transaction is used to find DocumentReference Resou
 |-------------------+--------------------------|
 | [Document Consumer](2_actors_and_transactions.html#document-consumer)     | Requests a list of DocumentReference Resources, matching the supplied set of criteria, from the Document Responder |
 | [Document Responder](2_actors_and_transactions.html#document-responder) | Returns DocumentReference Resources that match the search criteria provided by the Document Consumer |
+{: .grid}
 
 ### Referenced Standards
 
@@ -132,6 +133,7 @@ The Document Responder is grouped with an XDS Document Consumer when it supports
 | security-label	| $XDSDocumentEntryConfidentialityCode |
 | format	| $XDSDocumentEntryFormatCode |
 | related Note 4	| $XDSDocumentEntryReferenceIdList |
+{: .grid}
 
 Note 1: This FindDocuments parameter is used when the greater than parameter modifier is used on the indexed parameter. 
 
@@ -149,7 +151,7 @@ Note 5: The FHIR DocumentReference does not yet have a query parameter for creat
 |-----------|-----------|
 |current	|urn:oasis:names:tc:ebxml-regrep:StatusType:Approved |
 |superseded	|urn:oasis:names:tc:ebxml-regrep:StatusType:Deprecated |
-
+{: .grid}
 
 #### Find Document References Response message
 

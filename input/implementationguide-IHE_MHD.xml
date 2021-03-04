@@ -127,7 +127,7 @@ The IHE MHD Profile text is Normative, this conformance resource is Informative.
 		<!-- copyright year is a mandatory parameter -->
 		<parameter>
 		  <code value="copyrightyear"/>
-		  <value value="2019+"/>
+		  <value value="2021+"/>
 		</parameter>
 		<!-- releaselabel should be the ballot status for HL7-published IGs. -->
 		<parameter>
