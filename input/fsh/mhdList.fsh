@@ -20,13 +20,13 @@ Description: "Expresses contentType of submissionSet or the codeList of a Folder
 Instance: List-DesignationType
 InstanceOf: SearchParameter
 Title: "search on the IHE defined extension for designationType"
-* url = "http://ihe.net/fhir/ihe.mhd.fhir/SearchParameter/List-DesignationType"
+* url = "http://profiles.ihe.net/ITI/MHD/SearchParameter/List-DesignationType"
 * description = "This SearchParameter enables finding Lists by the designationType code in a submissionSet or folder."
 * name = "DesignationType"
 * status = #active
 * code = #designationType
 * base = #List
-* expression = "(extension('http://ihe.net/fhir/ihe.mhd.fhir/StructureDefinition/DesignationType').value as CodeableConcept)"
+* expression = "(extension('http://profiles.ihe.net/ITI/MHD/StructureDefinition/DesignationType').value as CodeableConcept)"
 * type = #token
 
 CodeSystem:  MHDlistTypes 

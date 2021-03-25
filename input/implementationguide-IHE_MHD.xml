@@ -14,7 +14,7 @@ The IHE MHD Profile text is Normative, this conformance resource is Informative.
 		<valueDate value="2020-01-04"/>
 	</extension>
 -->
-	<url value="http://profiles.ihe.net/iti/mhd/ImplementationGuide/ihe.mhd.fhir" />
+	<url value="http://profiles.ihe.net/ITI/MHD/ImplementationGuide/ihe.mhd.fhir" />
 	<version value="4.0.0 - final draft" />
 	<name value="IHE_MHD" />
 	<status value="active" />

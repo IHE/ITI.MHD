@@ -5,7 +5,7 @@
     "status": "additional",
     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">\n\tThis Requirements CapabilityStatement describes the <a href=\"2_actors_and_transactions.html#document-recipient\">Document Recipient actor</a> with no declared Options.\n\t</div>"
   },
-  "url": "http://ihe.net/fhir/ihe.mhd.fhir/CapabilityStatement/IHE.MHD.DocumentRecipient",
+  "url": "http://profiles.ihe.net/ITI/MHD/CapabilityStatement/IHE.MHD.DocumentRecipient",
   "name": "IHE_MHD_DocumentRecipient",
   "title": "Document Recipient",
   "status": "active",
@@ -49,15 +49,15 @@
       "interaction": [
         {
           "code": "transaction",
-          "documentation": "http://ihe.net/fhir/ihe.mhd.fhir/StructureDefinition/IHE.MHD.Minimal.ProvideBundle"
+          "documentation": "http://profiles.ihe.net/ITI/MHD/StructureDefinition/IHE.MHD.Minimal.ProvideBundle"
         },
         {
           "code": "transaction",
-          "documentation": "http://ihe.net/fhir/ihe.mhd.fhir/StructureDefinition/IHE.MHD.UnContained.Comprehensive.ProvideBundle"
+          "documentation": "http://profiles.ihe.net/ITI/MHD/StructureDefinition/IHE.MHD.UnContained.Comprehensive.ProvideBundle"
         },
         {
           "code": "transaction",
-          "documentation": "http://ihe.net/fhir/ihe.mhd.fhir/StructureDefinition/IHE.MHD.Comprehensive.ProvideBundle"
+          "documentation": "http://profiles.ihe.net/ITI/MHD/StructureDefinition/IHE.MHD.Comprehensive.ProvideBundle"
         }
       ]
     }

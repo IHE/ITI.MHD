@@ -5,7 +5,7 @@
     "status": "additional",
     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">\n\tThis Requirements CapabilityStatement describes the <a href=\"2_actors_and_transactions.html#document-source\">Document Source actor</a> with UnContained declared Option.\n\t</div>"
   },
-  "url": "http://ihe.net/fhir/ihe.mhd.fhir/CapabilityStatement/IHE.MHD.DocumentSource.UnContained",
+  "url": "http://profiles.ihe.net/ITI/MHD/CapabilityStatement/IHE.MHD.DocumentSource.UnContained",
   "name": "IHE_MHD_DocumentSource_UnContained",
   "title": "Document Source (publisher) implementing UnContained Option",
   "status": "active",
@@ -49,11 +49,11 @@
       "interaction": [
         {
           "code": "transaction",
-          "documentation": "http://ihe.net/fhir/ihe.mhd.fhir/StructureDefinition/IHE.MHD.Comprehensive.ProvideBundle"
+          "documentation": "http://profiles.ihe.net/ITI/MHD/StructureDefinition/IHE.MHD.Comprehensive.ProvideBundle"
         },
         {
           "code": "transaction",
-          "documentation": "http://ihe.net/fhir/ihe.mhd.fhir/StructureDefinition/IHE.MHD.UnContained.UnContained.Comprehensive.ProvideBundle"
+          "documentation": "http://profiles.ihe.net/ITI/MHD/StructureDefinition/IHE.MHD.UnContained.UnContained.Comprehensive.ProvideBundle"
         }
       ]
     }

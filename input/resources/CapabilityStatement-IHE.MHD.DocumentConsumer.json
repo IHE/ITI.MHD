@@ -5,7 +5,7 @@
     "status": "additional",
     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">\n\tThis Requirements CapabilityStatement describes the <a href=\"2_actors_and_transactions.html#document-consumer\">Document Consumer actor</a>.\n\t</div>"
   },
-  "url": "http://ihe.net/fhir/ihe.mhd.fhir/CapabilityStatement/IHE.MHD.DocumentConsumer",
+  "url": "http://profiles.ihe.net/ITI/MHD/CapabilityStatement/IHE.MHD.DocumentConsumer",
   "name": "IHE_MHD_DocumentConsumer",
   "title": "Document Consumer (client)",
   "status": "active",
@@ -46,7 +46,7 @@
       "resource": [
         {
           "type": "DocumentReference",
-          "profile": "http://ihe.net/fhir/ihe.mhd.fhir/StructureDefinition/IHE.MHD.Query.Minimal.DocumentReference",
+          "profile": "http://profiles.ihe.net/ITI/MHD/StructureDefinition/IHE.MHD.Query.Minimal.DocumentReference",
           "interaction": [
             {
               "code": "read"
@@ -156,7 +156,7 @@
         },
         {
           "type": "List",
-          "profile": "http://ihe.net/fhir/ihe.mhd.fhir/StructureDefinition/IHE.MHD.List",
+          "profile": "http://profiles.ihe.net/ITI/MHD/StructureDefinition/IHE.MHD.List",
           "interaction": [
             {
               "code": "read"
@@ -216,13 +216,13 @@
             },
             {
               "name": "designationType",
-              "definition": "http://ihe.net/fhir/ihe.mhd.fhir/SearchParameter/List-DesignationType",
+              "definition": "http://profiles.ihe.net/ITI/MHD/SearchParameter/List-DesignationType",
               "type": "token",
               "documentation": "This IHE extension on parameters defined as SearchParameter/List-DesignationType, of type token, specifies the designation type of the List. The value of the designation type element indicates the clinical purpose of the SubmissionSet or Folder. Note that servers that do not support this extended search parameter will ignore it, and thus return more results than expected."
             },
             {
               "name": "sourceId",
-              "definition": "http://ihe.net/fhir/ihe.mhd.fhir/SearchParameter/List-SourceId",
+              "definition": "http://profiles.ihe.net/ITI/MHD/SearchParameter/List-SourceId",
               "type": "reference",
               "documentation": "This IHE extension on parameters defined as SearchParameter/List-SourceId, of type reference, specifies the source (author) value supplied in the List Resource."
             }

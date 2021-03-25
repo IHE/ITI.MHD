@@ -3,7 +3,7 @@
     "id": "DocumentReference-IHE.MHD.Comprehensive.MedicationCard",
     "meta": {
         "profile": [
-            "http://ihe.net/fhir/ihe.mhd.fhir/StructureDefinition/IHE.MHD.Comprehensive.DocumentReference"
+            "http://profiles.ihe.net/ITI/MHD/StructureDefinition/IHE.MHD.Comprehensive.DocumentReference"
         ]
     },
     "contained": [

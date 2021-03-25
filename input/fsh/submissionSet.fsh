@@ -12,7 +12,7 @@ Description:    "A profile on the List resource for MHD SubmissionSet.
 "
 * extension[designationType] 0..1 MS
 * extension contains SourceId named sourceId 1..1
-* extension contains IntendedRecipient named intendedRecipient 0..1
+* extension contains IntendedRecipient named intendedRecipient 0..*
 * identifier 2..*
 //* status
 * mode = #working
@@ -51,13 +51,13 @@ Description: "When the author of the SubmissionSet is an Organization, this exte
 Instance: List-SourceId
 InstanceOf: SearchParameter
 Title: "search on the IHE defined extension for SourceId"
-* url = "http://ihe.net/fhir/ihe.mhd.fhir/SearchParameter/List-SourceId"
+* url = "http://profiles.ihe.net/ITI/MHD/SearchParameter/List-SourceId"
 * description = "This SearchParameter enables finding Lists by the SourceId of a submissionSet."
 * name = "SourceId"
 * status = #active
 * code = #sourceId
 * base = #List
-* expression = "(extension('http://ihe.net/fhir/ihe.mhd.fhir/StructureDefinition/SourceId').value as Reference)"
+* expression = "(extension('http://profiles.ihe.net/ITI/MHD/StructureDefinition/SourceId').value as Reference)"
 * type = #reference
 
 
