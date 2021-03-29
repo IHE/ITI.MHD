@@ -1,8 +1,9 @@
 {
  "package-id" : "ihe.mhd.fhir",
  "title" : "IHE Mobile Access to Health Documents", 
- "canonical" : "http://profiles.ihe.net/iti/mhd", 
+ "canonical" : "http://profiles.ihe.net/ITI/MHD", 
  "introduction" : "## The IHE Mobile Access to Health Documents (MHD)\r\nThis IHE Implementation Guide  defined the FHIR access methods to Document Sharing.",
+ "category":"EHR Access",
  "list" : [{
   "version" : "current",
   "desc" : "Continuous Integration Build (latest in version control)",
@@ -12,9 +13,9 @@
  },
  {
   "version" : "4.0.0",  
-  "date" : "2021-03-17", 
+  "date" : "2021-03-30", 
   "desc" : "Public Comment release for first IG authored version",   
-  "path" : "http://profiles.ihe.net/ITI/mhd/4.0.0",   
+  "path" : "http://profiles.ihe.net/ITI/MHD/4.0.0",   
   "status" : "release",
   "fhirversion": "4.0.1",
   "sequence" : "Public Comment"
