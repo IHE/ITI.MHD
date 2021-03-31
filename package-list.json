@@ -12,13 +12,14 @@
   "current" : true
  },
  {
-  "version" : "4.0.0",  
-  "date" : "2021-03-30", 
+  "version" : "4.0.0-comment",  
+  "date" : "2021-03-31", 
   "desc" : "Public Comment release for first IG authored version",   
-  "path" : "http://profiles.ihe.net/ITI/MHD/4.0.0",   
-  "status" : "release",
+  "path" : "http://profiles.ihe.net/ITI/MHD/4.0.0-comment",   
+  "status" : "ballot",
   "fhirversion": "4.0.1",
-  "sequence" : "Public Comment"
+  "sequence" : "Public Comment",
+  "current": true
  }
  ]
 }
