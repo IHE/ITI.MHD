@@ -1,7 +1,7 @@
-## Appendix E Usage of the CX Data Type in PID-3 Patient Identifier List
+## Appendix E Patient Identifiers in HL7-based IHE Profiles
 
 
-| EDITOR: Add the following new section to the end of ITI TF-2x: Appendix E Usage of the CX Data Type in PID-3 Patient Identifier List |
+| EDITOR: Add the following new section to the end of ITI TF-2x: Appendix E Patient Identifiers in HL7-based IHE Profiles |
 |-----------------------------------------|
 
 
