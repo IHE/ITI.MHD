@@ -1,8 +1,8 @@
 ## Appendix Z - FHIR Implementation Materials
 
-There is a set of profiles in IHE using the HL7 FHIR standard, including Patient [Demographics Query for Mobile (PDQm)](https://profiles.ihe.net/ITI/TF/Volume1/ch-38.html), [Patient Identifier Cross-reference for Mobile (PIXm)](https://profiles.ihe.net/ITI/TF/Volume1/ch-41.html), and [Mobile Health Document (MHD)](https://profiles.ihe.net/ITI/TF/Volume1/ch-33.html). These profiles define a lightweight RESTful interface using technologies readily available to mobile applications and lightweight browser based applications. There is some common explanation and profiling provided in this supplement as a new Appendix Z and update of [Appendix E](appendix_e.html) in [ITI Technical Framework Volume 2](https://profiles.ihe.net/ITI/TF/Volume2/index.html).
+There is a set of profiles in IHE using the HL7 FHIR standard, including Patient [Demographics Query for Mobile (PDQm)](https://profiles.ihe.net/ITI/TF/Volume1/ch-38.html), [Patient Identifier Cross-reference for Mobile (PIXm)](https://profiles.ihe.net/ITI/TF/Volume1/ch-41.html), and [Mobile Health Document (MHD)](https://profiles.ihe.net/ITI/TF/Volume1/ch-33.html). These profiles define a lightweight RESTful interface using technologies readily available to mobile applications and lightweight browser-based applications. There is some common explanation and profiling provided in this supplement as a new Appendix Z and update of [Appendix E](appendix_e.html) in [ITI Technical Framework Volume 2](https://profiles.ihe.net/ITI/TF/Volume2/index.html).
 
-The HL7 FHIR standard has several overarching concepts, which should be profiled consistently throughout any mobile/lightweight IHE transactions using FHIR. IHE profiles FHIR, like any other standard, in ways that narrow the standard for specific use-cases. IHE profiles are intended to be proper subsets of the standard and are not intended to be incompatible. 
+The HL7 FHIR standard has several overarching concepts which should be profiled consistently throughout any mobile/lightweight IHE transactions using FHIR. IHE profiles FHIR, like any other standard, in ways that narrow the standard for specific use-cases. IHE profiles are intended to be proper subsets of the standard and are not intended to be incompatible. 
 
 We discuss here how IHE profiles the FHIR standard such as Resources, Datatypes, Valuesets, Extensions, Transactions, Query Parameters, CapabilityStatement, etc.
 
@@ -43,7 +43,7 @@ This section has no specific constraints.
 
 For a simple string search, a string parameter serves as the input for a case- and accent-insensitive search against sequences of characters. By default, a field matches a string query if the value of the field equals or starts with the supplied parameter value, after both have been normalized by case and accent. (See FHIR http://hl7.org/fhir/R4/search.html#string.) 
 
-IHE Profiles may choose to require support for the string search modifiers. 
+IHE profiles may choose to require support for the string search modifiers. 
 
 This section has no specific constraints.
 
