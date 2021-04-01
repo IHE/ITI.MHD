@@ -240,7 +240,7 @@ between options when applicable are specified in notes.
 </table>
 
         
-The options in this guide are describe in more detail the sections below.
+The options in this guide are described in more detail in the sections below.
 
 #### Comprehensive Metadata Option
 
