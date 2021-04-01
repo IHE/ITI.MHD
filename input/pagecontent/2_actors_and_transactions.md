@@ -175,12 +175,12 @@ The Document Recipient receives documents and metadata sent by the Document Sour
 
 #### Document Responder
 
-The Document Responder responds with SubmissionSet, Folder, and DocumentReference metadata in response to a search request; and responds with documents in response to a retrieve request; from a Document Consumer.        
+The Document Responder responds with SubmissionSet, Folder, and DocumentReference metadata in response to a search request, and responds with documents in response to a retrieve request, from a Document Consumer.        
 * [Document Responder](CapabilityStatement-IHE.MHD.DocumentResponder.html) with no options or all options
 
 ### Actor Options
 
-Options that may be selected for each actor in this implementation guide, are listed in Table 3.2-1 below. Dependencies 
+Options that may be selected for each actor in this implementation guide, are listed in Table 33.2-1 below. Dependencies 
 between options when applicable are specified in notes.
 
 <table border="1" style="border: 1px solid black; border-collapse: collapse">
