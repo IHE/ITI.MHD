@@ -13,18 +13,18 @@ part of the [IHE Document Sharing Health Information Exchange](https://profiles.
 ### Organization of This Guide
 This guide is organized into four main sections:
 
-1. Volume I: [Overview](1_overview.html)
+1. Volume 1: [Overview](1_overview.html)
    1. [Actors and Transactions](2_actors_and_transactions.html)
    2. [Security Considerations](3_security_considerations.html)
    3. [Cross Profile Considerations](4_grouping.html)
 
-2. Volume II: Transaction Detail
+2. Volume 2: Transaction Detail
    1. [Provide Document Bundle [ITI-65]](ITI-65.html)
    2. [Find Document Lists [ITI-66]](ITI-66.html)
    3. [Find Document References [ITI-67]](ITI-67.html)
    4. [Retrieve Document [ITI-68]](ITI-68.html)
 
-3. Volume III: Metadata
+3. Volume 3: Metadata
    1. [FHIR Representation](metadata_maps.html)
    
 4. Appendix
