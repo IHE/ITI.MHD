@@ -9,9 +9,9 @@ Profile and the relevant transactions between them.
 
 <div style="clear: left"/>
 
-**Figure33.1-1: MHD Actor Diagram**
+**Figure 33.1-1: MHD Actor Diagram**
 
-Table 3-1 lists the transactions for each actor directly involved in the MHD Implementation Guide. To claim compliance with this guide, an actor shall
+Table 33.1-1 lists the transactions for each actor directly involved in the MHD Implementation Guide. To claim compliance with this guide, an actor shall
 support all required transactions (labeled "R") and may support the
 optional transactions (labeled "O").
 
