@@ -1,4 +1,4 @@
-Considerations when applications group MHD actors with other IHE actors
+Considerations when applications group MHD actors with other IHE actors.
 
 #### MHD Actor grouped with XDS infrastructure
 
