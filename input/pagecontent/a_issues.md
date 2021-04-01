@@ -1,16 +1,16 @@
 ### Significant changes since MHD Version 3.2
-* Due to Breaking changes this version of MHD is Version 4.0
-* Canonical URLs are different, using '.' rather than '_' as the underbar is not allowed in Canonical URLs
-* DocumentManifest has been replaced by List. Thus both SubmissionSet and Folder are supported with List Resource
-* To support use of List a few extensions have been added, and a few query parameters defined for those extensions
-* A full set of conformance resources and examples
-* Define AuditEvent using profiling and examples
-* Hyperlinked to https://profiles.ihe.net publication of ITI specifications
-* import IHE published FormatCode vocabulary from [IHE FormatCode Implementation Guide](https://profiles.ihe.net/fhir/ihe.formatcode.fhir/index.html)
-* this publication includes the content from the Appendix Z supplement
-* this publication includes a prototype of a test plan. This page is not complete.
+* Due to "breaking" changes, this version of MHD is Version 4.0 (for public comment).
+* Canonical URLs are different, using '.' rather than '_' as the underbar is not allowed in Canonical URLs.
+* DocumentManifest has been replaced by List. Thus both SubmissionSet and Folder are supported with List Resource.
+* To support use of List a few extensions have been added, and a few query parameters have been defined for those extensions.
+* A full set of conformance resources and examples are included.
+* Defined AuditEvent using profiling and examples.
+* Hyperlinked to https://profiles.ihe.net publication of ITI specifications.
+* Imported IHE published FormatCode vocabulary from [IHE FormatCode Implementation Guide](https://profiles.ihe.net/fhir/ihe.formatcode.fhir/index.html)
+* This publication includes the content from the Appendix Z supplement.
+* This publication includes a prototype of a test plan. This page is not complete.
 
-Please review the open issues and provide your response to the questions and statements
+Please review the open issues and provide your response to the questions and statements.
 
 ### Issues
 
