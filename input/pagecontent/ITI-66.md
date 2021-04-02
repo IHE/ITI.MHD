@@ -11,7 +11,7 @@ The result of the query is a Bundle containing List Resources that match the que
 
 ### Actors Roles
 
-**Table: Actor Roles**
+**Table 3.66.2-1: Actor Roles**
 
 |Actor | Role |
 |-------------------+--------------------------|
@@ -31,7 +31,7 @@ The result of the query is a Bundle containing List Resources that match the que
 
 <div style="clear: left"/>
 
-**Figure: Find Document Lists Interactions**
+**Figure 3.66.4-1: Find Document Lists Interactions**
 
 #### Find Document Lists Request message
 
@@ -84,7 +84,7 @@ The Document Consumer shall include search parameter *subject* or *subject.ident
 **status**
 :This parameter, of type token, specifies the status of the List. If included in the query, the Document Consumer shall populate the code portion of the token with one of the codes in the following *Table 3.66.4.1.2.1-1: Values for code for status of List*. The system portion of the token shall not be populated.
 
-*Table 3.66.4.1.2.1-1: Values for code for status of List*
+**Table 3.66.4.1.2.1-1: Values for code for status of List**
 
 |Code	| ebRIM Code |
 |current	| urn:oasis:names:tc:ebxml-regrep:StatusType:Approved |
@@ -117,7 +117,7 @@ The Document Responder shall process the query to discover the List entries that
 
 The Document Responder is grouped with an XDS Document Consumer when it supports the [XDS on FHIR](2_actors_and_transactions.html#xds-on-fhir-option) Option. The Document Responder shall map the query parameters as listed in Table 3.66.4.1.3-1 and shall execute a Registry Stored Query [ITI-18] for FindSubmissionSets or FindFolders. No additional query parameters as defined in FHIR are required of the Document Responder.
 
-Table 3.66.4.1.3-1: FindSubmissionSets Query Parameter Mapping
+**Table 3.66.4.1.3-1: FindSubmissionSets Query Parameter Mapping**
 
 |ITI-66 Parameter Name	| ITI-18 Parameter Name |
 |code | "submissionset" |
@@ -134,7 +134,7 @@ Note 1: This FindSubmissionSets parameter is used when the greater than paramete
 
 Note 2: This FindSubmissionSets parameter is used when the less than parameter modifier is used on the created parameter. 
 
-Table 3.66.4.1.3-2: FindFolders Query Parameter Mapping
+**Table 3.66.4.1.3-2: FindFolders Query Parameter Mapping**
 
 |ITI-66 Parameter Name	| ITI-18 Parameter Name |
 |code | "folder" |
@@ -190,7 +190,7 @@ The response shall adhere to the FHIR Bundle constraints specified in [ITI TF-2x
 
 **List Resource Contents**
 
-The List Resources returned shall be compliant with the FHIR specification [http://hl7.org/fhir/R4/list.html](http://hl7.org/fhir/R4/list.html)
+The List Resources returned shall be compliant with the FHIR specification [http://hl7.org/fhir/R4/list.html](http://hl7.org/fhir/R4/list.html).
 
 The List Resources returned will be compliant with the [IHE restrictions on the List Resource](metadata_maps.html) and for a mapping of ebXML attributes to List elements to [SubmissionSet](metadata_maps.html#submissionSet) and to [Folder](metadata_maps.html#folder). Document Consumers should be robust to receiving List Resources that are not IHE compliant.
 
@@ -209,7 +209,7 @@ Document Responders implementing this transaction shall provide a CapabilityStat
 
 ### Security Considerations
 
-See [MHD Security Considerations](3_security_considerations.html)
+See [MHD Security Considerations](3_security_considerations.html).
 
 This transaction should not return information that the Document Consumer is not authorized to access. Where authorization here is inclusive of system, app, and user according to local policy, patient consents, and security layering. However, the transaction may return List resources that have Reference elements that the Document Consumer may not have access to. This is to say that the authorization need only be to the content returned in the Bundle. There may be references (URLs) for which the content is not authorized. This is considered proper as the Document Consumer would need to retrieve the content pointed to by those references, and at that time the proper authorization decision would be made on that context and content. In this way it is possible for a Document Consumer to get List Resources that are pointing at data that the Document Consumer is not authorized to retrieve. Thus, the URLs used must be carefully crafted so as to not expose sensitive data in the URL value.
 
@@ -219,11 +219,11 @@ The security audit criteria are similar to those for the Registry Stored Query [
 
 ##### Document Consumer Audit
 
-The Document Consumer when grouped with ATNA Secure Node or Secure Application actor shall be able to record a [Find Document Lists Consumer Audit Event Log](StructureDefinition-IHE.MHD.FindDocumentLists.Audit.Consumer.html). [Audit Example for a Find Document Lists transaction from consumer perspective](AuditEvent-ex-auditFindDocumentLists-consumer.html) 
+The Document Consumer when grouped with ATNA Secure Node or Secure Application actor shall be able to record a [Find Document Lists Consumer Audit Event Log](StructureDefinition-IHE.MHD.FindDocumentLists.Audit.Consumer.html). [Audit Example for a Find Document Lists transaction from consumer perspective](AuditEvent-ex-auditFindDocumentLists-consumer.html). 
 
 ##### Document Responder Audit
 
-The Document Responder when grouped with ATNA Secure Node or Secure Application actor shall be able to record a [Find Document Lists Responder Audit Event Log](StructureDefinition-IHE.MHD.FindDocumentLists.Audit.Responder.html). [Audit Example for a Find Document Lists Transaction from responder perspective](AuditEvent-ex-auditFindDocumentLists-responder.html) 
+The Document Responder when grouped with ATNA Secure Node or Secure Application actor shall be able to record a [Find Document Lists Responder Audit Event Log](StructureDefinition-IHE.MHD.FindDocumentLists.Audit.Responder.html). [Audit Example for a Find Document Lists Transaction from responder perspective](AuditEvent-ex-auditFindDocumentLists-responder.html).
 
 
 
