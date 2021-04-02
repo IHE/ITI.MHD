@@ -18,7 +18,7 @@ The Find Document References transaction is used to find DocumentReference Resou
 
 **FHIR-R4** [HL7 FHIR Release 4.0](http://www.hl7.org/FHIR/R4)
 
-### Interactions
+### Messages
 
 <div>
 {%include ITI-67-seq.svg%}
@@ -26,7 +26,7 @@ The Find Document References transaction is used to find DocumentReference Resou
 
 <div style="clear: left"/>
 
-**Figure: Find Document References Interactions**
+**Figure 3.67.4-1: Find Document References Interactions**
 
 #### Find Document References Request message
 
@@ -173,7 +173,7 @@ The response shall adhere to the FHIR Bundle constraints specified in [ITI TF-2x
 
 ###### DocumentReference Resource Contents
 
-The DocumentReference Resources returned shall be compliant with the FHIR specification [http://hl7.org/fhir/R4/documentreference.html](http://hl7.org/fhir/R4/documentreference.html)
+The DocumentReference Resources returned shall be compliant with the FHIR specification [http://hl7.org/fhir/R4/documentreference.html](http://hl7.org/fhir/R4/documentreference.html).
 
 The DocumentReference Resources returned will be compliant with the [MHD metadata](metadata_maps.html) for the IHE restrictions on DocumentReference Resource and for a [mapping to DocumentEntry](metadata_maps.html#documentEntry) from IHE Document Sharing profiles (e.g., XDS) to FHIR. Document Consumers should be robust to receiving DocumentReference Resources that are not IHE compliant.
 
@@ -201,7 +201,7 @@ Document Responders implementing this transaction shall provide a CapabilityStat
 
 ### Security Considerations
 
-See [MHD Security Considerations](3_security_considerations.html)
+See [MHD Security Considerations](3_security_considerations.html).
 
 This transaction should not return information that the Document Consumer is not authorized to access. Where authorization here is inclusive of system, app, and user according to local policy, patient consents, and security layering. However, the transaction may return DocumentReference resources that have Reference elements that the Document Consumer may not have access to. This is to say that the authorization need only be to the content returned in the Bundle. There may be references (URLs) for which the content is not authorized. This is considered proper as the Document Consumer would need to retrieve the content pointed to by those references, and at that time the proper authorization decision would be made on that context and content. In this way it is possible for a Document Consumer to get DocumentManifest resources that are pointing at data that the Document Consumer is not authorized to retrieve. Thus, the URLs used must be carefully crafted so as to not expose sensitive data in the URL value.
 
@@ -213,11 +213,11 @@ The security audit criteria are similar to those for the Registry Stored Query [
 
 ##### Document Consumer Audit
 
-The Document Consumer when grouped with ATNA Secure Node or Secure Application actor shall be able to record a [Find Document References Consumer Audit Event Log](StructureDefinition-IHE.MHD.FindDocumentReferences.Audit.Consumer.html). [Audit Example for a Find Document References transaction from consumer perspective](AuditEvent-ex-auditFindDocumentReferences-consumer.html) 
+The Document Consumer when grouped with ATNA Secure Node or Secure Application actor shall be able to record a [Find Document References Consumer Audit Event Log](StructureDefinition-IHE.MHD.FindDocumentReferences.Audit.Consumer.html). [Audit Example for a Find Document References transaction from consumer perspective](AuditEvent-ex-auditFindDocumentReferences-consumer.html). 
 
 ##### Document Responder Audit
 
-The Document Responder when grouped with ATNA Secure Node or Secure Application actor shall be able to record a [Find Document References Responder Audit Event Log](StructureDefinition-IHE.MHD.FindDocumentReferences.Audit.Responder.html). [Audit Example for a Find Document Lists Transaction from responder perspective](AuditEvent-ex-auditFindDocumentReferences-responder.html) 
+The Document Responder when grouped with ATNA Secure Node or Secure Application actor shall be able to record a [Find Document References Responder Audit Event Log](StructureDefinition-IHE.MHD.FindDocumentReferences.Audit.Responder.html). [Audit Example for a Find Document Lists Transaction from responder perspective](AuditEvent-ex-auditFindDocumentReferences-responder.html). 
 
 
 
