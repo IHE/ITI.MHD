@@ -9,7 +9,7 @@ The MHD Profile can be used as an [API to a Document Sharing exchange using XDS]
 
 ### About This Guide
 
-This is a draft for Public Comment for IHE publication.
+This is a *Draft for Public Comment* IHE publication.
 
 ### Mobile access to Health Documents (MHD)
 
@@ -23,7 +23,7 @@ This profile leverages the metadata concepts from [XDS](https://profiles.ihe.net
 
 The MHD Profile does not replace [XDS](https://profiles.ihe.net/ITI/TF/Volume1/ch-10.html). Rather, it enables simplified access by mobile devices to an [XDS](https://profiles.ihe.net/ITI/TF/Volume1/ch-10.html) (or a similar) document management environment containing health information.
 
-The [Mobile Cross-Enterprise Document Data Element Extraction (mXDE)](https://profiles.ihe.net/ITI/TF/Volume1/ch-45.html) Profile combines MHD with the PCC Query for Existing Data for Mobile (QEDm) Profile to provide element level access to the medical information available in a Document Sharing exchange. More details can be found in the whitepaper on [Document Sharing Health Information Exchange](https://profiles.ihe.net/ITI/HIE-Whitepaper/index.html).
+The [Mobile Cross-Enterprise Document Data Element Extraction (mXDE)](https://profiles.ihe.net/ITI/TF/Volume1/ch-45.html) Profile combines MHD with the PCC Query for Existing Data for Mobile (QEDm) Profile to provide element level access to the medical information available in a Document Sharing exchange. More details can be found in the white paper on [Document Sharing Health Information Exchange](https://profiles.ihe.net/ITI/HIE-Whitepaper/index.html).
 
 ## MHD Actors, and Transactions
 
@@ -48,7 +48,7 @@ The [Mobile Cross-Enterprise Document Data Element Extraction (mXDE)](https://pr
   - [Retrieve Document ITI-68](ITI-68.html)
 
 ## MHD Overview
-The MHD Profile enables sharing of patient documents to, or from, mobile or constrained devices. Other IHE profiles, chiefly Cross-Enterprise Document Sharing (XDS), describe sharing of patient document in less constrained environments, and many of the concepts from those profiles are applicable to the MHD environment. For more information on IHE Document Sharing, see [Health Information Exchange: Enabling Document Sharing Using IHE Profiles](https://profiles.ihe.net/ITI/HIE-Whitepaper/index.html) whitepaper.
+The MHD Profile enables sharing of patient documents to, or from, mobile or constrained devices. Other IHE profiles, chiefly Cross-Enterprise Document Sharing (XDS), describe sharing of patient document in less constrained environments, and many of the concepts from those profiles are applicable to the MHD environment. For more information on IHE Document Sharing, see [Health Information Exchange: Enabling Document Sharing Using IHE Profiles](https://profiles.ihe.net/ITI/HIE-Whitepaper/index.html) White Paper.
 
 ### Concepts
 The MHD Profile supports a broad set of the XDS use cases and functionality while keeping the implementation as simple as possible. The MHD Profile is focused on a subset of the use cases that XDS supports and does not try to reproduce the full scalability, flexibility, privacy, or security supported by a more robust XDS infrastructure. Example use cases are:
@@ -118,7 +118,7 @@ The MHD Profile defines a set of transactions against FHIR Resources. These are 
 | TRACE  | Not Specified                    | Not Specified                | Not Specified              |
 {: .grid}
 
-Note: Items are marked Not Specified because the MHD Profile is focused on core Document Sharing (XDS, XDR, etc) capability and not trying to address the larger use-case of metadata update.
+Note: Items are marked *Not Specified* because the MHD Profile is focused on core Document Sharing (XDS, XDR, etc.) capability and is not trying to address the larger use-case of metadata update.
 
 
 **[Previous](index.html)   /   [Next](2_actors_and_transactions.html)**
