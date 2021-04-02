@@ -18,7 +18,7 @@ The Provide Document Bundle [ITI-65] transaction passes a Provide Document Bundl
 
 **FHIR-R4** [HL7 FHIR Release 4.0](http://www.hl7.org/FHIR/R4)
 
-### Interactions
+### Messages
 
 <div>
 {%include ITI-65-seq.svg%}
@@ -26,7 +26,7 @@ The Provide Document Bundle [ITI-65] transaction passes a Provide Document Bundl
 
 <div style="clear: left"/>
 
-**Figure: Provide Document Bundle Interactions**
+**Figure 3.65.4-1: Provide Document Bundle Interactions**
 
 
 #### Provide Document Bundle Request Message
@@ -72,8 +72,8 @@ The FHIR Bundle.meta.profile shall have the following value depending on the use
   * may have one or more [Folder type List](StructureDefinition-IHE.MHD.Minimal.Folder.html) that is either minimal, comprehensive, or unContained
   * may have one [Patient](http://hl7.org/fhir/R4/patient.html)
 * [UnContained Comprehensive Metadata](StructureDefinition-IHE.MHD.UnContained.Comprehensive.ProvideBundle.html): `http://profiles.ihe.net/ITI/MHD/StructureDefinition/IHE.MHD.UnContained.Comprehensive.ProvideBundle` 
-  * Note that Minimal Metadata does not require containment, so UnContained Minimal is the same as Minimal Metadata
-  * Note that UnContained only applies to DocumentReference and SubmissionSet type Lists; so the following apply
+  * note that Minimal Metadata does not require containment, so UnContained Minimal is the same as Minimal Metadata
+  * note that UnContained only applies to DocumentReference and SubmissionSet type Lists; so the following apply
   * shall be a Transaction Bundle
   * each bundle entry request shall be POST (create)
   * all resources shall be compliant with comprehensive unContained constraints, they may be marked comprehensive unContained
@@ -117,7 +117,7 @@ If the Document Recipient encounters any errors or if any validation fails, the 
 
 If the Provide Document Bundle Message contains a DocumentReference Resource with a relatesTo element and the Document Recipient does not support the relatesTo.code value, it shall return a warning message, as indicated in *Table 3.65.4.1.3-1: Warning message when relatesTo code is not supported*.
 
-*Table 3.65.4.1.3-1: Warning message when relatesTo code is not supported*
+**Table 3.65.4.1.3-1: Warning message when relatesTo code is not supported**
 
 |relatesTo.code |	Warning |
 |---------------|-----------|
@@ -146,7 +146,7 @@ Upon successful conversion of the FHIR Bundle to XDS Document Sharing metadata, 
 
 #### Provide Document Bundle Response Message
 
-The Document Recipient returns a HTTP Status code appropriate to the processing outcome, conforming to the transaction specification requirements as specified in [http://hl7.org/fhir/R4/http.html#transaction](http://hl7.org/fhir/R4/http.html#transaction) 
+The Document Recipient returns a HTTP Status code appropriate to the processing outcome, conforming to the transaction specification requirements as specified in [http://hl7.org/fhir/R4/http.html#transaction](http://hl7.org/fhir/R4/http.html#transaction). 
 
 ##### Trigger Events
 
@@ -187,11 +187,11 @@ The security audit criteria are similar to those for the Provide and Register Do
 
 ##### Document Source Audit 
 
-The Document Source when grouped with ATNA Secure Node or Secure Application actor shall be able to record a [Provide Audit Bundle Source Audit Event Log](StructureDefinition-IHE.MHD.ProvideBundle.Audit.Source.html). [Audit Example for a Provide Bundle Transaction from source perspective](AuditEvent-ex-auditProvideBundle-source.html) 
+The Document Source when grouped with ATNA Secure Node or Secure Application actor shall be able to record a [Provide Audit Bundle Source Audit Event Log](StructureDefinition-IHE.MHD.ProvideBundle.Audit.Source.html). [Audit Example for a Provide Bundle Transaction from source perspective](AuditEvent-ex-auditProvideBundle-source.html). 
 
 ##### Document Recipient Audit 
 
-The Document Recipient when grouped with ATNA Secure Node or Secure Application actor shall be able to record a [Provide Audit Bundle Recipient Audit Event Log](StructureDefinition-IHE.MHD.ProvideBundle.Audit.Recipient.html). [Audit Example for a Provide Bundle Transaction from recipient perspective](AuditEvent-ex-auditProvideBundle-recipient.html) 
+The Document Recipient when grouped with ATNA Secure Node or Secure Application actor shall be able to record a [Provide Audit Bundle Recipient Audit Event Log](StructureDefinition-IHE.MHD.ProvideBundle.Audit.Recipient.html). [Audit Example for a Provide Bundle Transaction from recipient perspective](AuditEvent-ex-auditProvideBundle-recipient.html). 
 
 
 
