@@ -23,7 +23,7 @@ The result of the query is a Bundle containing List Resources that match the que
 
 **FHIR-R4** [HL7 FHIR Release 4.0](http://www.hl7.org/FHIR/R4)
 
-### Interactions
+### Messages
 
 <div>
 {%include ITI-66-seq.svg%}
