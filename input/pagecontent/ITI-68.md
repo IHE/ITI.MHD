@@ -6,7 +6,7 @@ The Retrieve Document [ITI-68] transaction is used by the Document Consumer to r
 
 ### Actors Roles
 
-**Table: Actor Roles**
+**Table 3.68.2-1: Actor Roles**
 
 |Actor | Role |
 |-------------------+--------------------------|
@@ -18,7 +18,7 @@ The Retrieve Document [ITI-68] transaction is used by the Document Consumer to r
 
 **FHIR-R4** [HL7 FHIR Release 4.0](http://www.hl7.org/FHIR/R4)
 
-### Interactions
+### Messages
 
 <div>
 {%include ITI-68-seq.svg%}
@@ -26,7 +26,7 @@ The Retrieve Document [ITI-68] transaction is used by the Document Consumer to r
 
 <div style="clear: left"/>
 
-**Figure: Retrieve Document Interactions**
+**Figure 3.68.4-1: Retrieve Document Interactions**
 
 #### Retrieve Document Request Message
 
@@ -62,7 +62,7 @@ This message shall be an HTTP Response, as specified by RFC2616. When the reques
 
 Table 3.68.4.2.2-1 contains error situations and the HTTP Response.
 
-Table 3.68.4.2.2-1: HTTP Error Response Codes and Suggested Text
+**Table 3.68.4.2.2-1: HTTP Error Response Codes and Suggested Text**
 
 |Situation	| HTTP Response |
 |-----------|---------------|
@@ -80,7 +80,7 @@ The Document Responder may return HTTP redirect responses (responses with HTTP S
 
 ##### Expected Actions
 
-If the Document Responder returns an HTTP redirect response (HTTP status codes 301, 302, 303, or 307), the Document Consumer shall follow the redirect, but may stop processing if it detects a loop. See RFC7231 Section 6.4 Redirection 3xx.
+If the Document Responder returns an HTTP redirect response (HTTP status codes 301, 302, 303, or 307), the Document Consumer shall follow the redirect, but may stop processing if it detects a loop. See [RFC7231 Section 6.4 Redirection 3xx](https://tools.ietf.org/html/rfc7231#section-6.4).
 
 The Document Consumer processes the results according to application-defined rules.
 
@@ -92,7 +92,7 @@ Document Responders implementing this transaction shall provide a CapabilityStat
 
 ### Security Considerations
 
-See [MHD Security Considerations](3_security_considerations.html)
+See [MHD Security Considerations](3_security_considerations.html).
 
 This transaction should not return information that the Document Consumer is not authorized to access. 
 
@@ -102,11 +102,11 @@ The security audit criteria are similar to those for the Retrieve Document Set-b
 
 ##### Document Consumer Audit
 
-The Document Consumer when grouped with ATNA Secure Node or Secure Application actor shall be able to record a [Retrieve Document Consumer Audit Event Log](StructureDefinition-IHE.MHD.RetrieveDocument.Audit.Consumer.html). [Audit Example for a Retrieve Document transaction from consumer perspective](AuditEvent-ex-auditRetrieveDocument-consumer.html) 
+The Document Consumer when grouped with ATNA Secure Node or Secure Application actor shall be able to record a [Retrieve Document Consumer Audit Event Log](StructureDefinition-IHE.MHD.RetrieveDocument.Audit.Consumer.html). [Audit Example for a Retrieve Document transaction from consumer perspective](AuditEvent-ex-auditRetrieveDocument-consumer.html). 
 
 ##### Document Responder Audit
 
-The Document Responder when grouped with ATNA Secure Node or Secure Application actor shall be able to record a [Retrieve Document Responder Audit Event Log](StructureDefinition-IHE.MHD.RetrieveDocument.Audit.Responder.html). [Audit Example for a Find Document Lists Transaction from responder perspective](AuditEvent-ex-auditRetrieveDocument-responder.html) 
+The Document Responder when grouped with ATNA Secure Node or Secure Application actor shall be able to record a [Retrieve Document Responder Audit Event Log](StructureDefinition-IHE.MHD.RetrieveDocument.Audit.Responder.html). [Audit Example for a Find Document Lists Transaction from responder perspective](AuditEvent-ex-auditRetrieveDocument-responder.html). 
 
 
 
