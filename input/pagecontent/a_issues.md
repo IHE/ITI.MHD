@@ -1,5 +1,5 @@
 ### Significant changes since MHD Version 3.2
-* Due to "breaking" changes, this version of MHD is Version 4.0 (for public comment).
+* Due to "breaking" changes, this version of MHD is Version 4.0.0-ballot (for public comment), and will be published after public comment resolution as 4.0.0.
 * Canonical URLs are different, using '.' rather than '_' as the underbar is not allowed in Canonical URLs.
 * DocumentManifest has been replaced by List. Thus both SubmissionSet and Folder are supported with List Resource.
 * To support use of List a few extensions have been added, and a few query parameters have been defined for those extensions.
@@ -9,6 +9,7 @@
 * Imported IHE published FormatCode vocabulary from [IHE FormatCode Implementation Guide](https://profiles.ihe.net/fhir/ihe.formatcode.fhir/index.html)
 * This publication includes the content from the Appendix Z supplement.
 * This publication includes a prototype of a test plan. This page is not complete.
+* There are known and accepted IG build errors (QA reports: broken links = 0, errors = 49, warn = 44, info = 23). These are to be resolved post public comment.
 
 Please review the open issues and provide your response to the questions and statements.
 

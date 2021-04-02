@@ -13,7 +13,7 @@
  },
  {
   "version" : "4.0.0-comment",  
-  "date" : "2021-03-31", 
+  "date" : "2021-04-02", 
   "desc" : "Public Comment release for first IG authored version",   
   "path" : "http://profiles.ihe.net/ITI/MHD/4.0.0-comment",   
   "status" : "ballot",
