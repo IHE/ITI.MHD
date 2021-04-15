@@ -43,7 +43,8 @@ Description:    "A profile on the Bundle transaction for Provide Document resour
 * entry[DocumentRefs] ^definition = "any and all DocumentReference that are part of the SubmissionSet. These might be new, replacements, or other associations"
 * entry[DocumentRefs].request 1..1
 * entry[DocumentRefs].request.method = #POST
-* entry[Documents].resource only http://hl7.org/fhir/StructureDefinition/Binary
+* entry[Documents].resource ^type.code = "Binary"
+* entry[Documents].resource ^type.profile = Canonical(Binary)
 * entry[Documents] ^short = "the documents"
 * entry[Documents] ^definition = "the documents referenced by the DocumentReference resources"
 * entry[Documents].request 1..1
@@ -55,7 +56,8 @@ Description:    "A profile on the Bundle transaction for Provide Document resour
 * entry[Folders] ^definition = "any Folders being created or updated"
 * entry[Folders].request 1..1
 * entry[Folders].request.method = #POST
-* entry[Patient].resource only http://hl7.org/fhir/StructureDefinition/Patient
+* entry[Patient].resource ^type.code = "Patient"
+* entry[Patient].resource ^type.profile = Canonical(Patient)
 * entry[Patient] ^short = "the Patient"
 * entry[Patient] ^definition = "the Patient"
 
