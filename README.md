@@ -50,15 +50,7 @@ This Continuous Build will appear http://build.fhir.org/ig/IHE/ITI.MHD/branches/
 
 ## TODO
 
-1. setup for public comment submission (issues and form)
-
-
-### could be open issues if not done
-
-1. add an extension on source for a source that is Organization (sourceOrg), and add narrative to ITI-65 that when the author is an Organization this extension is to be used. No query is needed as XDS query is only against author person. update MHD_055.
-1. add to mappings page a mapping between XDS RegistryError and FHIR OperationOutcome. At the element level, and also addressing OperationOutcome.issue.code vocabulary could be mapped to the XDS error vocabulary. between XDS https://profiles.ihe.net/ITI/TF/Volume3/ch-4.2.html#4.2.4.1 and FHIR OperationOutcome. 
-1. capability statements need narrative
-1. capability statements need to somehow distinguish between minimal, uncontained, and comprehensive.
+none
 
 
 ### Examples
@@ -80,7 +72,6 @@ This Continuous Build will appear http://build.fhir.org/ig/IHE/ITI.MHD/branches/
 
 1. canonical url -- should we include realm in the URI like hl7?
 1. why do we need to add .fhir at the end of all profile id?
-1. handle persistent section numbers and references. Today I left in original numbers most of the time. Today I only changed a few to markdown links for experimentation.
 
 ## Test
 
