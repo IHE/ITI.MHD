@@ -33,6 +33,7 @@ Description:    "A profile on the Bundle transaction for Provide Document resour
     IHE.MHD.Comprehensive.SubmissionSet
 * entry[SubmissionSet] ^short = "the SubmissionSet"
 * entry[SubmissionSet] ^definition = "The SubmissionSet defines who submitted it, why they submitted it, when they submitted, what is in it, and where it is destine."
+* entry[SubmissionSet].resource 1..1
 * entry[SubmissionSet].request 1..1
 * entry[SubmissionSet].request.method = #POST
 * entry[DocumentRefs].resource only 
@@ -41,11 +42,13 @@ Description:    "A profile on the Bundle transaction for Provide Document resour
     IHE.MHD.Comprehensive.DocumentReference
 * entry[DocumentRefs] ^short = "the DocumentReference resources"
 * entry[DocumentRefs] ^definition = "any and all DocumentReference that are part of the SubmissionSet. These might be new, replacements, or other associations"
+* entry[DocumentRefs].resource 1..1
 * entry[DocumentRefs].request 1..1
 * entry[DocumentRefs].request.method = #POST
 * entry[Documents].resource only http://hl7.org/fhir/StructureDefinition/Binary
 * entry[Documents] ^short = "the documents"
 * entry[Documents] ^definition = "the documents referenced by the DocumentReference resources"
+* entry[Documents].resource 1..1
 * entry[Documents].request 1..1
 * entry[Documents].request.method = #POST
 * entry[Folders].resource only 
@@ -53,11 +56,13 @@ Description:    "A profile on the Bundle transaction for Provide Document resour
     IHE.MHD.Minimal.Folder
 * entry[Folders] ^short = "Folders"
 * entry[Folders] ^definition = "any Folders being created or updated"
+* entry[Folders].resource 1..1
 * entry[Folders].request 1..1
 * entry[Folders].request.method = #POST
 * entry[Patient].resource only http://hl7.org/fhir/StructureDefinition/Patient
 * entry[Patient] ^short = "the Patient"
 * entry[Patient] ^definition = "the Patient"
+* entry[Patient].resource 1..1
 
 
 Profile:        UnContainedComprehensiveProvideDocumentBundle
