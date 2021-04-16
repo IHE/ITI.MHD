@@ -2,7 +2,7 @@ Profile:        FindDocumentReferencesComprehensiveResponse
 Parent:         Bundle
 Id:             IHE.MHD.FindDocumentReferencesComprehensiveResponseMessage
 Title:          "MHD Find Document References Comprehensive Response message"
-Description:    "A profile on the Find Document References Comprehensive Response message for ITI-68"
+Description:    "A profile on the Find Document References Comprehensive Response message for ITI-67"
 * ^version = "3.1.1"
 * ^date = "2020-02-01"
 * ^publisher = "Integrating the Healthcare Enterprise (IHE)" 
