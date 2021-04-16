@@ -158,6 +158,8 @@ To enable the Document Source to know the outcome of processing the transaction,
 
 To indicate success the overall http `200` response is used. The Bundle.entry.response.status shall be `201` to indicate the Resource has been created; the `.location` element shall be populated, and the `.etag` element may be populated when the Document Recipient supports FHIR resource versioning.
 
+An informative StructureDefinition is outlined for [MHD Provide Bundle Document Response Message](StructureDefinition-IHE.MHD.Minimal.ProvideDocumentBundleResponse.html), with an [example](StructureDefinition-IHE.MHD.Minimal.ProvideDocumentBundleResponse-examples.html).
+
 ##### Expected Actions
 
 If the Document Recipient returns an HTTP redirect response (HTTP status codes 301, 302, 303, or 307), the Document Source shall follow the redirect, but may stop processing if it detects a loop. See [RFC7231 Section 6.4 Redirection 3xx](https://tools.ietf.org/html/rfc7231#section-6.4).

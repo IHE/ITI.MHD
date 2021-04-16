@@ -82,3 +82,21 @@ Title:      "Dummy Patient example"
 Description: "Dummy patient example for completeness sake. No actual use of this resource other than an example target"
 //Usage: #inline
 * meta.security = http://terminology.hl7.org/CodeSystem/v3-ActReason#HTEST
+
+Instance: ex-ProvideDocumentBundleResponse
+InstanceOf: IHE.MHD.Minimal.ProvideDocumentBundleResponse 
+Title: "ex-ProvideDocumentBundleResponse"
+Description: "IHE.MHD.Minimal.ProvideDocumentBundleResponse"
+* meta.security = http://terminology.hl7.org/CodeSystem/v3-ActReason#HTEST
+* type = #transaction-response
+* link[0].relation = "self"
+* link[0].url = "http://example.com/fhir"
+* entry[0].response.status = "201 Created"
+* entry[0].response.location = "http://example.com/xdsretrieve?uniqueId=1.3.6.1.4.1.12559.11.13.2.1.2964&repositoryUniqueId=1.1.4567332.1.2"
+* entry[0].response.lastModified = "2020-10-02T11:56:15.094+00:00"
+* entry[1].response.status = "201 Created"
+* entry[1].response.location = "List/68a928c0-df48-4743-a291-bfb0609bbddc"
+* entry[1].response.lastModified = "2020-10-02T11:56:15.094+00:00"
+* entry[2].response.status = "201 Created"
+* entry[2].response.location = "DocumentReference/50383ae5-49e5-4dea-b0e6-660cb9e7b91f"
+* entry[2].response.lastModified = "2020-10-02T11:56:15.101+00:00"
