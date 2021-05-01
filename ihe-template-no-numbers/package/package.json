@@ -1,0 +1,12 @@
+{
+  "name": "hl7.fhir.be.my.template",
+  "version": "0.0.1",
+  "type": "fhir.template",
+  "license": "CC0-1.0",
+  "description": "Local template extension for HL7 Affiliates",
+  "author": "http://hl7.org/fhir",
+	"base":  "ihe.fhir.template",
+  "dependencies": {
+    "ihe.fhir.template": "current"
+  }
+}
