@@ -7,6 +7,17 @@ Description:    "A profile on the List resource for MHD. Used with both Folder a
 "
 * extension contains DesignationType named designationType 0..*
 // code is used ONLY to switch between folder and submissionSet
+* identifier 1..* 
+* identifier ^slicing.discriminator.type = #value
+* identifier ^slicing.discriminator.path = "use"
+* identifier ^slicing.rules = #open
+* identifier contains uniqueId 1..1
+* identifier[uniqueId] ^short = "uniqueId"
+* identifier[uniqueId].use = #usual
+* identifier contains entryUUID 0..*
+* identifier[entryUUID] ^short = "entryUUID"
+* identifier[entryUUID].use = #official
+
 * code 1..1 
 * code from MHDlistTypesVS
 

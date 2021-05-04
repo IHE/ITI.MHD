@@ -11,7 +11,8 @@ Description:    "A profile on the List resource for MHD use as a Folder with min
 * with use-cases and constraints found in [3:4.3 Additional Document Sharing Requirements](https://profiles.ihe.net/ITI/TF/Volume3/ch-4.3.html#4.3) 
 "
 * extension[designationType] 0..* MS
-* identifier 2..*
+* identifier[entryUUID] 1..1
+* identifier 2..2
 //* status 
 * mode = #working
 * title 0..1
