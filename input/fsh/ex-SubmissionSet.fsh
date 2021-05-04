@@ -118,5 +118,12 @@ Usage: #inline
 * telecom.system = #email
 * telecom.value = "JohnMoehrke@gmail.com"
 
-
-
+Instance:   ex-findDocumentListsResponse
+InstanceOf: IHE.MHD.FindDocumentListsResponseMessage
+Title:      "Example of a Find Document Lists Response Message"
+* meta.security = http://terminology.hl7.org/CodeSystem/v3-ActReason#HTEST
+* type = #searchset
+* total = 1
+* timestamp = 2021-04-16T11:32:24Z
+* entry[0].fullUrl = "http://example.org/List/ex-minimalSubmissionSet"
+* entry[0].resource = ex-minimalSubmissionSet

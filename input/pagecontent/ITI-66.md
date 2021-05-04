@@ -188,6 +188,8 @@ If the Find Document Lists message is processed successfully, whether or not any
 
 The response shall adhere to the FHIR Bundle constraints specified in [ITI TF-2x: Appendix Z.1](appendix_z.html). 
 
+An informative StructureDefinition is outlined for [MHD Find Document Lists Response message](StructureDefinition-IHE.MHD.FindDocumentListsResponseMessage.html), with an [example](Bundle-ex-findDocumentListsResponse.html).
+
 **List Resource Contents**
 
 The List Resources returned shall be compliant with the FHIR specification [http://hl7.org/fhir/R4/list.html](http://hl7.org/fhir/R4/list.html).
