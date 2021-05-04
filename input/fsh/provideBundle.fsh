@@ -113,3 +113,15 @@ Description:    "A profile on the Bundle transaction for Provide Document resour
     IHE.MHD.Comprehensive.DocumentReference
 * entry[Folders].resource only 
     IHE.MHD.Minimal.Folder
+
+Profile:        MinimalProvideDocumentBundleResponse
+Parent:         Bundle
+Id:             IHE.MHD.Minimal.ProvideDocumentBundleResponse
+Title:          "MHD Minimal Provide Document Bundle Response"
+Description:    "A profile on the Bundle transaction-response for Provide Document Bundle response with Minimal metadata for MHD."
+* type = #transaction-response
+* entry 2..* 
+* entry ^short = "One entry for each entry in the request, in the same order as received"
+* entry.response 1..
+* entry.response ^short = "Indicating the results of processing the entry"
+* entry.response.location 1..
