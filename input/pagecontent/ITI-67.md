@@ -1,10 +1,10 @@
 This section corresponds to transaction [ITI-67] of the IHE Technical Framework. Transaction [ITI-67] is used by the Document Consumer and Document Responder Actors.
 
-### Scope
+### 2:3.67.1 Scope
 
 The Find Document References transaction is used to find DocumentReference Resources that satisfy a set of parameters. It is equivalent to the FindDocuments and FindDocumentsByReferenceId queries from the Registry Stored Query [ITI-18] transaction. The result of the query is a FHIR Bundle containing DocumentReference Resources that match the query parameters.
 
-### Actors Roles
+### 2:3.67.2 Actors Roles
 
 **Table: Actor Roles**
 
@@ -14,11 +14,11 @@ The Find Document References transaction is used to find DocumentReference Resou
 | [Document Responder](2_actors_and_transactions.html#document-responder) | Returns DocumentReference Resources that match the search criteria provided by the Document Consumer |
 {: .grid}
 
-### Referenced Standards
+### 2:3.67.3 Referenced Standards
 
 **FHIR-R4** [HL7 FHIR Release 4.0](http://www.hl7.org/FHIR/R4)
 
-### Messages
+### 2:3.67.4 Messages
 
 <div>
 {%include ITI-67-seq.svg%}
@@ -28,29 +28,32 @@ The Find Document References transaction is used to find DocumentReference Resou
 
 **Figure 3.67.4-1: Find Document References Interactions**
 
-#### Find Document References Request message
+#### 2:3.67.4.1 Find Document References Request message
 
 This message uses the HTTP GET method parameterized query to obtain DocumentReference Resources from the Document Responder. 
 
-##### Trigger Events
+##### 2:3.67.4.1.1 Trigger Events
 
 When the Document Consumer needs to discover DocumentReference Resources matching various metadata parameters, it issues a Find Document References message. 
 
-##### Message Semantics
+##### 2:3.67.4.1.2 Message Semantics
 
-The Document Consumer executes an HTTP GET against the Document Responders DocumentReference URL. The search target follows the FHIR HTTP specification, addressing the DocumentReference Resource [http://hl7.org/fhir/R4/http.html](http://hl7.org/fhir/R4/http.html):
+The Document Consumer executes an HTTP search against the Document Responders DocumentReference URL. The search target follows the FHIR HTTP specification, addressing the DocumentReference Resource [http://hl7.org/fhir/R4/http.html](http://hl7.org/fhir/R4/http.html):
 ```
 [base]/DocumentReference?<query>
 ```
 This URL is configurable by the Document Responder and is subject to the following constraints: 
 
-The <query> represents a series of encoded name-value pairs representing the filter for the query, as specified in Section [Query Search Parameters](#query-search-parameters), as well as control parameters to modify the behavior of the Document Responder such as response format, or pagination.
+The `<query>` represents a series of encoded name-value pairs representing the filter for the query, as specified in Section [Query Search Parameters](#23674121-query-search-parameters), as well as control parameters to modify the behavior of the Document Responder such as response format, or pagination.
 
-###### Query Search Parameters
+The Document Consumer may use GET or POST based searches. The Document Responder shall support both GET and POST based searches [http://hl7.org/fhir/R4/http.html#search](http://hl7.org/fhir/R4/http.html#search).
+
+
+###### 2:3.67.4.1.2.1 Query Search Parameters
 
 The Document Consumer may supply, and the Document Responder shall be capable of processing, all query parameters listed below. All query parameter values shall be appropriately encoded per RFC3986 “percent” encoding rules. Note that percent encoding does restrict the character set to a subset of ASCII characters which is used for encoding all other characters used in the URL.
 
-The Document Consumer shall include search parameter *patient* or *patient.identifier*, and *status*. The other parameters described below are optional. The Document Responder must implement the parameters described below. The Document Responder may choose to support additional query parameters beyond the subset listed below. Any additional query parameters supported shall be supported according to the core FHIR specification. Such additional parameters are considered out of scope for this transaction. Any additional parameters not supported should be ignored. See [http://hl7.org/fhir/R4/search.html#errors](http://hl7.org/fhir/R4/search.html#errors). 
+The Document Consumer shall include search parameter `patient` or `patient.identifier`, and `status`. The other parameters described below are optional. The Document Responder must implement the parameters described below. The Document Responder may choose to support additional query parameters beyond the subset listed below. Any additional query parameters supported shall be supported according to the core FHIR specification. Such additional parameters are considered out of scope for this transaction. Any additional parameters not supported should be ignored. See [http://hl7.org/fhir/R4/search.html#errors](http://hl7.org/fhir/R4/search.html#errors). 
 
 **author.given** and **author.family** 
 :These parameters, of type string, specify the name parts of the author person, which is associated with the DocumentReference Resource, or in Document Sharing nomenclature, the author of the Document Entry. See [ITI TF-2x: Appendix Z.2](appendix_z.html#query-parameters) for use of the string data type. 
@@ -97,17 +100,42 @@ The Document Consumer shall include search parameter *patient* or *patient.ident
 **type** 
 :This parameter, of type token, specifies the specific type of the DocumentReference resource or in Document Sharing nomenclature, the typeCode of the Document Entry. See [ITI TF-2x: Appendix Z.2](appendix_z.html#query-parameters) for additional constraints on the use of the token search parameter type.
 
-###### Populating Expected Response Format
+###### 2:3.67.4.1.2.2 Populating Expected Response Format
 
 The FHIR standard provides encodings for responses as either XML or JSON. The Document Responder shall support both message encodings, whilst the Document Consumer shall support one and may support both.
 
 See [ITI TF-2x: Appendix Z.6](appendix_z.html#populating-the-expected-response-format) for details. 
 
-##### Expected Actions
+###### 2:3.67.4.1.2.3 Example DocumentReference search
+
+For example given:
+* FHIR server root is `http://test.fhir.org/R4/fhir`
+* Patient id is `9876`
+* status of current
+* with clinical code from loinc of 1234-5
+
+###### 2:3.67.4.1.2.3.1 Example GET
+```
+GET test.fhir.net/R4/fhir/DocumentReference?patient=9876&status=current&type=http://loinc.org|1234-5
+```
+
+###### 2:3.67.4.1.2.3.2 Example POST
+```
+POST test.fhir.net/R4/fhir/DocumentReference?patient=9876&status=current&type=http://loinc.org|1234-5
+```
+
+###### 2:3.67.4.1.2.3.3 Example POST body
+```
+POST test.fhir.net/R4/fhir/DocumentReference
+
+patient=9876&status=current&type=http://loinc.org|1234-5
+```
+
+##### 2:3.67.4.1.3 Expected Actions
 
 The Document Responder shall process the query to discover the DocumentReference entries that match the search parameters given. 
 
-###### XDS on FHIR Option
+###### 2:3.67.4.1.3.1 XDS on FHIR Option
 
 The Document Responder is grouped with an XDS Document Consumer when it supports the [XDS on FHIR](2_actors_and_transactions.html#xds-on-fhir-option) Option. The Document Responder shall map the query parameters as listed in Table 3.67.4.1.3-1 and shall execute a Registry Stored Query [ITI-18] for FindDocuments or FindDocumentsByReferenceIdList (see ITI TF-2a: 3.18.4.1.2.3.7.1 and 3.18.4.1.2.3.7.14). All of the query parameters in Table 3.67.4.1.3-1 shall be supported by the Document Responder. No additional query parameters as defined in FHIR are required of the Document Responder, but they may be offered.
 
@@ -153,15 +181,15 @@ Note 5: The FHIR DocumentReference does not yet have a query parameter for creat
 |superseded	|urn:oasis:names:tc:ebxml-regrep:StatusType:Deprecated |
 {: .grid}
 
-#### Find Document References Response message
+#### 2:3.67.4.2 Find Document References Response message
 
 The Document Responder returns a HTTP Status code appropriate to the processing as well as a Bundle of the matching DocumentReference Resources.
 
-##### Trigger Events
+##### 2:3.67.4.2.1 Trigger Events
 
 The Document Responder completed processing of the Find Document Reference Request message. 
 
-##### Message Semantics
+##### 2:3.67.4.2.2 Message Semantics
 
 Based on the query results, the Document Responder will either return an error or success. Guidance on handling Access Denied related to use of 200, 403 and 404 can be found in [ITI TF-2x: Appendix Z.7](appendix_z.html#FHIRsecurity). 
 
@@ -169,37 +197,35 @@ When the Document Responder needs to report an error, it shall use HTTP error re
 
 If the Find Document References message is processed successfully, whether or not any DocumentReference Resources are found, the HTTP status code shall be 200. The Find Document References Response message shall be a Bundle Resource containing zero or more DocumentReference Resources. If the Document Responder is sending warnings, the Bundle Resource shall also contain an OperationOutcome Resource that contains those warnings.
 
-The response shall adhere to the FHIR Bundle constraints specified in [ITI TF-2x: Appendix Z.1](appendix_z.html). 
+The response shall adhere to the FHIR Bundle constraints specified in [ITI TF-2x: Appendix Z.1](appendix_z.html). The response bundle for a MHD Find Document References Comprehensive Response [is defined here](StructureDefinition-IHE.MHD.FindDocumentReferencesComprehensiveResponseMessage.html), with an [example](StructureDefinition-IHE.MHD.FindDocumentReferencesComprehensiveResponseMessage-examples.html).
 
-###### DocumentReference Resource Contents
+###### 2:3.67.4.2.2.1 DocumentReference Resource Contents
 
 The DocumentReference Resources returned shall be compliant with the FHIR specification [http://hl7.org/fhir/R4/documentreference.html](http://hl7.org/fhir/R4/documentreference.html).
 
-The DocumentReference Resources returned will be compliant with the [MHD metadata](metadata_maps.html) for the IHE restrictions on DocumentReference Resource and for a [mapping to DocumentEntry](metadata_maps.html#documentEntry) from IHE Document Sharing profiles (e.g., XDS) to FHIR. Document Consumers should be robust to receiving DocumentReference Resources that are not IHE compliant.
+The DocumentReference Resources returned will be compliant with the [MHD metadata](metadata_maps.html) for the IHE restrictions on DocumentReference Resource and with the [mapping to DocumentEntry](metadata_maps.html#documentEntry) from IHE Document Sharing profiles (e.g., XDS) to FHIR. 
 
-###### Resource Bundling
+###### 2:3.67.4.2.2.2 Resource Bundling
 
 Resource Bundling shall comply with the guidelines in [ITI TF-2x: Appendix Z.1](appendix_z.html). 
 
-**Document location**
+###### 2:3.67.4.2.2.2.1 Document location
 
 The Document Responder shall place into the DocumentReference.content.attachment.url element a full URL that can be used by the Document Consumer to retrieve the document using the Retrieve Document [ITI-68](ITI-68.html) transaction. IHE does not specify the format of the URL. There are many ways to encode this URL that allow for easy processing on a [Retrieve Document](ITI-68.html) transaction. Some examples are to encode homeCommunityId, repositoryUniqueId, uniqueId, and patientId into the URL. This could be done in many ways including using character separators or directory separators. In this way, the Document Responder can support many communities, and/or many repositories. 
 
-An informative StructureDefinition is outlined for [MHD Find Document References Comprehensive Response Message](StructureDefinition-IHE.MHD.FindDocumentReferencesComprehensiveResponseMessage.html), with an [example](StructureDefinition-IHE.MHD.FindDocumentReferencesComprehensiveResponseMessage-examples.html).
-
-##### Expected Actions
+##### 2:3.67.4.3 Expected Actions
 
 If the Document Responder returns an HTTP redirect response (HTTP status codes 301, 302, 303, or 307), the Document Consumer shall follow the redirect, but may stop processing if it detects a loop. See RFC7231 Section 6.4 Redirection 3xx.
 
 The Document Consumer shall process the results according to application-defined rules. The Document Consumer should be robust as the response may contain DocumentReference Resources that match the query parameters but are not compliant with the DocumentReference constraints defined here.
 
-#### CapabilityStatement Resource
+#### 2:3.67.4.4 CapabilityStatement Resource
 
 Document Responders implementing this transaction shall provide a CapabilityStatement Resource as described in [ITI TF-2x: Appendix Z.3](appendix_z.html#capability) indicating the transaction has been implemented. 
 * Requirements CapabilityStatement for [Document Consumer](CapabilityStatement-IHE.MHD.DocumentConsumer.html)
 * Requirements CapabilityStatement for [Document Responder](CapabilityStatement-IHE.MHD.DocumentResponder.html)
 
-### Security Considerations
+### 2:3.67.5 Security Considerations
 
 See [MHD Security Considerations](3_security_considerations.html).
 
@@ -207,15 +233,15 @@ This transaction should not return information that the Document Consumer is not
 
 Given that the Document Responder is responsible for the URL placed into DocumentReference.content.attachment.url, care must be taken to assure that manipulation of this URL prior to a Retrieve Document transaction does not expose resources the Document Consumer should not have access to.
 
-#### Security Audit Considerations
+#### 2:3.67.5.1 Security Audit Considerations
 
-The security audit criteria are similar to those for the Registry Stored Query [ITI-18](https://profiles.ihe.net/ITI/TF/Volume2/ITI-18.html#3.18.5) transaction. Grouping a Document Consumer or Document Responder with an [ATNA](https://profiles.ihe.net/ITI/TF/Volume1/ch-9.html) Secure Node or Secure Application is recommended, but not mandated. 
+The security audit criteria are similar to those for the Registry Stored Query [ITI-18](https://profiles.ihe.net/ITI/TF/Volume2/ITI-18.html#3.18.5) transaction. 
 
-##### Document Consumer Audit
+##### 2:3.67.5.1.1 Document Consumer Audit
 
 The Document Consumer when grouped with ATNA Secure Node or Secure Application actor shall be able to record a [Find Document References Consumer Audit Event Log](StructureDefinition-IHE.MHD.FindDocumentReferences.Audit.Consumer.html). [Audit Example for a Find Document References transaction from consumer perspective](AuditEvent-ex-auditFindDocumentReferences-consumer.html). 
 
-##### Document Responder Audit
+##### 2:3.67.5.1.2 Document Responder Audit
 
 The Document Responder when grouped with ATNA Secure Node or Secure Application actor shall be able to record a [Find Document References Responder Audit Event Log](StructureDefinition-IHE.MHD.FindDocumentReferences.Audit.Responder.html). [Audit Example for a Find Document Lists Transaction from responder perspective](AuditEvent-ex-auditFindDocumentReferences-responder.html). 
 
