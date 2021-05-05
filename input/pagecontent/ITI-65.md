@@ -1,10 +1,10 @@
 This section corresponds to transaction [ITI-65] of the IHE Technical Framework. Transaction [ITI-65] is used by the Document Source and Document Recipient Actors. The Provide Document Bundle [ITI-65] transaction is used to transmit a set of documents and associated metadata.
 
-### Scope
+### 2:3.65.1 Scope
 
 The Provide Document Bundle [ITI-65] transaction passes a Provide Document Bundle Request from a Document Source to a Document Recipient.
 
-### Actors Roles
+### 2:3.65.2 Actors Roles
 
 **Table: Actor Roles**
 
@@ -14,11 +14,11 @@ The Provide Document Bundle [ITI-65] transaction passes a Provide Document Bundl
 | [Document Recipient](2_actors_and_transactions.html#document-recipient) | Accepts the document and metadata sent from the Document Source |
 {: .grid}
 
-### Referenced Standards
+### 2:3.65.3 Referenced Standards
 
 **FHIR-R4** [HL7 FHIR Release 4.0](http://www.hl7.org/FHIR/R4)
 
-### Messages
+### 2:3.65.4 Messages
 
 <div>
 {%include ITI-65-seq.svg%}
@@ -29,18 +29,18 @@ The Provide Document Bundle [ITI-65] transaction passes a Provide Document Bundl
 **Figure 3.65.4-1: Provide Document Bundle Interactions**
 
 
-#### Provide Document Bundle Request Message
+#### 2:3.65.4.1 Provide Document Bundle Request Message
 This message uses the HTTP POST method on the target Provide Document Bundle endpoint to convey the metadata and the document(s) as a FHIR transaction.
 
-##### Trigger Events
+##### 2:3.65.4.1.1 Trigger Events
 
 This method is invoked when the Document Source needs to submit one or more documents to a Document Recipient. 
 
-##### Message Semantics
+##### 2:3.65.4.1.2 Message Semantics
 
-The Document Source shall initiate a FHIR “transaction” using a “create” action by sending an HTTP POST request method composed of a FHIR Bundle Resource containing the SubmissionSet type List Resource, one or more DocumentReference Resources, zero or more Folder type List Resources, and zero or more Binary Resources to the Document Recipient. Refer to ITI TF-3: 4.5.1 for details on the FHIR Resources and how Document Sharing metadata attributes are mapped. 
+The Document Source shall initiate a FHIR “transaction” using a “create” action by sending an HTTP POST request method composed of a FHIR Bundle Resource containing: one SubmissionSet type List Resource; one or more DocumentReference Resources; zero or more Folder type List Resources; and zero or more Binary Resources to the Document Recipient. Refer to ITI TF-3: 4.5.1 for details on the FHIR Resources and how Document Sharing metadata attributes are mapped. 
 
-The media type of the HTTP body shall be either application/fhir+json or application/fhir+xml.
+The media type of the HTTP body shall be either `application/fhir+json` or `application/fhir+xml`.
 
 See [http://hl7.org/fhir/R4/http.html#transaction](http://hl7.org/fhir/R4/http.html#transaction) for complete requirements of a transaction. See [http://hl7.org/fhir/R4/bundle-transaction.html](http://hl7.org/fhir/R4/bundle-transaction.html) for example of a transaction bundle.
 
@@ -48,7 +48,7 @@ The Provide Document Bundle message is sent to the base URL as defined in FHIR. 
 
 The Document Source shall assure all FHIR resource elements are consistent with the Document Sharing metadata requirements as specified for attributes ITI TF-3: Table 4.3.1-3 “Sending Actor Metadata Attribute Optionality”. The Document Source that supports the [Comprehensive Metadata](2_actors_and_transactions.html#xds-on-fhir-option) or the [XDS on FHIR](2_actors_and_transactions.html#xds-on-fhir-option) Options shall assure consistency with column “XDS DS”; otherwise, the Document Source shall assure consistency with column “XDR MS”. The Document Source shall not provide any entryUUID values.
 
-###### Bundle Resources
+###### 2:3.65.4.1.2.1 Bundle Resources
 
 For complete information on constructing a FHIR Bundle Resource, see [http://hl7.org/fhir/R4/bundle.html](http://hl7.org/fhir/R4/bundle.html)
 
@@ -87,33 +87,35 @@ When resources are `contained` (see ITI TF-3: 4.5.1), they shall be contained us
 
 When the DocumentReference.content.attachment.url points at a Binary Resource, the Binary Resource shall be in the Bundle. See FHIR Resolving references in Bundles at [http://hl7.org/fhir/R4/bundle.html#references](http://hl7.org/fhir/R4/bundle.html#references).
 
-###### Patient Identity
+###### 2:3.65.4.1.2.2 Patient Identity
 
 All DocumentReference.subject, and List.subject values shall be References to a FHIR Patient Resource. This value may be a relative reference to a Patient Resource within the Bundle or an absolute external reference (URL). This value should be an absolute external reference that may be obtained through use of [PDQm](https://profiles.ihe.net/ITI/TF/Volume1/ch-38.html) or [PIXm](https://profiles.ihe.net/ITI/TF/Volume1/ch-41.html), or by some other means. The Patient Resource needs to be accessible to both the Document Source and the Document Recipient.
 
 When the [UnContained Reference Option](2_actors_and_transactions.html#uncontained-reference-option) is used, there is no need to populate the sourcePatientInfo element. Otherwise, when sourcePatientInfo is provided, the DocumentReference.context.sourcePatientInfo shall be a reference to a “contained” Patient Resource. That is, the source patient info is encoded in a Patient Resource within the DocumentReference.contained element (see [http://hl7.org/fhir/R4/references.html#contained](http://hl7.org/fhir/R4/references.html#contained) ).
 
-###### Replace, Transform, Signs, and Append Associations
+###### 2:3.65.4.1.2.3 Replace, Transform, Signs, and Append Associations
 
 The DocumentReference.relatesTo element indicates an association between DocumentReference resources. The relatesTo.target element in the provided DocumentReference points at the pre-existing DocumentReference that is being replaced, transformed, signed, or appended. The relatesTo.code element in the provided DocumentReference shall be the appropriate relationship type code defined in [http://hl7.org/fhir/R4/valueset-document-relationship-type.html](http://hl7.org/fhir/R4/valueset-document-relationship-type.html). 
 
-##### Expected Actions
+##### 2:3.65.4.1.3 Expected Actions
 
 The Document Recipient shall accept both media types `application/fhir+json` and `application/fhir+xml`.
 
-On receipt of the submission, the Document Recipient shall validate the resources and respond with one of the HTTP codes defined in the response [Message Semantics](#message-semantics-1). 
+On receipt of the submission, the Document Recipient shall validate the resources and respond with one of the HTTP codes defined in the response [Message Semantics](#2365412-message-semantics). 
 
 The Document Recipient shall process the bundle atomically, analogous to both the Provide and Register Document Set-b [ITI-41] transaction and FHIR “transaction” as specified in [http://hl7.org/fhir/R4/http.html#transaction](http://hl7.org/fhir/R4/http.html#transaction) . 
 
 The Document Recipient shall validate the bundle first against the FHIR specification. Guidance on what FHIR considers a valid Resource can be found at [http://hl7.org/fhir/R4/validation.html](http://hl7.org/fhir/R4/validation.html). 
 
-The Document Recipient should verify the FHIR resource elements for consistency with the Document Sharing metadata requirements as specified for attributes [ITI TF-3: Table 4.3.1-3: “Sending Actor Metadata Attribute Optionality”](https://profiles.ihe.net/ITI/TF/Volume3/ch-4.3.html#4.3.1). The Document Recipient that supports the “Comprehensive Metadata” or the “XDS on FHIR” Option shall validate against column “XDS DS”; otherwise the Document Recipient should validate against column “XDR MS”.  
+The Document Recipient should verify the FHIR resource elements for consistency with the Document Sharing metadata requirements as specified for attributes [ITI TF-3: Table 4.3.1-3: “Sending Actor Metadata Attribute Optionality”](https://profiles.ihe.net/ITI/TF/Volume3/ch-4.3.html#4.3.1). 
+- The Document Recipient that supports the [Comprehensive Metadata](2_actors_and_transactions.html#xds-on-fhir-option) or the [XDS on FHIR](2_actors_and_transactions.html#xds-on-fhir-option) Option should validate against column “XDS DS”; 
+- Otherwise the Document Recipient should validate against column “XDR MS”.  
 
 A Document Recipient is allowed to be robust to non-compliant resources that violate the the Document Sharing metadata requirements. 
 
 If necessary for processing, the Document Recipient shall retrieve Resources referenced by absolute URLs in the FHIR Bundle Resource.
 
-If the Document Recipient encounters any errors or if any validation fails, the Document Recipient shall return an error, as documented in [Provide Document Bundle Response Message](#provide-document-bundle-response-message). If appropriate, it shall use error codes from [ITI TF-3: Table 4.2.4.1-2](https://profiles.ihe.net/ITI/TF/Volume3/ch-4.2.html#4.2.4.1).
+If the Document Recipient encounters any errors or if any validation fails, the Document Recipient shall return an error, as documented in [Provide Document Bundle Response Message](#236542-provide-document-bundle-response-message). If appropriate, it shall use error codes from [ITI TF-3: Table 4.2.4.1-2](https://profiles.ihe.net/ITI/TF/Volume3/ch-4.2.html#4.2.4.1).
 
 If the Provide Document Bundle Message contains a DocumentReference Resource with a relatesTo element and the Document Recipient does not support the relatesTo.code value, it shall return a warning message, as indicated in *Table 3.65.4.1.3-1: Warning message when relatesTo code is not supported*.
 
@@ -128,7 +130,7 @@ If the Provide Document Bundle Message contains a DocumentReference Resource wit
 
 If the Provide Document Bundle Message contains a Folder type List Resource and the Document Recipient does not support the Folder type List Resource (aka, Folders), the Document Recipient shall either fail the whole transaction or may ignore the Folder type List, continuing processing of the transaction, and return a “PartialFolderContentNotProcessed” warning. 
 
-###### XDS on FHIR Option
+###### 2:3.65.4.1.3.1 XDS on FHIR Option
 
 The MHD Document Recipient is grouped with an XDS Document Source when it supports the [XDS on FHIR Option](2_actors_and_transactions.html#xds-on-fhir-option) Option. The Document Recipient shall transform the Bundle content into a proper message for the Provide and Register Document Set-b [ITI-41](https://profiles.ihe.net/ITI/TF/Volume2/ITI-41.html) transaction. The Document Recipient shall create appropriate metadata from Resources in the FHIR Bundle Resource, including SubmissionSet, DocumentEntry, and Associations. 
 
@@ -144,15 +146,15 @@ Some FHIR elements do not translate to XDS concepts; the handling of these eleme
 
 Upon successful conversion of the FHIR Bundle to XDS Document Sharing metadata, the grouped Document Source shall execute the Provide and Register Document Set-b [ITI-41](https://profiles.ihe.net/ITI/TF/Volume2/ITI-41.html) transaction. The transaction result, and any error or warning messages, shall be reported to the MHD Document Source. The Document Recipient is responsible for translating the XDS response to the appropriate HTTP Status Code and FHIR OperationOutcome Resource in the Provide Document Bundle Response Message.
 
-#### Provide Document Bundle Response Message
+#### 2:3.65.4.2 Provide Document Bundle Response Message
 
 The Document Recipient returns a HTTP Status code appropriate to the processing outcome, conforming to the transaction specification requirements as specified in [http://hl7.org/fhir/R4/http.html#transaction](http://hl7.org/fhir/R4/http.html#transaction). 
 
-##### Trigger Events
+##### 2:3.65.4.2.1 Trigger Events
 
 This message shall be sent when a success or error condition needs to be communicated. Success is only indicated once the document(s) is/are received and completely processed and persisted as appropriate to the Document Recipient Actor configuration. 
 
-##### Message Semantics
+##### 2:3.65.4.2.2 Message Semantics
 
 To enable the Document Source to know the outcome of processing the transaction, and the identities assigned to the resources by the Document Recipient, the Document Recipient shall return a Bundle, with type set to transaction-response, that contains one entry for each entry in the request, in the same order as received, with the Bundle.entry.response.outcome indicating the results of processing the entry warnings such as PartialFolderContentNotProcessed shall be reported in `Bundle.entry.response.outcome`. The Document Recipient shall comply with FHIR [http://hl7.org/fhir/R4/bundle.html#transaction-response](http://hl7.org/fhir/R4/bundle.html#transaction-response) and [http://hl7.org/fhir/R4/http.html#transaction-response](http://hl7.org/fhir/R4/http.html#transaction-response). 
 
@@ -160,13 +162,13 @@ To indicate success the overall http `200` response is used. The Bundle.entry.re
 
 An informative StructureDefinition is outlined for [MHD Provide Bundle Document Response Message](StructureDefinition-IHE.MHD.Minimal.ProvideDocumentBundleResponse.html), with an [example](StructureDefinition-IHE.MHD.Minimal.ProvideDocumentBundleResponse-examples.html).
 
-##### Expected Actions
+##### 2:3.65.4.2.3 Expected Actions
 
 If the Document Recipient returns an HTTP redirect response (HTTP status codes 301, 302, 303, or 307), the Document Source shall follow the redirect, but may stop processing if it detects a loop. See [RFC7231 Section 6.4 Redirection 3xx](https://tools.ietf.org/html/rfc7231#section-6.4).
 
 The Document Source processes the results according to application-defined rules.	
 
-### CapabilityStatement Resource
+#### 2:3.65.4.3 CapabilityStatement Resource
 
 Document Recipient shall provide a CapabilityStatement Resource as described in [ITI TF-2x: Appendix Z.3](appendix_z.html#capability) indicating the transaction has been implemented. 
 * General Requirements CapabilityStatement for [Document Recipient](CapabilityStatement-IHE.MHD.DocumentRecipient.html). This indicates that either no options are declared or that all options are declared.
@@ -179,19 +181,19 @@ Document Source should provide a CapabilityStatement Resource as described in [I
 * Requirements CapabilityStatement for [Document Source UnContained](CapabilityStatement-IHE.MHD.DocumentSource.UnContained.html). This indicates that the UnContained Option is declared.
 
 
-### Security Considerations
+### 2:3.65.5 Security Considerations
 
 See [MHD Security Considerations](3_security_considerations.html)
 
-#### Security Audit Considerations
+#### 2:3.65.5.1 Security Audit Considerations
 
-The security audit criteria are similar to those for the Provide and Register Document Set-b [ITI-41](https://profiles.ihe.net/ITI/TF/Volume2/ITI-41.html) transaction as this transaction does export a document. Grouping a Document Source or Document Recipient with an ATNA Secure Node or Secure Application is recommended, but not mandated. 
+The security audit criteria are similar to those for the Provide and Register Document Set-b [ITI-41](https://profiles.ihe.net/ITI/TF/Volume2/ITI-41.html) transaction as this transaction does export a document.
 
-##### Document Source Audit 
+##### 2:3.65.5.1.1 Document Source Audit 
 
 The Document Source when grouped with ATNA Secure Node or Secure Application actor shall be able to record a [Provide Audit Bundle Source Audit Event Log](StructureDefinition-IHE.MHD.ProvideBundle.Audit.Source.html). [Audit Example for a Provide Bundle Transaction from source perspective](AuditEvent-ex-auditProvideBundle-source.html). 
 
-##### Document Recipient Audit 
+##### 2:3.65.5.1.2 Document Recipient Audit 
 
 The Document Recipient when grouped with ATNA Secure Node or Secure Application actor shall be able to record a [Provide Audit Bundle Recipient Audit Event Log](StructureDefinition-IHE.MHD.ProvideBundle.Audit.Recipient.html). [Audit Example for a Provide Bundle Transaction from recipient perspective](AuditEvent-ex-auditProvideBundle-recipient.html). 
 
