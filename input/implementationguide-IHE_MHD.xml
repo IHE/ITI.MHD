@@ -5,18 +5,18 @@
 		<status value="additional" />
 		<div xmlns="http://www.w3.org/1999/xhtml">
 ImplementationGuide for  
-IHE IT Infrastructure Technical Framework Supplement Mobile access to Health Documents (MHD) Rev. 4.0.0 Public-Comment
+IHE IT Infrastructure Technical Framework Supplement Mobile access to Health Documents (MHD) Rev. 4.0.0 Public-Comment-Resolving
 		</div>
 	</text>
 	<extension url="http://hl7.org/fhir/StructureDefinition/resource-approvalDate">
 		<valueDate value="2021-04-02"/>
 	</extension>
 	<url value="http://profiles.ihe.net/ITI/MHD/ImplementationGuide/ihe.mhd.fhir" />
-	<version value="4.0.0-comment" />
+	<version value="4.0.0-ci" />
 	<name value="IHE_MHD" />
 	<status value="active" />
 	<experimental value="false" />
-	<date value="2021-04-02" />
+	<date value="2021-05-06" />
 	<publisher value="Integrating the Healthcare Enterprise (IHE)" />
 	<contact>
 		<name value="IHE" />
@@ -32,7 +32,7 @@ IHE IT Infrastructure Technical Framework Supplement Mobile access to Health Doc
 			<value value="secretary@ihe.net" />
 		</telecom>
 	</contact>
-	<description value="Implementation Guide for the IHE Mobile access to Health Documents (MHD) Rev. 4.0.0-comment." />
+	<description value="Implementation Guide for the IHE Mobile access to Health Documents (MHD) Rev. 4.0.0 public comment resolution." />
 	<jurisdiction>
 		<coding>
 			<system value="http://unstats.un.org/unsd/methods/m49/m49.htm"/>
@@ -131,6 +131,7 @@ IHE IT Infrastructure Technical Framework Supplement Mobile access to Health Doc
         <generation value="markdown"/>
       </page>
     </page>
+	<!-- parameters found at https://confluence.hl7.org/display/FHIR/Implementation+Guide+Parameters -->
 		<!-- copyright year is a mandatory parameter -->
 		<parameter>
 		  <code value="copyrightyear"/>
@@ -139,7 +140,7 @@ IHE IT Infrastructure Technical Framework Supplement Mobile access to Health Doc
 		<!-- releaselabel should be the ballot status for HL7-published IGs. -->
 		<parameter>
 		  <code value="releaselabel"/>
-		  <value value="ballot"/>
+		  <value value="ci-build"/>
 		</parameter>  
 		<parameter>
 			<code value="autoload-resources" />
