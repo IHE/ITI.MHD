@@ -130,9 +130,9 @@ If the Provide Document Bundle Message contains a DocumentReference Resource wit
 
 If the Provide Document Bundle Message contains a Folder type List Resource and the Document Recipient does not support the Folder type List Resource (aka, Folders), the Document Recipient shall either fail the whole transaction or may ignore the Folder type List, continuing processing of the transaction, and return a “PartialFolderContentNotProcessed” warning. 
 
-If the SubmissionSet `intendedRecipient` is populated, the Document Recipient SHALL make reasonable efforts to determine whether each recipient can be notified, but MAY return success before confirming full receipt and processing by the intendedRecipients. A Document Recipient MAY delegate routing to some or all intendedRecipients, for example, by grouping with an XCDR Initiating Gateway that pushes to XCDR Responding Gateways. If notification of an intendedRecipient is not possible, the Document Recipient MAY do any of the following (The Error/Warning codes are defined in section 3:4.2.4.1](31_xds.html#34241-registryerror-element):
-- Fail the transaction with the code `UnknownRecipient` or `UnreachableRecipient` as an error
-- Accept the transaction with the code `UnknownRecipient` or `UnreachableRecipient` as a warning
+If the SubmissionSet `intendedRecipient` is populated, the Document Recipient SHALL make reasonable efforts to determine whether each recipient can be notified, but MAY return success before confirming full receipt and processing by the intendedRecipients. A Document Recipient MAY delegate routing to some or all intendedRecipients, for example, by grouping with an XCDR Initiating Gateway that pushes to XCDR Responding Gateways. If notification of an intendedRecipient is not possible, the Document Recipient MAY do any of the following (the Error/Warning codes are defined in section [3:4.2.4.1](31_xds.md#34241-registryerror-element)):
+- Fail the transaction with the code `UnknownRecipient` or `UnavailableRecipient` as an error
+- Accept the transaction with the code `UnknownRecipient` or `UnavailableRecipient` as a warning
 - Succeed silently
 
 ###### 2:3.65.4.1.3.1 XDS on FHIR Option
