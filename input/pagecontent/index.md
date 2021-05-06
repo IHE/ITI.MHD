@@ -25,7 +25,8 @@ This guide is organized into four main sections:
    4. [Retrieve Document [ITI-68]](ITI-68.html)
 
 3. Volume 3: Metadata
-   1. [FHIR Representation](metadata_maps.html)
+   1. [XDS Error Codes](31_xds.html)
+   1. [FHIR Representation](32_fhir_maps.html)
    
 4. Appendix
 	1. [E: FHIR Identifier Type for CX](appendix_e.html)
@@ -35,14 +36,15 @@ This guide is organized into four main sections:
 Click on any of the links above, head on over the [table of contents](toc.html), or
 if you are looking for a specific artifact, check out the [index](artifacts.html).
 
+MHD uses `Must Support` in StructureDefinitions with the definition found in [Appendix Z](appendix_z.html#ihe-use-of-must-support). This is equivalent to IHE use of **R2**.
+
 You can also download:
 
 * [this entire guide](full-ig.zip),
 * the definition resources in [json](definitions.json.zip), [xml](definitions.xml.zip), [ttl](definitions.ttl.zip), or [csv](csvs.zip) format, or
 * the example resources in [json](examples.json.zip), [xml](examples.xml.zip) or [ttl](examples.ttl.zip) format.
 
-The source code for this Implementation Guide can be found on IHE GitHub [https://github.com/IHE/ITI.MHD](https://github.com/IHE/ITI.MHD.
-).
+The source code for this Implementation Guide can be found on IHE GitHub [https://github.com/IHE/ITI.MHD](https://github.com/IHE/ITI.MHD).
 
 
 **[Next](1_overview.html)**

@@ -20,5 +20,5 @@ IHE imposes the following restrictions on the FHIR Identifier datatype for a Pat
 * The assigner attribute may be populated (the name of the organization which assigned the identifier). When the assigning authority name is provided, the actor shall also populate the display attribute.
 
 
-**[Previous](metadata_maps.html) /  [Next](appendix_z.html)**
+**[Previous](32_fhir_maps.html) /  [Next](appendix_z.html)**
 

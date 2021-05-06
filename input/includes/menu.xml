@@ -45,7 +45,10 @@
     </a>
     <ul class="dropdown-menu">
       <li>
-        <a href="metadata_maps.html">Volume 3</a>
+        <a href="31_xds.html">4.2.4.1 Error Codes</a>
+      </li>
+      <li>
+        <a href="32_fhir_maps.html">4.5 FHIR Maps</a>
       </li>
     </ul>
   </li>

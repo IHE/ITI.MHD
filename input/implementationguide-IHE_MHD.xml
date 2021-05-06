@@ -96,8 +96,13 @@ IHE IT Infrastructure Technical Framework Supplement Mobile access to Health Doc
         <generation value="markdown"/>
       </page>
       <page>
-        <nameUrl value="metadata_maps.html"/>
-        <title value="Volume 3"/>
+        <nameUrl value="31_xds.html"/>
+        <title value="4.2.4.1 Error Codes"/>
+        <generation value="markdown"/>
+      </page>
+      <page>
+        <nameUrl value="32_fhir_maps.html"/>
+        <title value="4.5 FHIR Maps"/>
         <generation value="markdown"/>
       </page>
       <page>
