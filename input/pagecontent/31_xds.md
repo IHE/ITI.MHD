@@ -14,7 +14,7 @@
 
 | Error Code | Discussion | Transaction (See Note 1) |
 |------------|------------|--------------------------|
-| UnknownRecipient | An IntendedRecipient indicated unknown. | P |
+| UnknownRecipient | An IntendedRecipient is not recognized. | P |
 | UnavailableRecipient | An IntendedRecipient which would have been contacted was not available. | P |
 {: .grid}
 
