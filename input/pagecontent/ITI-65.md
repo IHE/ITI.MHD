@@ -10,8 +10,8 @@ The Provide Document Bundle [ITI-65] transaction passes a Provide Document Bundl
 
 |Actor | Role |
 |-------------------+--------------------------|
-| [Document Source](2_actors_and_transactions.html#document-source)    | Sends documents and metadata to the Document Recipient |
-| [Document Recipient](2_actors_and_transactions.html#document-recipient) | Accepts the document and metadata sent from the Document Source |
+| [Document Source](1331_actors_and_transactions.html#133111-document-source)    | Sends documents and metadata to the Document Recipient |
+| [Document Recipient](1331_actors_and_transactions.html#133113-document-recipient) | Accepts the document and metadata sent from the Document Source |
 {: .grid}
 
 ### 2:3.65.3 Referenced Standards
@@ -46,7 +46,7 @@ See [http://hl7.org/fhir/R4/http.html#transaction](http://hl7.org/fhir/R4/http.h
 
 The Provide Document Bundle message is sent to the base URL as defined in FHIR. See [http://hl7.org/fhir/R4/http.html](http://hl7.org/fhir/R4/http.html) for the definition of “HTTP” access methods and “base”.
 
-The Document Source shall assure all FHIR resource elements are consistent with the Document Sharing metadata requirements as specified for attributes ITI TF-3: Table 4.3.1-3 “Sending Actor Metadata Attribute Optionality”. The Document Source that supports the [Comprehensive Metadata](2_actors_and_transactions.html#xds-on-fhir-option) or the [XDS on FHIR](2_actors_and_transactions.html#xds-on-fhir-option) Options shall assure consistency with column “XDS DS”; otherwise, the Document Source shall assure consistency with column “XDR MS”. The Document Source shall not provide any entryUUID values.
+The Document Source shall assure all FHIR resource elements are consistent with the Document Sharing metadata requirements as specified for attributes ITI TF-3: Table 4.3.1-3 “Sending Actor Metadata Attribute Optionality”. The Document Source that supports the [Comprehensive Metadata](1332_actor_options.html#13322-xds-on-fhir-option) or the [XDS on FHIR](1332_actor_options.html#13322-xds-on-fhir-option) Options shall assure consistency with column “XDS DS”; otherwise, the Document Source shall assure consistency with column “XDR MS”. The Document Source shall not provide any entryUUID values.
 
 ###### 2:3.65.4.1.2.1 Bundle Resources
 
@@ -91,7 +91,7 @@ When the DocumentReference.content.attachment.url points at a Binary Resource, t
 
 All DocumentReference.subject, and List.subject values shall be References to a FHIR Patient Resource. This value may be a relative reference to a Patient Resource within the Bundle or an absolute external reference (URL). This value should be an absolute external reference that may be obtained through use of [PDQm](https://profiles.ihe.net/ITI/TF/Volume1/ch-38.html) or [PIXm](https://profiles.ihe.net/ITI/TF/Volume1/ch-41.html), or by some other means. The Patient Resource needs to be accessible to both the Document Source and the Document Recipient.
 
-When the [UnContained Reference Option](2_actors_and_transactions.html#uncontained-reference-option) is used, there is no need to populate the sourcePatientInfo element. Otherwise, when sourcePatientInfo is provided, the DocumentReference.context.sourcePatientInfo shall be a reference to a “contained” Patient Resource. That is, the source patient info is encoded in a Patient Resource within the DocumentReference.contained element (see [http://hl7.org/fhir/R4/references.html#contained](http://hl7.org/fhir/R4/references.html#contained) ).
+When the [UnContained Reference Option](1332_actor_options.html#13323-uncontained-reference-option) is used, there is no need to populate the sourcePatientInfo element. Otherwise, when sourcePatientInfo is provided, the DocumentReference.context.sourcePatientInfo shall be a reference to a “contained” Patient Resource. That is, the source patient info is encoded in a Patient Resource within the DocumentReference.contained element (see [http://hl7.org/fhir/R4/references.html#contained](http://hl7.org/fhir/R4/references.html#contained) ).
 
 ###### 2:3.65.4.1.2.3 Replace, Transform, Signs, and Append Associations
 
@@ -108,7 +108,7 @@ The Document Recipient shall process the bundle atomically, analogous to both th
 The Document Recipient shall validate the bundle first against the FHIR specification. Guidance on what FHIR considers a valid Resource can be found at [http://hl7.org/fhir/R4/validation.html](http://hl7.org/fhir/R4/validation.html). 
 
 The Document Recipient should verify the FHIR resource elements for consistency with the Document Sharing metadata requirements as specified for attributes [ITI TF-3: Table 4.3.1-3: “Sending Actor Metadata Attribute Optionality”](https://profiles.ihe.net/ITI/TF/Volume3/ch-4.3.html#4.3.1). 
-- The Document Recipient that supports the [Comprehensive Metadata](2_actors_and_transactions.html#xds-on-fhir-option) or the [XDS on FHIR](2_actors_and_transactions.html#xds-on-fhir-option) Option should validate against column “XDS DS”; 
+- The Document Recipient that supports the [Comprehensive Metadata](1332_actor_options.html#13322-xds-on-fhir-option) or the [XDS on FHIR](1332_actor_options.html#13322-xds-on-fhir-option) Option should validate against column “XDS DS”; 
 - Otherwise the Document Recipient should validate against column “XDR MS”.  
 
 A Document Recipient is allowed to be robust to non-compliant resources that violate the the Document Sharing metadata requirements. 
@@ -137,7 +137,7 @@ If the SubmissionSet `intendedRecipient` is populated, the Document Recipient SH
 
 ###### 2:3.65.4.1.3.1 XDS on FHIR Option
 
-The MHD Document Recipient is grouped with an XDS Document Source when it supports the [XDS on FHIR Option](2_actors_and_transactions.html#xds-on-fhir-option) Option. The Document Recipient shall transform the Bundle content into a proper message for the Provide and Register Document Set-b [ITI-41](https://profiles.ihe.net/ITI/TF/Volume2/ITI-41.html) transaction. The Document Recipient shall create appropriate metadata from Resources in the FHIR Bundle Resource, including SubmissionSet, DocumentEntry, and Associations. 
+The MHD Document Recipient is grouped with an XDS Document Source when it supports the [XDS on FHIR Option](1332_actor_options.html#13322-xds-on-fhir-option) Option. The Document Recipient shall transform the Bundle content into a proper message for the Provide and Register Document Set-b [ITI-41](https://profiles.ihe.net/ITI/TF/Volume2/ITI-41.html) transaction. The Document Recipient shall create appropriate metadata from Resources in the FHIR Bundle Resource, including SubmissionSet, DocumentEntry, and Associations. 
 
 If the Provide Document Bundle Message contains a DocumentReference with a relatesTo element that has a code equal to "replaces" (as defined in [http://hl7.org/fhir/R4/valueset-document-relationship-type.html](http://hl7.org/fhir/R4/valueset-document-relationship-type.html) ), the XDS Document Source shall include a corresponding RPLC Association in the Submission Set for the Provide and Register Document Set-b [ITI-41](https://profiles.ihe.net/ITI/TF/Volume2/ITI-41.html) transaction. 
 
@@ -188,7 +188,7 @@ Document Source should provide a CapabilityStatement Resource as described in [I
 
 ### 2:3.65.5 Security Considerations
 
-See [MHD Security Considerations](3_security_considerations.html)
+See [MHD Security Considerations](1335_security_considerations.html)
 
 #### 2:3.65.5.1 Security Audit Considerations
 
@@ -204,5 +204,5 @@ The Document Recipient when grouped with ATNA Secure Node or Secure Application 
 
 
 
-**[Previous](4_grouping.html) / [Next](ITI-66.html)**
+**[Previous](1336_cross_grouping.html) / [Next](ITI-66.html)**
 

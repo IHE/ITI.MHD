@@ -3,7 +3,7 @@
   "id": "IHE.MHD.DocumentConsumer",
   "text": {
     "status": "additional",
-    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">\n\tThis Requirements CapabilityStatement describes the <a href=\"2_actors_and_transactions.html#document-consumer\">Document Consumer actor</a>.\n\t</div>"
+    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">\n\tThis Requirements CapabilityStatement describes the <a href=\"1331_actors_and_transactions.html#133112-document-consumer\">Document Consumer actor</a>.\n\t</div>"
   },
   "url": "http://profiles.ihe.net/ITI/MHD/CapabilityStatement/IHE.MHD.DocumentConsumer",
   "name": "IHE_MHD_DocumentConsumer",

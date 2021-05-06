@@ -57,27 +57,37 @@ IHE IT Infrastructure Technical Framework Supplement Mobile access to Health Doc
       <generation value="html"/>
       <page>
         <nameUrl value="index.html"/>
-        <title value="MHD Home Page"/>
+        <title value="1:33 MHD Home Page"/>
         <generation value="markdown"/>
       </page>
       <page>
-        <nameUrl value="1_overview.html"/>
-        <title value="Overview"/>
+        <nameUrl value="1331_actors_and_transactions.html"/>
+        <title value="1:33.1 MHD Actors and Transactions"/>
         <generation value="markdown"/>
       </page>
       <page>
-        <nameUrl value="2_actors_and_transactions.html"/>
-        <title value="Actors and Transactions"/>
+        <nameUrl value="1332_actor_options.html"/>
+        <title value="1:33.2 MHD Actor Options"/>
         <generation value="markdown"/>
       </page>
       <page>
-        <nameUrl value="3_security_considerations.html"/>
-        <title value="Security Considerations"/>
+        <nameUrl value="1333_required_grouping.html"/>
+        <title value="1:33.3 MHD Actor Required Grouping"/>
         <generation value="markdown"/>
       </page>
       <page>
-        <nameUrl value="4_grouping.html"/>
-        <title value="MHD Cross Profile Considerations"/>
+        <nameUrl value="1334_overview.html"/>
+        <title value="1:33.4 MHD Overview"/>
+        <generation value="markdown"/>
+      </page>
+      <page>
+        <nameUrl value="1335_security_considerations.html"/>
+        <title value="1:33.5 MHD Security Considerations"/>
+        <generation value="markdown"/>
+      </page>
+      <page>
+        <nameUrl value="1336_cross_grouping.html"/>
+        <title value="1:33.3 MHD Cross Profile Considerations"/>
         <generation value="markdown"/>
       </page>
       <page>
@@ -97,12 +107,12 @@ IHE IT Infrastructure Technical Framework Supplement Mobile access to Health Doc
       </page>
       <page>
         <nameUrl value="31_xds.html"/>
-        <title value="4.2.4.1 Error Codes"/>
+        <title value="3:4.2.4.1 Error Codes"/>
         <generation value="markdown"/>
       </page>
       <page>
         <nameUrl value="32_fhir_maps.html"/>
-        <title value="4.5 FHIR Maps"/>
+        <title value="3:4.5 FHIR Maps"/>
         <generation value="markdown"/>
       </page>
       <page>
@@ -137,7 +147,6 @@ IHE IT Infrastructure Technical Framework Supplement Mobile access to Health Doc
 		  <code value="copyrightyear"/>
 		  <value value="2021+"/>
 		</parameter>
-		<!-- releaselabel should be the ballot status for HL7-published IGs. -->
 		<parameter>
 		  <code value="releaselabel"/>
 		  <value value="ci-build"/>

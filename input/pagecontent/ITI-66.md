@@ -15,8 +15,8 @@ The result of the query is a Bundle containing List Resources that match the que
 
 |Actor | Role |
 |-------------------+--------------------------|
-| [Document Consumer](2_actors_and_transactions.html#document-consumer)     | Requests List Resources, matching the supplied set of criteria, from the Document Responder |
-| [Document Responder](2_actors_and_transactions.html#document-responder) | Returns List Resources that match the search criteria provided by the Document Consumer |
+| [Document Consumer](1331_actors_and_transactions.html#133112-document-consumer)     | Requests List Resources, matching the supplied set of criteria, from the Document Responder |
+| [Document Responder](1331_actors_and_transactions.html#133114-document-responder) | Returns List Resources that match the search criteria provided by the Document Consumer |
 {: .grid}
 
 ### 2:3.66.3 Referenced Standards
@@ -131,7 +131,7 @@ The Document Responder shall process the query to discover the List entries that
 
 ###### 2:3.66.4.1.3.1 XDS on FHIR Option
 
-The Document Responder is grouped with an XDS Document Consumer when it supports the [XDS on FHIR](2_actors_and_transactions.html#xds-on-fhir-option) Option. The Document Responder shall map the query parameters as listed in Table 3.66.4.1.3-1 and shall execute a Registry Stored Query [ITI-18] for FindSubmissionSets or FindFolders. No additional query parameters as defined in FHIR are required of the Document Responder.
+The Document Responder is grouped with an XDS Document Consumer when it supports the [XDS on FHIR](1332_actor_options.html#13322-xds-on-fhir-option) Option. The Document Responder shall map the query parameters as listed in Table 3.66.4.1.3-1 and shall execute a Registry Stored Query [ITI-18] for FindSubmissionSets or FindFolders. No additional query parameters as defined in FHIR are required of the Document Responder.
 
 **Table 3.66.4.1.3-1: FindSubmissionSets Query Parameter Mapping**
 
@@ -227,7 +227,7 @@ Document Responders implementing this transaction shall provide a CapabilityStat
 
 ### 2:3.66.5 Security Considerations
 
-See [MHD Security Considerations](3_security_considerations.html).
+See [MHD Security Considerations](1335_security_considerations.html).
 
 This transaction should not return information that the Document Consumer is not authorized to access. Where authorization here is inclusive of system, app, and user according to local policy, patient consents, and security layering. However, the transaction may return List resources that have Reference elements that the Document Consumer may not have access to. This is to say that the authorization need only be to the content returned in the Bundle. There may be references (URLs) for which the content is not authorized. This is considered proper as the Document Consumer would need to retrieve the content pointed to by those references, and at that time the proper authorization decision would be made on that context and content. In this way it is possible for a Document Consumer to get List Resources that are pointing at data that the Document Consumer is not authorized to retrieve. Thus, the URLs used must be carefully crafted so as to not expose sensitive data in the URL value.
 

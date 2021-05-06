@@ -3,7 +3,7 @@
   "id": "IHE.MHD.DocumentRecipient.Comprehensive",
   "text": {
     "status": "additional",
-    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">\n\tThis Requirements CapabilityStatement describes the <a href=\"2_actors_and_transactions.html#document-recipient\">Document Recipient actor</a> with Comprehensive declared Option.\n\t</div>"
+    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">\n\tThis Requirements CapabilityStatement describes the <a href=\"1331_actors_and_transactions.html#133113-document-recipient\">Document Recipient actor</a> with Comprehensive declared Option.\n\t</div>"
   },
   "url": "http://profiles.ihe.net/ITI/MHD/CapabilityStatement/IHE.MHD.DocumentRecipient.Comprehensive",
   "name": "IHE_MHD_DocumentRecipient_Comprehensive",

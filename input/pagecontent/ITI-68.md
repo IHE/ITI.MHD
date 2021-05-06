@@ -10,8 +10,8 @@ The Retrieve Document [ITI-68] transaction is used by the Document Consumer to r
 
 |Actor | Role |
 |-------------------+--------------------------|
-| [Document Consumer](2_actors_and_transactions.html#document-consumer)    | Requests a document from the Document Responder |
-| [Document Responder](2_actors_and_transactions.html#document-responder) | Serves the document to the Document Consumer |
+| [Document Consumer](1331_actors_and_transactions.html#133112-document-consumer)    | Requests a document from the Document Responder |
+| [Document Responder](1331_actors_and_transactions.html#133114-document-responder) | Serves the document to the Document Consumer |
 {: .grid}
 
 ### 2:3.68.3 Referenced Standards
@@ -92,7 +92,7 @@ Document Responders implementing this transaction shall provide a CapabilityStat
 
 ### 2:3.68.5 Security Considerations
 
-See [MHD Security Considerations](3_security_considerations.html).
+See [MHD Security Considerations](1335_security_considerations.html).
 
 This transaction should not return information that the Document Consumer is not authorized to access. 
 
