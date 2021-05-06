@@ -130,6 +130,12 @@ If the Provide Document Bundle Message contains a DocumentReference Resource wit
 
 If the Provide Document Bundle Message contains a Folder type List Resource and the Document Recipient does not support the Folder type List Resource (aka, Folders), the Document Recipient shall either fail the whole transaction or may ignore the Folder type List, continuing processing of the transaction, and return a “PartialFolderContentNotProcessed” warning. 
 
+If the SubmissionSet `intendedRecipient` is populated, the Document Recipient SHALL make reasonable efforts to determine whether each recipient can be notified. If notification of an intendedRecipient is not possible, the Document Recipient MAY do any of the following (The Error/Warning codes are defined in section 3:4.2.4.1](#34241-registryerror-element):
+- Fail the transaction with the code `UnknownRecipient` or `UnreachableRecipient` as an error
+- Accept the transaction with the code `UnknownRecipient` or `UnreachableRecipient` as a warning
+- Succeed silently
+**(TODO: How do I say that a Document Recipient may be just pushing the content to another system that has this responsibility?) **
+
 ###### 2:3.65.4.1.3.1 XDS on FHIR Option
 
 The MHD Document Recipient is grouped with an XDS Document Source when it supports the [XDS on FHIR Option](2_actors_and_transactions.html#xds-on-fhir-option) Option. The Document Recipient shall transform the Bundle content into a proper message for the Provide and Register Document Set-b [ITI-41](https://profiles.ihe.net/ITI/TF/Volume2/ITI-41.html) transaction. The Document Recipient shall create appropriate metadata from Resources in the FHIR Bundle Resource, including SubmissionSet, DocumentEntry, and Associations. 

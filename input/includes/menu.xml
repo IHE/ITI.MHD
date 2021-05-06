@@ -2,7 +2,7 @@
   <li><a href="index.html">MHD Home</a></li>
   <li><a href="toc.html">Table of Contents</a></li>
   <li class="dropdown">
-    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Overview<b class="caret">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Volume 1<b class="caret">
       </b>
     </a>
     <ul class="dropdown-menu">
@@ -21,7 +21,7 @@
     </ul>
   </li>
   <li class="dropdown">
-    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Transactions<b class="caret">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Volume 2<b class="caret">
       </b>
     </a>
     <ul class="dropdown-menu">
@@ -40,13 +40,20 @@
     </ul>
   </li>
   <li class="dropdown">
-    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Other<b class="caret">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Volume 3<b class="caret">
       </b>
     </a>
     <ul class="dropdown-menu">
       <li>
-        <a href="metadata_maps.html">FHIR Representation of Document Sharing Metadata</a>
+        <a href="metadata_maps.html">Volume 3</a>
       </li>
+    </ul>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Appendix<b class="caret">
+      </b>
+    </a>
+    <ul class="dropdown-menu">
       <li>
         <a href="appendix_e.html">E: FHIR Identifier Type for CX</a>
       </li>
