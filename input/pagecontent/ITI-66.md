@@ -75,10 +75,10 @@ The Document Consumer shall include search parameter `patient` or `patient.ident
 :This parameter is of type Reference(Patient). The Document Consumer may get this reference through the use of the [PDQm](https://profiles.ihe.net/ITI/TF/Volume1/ch-38.html) or [PIXm](https://profiles.ihe.net/ITI/TF/Volume1/ch-41.html) Profiles, or by some other method. When the patient parameter is used, the Patient reference would need to be accessible to both the Document Consumer and the Document Responder.
 
 **patient.identifier** 
-:This parameter, of type token, specifies an identifier associated with the patient to which the List Resource is assigned. See [ITI TF-2x: Appendix Z.2](appendix_z.html#query-parameters) for use of the token data type for identifiers. 
+:This parameter, of type token, specifies an identifier associated with the patient to which the List Resource is assigned. See [ITI TF-2x: Appendix Z.2](appendix_z.html#query-parameters) for use of the token data type for identifiers. This use of **patient.identifier** follows the [FHIR Chaining Parameters](http://hl7.org/fhir/search.html#chaining) search methodology.
 
 **source.given and source.family** 
-:These parameters, of type string, specify the name parts of the author person which is associated with the List. See [ITI TF-2x: Appendix Z.2](appendix_z.html#query-parameters) for use of the string data type.
+:These parameters, of type string, specify the name parts of the author person which is associated with the List. See [ITI TF-2x: Appendix Z.2](appendix_z.html#query-parameters) for use of the string data type. This use of **source.given** and **source.family** follows the [FHIR Chaining Parameters](http://hl7.org/fhir/search.html#chaining) search methodology.
 
 **sourceId** 
 :This IHE extension on parameters defined as [SearchParameter/List-SourceId](SearchParameter-List-SourceId.html), of type reference, specifies the source (author) value supplied in the List Resource. 

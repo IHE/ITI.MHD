@@ -56,7 +56,7 @@ The Document Consumer may supply, and the Document Responder shall be capable of
 The Document Consumer shall include search parameter `patient` or `patient.identifier`, and `status`. The other parameters described below are optional. The Document Responder must implement the parameters described below. The Document Responder may choose to support additional query parameters beyond the subset listed below. Any additional query parameters supported shall be supported according to the core FHIR specification. Such additional parameters are considered out of scope for this transaction. Any additional parameters not supported should be ignored. See [http://hl7.org/fhir/R4/search.html#errors](http://hl7.org/fhir/R4/search.html#errors). 
 
 **author.given** and **author.family** 
-:These parameters, of type string, specify the name parts of the author person, which is associated with the DocumentReference Resource, or in Document Sharing nomenclature, the author of the Document Entry. See [ITI TF-2x: Appendix Z.2](appendix_z.html#query-parameters) for use of the string data type. 
+:These parameters, of type string, specify the name parts of the author person, which is associated with the DocumentReference Resource, or in Document Sharing nomenclature, the author of the Document Entry. See [ITI TF-2x: Appendix Z.2](appendix_z.html#query-parameters) for use of the string data type.  This use of **author.given** and **author.family** follows the [FHIR Chaining Parameters](http://hl7.org/fhir/search.html#chaining) search methodology.
 
 **category** 
 :This parameter, of type token, specifies the general classification of the DocumentReference Resource, or in Document Sharing nomenclature, the classCode of the Document Entry. See [ITI TF-2x: Appendix Z.2](appendix_z.html#query-parameters) for additional constraints on the use of the token search parameter type.
@@ -80,7 +80,7 @@ The Document Consumer shall include search parameter `patient` or `patient.ident
 :This parameter is of type Reference(Patient). The Document Consumer may get this reference using the [PDQm](https://profiles.ihe.net/ITI/TF/Volume1/ch-38.html) or [PIXm](https://profiles.ihe.net/ITI/TF/Volume1/ch-41.html) Profile. When the patient parameter is used, the Patient reference would need to be accessible to both the Document Consumer and the Document Responder.
 
 **patient.identifier** 
-:This parameter, of type token, specifies an identifier associated with the patient to which the DocumentReference Resource is assigned.  See [ITI TF-2x: Appendix Z.2](appendix_z.html#query-parameters) for additional constraints on the use of the token search parameter type. 
+:This parameter, of type token, specifies an identifier associated with the patient to which the DocumentReference Resource is assigned.  See [ITI TF-2x: Appendix Z.2](appendix_z.html#query-parameters) for additional constraints on the use of the token search parameter type. This use of **patient.identifier** follows the [FHIR Chaining Parameters](http://hl7.org/fhir/search.html#chaining) search methodology.
 
 **period** 
 :This parameter, of type date, represents the time of service that is being documented by the DocumentReference. The period search parameter specifies an interval which the time of service overlaps. In Document Sharing nomenclature, this query parameter represents from/to parameters for the serviceStartTime and serviceStopTime of the Document Entry. See FHIR [http://hl7.org/fhir/R4/search.html#date](http://hl7.org/fhir/R4/search.html#date) for use of the date search type.
