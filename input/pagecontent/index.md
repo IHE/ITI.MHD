@@ -7,13 +7,6 @@ The Mobile access to Health Documents (MHD) Profile defines one pair of actors a
 
 The transactions defined here leverage the [document content- and format-agnostic metadata concepts](https://profiles.ihe.net/ITI/TF/Volume3/index.html#4) that were initially developed for [XDS](https://profiles.ihe.net/ITI/TF/Volume1/ch-10.html) but simplify them for access in constrained environments including mobile devices. The following figure is a high-level view of using MHD with a document sharing environment.
 
-![Figure 1:33-1: General MHD Diagram](umlFigure1.svg "Figure: General MHD Diagram")
-
-<div style="clear: left"/>
-
-**Figure 1:33-1: General MHD Diagram** 
-
-
 The MHD Profile can be used as an [API to a Document Sharing exchange using XDS](1336_cross_grouping.html#13361-mhd-actor-grouped-with-xds-infrastructure) or [XCA](1336_cross_grouping.html#13362-mhd-actors-grouped-with-xca-infrastructure). The MHD Profile is used by the [MHDS Document Sharing](https://profiles.ihe.net/ITI/TF/Volume1/ch-50.html) solution. The MHD Profile can be used in [push solutions](1334_overview.html#133422-publication-of-new-documents-process-flow) alone or as an API to solutions like XDR or XDM. These are further elaborated in [Cross Profile Considerations](1336_cross_grouping.html)
 
 The [Mobile Cross-Enterprise Document Data Element Extraction (mXDE)](https://profiles.ihe.net/ITI/TF/Volume1/ch-45.html) Profile combines MHD with the PCC Query for Existing Data for Mobile (QEDm) Profile to provide element level access to the medical information available in a Document Sharing exchange. More details can be found in the white paper on [Document Sharing Health Information Exchange](https://profiles.ihe.net/ITI/HIE-Whitepaper/index.html).

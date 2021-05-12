@@ -1,5 +1,7 @@
 @startuml
-agent "Document Consumer" as DocumentConsumer
-agent "Document Responder" as DocumentResponder
-DocumentConsumer -- DocumentResponder : "communicate document(s)"
+actor "content creator" as creator
+agent "Document Sharing Infrastructure" as sharing
+actor "content consumer" as consumer
+creator -> sharing
+sharing -> consumer
 @enduml
