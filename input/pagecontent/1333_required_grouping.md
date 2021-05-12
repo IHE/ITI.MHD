@@ -2,7 +2,7 @@ Actor(s) which are required to be grouped with other actor(s) are listed in this
 
 An actor from this profile (Column 1) must implement all the required transactions in this profile in addition to all of the required transactions for the grouped profile/actor listed (Column 3).
 
-**Table 33.3-1: MHD - Actors Required Grouping**
+**Table 1:33.3-1: MHD - Actors Required Grouping**
 
 | MHD Actor          | Grouping Condition | Actor(s) to be grouped with              | Reference      |
 |--------------------|--------------------|------------------------------------------|----------------|

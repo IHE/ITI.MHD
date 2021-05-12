@@ -7,7 +7,7 @@
   },
   "url": "http://profiles.ihe.net/ITI/MHD/CapabilityStatement/IHE.MHD.DocumentRecipient.Comprehensive",
   "name": "IHE_MHD_DocumentRecipient_Comprehensive",
-  "title": "Document Recipient implementing Comprehensive Option",
+  "title": "Document Recipient implementing Comprehensive Metadata Option",
   "status": "active",
   "experimental": false,
   "date": "2021-02-22T00:00:00-05:00",

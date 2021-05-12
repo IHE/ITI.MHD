@@ -6,7 +6,7 @@ The Find Document References transaction is used to find DocumentReference Resou
 
 ### 2:3.67.2 Actors Roles
 
-**Table: Actor Roles**
+**Table 2:3.67.2-1: Actor Roles**
 
 |Actor | Role |
 |-------------------+--------------------------|
@@ -26,7 +26,7 @@ The Find Document References transaction is used to find DocumentReference Resou
 
 <div style="clear: left"/>
 
-**Figure 3.67.4-1: Find Document References Interactions**
+**Figure 2:3.67.4-1: Find Document References Interactions**
 
 #### 2:3.67.4.1 Find Document References Request message
 
@@ -61,10 +61,10 @@ The Document Consumer shall include search parameter `patient` or `patient.ident
 **category** 
 :This parameter, of type token, specifies the general classification of the DocumentReference Resource, or in Document Sharing nomenclature, the classCode of the Document Entry. See [ITI TF-2x: Appendix Z.2](appendix_z.html#query-parameters) for additional constraints on the use of the token search parameter type.
 
-**date**
+**date** 
 :This parameter, of type date, specifies the time when the document was created. Note: The DocumentReference Resource does not yet have a query parameter for creationTime of the document; it has only a date element which is the creation date/time of the DocumentReference. For FHIR R4 we align these two elements so that query will function. See FHIR [http://hl7.org/fhir/R4/search.html#date](http://hl7.org/fhir/R4/search.html#date) for use of the date search type.
 
-**event**  
+**event** 
 :This parameter, of type token, specifies the main clinical acts documented by the DocumentReference Resource, or in Document Sharing nomenclature, the eventCodeList of the Document Entry. See [ITI TF-2x: Appendix Z.2](appendix_z.html#query-parameters) for additional constraints on the use of the token search parameter type.
 
 **facility** 
@@ -85,7 +85,7 @@ The Document Consumer shall include search parameter `patient` or `patient.ident
 **period** 
 :This parameter, of type date, represents the time of service that is being documented by the DocumentReference. The period search parameter specifies an interval which the time of service overlaps. In Document Sharing nomenclature, this query parameter represents from/to parameters for the serviceStartTime and serviceStopTime of the Document Entry. See FHIR [http://hl7.org/fhir/R4/search.html#date](http://hl7.org/fhir/R4/search.html#date) for use of the date search type.
 
-**related**
+**related** 
 :This parameter, of type reference, represents other identifiers associated with the DocumentReference Resource, or in Document Sharing nomenclature, the referenceIdList of the Document Entry. 
 
 **security-label** 
@@ -139,7 +139,7 @@ The Document Responder shall process the query to discover the DocumentReference
 
 The Document Responder is grouped with an XDS Document Consumer when it supports the [XDS on FHIR](1332_actor_options.html#13322-xds-on-fhir-option) Option. The Document Responder shall map the query parameters as listed in Table 3.67.4.1.3-1 and shall execute a Registry Stored Query [ITI-18] for FindDocuments or FindDocumentsByReferenceIdList (see ITI TF-2a: 3.18.4.1.2.3.7.1 and 3.18.4.1.2.3.7.14). All of the query parameters in Table 3.67.4.1.3-1 shall be supported by the Document Responder. No additional query parameters as defined in FHIR are required of the Document Responder, but they may be offered.
 
-**Table 3.67.4.1.3-1: ITI-18 FindDocuments Query Parameter Mapping**
+**Table 2:3.67.4.1.3-1: ITI-18 FindDocuments Query Parameter Mapping**
 
 | ITI-67 Parameter Name	| ITI-18 Parameter Name |
 |-----------|-----------|
@@ -169,11 +169,11 @@ Note 2: This FindDocuments parameter is used when the less than parameter modifi
 
 Note 3: The $XDSDocumentEntryType is not a supported query parameter in HL7 FHIR.
 
-Note 4: The $XDSDocumentEntryReferenceIdList can only be mapped when using the XDS FindDocumentsByReferenceId query.
+Note 4: The $XDSDocumentEntryReferenceIdList can only be mapped when using the XDS FindDocumentsByReferenceId query. This parameter support requires XDS [Reference ID Option](https://profiles.ihe.net/ITI/TF/Volume1/ch-10.html#10.2.6).
 
 Note 5: The FHIR DocumentReference does not yet have a query parameter for creationTime of the document, it has only a date element which is the creation date/time of the DocumentReference. For FHIR R4 we align these two elements so that query will function.
 
-**Table 3.67.4.1.2.1-1: Values for code for status of DocumentReference**
+**Table 2:3.67.4.1.2.1-1: Values for code for status of DocumentReference**
 
 |FHIR Code	|ebRIM Code |
 |-----------|-----------|

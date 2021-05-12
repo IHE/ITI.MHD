@@ -65,7 +65,7 @@ Description:      "SubmissionSet in List resource conforming Comprehensive metad
 Instance:   ex-compSubmissionSetFullUnContained
 InstanceOf: IHE.MHD.UnContained.Comprehensive.SubmissionSet
 Title: "Example UnContained Comprehensive Full SubmissionSet"
-Description:      "SubmissionSet in List resource conforming fully to UnContained Comprehensive metadata. This has all elements fully populated."
+Description:      "SubmissionSet in List resource conforming fully to UnContained References Option and Comprehensive Metadata Option. This has all elements fully populated."
 * meta.security = http://terminology.hl7.org/CodeSystem/v3-ActReason#HTEST
 * subject = Reference(Patient/ex-patient)
 * identifier[0].system = "urn:ietf:rfc:3986"

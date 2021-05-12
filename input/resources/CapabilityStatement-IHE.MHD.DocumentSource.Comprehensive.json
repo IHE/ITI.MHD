@@ -7,7 +7,7 @@
   },
   "url": "http://profiles.ihe.net/ITI/MHD/CapabilityStatement/IHE.MHD.DocumentSource.Comprehensive",
   "name": "IHE_MHD_DocumentSource_Comprehensive",
-  "title": "Document Source (publisher) implementing Comprehensive Option",
+  "title": "Document Source (publisher) implementing Comprehensive Metadata Option",
   "status": "active",
   "experimental": false,
   "date": "2021-02-22T00:00:00-05:00",
@@ -32,7 +32,7 @@
       ]
     }
   ],
-  "description": "IHE ITI Mobile access to Health Documents (MHD) - Document Source (publisher) - with Comprehensive Option.",
+  "description": "IHE ITI Mobile access to Health Documents (MHD) - Document Source (publisher) - with Comprehensive Metadata Option.",
   "copyright": "IHE http://www.ihe.net/Governance/#Intellectual_Property",
   "kind": "requirements",
   "fhirVersion": "4.0.0",

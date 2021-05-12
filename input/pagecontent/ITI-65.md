@@ -6,7 +6,7 @@ The Provide Document Bundle [ITI-65] transaction passes a Provide Document Bundl
 
 ### 2:3.65.2 Actors Roles
 
-**Table: Actor Roles**
+**Table 2:3.65.2-1: Actor Roles**
 
 |Actor | Role |
 |-------------------+--------------------------|
@@ -26,7 +26,7 @@ The Provide Document Bundle [ITI-65] transaction passes a Provide Document Bundl
 
 <div style="clear: left"/>
 
-**Figure 3.65.4-1: Provide Document Bundle Interactions**
+**Figure 2:3.65.4-1: Provide Document Bundle Interactions**
 
 
 #### 2:3.65.4.1 Provide Document Bundle Request Message
@@ -38,7 +38,7 @@ This method is invoked when the Document Source needs to submit one or more docu
 
 ##### 2:3.65.4.1.2 Message Semantics
 
-The Document Source shall initiate a FHIR “transaction” using a “create” action by sending an HTTP POST request method composed of a FHIR Bundle Resource containing: one SubmissionSet type List Resource; one or more DocumentReference Resources; zero or more Folder type List Resources; and zero or more Binary Resources to the Document Recipient. Refer to ITI TF-3: 4.5.1 for details on the FHIR Resources and how Document Sharing metadata attributes are mapped. 
+The Document Source shall initiate a FHIR “transaction” using a “create” action by sending an HTTP POST request method composed of a FHIR Bundle Resource containing: one SubmissionSet type List Resource; one or more DocumentReference Resources; zero or more Folder type List Resources; and zero or more Binary Resources to the Document Recipient. Refer to [ITI TF-3: 4.5.1](32_fhir_maps.html) for details on the FHIR Resources and how Document Sharing metadata attributes are mapped. 
 
 The media type of the HTTP body shall be either `application/fhir+json` or `application/fhir+xml`.
 
@@ -52,16 +52,7 @@ The Document Source shall assure all FHIR resource elements are consistent with 
 
 For complete information on constructing a FHIR Bundle Resource, see [http://hl7.org/fhir/R4/bundle.html](http://hl7.org/fhir/R4/bundle.html)
 
-The FHIR Bundle.meta.profile shall have the following value depending on the use of Comprehensive metadata, Minimal metadata, or UnContained metadata: 
-* [Comprehensive Metadata](StructureDefinition-IHE.MHD.Comprehensive.ProvideBundle.html): `http://profiles.ihe.net/ITI/MHD/StructureDefinition/IHE.MHD.Comprehensive.ProvideBundle`
-  * shall be a Transaction Bundle
-  * each bundle entry request shall be POST (create)
-  * all resources shall be compliant with comprehensive constraints, they may be marked comprehensive
-  * shall have a [SubmissionSet type List](StructureDefinition-IHE.MHD.Comprehensive.SubmissionSet.html) that is comprehensive
-  * may have one or more [DocumentReference](StructureDefinition-IHE.MHD.Comprehensive.DocumentReference.html) that is comprehensive
-  * may have one or more [Binary](http://hl7.org/fhir/R4/binary.html)
-  * may have one or more [Folder type List](StructureDefinition-IHE.MHD.Comprehensive.Folder.html) that is comprehensive
-  * may have one [Patient](http://hl7.org/fhir/R4/patient.html)
+The FHIR Bundle.meta.profile shall have the following value depending on the Actor implementation of no options (Minimal Metadata), Comprehensive Metadata Option, or UnContained References Option: 
 * [Minimal Metadata](StructureDefinition-IHE.MHD.Minimal.ProvideBundle.html): `http://profiles.ihe.net/ITI/MHD/StructureDefinition/IHE.MHD.Minimal.ProvideBundle`
   * shall be a Transaction Bundle
   * each bundle entry request shall be POST (create)
@@ -70,6 +61,15 @@ The FHIR Bundle.meta.profile shall have the following value depending on the use
   * may have one or more [DocumentReference](StructureDefinition-IHE.MHD.Minimal.DocumentReference.html) that is either minimal, comprehensive, or unContained
   * may have one or more [Binary](http://hl7.org/fhir/R4/binary.html)
   * may have one or more [Folder type List](StructureDefinition-IHE.MHD.Minimal.Folder.html) that is either minimal, comprehensive, or unContained
+  * may have one [Patient](http://hl7.org/fhir/R4/patient.html)
+* [Comprehensive Metadata](StructureDefinition-IHE.MHD.Comprehensive.ProvideBundle.html): `http://profiles.ihe.net/ITI/MHD/StructureDefinition/IHE.MHD.Comprehensive.ProvideBundle`
+  * shall be a Transaction Bundle
+  * each bundle entry request shall be POST (create)
+  * all resources shall be compliant with comprehensive constraints, they may be marked comprehensive
+  * shall have a [SubmissionSet type List](StructureDefinition-IHE.MHD.Comprehensive.SubmissionSet.html) that is comprehensive
+  * may have one or more [DocumentReference](StructureDefinition-IHE.MHD.Comprehensive.DocumentReference.html) that is comprehensive
+  * may have one or more [Binary](http://hl7.org/fhir/R4/binary.html)
+  * may have one or more [Folder type List](StructureDefinition-IHE.MHD.Comprehensive.Folder.html) that is comprehensive
   * may have one [Patient](http://hl7.org/fhir/R4/patient.html)
 * [UnContained Comprehensive Metadata](StructureDefinition-IHE.MHD.UnContained.Comprehensive.ProvideBundle.html): `http://profiles.ihe.net/ITI/MHD/StructureDefinition/IHE.MHD.UnContained.Comprehensive.ProvideBundle` 
   * note that Minimal Metadata does not require containment, so UnContained Minimal is the same as Minimal Metadata
@@ -83,13 +83,13 @@ The FHIR Bundle.meta.profile shall have the following value depending on the use
   * may have one or more [Folder type List](StructureDefinition-IHE.MHD.Comprehensive.Folder.html)
   * may have one [Patient](http://hl7.org/fhir/R4/patient.html)
 
-When resources are `contained` (see ITI TF-3: 4.5.1), they shall be contained using the FHIR contained method (see [http://hl7.org/fhir/R4/references.html#contained](http://hl7.org/fhir/R4/references.html#contained) ).
+When resources are `contained` , see [ITI TF-3: 4.5.1](32_fhir_maps.html), they shall be contained using the FHIR contained method (see [http://hl7.org/fhir/R4/references.html#contained](http://hl7.org/fhir/R4/references.html#contained) ).
 
 When the DocumentReference.content.attachment.url points at a Binary Resource, the Binary Resource shall be in the Bundle. See FHIR Resolving references in Bundles at [http://hl7.org/fhir/R4/bundle.html#references](http://hl7.org/fhir/R4/bundle.html#references).
 
 ###### 2:3.65.4.1.2.2 Patient Identity
 
-All DocumentReference.subject, and List.subject values shall be References to a FHIR Patient Resource. This value may be a relative reference to a Patient Resource within the Bundle or an absolute external reference (URL). This value should be an absolute external reference that may be obtained through use of [PDQm](https://profiles.ihe.net/ITI/TF/Volume1/ch-38.html) or [PIXm](https://profiles.ihe.net/ITI/TF/Volume1/ch-41.html), or by some other means. The Patient Resource needs to be accessible to both the Document Source and the Document Recipient.
+All DocumentReference.subject, and List.subject values shall be References to a FHIR Patient Resource that may be obtained through use of [PDQm](https://profiles.ihe.net/ITI/TF/Volume1/ch-38.html) or [PIXm](https://profiles.ihe.net/ITI/TF/Volume1/ch-41.html), or by some other means. If the Patient Resource is accessible to both the Document Source and Document Recipient via an external reference, it shall be included as an external reference. Otherwise, the Patient Resource shall be included in the Bundle.
 
 When the [UnContained Reference Option](1332_actor_options.html#13323-uncontained-reference-option) is used, there is no need to populate the sourcePatientInfo element. Otherwise, when sourcePatientInfo is provided, the DocumentReference.context.sourcePatientInfo shall be a reference to a “contained” Patient Resource. That is, the source patient info is encoded in a Patient Resource within the DocumentReference.contained element (see [http://hl7.org/fhir/R4/references.html#contained](http://hl7.org/fhir/R4/references.html#contained) ).
 
@@ -117,9 +117,9 @@ If necessary for processing, the Document Recipient shall retrieve Resources ref
 
 If the Document Recipient encounters any errors or if any validation fails, the Document Recipient shall return an error, as documented in [Provide Document Bundle Response Message](#236542-provide-document-bundle-response-message). If appropriate, it shall use error codes from [ITI TF-3: Table 4.2.4.1-2](https://profiles.ihe.net/ITI/TF/Volume3/ch-4.2.html#4.2.4.1).
 
-If the Provide Document Bundle Message contains a DocumentReference Resource with a relatesTo element and the Document Recipient does not support the relatesTo.code value, it shall return a warning message, as indicated in *Table 3.65.4.1.3-1: Warning message when relatesTo code is not supported*.
+If the Provide Document Bundle Message contains a DocumentReference Resource with a relatesTo element and the Document Recipient does not support the relatesTo.code value, it shall return a warning message, as indicated in *Table 2:3.65.4.1.3-1: Warning message when relatesTo code is not supported*.
 
-**Table 3.65.4.1.3-1: Warning message when relatesTo code is not supported**
+**Table 2:3.65.4.1.3-1: Warning message when relatesTo code is not supported**
 
 |relatesTo.code |	Warning |
 |---------------|-----------|
@@ -145,7 +145,7 @@ If the Provide Document Bundle Message contains a DocumentReference with a relat
 
 If the Provide Document Bundle Message contains a DocumentReference with a relatesTo element that has a code equal to "appends", the XDS Document Source shall include a corresponding APND Association in the Submission Set for the Provide and Register Document Set-b [ITI-41](https://profiles.ihe.net/ITI/TF/Volume2/ITI-41.html) transaction.
 
-The Document Recipient shall map Folder type List Resources in the Bundle Resource to XDS Folders, as specified in [ITI TF-3: Table 4.5.1.1-1](32_fhir_maps.html#folder).
+The Document Recipient shall map Folder type List Resources in the Bundle Resource to XDS Folders, as specified in [ITI TF-3: Table 4.5.1.1-1](32_fhir_maps.html#folder). The Document Registry may apply further constraints on Folder content and revision, for example removal of entries from Folders is not generally allowed.
 
 Some FHIR elements do not translate to XDS concepts; the handling of these elements is left to the implementer of the Document Recipient. 
 
@@ -177,13 +177,13 @@ The Document Source processes the results according to application-defined rules
 
 Document Recipient shall provide a CapabilityStatement Resource as described in [ITI TF-2x: Appendix Z.3](appendix_z.html#capability) indicating the transaction has been implemented. 
 * General Requirements CapabilityStatement for [Document Recipient](CapabilityStatement-IHE.MHD.DocumentRecipient.html). This indicates that either no options are declared or that all options are declared.
-* Requirements CapabilityStatement for [Document Recipient Comprehensive](CapabilityStatement-IHE.MHD.DocumentRecipient.Comprehensive.html). This indicates that the Comprehensive Option is declared. Note that XDS-on-FHIR Option requires Comprehensive and thus this Requirements CapabilityStatement applies to XDS-on-FHIR also.
-* Requirements CapabilityStatement for [Document Recipient UnContained](CapabilityStatement-IHE.MHD.DocumentRecipient.UnContained.html). This indicates that the UnContained Option is declared.
+* Requirements CapabilityStatement for [Document Recipient Comprehensive Metadata Option](CapabilityStatement-IHE.MHD.DocumentRecipient.Comprehensive.html). This indicates that the Comprehensive Metadata Option is declared. Note that XDS-on-FHIR Option requires Comprehensive and thus this Requirements CapabilityStatement applies to XDS-on-FHIR also.
+* Requirements CapabilityStatement for [Document Recipient UnContained References Option](CapabilityStatement-IHE.MHD.DocumentRecipient.UnContained.html). This indicates that the UnContained Option is declared.
 
 Document Source should provide a CapabilityStatement Resource as described in [ITI TF-2x: Appendix Z.3](appendix_z.html#capability) indicating the transaction has been implemented. 
 * General Requirements CapabilityStatement for [Document Source](CapabilityStatement-IHE.MHD.DocumentSource.html). This indicates that either no options are declared or that all options are declared.
-* Requirements CapabilityStatement for [Document Source Comprehensive](CapabilityStatement-IHE.MHD.DocumentSource.Comprehensive.html). This indicates that the Comprehensive Option is declared. Note that XDS-on-FHIR Option requires Comprehensive and thus this Requirements CapabilityStatement applies to XDS-on-FHIR also.
-* Requirements CapabilityStatement for [Document Source UnContained](CapabilityStatement-IHE.MHD.DocumentSource.UnContained.html). This indicates that the UnContained Option is declared.
+* Requirements CapabilityStatement for [Document Source Comprehensive Metadata Option](CapabilityStatement-IHE.MHD.DocumentSource.Comprehensive.html). This indicates that the Comprehensive Metadata Option is declared. Note that XDS-on-FHIR Option requires Comprehensive and thus this Requirements CapabilityStatement applies to XDS-on-FHIR also.
+* Requirements CapabilityStatement for [Document Source UnContained References Option](CapabilityStatement-IHE.MHD.DocumentSource.UnContained.html). This indicates that the UnContained Option is declared.
 
 
 ### 2:3.65.5 Security Considerations

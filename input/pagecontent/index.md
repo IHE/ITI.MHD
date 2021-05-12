@@ -5,7 +5,7 @@ The Mobile access to Health Documents (MHD) Profile defines one standardized int
 <br clear="all" />
 **Figure 33-1: General MHD Diagram** 
 
-The MHD Profile can be used as an [API to a Document Sharing exchange using XDS](1336_cross_grouping.html#mhd-actor-grouped-with-xds-infrastructure) or [XCA](1336_cross_grouping.html#mhd-actors-grouped-with-xca-infrastructure). The MHD Profile is used by the [MHDS Document Sharing](https://profiles.ihe.net/ITI/TF/Volume1/ch-50.html) solution. The MHD Profile can be used in [push solutions](1334_overview.html#publication-of-new-documents-use-case-description) alone or as an API to solutions like XDR or XDM. These are further elaborated in [Cross Profile Considerations](1336_cross_grouping.html)
+The MHD Profile can be used as an [API to a Document Sharing exchange using XDS](1336_cross_grouping.html#13361-mhd-actor-grouped-with-xds-infrastructure) or [XCA](1336_cross_grouping.html#13362-mhd-actors-grouped-with-xca-infrastructure). The MHD Profile is used by the [MHDS Document Sharing](https://profiles.ihe.net/ITI/TF/Volume1/ch-50.html) solution. The MHD Profile can be used in [push solutions](1334_overview.html#133422-publication-of-new-documents-process-flow) alone or as an API to solutions like XDR or XDM. These are further elaborated in [Cross Profile Considerations](1336_cross_grouping.html)
 
 This is a *Draft for Public Comment* IHE publication.
 

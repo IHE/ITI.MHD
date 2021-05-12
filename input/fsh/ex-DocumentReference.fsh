@@ -39,7 +39,7 @@ Description: "Example of a Comprehensive DocumentReference resource. This is min
 Instance:   ex-DocumentReferenceUnContainedFully
 InstanceOf: IHE.MHD.UnContained.Comprehensive.DocumentReference
 Title:      "DocumentReference for Comprehensive minimally filled metadata"
-Description: "Example of a UnContained Comprehensive DocumentReference resource. This is fully filled for all mandatory elements and optional elements."
+Description: "Example of a UnContained References Option with Comprehensive DocumentReference resource. This is fully filled for all mandatory elements and optional elements."
 * meta.security = http://terminology.hl7.org/CodeSystem/v3-ActReason#HTEST
 * masterIdentifier.system = "urn:ietf:rfc:3986"
 * masterIdentifier.value = "urn:oid:1.2.840.113556.1.8000.2554.58783.21864.3474.19410.44358.58254.41281.46340"

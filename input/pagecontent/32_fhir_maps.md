@@ -21,11 +21,11 @@ The documented [mapping of the metadata elements](StructureDefinition-IHE.MHD.Mi
 Note: FHIR contains an informative mapping that is intended to be equivalent and can be found at http://hl7.org/fhir/R4/documentreference-mappings.html#xds. For the purposes of IHE MHD conformance the mapping documented here (in IHE) are normative.
 
 ##### 3:4.5.1.2 DocumentReference StructureDefinition
-The conformance requirements are different between a Provide Document Bundle [ITI-65](ITI-65.html) transaction and a Find Document References [ITI-67](ITI-67.html) transaction, and between Minimal Metadata, Comprehensive Metadata, and UnContained Metadata.
+The conformance requirements are different between a Provide Document Bundle [ITI-65](ITI-65.html) transaction and a Find Document References [ITI-67](ITI-67.html) transaction, and between Minimal Metadata, Comprehensive Metadata, and UnContained References.
 
-The conformance requirements are different between Comprehensive, minimal, and UnContained metadata. The canonical URI is found as the "Defining URL:":
+The conformance requirements are different between Comprehensive, minimal, and UnContained References. The canonical URI is found as the "Defining URL:":
 * [Comprehensive DocumentReference Metadata](StructureDefinition-IHE.MHD.Comprehensive.DocumentReference.html)
-* [Comprehensive DocumentReference UnContained Metadata](StructureDefinition-IHE.MHD.UnContained.Comprehensive.DocumentReference.html)
+* [Comprehensive DocumentReference UnContained References](StructureDefinition-IHE.MHD.UnContained.Comprehensive.DocumentReference.html)
 * [Minimal DocumentReference Metadata](StructureDefinition-IHE.MHD.Minimal.DocumentReference.html)
 * Minimal DocumentReference does not include `contained` requirements
 
@@ -36,9 +36,9 @@ Resources are not required to carry the meta.profile element and may only carry 
 The documented [mapping of the metadata elements](StructureDefinition-IHE.MHD.Minimal.SubmissionSet-mappings.html#mappings-for-xds-and-mhd-mapping-xds) associated with a [Document Sharing SubmissionSet object](https://profiles.ihe.net/ITI/TF/Volume3/ch-4.2.html#4.2.3.3) attributes.
 
 ##### 3:4.5.2.1 SubmissionSet List StructureDefinition
-The conformance requirements are different between Comprehensive, Minimal, and UnContained metadata. The canonical URI is found as the "Defining URL:":
+The conformance requirements are different between Comprehensive, Minimal, and UnContained References. The canonical URI is found as the "Defining URL:":
 * [Comprehensive SubmissionSet Metadata](StructureDefinition-IHE.MHD.Comprehensive.SubmissionSet.html)
-* [Comprehensive SubmissionSet UnContained Metadata](StructureDefinition-IHE.MHD.UnContained.Comprehensive.SubmissionSet.html)
+* [Comprehensive SubmissionSet UnContained References](StructureDefinition-IHE.MHD.UnContained.Comprehensive.SubmissionSet.html)
 * [Minimal SubmissionSet Metadata](StructureDefinition-IHE.MHD.Minimal.SubmissionSet.html)
 * Minimal SubmissionSet Metadata does not include `contained` requirements
 

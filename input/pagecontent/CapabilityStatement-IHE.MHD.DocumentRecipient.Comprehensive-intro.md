@@ -1,6 +1,6 @@
 This is the **Requirements** CapabilityStatement for a [Document Recipient](1331_actors_and_transactions.html#133113-document-recipient) with Comprehensive declared [Option](1332_actor_options.html). 
 This actor must use [Comprehensive Metadata](1332_actor_options.html#13321-comprehensive-metadata-option) Option.
-Note that [XDS on FHIR](1332_actor_options.html#13322-xds-on-fhir-option) Option requires the Comprehensive Option. 
+Note that [XDS on FHIR](1332_actor_options.html#13322-xds-on-fhir-option) Option requires the Comprehensive Metadata Option. 
 
 The [Document Source](1331_actors_and_transactions.html#133111-document-source) uses the [Provide Document Bundle ITI-65](ITI-65.html) to communicate metadata and documents to the [Document Recipient](1331_actors_and_transactions.html#133113-document-recipient).
 

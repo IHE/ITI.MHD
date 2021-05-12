@@ -65,7 +65,7 @@ The Document Consumer shall include search parameter `patient` or `patient.ident
 **date** 
 :This parameter, of type date, specifies the time when the List was created. See FHIR [http://hl7.org/fhir/R4/search.html#date](http://hl7.org/fhir/R4/search.html#date) for use of the date search type.
 
-**designationType**
+**designationType** 
 :This IHE extension on parameters defined as [SearchParameter/List-DesignationType](SearchParameter-List-DesignationType.html), of type token, specifies the designation type of the List. The value of the designation type element indicates the clinical purpose of the SubmissionSet or Folder. Note that servers that do not support this extended search parameter will ignore it, and thus return more results than expected.
 
 **identifier** 
@@ -80,13 +80,13 @@ The Document Consumer shall include search parameter `patient` or `patient.ident
 **source.given and source.family** 
 :These parameters, of type string, specify the name parts of the author person which is associated with the List. See [ITI TF-2x: Appendix Z.2](appendix_z.html#query-parameters) for use of the string data type.
 
-**sourceId**
+**sourceId** 
 :This IHE extension on parameters defined as [SearchParameter/List-SourceId](SearchParameter-List-SourceId.html), of type reference, specifies the source (author) value supplied in the List Resource. 
 
-**status**
+**status** 
 :This parameter, of type token, specifies the status of the List. If included in the query, the Document Consumer shall populate the code portion of the token with one of the codes in the following *Table 3.66.4.1.2.1-1: Values for code for status of List*. The system portion of the token shall not be populated.
 
-**Table 3.66.4.1.2.1-1: Values for code for status of List**
+**Table 2:3.66.4.1.2.1-1: Values for code for status of List**
 
 |Code	| ebRIM Code |
 |current	| urn:oasis:names:tc:ebxml-regrep:StatusType:Approved |
@@ -133,7 +133,7 @@ The Document Responder shall process the query to discover the List entries that
 
 The Document Responder is grouped with an XDS Document Consumer when it supports the [XDS on FHIR](1332_actor_options.html#13322-xds-on-fhir-option) Option. The Document Responder shall map the query parameters as listed in Table 3.66.4.1.3-1 and shall execute a Registry Stored Query [ITI-18] for FindSubmissionSets or FindFolders. No additional query parameters as defined in FHIR are required of the Document Responder.
 
-**Table 3.66.4.1.3-1: FindSubmissionSets Query Parameter Mapping**
+**Table 2:3.66.4.1.3-1: FindSubmissionSets Query Parameter Mapping**
 
 |ITI-66 Parameter Name	| ITI-18 Parameter Name |
 |code | "submissionset" |
@@ -150,7 +150,7 @@ Note 1: This FindSubmissionSets parameter is used when the greater than paramete
 
 Note 2: This FindSubmissionSets parameter is used when the less than parameter modifier is used on the created parameter. 
 
-**Table 3.66.4.1.3-2: FindFolders Query Parameter Mapping**
+**Table 2:3.66.4.1.3-2: FindFolders Query Parameter Mapping**
 
 |ITI-66 Parameter Name	| ITI-18 Parameter Name |
 |code | "folder" |
@@ -165,7 +165,7 @@ Note 1: This FindFolder parameter is used when the greater than parameter modifi
 
 Note 2: This FindFolder parameter is used when the less than parameter modifier is used on the created parameter. 
 
-
+Note 3: Parameters specific to "submissionset" shall be silently ignored.
 
 **Translation of Token Parameter**
 
@@ -216,7 +216,7 @@ The List Resources returned will be compliant with the [IHE restrictions on the 
 
 If the Document Responder returns an HTTP redirect response (HTTP status codes 301, 302, 303, or 307), the Document Consumer shall follow the redirect, but may stop processing if it detects a loop. See RFC7231 Section 6.4 Redirection 3xx.
 
-The Document Consumer shall process the results according to application-defined rules. The Document Consumer should be robust as the response may contain List Resources that match the query parameters but are not compliant with the List constraints defined in ITI TF-3: 4.5.
+The Document Consumer shall process the results according to application-defined rules. The Document Consumer should be robust as the response may contain List Resources that match the query parameters but are not compliant with the List constraints defined in [ITI TF-3: 4.5](32_fhir_maps.html).
 
 #### 2:3.66.4.3 CapabilityStatement Resource
 

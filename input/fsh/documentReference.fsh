@@ -44,12 +44,12 @@ Description:    "A profile on the DocumentReference resource for MHD with minima
 * context.sourcePatientInfo 0..1 MS
 * context.related 0..*
 
-// equivalent to MHD DocumentReference Comprehensive UnContained
+// equivalent to MHD DocumentReference Comprehensive UnContained Option
 Profile:        UnContainedComprehensiveDocumentReference
 Parent:         IHE.MHD.Minimal.DocumentReference
 Id:             IHE.MHD.UnContained.Comprehensive.DocumentReference
-Title:          "MHD DocumentReference Comprehensive UnContained"
-Description:    "A profile on the DocumentReference resource for MHD with Comprehensive metadata but without a requirement for contained author, authenticator, or sourcePatientInfo. 
+Title:          "MHD DocumentReference Comprehensive UnContained References Option"
+Description:    "A profile on the DocumentReference resource for MHD with Comprehensive Metadata Option but without a requirement for contained author, authenticator, or sourcePatientInfo. 
 * MHD is based on the [IHE Document Sharing](https://profiles.ihe.net/ITI/HIE-Whitepaper/index.html) model, 
 * the [3:4.1 Abstract Metadata Model](https://profiles.ihe.net/ITI/TF/Volume3/ch-4.1.html#4.1), and 
 * the use defined here is FHIR DocumentReference implementation of the 
@@ -74,7 +74,7 @@ Profile:        ComprehensiveDocumentReference
 Parent:         IHE.MHD.UnContained.Comprehensive.DocumentReference
 Id:             IHE.MHD.Comprehensive.DocumentReference
 Title:          "MHD DocumentReference Comprehensive"
-Description:    "A profile on the DocumentReference resource for MHD Comprehensive Contained (not UnContained), compatible with XDS-on-FHIR and XCA use.
+Description:    "A profile on the DocumentReference resource for MHD Comprehensive Option with Contained (not UnContained), compatible with XDS-on-FHIR and XCA use.
 * MHD is based on the [IHE Document Sharing](https://profiles.ihe.net/ITI/HIE-Whitepaper/index.html) model, 
 * the [3:4.1 Abstract Metadata Model](https://profiles.ihe.net/ITI/TF/Volume3/ch-4.1.html#4.1), and 
 * the use defined here is FHIR DocumentReference implementation of the 

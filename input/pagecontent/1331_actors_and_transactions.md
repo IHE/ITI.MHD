@@ -5,13 +5,13 @@ Figure below shows the actors directly
 involved in the MHD 
 Profile and the relevant transactions between them.
 
-![Figure 33.1-1: MHD Actor Diagram](ActorsAndTransactions.svg "Figure: MHD Actor Diagram")
+![Figure 1:33.1-1: MHD Actor Diagram](ActorsAndTransactions.svg "Figure: MHD Actor Diagram")
 
 <div style="clear: left"/>
 
-**Figure 33.1-1: MHD Actor Diagram**
+**Figure 1:33.1-1: MHD Actor Diagram**
 
-Table 33.1-1 lists the transactions for each actor directly involved in the MHD Implementation Guide. To claim compliance with this guide, an actor shall
+Table 1:33.1-1 lists the transactions for each actor directly involved in the MHD Implementation Guide. To claim compliance with this guide, an actor shall
 support all required transactions (labeled "R") and may support the
 optional transactions (labeled "O").
 
