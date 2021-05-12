@@ -134,6 +134,8 @@ If the SubmissionSet `intendedRecipient` is populated, the Document Recipient SH
 - Succeed and return the code `UnknownRecipient` or `UnavailableRecipient` as a warning
 - Succeed silently
 
+If the recipient is known to be an XDR/XCDR community, the error codes `XDSUnknownCommunity` or `XDSUnavailableCommunity` may be used instead.
+
 ###### 2:3.65.4.1.3.1 XDS on FHIR Option
 
 The MHD Document Recipient is grouped with an XDS Document Source when it supports the [XDS on FHIR Option](1332_actor_options.html#13322-xds-on-fhir-option) Option. The Document Recipient shall transform the Bundle content into a proper message for the Provide and Register Document Set-b [ITI-41](https://profiles.ihe.net/ITI/TF/Volume2/ITI-41.html) transaction. The Document Recipient shall create appropriate metadata from Resources in the FHIR Bundle Resource, including SubmissionSet, DocumentEntry, and Associations. 
