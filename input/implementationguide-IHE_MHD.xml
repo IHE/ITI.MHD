@@ -57,7 +57,7 @@ IHE IT Infrastructure Technical Framework Supplement Mobile access to Health Doc
       <generation value="html"/>
       <page>
         <nameUrl value="index.html"/>
-        <title value="1:33 MHD Home Page"/>
+        <title value="1:33 Mobile access to Health Documents"/>
         <generation value="markdown"/>
       </page>
       <page>
@@ -92,22 +92,22 @@ IHE IT Infrastructure Technical Framework Supplement Mobile access to Health Doc
       </page>
       <page>
         <nameUrl value="ITI-65.html"/>
-        <title value="Provide Document Bundle [ITI-65]"/>
+        <title value="2:3.65 Provide Document Bundle [ITI-65]"/>
         <generation value="markdown"/>
       </page>
       <page>
         <nameUrl value="ITI-66.html"/>
-        <title value="Find Document Lists [ITI-66]"/>
+        <title value="2:3.66 Find Document Lists [ITI-66]"/>
         <generation value="markdown"/>
       </page>
       <page>
         <nameUrl value="ITI-67.html"/>
-        <title value="Find Document References [ITI-67]"/>
+        <title value="2:3.67 Find Document References [ITI-67]"/>
         <generation value="markdown"/>
       </page>
       <page>
         <nameUrl value="ITI-68.html"/>
-        <title value="Retrieve Document [ITI-68]"/>
+        <title value="2:3.68 Retrieve Document [ITI-68]"/>
         <generation value="markdown"/>
       </page>
       <page>
@@ -127,7 +127,7 @@ IHE IT Infrastructure Technical Framework Supplement Mobile access to Health Doc
       </page>
       <page>
         <nameUrl value="a_issues.html"/>
-        <title value="Issues"/>
+        <title value="Open/Closed Issues"/>
         <generation value="markdown"/>
       </page>
       <page>

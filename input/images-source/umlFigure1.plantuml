@@ -1,0 +1,5 @@
+@startuml
+agent "Document Consumer" as DocumentConsumer
+agent "Document Responder" as DocumentResponder
+DocumentConsumer -- DocumentResponder : "communicate document(s)"
+@enduml

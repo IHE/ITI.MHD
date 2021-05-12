@@ -28,7 +28,6 @@ The Provide Document Bundle [ITI-65] transaction passes a Provide Document Bundl
 
 **Figure 2:3.65.4-1: Provide Document Bundle Interactions**
 
-
 #### 2:3.65.4.1 Provide Document Bundle Request Message
 This message uses the HTTP POST method on the target Provide Document Bundle endpoint to convey the metadata and the document(s) as a FHIR transaction.
 

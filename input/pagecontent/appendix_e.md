@@ -2,8 +2,7 @@
 
 
 | EDITOR: Add the following new section to the end of ITI TF-2x: Appendix E Patient Identifiers in HL7-based IHE Profiles |
-|-----------------------------------------|
-
+{: .grid}
 
 ### FHIR Identifier Type
 
