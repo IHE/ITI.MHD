@@ -5,7 +5,9 @@ Figure below shows the actors directly
 involved in the MHD 
 Profile and the relevant transactions between them.
 
-![Figure 1:33.1-1: MHD Actor Diagram](ActorsAndTransactions.svg "Figure: MHD Actor Diagram")
+<div>
+{%include ActorsAndTransactions.svg%}
+</div>
 
 <div style="clear: left"/>
 
