@@ -6,6 +6,15 @@ Code System URI 'urn:ihe:event-type-code' is unknown so the code cannot be valid
 INFORMATION: AuditEvent/ex-auditProvideBundle-source: AuditEvent: Validate resource against profile http://hl7.org/fhir/StructureDefinition/AuditEvent
 INFORMATION: AuditEvent/ex-auditProvideBundle-source: AuditEvent.subtype[0]: Code System URI 'urn:ihe:event-type-code' is unknown so the code cannot be validated
 INFORMATION: AuditEvent/ex-auditProvideBundle-source: AuditEvent: Validate resource against profile http://profiles.ihe.net/ITI/MHD/StructureDefinition/IHE.MHD.ProvideBundle.Audit.Source - listed in meta
+Validate resource against profile http://profiles.ihe.net/ITI/MHD/StructureDefinition/IHE.MHD.Minimal.ProvideBundle - listed in meta
+Validate resource against profile http://profiles.ihe.net/ITI/MHD/StructureDefinition/IHE.MHD.Minimal.SubmissionSet
+Validate resource against profile http://profiles.ihe.net/ITI/MHD/StructureDefinition/IHE.MHD.Minimal.Folder
+Validate resource against profile http://profiles.ihe.net/ITI/MHD/StructureDefinition/IHE.MHD.Minimal.DocumentReference
+Validate resource against profile http://profiles.ihe.net/ITI/MHD/StructureDefinition/IHE.MHD.List
+Validate resource against profile http://profiles.ihe.net/ITI/MHD/StructureDefinition/IHE.MHD.FindDocumentListsResponseMessage - listed in meta
+Validate resource against profile http://profiles.ihe.net/ITI/MHD/StructureDefinition/IHE.MHD.Minimal.ProvideDocumentBundleResponse - listed in meta
+Validate resource against profile http://profiles.ihe.net/ITI/MHD/StructureDefinition/IHE.MHD.Comprehensive.DocumentReference
+Validate resource against profile http://hl7.org/fhir/StructureDefinition/ImplementationGuide
 
 # Structure Definitions
 INFORMATION: StructureDefinition/IHE.MHD.Comprehensive.DocumentReference: StructureDefinition: Validate resource against profile http://hl7.org/fhir/StructureDefinition/StructureDefinition
@@ -84,3 +93,8 @@ Validate resource against profile http://hl7.org/fhir/StructureDefinition/CodeSy
 Validate resource against profile http://hl7.org/fhir/StructureDefinition/Device
 Validate resource against profile http://hl7.org/fhir/StructureDefinition/SearchParameter
 Validate resource against profile http://hl7.org/fhir/StructureDefinition/ValueSet
+Validate resource against profile http://hl7.org/fhir/StructureDefinition/StructureDefinition
+Validate resource against profile http://hl7.org/fhir/StructureDefinition/CapabilityStatement
+
+# Examples use realworld OIDs for code systems
+Code System URI 'urn:oid:1.3.6.1.4.1.19376.1.2.3' is unknown so the code cannot be validated

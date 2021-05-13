@@ -100,88 +100,38 @@ Description: "Dummy Practitioner example for completeness sake. No actual use of
 
 
 Instance:   ex-dummyProvideDocumentBundle
-InstanceOf: DummyProvideDocumentBundle
-Title:      "Dummy Provide Document Bundle with Minimal metadata"
+InstanceOf: Bundle
+Title:      "Dummy Provide Document Bundle"
 Description: "Example of a Provide Document Bundle transaction made up of the right FHIR resources, but these FHIR resources are not compliant with the MHD constraints. A robust Document Recipient is allowed to consume this if it has business rules that allow it."
 * meta.security = http://terminology.hl7.org/CodeSystem/v3-ActReason#HTEST
 * type = #transaction
 * timestamp = 2020-11-24T23:50:50-05:00
-* entry[Lists].resource = 593cd04e-b696-45c1-bc32-39e55a340a48
-* entry[Lists].fullUrl = "urn:uuid:593cd04e-b696-45c1-bc32-39e55a340a48"
-* entry[Lists].request.url = "List"
-* entry[Lists].request.method = #POST
-* entry[+].resource = 593cd04e-b696-45c1-bc32-39e55a340a47
-* entry[=].fullUrl = "urn:uuid:593cd04e-b696-45c1-bc32-39e55a340a47"
+* entry[+].resource =          593cd04e-b696-45c1-bc32-d00000000001
+* entry[=].fullUrl = "urn:uuid:593cd04e-b696-45c1-bc32-d00000000001"
+* entry[=].request.url = "List"
+* entry[=].request.method = #POST
+* entry[+].resource =          593cd04e-b696-45c1-bc32-d00000000002
+* entry[=].fullUrl = "urn:uuid:593cd04e-b696-45c1-bc32-d00000000002"
 * entry[=].request.url = "DocumentReference"
 * entry[=].request.method = #POST
 
-Instance: 593cd04e-b696-45c1-bc32-39e55a340a48
+Instance: 593cd04e-b696-45c1-bc32-d00000000002
 InstanceOf: List
 Title: "Dummy List example"
 Description: "Dummy List example for completeness sake. No actual use of this resource other than an example target"
+Usage: #inline
 * meta.security = http://terminology.hl7.org/CodeSystem/v3-ActReason#HTEST
 * status = #current
 * mode = #working
-* entry.item = Reference(urn:uuid:593cd04e-b696-45c1-bc32-39e55a340a47)
+* entry.item = Reference(urn:uuid:593cd04e-b696-45c1-bc32-d00000000001)
 
-Instance: 593cd04e-b696-45c1-bc32-39e55a340a47
+Instance: 593cd04e-b696-45c1-bc32-d00000000001
 InstanceOf: DocumentReference
 Title: "Dummy DocumentReference example"
 Description: "Dummy DocumentReference example for completeness sake. No actual use of this resource other than an example target"
+Usage: #inline
 * meta.security = http://terminology.hl7.org/CodeSystem/v3-ActReason#HTEST
 * status = #current
 * content.attachment.title = "Hello World"
 * content.attachment.contentType = #text/plain
-
-
-Profile:        DummyProvideDocumentBundle
-Parent:         Bundle
-Id:             IHE.MHD.Dummy.ProvideBundle
-Title:          "MHD Dummy Provide Document Bundle"
-Description:    "A profile on the Bundle transaction for Provide Document resources with Dummy metadata for MHD.
-* all resources are just core FHIR resources
-* shall be a Bundle
-* shall be a Transaction
-* shall have one or more List resources
-* may have one or more DocumentReference
-* may have one or more Binary
-* may have one or more Patient
-* can not have anything else (closed)
-"
-* type = #transaction
-* entry ^slicing.discriminator.type = #type
-* entry ^slicing.discriminator.path = "resource"
-* entry ^slicing.rules = #closed
-* entry ^slicing.description = "Slicing based on the resource type of the entry"
-* entry contains 
-    Lists 1..* and
-    DocRefs 0..* and
-    Bin 0..* and
-    Pat 0..1
-* entry[Lists].resource only List
-* entry[Lists] ^short = "SubmissionSet and Folders"
-* entry[Lists] ^definition = "The SubmissionSet and Folders defines who submitted it, why they submitted it, when they submitted, what is in it, and where it is destine."
-* entry[Lists].request.method = #POST
-* entry[Lists].request.url 1..1
-* entry[Lists].fullUrl 1..1
-* entry[DocRefs].resource only DocumentReference
-* entry[DocRefs] ^short = "DocumentReference resources"
-* entry[DocRefs] ^definition = "The DocumentReference resources to be published or pushed."
-* entry[DocRefs].request.method = #POST
-* entry[DocRefs].request.url 1..1
-* entry[DocRefs].fullUrl 1..1
-* entry[Bin].resource only Binary
-* entry[Bin] ^short = "Binary resources"
-* entry[Bin] ^definition = "The document bits in a Binary resources to be published or pushed."
-* entry[Bin].request.method = #POST
-* entry[Bin].request.url 1..1
-* entry[Bin].fullUrl 1..1
-* entry[Pat].resource only Patient
-* entry[Pat] ^short = "Patient"
-* entry[Pat] ^definition = "The Patient is unusual, and only allowed in PUSH scenarios."
-* entry[Pat].request.method = #POST
-* entry[Pat].request.url 1..1
-* entry[Pat].fullUrl 1..1
-
-
 
