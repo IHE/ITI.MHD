@@ -1,7 +1,7 @@
 @startuml
-actor "content creator" as creator
+agent "content creator" as creator
 cloud "Document Sharing Infrastructure" as sharing
-actor "content consumer" as consumer
+agent "content consumer" as consumer
 creator -> sharing
 sharing -> consumer
 @enduml
