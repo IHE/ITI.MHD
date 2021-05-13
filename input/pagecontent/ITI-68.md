@@ -72,7 +72,7 @@ Table 3.68.4.2.2-1 contains error situations and the HTTP Response.
 |HTTP request specified is otherwise not a legal value	| 403 Forbidden/Request Type Not Supported |
 {: .grid}
 
-The Document Responder may return other HTTP Status Codes. Guidance on handling Access Denied related to use of 200, 403 and 404 can be found in [ITI TF-2x: Appendix Z.7](appendix_z.html#FHIRsecurity).
+The Document Responder may return other HTTP Status Codes. Guidance on handling Access Denied related to use of 200, 403 and 404 can be found in [ITI TF-2x: Appendix Z.7](https://profiles.ihe.net/ITI/TF/Volume2/ch-Z.html#FHIRsecurity).
 
 The Document Responder should complement the returned error code with a human readable description of the error condition.
 
@@ -86,7 +86,7 @@ The Document Consumer processes the results according to application-defined rul
 
 #### 2:3.68.4.3 CapabilityStatement Resource
 
-Document Responders implementing this transaction shall provide a CapabilityStatement Resource as described in [ITI TF-2x: Appendix Z.3](appendix_z.html#capability) indicating the transaction has been implemented. 
+Document Responders implementing this transaction shall provide a CapabilityStatement Resource as described in [ITI TF-2x: Appendix Z.3](https://profiles.ihe.net/ITI/TF/Volume2/ch-Z.html#capability) indicating the transaction has been implemented. 
 * Requirements CapabilityStatement for [Document Consumer](CapabilityStatement-IHE.MHD.DocumentConsumer.html)
 * Requirements CapabilityStatement for [Document Responder](CapabilityStatement-IHE.MHD.DocumentResponder.html)
 

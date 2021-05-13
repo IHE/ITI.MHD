@@ -65,5 +65,5 @@ Integration Tests in this context is where two SUT of paired actors test against
 TODO: Write specific Gherkin statements, might use external tooling?
 
 
-**[Previous](appendix_z.html) / [Next](a_issues.html)**
+**[Previous](32_fhir_maps.html) / [Next](a_issues.html)**
 

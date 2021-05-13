@@ -66,12 +66,7 @@
       </b>
     </a>
     <ul class="dropdown-menu">
-      <li>
-        <a href="appendix_e.html">E: FHIR Identifier Type for CX</a>
-      </li>
-      <li>
-        <a href="appendix_z.html">Z: FHIR Common IHE Constraints</a>
-      </li>
+
       <li>
         <a href="testplan.html">Test Plan</a>
       </li>

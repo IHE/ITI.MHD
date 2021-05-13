@@ -130,16 +130,7 @@ IHE IT Infrastructure Technical Framework Supplement Mobile access to Health Doc
         <title value="Open/Closed Issues"/>
         <generation value="markdown"/>
       </page>
-      <page>
-        <nameUrl value="appendix_e.html"/>
-        <title value="Appendix E"/>
-        <generation value="markdown"/>
-      </page>
-      <page>
-        <nameUrl value="appendix_z.html"/>
-        <title value="Appendix Z"/>
-        <generation value="markdown"/>
-      </page>
+
     </page>
 	<!-- parameters found at https://confluence.hl7.org/display/FHIR/Implementation+Guide+Parameters -->
 		<!-- copyright year is a mandatory parameter -->
