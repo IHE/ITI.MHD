@@ -8,7 +8,6 @@ The overall scope of MHD testing is affected by the infrastructure that MHD is c
 
 MHD does not mandate of the functionality to be provided by the data communicated via MHD transations. How MHD actors use the data communicated via these transaction is out-of-scope for MHD testing, but may apply to other related Implentatoin Guilds
 
-
 ## High-level Test Scope
 ### ITI-65 Provide Document Bundle
 * Document Source publishes document and folder combinations
@@ -24,45 +23,6 @@ MHD does not mandate of the functionality to be provided by the data communicate
 * "Comprehensive Metadata" for the Document Source & Document Recipient
 * "XDS on FHIR" for the Document Recipient and Document Responder (i.e. XDS backend for server actors)
 * "Uncontained Reference" for all MHD actors
-
-### Document Source and Document Recipient - ITI-65
-
-Given that the system that has implemented the Document Source may choose to implement a subset of the functionality provided by the Document Source, the capability of the Document Source would be able to test only that subset of the following. The Document Responder also may only support a subset of the functionality provided by the Document Responder (e.g., may not support Folders, or may have policy against external document content). The conformance to Minimal-Metadata vs Comphrehensive-Metadata would also vary depending on the functionality of the SUT. 
-
-#### Positive Test Scenarios 
-presumes security successful
-* provide CapabilityStatement with indications of support of the MHD Document Source
-* Where both minimal-metadata and comprehensive-metadata are supported by SUT, it would test both minimal and comprehensive to test out extremes 
-* Publish one DocumentReference with document content
-* Publish one DocumentReference with external document content
-* Publish two Documents with document
-* Publish one Document and a Folder
-* Publish two Documents and a Folder
-* Publish Replacement of a Document
-* Publish one Document and an update to an existing Folder 
-* Publish one Document and a Transform of that Document
-* Publish one Document as a Transform of an existing Document
-* Publish one On-Demand Document
-* Publish one Deferred-Creation Document
-
-#### Negative Test Scenarios: 
-Document Responder returns failure-mode, Document Consumer handles failure gracefully
-* Access control failure
-* No CapabilityStatement available from Document Responder
-* Minimal-Metadata when Comprehensive is required
-* Hash and Size do not match the document content
-* Metadata is proper, but not within configured policy (e.g., unsupported FormatCode)
-* document too big
-* Folder not supported
-* external document not supported
-* inability to store content (e.g., storage failure, or XDS return failures)
-
-
-### Document Consumer and Document Responder
-
-
-Given that the system-under-test that has implemented the Document Consumer may choose to implement a subset of the functionality provided by the Document Consumer.
-
 
 
 
@@ -110,8 +70,47 @@ The tests listed below are defined in Gazelle Master Model (https://gazelle.ihe.
 * MHD_SearchRead_ITI-67_ITI-68
 * MHD_QryRetr_XDSonFHIR
 
-## Gherkin
+## Testable Assertions
 TODO: Write specific Gherkin statements, might use external tooling?
+
+### Document Source and Document Recipient - ITI-65
+
+Given that the system that has implemented the Document Source may choose to implement a subset of the functionality provided by the Document Source, the capability of the Document Source would be able to test only that subset of the following. The Document Responder also may only support a subset of the functionality provided by the Document Responder (e.g., may not support Folders, or may have policy against external document content). The conformance to Minimal-Metadata vs Comphrehensive-Metadata would also vary depending on the functionality of the SUT. 
+
+#### Positive Test Scenarios 
+presumes security successful
+* provide CapabilityStatement with indications of support of the MHD Document Source
+* Where both minimal-metadata and comprehensive-metadata are supported by SUT, it would test both minimal and comprehensive to test out extremes 
+* Publish one DocumentReference with document content
+* Publish one DocumentReference with external document content
+* Publish two Documents with document
+* Publish one Document and a Folder
+* Publish two Documents and a Folder
+* Publish Replacement of a Document
+* Publish one Document and an update to an existing Folder 
+* Publish one Document and a Transform of that Document
+* Publish one Document as a Transform of an existing Document
+* Publish one On-Demand Document
+* Publish one Deferred-Creation Document
+
+#### Negative Test Scenarios: 
+Document Responder returns failure-mode, Document Consumer handles failure gracefully
+* Access control failure
+* No CapabilityStatement available from Document Responder
+* Minimal-Metadata when Comprehensive is required
+* Hash and Size do not match the document content
+* Metadata is proper, but not within configured policy (e.g., unsupported FormatCode)
+* document too big
+* Folder not supported
+* external document not supported
+* inability to store content (e.g., storage failure, or XDS return failures)
+
+
+### Document Consumer and Document Responder
+
+
+Given that the system-under-test that has implemented the Document Consumer may choose to implement a subset of the functionality provided by the Document Consumer.
+
 
 
 **[Previous](32_fhir_maps.html) / [Next](a_issues.html)**
