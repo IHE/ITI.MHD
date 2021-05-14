@@ -1,6 +1,6 @@
-** This page on Test Plan is a prototype. It is not fully written. It has not been reviewed by committee. Comments are welcome. **
+** This page on Test Plan is a prototype.   We expect the maturity of the content will improve over time.  For now, we summarize high level testing scope and available tools. Comments are welcome. **
 
-The overall MHD is an API between four actors, with no expectation or mandate of the function to be provided by the data communicated. Thus, the tests that can be executed are limited to the functionality of the system-under-test (SUT). Where that SUT has a function, it can be tested. 
+MHD is an API between four actors, with no expectation or mandate of the function to be provided by the data communicated. Thus, the tests that can be executed are limited to the functionality of the system-under-test (SUT). Where that SUT has a function, it can be tested. 
 
 The overall success of MHD testing is limited by the infrastructure that MHD is connected to. For example, where the Document Responder and Document Recipient are grouped with XDS or MHDS infrastructure, then the Document Consumer and Document Source can be more fully tested. 
 
@@ -57,8 +57,10 @@ Given that the system-under-test that has implemented the Document Consumer may 
 
 ## FHIR Toolkit (aka "Asbestos")
 * Provider: NIST (US National Institute of Standards and Technology)
-* Tool location:
-* Documentation:
+* FHIR Toolkit online: https://tools.iheusa.org:9743/home
+* Tool distribution: https://github.com/usnistgov/asbestos/releases/
+* Documentation (installation):  https://github.com/usnistgov/asbestos/wiki/xInstallation-Guide-v2.x.x
+* Tool support: http://groups.google.com/group/ihe-mhd-implementors
 * Scope of testing:
 * Other notes:
 
