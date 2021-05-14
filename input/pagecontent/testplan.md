@@ -4,12 +4,12 @@ MHD is an API between four actors, with no expectation or mandate of the functio
 
 The overall success of MHD testing is limited by the infrastructure that MHD is connected to. For example, where the Document Responder and Document Recipient are grouped with XDS or MHDS infrastructure, then the Document Consumer and Document Source can be more fully tested. 
 
-## Test Plan
-
-The following is the overall test plan for MHD alone:
+## High-level Test Scope
+ITI-65 Provide Document Bundle
 * Document Source publishes all known document and folder combinations
-* Document Recipient receives and responds as appropriate
-* Document Consumer requests all forms of query for Folder, query for DocumentReference, and retrieve document
+* Document Recipient receives and responds as appropriate 
+IIT-66 Find Document Lists, ITI-67 Find Document References, ITI-68 Retrieve Documebnt
+* Document Consumer requests all forms of query for List (Submission Set & Folder), query for DocumentReference, and retrieve document
 * Document Responder responds to query and retrieve as appropriate
 
 ### Document Source and Document Recipient
@@ -53,31 +53,48 @@ Document Responder returns failure-mode, Document Consumer handles failure grace
 Given that the system-under-test that has implemented the Document Consumer may choose to implement a subset of the functionality provided by the Document Consumer.
 
 
-## Available Test Tools
 
-## FHIR Toolkit (aka "Asbestos")
+
+## Unit Test Proceduren (Conformance Testing)
+
+Unit Tests in this context is where a SUT is tested against a simulator or validator.  A simulator is a implementation of an actor that is designed specifically to test the opposite pair actor. The simulator might be a reference implementation or may be a specially designed test-bench. Where a reference implementation is used the negative tests are harder to simulate. A validator is a implementation that can check conformance. A validator may be a simulator, but may also be a standalone tool used to validate only a message encoding. Some reference implementations may be able to validate to a StructureDefinition profile, but often these do not include sufficient constraints given the overall actor conformance criteria. 
+
+### Available Test Tools
+
+#### FHIR Toolkit (aka "Asbestos")
 * Provider: NIST (US National Institute of Standards and Technology)
 * FHIR Toolkit online: https://tools.iheusa.org:9743/home
 * Tool distribution: https://github.com/usnistgov/asbestos/releases/
 * Documentation (installation):  https://github.com/usnistgov/asbestos/wiki/xInstallation-Guide-v2.x.x
 * Tool support: http://groups.google.com/group/ihe-mhd-implementors
-* Scope of testing:
+* Actors (options) tested:  Document Source (minimal metadata), Document Source (comprehensive metadata), Document Source (minimal metadata), Document Source (comprehensive metadata)
 * Other notes:
 
-## Gazelle External Validation Service (aka "EVS Client"):
+#### Gazelle External Validation Service (aka "EVS Client"):
 * Provider:  INRIA (Rennes, France), KEREVAL (https://www.kereval.com/), and Mallinckrodt Institute of Radiology (Saint Louis, USA) 
 * Tool location: https://gazelle.ihe.net/EVSClient/home.seam
 * Documentation: https://gazelle.ihe.net/content/evsfhirvalidation
 * Scope of testing: validation of FHIR Resources using StructureDefinitions for MHD
 * Other notes: StructureDefinitions available in EVSClient validation are published by IHE here: https://github.com/IHE/fhir/tree/master/StructureDefinition
 
-## Unit Test Procedure
+## Integration Test Procedure (Interoperability Testing)
 
-Unit Tests in this context is where a SUT is tested against a simulator or validator.  A simulator is a implementation of an actor that is designed specifically to test the opposite pair actor. The simulator might be a reference implementation or may be a specially designed test-bench. Where a reference implementation is used the negative tests are harder to simulate. A validator is a implementation that can check conformance. A validator may be a simulator, but may also be a standalone tool used to validate only a message encoding. Some reference implementations may be able to validate to a StructureDefinition profile, but often these do not include sufficient constraints given the overall actor conformance criteria. 
+Integration Testing in this context is where two SUT of paired actors test against each other. In this case, the subset of tests that can be tested is the intersection. Testing only this intersection is necessary but not sufficient. The testing must also include the capability of the client (Document Source or Document Consumer) to exercise the test scenarios that this SUT can test, to determine that failure-modes are handled properly by both SUT.
 
-## Integration Test Procedure
+Gazelle Master Model (https://gazelle.ihe.net/GMM)
 
-Integration Tests in this context is where two SUT of paired actors test against each other. In this case, the subset of tests that can be tested is the intersection. Testing only this intersection is necessary but not sufficient. The testing must also include the capability of the client (Document Source or Document Consumer) to exercise the test scenarios that this SUT can test, to determine that failure-modes are handled properly by both SUT.
+### Document Source --> Document Recipient Interoperability Tests
+* MHD_Create_ITI-65
+* MHD_Create_with_List
+* MHD_Submit_XDSonFHIR
+* MHD_XDSonFHIR_Replace
+* MHD_XDSonFHIR_Append
+* MHD_XDSonFHIR_Transform
+
+### Document Consumer --> Document Responder Interoperability Tests
+* MHD_Search_ITI-66
+* MHD_SearchRead_ITI-67_ITI-68
+* MHD_QryRetr_XDSonFHIR
 
 ## Gherkin
 TODO: Write specific Gherkin statements, might use external tooling?
