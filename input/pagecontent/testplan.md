@@ -53,6 +53,22 @@ Document Responder returns failure-mode, Document Consumer handles failure grace
 Given that the system-under-test that has implemented the Document Consumer may choose to implement a subset of the functionality provided by the Document Consumer.
 
 
+## Available Test Tools
+
+## FHIR Toolkit (aka "Asbestos")
+* Provider: NIST (US National Institute of Standards and Technology)
+* Tool location:
+* Documentation:
+* Scope of testing:
+* Other notes:
+
+## Gazelle External Validation Service (aka "EVS Client"):
+* Provider:  INRIA (Rennes, France), KEREVAL (https://www.kereval.com/), and Mallinckrodt Institute of Radiology (Saint Louis, USA) 
+* Tool location: https://gazelle.ihe.net/EVSClient/home.seam
+* Documentation: https://gazelle.ihe.net/content/evsfhirvalidation
+* Scope of testing: validation of FHIR Resources using StructureDefinitions for MHD
+* Other notes: StructureDefinitions available in EVSClient validation are published by IHE here: https://github.com/IHE/fhir/tree/master/StructureDefinition
+
 ## Unit Test Procedure
 
 Unit Tests in this context is where a SUT is tested against a simulator or validator.  A simulator is a implementation of an actor that is designed specifically to test the opposite pair actor. The simulator might be a reference implementation or may be a specially designed test-bench. Where a reference implementation is used the negative tests are harder to simulate. A validator is a implementation that can check conformance. A validator may be a simulator, but may also be a standalone tool used to validate only a message encoding. Some reference implementations may be able to validate to a StructureDefinition profile, but often these do not include sufficient constraints given the overall actor conformance criteria. 
