@@ -7,20 +7,22 @@ The overall success of MHD testing is limited by the infrastructure that MHD is 
 ## High-level Test Scope
 ITI-65 Provide Document Bundle
 * Document Source publishes all known document and folder combinations
+* * Note that the Document Content is not material to these tests. It could be a simple text file, CDA, FHIR-Document, PNG image, DICOM KOS, or anything that has a mime type
 * Document Recipient receives and responds as appropriate 
+* * Document Recipient may have policy against some content types.
+
 IIT-66 Find Document Lists, ITI-67 Find Document References, ITI-68 Retrieve Documebnt
 * Document Consumer requests all forms of query for List (Submission Set & Folder), query for DocumentReference, and retrieve document
 * Document Responder responds to query and retrieve as appropriate
+
 Options
 * "Comprehensive Metadata" for the Document Source & Document Recipient
 * "XDS on FHIR" for the Document Recipient and Document Responder (i.e. XDS backend for server actors)
 * "Uncontained Reference" for all MHD actors
 
-### Document Source and Document Recipient
+### Document Source and Document Recipient - ITI-65
 
 Given that the system that has implemented the Document Source may choose to implement a subset of the functionality provided by the Document Source, the capability of the Document Source would be able to test only that subset of the following. The Document Responder also may only support a subset of the functionality provided by the Document Responder (e.g., may not support Folders, or may have policy against external document content). The conformance to Minimal-Metadata vs Comphrehensive-Metadata would also vary depending on the functionality of the SUT. 
-
-Note that the Document Content is not material to these tests. It could be a simple text file, CDA, FHIR-Document, PNG image, DICOM KOS, or anything that has a mime type. Document Recipient may have policy against some content types.
 
 #### Positive Test Scenarios 
 presumes security successful
@@ -70,10 +72,12 @@ Unit Tests in this context is where a SUT is tested against a simulator or valid
 * FHIR Toolkit online: https://tools.iheusa.org:9743/home
 * Tool distribution: https://github.com/usnistgov/asbestos/releases/
 * * Release 2.x.x is compatible with MHD version 3.x.
+* * As of June 2021, FHIR Toolkit is not compatible with MHD version 4.x.
+* * Features may be added to FHIR Toolkit in subsequent releases. Check release notes in the tool distribution link above.
 * Documentation (installation):  https://github.com/usnistgov/asbestos/wiki/xInstallation-Guide-v2.x.x
 * Tool support: http://groups.google.com/group/ihe-mhd-implementors
 * Actors (options) tested:  Document Source (minimal metadata), Document Source (comprehensive metadata), Document Source (minimal metadata), Document Source (comprehensive metadata)
-* Other notes:  Features may be added to FHIR Toolkit in subsequent releases. Check release notes in the tool distribution link above 
+* Other notes:  
 
 #### Gazelle External Validation Service (aka "EVS Client"):
 * Provider:  INRIA (Rennes, France), KEREVAL (https://www.kereval.com/), and Mallinckrodt Institute of Radiology (Saint Louis, USA) 
