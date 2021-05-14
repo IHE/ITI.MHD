@@ -1,18 +1,23 @@
 ** This page on Test Plan is a prototype.   We expect the maturity of the content will improve over time.  For now, we summarize high level testing scope and available tools. Comments are welcome. **
 
-MHD is an API between four actors, with no expectation or mandate of the function to be provided by the data communicated. Thus, the tests that can be executed are limited to the functionality of the system-under-test (SUT). Where that SUT has a function, it can be tested. 
+## Introduction
 
-The overall success of MHD testing is limited by the infrastructure that MHD is connected to. For example, where the Document Responder and Document Recipient are grouped with XDS or MHDS infrastructure, then the Document Consumer and Document Source can be more fully tested. 
+MHD is an API between four actors.  The transactions between actors specify semantics of the data exchanged.  The MHD test plan focuses on these semantics and on the expected actions on the server-side actors (Document Recipient and Document Responder).
+
+The overall scope of MHD testing is affected by the infrastructure that MHD is connected to. For example, where the Document Responder and Document Recipient are grouped with XDS or MHDS infrastructure, more tests apply.
+
+MHD does not mandate of the functionality to be provided by the data communicated via MHD transations. How MHD actors use the data communicated via these transaction is out-of-scope for MHD testing, but may apply to other related Implentatoin Guilds
+
 
 ## High-level Test Scope
 ITI-65 Provide Document Bundle
-* Document Source publishes all known document and folder combinations
+* Document Source publishes document and folder combinations
 * * Note that the Document Content is not material to these tests. It could be a simple text file, CDA, FHIR-Document, PNG image, DICOM KOS, or anything that has a mime type
 * Document Recipient receives and responds as appropriate 
 * * Document Recipient may have policy against some content types.
 
 IIT-66 Find Document Lists, ITI-67 Find Document References, ITI-68 Retrieve Documebnt
-* Document Consumer requests all forms of query for List (Submission Set & Folder), query for DocumentReference, and retrieve document
+* Document Consumer requests query for List (Submission Set & Folder), query for DocumentReference, and retrieve document
 * Document Responder responds to query and retrieve as appropriate
 
 Options
