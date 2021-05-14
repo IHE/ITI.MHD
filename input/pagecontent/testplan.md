@@ -70,6 +70,14 @@ The tests listed below are defined in Gazelle Master Model (https://gazelle.ihe.
 * MHD_SearchRead_ITI-67_ITI-68
 * MHD_QryRetr_XDSonFHIR
 
+
+====== 
+======
+Lynn proposes removing the following content for the initial publication.  If we want to publish test scenarios or testable assertions, then we should do a respectable job, and ensure there is time to complete this content after TI text is confirmed, or have a 2-step publication process for TI - one w/ a rough test plan, and one with a thorough test plan
+
+====== 
+======
+
 ## Testable Assertions
 TODO: Write specific Gherkin statements, might use external tooling?
 
