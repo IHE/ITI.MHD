@@ -10,17 +10,17 @@ MHD does not mandate of the functionality to be provided by the data communicate
 
 
 ## High-level Test Scope
-ITI-65 Provide Document Bundle
+### ITI-65 Provide Document Bundle
 * Document Source publishes document and folder combinations
 * * Note that the Document Content is not material to these tests. It could be a simple text file, CDA, FHIR-Document, PNG image, DICOM KOS, or anything that has a mime type
 * Document Recipient receives and responds as appropriate 
 * * Document Recipient may have policy against some content types.
 
-IIT-66 Find Document Lists, ITI-67 Find Document References, ITI-68 Retrieve Documebnt
+### IIT-66 Find Document Lists, ITI-67 Find Document References, ITI-68 Retrieve Documebnt
 * Document Consumer requests query for List (Submission Set & Folder), query for DocumentReference, and retrieve document
 * Document Responder responds to query and retrieve as appropriate
 
-Options
+### Options
 * "Comprehensive Metadata" for the Document Source & Document Recipient
 * "XDS on FHIR" for the Document Recipient and Document Responder (i.e. XDS backend for server actors)
 * "Uncontained Reference" for all MHD actors
