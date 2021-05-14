@@ -68,11 +68,11 @@ Given that the system-under-test that has implemented the Document Consumer may 
 
 ## Unit Test Procedure (Conformance Testing)
 
-Unit Tests in this context is where a SUT is tested against a simulator or validator tool.  A simulator is a implementation of an actor that is designed specifically to test the opposite pair actor. The simulator might be a reference implementation or may be a specially designed test-bench. Where a reference implementation is used the negative tests are harder to simulate. A validator is a implementation that can check conformance. A validator may be a simulator, but may also be a standalone tool used to validate only a message encoding. Some reference implementations may be able to validate to a StructureDefinition profile, but often these do not include sufficient constraints given the overall actor conformance criteria. 
+Unit Test ingin this context is where a SUT is tested against a simulator or validator tool.  A simulator is a implementation of an actor that is designed specifically to test the opposite pair actor. The simulator might be a reference implementation or may be a specially designed test-bench. Where a reference implementation is used the negative tests are harder to simulate. A validator is a implementation that can check conformance. A validator may be a simulator, but may also be a standalone tool used to validate only a message encoding. Some reference implementations may be able to validate to a StructureDefinition profile, but often these do not include sufficient constraints given the overall actor conformance criteria. 
 
 ### Available Tools for MHD testing
 
-#### FHIR Toolkit (aka "Asbestos")
+#### FHIR Toolkit (aka "Asbestos") - Simulator and Validator
 * Provider: NIST (US National Institute of Standards and Technology)
 * FHIR Toolkit online: https://tools.iheusa.org:9743/home
 * Tool distribution: https://github.com/usnistgov/asbestos/releases/
@@ -84,7 +84,7 @@ Unit Tests in this context is where a SUT is tested against a simulator or valid
 * Actors (options) tested:  Document Source (minimal metadata), Document Source (comprehensive metadata), Document Source (minimal metadata), Document Source (comprehensive metadata)
 * Other notes:  
 
-#### Gazelle External Validation Service (aka "EVS Client"):
+#### Gazelle External Validation Service (aka "EVS Client") - Validator
 * Provider:  INRIA (Rennes, France), KEREVAL (https://www.kereval.com/), and Mallinckrodt Institute of Radiology (Saint Louis, USA) 
 * Tool location: https://gazelle.ihe.net/EVSClient/home.seam
 * Documentation: https://gazelle.ihe.net/content/evsfhirvalidation
@@ -93,9 +93,9 @@ Unit Tests in this context is where a SUT is tested against a simulator or valid
 
 ## Integration Test Procedure (Interoperability Testing)
 
-Integration Testing in this context is where two SUT of paired actors test against each other. In this case, the subset of tests that can be tested is the intersection. Testing only this intersection is necessary but not sufficient. The testing must also include the capability of the client (Document Source or Document Consumer) to exercise the test scenarios that this SUT can test, to determine that failure-modes are handled properly by both SUT.
+Integration Testing in this context is where two SUT of paired actors test against each other.  Integration testing is often limited by the capability of the client (Document Source or Document Consumer), which may support only a subset of the semantics required to be supported by the server (Document Recipient or Document Responder).  Full semantics and failure-modes are more thoroughly exercised with unit (conformance) tests.
 
-Gazelle Master Model (https://gazelle.ihe.net/GMM)
+The tests listed below are defined in Gazelle Master Model (https://gazelle.ihe.net/GMM) and are performed by systems testing MHD at IHE Connectathons.
 
 ### Document Source --> Document Recipient Interoperability Tests
 * MHD_Create_ITI-65
