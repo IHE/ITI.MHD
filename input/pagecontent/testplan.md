@@ -11,6 +11,10 @@ ITI-65 Provide Document Bundle
 IIT-66 Find Document Lists, ITI-67 Find Document References, ITI-68 Retrieve Documebnt
 * Document Consumer requests all forms of query for List (Submission Set & Folder), query for DocumentReference, and retrieve document
 * Document Responder responds to query and retrieve as appropriate
+Options
+* "Comprehensive Metadata" for the Document Source & Document Recipient
+* "XDS on FHIR" for the Document Recipient and Document Responder (i.e. XDS backend for server actors)
+* "Uncontained Reference" for all MHD actors
 
 ### Document Source and Document Recipient
 
@@ -32,7 +36,7 @@ presumes security successful
 * Publish one Document and a Transform of that Document
 * Publish one Document as a Transform of an existing Document
 * Publish one On-Demand Document
-* Publish one Defered-Creation Document
+* Publish one Deferred-Creation Document
 
 #### Negative Test Scenarios: 
 Document Responder returns failure-mode, Document Consumer handles failure gracefully
@@ -55,20 +59,21 @@ Given that the system-under-test that has implemented the Document Consumer may 
 
 
 
-## Unit Test Proceduren (Conformance Testing)
+## Unit Test Procedure (Conformance Testing)
 
-Unit Tests in this context is where a SUT is tested against a simulator or validator.  A simulator is a implementation of an actor that is designed specifically to test the opposite pair actor. The simulator might be a reference implementation or may be a specially designed test-bench. Where a reference implementation is used the negative tests are harder to simulate. A validator is a implementation that can check conformance. A validator may be a simulator, but may also be a standalone tool used to validate only a message encoding. Some reference implementations may be able to validate to a StructureDefinition profile, but often these do not include sufficient constraints given the overall actor conformance criteria. 
+Unit Tests in this context is where a SUT is tested against a simulator or validator tool.  A simulator is a implementation of an actor that is designed specifically to test the opposite pair actor. The simulator might be a reference implementation or may be a specially designed test-bench. Where a reference implementation is used the negative tests are harder to simulate. A validator is a implementation that can check conformance. A validator may be a simulator, but may also be a standalone tool used to validate only a message encoding. Some reference implementations may be able to validate to a StructureDefinition profile, but often these do not include sufficient constraints given the overall actor conformance criteria. 
 
-### Available Test Tools
+### Available Tools for MHD testing
 
 #### FHIR Toolkit (aka "Asbestos")
 * Provider: NIST (US National Institute of Standards and Technology)
 * FHIR Toolkit online: https://tools.iheusa.org:9743/home
 * Tool distribution: https://github.com/usnistgov/asbestos/releases/
+* * Release 2.x.x is compatible with MHD version 3.x.
 * Documentation (installation):  https://github.com/usnistgov/asbestos/wiki/xInstallation-Guide-v2.x.x
 * Tool support: http://groups.google.com/group/ihe-mhd-implementors
 * Actors (options) tested:  Document Source (minimal metadata), Document Source (comprehensive metadata), Document Source (minimal metadata), Document Source (comprehensive metadata)
-* Other notes:
+* Other notes:  Features may be added to FHIR Toolkit in subsequent releases. Check release notes in the tool distribution link above 
 
 #### Gazelle External Validation Service (aka "EVS Client"):
 * Provider:  INRIA (Rennes, France), KEREVAL (https://www.kereval.com/), and Mallinckrodt Institute of Radiology (Saint Louis, USA) 
