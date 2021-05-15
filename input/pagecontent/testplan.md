@@ -1,22 +1,89 @@
-** This page on Test Plan is a prototype. It is not fully written. It has not been reviewed by committee. Comments are welcome. **
+** This Test Plan page is a prototype.   We expect the maturity of the content will improve over time.  For now, we summarize high level testing scope and available tools. Comments are welcome. **
 
-The overall MHD is an API between four actors, with no expectation or mandate of the function to be provided by the data communicated. Thus, the tests that can be executed are limited to the functionality of the system-under-test (SUT). Where that SUT has a function, it can be tested. 
+## Introduction
 
-The overall success of MHD testing is limited by the infrastructure that MHD is connected to. For example, where the Document Responder and Document Recipient are grouped with XDS or MHDS infrastructure, then the Document Consumer and Document Source can be more fully tested. 
+MHD is an API between four actors.  The transactions between actors specify semantics of the data exchanged.  The MHD test plan focuses on these semantics and on the expected actions on the server-side actors (Document Recipient and Document Responder).
 
-## Test Plan
+The overall scope of MHD testing is affected by the infrastructure that MHD is connected to. For example, where the Document Responder and Document Recipient are grouped with XDS or MHDS infrastructure, more tests apply.
 
-The following is the overall test plan for MHD alone:
-* Document Source publishes all known document and folder combinations
-* Document Recipient receives and responds as appropriate
-* Document Consumer requests all forms of query for Folder, query for DocumentReference, and retrieve document
+MHD does not mandate of the functionality to be provided by the data communicated via MHD transations. How MHD actors use the data communicated via these transaction is out-of-scope for MHD testing, but may apply to other related Implementation Guides or IHE Profiles.
+
+## High-level Test Scope
+### ITI-65 Provide Document Bundle
+* Document Source publishes document and folder combinations
+* * Note that the Document Content is not material to these tests. It could be a simple text file, CDA, FHIR-Document, PNG image, DICOM KOS, or anything that has a mime type
+* Document Recipient receives and responds as appropriate 
+* * Document Recipient may have policy against some content types.
+
+### IIT-66 Find Document Lists, ITI-67 Find Document References, ITI-68 Retrieve Documebnt
+* Document Consumer requests query for List (Submission Set & Folder), query for DocumentReference, and retrieve document
 * Document Responder responds to query and retrieve as appropriate
 
-### Document Source and Document Recipient
+### Options
+* "Comprehensive Metadata" for the Document Source & Document Recipient
+* "XDS on FHIR" for the Document Recipient and Document Responder (i.e. XDS backend for server actors)
+* "Uncontained Reference" for all MHD actors
+
+
+
+## Unit Test Procedure (Conformance Testing)
+
+Unit testing this context entails testing a SUT with a simulator or validator tool.  A simulator is a implementation of an actor that is designed specifically to test the opposite pair actor. The simulator might be a reference implementation or may be a specially designed test-bench.  Often, when a reference implementation is used, the negative tests are harder to simulate. A validator is a implementation that can check conformance. A validator may be a simulator, but may also be a standalone tool used to validate only a message encoding. Some reference implementations may be able to validate to a StructureDefinition profile, but often these do not include sufficient constraints given the overall actor conformance criteria. 
+
+### Available tools for MHD unit testing
+
+#### FHIR Toolkit (aka "Asbestos") - Simulator and Validator
+* Provider: NIST (US National Institute of Standards and Technology)
+* FHIR Toolkit online: https://tools.iheusa.org:9743/home
+* Tool distribution: https://github.com/usnistgov/asbestos/releases/
+* * Release 2.x.x is compatible with MHD version 3.x.
+* * As of June 2021, FHIR Toolkit is not compatible with MHD version 4.x.
+* * Features may be added to FHIR Toolkit in subsequent releases. Check release notes in the tool distribution link above.
+* Documentation (installation):  https://github.com/usnistgov/asbestos/wiki/xInstallation-Guide-v2.x.x
+* Tool support: http://groups.google.com/group/ihe-mhd-implementors
+* Actors (options) tested:  Document Source (minimal metadata), Document Source (comprehensive metadata), Document Source (minimal metadata), Document Source (comprehensive metadata)
+* Other notes:  
+
+#### Gazelle External Validation Service (aka "EVS Client") - Validator
+* Provider:  INRIA (Rennes, France), KEREVAL (https://www.kereval.com/), and Mallinckrodt Institute of Radiology (Saint Louis, USA) 
+* Tool location: https://gazelle.ihe.net/EVSClient/home.seam
+* Documentation: https://gazelle.ihe.net/content/evsfhirvalidation
+* Scope of testing: validation of FHIR Resources using StructureDefinitions for MHD
+* Other notes: StructureDefinitions available in EVSClient validation are published by IHE here: https://github.com/IHE/fhir/tree/master/StructureDefinition
+
+## Integration Test Procedure (Interoperability Testing)
+
+Integration Testing in this context is where two SUT of paired actors test against each other.  Integration testing is often limited by the capability of the client (Document Source or Document Consumer), which may support only a subset of the semantics required to be supported by the server (Document Recipient or Document Responder).  Full message semantics and failure-modes are more thoroughly exercised with unit (conformance) tests.
+
+The tests listed below are defined in Gazelle Master Model (https://gazelle.ihe.net/GMM) and are performed by systems testing MHD at IHE Connectathons.
+
+### Document Source --> Document Recipient Interoperability Tests
+* MHD_Create_ITI-65
+* MHD_Create_with_List
+* MHD_Submit_XDSonFHIR
+* MHD_XDSonFHIR_Replace
+* MHD_XDSonFHIR_Append
+* MHD_XDSonFHIR_Transform
+
+### Document Consumer --> Document Responder Interoperability Tests
+* MHD_Search_ITI-66
+* MHD_SearchRead_ITI-67_ITI-68
+* MHD_QryRetr_XDSonFHIR
+
+
+====== 
+======
+Lynn proposes removing the following content for the initial publication.  If we want to publish test scenarios or testable assertions, then I would like to take more time to complete this.  Future publication plans should ensure there is time to complete this content after TI text is confirmed, or have a 2-step publication process for TI - one w/ a rough test plan, and one with a thorough test plan
+
+====== 
+======
+
+## Testable Assertions
+TODO: Write specific Gherkin statements, might use external tooling?
+
+### Document Source and Document Recipient - ITI-65
 
 Given that the system that has implemented the Document Source may choose to implement a subset of the functionality provided by the Document Source, the capability of the Document Source would be able to test only that subset of the following. The Document Responder also may only support a subset of the functionality provided by the Document Responder (e.g., may not support Folders, or may have policy against external document content). The conformance to Minimal-Metadata vs Comphrehensive-Metadata would also vary depending on the functionality of the SUT. 
-
-Note that the Document Content is not material to these tests. It could be a simple text file, CDA, FHIR-Document, PNG image, DICOM KOS, or anything that has a mime type. Document Recipient may have policy against some content types.
 
 #### Positive Test Scenarios 
 presumes security successful
@@ -32,7 +99,7 @@ presumes security successful
 * Publish one Document and a Transform of that Document
 * Publish one Document as a Transform of an existing Document
 * Publish one On-Demand Document
-* Publish one Defered-Creation Document
+* Publish one Deferred-Creation Document
 
 #### Negative Test Scenarios: 
 Document Responder returns failure-mode, Document Consumer handles failure gracefully
@@ -52,17 +119,6 @@ Document Responder returns failure-mode, Document Consumer handles failure grace
 
 Given that the system-under-test that has implemented the Document Consumer may choose to implement a subset of the functionality provided by the Document Consumer.
 
-
-## Unit Test Procedure
-
-Unit Tests in this context is where a SUT is tested against a simulator or validator.  A simulator is a implementation of an actor that is designed specifically to test the opposite pair actor. The simulator might be a reference implementation or may be a specially designed test-bench. Where a reference implementation is used the negative tests are harder to simulate. A validator is a implementation that can check conformance. A validator may be a simulator, but may also be a standalone tool used to validate only a message encoding. Some reference implementations may be able to validate to a StructureDefinition profile, but often these do not include sufficient constraints given the overall actor conformance criteria. 
-
-## Integration Test Procedure
-
-Integration Tests in this context is where two SUT of paired actors test against each other. In this case, the subset of tests that can be tested is the intersection. Testing only this intersection is necessary but not sufficient. The testing must also include the capability of the client (Document Source or Document Consumer) to exercise the test scenarios that this SUT can test, to determine that failure-modes are handled properly by both SUT.
-
-## Gherkin
-TODO: Write specific Gherkin statements, might use external tooling?
 
 
 **[Previous](32_fhir_maps.html) / [Next](a_issues.html)**
