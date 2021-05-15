@@ -1,4 +1,4 @@
-** This page on Test Plan is a prototype.   We expect the maturity of the content will improve over time.  For now, we summarize high level testing scope and available tools. Comments are welcome. **
+** This Test Plan page is a prototype.   We expect the maturity of the content will improve over time.  For now, we summarize high level testing scope and available tools. Comments are welcome. **
 
 ## Introduction
 
@@ -28,7 +28,7 @@ MHD does not mandate of the functionality to be provided by the data communicate
 
 ## Unit Test Procedure (Conformance Testing)
 
-Unit Test testing this context is where a SUT is tested against a simulator or validator tool.  A simulator is a implementation of an actor that is designed specifically to test the opposite pair actor. The simulator might be a reference implementation or may be a specially designed test-bench. Where a reference implementation is used the negative tests are harder to simulate. A validator is a implementation that can check conformance. A validator may be a simulator, but may also be a standalone tool used to validate only a message encoding. Some reference implementations may be able to validate to a StructureDefinition profile, but often these do not include sufficient constraints given the overall actor conformance criteria. 
+Unit testing this context entails testing a SUT with a simulator or validator tool.  A simulator is a implementation of an actor that is designed specifically to test the opposite pair actor. The simulator might be a reference implementation or may be a specially designed test-bench.  Often, when a reference implementation is used, the negative tests are harder to simulate. A validator is a implementation that can check conformance. A validator may be a simulator, but may also be a standalone tool used to validate only a message encoding. Some reference implementations may be able to validate to a StructureDefinition profile, but often these do not include sufficient constraints given the overall actor conformance criteria. 
 
 ### Available Tools for MHD testing
 
@@ -53,7 +53,7 @@ Unit Test testing this context is where a SUT is tested against a simulator or v
 
 ## Integration Test Procedure (Interoperability Testing)
 
-Integration Testing in this context is where two SUT of paired actors test against each other.  Integration testing is often limited by the capability of the client (Document Source or Document Consumer), which may support only a subset of the semantics required to be supported by the server (Document Recipient or Document Responder).  Full semantics and failure-modes are more thoroughly exercised with unit (conformance) tests.
+Integration Testing in this context is where two SUT of paired actors test against each other.  Integration testing is often limited by the capability of the client (Document Source or Document Consumer), which may support only a subset of the semantics required to be supported by the server (Document Recipient or Document Responder).  Full message semantics and failure-modes are more thoroughly exercised with unit (conformance) tests.
 
 The tests listed below are defined in Gazelle Master Model (https://gazelle.ihe.net/GMM) and are performed by systems testing MHD at IHE Connectathons.
 
@@ -73,7 +73,7 @@ The tests listed below are defined in Gazelle Master Model (https://gazelle.ihe.
 
 ====== 
 ======
-Lynn proposes removing the following content for the initial publication.  If we want to publish test scenarios or testable assertions, then we should do a respectable job, and ensure there is time to complete this content after TI text is confirmed, or have a 2-step publication process for TI - one w/ a rough test plan, and one with a thorough test plan
+Lynn proposes removing the following content for the initial publication.  If we want to publish test scenarios or testable assertions, then I would like to take more time to complete this.  Future publication plans should ensure there is time to complete this content after TI text is confirmed, or have a 2-step publication process for TI - one w/ a rough test plan, and one with a thorough test plan
 
 ====== 
 ======
