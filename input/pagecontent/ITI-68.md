@@ -40,7 +40,9 @@ The Document Consumer wants to obtain a document.
 
 The Document Consumer sends a HTTP GET request to the server. The Document Consumer request may be to retrieve the document content referenced by a DocumentReference.content.attachment.url. 
 
-The Document Consumer may provide a HTTP Accept header, according to the semantics of the HTTP protocols (see RFC2616, Section 14.1). The only MIME type assured to be returned is the MIME type indicated in the DocumentReference.content.attachment.contentType.
+The Document Consumer may provide HTTP Accept header, according to the semantics of the HTTP protocols (see RFC2616, Section 14.1).  This enables the Document Consumer to indicate prefered mime-types such that the Document Responder could provide the document requested in an encoding other than the encoding indicated in the DocumentReference. For example, indicating `application/fhir+json` could result in the response from the Document Responder being a json FHIR Bundle of type `document` with all the content encoded as FHIR resources.
+
+The only MIME type assured to be returned is the MIME type indicated in the DocumentReference.content.attachment.contentType.
 
 The HTTP If-Unmodified-Since header shall not be included in the GET request.
 
