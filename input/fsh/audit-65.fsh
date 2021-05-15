@@ -11,6 +11,7 @@ Description:    "Defines constraints on the AuditEvent Resource to record when a
 * shall have a patient entity
 * shall have a submission set identity entity
 "
+* modifierExtension 0..0
 * type = DCM#110107 "Import"
 * action = #C
 * subtype = urn:ihe:event-type-code#ITI-65 "Provide Document Bundle"
@@ -70,6 +71,7 @@ Description:    "Defines constraints on the AuditEvent Resource to record when a
 * shall have a patient entity
 * shall have a submission set identity entity
 "
+* modifierExtension 0..0
 * type = DCM#110106 "Export"
 * action = #R
 * subtype = urn:ihe:event-type-code#ITI-65 "Provide Document Bundle"

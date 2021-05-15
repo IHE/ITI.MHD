@@ -10,6 +10,7 @@ Description:    "A profile on the DocumentReference resource for MHD with minima
 * ebRIM implementation at [3:4.2.3.2 Document Entry](https://profiles.ihe.net/ITI/TF/Volume3/ch-4.2.html#4.2.3.2).
 * with use-cases and constraints found in [3:4.3 Additional Document Sharing Requirements](https://profiles.ihe.net/ITI/TF/Volume3/ch-4.3.html#4.3) 
 "
+* modifierExtension 0..0
 * masterIdentifier 1..1
 * identifier 1..*
 * status 1..1

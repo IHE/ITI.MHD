@@ -11,6 +11,7 @@ Description:    "Defines constraints on the Document Consumer AuditEvent Resourc
 * shall have a patient entity
 * shall have a document uniqueId (usually a Binary)
 "
+* modifierExtension 0..0
 * type = DCM#110107 "Import"
 * action = #C
 * subtype = urn:ihe:event-type-code#ITI-68 "Retrieve Document"
@@ -68,6 +69,7 @@ Description:    "Defines constraints on the Document Responder AuditEvent Resour
 * shall have a patient entity
 * shall have a document uniqueId (usually a Binary)
 "
+* modifierExtension 0..0
 * type = http://dicom.nema.org/resources/ontology/DCM#110106 "Export"
 * action = #R
 * subtype = urn:ihe:event-type-code#ITI-68 "Retrieve Document"

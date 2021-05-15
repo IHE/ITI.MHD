@@ -3,16 +3,6 @@ Parent:         Bundle
 Id:             IHE.MHD.FindDocumentReferencesResponseMessage
 Title:          "MHD Find Document References Response message"
 Description:    "A profile on the Find Document References Response message for ITI-67"
-* ^version = "3.1.1"
-* ^date = "2020-02-01"
-* ^publisher = "Integrating the Healthcare Enterprise (IHE)" 
-* ^contact[0].name = "IHE"
-* ^contact[0].telecom.system = #url
-* ^contact[0].telecom.value = "http://ihe.net"
-* ^contact[1].name = "John Moehrke"
-* ^contact[1].telecom.system = #email
-* ^contact[1].telecom.value = "JohnMoehrke@gmail.com"
-* ^copyright = "IHE http://www.ihe.net/Governance/#Intellectual_Property" 
 * type = #searchset (exactly)
 * total 1..
 * entry ^slicing.discriminator[0].type = #profile

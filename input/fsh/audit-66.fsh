@@ -11,6 +11,7 @@ Description:    "Defines constraints on the AuditEvent Resource to record when a
 * shall have a patient entity
 * shall have a the query parameters
 "
+* modifierExtension 0..0
 * type = DCM#110112 "Query"
 * action = #E
 * subtype = urn:ihe:event-type-code#ITI-66 "Find Document Lists"
@@ -68,6 +69,7 @@ Description:    "Defines constraints on the AuditEvent Resource to record when a
 * shall have a patient entity
 * shall have a the query parameters
 "
+* modifierExtension 0..0
 * type = DCM#110112 "Query"
 * action = #E
 * subtype = urn:ihe:event-type-code#ITI-66 "Find Document Lists"

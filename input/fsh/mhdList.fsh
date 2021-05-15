@@ -6,6 +6,7 @@ Description:    "A profile on the List resource for MHD. Used with both Folder a
 * MHD adds a codeable Concept to List for use with Folder and SubmissionSet
 "
 * extension contains DesignationType named designationType 0..*
+* modifierExtension 0..0
 // code is used ONLY to switch between folder and submissionSet
 * identifier 1..* 
 * identifier ^slicing.discriminator.type = #value
