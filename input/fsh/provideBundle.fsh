@@ -3,22 +3,22 @@ Profile:        MinimalProvideDocumentBundle
 Parent:         Bundle
 Id:             IHE.MHD.Minimal.ProvideBundle
 Title:          "MHD Minimal Provide Document Bundle"
-Description:    "A profile on the Bundle transaction for Provide Document resources with Minimal metadata for MHD.
-* all resources may be marked minimal, comprehensive, or unContained
-* shall be a Bundle
-* shall be a Transaction
-* each bundle entry request shall be a POST (create)
-* shall have a SubmissionSet
-* may have one or more DocumentReference
-* may have one or more Binary
-* may have one or more Folder
-* may have one Patient
+Description:    "A profile on the Bundle transaction for ITI-65 Provide Document resources with Minimal metadata for MHD.
+
+- [Minimal Metadata](StructureDefinition-IHE.MHD.Minimal.ProvideBundle.html): `http://profiles.ihe.net/ITI/MHD/StructureDefinition/IHE.MHD.Minimal.ProvideBundle`
+  - shall be a Transaction Bundle
+  - all resources shall be compliant with minimal constaints, they may be marked minimal, comprehensive, or unContained
+  - shall create a [SubmissionSet type List](StructureDefinition-IHE.MHD.Minimal.SubmissionSet.html) that is either minimal, comprehensive, or unContained
+  - may create one or more [DocumentReference](StructureDefinition-IHE.MHD.Minimal.DocumentReference.html) that is either minimal, comprehensive, or unContained
+  - may create one or more [Binary](http://hl7.org/fhir/R4/binary.html)
+  - may create/update one or more [Folder type List](StructureDefinition-IHE.MHD.Minimal.Folder.html) that is either minimal, comprehensive, or unContained
+  - may create/update/read one [Patient](http://hl7.org/fhir/R4/patient.html)
 "
 * meta.profile 1..*
 * type = #transaction
 * entry ^slicing.discriminator.type = #profile
 * entry ^slicing.discriminator.path = "resource"
-* entry ^slicing.rules = #open
+* entry ^slicing.rules = #closed
 * entry ^slicing.description = "Slicing based on the profile conformance of the entry"
 * entry and entry.resource MS
 * entry contains 
@@ -54,28 +54,43 @@ Description:    "A profile on the Bundle transaction for Provide Document resour
 * entry[Folders] ^definition = "any Folders being created or updated"
 * entry[Folders].resource 1..1
 * entry[Folders].request 1..1
-* entry[Folders].request.method = #POST
+* entry[Folders].request.method from MHDprovideListActions
 * entry[Patient].resource ^type.code = "Patient"
 * entry[Patient].resource ^type.profile = Canonical(Patient)
 * entry[Patient] ^short = "the Patient"
 * entry[Patient] ^definition = "the Patient"
 * entry[Patient].resource 1..1
+* entry[Patient].request.method from MHDprovidePatientActions
+
+ValueSet: MHDprovideListActions
+* http://hl7.org/fhir/http-verb#POST
+* http://hl7.org/fhir/http-verb#PUT
+
+ValueSet: MHDprovidePatientActions
+// GET would be typical, but there might be use-cases where sender uses Create or Update
+* http://hl7.org/fhir/http-verb#GET
+* http://hl7.org/fhir/http-verb#POST
+* http://hl7.org/fhir/http-verb#PUT
+
 
 
 Profile:        UnContainedComprehensiveProvideDocumentBundle
 Parent:         IHE.MHD.Minimal.ProvideBundle
 Id:             IHE.MHD.UnContained.Comprehensive.ProvideBundle
 Title:          "MHD UnContained Comprehensive Provide Document Bundle"
-Description:    "A profile on the Bundle transaction for Provide Document resources with UnContained allowed but requiring Comprehensive Metadata for MHD.
-* all resources must be Comprehensive other than the Containment requirement
-* shall be a Bundle
-* shall be a Transaction
-* each bundle entry request shall be a POST (create)
-* shall have a SubmissionSet
-* may have one or more DocumentReference
-* may have one or more Binary
-* may have one or more Folder
-* may have one Patient
+Description:    "A profile on the Bundle transaction for ITI-65 Provide Document resources with UnContained allowed but requiring Comprehensive Metadata for MHD.
+
+- [UnContained Comprehensive Metadata](StructureDefinition-IHE.MHD.UnContained.Comprehensive.ProvideBundle.html): `http://profiles.ihe.net/ITI/MHD/StructureDefinition/IHE.MHD.UnContained.Comprehensive.ProvideBundle` 
+  - note that Minimal Metadata does not require containment, so UnContained Minimal is the same as Minimal Metadata
+  - note that UnContained only applies to DocumentReference and SubmissionSet type Lists; so the following apply
+  - shall be a Transaction Bundle
+  - all resources shall be compliant with comprehensive unContained constraints, they may be marked comprehensive unContained
+  - shall create a [SubmissionSet type List](StructureDefinition-IHE.MHD.Minimal.SubmissionSet.html) that is either minimal, comprehensive, or unContained
+  - may create one or more [DocumentReference](StructureDefinition-IHE.MHD.Minimal.DocumentReference.html) that is either minimal, comprehensive, or unContained
+  - may create one or more [Binary](http://hl7.org/fhir/R4/binary.html)
+  - may create/update one or more [Folder type List](StructureDefinition-IHE.MHD.Minimal.Folder.html) that is either minimal, comprehensive, or unContained
+  - may create/update/read one [Patient](http://hl7.org/fhir/R4/patient.html)
+
 "
 * entry[SubmissionSet].resource only
     IHE.MHD.UnContained.Comprehensive.SubmissionSet
@@ -89,17 +104,17 @@ Profile:        ComprehensiveProvideDocumentBundle
 Parent:         IHE.MHD.UnContained.Comprehensive.ProvideBundle
 Id:             IHE.MHD.Comprehensive.ProvideBundle
 Title:          "MHD Comprehensive Provide Document Bundle"
-Description:    "A profile on the Bundle transaction for Provide Document resources with Comprehensive Metadata for MHD.
-* this is otherwise known as XDS-on-FHIR
-* all resources must be Comprehensive 
-* shall be a Bundle
-* shall be a Transaction
-* each bundle entry request shall be a POST (create)
-* shall have a SubmissionSet
-* may have one or more DocumentReference
-* may have one or more Binary
-* may have one or more Folder
-* may have one Patient
+Description:    "A profile on the Bundle transaction for ITI-65 Provide Document resources with Comprehensive Metadata for MHD.
+
+- [Comprehensive Metadata](StructureDefinition-IHE.MHD.Comprehensive.ProvideBundle.html): `http://profiles.ihe.net/ITI/MHD/StructureDefinition/IHE.MHD.Comprehensive.ProvideBundle`
+  - this is otherwise known as XDS-on-FHIR
+  - shall be a Transaction Bundle
+  - all resources shall be compliant with comprehensive constraints, they may be marked comprehensive
+  - shall create a [SubmissionSet type List](StructureDefinition-IHE.MHD.Minimal.SubmissionSet.html) that is either minimal, comprehensive, or unContained
+  - may create one or more [DocumentReference](StructureDefinition-IHE.MHD.Minimal.DocumentReference.html) that is either minimal, comprehensive, or unContained
+  - may create one or more [Binary](http://hl7.org/fhir/R4/binary.html)
+  - may create/update one or more [Folder type List](StructureDefinition-IHE.MHD.Minimal.Folder.html) that is either minimal, comprehensive, or unContained
+  - may create/update/read one [Patient](http://hl7.org/fhir/R4/patient.html)
 "
 * entry[SubmissionSet].resource only
     IHE.MHD.Comprehensive.SubmissionSet
@@ -111,9 +126,15 @@ Profile:        MinimalProvideDocumentBundleResponse
 Parent:         Bundle
 Id:             IHE.MHD.Minimal.ProvideDocumentBundleResponse
 Title:          "MHD Minimal Provide Document Bundle Response"
-Description:    "A profile on the Bundle transaction-response for Provide Document Bundle response with Minimal metadata for MHD."
+Description:    "A profile on the Bundle transaction-response for ITI-65 Provide Document Bundle response with Minimal metadata for MHD.
+
+- shall be a transaction response
+- shall have at least 1 entry for each entry in the request, in the same order as received in the request
+  - entry response location must be indicated
+ 
+"
 * type = #transaction-response
-* entry 2..* 
+* entry 1..* 
 * entry ^short = "One entry for each entry in the request, in the same order as received"
 * entry.response 1..
 * entry.response ^short = "Indicating the results of processing the entry"

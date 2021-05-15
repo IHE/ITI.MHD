@@ -142,5 +142,5 @@ Description: "Example of a minimal Provide Document Bundle. 2 "
 * entry[Patient].fullUrl = "urn:uuid:593cd04e-b696-45c1-bc32-39e55a340a49"
 * entry[Patient].resource = 593cd04e-b696-45c1-bc32-39e55a340a49
 * entry[Patient].request.url = "Patient"
-* entry[Patient].request.method = #POST
+* entry[Patient].request.method = #GET
 // TODO: This example has a Patient in the bundle, therefore it would be best if the other resources pointed at this Patient

@@ -52,39 +52,41 @@ The Document Source shall assure all FHIR resource elements are consistent with 
 For complete information on constructing a FHIR Bundle Resource, see [http://hl7.org/fhir/R4/bundle.html](http://hl7.org/fhir/R4/bundle.html)
 
 The FHIR Bundle.meta.profile shall have the following value depending on the Actor implementation of no options (Minimal Metadata), Comprehensive Metadata Option, or UnContained References Option: 
-* [Minimal Metadata](StructureDefinition-IHE.MHD.Minimal.ProvideBundle.html): `http://profiles.ihe.net/ITI/MHD/StructureDefinition/IHE.MHD.Minimal.ProvideBundle`
-  * shall be a Transaction Bundle
-  * each bundle entry request shall be POST (create)
-  * all resources shall be compliant with minimal constaints, they may be marked minimal, comprehensive, or unContained
-  * shall have a [SubmissionSet type List](StructureDefinition-IHE.MHD.Minimal.SubmissionSet.html) that is either minimal, comprehensive, or unContained
-  * may have one or more [DocumentReference](StructureDefinition-IHE.MHD.Minimal.DocumentReference.html) that is either minimal, comprehensive, or unContained
-  * may have one or more [Binary](http://hl7.org/fhir/R4/binary.html)
-  * may have one or more [Folder type List](StructureDefinition-IHE.MHD.Minimal.Folder.html) that is either minimal, comprehensive, or unContained
-  * may have one [Patient](http://hl7.org/fhir/R4/patient.html)
-* [Comprehensive Metadata](StructureDefinition-IHE.MHD.Comprehensive.ProvideBundle.html): `http://profiles.ihe.net/ITI/MHD/StructureDefinition/IHE.MHD.Comprehensive.ProvideBundle`
-  * shall be a Transaction Bundle
-  * each bundle entry request shall be POST (create)
-  * all resources shall be compliant with comprehensive constraints, they may be marked comprehensive
-  * shall have a [SubmissionSet type List](StructureDefinition-IHE.MHD.Comprehensive.SubmissionSet.html) that is comprehensive
-  * may have one or more [DocumentReference](StructureDefinition-IHE.MHD.Comprehensive.DocumentReference.html) that is comprehensive
-  * may have one or more [Binary](http://hl7.org/fhir/R4/binary.html)
-  * may have one or more [Folder type List](StructureDefinition-IHE.MHD.Comprehensive.Folder.html) that is comprehensive
-  * may have one [Patient](http://hl7.org/fhir/R4/patient.html)
-* [UnContained Comprehensive Metadata](StructureDefinition-IHE.MHD.UnContained.Comprehensive.ProvideBundle.html): `http://profiles.ihe.net/ITI/MHD/StructureDefinition/IHE.MHD.UnContained.Comprehensive.ProvideBundle` 
-  * note that Minimal Metadata does not require containment, so UnContained Minimal is the same as Minimal Metadata
-  * note that UnContained only applies to DocumentReference and SubmissionSet type Lists; so the following apply
-  * shall be a Transaction Bundle
-  * each bundle entry request shall be POST (create)
-  * all resources shall be compliant with comprehensive unContained constraints, they may be marked comprehensive unContained
-  * shall have a [Submission Set UnContained](StructureDefinition-IHE.MHD.UnContained.Comprehensive.SubmissionSet.html)
-  * may have one or more [DocumentReference UnContained](StructureDefinition-IHE.MHD.UnContained.Comprehensive.DocumentReference.html)
-  * may have one or more [Binary](http://hl7.org/fhir/R4/binary.html)
-  * may have one or more [Folder type List](StructureDefinition-IHE.MHD.Comprehensive.Folder.html)
-  * may have one [Patient](http://hl7.org/fhir/R4/patient.html)
+- [Minimal Metadata](StructureDefinition-IHE.MHD.Minimal.ProvideBundle.html): `http://profiles.ihe.net/ITI/MHD/StructureDefinition/IHE.MHD.Minimal.ProvideBundle`
+  - shall be a Transaction Bundle
+  - all resources shall be compliant with minimal constaints, they may be marked minimal, comprehensive, or unContained
+  - shall create a [SubmissionSet type List](StructureDefinition-IHE.MHD.Minimal.SubmissionSet.html) that is either minimal, comprehensive, or unContained
+  - may create one or more [DocumentReference](StructureDefinition-IHE.MHD.Minimal.DocumentReference.html) that is either minimal, comprehensive, or unContained
+  - may create one or more [Binary](http://hl7.org/fhir/R4/binary.html)
+  - may create/update one or more [Folder type List](StructureDefinition-IHE.MHD.Minimal.Folder.html) that is either minimal, comprehensive, or unContained
+  - may create/update/read one [Patient](http://hl7.org/fhir/R4/patient.html)
+- [Comprehensive Metadata](StructureDefinition-IHE.MHD.Comprehensive.ProvideBundle.html): `http://profiles.ihe.net/ITI/MHD/StructureDefinition/IHE.MHD.Comprehensive.ProvideBundle`
+  - this is otherwise known as XDS-on-FHIR
+  - shall be a Transaction Bundle
+  - all resources shall be compliant with comprehensive constraints, they may be marked comprehensive
+  - shall create a [SubmissionSet type List](StructureDefinition-IHE.MHD.Minimal.SubmissionSet.html) that is either minimal, comprehensive, or unContained
+  - may create one or more [DocumentReference](StructureDefinition-IHE.MHD.Minimal.DocumentReference.html) that is either minimal, comprehensive, or unContained
+  - may create one or more [Binary](http://hl7.org/fhir/R4/binary.html)
+  - may create/update one or more [Folder type List](StructureDefinition-IHE.MHD.Minimal.Folder.html) that is either minimal, comprehensive, or unContained
+  - may create/update/read one [Patient](http://hl7.org/fhir/R4/patient.html)
+- [UnContained Comprehensive Metadata](StructureDefinition-IHE.MHD.UnContained.Comprehensive.ProvideBundle.html): `http://profiles.ihe.net/ITI/MHD/StructureDefinition/IHE.MHD.UnContained.Comprehensive.ProvideBundle` 
+  - note that Minimal Metadata does not require containment, so UnContained Minimal is the same as Minimal Metadata
+  - note that UnContained only applies to DocumentReference and SubmissionSet type Lists; so the following apply
+  - shall be a Transaction Bundle
+  - all resources shall be compliant with comprehensive unContained constraints, they may be marked comprehensive unContained
+  - shall create a [SubmissionSet type List](StructureDefinition-IHE.MHD.Minimal.SubmissionSet.html) that is either minimal, comprehensive, or unContained
+  - may create one or more [DocumentReference](StructureDefinition-IHE.MHD.Minimal.DocumentReference.html) that is either minimal, comprehensive, or unContained
+  - may create one or more [Binary](http://hl7.org/fhir/R4/binary.html)
+  - may create/update one or more [Folder type List](StructureDefinition-IHE.MHD.Minimal.Folder.html) that is either minimal, comprehensive, or unContained
+  - may create/update/read one [Patient](http://hl7.org/fhir/R4/patient.html)
 
 When resources are `contained` , see [ITI TF-3: 4.5.1](32_fhir_maps.html), they shall be contained using the FHIR contained method (see [http://hl7.org/fhir/R4/references.html#contained](http://hl7.org/fhir/R4/references.html#contained) ).
 
 When the DocumentReference.content.attachment.url points at a Binary Resource, the Binary Resource shall be in the Bundle. See FHIR Resolving references in Bundles at [http://hl7.org/fhir/R4/bundle.html#references](http://hl7.org/fhir/R4/bundle.html#references).
+
+Folders may be created or updated. A Document Recipient may require that an Updated Folder only have new .entry elements added as would be the requirement of XDS.
+
+Patient would typically only be allowed by the Document Recipient in PUSH interaction situations, but may be accepted for other reasons at the discression of the Document Recipient actor policy.
 
 ###### 2:3.65.4.1.2.2 Patient Identity
 
