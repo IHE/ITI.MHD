@@ -1,4 +1,7 @@
-** This Test Plan page is a prototype.   We expect the maturity of the content will improve over time.  For now, we summarize high level testing scope and available tools. Comments are welcome. **
+<div markdown="1" class="stu-note">
+
+This Test Plan page is a prototype.   We expect the maturity of the content will improve over time.  For now, we summarize high level testing scope and available tools. Comments are welcome.
+</div>
 
 ## Introduction
 
@@ -11,11 +14,11 @@ MHD does not mandate of the functionality to be provided by the data communicate
 ## High-level Test Scope
 ### ITI-65 Provide Document Bundle
 * Document Source publishes document and folder combinations
-* * Note that the Document Content is not material to these tests. It could be a simple text file, CDA, FHIR-Document, PNG image, DICOM KOS, or anything that has a mime type
+  * Note that the Document Content is not material to these tests. It could be a simple text file, CDA, FHIR-Document, PNG image, DICOM KOS, or anything that has a mime type
 * Document Recipient receives and responds as appropriate 
-* * Document Recipient may have policy against some content types.
+  * Document Recipient may have policy against some content types.
 
-### IIT-66 Find Document Lists, ITI-67 Find Document References, ITI-68 Retrieve Documebnt
+### ITI-66 Find Document Lists, ITI-67 Find Document References, ITI-68 Retrieve Document
 * Document Consumer requests query for List (Submission Set & Folder), query for DocumentReference, and retrieve document
 * Document Responder responds to query and retrieve as appropriate
 
@@ -23,8 +26,6 @@ MHD does not mandate of the functionality to be provided by the data communicate
 * "Comprehensive Metadata" for the Document Source & Document Recipient
 * "XDS on FHIR" for the Document Recipient and Document Responder (i.e. XDS backend for server actors)
 * "Uncontained Reference" for all MHD actors
-
-
 
 ## Unit Test Procedure (Conformance Testing)
 
@@ -36,9 +37,9 @@ Unit testing this context entails testing a SUT with a simulator or validator to
 * Provider: NIST (US National Institute of Standards and Technology)
 * FHIR Toolkit online: https://tools.iheusa.org:9743/home
 * Tool distribution: https://github.com/usnistgov/asbestos/releases/
-* * Release 2.x.x is compatible with MHD version 3.x.
-* * As of June 2021, FHIR Toolkit is not compatible with MHD version 4.x.
-* * Features may be added to FHIR Toolkit in subsequent releases. Check release notes in the tool distribution link above.
+  * Release 2.x.x is compatible with MHD version 3.x.
+  * As of June 2021, FHIR Toolkit is not compatible with MHD version 4.x.
+  * Features may be added to FHIR Toolkit in subsequent releases. Check release notes in the tool distribution link above.
 * Documentation (installation):  https://github.com/usnistgov/asbestos/wiki/xInstallation-Guide-v2.x.x
 * Tool support: http://groups.google.com/group/ihe-mhd-implementors
 * Actors (options) tested:  Document Source (minimal metadata), Document Source (comprehensive metadata), Document Source (minimal metadata), Document Source (comprehensive metadata)
@@ -69,56 +70,6 @@ The tests listed below are defined in Gazelle Master Model (https://gazelle.ihe.
 * MHD_Search_ITI-66
 * MHD_SearchRead_ITI-67_ITI-68
 * MHD_QryRetr_XDSonFHIR
-
-
-====== 
-======
-Lynn proposes removing the following content for the initial publication.  If we want to publish test scenarios or testable assertions, then I would like to take more time to complete this.  Future publication plans should ensure there is time to complete this content after TI text is confirmed, or have a 2-step publication process for TI - one w/ a rough test plan, and one with a thorough test plan
-
-====== 
-======
-
-## Testable Assertions
-TODO: Write specific Gherkin statements, might use external tooling?
-
-### Document Source and Document Recipient - ITI-65
-
-Given that the system that has implemented the Document Source may choose to implement a subset of the functionality provided by the Document Source, the capability of the Document Source would be able to test only that subset of the following. The Document Responder also may only support a subset of the functionality provided by the Document Responder (e.g., may not support Folders, or may have policy against external document content). The conformance to Minimal-Metadata vs Comphrehensive-Metadata would also vary depending on the functionality of the SUT. 
-
-#### Positive Test Scenarios 
-presumes security successful
-* provide CapabilityStatement with indications of support of the MHD Document Source
-* Where both minimal-metadata and comprehensive-metadata are supported by SUT, it would test both minimal and comprehensive to test out extremes 
-* Publish one DocumentReference with document content
-* Publish one DocumentReference with external document content
-* Publish two Documents with document
-* Publish one Document and a Folder
-* Publish two Documents and a Folder
-* Publish Replacement of a Document
-* Publish one Document and an update to an existing Folder 
-* Publish one Document and a Transform of that Document
-* Publish one Document as a Transform of an existing Document
-* Publish one On-Demand Document
-* Publish one Deferred-Creation Document
-
-#### Negative Test Scenarios: 
-Document Responder returns failure-mode, Document Consumer handles failure gracefully
-* Access control failure
-* No CapabilityStatement available from Document Responder
-* Minimal-Metadata when Comprehensive is required
-* Hash and Size do not match the document content
-* Metadata is proper, but not within configured policy (e.g., unsupported FormatCode)
-* document too big
-* Folder not supported
-* external document not supported
-* inability to store content (e.g., storage failure, or XDS return failures)
-
-
-### Document Consumer and Document Responder
-
-
-Given that the system-under-test that has implemented the Document Consumer may choose to implement a subset of the functionality provided by the Document Consumer.
-
 
 
 **[Previous](32_fhir_maps.html) / [Next](a_issues.html)**

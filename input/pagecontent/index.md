@@ -14,10 +14,14 @@ The [Mobile Cross-Enterprise Document Data Element Extraction (mXDE)](https://pr
 MHD is part of [IHE](https://profiles.ihe.net) -- [IT-Infrastructure](https://profiles.ihe.net/ITI) Domain and 
 part of the [IHE Document Sharing Health Information Exchange](https://profiles.ihe.net/ITI/HIE-Whitepaper) solution.
 
+<div markdown="1" class="stu-note">
+
 | [Significant Changes, Open, and Closed Issues](a_issues.html) |
 {: .grid}
 
 **[Search this IG](https://www.google.com/search?q=site%3Ahttps%3A%2F%2Fprofiles.ihe.net%2FITI%2FMHD&rlz=1C1GCEU_enUS815US815&sxsrf=ALeKk02egtK8A20vWkRrPApvkcoQjnIiDA%3A1620864970799&ei=ym-cYPmMMMq6tQa8vre4CA&oq=site%3Ahttps%3A%2F%2Fprofiles.ihe.net%2FITI%2FMHD&gs_lcp=Cgdnd3Mtd2l6EANQ7CZYmDBg9TdoAXAAeACAAWaIAcIDkgEDNS4xmAEAoAEBqgEHZ3dzLXdpesABAQ&sclient=gws-wiz&ved=0ahUKEwj5mcDGsMXwAhVKXc0KHTzfDYcQ4dUDCA4&uact=5)**
+
+</div>
 
 #### Organization of This Guide 
 

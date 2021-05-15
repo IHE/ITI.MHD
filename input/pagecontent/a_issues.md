@@ -1,3 +1,5 @@
+<div markdown="1" class="stu-note">
+
 ### Significant changes since MHD Version 3.2
 * Due to "breaking" changes, this version of MHD is Version 4.0.0-ballot (for public comment), and will be published after public comment resolution as 4.0.0.
 * Canonical URLs are different, using '.' rather than '_' as the underbar is not allowed in Canonical URLs.
@@ -74,7 +76,7 @@ Please review the open issues and provide your response to the questions and sta
 * MHD_034: MHD updated in 2020 includes an “UnContained References Option” to enable use-cases where known references are managed over their lifecycle and thus contained is not helpful. This option identifies sourcePatientInfo, Authenticator, and Author resources within the DocumentReference, and DocumentManifest.
 * MHD_035: FHIR does not provide an ad-hoc metadata extension mechanism like custom slots in XDS. 
 
-
+</div>
 
 **[Previous](testplan.html) /   [Next](index.html)**
 
