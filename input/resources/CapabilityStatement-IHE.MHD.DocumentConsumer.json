@@ -10,7 +10,7 @@
   "title": "Document Consumer (client)",
   "status": "active",
   "experimental": false,
-  "date": "2019-09-13T00:00:00-05:00",
+  "date": "2021-05-15T00:00:00-05:00",
   "publisher": "Integrating the Healthcare Enterprise (IHE)",
   "contact": [
     {
@@ -79,6 +79,12 @@
               "definition": "http://hl7.org/fhir/SearchParameter/DocumentReference-category",
               "type": "token",
               "documentation": "Categorization of document"
+            },
+            {
+              "name": "creation",
+              "definition": "http://profiles.ihe.net/ITI/MHD/SearchParameter/DocumentReference-Creation",
+              "type": "date",
+              "documentation": "When this document was created"
             },
             {
               "name": "date",
