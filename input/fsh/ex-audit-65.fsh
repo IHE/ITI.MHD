@@ -2,6 +2,7 @@ Instance: ex-auditProvideBundle-recipient
 InstanceOf: IHE.MHD.ProvideBundle.Audit.Recipient
 Title: "Audit Example of ITI-65 at recipient"
 Description: "Audit Example for a Provide Bundle Transaction as recorded at the recipient"
+Usage: #example
 * meta.security = http://terminology.hl7.org/CodeSystem/v3-ActReason#HTEST
 * type = DCM#110107 "Import"
 * action = #C
@@ -37,6 +38,7 @@ Instance: ex-auditProvideBundle-source
 InstanceOf: IHE.MHD.ProvideBundle.Audit.Source
 Title: "Audit Example of ITI-65 at source"
 Description: "Audit Example for a Provide Bundle Transaction from source perspective"
+Usage: #example
 * meta.security = http://terminology.hl7.org/CodeSystem/v3-ActReason#HTEST
 * type = DCM#110106 "Export"
 * action = #R

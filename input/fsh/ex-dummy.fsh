@@ -3,6 +3,7 @@ Instance:   ex-patient
 InstanceOf: Patient
 Title:      "Dummy Patient example"
 Description: "Dummy patient example for completeness sake. No actual use of this resource other than an example target"
+Usage: #example
 // history - http://playgroundjungle.com/2018/02/origins-of-john-jacob-jingleheimer-schmidt.html
 * meta.security = http://terminology.hl7.org/CodeSystem/v3-ActReason#HTEST
 * name[+].use = #usual
@@ -33,12 +34,14 @@ Instance:   ex-device
 InstanceOf: Device
 Title:      "Dummy Device example"
 Description: "Dummy Device example for completeness sake. No actual use of this resource other than an example target"
+Usage: #example
 * meta.security = http://terminology.hl7.org/CodeSystem/v3-ActReason#HTEST
 
 Instance:   ex-organization
 InstanceOf: Organization
 Title:      "Dummy Organization example"
 Description: "Dummy Organization example for completeness sake. No actual use of this resource other than an example target"
+Usage: #example
 * meta.security = http://terminology.hl7.org/CodeSystem/v3-ActReason#HTEST
 * name = "nowhere"
 
@@ -46,6 +49,7 @@ Instance: ex-documentreference
 InstanceOf: DocumentReference
 Title: "Dummy DocumentReference example"
 Description: "Dummy DocumentReference example for completeness sake. No actual use of this resource other than an example target"
+Usage: #example
 * meta.security = http://terminology.hl7.org/CodeSystem/v3-ActReason#HTEST
 * status = #current
 * content.attachment.title = "Hello World"
@@ -55,6 +59,7 @@ Instance: ex-documentreference2
 InstanceOf: DocumentReference
 Title: "Dummy DocumentReference 2 example"
 Description: "Dummy DocumentReference 2 example for completeness sake. No actual use of this resource other than an example target"
+Usage: #example
 * meta.security = http://terminology.hl7.org/CodeSystem/v3-ActReason#HTEST
 * status = #current
 // TODO: figure out how to get Binary attachments in sushi
@@ -65,6 +70,7 @@ Description: "Dummy DocumentReference 2 example for completeness sake. No actual
 Instance: ex-b-binary
 InstanceOf: Binary
 Title: "Example document that says: Hello World"
+Usage: #example
 * meta.security = http://terminology.hl7.org/CodeSystem/v3-ActReason#HTEST
 * contentType = #text/plain
 * data = "SGVsbG8gV29ybGQ="
@@ -73,24 +79,17 @@ Instance: ex-list
 InstanceOf: List
 Title: "Dummy List example"
 Description: "Dummy List example for completeness sake. No actual use of this resource other than an example target"
+Usage: #example
 * meta.security = http://terminology.hl7.org/CodeSystem/v3-ActReason#HTEST
 * status = #current
 * mode = #working
 * entry.item = Reference(DocumentReference/ex-documentreference2)
 
-Instance: ex-list2
-InstanceOf: List
-Title: "Dummy List 2 example"
-Description: "Dummy List 2 example for completeness sake. No actual use of this resource other than an example target"
-* meta.security = http://terminology.hl7.org/CodeSystem/v3-ActReason#HTEST
-* status = #current
-* mode = #working
-//* entry.item = Reference(List/ex-list)
-
 Instance: ex-practitioner
 InstanceOf: Practitioner
 Title: "Dummy Practitioner example"
 Description: "Dummy Practitioner example for completeness sake. No actual use of this resource other than an example target"
+Usage: #example
 * meta.security = http://terminology.hl7.org/CodeSystem/v3-ActReason#HTEST
 * telecom.system = #email
 * telecom.value = "JohnMoehrke@gmail.com"
@@ -102,7 +101,10 @@ Description: "Dummy Practitioner example for completeness sake. No actual use of
 Instance:   ex-dummyProvideDocumentBundle
 InstanceOf: Bundle
 Title:      "Dummy Provide Document Bundle"
-Description: "Example of a Provide Document Bundle transaction made up of the right FHIR resources, but these FHIR resources are not compliant with the MHD constraints. A robust Document Recipient is allowed to consume this if it has business rules that allow it."
+Description: "Example of a Provide Document Bundle transaction made up of the right FHIR resources, but these FHIR resources are not compliant with the MHD constraints. 
+- A robust Document Recipient is allowed to consume this if it has business rules that allow it.
+"
+Usage: #example
 * meta.security = http://terminology.hl7.org/CodeSystem/v3-ActReason#HTEST
 * type = #transaction
 * timestamp = 2020-11-24T23:50:50-05:00

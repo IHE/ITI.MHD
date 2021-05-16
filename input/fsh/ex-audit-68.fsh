@@ -2,6 +2,7 @@ Instance: ex-auditRetrieveDocument-consumer
 InstanceOf: IHE.MHD.RetrieveDocument.Audit.Consumer
 Title: "Audit Example of ITI-68 at consumer"
 Description: "Audit Example for a Retrieve Document Transaction as recorded at the consumer"
+Usage: #example
 * meta.security = http://terminology.hl7.org/CodeSystem/v3-ActReason#HTEST
 * type = DCM#110107 "Import"
 * action = #C
@@ -35,6 +36,7 @@ Instance: ex-auditRetrieveDocument-responder
 InstanceOf: IHE.MHD.RetrieveDocument.Audit.Responder
 Title: "Audit Example of ITI-68 at responder"
 Description: "Audit Example for a Retrieve Document Transaction from responder perspective"
+Usage: #example
 * meta.security = http://terminology.hl7.org/CodeSystem/v3-ActReason#HTEST
 * type = DCM#110106 "Export"
 * action = #R

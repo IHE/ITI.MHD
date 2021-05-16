@@ -54,7 +54,7 @@ Description:    "A profile on the Bundle transaction for ITI-65 Provide Document
 * entry[Folders] ^definition = "any Folders being created or updated"
 * entry[Folders].resource 1..1
 * entry[Folders].request 1..1
-* entry[Folders].request.method from MHDprovideListActions
+* entry[Folders].request.method from MHDprovideFolderActions
 * entry[Patient].resource ^type.code = "Patient"
 * entry[Patient].resource ^type.profile = Canonical(Patient)
 * entry[Patient] ^short = "the Patient"
@@ -62,12 +62,15 @@ Description:    "A profile on the Bundle transaction for ITI-65 Provide Document
 * entry[Patient].resource 1..1
 * entry[Patient].request.method from MHDprovidePatientActions
 
-ValueSet: MHDprovideListActions
+ValueSet: MHDprovideFolderActions
+Title: "MHD Folder List Types ValueSet"
+Description: "A ValueSet of the allowed actions in a ITI-65 Provide Document Bundle for the Folder List type Resources. Where Folders are allowed to be Updated in addition to Created."
 * http://hl7.org/fhir/http-verb#POST
 * http://hl7.org/fhir/http-verb#PUT
 
 ValueSet: MHDprovidePatientActions
-// GET would be typical, but there might be use-cases where sender uses Create or Update
+Title: "MHD Patient Types ValueSet"
+Description: "A ValueSet of the allowed actions in a ITI-65 Provide Document Bundle for the Patient type Resource. Where Patient would typically be indicated as a GET (read), but might be created or updated depending on policy."
 * http://hl7.org/fhir/http-verb#GET
 * http://hl7.org/fhir/http-verb#POST
 * http://hl7.org/fhir/http-verb#PUT

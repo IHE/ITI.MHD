@@ -232,7 +232,7 @@ Informative note: When the Document Consumer retrieves the document using the Do
 
 ####### 2:3.67.4.2.2.1.4 XDS Associations
 
-Where the documentReference Resource being returned has an XDS Association, this shall be represented in the DocumentReference.relatesTo element. Where the DocumentReference.relatesTo.target element holds the Reference to the other DocumentReference Resource, and the DocumentReference.relatesTo.code element holds the relationship type translated using the [AssociationType vs RelatesTo ConceptMap](ConceptMap-AssociationType-vs-RelatesTo.html).
+Where the documentReference Resource being returned has an XDS Association, this shall be represented in the DocumentReference.relatesTo element. Where the DocumentReference.relatesTo.target element holds the Reference to the other DocumentReference Resource, and the DocumentReference.relatesTo.code element holds the relationship type translated using the [AssociationType vs RelatesTo ConceptMap](ConceptMap-AssociationTypeVsRelatesTo.html).
 
 ###### 2:3.67.4.2.2.2 Resource Bundling
 

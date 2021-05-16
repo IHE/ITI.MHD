@@ -144,7 +144,7 @@ This section applies to grouping MHD Document Recipient with [XDS](https://profi
 
 The Document Recipient shall transform the Bundle content into a proper message for the Given grouped Actor (e.g. the XDS Document Source using the Provide and Register Document Set-b [ITI-41](https://profiles.ihe.net/ITI/TF/Volume2/ITI-41.html) transaction). The Document Recipient shall create appropriate metadata from Resources in the FHIR Bundle Resource, including SubmissionSet, DocumentEntry, Folder, and Associations. 
 
-If the Provide Document Bundle Message contains a DocumentReference with a relatesTo element, the code shall be translated using the [AssociationType vs RelatesTo ConceptMap](ConceptMap-AssociationType-vs-RelatesTo.html).
+If the Provide Document Bundle Message contains a DocumentReference with a relatesTo element, the code shall be translated using the [AssociationType vs RelatesTo ConceptMap](ConceptMap-AssociationTypeVsRelatesTo.html).
 
 The Document Recipient shall map Folder type List Resources in the Bundle Resource to XDS Folders, as specified in [ITI TF-3: Table 4.5.1.1-1](32_fhir_maps.html#folder). The Document Registry may apply further constraints on Folder content and revision, for example removal of entries from Folders is not generally allowed.
 

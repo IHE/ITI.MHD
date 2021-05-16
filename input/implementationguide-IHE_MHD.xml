@@ -9,14 +9,14 @@ IHE IT Infrastructure Technical Framework Supplement Mobile access to Health Doc
 		</div>
 	</text>
 	<extension url="http://hl7.org/fhir/StructureDefinition/resource-approvalDate">
-		<valueDate value="2021-04-02"/>
+		<valueDate value="2021-05-16"/>
 	</extension>
 	<url value="http://profiles.ihe.net/ITI/MHD/ImplementationGuide/ihe.mhd.fhir" />
-	<version value="4.0.0-ci" />
+	<version value="4.0.0" />
 	<name value="IHE_MHD" />
 	<status value="active" />
 	<experimental value="false" />
-	<date value="2021-05-06" />
+	<date value="2021-05-16" />
 	<publisher value="Integrating the Healthcare Enterprise (IHE)" />
 	<contact>
 		<name value="IHE" />
@@ -48,6 +48,75 @@ IHE IT Infrastructure Technical Framework Supplement Mobile access to Health Doc
 	</dependsOn>
 
 	 <definition>
+
+		<resource>
+			<reference>
+				<reference value="SearchParameter/DocumentReference-Creation"/>
+			</reference>
+			<name value="Search Parameter for DocumetReference creation"/>
+			<exampleBoolean value="false"/>
+		</resource>
+		<resource>
+			<reference>
+				<reference value="SearchParameter/List-DesignationType"/>
+			</reference>
+			<name value="Search Parameter for List DesignationType"/>
+			<exampleBoolean value="false"/>
+		</resource>
+		<resource>
+			<reference>
+				<reference value="SearchParameter/List-SourceId"/>
+			</reference>
+			<name value="Search Parameter for List SourceId"/>
+			<exampleBoolean value="false"/>
+		</resource>
+		<resource>
+			<reference>
+				<reference value="ValueSet/MHDlistTypesVS"/>
+			</reference>
+			<name value="ValueSet of MHD List types"/>
+			<exampleBoolean value="false"/>
+		</resource>
+		<resource>
+			<reference>
+				<reference value="ValueSet/MHDprovideFolderActions"/>
+			</reference>
+			<name value="ValueSet of MHD Provide Folder Actions"/>
+			<exampleBoolean value="false"/>
+		</resource>
+		<resource>
+			<reference>
+				<reference value="ValueSet/MHDprovidePatientActions"/>
+			</reference>
+			<name value="ValueSet of MHD Provide Patient Actions"/>
+			<exampleBoolean value="false"/>
+		</resource>
+		<resource>
+			<reference>
+				<reference value="ConceptMap/AssociationTypeVsRelatesTo"/>
+			</reference>
+			<name value="ConceptMap between XDS AssociationType and MHD FHIR RelatesTo code"/>
+			<exampleBoolean value="false"/>
+		</resource>
+
+<!--      Examples     -->
+
+		<resource>
+			<reference>
+				<reference value="Bundle/ex-dummyProvideDocumentBundle"/>
+			</reference>
+			<name value="Dummy Provide Document Bundle"/>
+			<description value="Example of a Provide Document Bundle transaction made up of the right FHIR resources, but these FHIR resources are not compliant with the MHD constraints. 
+- A robust Document Recipient is allowed to consume this if it has business rules that allow it."/>			
+			<exampleBoolean value="true"/>
+		</resource>
+
+
+
+
+
+
+
 
 
     <page>

@@ -2,6 +2,7 @@ Instance:   ex-DocumentReferenceMinimal
 InstanceOf: IHE.MHD.Minimal.DocumentReference
 Title:      "DocumentReference for Minimal metadata"
 Description: "Example of a minimal DocumentReference resource. This is very unlikely to be acceptable anywhere, but it is the minimum required."
+Usage: #example
 * meta.security = http://terminology.hl7.org/CodeSystem/v3-ActReason#HTEST
 * masterIdentifier.system = "urn:ietf:rfc:3986"
 * masterIdentifier.value = "urn:oid:1.2.840.113556.1.8000.2554.53432.348.12973.17740.34205.4355.50220.62012"
@@ -15,6 +16,7 @@ Instance:   ex-DocumentReferenceUnContained
 InstanceOf: IHE.MHD.UnContained.Comprehensive.DocumentReference
 Title:      "DocumentReference for Comprehensive minimally metadata"
 Description: "Example of a Comprehensive DocumentReference resource. This is minimally filled for all mandatory elements."
+Usage: #example
 * meta.security = http://terminology.hl7.org/CodeSystem/v3-ActReason#HTEST
 * masterIdentifier.system = "urn:ietf:rfc:3986"
 * masterIdentifier.value = "urn:oid:1.2.840.113556.1.8000.2554.58783.21864.3474.19410.44358.58254.41281.46340"
@@ -40,6 +42,7 @@ Instance:   ex-DocumentReferenceUnContainedFully
 InstanceOf: IHE.MHD.UnContained.Comprehensive.DocumentReference
 Title:      "DocumentReference for Comprehensive minimally filled metadata"
 Description: "Example of a UnContained References Option with Comprehensive DocumentReference resource. This is fully filled for all mandatory elements and optional elements."
+Usage: #example
 * meta.security = http://terminology.hl7.org/CodeSystem/v3-ActReason#HTEST
 * masterIdentifier.system = "urn:ietf:rfc:3986"
 * masterIdentifier.value = "urn:oid:1.2.840.113556.1.8000.2554.58783.21864.3474.19410.44358.58254.41281.46340"
@@ -81,6 +84,7 @@ Instance:   ex-DocumentReferenceComprehensive
 InstanceOf: IHE.MHD.Comprehensive.DocumentReference
 Title:      "DocumentReference for Comprehensive fully filled metadata"
 Description: "Example of a Comprehensive DocumentReference resource. This is fully filled for all mandatory elements and all optional elements."
+Usage: #example
 * meta.security = http://terminology.hl7.org/CodeSystem/v3-ActReason#HTEST
 * masterIdentifier.system = "urn:ietf:rfc:3986"
 * masterIdentifier.value = "urn:oid:1.2.840.113556.1.8000.2554.58783.21864.3474.19410.44358.58254.41281.46340"

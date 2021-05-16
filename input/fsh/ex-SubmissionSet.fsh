@@ -2,6 +2,7 @@ Instance:   ex-minimalSubmissionSet
 InstanceOf: IHE.MHD.Minimal.SubmissionSet
 Title:      "SubmissionSet for Minimal metadata"
 Description: "Example of a minimal submissionSet in List resource. "
+Usage: #example
 * meta.security = http://terminology.hl7.org/CodeSystem/v3-ActReason#HTEST
 * identifier[0].system = "urn:ietf:rfc:3986"
 * identifier[0].value = "urn:oid:1.2.129.6.58.92.88337.4"
@@ -21,6 +22,7 @@ Instance:   ex-compSubmissionSetList
 InstanceOf: IHE.MHD.Comprehensive.SubmissionSet
 Title: "Example Comprehensive SubmissionSet"
 Description:      "SubmissionSet in List resource conforming minimally to Comprehensive metadata"
+Usage: #example
 * meta.security = http://terminology.hl7.org/CodeSystem/v3-ActReason#HTEST
 * subject = Reference(Patient/ex-patient)
 * identifier[0].system = "urn:ietf:rfc:3986"
@@ -43,6 +45,7 @@ Instance:   ex-compEmailPackage
 InstanceOf: IHE.MHD.Comprehensive.SubmissionSet
 Title: "Example Comprehensive Email SubmissionSet"
 Description:      "SubmissionSet in List resource conforming Comprehensive metadata with an intendedRecipient"
+Usage: #example
 * meta.security = http://terminology.hl7.org/CodeSystem/v3-ActReason#HTEST
 * subject = Reference(Patient/ex-patient)
 * identifier[0].system = "urn:ietf:rfc:3986"
@@ -66,6 +69,7 @@ Instance:   ex-compSubmissionSetFullUnContained
 InstanceOf: IHE.MHD.UnContained.Comprehensive.SubmissionSet
 Title: "Example UnContained Comprehensive Full SubmissionSet"
 Description:      "SubmissionSet in List resource conforming fully to UnContained References Option and Comprehensive Metadata Option. This has all elements fully populated."
+Usage: #example
 * meta.security = http://terminology.hl7.org/CodeSystem/v3-ActReason#HTEST
 * subject = Reference(Patient/ex-patient)
 * identifier[0].system = "urn:ietf:rfc:3986"
@@ -90,6 +94,7 @@ Instance:   ex-compSubmissionSetFull
 InstanceOf: IHE.MHD.Minimal.SubmissionSet
 Title: "Example Comprehensive Full SubmissionSet"
 Description:      "SubmissionSet in List resource conforming fully to Comprehensive metadata. This has all elements fully populated."
+Usage: #example
 * meta.security = http://terminology.hl7.org/CodeSystem/v3-ActReason#HTEST
 * subject = Reference(Patient/ex-patient)
 * identifier[0].system = "urn:ietf:rfc:3986"
@@ -121,9 +126,31 @@ Usage: #inline
 Instance:   ex-findDocumentListsResponse
 InstanceOf: IHE.MHD.FindDocumentListsResponseMessage
 Title:      "Example of a Find Document Lists Response Message"
+Usage: #example
 * meta.security = http://terminology.hl7.org/CodeSystem/v3-ActReason#HTEST
 * type = #searchset
+* link[0].relation = "self"
+* link[0].url = "test.fhir.net/R4/fhir/List?patient=9876&code=submissionset&status=current&designationType=http://loinc.org|1234-5"
 * total = 1
 * timestamp = 2021-04-16T11:32:24Z
-* entry[0].fullUrl = "http://example.org/List/ex-minimalSubmissionSet"
-* entry[0].resource = ex-minimalSubmissionSet
+* entry[List].fullUrl = "http://example.org/List/ex-minimalSubmissionSet"
+* entry[List].resource = in-minimalSubmissionSet
+
+Instance:   in-minimalSubmissionSet
+InstanceOf: IHE.MHD.Minimal.SubmissionSet
+Title:      "SubmissionSet for Minimal metadata"
+Description: "Example of a minimal submissionSet in List resource. "
+Usage: #inline
+* meta.security = http://terminology.hl7.org/CodeSystem/v3-ActReason#HTEST
+* identifier[0].system = "urn:ietf:rfc:3986"
+* identifier[0].value = "urn:oid:1.2.129.6.58.92.88337.4"
+* identifier[0].use = #official
+* identifier[1].system = "http://example.org/documents"
+* identifier[1].value = "23425234-23470"
+* identifier[1].use = #usual
+* status = #current
+* mode = #working
+* code = MHDlistTypes#submissionset
+* date = 2004-12-25T23:50:50-05:00
+* entry[0].item = Reference(DocumentReference/ex-documentreference)
+* extension[sourceId].valueIdentifier.value = "urn:oid:1.2.3.4"

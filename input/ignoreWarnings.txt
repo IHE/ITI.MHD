@@ -95,6 +95,14 @@ Validate resource against profile http://hl7.org/fhir/StructureDefinition/Search
 Validate resource against profile http://hl7.org/fhir/StructureDefinition/ValueSet
 Validate resource against profile http://hl7.org/fhir/StructureDefinition/StructureDefinition
 Validate resource against profile http://hl7.org/fhir/StructureDefinition/CapabilityStatement
+Validate resource against profile http://hl7.org/fhir/StructureDefinition/ConceptMap
 
 # Examples use realworld OIDs for code systems
 Code System URI 'urn:oid:1.3.6.1.4.1.19376.1.2.3' is unknown so the code cannot be validated
+Code System URI 'http://ihe.net/fhir/ValueSet/IHE.FormatCode.codesystem' is unknown so the code cannot be validated
+
+# Example Bundle-FindDocumentReferences and DocumentReference-IHE.MHD.Comprehensive.MedicationCard uses realworld values that are okay
+None of the codings provided are in the value set http://hl7.org/fhir/ValueSet/c80-doc-typecodes (http://hl7.org/fhir/ValueSet/c80-doc-typecodes), and a coding is recommended to come from this value set) (codes = http://snomed.info/sct#721912009)
+Could not confirm that the codes provided are in the value set http://hl7.org/fhir/ValueSet/formatcodes, and a code is recommended to come from this value set
+Could not confirm that the codes provided are in the value set http://ihe.net/fhir/ihe.formatcode.fhir/ValueSet/formatcode, and a code is recommended to come from this value set
+

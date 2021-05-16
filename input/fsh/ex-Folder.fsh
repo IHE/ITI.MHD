@@ -2,6 +2,7 @@ Instance:   ex-minimalFolder
 InstanceOf: IHE.MHD.Minimal.Folder
 Title: "Example Minimal Folder"
 Description:      "Folder in List resource conforming only to Minimal metadata"
+Usage: #example
 * meta.security = http://terminology.hl7.org/CodeSystem/v3-ActReason#HTEST
 * identifier[0].system = "urn:ietf:rfc:3986"
 * identifier[0].value = "urn:oid:1.2.129.6.58.92.88337.4"
@@ -19,6 +20,7 @@ Instance:   ex-compFolder
 InstanceOf: IHE.MHD.Comprehensive.Folder
 Title: "Example Comprehensive Folder"
 Description:      "Folder in List resource conforming only to Comprehensive metadata"
+Usage: #example
 * meta.security = http://terminology.hl7.org/CodeSystem/v3-ActReason#HTEST
 * subject = Reference(Patient/ex-patient)
 * identifier[0].system = "urn:ietf:rfc:3986"

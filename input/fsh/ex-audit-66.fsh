@@ -2,6 +2,7 @@ Instance: ex-auditFindDocumentLists-consumer
 InstanceOf: IHE.MHD.FindDocumentLists.Audit.Consumer
 Title: "Audit Example of ITI-66 at Consumer"
 Description: "Audit Example for a Find Document Lists Transaction as recorded at the consumer"
+Usage: #example
 * meta.security = http://terminology.hl7.org/CodeSystem/v3-ActReason#HTEST
 * type = http://dicom.nema.org/resources/ontology/DCM#110112 "Query"
 * action = #E
@@ -35,6 +36,7 @@ Instance: ex-auditFindDocumentLists-responder
 InstanceOf: IHE.MHD.FindDocumentLists.Audit.Responder
 Title: "Audit Example of ITI-66 at responder"
 Description: "Audit Example for a Find Document Lists Transaction from responder perspective"
+Usage: #example
 * meta.security = http://terminology.hl7.org/CodeSystem/v3-ActReason#HTEST
 * type = http://dicom.nema.org/resources/ontology/DCM#110112 "Query"
 * action = #E

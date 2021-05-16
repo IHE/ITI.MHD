@@ -46,11 +46,7 @@
       "resource": [
         {
           "type": "DocumentReference",
-          "profile": "http://profiles.ihe.net/ITI/MHD/StructureDefinition/IHE.MHD.Minimal.DocumentReference",
-          "supportedProfile": [
-            "http://profiles.ihe.net/ITI/MHD/StructureDefinition/IHE.MHD.Comprehensive.DocumentReference",
-            "http://profiles.ihe.net/ITI/MHD/StructureDefinition/IHE.MHD.UnContained.DocumentReference"
-          ],
+          "profile": "http://profiles.ihe.net/ITI/MHD/StructureDefinition/IHE.MHD.Query.Minimal.DocumentReference",
           "interaction": [
             {
               "code": "read"
@@ -67,7 +63,7 @@
               "documentation": "Logical id of this artifact"
             },
             {
-              "name": "_lastUpdated",
+              "name": "_lastupdated",
               "definition": "http://hl7.org/fhir/SearchParameter/Resource-lastUpdated",
               "type": "date",
               "documentation": "When the resource version last changed"
@@ -115,12 +111,6 @@
               "documentation": "Format/content rules for the document"
             },
             {
-              "name": "date",
-              "definition": "http://hl7.org/fhir/SearchParameter/DocumentReference-date",
-              "type": "date",
-              "documentation": "When this document reference was created"
-            },
-            {
               "name": "identifier",
               "definition": "http://hl7.org/fhir/SearchParameter/clinical-identifier",
               "type": "token",
@@ -164,8 +154,8 @@
             },
             {
               "name": "type",
-              "definition": "http://hl7.org/fhir/SearchParameter/clinical-type",
-              "type": "token",
+              "definition": "http://hl7.org/fhir/SearchParameter/clinical-patient",
+              "type": "reference",
               "documentation": "Kind of document (LOINC if possible)"
             }
           ]

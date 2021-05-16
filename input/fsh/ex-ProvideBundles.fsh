@@ -3,6 +3,7 @@ Instance:   ex-minimalProvideDocumentBundle
 InstanceOf: IHE.MHD.Minimal.ProvideBundle
 Title:      "Provide Document Bundle with Minimal metadata"
 Description: "Example of a minimal Provide Document Bundle. "
+Usage: #example
 * meta.security = http://terminology.hl7.org/CodeSystem/v3-ActReason#HTEST
 * type = #transaction
 * timestamp = 2020-11-24T23:50:50-05:00
@@ -101,6 +102,7 @@ Instance: ex-ProvideDocumentBundleResponse
 InstanceOf: IHE.MHD.Minimal.ProvideDocumentBundleResponse 
 Title: "ex-ProvideDocumentBundleResponse"
 Description: "IHE.MHD.Minimal.ProvideDocumentBundleResponse"
+Usage: #example
 * meta.security = http://terminology.hl7.org/CodeSystem/v3-ActReason#HTEST
 * type = #transaction-response
 * link[0].relation = "self"
@@ -120,6 +122,7 @@ Instance:   ex-minimalProvideDocumentBundle2
 InstanceOf: IHE.MHD.Minimal.ProvideBundle
 Title:      "Provide Document Bundle with Minimal metadata 2"
 Description: "Example of a minimal Provide Document Bundle. 2 "
+Usage: #example
 * meta.security = http://terminology.hl7.org/CodeSystem/v3-ActReason#HTEST
 * type = #transaction
 * timestamp = 2020-11-24T23:50:50-05:00

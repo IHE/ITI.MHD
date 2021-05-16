@@ -55,6 +55,7 @@ Description: "When the author of the SubmissionSet is an Organization, this exte
 Instance: List-SourceId
 InstanceOf: SearchParameter
 Title: "search on the IHE defined extension for SourceId"
+Usage: #definition
 * url = "http://profiles.ihe.net/ITI/MHD/SearchParameter/List-SourceId"
 * description = "This SearchParameter enables finding Lists by the SourceId of a submissionSet."
 * name = "SourceId"
