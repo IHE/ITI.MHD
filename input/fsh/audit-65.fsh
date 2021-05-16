@@ -3,13 +3,13 @@ Parent:         AuditEvent
 Id:             IHE.MHD.ProvideBundle.Audit.Recipient
 Title:          "Audit Event for Provide Bundle Transaction at Recipient"
 Description:    "Defines constraints on the AuditEvent Resource to record when a Provide Bundle Transaction happens at the Recipient.
-* Import event
-* shall have source of itself
-* shall have a document source agent
-* shall have a document recipient agent
-* may have user, app, organization agent(s)
-* shall have a patient entity
-* shall have a submission set identity entity
+- Import event
+- shall have source of itself
+- shall have a document source agent
+- shall have a document recipient agent
+- may have user, app, organization agent(s)
+- shall have a patient entity
+- shall have a submission set identity entity
 "
 * modifierExtension 0..0
 * type = DCM#110107 "Import"
@@ -63,13 +63,13 @@ Parent:         AuditEvent
 Id:             IHE.MHD.ProvideBundle.Audit.Source
 Title:          "Audit Event for Provide Bundle Transaction at Source"
 Description:    "Defines constraints on the AuditEvent Resource to record when a Provide Bundle Transaction happens at the Source.
-* Import event
-* shall have source of itself
-* shall have a document source agent
-* shall have a document recipient agent
-* may have user, app, organization agent(s)
-* shall have a patient entity
-* shall have a submission set identity entity
+- Import event
+- shall have source of itself
+- shall have a document source agent
+- shall have a document recipient agent
+- may have user, app, organization agent(s)
+- shall have a patient entity
+- shall have a submission set identity entity
 "
 * modifierExtension 0..0
 * type = DCM#110106 "Export"

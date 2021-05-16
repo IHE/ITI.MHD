@@ -3,13 +3,13 @@ Parent:         AuditEvent
 Id:             IHE.MHD.RetrieveDocument.Audit.Consumer
 Title:          "Audit Event for Retrieve Document Transaction at Document Consumer"
 Description:    "Defines constraints on the Document Consumer AuditEvent Resource to record when a Retrieve Document Transaction happens, as recorded by the Document Consumer.
-* Import event
-* shall have the source as itself
-* shall have a document consumer agent
-* shall have a document responder agent
-* may have user, app, organization agent(s)
-* shall have a patient entity
-* shall have a document uniqueId (usually a Binary)
+- Import event
+- shall have the source as itself
+- shall have a document consumer agent
+- shall have a document responder agent
+- may have user, app, organization agent(s)
+- shall have a patient entity
+- shall have a document uniqueId (usually a Binary)
 "
 * modifierExtension 0..0
 * type = DCM#110107 "Import"
@@ -61,13 +61,13 @@ Parent:         AuditEvent
 Id:             IHE.MHD.RetrieveDocument.Audit.Responder
 Title:          "Audit Event for Retrieve Document Transaction at the Document Responder"
 Description:    "Defines constraints on the Document Responder AuditEvent Resource to record when a Retrieve Document Transaction happens, as recorded by the Document Responder.
-* Export event
-* shall have the source as itself
-* shall have a document consumer agent
-* shall have a document responder agent
-* may have user, app, organization agent(s)
-* shall have a patient entity
-* shall have a document uniqueId (usually a Binary)
+- Export event
+- shall have the source as itself
+- shall have a document consumer agent
+- shall have a document responder agent
+- may have user, app, organization agent(s)
+- shall have a patient entity
+- shall have a document uniqueId (usually a Binary)
 "
 * modifierExtension 0..0
 * type = http://dicom.nema.org/resources/ontology/DCM#110106 "Export"

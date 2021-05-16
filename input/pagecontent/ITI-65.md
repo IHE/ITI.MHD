@@ -118,7 +118,7 @@ If necessary for processing, the Document Recipient shall retrieve Resources ref
 
 If the Document Recipient encounters any errors or if any validation fails, the Document Recipient shall return an error, as documented in [Provide Document Bundle Response Message](#236542-provide-document-bundle-response-message). If appropriate, it shall use error codes from [ITI TF-3: Table 4.2.4.1-2](https://profiles.ihe.net/ITI/TF/Volume3/ch-4.2.html#4.2.4.1).
 
-If the Provide Document Bundle Message contains a DocumentReference Resource with a relatesTo element and the Document Recipient does not support the relatesTo.code value, it shall return a warning message, as indicated in *Table 2:3.65.4.1.3-1: Warning message when relatesTo code is not supported*.
+If the Provide Document Bundle Message contains a DocumentReference Resource with a relatesTo element and the Document Recipient does not support the relatesTo.code value given, it shall return a warning message, as indicated in *Table 2:3.65.4.1.3-1: Warning message when relatesTo code is not supported*.
 
 **Table 2:3.65.4.1.3-1: Warning message when relatesTo code is not supported**
 
@@ -144,11 +144,7 @@ This section applies to grouping MHD Document Recipient with [XDS](https://profi
 
 The Document Recipient shall transform the Bundle content into a proper message for the Given grouped Actor (e.g. the XDS Document Source using the Provide and Register Document Set-b [ITI-41](https://profiles.ihe.net/ITI/TF/Volume2/ITI-41.html) transaction). The Document Recipient shall create appropriate metadata from Resources in the FHIR Bundle Resource, including SubmissionSet, DocumentEntry, Folder, and Associations. 
 
-If the Provide Document Bundle Message contains a DocumentReference with a relatesTo element that has a code equal to "replaces" (as defined in [http://hl7.org/fhir/R4/valueset-document-relationship-type.html](http://hl7.org/fhir/R4/valueset-document-relationship-type.html) ), the corresponding RPLC Association shall be included. 
-
-If the Provide Document Bundle Message contains a DocumentReference with a relatesTo element that has a code equal to "transforms", the corresponding XFRM Association shall be included. 
-
-If the Provide Document Bundle Message contains a DocumentReference with a relatesTo element that has a code equal to "appends", the corresponding APND Association shall be included.
+If the Provide Document Bundle Message contains a DocumentReference with a relatesTo element, the code shall be translated using the [AssociationType vs RelatesTo ConceptMap](ConceptMap-AssociationType-vs-RelatesTo.html).
 
 The Document Recipient shall map Folder type List Resources in the Bundle Resource to XDS Folders, as specified in [ITI TF-3: Table 4.5.1.1-1](32_fhir_maps.html#folder). The Document Registry may apply further constraints on Folder content and revision, for example removal of entries from Folders is not generally allowed.
 

@@ -3,13 +3,13 @@ Parent:         AuditEvent
 Id:             IHE.MHD.FindDocumentReferences.Audit.Consumer
 Title:          "Audit Event for Find Document References Transaction at Document Consumer"
 Description:    "Defines constraints on the AuditEvent Resource to record when a Find Document References Transaction happens, as recorded by the Document Consumer.
-* Query event
-* shall have the source as itself
-* shall have a document consumer agent
-* shall have a document responder agent
-* may have user, app, organization agent(s)
-* shall have a patient entity
-* shall have a the query parameters
+- Query event
+- shall have the source as itself
+- shall have a document consumer agent
+- shall have a document responder agent
+- may have user, app, organization agent(s)
+- shall have a patient entity
+- shall have a the query parameters
 "
 * modifierExtension 0..0
 * type = DCM#110112 "Query"
@@ -59,13 +59,13 @@ Parent:         AuditEvent
 Id:             IHE.MHD.FindDocumentReferences.Audit.Responder
 Title:          "Audit Event for Find Document References Transaction at Document Responder"
 Description:    "Defines constraints on the AuditEvent Resource to record when a Find Document References Transaction happens, as recorded by the Document Responder.
-* Query event
-* shall have the source as itself
-* shall have a document consumer agent
-* shall have a document responder agent
-* may have user, app, organization agent(s)
-* shall have a patient entity
-* shall have a the query parameters
+- Query event
+- shall have the source as itself
+- shall have a document consumer agent
+- shall have a document responder agent
+- may have user, app, organization agent(s)
+- shall have a patient entity
+- shall have a the query parameters
 "
 * modifierExtension 0..0
 * type = DCM#110112 "Query"

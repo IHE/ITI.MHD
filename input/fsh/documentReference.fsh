@@ -4,11 +4,11 @@ Parent:         DocumentReference
 Id:             IHE.MHD.Minimal.DocumentReference
 Title:          "MHD DocumentReference Minimal"
 Description:    "A profile on the DocumentReference resource for MHD with minimal metadata constraints. 
-* MHD is based on the [IHE Document Sharing](https://profiles.ihe.net/ITI/HIE-Whitepaper/index.html) model, 
-* the [3:4.1 Abstract Metadata Model](https://profiles.ihe.net/ITI/TF/Volume3/ch-4.1.html#4.1), and 
-* the use defined here is FHIR DocumentReference implementation of the 
-* ebRIM implementation at [3:4.2.3.2 Document Entry](https://profiles.ihe.net/ITI/TF/Volume3/ch-4.2.html#4.2.3.2).
-* with use-cases and constraints found in [3:4.3 Additional Document Sharing Requirements](https://profiles.ihe.net/ITI/TF/Volume3/ch-4.3.html#4.3) 
+- MHD is based on the [IHE Document Sharing](https://profiles.ihe.net/ITI/HIE-Whitepaper/index.html) model, 
+- the [3:4.1 Abstract Metadata Model](https://profiles.ihe.net/ITI/TF/Volume3/ch-4.1.html#4.1), and 
+- the use defined here is FHIR DocumentReference implementation of the 
+- ebRIM implementation at [3:4.2.3.2 Document Entry](https://profiles.ihe.net/ITI/TF/Volume3/ch-4.2.html#4.2.3.2).
+- with use-cases and constraints found in [3:4.3 Additional Document Sharing Requirements](https://profiles.ihe.net/ITI/TF/Volume3/ch-4.3.html#4.3) 
 "
 * modifierExtension 0..0
 * masterIdentifier 1..1
@@ -51,11 +51,11 @@ Parent:         IHE.MHD.Minimal.DocumentReference
 Id:             IHE.MHD.UnContained.Comprehensive.DocumentReference
 Title:          "MHD DocumentReference Comprehensive UnContained References Option"
 Description:    "A profile on the DocumentReference resource for MHD with Comprehensive Metadata Option but without a requirement for contained author, authenticator, or sourcePatientInfo. 
-* MHD is based on the [IHE Document Sharing](https://profiles.ihe.net/ITI/HIE-Whitepaper/index.html) model, 
-* the [3:4.1 Abstract Metadata Model](https://profiles.ihe.net/ITI/TF/Volume3/ch-4.1.html#4.1), and 
-* the use defined here is FHIR DocumentReference implementation of the 
-* ebRIM implementation at [3:4.2.3.2 Document Entry](https://profiles.ihe.net/ITI/TF/Volume3/ch-4.2.html#4.2.3.2).
-* with use-cases and constraints found in [3:4.3 Additional Document Sharing Requirements](https://profiles.ihe.net/ITI/TF/Volume3/ch-4.3.html#4.3) 
+- MHD is based on the [IHE Document Sharing](https://profiles.ihe.net/ITI/HIE-Whitepaper/index.html) model, 
+- the [3:4.1 Abstract Metadata Model](https://profiles.ihe.net/ITI/TF/Volume3/ch-4.1.html#4.1), and 
+- the use defined here is FHIR DocumentReference implementation of the 
+- ebRIM implementation at [3:4.2.3.2 Document Entry](https://profiles.ihe.net/ITI/TF/Volume3/ch-4.2.html#4.2.3.2).
+- with use-cases and constraints found in [3:4.3 Additional Document Sharing Requirements](https://profiles.ihe.net/ITI/TF/Volume3/ch-4.3.html#4.3) 
 "
 * type 1..1
 * category 1..1
@@ -76,11 +76,11 @@ Parent:         IHE.MHD.UnContained.Comprehensive.DocumentReference
 Id:             IHE.MHD.Comprehensive.DocumentReference
 Title:          "MHD DocumentReference Comprehensive"
 Description:    "A profile on the DocumentReference resource for MHD Comprehensive Option with Contained (not UnContained), compatible with XDS-on-FHIR and XCA use.
-* MHD is based on the [IHE Document Sharing](https://profiles.ihe.net/ITI/HIE-Whitepaper/index.html) model, 
-* the [3:4.1 Abstract Metadata Model](https://profiles.ihe.net/ITI/TF/Volume3/ch-4.1.html#4.1), and 
-* the use defined here is FHIR DocumentReference implementation of the 
-* ebRIM implementation at [3:4.2.3.2 Document Entry](https://profiles.ihe.net/ITI/TF/Volume3/ch-4.2.html#4.2.3.2).
-* with use-cases and constraints found in [3:4.3 Additional Document Sharing Requirements](https://profiles.ihe.net/ITI/TF/Volume3/ch-4.3.html#4.3) 
+- MHD is based on the [IHE Document Sharing](https://profiles.ihe.net/ITI/HIE-Whitepaper/index.html) model, 
+- the [3:4.1 Abstract Metadata Model](https://profiles.ihe.net/ITI/TF/Volume3/ch-4.1.html#4.1), and 
+- the use defined here is FHIR DocumentReference implementation of the 
+- ebRIM implementation at [3:4.2.3.2 Document Entry](https://profiles.ihe.net/ITI/TF/Volume3/ch-4.2.html#4.2.3.2).
+- with use-cases and constraints found in [3:4.3 Additional Document Sharing Requirements](https://profiles.ihe.net/ITI/TF/Volume3/ch-4.3.html#4.3) 
 "
 * author ^type.aggregation = #contained
 * authenticator ^type.aggregation = #contained
@@ -124,3 +124,42 @@ Title: "XDS and MHD Mapping"
 * relatesTo -> "DocumentEntry Associations"
 * relatesTo.code -> "DocumentEntry Associations.type"
 * relatesTo.target -> "DocumentEntry Associations.reference"
+
+Instance:   AssociationType-vs-RelatesTo
+InstanceOf: ConceptMap
+Title:      "AssociationType vs RelatesTo"
+Description: "map between XDS Association Types and MHD FHIR DocumentReference relatesTo code."
+* url = "http://profiles.ihe.net/ITI/MHD/ConceptMap/AssociationType-vs-RelatesTo"
+* name =  "AssociationType vs RelatesTo"
+* status = #active
+* date = 2021-05-15
+* publisher = "IHE"
+* description = "map between XDS Association Types and MHD FHIR DocumentReference relatesTo code.
+
+- Source Code - [XDS Association Types](https://profiles.ihe.net/ITI/TF/Volume3/ch-4.2.html#4.2.2) are indicated as URN, they are here indicated as system and code
+- Destination Code - [DocumentReference relatesTo code](http://hl7.org/fhir/valueset-document-relationship-type.html) are Required codes
+"
+* purpose = "show the mapping between Association Types and relatesTo code"
+* sourceUri = "urn:ihe:iti:2007:AssociationType"
+* targetUri = "http://hl7.org/fhir/document-relationship-type"
+* group.element[+].code = #RPLC
+* group.element[=].target.equivalence = #equal
+* group.element[=].target.code = #replaces
+* group.element[+].code = #XFRM
+* group.element[=].target.equivalence = #equal
+* group.element[=].target.code = #transforms
+* group.element[+].code = #APND
+* group.element[=].target.equivalence = #equal
+* group.element[=].target.code = #appends
+* group.element[+].code = #XFRM_RPLC
+* group.element[=].target.equivalence = #narrower
+* group.element[=].target.code = #replaces
+* group.element[=].target.comment = "An XDS Transform Replacement is both a document that replaces and transforms. The mapping here indicates Replace as that is the most specific change."
+* group.element[+].code = #signs
+* group.element[=].target.equivalence = #equal
+* group.element[=].target.code = #signs
+* group.element[+].code = #IsSnapshotOf
+* group.element[=].target.equivalence = #inexact
+* group.element[=].target.code = #transforms
+* group.element[=].target.comment = "An XDS IsSnapshotOf is a new instance of what is defined in the parent DocumentEntry (DocumentReference), thus it is a transform in a manner, but is not exactly a transform of the parent document."
+
