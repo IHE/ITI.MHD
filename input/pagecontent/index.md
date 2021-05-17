@@ -64,6 +64,3 @@ You can also download:
 * the example resources in [json](examples.json.zip), [xml](examples.xml.zip) or [ttl](examples.ttl.zip) format.
 
 The source code for this Implementation Guide can be found on IHE GitHub [https://github.com/IHE/ITI.MHD](https://github.com/IHE/ITI.MHD).
-
-
-**[Next](1331_actors_and_transactions.html)**

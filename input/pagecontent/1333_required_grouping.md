@@ -11,6 +11,3 @@ An actor from this profile (Column 1) must implement all the required transactio
 | Document Consumer  | -                  | None                                     | -              |
 | Document Responder | XDS on FHIR Option | XDS.b / Document Consumer                | [Section 33.2.2](1332_actor_options.html#13322-xds-on-fhir-option) |
 {: .grid}
-
-
-**[Previous](1332_actor_options.html) /   [Next](1334_overview.html)**

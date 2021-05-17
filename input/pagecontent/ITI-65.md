@@ -202,8 +202,3 @@ The Document Source when grouped with ATNA Secure Node or Secure Application act
 ##### 2:3.65.5.1.2 Document Recipient Audit 
 
 The Document Recipient when grouped with ATNA Secure Node or Secure Application actor shall be able to record a [Provide Audit Bundle Recipient Audit Event Log](StructureDefinition-IHE.MHD.ProvideBundle.Audit.Recipient.html). [Audit Example for a Provide Bundle Transaction from recipient perspective](AuditEvent-ex-auditProvideBundle-recipient.html). 
-
-
-
-**[Previous](1336_cross_grouping.html) / [Next](ITI-66.html)**
-

@@ -91,7 +91,3 @@ The MHD Profile defines a set of transactions against FHIR Resources. These are 
 {: .grid}
 
 Note: Items are marked *Not Specified* because the MHD Profile is focused on core Document Sharing (XDS, XDR, etc.) capability and is not trying to address the larger use-case of metadata update.
-
-
-**[Previous](1333_required_grouping.html)   /   [Next](1335_security_considerations.html)**
-

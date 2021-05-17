@@ -31,7 +31,3 @@ The Retrieve Information for Display (RID) Profile includes a similar set of tra
 ![Figure: MHD Actors grouped with RID](Figure33.6.3-1.png)
 
 **Figure 1:33.6.3-1: MHD Actors grouped with RID**
-
-
-**[Previous](1335_security_considerations.html) /  [Next](ITI-65.html)**
-

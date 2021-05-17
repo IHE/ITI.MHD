@@ -84,6 +84,3 @@ The [UnContained Reference Option](#13323-uncontained-reference-option) recogniz
 The actors that support the [UnContained Reference Option](#13323-uncontained-reference-option) shall be able to create and consume full URL values in the DocumentReference.author, the DocumentReference.authenticator, the DocumentReference.context.sourcePatientInfo, and the DocumentManifest.author. This requirement encourages the persisting of the information at the time the document is published. 
 
 The [UnContained Reference Option](#13323-uncontained-reference-option) is not compatible with the [XDS on FHIR Option](#13322-xds-on-fhir-option). A system may be able to support both options, but only one will be able to be used at a given deployment.
-
-
-**[Previous](1331_actors_and_transactions.html) /   [Next](1333_required_grouping.html)**

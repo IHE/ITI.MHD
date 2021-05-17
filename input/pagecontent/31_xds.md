@@ -19,5 +19,3 @@
 {: .grid}
 
 ...
-
-**[Previous](ITI-68.html) /   [Next](32_fhir_maps.html)**

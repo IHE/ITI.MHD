@@ -80,6 +80,3 @@ Please review the open issues and provide your response to the questions and sta
 * MHD_035: FHIR does not provide an ad-hoc metadata extension mechanism like custom slots in XDS. 
 
 </div>
-
-**[Previous](testplan.html) /   [Next](index.html)**
-

@@ -214,7 +214,3 @@ For more details see the detailed [ITI-67 transaction description](ITI-67.html)
 This transaction is used to get documents.
 
 For more details see the detailed [ITI-68 transaction description](ITI-68.html)
-
-
-**[Previous](index.html) /   [Next](1332_actor_options.html)**
-

@@ -12,17 +12,21 @@ The overall scope of MHD testing is affected by the infrastructure that MHD is c
 MHD does not mandate of the functionality to be provided by the data communicated via MHD transations. How MHD actors use the data communicated via these transaction is out-of-scope for MHD testing, but may apply to other related Implementation Guides or IHE Profiles.
 
 ## High-level Test Scope
+
 ### ITI-65 Provide Document Bundle
+
 * Document Source publishes document and folder combinations
   * Note that the Document Content is not material to these tests. It could be a simple text file, CDA, FHIR-Document, PNG image, DICOM KOS, or anything that has a mime type
 * Document Recipient receives and responds as appropriate 
   * Document Recipient may have policy against some content types.
 
 ### ITI-66 Find Document Lists, ITI-67 Find Document References, ITI-68 Retrieve Document
+
 * Document Consumer requests query for List (Submission Set & Folder), query for DocumentReference, and retrieve document
 * Document Responder responds to query and retrieve as appropriate
 
 ### Options
+
 * "Comprehensive Metadata" for the Document Source & Document Recipient
 * "XDS on FHIR" for the Document Recipient and Document Responder (i.e. XDS backend for server actors)
 * "Uncontained Reference" for all MHD actors
@@ -34,6 +38,7 @@ Unit testing this context entails testing a SUT with a simulator or validator to
 ### Available tools for MHD unit testing
 
 #### FHIR Toolkit (aka "Asbestos") - Simulator and Validator
+
 * Provider: NIST (US National Institute of Standards and Technology)
 * FHIR Toolkit online: https://tools.iheusa.org:9743/home
 * Tool distribution: https://github.com/usnistgov/asbestos/releases/
@@ -46,6 +51,7 @@ Unit testing this context entails testing a SUT with a simulator or validator to
 * Other notes:  
 
 #### Gazelle External Validation Service (aka "EVS Client") - Validator
+
 * Provider:  INRIA (Rennes, France), KEREVAL (https://www.kereval.com/), and Mallinckrodt Institute of Radiology (Saint Louis, USA) 
 * Tool location: https://gazelle.ihe.net/EVSClient/home.seam
 * Documentation: https://gazelle.ihe.net/content/evsfhirvalidation
@@ -59,6 +65,7 @@ Integration Testing in this context is where two SUT of paired actors test again
 The tests listed below are defined in Gazelle Master Model (https://gazelle.ihe.net/GMM) and are performed by systems testing MHD at IHE Connectathons.
 
 ### Document Source --> Document Recipient Interoperability Tests
+
 * MHD_Create_ITI-65
 * MHD_Create_with_List
 * MHD_Submit_XDSonFHIR
@@ -67,10 +74,7 @@ The tests listed below are defined in Gazelle Master Model (https://gazelle.ihe.
 * MHD_XDSonFHIR_Transform
 
 ### Document Consumer --> Document Responder Interoperability Tests
+
 * MHD_Search_ITI-66
 * MHD_SearchRead_ITI-67_ITI-68
 * MHD_QryRetr_XDSonFHIR
-
-
-**[Previous](32_fhir_maps.html) / [Next](a_issues.html)**
-
