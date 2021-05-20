@@ -215,6 +215,9 @@ IHE IT Infrastructure Technical Framework Supplement Mobile access to Health Doc
 			<code value="autoload-resources" />
 			<value value="true" />
 		</parameter>
-
+    <parameter>
+        <code value="shownav"/>
+        <value value="true"/>
+    </parameter>
 </definition>
 </ImplementationGuide>

@@ -106,7 +106,8 @@ For example given:
 * Patient id is `9876`
 * looking for a SubmissionSet
 * status of current
-* with clinical code from loinc of 1234-5
+* with clinical code from loinc of `1234-5`
+* examples do not include all http headers such as the security headers						   
 
 ###### 2:3.66.4.1.2.3.1 Example GET
 ```

@@ -115,7 +115,8 @@ For example given:
 * FHIR server root is `http://test.fhir.org/R4/fhir`
 * Patient id is `9876`
 * status of current
-* with clinical code from loinc of 1234-5
+* with clinical code from loinc of `1234-5`
+* examples do not include all http headers such as the security headers
 
 ###### 2:3.67.4.1.2.3.1 Example GET
 ```
@@ -129,8 +130,10 @@ POST test.fhir.net/R4/fhir/DocumentReference/_search?patient=9876&status=current
 
 ###### 2:3.67.4.1.2.3.3 Example POST body
 ```
-POST test.fhir.net/R4/fhir/DocumentReference/_search
+POST test.fhir.net/R4/fhir/DocumentReference/_search	  
+Host test.fhir.net
 Content-Type: application/x-www-form-urlencoded
+Accept: application/fhir+json; fhirVersion=4.0										  
 
 patient=9876&status=current&type=http://loinc.org|1234-5
 ```

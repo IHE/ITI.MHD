@@ -29,7 +29,7 @@ Usage: #example
 * entity[patient].what = Reference(Patient/ex-patient)
 * entity[queryParameters].type = http://terminology.hl7.org/CodeSystem/audit-entity-type#2 "System Object"
 * entity[queryParameters].role = http://terminology.hl7.org/CodeSystem/object-role#24 "Query"
-* entity[queryParameters].query = "aW1hZ2luZSBzb21lIHF1ZXJ5IGhlcmU="
+* entity[queryParameters].query = "R0VUIHRlc3QuZmhpci5uZXQvUjQvZmhpci9MaXN0P3BhdGllbnQ9OTg3NiZjb2RlPXN1Ym1pc3Npb25zZXQmc3RhdHVzPWN1cnJlbnQmZGVzaWduYXRpb25UeXBlPWh0dHA6Ly9sb2luYy5vcmd8MTIzNC01Cg=="
 
 
 Instance: ex-auditFindDocumentLists-responder
@@ -63,5 +63,5 @@ Usage: #example
 * entity[patient].what = Reference(Patient/ex-patient)
 * entity[queryParameters].type = http://terminology.hl7.org/CodeSystem/audit-entity-type#2 "System Object"
 * entity[queryParameters].role = http://terminology.hl7.org/CodeSystem/object-role#24 "Query"
-* entity[queryParameters].query = "aW1hZ2luZSBzb21lIHF1ZXJ5IGhlcmU="
+* entity[queryParameters].query = "R0VUIHRlc3QuZmhpci5uZXQvUjQvZmhpci9MaXN0P3BhdGllbnQ9OTg3NiZjb2RlPXN1Ym1pc3Npb25zZXQmc3RhdHVzPWN1cnJlbnQmZGVzaWduYXRpb25UeXBlPWh0dHA6Ly9sb2luYy5vcmd8MTIzNC01Cg=="
 
