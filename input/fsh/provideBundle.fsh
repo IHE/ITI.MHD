@@ -7,7 +7,7 @@ Description:    "A profile on the Bundle transaction for ITI-65 Provide Document
 
 - [Minimal Metadata](StructureDefinition-IHE.MHD.Minimal.ProvideBundle.html): `http://profiles.ihe.net/ITI/MHD/StructureDefinition/IHE.MHD.Minimal.ProvideBundle`
   - shall be a Transaction Bundle
-  - all resources shall be compliant with minimal constaints, they may be marked minimal, comprehensive, or unContained
+  - all resources shall be compliant with minimal constraints, they may be marked minimal, comprehensive, or unContained
   - shall create a [SubmissionSet type List](StructureDefinition-IHE.MHD.Minimal.SubmissionSet.html) that is either minimal, comprehensive, or unContained
   - may create one or more [DocumentReference](StructureDefinition-IHE.MHD.Minimal.DocumentReference.html) that is either minimal, comprehensive, or unContained
   - may create one or more [Binary](http://hl7.org/fhir/R4/binary.html)

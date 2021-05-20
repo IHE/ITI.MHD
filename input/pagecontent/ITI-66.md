@@ -59,32 +59,32 @@ The Document Consumer may supply, and the Document Responder shall be capable of
 
 The Document Consumer shall include search parameter `patient` or `patient.identifier`, `code`, and `status`. The other parameters described below are optional. The Document Responder shall implement the parameters described below. The Document Responder may choose to support additional query parameters beyond the subset listed below. Any additional query parameters supported shall be supported according to the core FHIR specification. Such additional parameters are considered out of scope for this transaction. Any additional parameters not supported should be ignored. See [http://hl7.org/fhir/R4/search.html#errors](http://hl7.org/fhir/R4/search.html#errors).
 
-**code** 
-:This parameter, of type token, specifies the code.coding value supplied in the List Resource. The value of the code element indicates the List of type SubmissionSet or Folder as indicated
+**code**: 
+This parameter, of type token, specifies the code.coding value supplied in the List Resource. The value of the code element indicates the List of type SubmissionSet or Folder as indicated
 
-**date** 
-:This parameter, of type date, specifies the time when the List was created. See FHIR [http://hl7.org/fhir/R4/search.html#date](http://hl7.org/fhir/R4/search.html#date) for use of the date search type.
+**date**:
+This parameter, of type date, specifies the time when the List was created. See FHIR [http://hl7.org/fhir/R4/search.html#date](http://hl7.org/fhir/R4/search.html#date) for use of the date search type.
 
-**designationType** 
-:This IHE extension on parameters defined as [SearchParameter/List-DesignationType](SearchParameter-List-DesignationType.html), of type token, specifies the designation type of the List. The value of the designation type element expresses contentType of submissionSet or the codeList of a Folder. Usually expressed in LOINC or SNOMED. Note that servers that do not support this extended search parameter will ignore it, and thus return more results than expected.
+**designationType**:
+This IHE extension on parameters defined as [SearchParameter/List-DesignationType](SearchParameter-List-DesignationType.html), of type token, specifies the designation type of the List. The value of the designation type element expresses contentType of submissionSet or the codeList of a Folder. Usually expressed in LOINC or SNOMED. Note that servers that do not support this extended search parameter will ignore it, and thus return more results than expected.
 
-**identifier** 
-:This parameter, of type token, specifies an identifier for this List. The search results represent the results of a search on List.masterIdentifier and List.identifier. See [ITI TF-2x: Appendix Z.2](https://profiles.ihe.net/ITI/TF/Volume2/ch-Z.html#query-parameters) for additional constraints on the use of the token search parameter type. 
+**identifier**:
+This parameter, of type token, specifies an identifier for this List. The search results represent the results of a search on List.masterIdentifier and List.identifier. See [ITI TF-2x: Appendix Z.2](https://profiles.ihe.net/ITI/TF/Volume2/ch-Z.html#query-parameters) for additional constraints on the use of the token search parameter type. 
 
-**patient** 
-:This parameter is of type Reference(Patient). The Document Consumer may get this reference through the use of the [PDQm](https://profiles.ihe.net/ITI/TF/Volume1/ch-38.html) or [PIXm](https://profiles.ihe.net/ITI/TF/Volume1/ch-41.html) Profiles, or by some other method. When the patient parameter is used, the Patient reference would need to be accessible to both the Document Consumer and the Document Responder.
+**patient**:
+This parameter is of type Reference(Patient). The Document Consumer may get this reference through the use of the [PDQm](https://profiles.ihe.net/ITI/TF/Volume1/ch-38.html) or [PIXm](https://profiles.ihe.net/ITI/TF/Volume1/ch-41.html) Profiles, or by some other method. When the patient parameter is used, the Patient reference would need to be accessible to both the Document Consumer and the Document Responder.
 
-**patient.identifier** 
-:This parameter, of type token, specifies an identifier associated with the patient to which the List Resource is assigned. See [ITI TF-2x: Appendix Z.2](https://profiles.ihe.net/ITI/TF/Volume2/ch-Z.html#query-parameters) for use of the token data type for identifiers. This use of **patient.identifier** follows the [FHIR Chaining Parameters](http://hl7.org/fhir/search.html#chaining) search methodology.
+**patient.identifier**:
+This parameter, of type token, specifies an identifier associated with the patient to which the List Resource is assigned. See [ITI TF-2x: Appendix Z.2](https://profiles.ihe.net/ITI/TF/Volume2/ch-Z.html#query-parameters) for use of the token data type for identifiers. This use of **patient.identifier** follows the [FHIR Chaining Parameters](http://hl7.org/fhir/search.html#chaining) search methodology.
 
-**source.given and source.family** 
-:These parameters, of type string, specify the name parts of the author person which is associated with the List. See [ITI TF-2x: Appendix Z.2](https://profiles.ihe.net/ITI/TF/Volume2/ch-Z.html#query-parameters) for use of the string data type. This use of **source.given** and **source.family** follows the [FHIR Chaining Parameters](http://hl7.org/fhir/search.html#chaining) search methodology.
+**source.given and source.family**:
+These parameters, of type string, specify the name parts of the author person which is associated with the List. See [ITI TF-2x: Appendix Z.2](https://profiles.ihe.net/ITI/TF/Volume2/ch-Z.html#query-parameters) for use of the string data type. This use of **source.given** and **source.family** follows the [FHIR Chaining Parameters](http://hl7.org/fhir/search.html#chaining) search methodology.
 
-**sourceId** 
-:This IHE extension on parameters defined as [SearchParameter/List-SourceId](SearchParameter-List-SourceId.html), of type reference, specifies the source (author) value supplied in the List Resource. 
+**sourceId**:
+This IHE extension on parameters defined as [SearchParameter/List-SourceId](SearchParameter-List-SourceId.html), of type reference, specifies the source (author) value supplied in the List Resource. 
 
-**status** 
-:This parameter, of type token, specifies the status of the List. If included in the query, the Document Consumer shall populate the code portion of the token with one of the codes in the following *Table 3.66.4.1.2.1-1: Values for code for status of List*. The system portion of the token shall not be populated.
+**status**:
+This parameter, of type token, specifies the status of the List. If included in the query, the Document Consumer shall populate the code portion of the token with one of the codes in the following *Table 3.66.4.1.2.1-1: Values for code for status of List*. The system portion of the token shall not be populated.
 
 **Table 2:3.66.4.1.2.1-1: Values for code for status of List**
 
@@ -139,8 +139,8 @@ The Document Responder is grouped with an XDS Document Consumer when it supports
 |ITI-66 Parameter Name	| ITI-18 Parameter Name |
 |code | "submissionset" |
 |patient or patient.identifier	| $XDSSubmissionSetPatientId |
-|date Note 1	| $XDSSubmissionSetSubmissionTimeFrom |
-|date Note 2	| $XDSSubmissionSetSubmissionTimeTo |
+|date (Note 1)	| $XDSSubmissionSetSubmissionTimeFrom |
+|date (Note 2)	| $XDSSubmissionSetSubmissionTimeTo |
 |source.given / source.family	| $XDSSubmissionSetAuthorPerson |
 |designationType | $XDSSubmissionSetContentType |
 |sourceId	| $XDSSubmissionSetSourceId |
@@ -156,8 +156,8 @@ Note 2: This FindSubmissionSets parameter is used when the less than parameter m
 |ITI-66 Parameter Name	| ITI-18 Parameter Name |
 |code | "folder" |
 |patient or patient.identifier	| $XDSFolderPatientId |
-|date Note 1	| $XDSFolderLastUpdateTimeFrom |
-|date Note 2	| $XDSFolderLastUpdateTimeTo |
+|date (Note 1)	| $XDSFolderLastUpdateTimeFrom |
+|date (Note 2)	| $XDSFolderLastUpdateTimeTo |
 |designationType | $XDSFolderCodeList |
 |status	| $XDSFolderStatus |
 {: .grid}
