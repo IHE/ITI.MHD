@@ -124,12 +124,13 @@ GET test.fhir.net/R4/fhir/DocumentReference?patient=9876&status=current&type=htt
 
 ###### 2:3.67.4.1.2.3.2 Example POST
 ```
-POST test.fhir.net/R4/fhir/DocumentReference?patient=9876&status=current&type=http://loinc.org|1234-5
+POST test.fhir.net/R4/fhir/DocumentReference/_search?patient=9876&status=current&type=http://loinc.org|1234-5
 ```
 
 ###### 2:3.67.4.1.2.3.3 Example POST body
 ```
-POST test.fhir.net/R4/fhir/DocumentReference
+POST test.fhir.net/R4/fhir/DocumentReference/_search
+Content-Type: application/x-www-form-urlencoded
 
 patient=9876&status=current&type=http://loinc.org|1234-5
 ```
