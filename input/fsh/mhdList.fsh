@@ -3,8 +3,7 @@ Parent:         List
 Id:             IHE.MHD.List
 Title:          "MHD common List with designationType"
 Description:    "A profile on the List resource for MHD. Used with both Folder and SubmissionSet.
-- MHD adds a codeable Concept to List for use with Folder and SubmissionSet
-"
+- MHD adds a codeable Concept to List for use with Folder and SubmissionSet"
 * extension contains DesignationType named designationType 0..*
 * modifierExtension 0..0
 // code is used ONLY to switch between folder and submissionSet

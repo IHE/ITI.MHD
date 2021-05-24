@@ -1,7 +1,46 @@
 id: ihe.mhd.fhir
 canonical: http://profiles.ihe.net/ITI/MHD
-name: ihe.mhd.fhir
+name: IHE_MHD
 version: 4.0.0
 fhirVersion: 4.0.1
 status: active
-FSHOnly: true
+title: "HL7 FHIR Implementation Guide: Example IG Release 1 - US Realm | STU1"
+description: ImplementationGuide for IHE IT Infrastructure Technical Framework Supplement Mobile access to Health Documents (MHD) Rev. 4.0.0 Public-Comment-Resolving
+copyright: IHE http://www.ihe.net/Governance/#Intellectual_Property
+copyrightYear: 2020+
+releaseLabel: ci-build
+publisher:
+  name: Integrating the Healthcare Enterprise (IHE)
+  url: http://ihe.net
+  email: secretary@ihe.net
+contact:
+  - name: John Moehrke
+    telecom:
+      - system: email
+        value: JohnMoehrke@gmail.copm
+        use: work
+license: CC-BY-SA-4.0
+jurisdiction: 'http://unstats.un.org/unsd/methods/m49/m49.htm#001'
+#dependencies:
+#  https://profiles.ihe.net/fhir/ihe.formatcode.fhir: 0.2.4
+  
+  
+# extension url="http://hl7.org/fhir/StructureDefinition/resource-approvalDate", valueDate value="2021-05-16"
+ 
+parameters:  # see https://confluence.hl7.org/display/FHIR/Implementation+Guide+Parameters
+  path-resource:
+    - input/resources
+    - fsh-generated/resources
+    - input/examples
+  path-pages:
+    - input/pagecontent
+#    - fsh-generated/includes
+  active-tables: 'false'
+  apply-contact: 'true'
+  apply-jurisdiction: 'true'
+  apply-publisher: 'true'
+  apply-version: 'true'
+  show-inherited-invariants: 'false'
+  usage-stats-opt-out: 'true'
+  autoload-resources: 'true'
+  shownav: 'true'

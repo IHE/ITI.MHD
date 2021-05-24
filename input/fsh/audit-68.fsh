@@ -9,8 +9,7 @@ Description:    "Defines constraints on the Document Consumer AuditEvent Resourc
 - shall have a document responder agent
 - may have user, app, organization agent(s)
 - shall have a patient entity
-- shall have a document uniqueId (usually a Binary)
-"
+- shall have a document uniqueId (usually a Binary)"
 * modifierExtension 0..0
 * type = DCM#110107 "Import"
 * action = #C
@@ -67,8 +66,7 @@ Description:    "Defines constraints on the Document Responder AuditEvent Resour
 - shall have a document responder agent
 - may have user, app, organization agent(s)
 - shall have a patient entity
-- shall have a document uniqueId (usually a Binary)
-"
+- shall have a document uniqueId (usually a Binary)"
 * modifierExtension 0..0
 * type = http://dicom.nema.org/resources/ontology/DCM#110106 "Export"
 * action = #R

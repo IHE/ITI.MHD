@@ -63,6 +63,7 @@ Usage: #example
 * meta.security = http://terminology.hl7.org/CodeSystem/v3-ActReason#HTEST
 * status = #current
 // TODO: figure out how to get Binary attachments in sushi
+// Note that IG builder has a way to do Binary as a file
 //* content.attachment.url = "Binary/ex-b-binary"
 * content.attachment.title = "Hello World"
 * content.attachment.contentType = #text/plain
@@ -70,6 +71,7 @@ Usage: #example
 Instance: ex-b-binary
 InstanceOf: Binary
 Title: "Example document that says: Hello World"
+Description: "Example binary that holds just Hello World"
 Usage: #example
 * meta.security = http://terminology.hl7.org/CodeSystem/v3-ActReason#HTEST
 * contentType = #text/plain
@@ -102,8 +104,7 @@ Instance:   ex-dummyProvideDocumentBundle
 InstanceOf: Bundle
 Title:      "Dummy Provide Document Bundle"
 Description: "Example of a Provide Document Bundle transaction made up of the right FHIR resources, but these FHIR resources are not compliant with the MHD constraints. 
-- A robust Document Recipient is allowed to consume this if it has business rules that allow it.
-"
+- A robust Document Recipient is allowed to consume this if it has business rules that allow it."
 Usage: #example
 * meta.security = http://terminology.hl7.org/CodeSystem/v3-ActReason#HTEST
 * type = #transaction

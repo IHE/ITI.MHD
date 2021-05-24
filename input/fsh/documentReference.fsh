@@ -8,8 +8,7 @@ Description:    "A profile on the DocumentReference resource for MHD with minima
 - the [3:4.1 Abstract Metadata Model](https://profiles.ihe.net/ITI/TF/Volume3/ch-4.1.html#4.1), and 
 - the use defined here is FHIR DocumentReference implementation of the 
 - ebRIM implementation at [3:4.2.3.2 Document Entry](https://profiles.ihe.net/ITI/TF/Volume3/ch-4.2.html#4.2.3.2).
-- with use-cases and constraints found in [3:4.3 Additional Document Sharing Requirements](https://profiles.ihe.net/ITI/TF/Volume3/ch-4.3.html#4.3) 
-"
+- with use-cases and constraints found in [3:4.3 Additional Document Sharing Requirements](https://profiles.ihe.net/ITI/TF/Volume3/ch-4.3.html#4.3)"
 * modifierExtension 0..0
 * masterIdentifier 1..1
 * identifier 1..*
@@ -36,7 +35,7 @@ Description:    "A profile on the DocumentReference resource for MHD with minima
 * content.attachment.title 0..1
 * content.attachment.creation 0..1 MS
 * content.format 0..1 MS
-* content.format from http://ihe.net/fhir/ihe.formatcode.fhir/ValueSet/formatcode (preferred)
+//* content.format from http://ihe.net/fhir/ihe.formatcode.fhir/ValueSet/formatcode (preferred)
 * context.encounter 0..0
 * context.event 0..*
 * context.period 0..1 MS
@@ -55,8 +54,7 @@ Description:    "A profile on the DocumentReference resource for MHD with Compre
 - the [3:4.1 Abstract Metadata Model](https://profiles.ihe.net/ITI/TF/Volume3/ch-4.1.html#4.1), and 
 - the use defined here is FHIR DocumentReference implementation of the 
 - ebRIM implementation at [3:4.2.3.2 Document Entry](https://profiles.ihe.net/ITI/TF/Volume3/ch-4.2.html#4.2.3.2).
-- with use-cases and constraints found in [3:4.3 Additional Document Sharing Requirements](https://profiles.ihe.net/ITI/TF/Volume3/ch-4.3.html#4.3) 
-"
+- with use-cases and constraints found in [3:4.3 Additional Document Sharing Requirements](https://profiles.ihe.net/ITI/TF/Volume3/ch-4.3.html#4.3)"
 * type 1..1
 * category 1..1
 * subject 1..1
@@ -80,8 +78,7 @@ Description:    "A profile on the DocumentReference resource for MHD Comprehensi
 - the [3:4.1 Abstract Metadata Model](https://profiles.ihe.net/ITI/TF/Volume3/ch-4.1.html#4.1), and 
 - the use defined here is FHIR DocumentReference implementation of the 
 - ebRIM implementation at [3:4.2.3.2 Document Entry](https://profiles.ihe.net/ITI/TF/Volume3/ch-4.2.html#4.2.3.2).
-- with use-cases and constraints found in [3:4.3 Additional Document Sharing Requirements](https://profiles.ihe.net/ITI/TF/Volume3/ch-4.3.html#4.3) 
-"
+- with use-cases and constraints found in [3:4.3 Additional Document Sharing Requirements](https://profiles.ihe.net/ITI/TF/Volume3/ch-4.3.html#4.3)"
 * author ^type.aggregation = #contained
 * authenticator ^type.aggregation = #contained
 * context.sourcePatientInfo ^type.aggregation = #contained
@@ -139,8 +136,7 @@ Usage: #definition
 * description = "map between XDS Association Types and MHD FHIR DocumentReference relatesTo code.
 
 - Source Code - [XDS Association Types](https://profiles.ihe.net/ITI/TF/Volume3/ch-4.2.html#4.2.2) are indicated as URN, they are here indicated as system and code
-- Destination Code - [DocumentReference relatesTo code](http://hl7.org/fhir/valueset-document-relationship-type.html) are Required codes
-"
+- Destination Code - [DocumentReference relatesTo code](http://hl7.org/fhir/valueset-document-relationship-type.html) are Required codes"
 * purpose = "show the mapping between Association Types and relatesTo code"
 * sourceUri = "urn:ihe:iti:2007:AssociationType"
 * targetUri = "http://hl7.org/fhir/document-relationship-type"

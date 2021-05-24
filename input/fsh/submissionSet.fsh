@@ -12,8 +12,7 @@ Description:    "A profile on the List resource for MHD SubmissionSet.
   - Document Source implementing not implementing Comprehensive Metadata Option
   - Document Source implementing UnContained Option but not Comprehensive Option
   - equivalent to XDR Document Source implementing Metadata-Limited Option requirements
-  - aka the default MHD Document Source
-"
+  - aka the default MHD Document Source"
 * extension[designationType] 0..1 MS
 * extension contains SourceId named sourceId 1..1
 * extension contains IntendedRecipient named intendedRecipient 0..*
@@ -84,8 +83,7 @@ Description:    "A profile on the List resource for MHD UnContained Comprehensiv
 - the use defined here is FHIR List for use as a SubmissionSet implementation of the 
 - ebRIM implementation at [3:4.2.3.3 SubmissionSet Attributes](https://profiles.ihe.net/ITI/TF/Volume3/ch-4.2.html#4.2.3.3).
 - with use-cases and constraints found in [3:4.3.1 Submission Metadata Attribute Optionality](https://profiles.ihe.net/ITI/TF/Volume3/ch-4.3.html#4.3.1) for 
-  - MHD Document Source that has implemented both Comprehensive Metadata Option and UnContained References Option 
-"
+  - MHD Document Source that has implemented both Comprehensive Metadata Option and UnContained References Option"
 * subject 1..1
 * extension[designationType] 1..1
 
@@ -103,8 +101,7 @@ Description:    "A profile on the List resource for MHD Comprehensive Submission
 - with use-cases and constraints found in [3:4.3.1 Submission Metadata Attribute Optionality](https://profiles.ihe.net/ITI/TF/Volume3/ch-4.3.html#4.3.1) for 
   - MHD Comprehensive Option Document Source
   - aka the XDS Document Source requirements
-  - aka the XDR Document Source requirements
-"
+  - aka the XDR Document Source requirements"
 * source ^type.aggregation = #contained
 
 // mappings to XDS 

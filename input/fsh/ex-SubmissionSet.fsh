@@ -1,7 +1,7 @@
 Instance:   ex-minimalSubmissionSet
 InstanceOf: IHE.MHD.Minimal.SubmissionSet
 Title:      "SubmissionSet for Minimal metadata"
-Description: "Example of a minimal submissionSet in List resource. "
+Description: "Example of a minimal submissionSet in List resource."
 Usage: #example
 * meta.security = http://terminology.hl7.org/CodeSystem/v3-ActReason#HTEST
 * identifier[0].system = "urn:ietf:rfc:3986"

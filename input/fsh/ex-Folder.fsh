@@ -47,6 +47,7 @@ Usage: #example
 Instance:   ex-findDocumentListsResponse
 InstanceOf: IHE.MHD.FindDocumentListsResponseMessage
 Title:      "Example of a Find Document Lists Response Message with a folder"
+Description: "Example of a Find Documents List Response Bundle witha folder"
 Usage: #example
 * meta.security = http://terminology.hl7.org/CodeSystem/v3-ActReason#HTEST
 * type = #searchset

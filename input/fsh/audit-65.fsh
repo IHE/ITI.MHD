@@ -9,8 +9,7 @@ Description:    "Defines constraints on the AuditEvent Resource to record when a
 - shall have a document recipient agent
 - may have user, app, organization agent(s)
 - shall have a patient entity
-- shall have a submission set identity entity
-"
+- shall have a submission set identity entity"
 * modifierExtension 0..0
 * type = DCM#110107 "Import"
 * action = #C
@@ -69,8 +68,7 @@ Description:    "Defines constraints on the AuditEvent Resource to record when a
 - shall have a document recipient agent
 - may have user, app, organization agent(s)
 - shall have a patient entity
-- shall have a submission set identity entity
-"
+- shall have a submission set identity entity"
 * modifierExtension 0..0
 * type = DCM#110106 "Export"
 * action = #R

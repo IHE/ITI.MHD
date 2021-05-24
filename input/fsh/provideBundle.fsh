@@ -12,8 +12,7 @@ Description:    "A profile on the Bundle transaction for ITI-65 Provide Document
   - may create one or more [DocumentReference](StructureDefinition-IHE.MHD.Minimal.DocumentReference.html) that is either minimal, comprehensive, or unContained
   - may create one or more [Binary](http://hl7.org/fhir/R4/binary.html)
   - may create/update one or more [Folder type List](StructureDefinition-IHE.MHD.Minimal.Folder.html) that is either minimal, comprehensive, or unContained
-  - may create/update/read one [Patient](http://hl7.org/fhir/R4/patient.html)
-"
+  - may create/update/read one [Patient](http://hl7.org/fhir/R4/patient.html)"
 * meta.profile 1..*
 * type = #transaction
 * entry ^slicing.discriminator.type = #profile
@@ -92,9 +91,7 @@ Description:    "A profile on the Bundle transaction for ITI-65 Provide Document
   - may create one or more [DocumentReference](StructureDefinition-IHE.MHD.Minimal.DocumentReference.html) that is either minimal, comprehensive, or unContained
   - may create one or more [Binary](http://hl7.org/fhir/R4/binary.html)
   - may create/update one or more [Folder type List](StructureDefinition-IHE.MHD.Minimal.Folder.html) that is either minimal, comprehensive, or unContained
-  - may create/update/read one [Patient](http://hl7.org/fhir/R4/patient.html)
-
-"
+  - may create/update/read one [Patient](http://hl7.org/fhir/R4/patient.html)"
 * entry[SubmissionSet].resource only
     IHE.MHD.UnContained.Comprehensive.SubmissionSet
 * entry[DocumentRefs].resource only 
@@ -117,8 +114,7 @@ Description:    "A profile on the Bundle transaction for ITI-65 Provide Document
   - may create one or more [DocumentReference](StructureDefinition-IHE.MHD.Minimal.DocumentReference.html) that is either minimal, comprehensive, or unContained
   - may create one or more [Binary](http://hl7.org/fhir/R4/binary.html)
   - may create/update one or more [Folder type List](StructureDefinition-IHE.MHD.Minimal.Folder.html) that is either minimal, comprehensive, or unContained
-  - may create/update/read one [Patient](http://hl7.org/fhir/R4/patient.html)
-"
+  - may create/update/read one [Patient](http://hl7.org/fhir/R4/patient.html)"
 * entry[SubmissionSet].resource only
     IHE.MHD.Comprehensive.SubmissionSet
 * entry[DocumentRefs].resource only 
@@ -133,9 +129,7 @@ Description:    "A profile on the Bundle transaction-response for ITI-65 Provide
 
 - shall be a transaction response
 - shall have at least 1 entry for each entry in the request, in the same order as received in the request
-  - entry response location must be indicated
- 
-"
+  - entry response location must be indicated"
 * type = #transaction-response
 * entry 1..* 
 * entry ^short = "One entry for each entry in the request, in the same order as received"

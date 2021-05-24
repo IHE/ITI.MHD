@@ -2,7 +2,7 @@
 Instance:   ex-minimalProvideDocumentBundle
 InstanceOf: IHE.MHD.Minimal.ProvideBundle
 Title:      "Provide Document Bundle with Minimal metadata"
-Description: "Example of a minimal Provide Document Bundle. "
+Description: "Example of a minimal Provide Document Bundle."
 Usage: #example
 * meta.security = http://terminology.hl7.org/CodeSystem/v3-ActReason#HTEST
 * type = #transaction

@@ -1,21 +1,9 @@
 == Suppressed Messages ==
-# show DICOM system is okay
+# show DICOM system is okay. This may not be what FHIR wants to be the system, but it is what is often done in the IHE and DICOM
 Code System URI 'urn:ihe:event-type-code' is unknown so the code cannot be validated
 
-# resources used for validation
-INFORMATION: AuditEvent/ex-auditProvideBundle-source: AuditEvent: Validate resource against profile http://hl7.org/fhir/StructureDefinition/AuditEvent
-INFORMATION: AuditEvent/ex-auditProvideBundle-source: AuditEvent.subtype[0]: Code System URI 'urn:ihe:event-type-code' is unknown so the code cannot be validated
-INFORMATION: AuditEvent/ex-auditProvideBundle-source: AuditEvent: Validate resource against profile http://profiles.ihe.net/ITI/MHD/StructureDefinition/IHE.MHD.ProvideBundle.Audit.Source - listed in meta
-Validate resource against profile http://profiles.ihe.net/ITI/MHD/StructureDefinition/IHE.MHD.Minimal.ProvideBundle - listed in meta
-Validate resource against profile http://profiles.ihe.net/ITI/MHD/StructureDefinition/IHE.MHD.Minimal.SubmissionSet
-Validate resource against profile http://profiles.ihe.net/ITI/MHD/StructureDefinition/IHE.MHD.Minimal.Folder
-Validate resource against profile http://profiles.ihe.net/ITI/MHD/StructureDefinition/IHE.MHD.Minimal.DocumentReference
-Validate resource against profile http://profiles.ihe.net/ITI/MHD/StructureDefinition/IHE.MHD.List
-Validate resource against profile http://profiles.ihe.net/ITI/MHD/StructureDefinition/IHE.MHD.FindDocumentListsResponseMessage - listed in meta
-Validate resource against profile http://profiles.ihe.net/ITI/MHD/StructureDefinition/IHE.MHD.FindDocumentReferencesResponseMessage - listed in meta
-Validate resource against profile http://profiles.ihe.net/ITI/MHD/StructureDefinition/IHE.MHD.Minimal.ProvideDocumentBundleResponse - listed in meta
-Validate resource against profile http://profiles.ihe.net/ITI/MHD/StructureDefinition/IHE.MHD.Comprehensive.DocumentReference
-Validate resource against profile http://hl7.org/fhir/StructureDefinition/ImplementationGuide
+# the formal IHE formatcode code system
+Code System URI 'http://ihe.net/fhir/ihe.formatcode.fhir/CodeSystem/formatcode' is unknown so the code cannot be validated
 
 # Structure Definitions
 INFORMATION: StructureDefinition/IHE.MHD.Comprehensive.DocumentReference: StructureDefinition: Validate resource against profile http://hl7.org/fhir/StructureDefinition/StructureDefinition
@@ -44,10 +32,28 @@ INFORMATION: StructureDefinition/ihe-designationType: StructureDefinition: Valid
 INFORMATION: StructureDefinition/ihe-intendedRecipient: StructureDefinition: Validate resource against profile http://hl7.org/fhir/StructureDefinition/StructureDefinition
 INFORMATION: StructureDefinition/ihe-sourceId: StructureDefinition: Validate resource against profile http://hl7.org/fhir/StructureDefinition/StructureDefinition
 INFORMATION: StructureDefinition/ihe-authorOrg: StructureDefinition: Validate resource against profile http://hl7.org/fhir/StructureDefinition/StructureDefinition
+INFORMATION: AuditEvent/ex-auditFindDocumentLists-consumer: AuditEvent: Validate resource against profile http://profiles.ihe.net/ITI/MHD/StructureDefinition/IHE.MHD.FindDocumentLists.Audit.Consumer
+INFORMATION: AuditEvent/ex-auditFindDocumentLists-responder: AuditEvent: Validate resource against profile http://profiles.ihe.net/ITI/MHD/StructureDefinition/IHE.MHD.FindDocumentLists.Audit.Responder
+INFORMATION: AuditEvent/ex-auditFindDocumentReferences-consumer: AuditEvent: Validate resource against profile http://profiles.ihe.net/ITI/MHD/StructureDefinition/IHE.MHD.FindDocumentReferences.Audit.Consumer
+INFORMATION: AuditEvent/ex-auditFindDocumentReferences-post-responder: AuditEvent: Validate resource against profile http://profiles.ihe.net/ITI/MHD/StructureDefinition/IHE.MHD.FindDocumentReferences.Audit.Responder
+INFORMATION: AuditEvent/ex-auditFindDocumentReferences-responder: AuditEvent: Validate resource against profile http://profiles.ihe.net/ITI/MHD/StructureDefinition/IHE.MHD.FindDocumentReferences.Audit.Responder
+INFORMATION: AuditEvent/ex-auditProvideBundle-recipient: AuditEvent: Validate resource against profile http://profiles.ihe.net/ITI/MHD/StructureDefinition/IHE.MHD.ProvideBundle.Audit.Recipient
+INFORMATION: AuditEvent/ex-auditProvideBundle-source: AuditEvent: Validate resource against profile http://profiles.ihe.net/ITI/MHD/StructureDefinition/IHE.MHD.ProvideBundle.Audit.Source
+INFORMATION: AuditEvent/ex-auditRetrieveDocument-consumer: AuditEvent: Validate resource against profile http://profiles.ihe.net/ITI/MHD/StructureDefinition/IHE.MHD.RetrieveDocument.Audit.Consumer
+INFORMATION: AuditEvent/ex-auditRetrieveDocument-responder: AuditEvent: Validate resource against profile http://profiles.ihe.net/ITI/MHD/StructureDefinition/IHE.MHD.RetrieveDocument.Audit.Responder
+INFORMATION: Bundle/ex-ProvideDocumentBundleResponse: Bundle: Validate resource against profile http://profiles.ihe.net/ITI/MHD/StructureDefinition/IHE.MHD.Minimal.ProvideDocumentBundleResponse
+INFORMATION: Bundle/ex-findDocumentListsResponse: Bundle: Validate resource against profile http://profiles.ihe.net/ITI/MHD/StructureDefinition/IHE.MHD.FindDocumentListsResponseMessage
+INFORMATION: Bundle/ex-findDocumentReferencesResponse: Bundle: Validate resource against profile http://profiles.ihe.net/ITI/MHD/StructureDefinition/IHE.MHD.FindDocumentReferencesResponseMessage
+INFORMATION: Bundle/ex-minimalProvideDocumentBundle: Bundle: Validate resource against profile http://profiles.ihe.net/ITI/MHD/StructureDefinition/IHE.MHD.Minimal.ProvideBundle
+INFORMATION: Bundle/ex-minimalProvideDocumentBundle2: Bundle: Validate resource against profile http://profiles.ihe.net/ITI/MHD/StructureDefinition/IHE.MHD.Minimal.ProvideBundle
+INFORMATION: DocumentReference/ex-DocumentReferenceUnContained: DocumentReference: Validate resource against profile http://profiles.ihe.net/ITI/MHD/StructureDefinition/IHE.MHD.UnContained.Comprehensive.DocumentReference
+http://profiles.ihe.net/ITI/MHD/StructureDefinition/IHE.MHD.UnContained.Comprehensive.DocumentReference
+INFORMATION: List/ex-compEmailPackage: List: Validate resource against profile http://profiles.ihe.net/ITI/MHD/StructureDefinition/IHE.MHD.Comprehensive.SubmissionSet
+INFORMATION: List/ex-compFolder: List: Validate resource against profile http://profiles.ihe.net/ITI/MHD/StructureDefinition/IHE.MHD.Comprehensive.Folder
+INFORMATION: List/ex-compSubmissionSetFullUnContained: List: Validate resource against profile http://profiles.ihe.net/ITI/MHD/StructureDefinition/IHE.MHD.UnContained.Comprehensive.SubmissionSet
+INFORMATION: List/ex-compSubmissionSetList: List: Validate resource against profile http://profiles.ihe.net/ITI/MHD/StructureDefinition/IHE.MHD.Comprehensive.SubmissionSet
+INFORMATION: Bundle/Bundle-FindDocumentReferences: Bundle: Validate resource against profile http://profiles.ihe.net/ITI/MHD/StructureDefinition/IHE.MHD.FindDocumentReferencesComprehensiveResponseMessage
 
-
-#Implementation Guide
-INFORMATION: ImplementationGuide/ihe.mhd.fhir: ImplementationGuide: Validate resource against profile http://hl7.org/fhir/StructureDefinition/ImplementationGuide
 
 # Capability Statements
 INFORMATION: CapabilityStatement/IHE.MHD.DocumentConsumer: CapabilityStatement: Validate resource against profile http://hl7.org/fhir/StructureDefinition/CapabilityStatement
@@ -59,17 +65,36 @@ INFORMATION: CapabilityStatement/IHE.MHD.DocumentRecipient.Comprehensive: Capabi
 INFORMATION: CapabilityStatement/IHE.MHD.DocumentRecipient.UnContained: CapabilityStatement: Validate resource against profile http://hl7.org/fhir/StructureDefinition/CapabilityStatement
 INFORMATION: CapabilityStatement/IHE.MHD.DocumentRecipient: CapabilityStatement: Validate resource against profile http://hl7.org/fhir/StructureDefinition/CapabilityStatement
 
+# profile for MHD that is just structural and thus has no examples
+Validate resource against profile http://profiles.ihe.net/ITI/MHD/StructureDefinition/IHE.MHD.List
+WARNING: StructureDefinition.where(url = 'http://profiles.ihe.net/ITI/MHD/StructureDefinition/IHE.MHD.List'): The Implementation Guide contains no examples for this profile
+
+
 # profiles for MHD that have examples
 Validate resource against profile http://profiles.ihe.net/ITI/MHD/StructureDefinition/IHE.MHD.Minimal.SubmissionSet - listed in meta
+Validate resource against profile http://profiles.ihe.net/ITI/MHD/StructureDefinition/IHE.MHD.Minimal.SubmissionSet
 Validate resource against profile http://profiles.ihe.net/ITI/MHD/StructureDefinition/IHE.MHD.Comprehensive.SubmissionSet - listed in meta
 Validate resource against profile http://profiles.ihe.net/ITI/MHD/StructureDefinition/IHE.MHD.UnContained.Comprehensive.SubmissionSet - listed in meta
 Validate resource against profile http://profiles.ihe.net/ITI/MHD/StructureDefinition/IHE.MHD.Minimal.Folder - listed in meta
+Validate resource against profile http://profiles.ihe.net/ITI/MHD/StructureDefinition/IHE.MHD.Minimal.Folder
 Validate resource against profile http://profiles.ihe.net/ITI/MHD/StructureDefinition/IHE.MHD.Comprehensive.Folder - listed in meta
-Validate resource against profile http://profiles.ihe.net/ITI/MHD/StructureDefinition/IHE.MHD.FindDocumentReferencesComprehensiveResponseMessage - listed in meta
 Validate resource against profile http://profiles.ihe.net/ITI/MHD/StructureDefinition/IHE.MHD.Minimal.DocumentReference - listed in meta
+Validate resource against profile http://profiles.ihe.net/ITI/MHD/StructureDefinition/IHE.MHD.Minimal.DocumentReference
 Validate resource against profile http://profiles.ihe.net/ITI/MHD/StructureDefinition/IHE.MHD.Comprehensive.DocumentReference - listed in meta
+Validate resource against profile http://profiles.ihe.net/ITI/MHD/StructureDefinition/IHE.MHD.Comprehensive.DocumentReference
 Validate resource against profile http://profiles.ihe.net/ITI/MHD/StructureDefinition/IHE.MHD.UnContained.Comprehensive.DocumentReference - listed in meta
-# so far missing bundle examples
+Validate resource against profile http://profiles.ihe.net/ITI/MHD/StructureDefinition/IHE.MHD.UnContained.Comprehensive.DocumentReference
+Validate resource against profile http://profiles.ihe.net/ITI/MHD/StructureDefinition/IHE.MHD.Minimal.ProvideBundle - listed in meta
+Validate resource against profile http://profiles.ihe.net/ITI/MHD/StructureDefinition/IHE.MHD.Minimal.ProvideBundle
+Validate resource against profile http://profiles.ihe.net/ITI/MHD/StructureDefinition/IHE.MHD.Minimal.ProvideDocumentBundleResponse - listed in meta
+Validate resource against profile http://profiles.ihe.net/ITI/MHD/StructureDefinition/IHE.MHD.FindDocumentReferencesComprehensiveResponseMessage - listed in meta
+Validate resource against profile http://profiles.ihe.net/ITI/MHD/StructureDefinition/IHE.MHD.FindDocumentReferencesResponseMessage - listed in meta
+Validate resource against profile http://profiles.ihe.net/ITI/MHD/StructureDefinition/IHE.MHD.FindDocumentListsResponseMessage - listed in meta
+
+# did not include examples of comprehensive or uncontained bundles due to trouble with sushi and IG builder
+WARNING: StructureDefinition.where(url = 'http://profiles.ihe.net/ITI/MHD/StructureDefinition/IHE.MHD.Comprehensive.ProvideBundle'): The Implementation Guide contains no examples for this profile
+WARNING: StructureDefinition.where(url = 'http://profiles.ihe.net/ITI/MHD/StructureDefinition/IHE.MHD.UnContained.Comprehensive.ProvideBundle'): The Implementation Guide contains no examples for this profile
+
 
 # profiles for ATNA audit that have examples
 Validate resource against profile http://profiles.ihe.net/ITI/MHD/StructureDefinition/IHE.MHD.FindDocumentLists.Audit.Consumer - listed in meta
@@ -82,6 +107,8 @@ Validate resource against profile http://profiles.ihe.net/ITI/MHD/StructureDefin
 Validate resource against profile http://profiles.ihe.net/ITI/MHD/StructureDefinition/IHE.MHD.RetrieveDocument.Audit.Responder - listed in meta
 
 # FHIR core resources profiled 
+Validate resource against profile http://hl7.org/fhir/StructureDefinition/ImplementationGuide
+Validate resource against profile http://hl7.org/fhir/StructureDefinition/AuditEvent
 Validate resource against profile http://hl7.org/fhir/StructureDefinition/List
 Validate resource against profile http://hl7.org/fhir/StructureDefinition/Practitioner
 Validate resource against profile http://hl7.org/fhir/StructureDefinition/Organization
@@ -100,16 +127,7 @@ Validate resource against profile http://hl7.org/fhir/StructureDefinition/Concep
 
 # Examples use realworld OIDs for code systems
 Code System URI 'urn:oid:1.3.6.1.4.1.19376.1.2.3' is unknown so the code cannot be validated
-Code System URI 'http://ihe.net/fhir/ValueSet/IHE.FormatCode.codesystem' is unknown so the code cannot be validated
 
 # Example DocumentReference-IHE.MHD.Comprehensive.MedicationCard uses realworld values that are okay
 None of the codings provided are in the value set http://hl7.org/fhir/ValueSet/c80-doc-typecodes (http://hl7.org/fhir/ValueSet/c80-doc-typecodes), and a coding is recommended to come from this value set) (codes = http://snomed.info/sct#721912009)
-Could not confirm that the codes provided are in the value set http://hl7.org/fhir/ValueSet/formatcodes, and a code is recommended to come from this value set
-Could not confirm that the codes provided are in the value set http://ihe.net/fhir/ihe.formatcode.fhir/ValueSet/formatcode, and a code is recommended to come from this value set
 
-# IHE.MHD.List is not used
-WARNING: StructureDefinition.where(url = 'http://profiles.ihe.net/ITI/MHD/StructureDefinition/IHE.MHD.List'): The Implementation Guide contains no examples for this profile
-
-# did not include examples of comprehensive or uncontained bundles due to trouble with sushi and IG builder
-WARNING: StructureDefinition.where(url = 'http://profiles.ihe.net/ITI/MHD/StructureDefinition/IHE.MHD.Comprehensive.ProvideBundle'): The Implementation Guide contains no examples for this profile
-WARNING: StructureDefinition.where(url = 'http://profiles.ihe.net/ITI/MHD/StructureDefinition/IHE.MHD.UnContained.Comprehensive.ProvideBundle'): The Implementation Guide contains no examples for this profile

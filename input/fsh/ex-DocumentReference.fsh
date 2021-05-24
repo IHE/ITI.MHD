@@ -35,7 +35,7 @@ Usage: #example
 * content.attachment.creation = 2020-12-31T23:50:50-05:00
 * context.facilityType = http://snomed.info/sct#82242000
 * context.practiceSetting =  http://snomed.info/sct#408467006
-* content.format = http://ihe.net/fhir/ValueSet/IHE.FormatCode.codesystem#urn:ihe:iti:xds-sd:text:2008
+* content.format = http://ihe.net/fhir/ihe.formatcode.fhir/CodeSystem/formatcode#urn:ihe:iti:xds-sd:text:2008
 * context.sourcePatientInfo = Reference(Patient/ex-patient)
 
 Instance:   ex-DocumentReferenceUnContainedFully
@@ -61,7 +61,7 @@ Usage: #example
 * content.attachment.creation = 2020-12-31T23:50:50-05:00
 * context.facilityType = http://snomed.info/sct#82242000
 * context.practiceSetting =  http://snomed.info/sct#408467006
-* content.format = http://ihe.net/fhir/ValueSet/IHE.FormatCode.codesystem#urn:ihe:iti:xds-sd:text:2008
+* content.format = http://ihe.net/fhir/ihe.formatcode.fhir/CodeSystem/formatcode#urn:ihe:iti:xds-sd:text:2008
 // optional elements
 * author = Reference(Practitioner/ex-practitioner)
 * authenticator = Reference(Practitioner/ex-practitioner)
@@ -71,7 +71,7 @@ Usage: #example
 * context.event = http://terminology.hl7.org/CodeSystem/v3-ActCode#ACCTRECEIVABLE
 * context.related.identifier.system = "urn:ietf:rfc:3986"
 * context.related.identifier.value = "urn:oid:1.2.840.113556.1.8000.2554.17917.46600.21181.17878.33419.62048.57128.2759"
-* content.format = http://ihe.net/fhir/ValueSet/IHE.FormatCode.codesystem#urn:ihe:iti:xds-sd:text:2008
+* content.format = http://ihe.net/fhir/ihe.formatcode.fhir/CodeSystem/formatcode#urn:ihe:iti:xds-sd:text:2008
 * content.attachment.title = "DocumentReference for Comprehensive minimally filled metadata"
 * description = "Example of a Comprehensive DocumentReference resource. This is minimally filled for all mandatory elements."
 // note the sha1 hash of a zero file is da39a3ee5e6b4b0d3255bfef95601890afd80709
@@ -103,7 +103,7 @@ Usage: #example
 * content.attachment.creation = 2020-12-31T23:50:50-05:00
 * context.facilityType = http://snomed.info/sct#82242000
 * context.practiceSetting =  http://snomed.info/sct#408467006
-* content.format = http://ihe.net/fhir/ValueSet/IHE.FormatCode.codesystem#urn:ihe:iti:xds-sd:text:2008
+* content.format = http://ihe.net/fhir/ihe.formatcode.fhir/CodeSystem/formatcode#urn:ihe:iti:xds-sd:text:2008
 // optional elements
 * author = Reference(in-author)
 * authenticator = Reference(in-author)
@@ -142,6 +142,7 @@ Usage: #inline
 Instance:   ex-findDocumentReferencesResponse
 InstanceOf: IHE.MHD.FindDocumentReferencesResponseMessage
 Title:      "Example of a Find Document References Response Message"
+Description: "Example of a Find Document References Bundle Search Set with a single DocumentReference"
 Usage: #example
 * meta.security = http://terminology.hl7.org/CodeSystem/v3-ActReason#HTEST
 * type = #searchset

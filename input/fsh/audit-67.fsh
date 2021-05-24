@@ -9,8 +9,7 @@ Description:    "Defines constraints on the AuditEvent Resource to record when a
 - shall have a document responder agent
 - may have user, app, organization agent(s)
 - shall have a patient entity
-- shall have a the query parameters
-"
+- shall have a the query parameters"
 * modifierExtension 0..0
 * type = DCM#110112 "Query"
 * action = #E
@@ -65,8 +64,7 @@ Description:    "Defines constraints on the AuditEvent Resource to record when a
 - shall have a document responder agent
 - may have user, app, organization agent(s)
 - shall have a patient entity
-- shall have a the query parameters
-"
+- shall have a the query parameters"
 * modifierExtension 0..0
 * type = DCM#110112 "Query"
 * action = #E
