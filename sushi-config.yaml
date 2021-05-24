@@ -4,7 +4,7 @@ name: IHE_MHD
 version: 4.0.0
 fhirVersion: 4.0.1
 status: active
-title: "HL7 FHIR Implementation Guide: Example IG Release 1 - US Realm | STU1"
+title: "Mobile access to Health Documents (MHD)"
 description: ImplementationGuide for IHE IT Infrastructure Technical Framework Supplement Mobile access to Health Documents (MHD) Rev. 4.0.0 Public-Comment-Resolving
 copyright: IHE http://www.ihe.net/Governance/#Intellectual_Property
 copyrightYear: 2020+
