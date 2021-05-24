@@ -112,6 +112,7 @@ Usage: #example
 * entry[1].item = Reference(List/ex-list)
 * contained[0] = in-sender
 * source = Reference(in-sender)
+* source.extension[AuthorOrg].valueReference = Reference(Organization/ex-organization)
 * extension[designationType].valueCodeableConcept = http://snomed.info/sct#225728007
 * extension[sourceId].valueIdentifier.value = "urn:oid:1.2.3.4"
 * extension[intendedRecipient].valueReference = Reference(ex-practitioner)
@@ -123,34 +124,4 @@ Usage: #inline
 * telecom.system = #email
 * telecom.value = "JohnMoehrke@gmail.com"
 
-Instance:   ex-findDocumentListsResponse
-InstanceOf: IHE.MHD.FindDocumentListsResponseMessage
-Title:      "Example of a Find Document Lists Response Message"
-Usage: #example
-* meta.security = http://terminology.hl7.org/CodeSystem/v3-ActReason#HTEST
-* type = #searchset
-* link[0].relation = "self"
-* link[0].url = "test.fhir.net/R4/fhir/List?patient=9876&code=submissionset&status=current&designationType=http://loinc.org|1234-5"
-* total = 1
-* timestamp = 2021-04-16T11:32:24Z
-* entry[List].fullUrl = "http://example.org/List/ex-minimalSubmissionSet"
-* entry[List].resource = in-minimalSubmissionSet
-
-Instance:   in-minimalSubmissionSet
-InstanceOf: IHE.MHD.Minimal.SubmissionSet
-Title:      "SubmissionSet for Minimal metadata"
-Description: "Example of a minimal submissionSet in List resource. "
-Usage: #inline
-* meta.security = http://terminology.hl7.org/CodeSystem/v3-ActReason#HTEST
-* identifier[0].system = "urn:ietf:rfc:3986"
-* identifier[0].value = "urn:oid:1.2.129.6.58.92.88337.4"
-* identifier[0].use = #official
-* identifier[1].system = "http://example.org/documents"
-* identifier[1].value = "23425234-23470"
-* identifier[1].use = #usual
-* status = #current
-* mode = #working
-* code = MHDlistTypes#submissionset
-* date = 2004-12-25T23:50:50-05:00
-* entry[0].item = Reference(DocumentReference/ex-documentreference)
-* extension[sourceId].valueIdentifier.value = "urn:oid:1.2.3.4"
+// do not include examples of search set as there are problems with the IG builder

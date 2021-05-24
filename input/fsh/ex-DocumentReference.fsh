@@ -138,3 +138,30 @@ Usage: #inline
 * telecom.system = #email
 * telecom.value = "JohnMoehrke@gmail.com"
 
+
+Instance:   ex-findDocumentReferencesResponse
+InstanceOf: IHE.MHD.FindDocumentReferencesResponseMessage
+Title:      "Example of a Find Document References Response Message"
+Usage: #example
+* meta.security = http://terminology.hl7.org/CodeSystem/v3-ActReason#HTEST
+* type = #searchset
+* link[0].relation = "self"
+* link[0].url = "test.fhir.net/R4/fhir/DocumentReference?patient=9876&status=current"
+* total = 1
+* timestamp = 2021-04-16T11:32:24Z
+* entry[0].fullUrl = "http://example.org/DocumentReference/ex-DocumentReferenceMinimal"
+* entry[0].resource = in-DocumentReferenceMinimal
+
+Instance:   in-DocumentReferenceMinimal
+InstanceOf: IHE.MHD.Minimal.DocumentReference
+Title:      "DocumentReference for Minimal metadata"
+Description: "Example of a minimal DocumentReference resource. This is very unlikely to be acceptable anywhere, but it is the minimum required."
+Usage: #inline
+* meta.security = http://terminology.hl7.org/CodeSystem/v3-ActReason#HTEST
+* masterIdentifier.system = "urn:ietf:rfc:3986"
+* masterIdentifier.value = "urn:oid:1.2.840.113556.1.8000.2554.53432.348.12973.17740.34205.4355.50220.62012"
+* identifier.system = "urn:ietf:rfc:3986"
+* identifier.value = "urn:uuid:7d5bb8ac-68ee-4926-85e7-b8aac8e1f09d"
+* status = #current
+* content.attachment.contentType = #text/plain
+* content.attachment.url = "http://example.com/nowhere.txt"

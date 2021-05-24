@@ -12,6 +12,7 @@ Validate resource against profile http://profiles.ihe.net/ITI/MHD/StructureDefin
 Validate resource against profile http://profiles.ihe.net/ITI/MHD/StructureDefinition/IHE.MHD.Minimal.DocumentReference
 Validate resource against profile http://profiles.ihe.net/ITI/MHD/StructureDefinition/IHE.MHD.List
 Validate resource against profile http://profiles.ihe.net/ITI/MHD/StructureDefinition/IHE.MHD.FindDocumentListsResponseMessage - listed in meta
+Validate resource against profile http://profiles.ihe.net/ITI/MHD/StructureDefinition/IHE.MHD.FindDocumentReferencesResponseMessage - listed in meta
 Validate resource against profile http://profiles.ihe.net/ITI/MHD/StructureDefinition/IHE.MHD.Minimal.ProvideDocumentBundleResponse - listed in meta
 Validate resource against profile http://profiles.ihe.net/ITI/MHD/StructureDefinition/IHE.MHD.Comprehensive.DocumentReference
 Validate resource against profile http://hl7.org/fhir/StructureDefinition/ImplementationGuide
@@ -101,8 +102,14 @@ Validate resource against profile http://hl7.org/fhir/StructureDefinition/Concep
 Code System URI 'urn:oid:1.3.6.1.4.1.19376.1.2.3' is unknown so the code cannot be validated
 Code System URI 'http://ihe.net/fhir/ValueSet/IHE.FormatCode.codesystem' is unknown so the code cannot be validated
 
-# Example Bundle-FindDocumentReferences and DocumentReference-IHE.MHD.Comprehensive.MedicationCard uses realworld values that are okay
+# Example DocumentReference-IHE.MHD.Comprehensive.MedicationCard uses realworld values that are okay
 None of the codings provided are in the value set http://hl7.org/fhir/ValueSet/c80-doc-typecodes (http://hl7.org/fhir/ValueSet/c80-doc-typecodes), and a coding is recommended to come from this value set) (codes = http://snomed.info/sct#721912009)
 Could not confirm that the codes provided are in the value set http://hl7.org/fhir/ValueSet/formatcodes, and a code is recommended to come from this value set
 Could not confirm that the codes provided are in the value set http://ihe.net/fhir/ihe.formatcode.fhir/ValueSet/formatcode, and a code is recommended to come from this value set
 
+# IHE.MHD.List is not used
+WARNING: StructureDefinition.where(url = 'http://profiles.ihe.net/ITI/MHD/StructureDefinition/IHE.MHD.List'): The Implementation Guide contains no examples for this profile
+
+# did not include examples of comprehensive or uncontained bundles due to trouble with sushi and IG builder
+WARNING: StructureDefinition.where(url = 'http://profiles.ihe.net/ITI/MHD/StructureDefinition/IHE.MHD.Comprehensive.ProvideBundle'): The Implementation Guide contains no examples for this profile
+WARNING: StructureDefinition.where(url = 'http://profiles.ihe.net/ITI/MHD/StructureDefinition/IHE.MHD.UnContained.Comprehensive.ProvideBundle'): The Implementation Guide contains no examples for this profile
