@@ -144,7 +144,7 @@ The Document Responder shall process the query to discover the DocumentReference
 
 ###### 2:3.67.4.1.3.1 XDS on FHIR Option
 
-The Document Responder is grouped with an XDS Document Consumer when it supports the [XDS on FHIR](1332_actor_options.html#13322-xds-on-fhir-option) Option. The Document Responder shall map the query parameters as listed in Table 3.67.4.1.3-1 and shall execute a Registry Stored Query [ITI-18] for FindDocuments or FindDocumentsByReferenceIdList (see ITI TF-2a: 3.18.4.1.2.3.7.1 and 3.18.4.1.2.3.7.14). All of the query parameters in Table 3.67.4.1.3-1 shall be supported by the Document Responder. No additional query parameters as defined in FHIR are required of the Document Responder, but they may be offered.
+The Document Responder is grouped with an XDS Document Consumer when it supports the [XDS on FHIR](1332_actor_options.html#13322-xds-on-fhir-option) Option. The Document Responder shall map the query parameters as listed in Table 3.67.4.1.3-1 and shall execute a Registry Stored Query [ITI-18] for FindDocuments or FindDocumentsByReferenceIdList (see [ITI TF-2a: 3.18.4.1.2.3.7.1](https://profiles.ihe.net/ITI/TF/Volume2/ITI-18.html#3.18.4.1.2.3.7.1) and [3.18.4.1.2.3.7.14](https://profiles.ihe.net/ITI/TF/Volume2/ITI-18.html#3.18.4.1.2.3.7.14) ). All of the query parameters in Table 3.67.4.1.3-1 shall be supported by the Document Responder. No additional query parameters as defined in FHIR are required of the Document Responder, but they may be offered.
 
 **Table 2:3.67.4.1.3-1: ITI-18 FindDocuments Query Parameter Mapping**
 

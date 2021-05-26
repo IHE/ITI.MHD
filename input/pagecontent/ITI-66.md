@@ -173,7 +173,7 @@ Note 3: Parameters specific to "submissionset" shall be silently ignored.
 
 Query parameters of type token are used to represent codes and identifiers. See [https://www.hl7.org/fhir/R4/search.html#token](https://www.hl7.org/fhir/R4/search.html#token). 
 
-The manner in which the Document Responder translates these parameters to ebXML to support the Registry Stored Query [ITI-18] transaction will depend on the type of the corresponding parameter within the FindSubmissionSets stored query (see ITI TF-2a: 3.18.4.1.2.3.7.2). 
+The manner in which the Document Responder translates these parameters to ebXML to support the Registry Stored Query [ITI-18] transaction will depend on the type of the corresponding parameter within the FindSubmissionSets stored query (see [ITI TF-2: 3.18.4.1.2.3.7.2](https://profiles.ihe.net/ITI/TF/Volume2/ITI-18.html#3.18.4.1.2.3.7.2) ). 
 * If the token parameter translates to a codified stored query parameter, then the Document Responder shall represent the token parameter in the stored query as: `<Value>('code^^system')</Value>`
 * If the token parameter translates to a patient identifier in the FindSubmissionSets stored query, then the Document Responder shall represent the token parameter in the stored query as: `<Value>code^^^&amp;system&amp;ISO</Value>` 
 * If the token parameter translates to a simple string, then the code shall be used for the parameter and the system shall be ignored.

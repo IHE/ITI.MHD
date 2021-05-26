@@ -45,7 +45,7 @@ See [http://hl7.org/fhir/R4/http.html#transaction](http://hl7.org/fhir/R4/http.h
 
 The Provide Document Bundle message is sent to the base URL as defined in FHIR. See [http://hl7.org/fhir/R4/http.html](http://hl7.org/fhir/R4/http.html) for the definition of “HTTP” access methods and “base”.
 
-The Document Source shall assure all FHIR resource elements are consistent with the Document Sharing metadata requirements as specified for attributes ITI TF-3: Table 4.3.1-3 “Sending Actor Metadata Attribute Optionality”. The Document Source that supports the [Comprehensive Metadata](1332_actor_options.html#13322-xds-on-fhir-option) or the [XDS on FHIR](1332_actor_options.html#13322-xds-on-fhir-option) Options shall assure consistency with column “XDS DS”; otherwise, the Document Source shall assure consistency with column “XDR MS”. The Document Source shall not provide any entryUUID values.
+The Document Source shall assure all FHIR resource elements are consistent with the [Document Sharing metadata](https://profiles.ihe.net/ITI/TF/Volume3/index.html#4) requirements as specified for attributes [ITI TF-3: Table 4.3.1-3 “Sending Actor Metadata Attribute Optionality”](https://profiles.ihe.net/ITI/TF/Volume3/ch-4.3.html#4.3.1). The Document Source that supports the [Comprehensive Metadata](1332_actor_options.html#13322-xds-on-fhir-option) or the [XDS on FHIR](1332_actor_options.html#13322-xds-on-fhir-option) Options shall assure consistency with column “XDS DS”; otherwise, the Document Source shall assure consistency with column “XDR MS”. The Document Source shall not provide any entryUUID values.
 
 ###### 2:3.65.4.1.2.1 Bundle Resources
 

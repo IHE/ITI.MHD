@@ -17,7 +17,7 @@ contact:
   - name: John Moehrke
     telecom:
       - system: email
-        value: JohnMoehrke@gmail.copm
+        value: JohnMoehrke@gmail.com
         use: work
 license: CC-BY-SA-4.0
 jurisdiction: 'http://unstats.un.org/unsd/methods/m49/m49.htm#001'
@@ -34,7 +34,7 @@ parameters:  # see https://confluence.hl7.org/display/FHIR/Implementation+Guide+
     - input/examples
   path-pages:
     - input/pagecontent
-#    - fsh-generated/includes
+    - fsh-generated/includes
   active-tables: 'false'
   apply-contact: 'true'
   apply-jurisdiction: 'true'
@@ -44,3 +44,75 @@ parameters:  # see https://confluence.hl7.org/display/FHIR/Implementation+Guide+
   usage-stats-opt-out: 'true'
   autoload-resources: 'true'
   shownav: 'true'
+
+# additional examples that need descriptions
+resources:
+  Bundle/Bundle-FindDocumentReferences:
+    name: Example FindDocumentReferences response
+    description: An example of a searchset Bundle with one DocumentReference
+    exampleBoolean: true
+  DocumentReference/IHE.MHD.Comprehensive.MedicationCard:
+    name: Example DocumentReference of a Medication Card
+    description: Medication Card DocumentReference with UUID as if included in a Provide Document Bundle
+    exampleBoolean: true
+
+
+# ╭────────────────────────────────────────────pages───────────────────────────────────────────────╮
+# │  The pages property corresponds to IG.definition.page.                                         │
+# ╰────────────────────────────────────────────────────────────────────────────────────────────────╯
+pages:
+  index.md:
+    title: "MHD Home"
+  1331_actors_and_transactions.md:
+    title: "1:33.1 Actors and Transactions"
+  1332_actor_options.md:
+    title: "1:33.2 Actor Options"
+  1333_required_grouping.md:
+    title: "1:33.3 Required Grouping"
+  1334_overview.md:
+    title: "1:33.4 Overview"
+  1335_security_considerations.md:
+    title: "1:33.5 Security Considerations"
+  1336_cross_profile_considerations.md:
+    title: "1:33.6 Cross Profile Considerations"
+  ITI-65.md:
+    title: "Provide Document Bundle [ITI-65]"
+  ITI-66.md:
+    title: "Find Document Lists [ITI-66]"
+  ITI-67.md:
+    title: "Find Document References [ITI-67]"
+  ITI-68.md:
+    title: "Retrieve Document [ITI-68]"
+  31_xds.md:
+    title: "4.2.4.1 Error Codes"
+  32_fhir_maps.md:
+    title: "4.5 FHIR Maps"
+  testplan.md:
+    title: "Test Plan"
+  a_issues.md:
+    title: "Issues"
+      
+
+# ╭────────────────────────────────────────────menu.xml────────────────────────────────────────────╮
+# │  To use a provided ig-data/input/includes/menu.xml file, delete the "menu" property below.     │
+# ╰────────────────────────────────────────────────────────────────────────────────────────────────╯
+menu:
+  MHD Home: index.html
+  Volume 1: 
+    Introduction: index.html
+    "Actors and Transactions": 1331_actors_and_transactions.html
+    "Actor Options": 1332_actor_options.html
+    "Actor Required Grouping": 1333_required_grouping.html
+    "Overview": 1334_overview.html
+    "Security Considerations": 1335_security_considerations.html
+    "Cross Profile Considerations": 1336_cross_profile_considerations.html
+  Volume 2:
+    "Provide Document Bundle [ITI-65]": ITI-65.html
+    "Find Document Lists [ITI-66]": ITI-66.html
+    "Find Document References [ITI-67]": ITI-67.html
+    "Retrieve Document [ITI-68]": ITI-68.html
+  Volume 3:
+    "Error Codes": 31_xds.html
+    "FHIR Maps": 32_fhir_maps.html
+  Test Plan: testplan.html
+  Artifact Index: artifacts.html

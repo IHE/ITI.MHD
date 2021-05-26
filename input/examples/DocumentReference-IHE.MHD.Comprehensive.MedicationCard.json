@@ -1,6 +1,6 @@
 {
     "resourceType": "DocumentReference",
-    "id": "DocumentReference-IHE.MHD.Comprehensive.MedicationCard",
+    "id": "IHE.MHD.Comprehensive.MedicationCard",
     "meta": {
         "profile": [
             "http://profiles.ihe.net/ITI/MHD/StructureDefinition/IHE.MHD.Comprehensive.DocumentReference"
