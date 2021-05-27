@@ -51,11 +51,6 @@ resources:
     name: Example FindDocumentReferences response
     description: An example of a searchset Bundle with one DocumentReference
     exampleBoolean: true
-  DocumentReference/IHE.MHD.Comprehensive.MedicationCard:
-    name: Example DocumentReference of a Medication Card
-    description: Medication Card DocumentReference with UUID as if included in a Provide Document Bundle
-    exampleBoolean: true
-
 
 # ╭────────────────────────────────────────────pages───────────────────────────────────────────────╮
 # │  The pages property corresponds to IG.definition.page.                                         │
