@@ -82,7 +82,13 @@ The FHIR Bundle.meta.profile shall have the following value depending on the Act
 
 When resources are `contained` , see [ITI TF-3: 4.5.1](32_fhir_maps.html), they shall be contained using the FHIR contained method (see [http://hl7.org/fhir/R4/references.html#contained](http://hl7.org/fhir/R4/references.html#contained) ).
 
-When the DocumentReference.content.attachment.url points at a Binary Resource, the Binary Resource shall be in the Bundle. See FHIR Resolving references in Bundles at [http://hl7.org/fhir/R4/bundle.html#references](http://hl7.org/fhir/R4/bundle.html#references).
+When the DocumentReference.content.attachment.url points at a Binary Resource, the Binary Resource shall be in the Bundle. See FHIR Resolving references in Bundles at [http://hl7.org/fhir/R4/bundle.html#references](http://hl7.org/fhir/R4/bundle.html#references). 
+
+The Document Source shall populate accurate .hash and .size for the document content: 
+* Where the document content is a Binary Resource instance, the .hash and .size measure the raw artifact that has been base64encoded in the Binary.data element.  
+* Where the document content is hosted elsewhere, not as a Binary Resource, the .hash and the .size shall represent the document content that would be retrieved using the mime-type specified in contentType element. 
+* Where the document content is [On-Demand Document Option](https://profiles.ihe.net/ITI/TF/Volume1/ch-10.html#10.2.7), the .hash and the .size shall be absent from the DocumentReference Resource. See On-Demand Document [Use Cases Summary](https://profiles.ihe.net/ITI/TF/Volume1/ch-10.html#10.4.11.3). 
+* Where the document content is [Delayed Document Assembly](https://profiles.ihe.net/ITI/TF/Volume1/ch-10.html#10.2.10), the .size of `0` (zero), and the .hash with the fixed value `da39a3ee5e6b4b0d3255bfef95601890afd80709` (SHA1 hash of a zero length file).
 
 Folders may be created or updated. A Document Recipient may require that an Updated Folder only have new .entry elements added as would be the requirement of XDS.
 

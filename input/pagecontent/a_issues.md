@@ -25,6 +25,7 @@ Please review the open issues and provide your response to the questions and sta
 * MHD_058: The profile requires that the document submitted is encoded in a FHIR Binary. Is there interest in also allowing a Bundle of type Document? This would be useful when publishing FHIR-Documents. The FHIR-Document would still need to be seralized into a Bundle of type Document, but that Bundle would not need to be further encoded into a Binary (e.g. base64 encoding). Note that the mime-type in this case would be forced to be the same mime-type as the ITI-65 Bundle, where a Document Source wants to encode ITI-65 in a mime-type that is different than the document, the Binary methodology would need to be used.
   * note that retrieve (ITI-68) does allow the Document Client to ask for the document content in various mime types, thus allowing support for preferred mime type encoding if the Document Responder has the ability to return the content in a encoding other than the DocumentReference indicates.
 * MHD_065: Is it needed to have a mapping between XDS RegistryError and FHIR OperationOutcome at the element level, and also addressing OperationOutcome.issue.code vocabulary could be mapped to the XDS error vocabulary between XDS https://profiles.ihe.net/ITI/TF/Volume3/ch-4.2.html#4.2.4.1 and FHIR OperationOutcome?
+* MHD_066: Note that On-Demand may become supported in FHIR R5 https://jira.hl7.org/browse/FHIR-22501
 
 #### Closed Issues
 

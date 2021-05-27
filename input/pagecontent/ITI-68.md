@@ -86,6 +86,8 @@ If the Document Responder returns an HTTP redirect response (HTTP status codes 3
 
 The Document Consumer processes the results according to application-defined rules.
 
+The .hash and .size, when populated, represent the content in the MIME type indicated in the DocumentReference.content.attachment.contentType. Note there are special .size and .hash handling for [On-Demand Documents](ITI-67.html#236742212-support-for-on-demand-documents) and [Delayed Document Assembly](ITI-67.html#236742213-support-for-delayed-document-assembly).
+
 #### 2:3.68.4.3 CapabilityStatement Resource
 
 Document Responders implementing this transaction shall provide a CapabilityStatement Resource as described in [ITI TF-2x: Appendix Z.3](https://profiles.ihe.net/ITI/TF/Volume2/ch-Z.html#capability) indicating the transaction has been implemented. 
