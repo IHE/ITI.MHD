@@ -79,7 +79,7 @@
             "attachment": {
                 "contentType": "text/xml",
                 "language": "de-CH",
-                "url": "urn:uuid:d8d1fe44-07e9-4a84-985f-fde97d77d54b",
+                "url": "http://example.com/xdsretrieve?uniqueId=urn:uuid:413eb0f7-aa72-4405-86a4-7793a23fcc27&repositoryUniqueId=2.999.756.42.1",
                 "creation": "2020-06-29T11:58:00+00:00"
             },
             "format": {
