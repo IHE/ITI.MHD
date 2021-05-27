@@ -30,7 +30,7 @@ The Find Document References transaction is used to find DocumentReference Resou
 
 #### 2:3.67.4.1 Find Document References Request message
 
-This message uses the HTTP GET method parameterized query to obtain DocumentReference Resources from the Document Responder. 
+This message uses the search method parameterized query to obtain DocumentReference Resources from the Document Responder. 
 
 ##### 2:3.67.4.1.1 Trigger Events
 
@@ -113,7 +113,7 @@ See [ITI TF-2x: Appendix Z.6](https://profiles.ihe.net/ITI/TF/Volume2/ch-Z.html#
 
 For example given:
 * FHIR server root is `http://test.fhir.org/R4/fhir`
-* Patient id is `9876`
+* Patient reference id is `9876`
 * status of current
 * with clinical code from loinc of `1234-5`
 * examples do not include all http headers such as the security headers
@@ -151,8 +151,8 @@ The Document Responder is grouped with an XDS Document Consumer when it supports
 | ITI-67 Parameter Name	| ITI-18 Parameter Name |
 |-----------|-----------|
 | patient or patient.identifier	| $XDSDocumentEntryPatientId |
-| date (Note 1) (Note 5)	| $XDSDocumentEntryCreationTimeFrom |
-| date (Note 2) (Note 5)	| $XDSDocumentEntryCreationTimeTo |
+| creation (Note 1) (Note 5)	| $XDSDocumentEntryCreationTimeFrom |
+| creation (Note 2) (Note 5)	| $XDSDocumentEntryCreationTimeTo |
 | author.given / author.family	| $XDSDocumentEntryAuthorPerson |
 | status	| $XDSDocumentEntryStatus |
 | (Not supported) (Note 3)	| $XDSDocumentEntryType |
@@ -170,9 +170,9 @@ The Document Responder is grouped with an XDS Document Consumer when it supports
 | related (Note 4)	| $XDSDocumentEntryReferenceIdList |
 {: .grid}
 
-Note 1: This FindDocuments parameter is used when the greater than parameter modifier is used on the indexed parameter. 
+Note 1: This FindDocuments parameter is used when the greater than parameter modifier is used on the given parameter. 
 
-Note 2: This FindDocuments parameter is used when the less than parameter modifier is used on the indexed parameter. 
+Note 2: This FindDocuments parameter is used when the less than parameter modifier is used on the given parameter. 
 
 Note 3: The $XDSDocumentEntryType is not a supported query parameter in HL7 FHIR.
 

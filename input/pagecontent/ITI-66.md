@@ -35,7 +35,7 @@ The result of the query is a Bundle containing List Resources that match the que
 
 #### 2:3.66.4.1 Find Document Lists Request message
 
-This message uses the HTTP GET method parameterized query to obtain List Resources from the Document Responder. 
+This message uses the search method parameterized query to obtain List Resources from the Document Responder. 
 
 ##### 2:3.66.4.1.1 Trigger Events
 
@@ -103,7 +103,7 @@ See [ITI TF-2x: Appendix Z.6](https://profiles.ihe.net/ITI/TF/Volume2/ch-Z.html#
 
 For example given:
 * FHIR server root is `http://test.fhir.org/R4/fhir`
-* Patient id is `9876`
+* Patient reference id is `9876`
 * looking for a SubmissionSet
 * status of current
 * with clinical code from loinc of `1234-5`
