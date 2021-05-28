@@ -62,9 +62,6 @@ Description: "Dummy DocumentReference 2 example for completeness sake. No actual
 Usage: #example
 * meta.security = http://terminology.hl7.org/CodeSystem/v3-ActReason#HTEST
 * status = #current
-// TODO: figure out how to get Binary attachments in sushi
-// Note that IG builder has a way to do Binary as a file
-//* content.attachment.url = "Binary/ex-b-binary"
 * content.attachment.title = "Hello World"
 * content.attachment.contentType = #text/plain
 
