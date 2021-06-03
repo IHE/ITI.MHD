@@ -19,7 +19,7 @@ Usage: #inline
 
 Instance: cccccccc-2222-0000-0000-000000000002
 InstanceOf: Binary
-Title: "Example document that says: Hello World"
+Title: "Dummy Binary document that says: Hello World"
 Description: """
 For Bundling Example binary that 
 - holds \"Hello World\"
@@ -34,8 +34,8 @@ Usage: #inline
 
 Instance:   ex-dummyBundleDocAndBinary
 InstanceOf: Bundle
-Title:      "Dummy example Bundle with DocumentReference and Binary"
-Description: "Example Bundle with a DocumentReferenece and Binary
+Title:      "Dummy Bundle with DocumentReference + Binary"
+Description: "Dummy Bundle with a DocumentReferenece and Binary
 - with 1 documentReference
 - with 1 document Binary"
 Usage: #example

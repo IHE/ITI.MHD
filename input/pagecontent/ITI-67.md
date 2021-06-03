@@ -62,7 +62,7 @@ These parameters, of type string, specify the name parts of the author person, w
 This parameter, of type token, specifies the general classification of the DocumentReference Resource, or in Document Sharing nomenclature, the classCode of the Document Entry. See [ITI TF-2x: Appendix Z.2](https://profiles.ihe.net/ITI/TF/Volume2/ch-Z.html#query-parameters) for additional constraints on the use of the token search parameter type.
 
 **creation**:
-This IHE defined parameter defined as [SearchParameter/DocumentReference-Creation](SearchParameter-DocumentReference-Creation.html), of type dateTime, specifies a search against the DocumentReference.content.attachment.creation. See FHIR [http://hl7.org/fhir/R4/search.html#date](http://hl7.org/fhir/R4/search.html#date) for use of the date search type.
+This IHE defined parameter defined as [DocumentReference-Creation](SearchParameter-DocumentReference-Creation.html), of type dateTime, specifies a search against the DocumentReference.content.attachment.creation. See FHIR [http://hl7.org/fhir/R4/search.html#date](http://hl7.org/fhir/R4/search.html#date) for use of the date search type.
 
 **date**:
 This parameter, of type date, specifies the time when the DocumentReference was created. See FHIR [http://hl7.org/fhir/R4/search.html#date](http://hl7.org/fhir/R4/search.html#date) for use of the date search type.

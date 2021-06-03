@@ -121,15 +121,17 @@ Description:    "A profile on the Bundle transaction for ITI-65 Provide Document
     IHE.MHD.Comprehensive.DocumentReference
 
 
-Profile:        MinimalProvideDocumentBundleResponse
+Profile:        ProvideDocumentBundleResponse
 Parent:         Bundle
-Id:             IHE.MHD.Minimal.ProvideDocumentBundleResponse
-Title:          "MHD Minimal Provide Document Bundle Response"
-Description:    "A profile on the Bundle transaction-response for ITI-65 Provide Document Bundle response with Minimal metadata for MHD.
+Id:             IHE.MHD.ProvideDocumentBundleResponse
+Title:          "MHD Provide Document Bundle Response"
+Description:    """
+A profile on the Bundle transaction-response for ITI-65 Provide Document Bundle response.
 
 - shall be a transaction response
 - shall have at least 1 entry for each entry in the request, in the same order as received in the request
-  - entry response location must be indicated"
+  - entry response location must be indicated
+"""
 * type = #transaction-response
 * entry 1..* 
 * entry ^short = "One entry for each entry in the request, in the same order as received"

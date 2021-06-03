@@ -32,8 +32,9 @@ Description:    "A profile on the Find Document References Comprehensive Respons
 
 Instance: DocumentReference-Creation
 InstanceOf: SearchParameter
-Title: "search on the DocumentRference.content.attachment.creation element"
+Title: "search on the DocumentReference.content.attachment.creation element"
 Description: "Search Parameter extension enabling clients to search on the DocumentReference.content.attachment.creation element"
+Usage: #definition
 * url = "http://profiles.ihe.net/ITI/MHD/SearchParameter/DocumentReference-Creation"
 * description = "This SearchParameter enables finding DocumentReference by the creation dateTime."
 * name = "Creation"
