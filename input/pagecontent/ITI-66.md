@@ -69,16 +69,16 @@ This parameter, of type date, specifies the time when the List was created. See 
 This IHE extension on parameters defined as [List-DesignationType](SearchParameter-List-DesignationType.html), of type token, specifies the designation type of the List. The value of the designation type element expresses contentType of submissionSet or the codeList of a Folder. Usually expressed in LOINC or SNOMED. Note that servers that do not support this extended search parameter will ignore it, and thus return more results than expected.
 
 **identifier**:
-This parameter, of type token, specifies an identifier for this List. The search results represent the results of a search on List.masterIdentifier and List.identifier. See [ITI TF-2x: Appendix Z.2](https://profiles.ihe.net/ITI/TF/Volume2/ch-Z.html#query-parameters) for additional constraints on the use of the token search parameter type. 
+This parameter, of type token, specifies an identifier for this List. The search results represent the results of a search on List.masterIdentifier and List.identifier. See [ITI TF-2x: Appendix Z.2](https://profiles.ihe.net/ITI/TF/Volume2/ch-Z.html#z.2-query-parameters) for additional constraints on the use of the token search parameter type. 
 
 **patient**:
 This parameter is of type Reference(Patient). The Document Consumer may get this reference through the use of the [PDQm](https://profiles.ihe.net/ITI/TF/Volume1/ch-38.html) or [PIXm](https://profiles.ihe.net/ITI/TF/Volume1/ch-41.html) Profiles, or by some other method. When the patient parameter is used, the Patient reference would need to be accessible to both the Document Consumer and the Document Responder.
 
 **patient.identifier**:
-This parameter, of type token, specifies an identifier associated with the patient to which the List Resource is assigned. See [ITI TF-2x: Appendix Z.2](https://profiles.ihe.net/ITI/TF/Volume2/ch-Z.html#query-parameters) for use of the token data type for identifiers. This use of **patient.identifier** follows the [FHIR Chaining Parameters](http://hl7.org/fhir/search.html#chaining) search methodology.
+This parameter, of type token, specifies an identifier associated with the patient to which the List Resource is assigned. See [ITI TF-2x: Appendix Z.2](https://profiles.ihe.net/ITI/TF/Volume2/ch-Z.html#z.2-query-parameters) for use of the token data type for identifiers. This use of **patient.identifier** follows the [FHIR Chaining Parameters](http://hl7.org/fhir/search.html#chaining) search methodology.
 
 **source.given and source.family**:
-These parameters, of type string, specify the name parts of the author person which is associated with the List. See [ITI TF-2x: Appendix Z.2](https://profiles.ihe.net/ITI/TF/Volume2/ch-Z.html#query-parameters) for use of the string data type. This use of **source.given** and **source.family** follows the [FHIR Chaining Parameters](http://hl7.org/fhir/search.html#chaining) search methodology.
+These parameters, of type string, specify the name parts of the author person which is associated with the List. See [ITI TF-2x: Appendix Z.2](https://profiles.ihe.net/ITI/TF/Volume2/ch-Z.html#z.2-query-parameters) for use of the string data type. This use of **source.given** and **source.family** follows the [FHIR Chaining Parameters](http://hl7.org/fhir/search.html#chaining) search methodology.
 
 **sourceId**:
 This IHE extension on parameters defined as [List-SourceId](SearchParameter-List-SourceId.html), of type reference, specifies the source (author) value supplied in the List Resource. 
@@ -97,7 +97,7 @@ This parameter, of type token, specifies the status of the List. If included in 
 
 The FHIR standard provides encodings for responses as either XML or JSON. The Document Responder shall support both message encodings, whilst the Document Consumer shall support one and may support both.
 
-See [ITI TF-2x: Appendix Z.6](https://profiles.ihe.net/ITI/TF/Volume2/ch-Z.html#populating-the-expected-response-format) for details. 
+See [ITI TF-2x: Appendix Z.6](https://profiles.ihe.net/ITI/TF/Volume2/ch-Z.html#z.6-populating-the-expected-response-format) for details. 
 
 ###### 2:3.66.4.1.2.3 Example List search
 
@@ -198,13 +198,13 @@ The Document Responder completed processing of the Find Document Lists message.
 
 ##### 2:3.66.4.2.2 Message Semantics
 
-Based on the query results, the Document Responder will either return an error or success. Guidance on handling Access Denied related to use of 200, 403 and 404 can be found in [ITI TF-2x: Appendix Z.7](https://profiles.ihe.net/ITI/TF/Volume2/ch-Z.html#FHIRsecurity).
+Based on the query results, the Document Responder will either return an error or success. Guidance on handling Access Denied related to use of 200, 403 and 404 can be found in [ITI TF-2x: Appendix Z.7](https://profiles.ihe.net/ITI/TF/Volume2/ch-Z.html#z.8-mobile-security-considerations).
 
 When the Document Responder needs to report an error, it shall use HTTP error response codes and should include a FHIR OperationOutcome with more details on the failure. See FHIR [http://hl7.org/fhir/R4/http.html](http://hl7.org/fhir/R4/http.html) and [http://hl7.org/fhir/R4/operationoutcome.html](http://hl7.org/fhir/R4/operationoutcome.html).
 
 If the Find Document Lists message is processed successfully, whether or not any List Resources are found, the HTTP status code shall be 200. The Find Document Lists Response message shall be a Bundle Resource containing zero or more List Resources. If the Document Responder is sending warnings, the Bundle Resource shall also contain an OperationOutcome Resource that contains those warnings.
 
-The response shall adhere to the FHIR Bundle constraints specified in [ITI TF-2x: Appendix Z.1](https://profiles.ihe.net/ITI/TF/Volume2/ch-Z.html). 
+The response shall adhere to the FHIR Bundle constraints specified in [ITI TF-2x: Appendix Z.1](https://profiles.ihe.net/ITI/TF/Volume2/ch-Z.html#z.1-resource-bundles). 
 
 An informative StructureDefinition is outlined for [MHD Find Document Lists Response message](StructureDefinition-IHE.MHD.FindDocumentListsResponseMessage.html), with an [example](Bundle-ex-findDocumentListsResponse.html).
 
@@ -222,7 +222,7 @@ The Document Consumer shall process the results according to application-defined
 
 #### 2:3.66.4.3 CapabilityStatement Resource
 
-Document Responders implementing this transaction shall provide a CapabilityStatement Resource as described in [ITI TF-2x: Appendix Z.3](https://profiles.ihe.net/ITI/TF/Volume2/ch-Z.html#capability) indicating the transaction has been implemented. 
+Document Responders implementing this transaction shall provide a CapabilityStatement Resource as described in [ITI TF-2x: Appendix Z.3](https://profiles.ihe.net/ITI/TF/Volume2/ch-Z.html#z.3-capabilitystatement-resource) indicating the transaction has been implemented. 
 * Requirements CapabilityStatement for [Document Consumer](CapabilityStatement-IHE.MHD.DocumentConsumer.html)
 * Requirements CapabilityStatement for [Document Responder](CapabilityStatement-IHE.MHD.DocumentResponder.html)
 

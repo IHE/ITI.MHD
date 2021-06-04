@@ -182,12 +182,12 @@ The Document Source processes the results according to application-defined rules
 
 #### 2:3.65.4.3 CapabilityStatement Resource
 
-Document Recipient shall provide a CapabilityStatement Resource as described in [ITI TF-2x: Appendix Z.3](https://profiles.ihe.net/ITI/TF/Volume2/ch-Z.html#capability) indicating the transaction has been implemented. 
+Document Recipient shall provide a CapabilityStatement Resource as described in [ITI TF-2x: Appendix Z.3](https://profiles.ihe.net/ITI/TF/Volume2/ch-Z.html#z.3-capabilitystatement-resource) indicating the transaction has been implemented. 
 * General Requirements CapabilityStatement for [Document Recipient](CapabilityStatement-IHE.MHD.DocumentRecipient.html). This indicates that either no options are declared or that all options are declared.
 * Requirements CapabilityStatement for [Document Recipient Comprehensive Metadata Option](CapabilityStatement-IHE.MHD.DocumentRecipient.Comprehensive.html). This indicates that the Comprehensive Metadata Option is declared. Note that XDS-on-FHIR Option requires Comprehensive and thus this Requirements CapabilityStatement applies to XDS-on-FHIR also.
 * Requirements CapabilityStatement for [Document Recipient UnContained References Option](CapabilityStatement-IHE.MHD.DocumentRecipient.UnContained.html). This indicates that the UnContained Option is declared.
 
-Document Source should provide a CapabilityStatement Resource as described in [ITI TF-2x: Appendix Z.3](https://profiles.ihe.net/ITI/TF/Volume2/ch-Z.html#capability) indicating the transaction has been implemented. 
+Document Source should provide a CapabilityStatement Resource as described in [ITI TF-2x: Appendix Z.3](https://profiles.ihe.net/ITI/TF/Volume2/ch-Z.html#z.3-capabilitystatement-resource) indicating the transaction has been implemented. 
 * General Requirements CapabilityStatement for [Document Source](CapabilityStatement-IHE.MHD.DocumentSource.html). This indicates that either no options are declared or that all options are declared.
 * Requirements CapabilityStatement for [Document Source Comprehensive Metadata Option](CapabilityStatement-IHE.MHD.DocumentSource.Comprehensive.html). This indicates that the Comprehensive Metadata Option is declared. Note that XDS-on-FHIR Option requires Comprehensive and thus this Requirements CapabilityStatement applies to XDS-on-FHIR also.
 * Requirements CapabilityStatement for [Document Source UnContained References Option](CapabilityStatement-IHE.MHD.DocumentSource.UnContained.html). This indicates that the UnContained Option is declared.
