@@ -106,7 +106,7 @@ Title:      "SubmissionSet for Comprehensive metadata in a bundle"
 Description: "Example of a comprehensive submissionSet in List resource with an intended recipient used in a bundle."
 Usage: #inline
 * text.status = #extensions
-* text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\">TODO: when builder works, remove this text element</div>"
+* text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\">SubmissionSet with Patient</div>"
 * meta.security = http://terminology.hl7.org/CodeSystem/v3-ActReason#HTEST
 * identifier[+].system = "urn:ietf:rfc:3986"
 * identifier[=].value = "urn:oid:1.2.129.6.58.92.88337.1"
@@ -200,7 +200,7 @@ Title: "Example complete Comprehensive Folder"
 Description:      "Folder in List resource conforming Comprehensive metadata fully populated"
 Usage: #inline
 * text.status = #extensions
-* text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\">TODO: when builder works, remove this text element</div>"
+* text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\">Folder with Patient</div>"
 * meta.security = http://terminology.hl7.org/CodeSystem/v3-ActReason#HTEST
 * subject = Reference(Patient/ex-patient)
 * identifier[0].system = "urn:ietf:rfc:3986"
