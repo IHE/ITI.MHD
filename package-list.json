@@ -1,35 +1,35 @@
 {
- "package-id" : "ihe.mhd.fhir",
- "title" : "IHE Mobile Access to Health Documents", 
- "canonical" : "http://profiles.ihe.net/ITI/MHD", 
- "introduction" : "## The IHE Mobile Access to Health Documents (MHD)\r\nThis IHE Implementation Guide  defined the FHIR access methods to Document Sharing.",
+ "package-id":"ihe.mhd.fhir",
+ "title":"IHE Mobile Access to Health Documents", 
+ "canonical":"http://profiles.ihe.net/ITI/MHD", 
+ "introduction":"## The IHE Mobile Access to Health Documents (MHD)\r\nThis IHE Implementation Guide  defined the FHIR access methods to Document Sharing.",
  "category":"EHR Access",
- "list" : [{
-  "version" : "current",
-  "desc" : "Continuous Integration Build (latest in version control)",
-  "path" : "http://build.fhir.org/ig/IHE/ITI.MHD",
-  "status" : "ci-build",
-  "current" : true
+ "list":[{
+  "version":"current",
+  "desc":"Continuous Integration Build (latest in version control)",
+  "path":"http://build.fhir.org/ig/IHE/ITI.MHD",
+  "status":"ci-build",
+  "current":true
  },
  {
-  "version" : "4.0.1",  
-  "date" : "2021-06-04", 
-  "desc" : "Normative release for Trial Implementation",   
-  "path" : "http://profiles.ihe.net/ITI/MHD/4.0.1",   
-  "status" : "trial-use",
-  "fhirversion": "4.0.1",
-  "sequence" : "Trial Implementation",
-  "current": true
+  "version":"4.0.1",  
+  "date":"2021-06-04", 
+  "desc":"Normative release for Trial Implementation",   
+  "path":"http://profiles.ihe.net/ITI/MHD/4.0.1",   
+  "status":"trial-use",
+  "fhirversion":"4.0.1",
+  "sequence":"Trial Implementation",
+  "current":true
  },
  {
-  "version" : "4.0.0-comment",  
-  "date" : "2021-04-02", 
-  "desc" : "Public Comment release for first IG authored version",   
-  "path" : "http://profiles.ihe.net/ITI/MHD/4.0.0",   
-  "status" : "ballot",
-  "fhirversion": "4.0.1",
-  "sequence" : "Public Comment",
-  "current": false
+  "version":"4.0.0-comment",  
+  "date":"2021-04-02", 
+  "desc":"Public Comment release for first IG authored version",   
+  "path":"http://profiles.ihe.net/ITI/MHD/4.0.0",   
+  "status":"ballot",
+  "fhirversion":"4.0.1",
+  "sequence":"Public Comment",
+  "current":false
  }
  ]
 }

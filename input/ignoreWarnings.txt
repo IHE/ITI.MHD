@@ -2,8 +2,6 @@
 # show DICOM system is okay. This may not be what FHIR wants to be the system, but it is what is often done in the IHE and DICOM
 Code System URI 'urn:ihe:event-type-code' is unknown so the code cannot be validated
 Could not confirm that the codes provided are in the value set http://hl7.org/fhir/ValueSet/formatcodes, and a code is recommended to come from this value set
-
-# the formal IHE formatcode code system
 Code System URI 'http://ihe.net/fhir/ihe.formatcode.fhir/CodeSystem/formatcode' is unknown so the code cannot be validated
 
 # Structure Definitions
@@ -76,6 +74,7 @@ Validate resource against profile http://profiles.ihe.net/ITI/MHD/StructureDefin
 Validate resource against profile http://profiles.ihe.net/ITI/MHD/StructureDefinition/IHE.MHD.Minimal.SubmissionSet
 Validate resource against profile http://profiles.ihe.net/ITI/MHD/StructureDefinition/IHE.MHD.Comprehensive.SubmissionSet - listed in meta
 Validate resource against profile http://profiles.ihe.net/ITI/MHD/StructureDefinition/IHE.MHD.UnContained.Comprehensive.SubmissionSet - listed in meta
+Validate resource against profile http://profiles.ihe.net/ITI/MHD/StructureDefinition/IHE.MHD.UnContained.Comprehensive.SubmissionSet
 Validate resource against profile http://profiles.ihe.net/ITI/MHD/StructureDefinition/IHE.MHD.Comprehensive.SubmissionSet
 Validate resource against profile http://profiles.ihe.net/ITI/MHD/StructureDefinition/IHE.MHD.Minimal.Folder - listed in meta
 Validate resource against profile http://profiles.ihe.net/ITI/MHD/StructureDefinition/IHE.MHD.Minimal.Folder
@@ -92,6 +91,7 @@ Validate resource against profile http://profiles.ihe.net/ITI/MHD/StructureDefin
 Validate resource against profile http://profiles.ihe.net/ITI/MHD/StructureDefinition/IHE.MHD.Comprehensive.ProvideBundle
 Validate resource against profile http://profiles.ihe.net/ITI/MHD/StructureDefinition/IHE.MHD.ProvideDocumentBundleResponse - listed in meta
 Validate resource against profile http://profiles.ihe.net/ITI/MHD/StructureDefinition/IHE.MHD.ProvideDocumentBundleResponse
+Validate resource against profile http://profiles.ihe.net/ITI/MHD/StructureDefinition/IHE.MHD.UnContained.Comprehensive.ProvideBundle
 Validate resource against profile http://profiles.ihe.net/ITI/MHD/StructureDefinition/IHE.MHD.FindDocumentReferencesComprehensiveResponseMessage - listed in meta
 Validate resource against profile http://profiles.ihe.net/ITI/MHD/StructureDefinition/IHE.MHD.FindDocumentReferencesResponseMessage - listed in meta
 Validate resource against profile http://profiles.ihe.net/ITI/MHD/StructureDefinition/IHE.MHD.FindDocumentListsResponseMessage - listed in meta
