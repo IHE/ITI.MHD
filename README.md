@@ -15,4 +15,3 @@ After public comment resolution this Implementation Guide will become the normat
 This Continuous Build will appear http://build.fhir.org/ig/IHE/ITI.MHD/branches/master/index.html
 
 Formal Publicaiton at http://profiles.ihe.net/ITI/MHD
-
