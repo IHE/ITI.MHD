@@ -32,9 +32,9 @@ parameters:  # see https://confluence.hl7.org/display/FHIR/Implementation+Guide+
     - input/resources
     - fsh-generated/resources
     - input/examples
-  path-pages:
-    - input/pagecontent
-    - fsh-generated/includes
+#  path-pages:
+#    - input/pagecontent
+#    - fsh-generated/includes
   active-tables: 'false'
   apply-contact: 'true'
   apply-jurisdiction: 'true'
