@@ -65,15 +65,6 @@ Usage: #example
 * content.attachment.title = "Hello World"
 * content.attachment.contentType = #text/plain
 
-Instance: ex-b-binary
-InstanceOf: Binary
-Title: "Example document that says: Hello World"
-Description: "Example binary that holds just Hello World"
-Usage: #example
-* meta.security = http://terminology.hl7.org/CodeSystem/v3-ActReason#HTEST
-* contentType = #text/plain
-* data = "SGVsbG8gV29ybGQ="
-
 Instance: ex-list
 InstanceOf: List
 Title: "Dummy List example"

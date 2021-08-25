@@ -101,8 +101,8 @@ Usage: #inline
 * subject = Reference(urn:uuid:aaaaaaaa-bbbb-cccc-dddd-e00111100004)
 * entry[+].item = Reference(urn:uuid:aaaaaaaa-bbbb-cccc-dddd-e00111100002)
 * extension[sourceId].valueIdentifier.value = "urn:oid:1.2.3.4"
-* contained[0] = in-practitioner
-* extension[intendedRecipient].valueReference = Reference(in-practitioner)
+* contained[0] = in-practitioner2
+* extension[intendedRecipient].valueReference = Reference(in-practitioner2)
 
 
 Instance:   aaaaaaaa-bbbb-cccc-dddd-e00111100002

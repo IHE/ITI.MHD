@@ -65,7 +65,7 @@ Usage: #inline
 * name[+].family = "Schmidt"
 * name[=].given = "Dee"
 
-Instance: in-practitioner
+Instance: in-practitioner2
 InstanceOf: Practitioner
 Title: "Intended Practitioner Recipient example"
 Description: "a Practitioner identified only as an email address, carried as a contained resoruce."
