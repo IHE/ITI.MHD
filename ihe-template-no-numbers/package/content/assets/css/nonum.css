@@ -1,0 +1,33 @@
+/*
+
+    just the style changes for removing auto-numbering of headers
+
+*/
+
+  /* Common content for section numbering */
+  body{counter-reset:section}
+  h2{counter-reset:sub-section}
+  h3{counter-reset:composite}
+  h4{counter-reset:detail}
+  h5{counter-reset:more-detail}
+  h2:before{content: " " !important;}
+  h3:before{content: " " !important;}
+  h4:before{content: " " !important;}
+  h5:before{content: " " !important;}
+  h6:before{content: " " !important;}
+  
+  
+  
+  /*--------- smooth transitions ---------- */
+  
+  body{
+      opacity: 0;
+      transition: opacity 0.7s;
+      -webkit-transition: opacity 0.7s; /* Safari */
+      -ms-transition: opacity 0.7s; /* ie */
+      -o-transition: opacity 0.7s; /* opera */
+      -moz-transition: opacity 0.7s; /* firefox */
+  }
+  
+  
+  
