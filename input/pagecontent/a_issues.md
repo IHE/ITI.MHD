@@ -11,9 +11,16 @@
 
 Please review the open issues and provide your response to the questions and statements.
 
-### Issues
+## Issues
 
-#### Open Issues
+IHE welcomes [New Issues](https://github.com/IHE/ITI.MHD/issues/new/choose) from the GitHub community. 
+For those without GitHub access, issues may be submitted to the [Public Comment form](https://www.ihe.net/resources/public_comment/).
+
+As issues are submitted they will be managed on the [PDQm GitHub Issues](https://github.com/IHE/ITI.MHD/issues), where discussion and workarounds may be found. These issues, when critical, will be processed using the normal [IHE Change Proposal](https://wiki.ihe.net/index.php/Category:CPs) management and balloting. 
+It is important to note that as soon as a Change Proposal is approved, it carries the same weight as a published Implementation Guide (i.e., it is testable at an [IHE Connectathon](https://www.ihe.net/participate/connectathon/) from the time it is approved, even if it will not be integrated until several months later).
+
+### Open Issues
+These issues were known as part of the publication, and IHE invites comments.
 
 * MHD_063: Should MHD defined CapabilityStatement requirements so that a client can determine that the server supports MHD and which MHD server actor? Today we do require servers to support metadata endpoint returning their CapabilityStatment, but do not require it to contain anything specifically. We could first require that the CapabilityStatment.implementationGuide be populated with MHD canonical IG URL. We could additionally require specific .transaction values for DocumentRecipient, and .rest.resource.supportedProfile for DocumentResponder. Might we need an extension in .transaction to be more specific for Document Recipient? Should a DocumentRecipient need to publish that it is capable of receiving a create/update on these .rest resources (which we only defined thru the transaction, not individually REST)? Might we add an extension on CapabilityStatement.implementationGuide to hold the actor name and options? 
 * MHD_061: The new IUA supplement includes guidance on use of OAuth scopes when grouped with MHD. That text updates MHD, but be maintained in MHD until IUA goes Final Text. see https://profiles.ihe.net/ITI/IUA/index.html#33-mhd-profile
@@ -23,7 +30,8 @@ Please review the open issues and provide your response to the questions and sta
 * MHD_065: Is it needed to have a mapping between XDS RegistryError and FHIR OperationOutcome at the element level, and also addressing OperationOutcome.issue.code vocabulary could be mapped to the XDS error vocabulary between XDS https://profiles.ihe.net/ITI/TF/Volume3/ch-4.2.html#4.2.4.1 and FHIR OperationOutcome?
 * MHD_066: Note that On-Demand may become supported in FHIR R5 https://jira.hl7.org/browse/FHIR-22501
 
-#### Closed Issues
+### Closed Issues
+These issues have been decided and documented in the publication.
 
 * Resolved in 4.0 (first IG build)
 * MHD_062: Should the structureDefinition profiles forbid modifier extensions? It seems we have no reason for modifierExtensions, and modifierExtensions are allowed to radically change the meaning of the resource. -- with no objection this is likely to be added as a constraint.

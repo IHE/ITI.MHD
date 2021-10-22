@@ -1,0 +1,10 @@
+---
+feedback:
+  - active: true
+    dashboard:
+      label: New Issue
+      url: https://github.com/IHE/ITI.MHD/issues/new/choose
+  - active: true
+    dashboard:
+      label: Issues
+      url: https://github.com/IHE/ITI.MHD/issues
