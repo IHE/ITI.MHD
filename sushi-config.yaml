@@ -11,7 +11,7 @@ title: "Mobile access to Health Documents (MHD)"
 description: ImplementationGuide for IHE IT Infrastructure Technical Framework Supplement Mobile access to Health Documents (MHD) Rev. 4.0.1 normative
 copyright: IHE http://www.ihe.net/Governance/#Intellectual_Property
 copyrightYear: 2020+
-releaseLabel: ci-build
+releaseLabel: Trial-Implementation
 publisher:
   name: Integrating the Healthcare Enterprise (IHE)
   url: http://ihe.net
