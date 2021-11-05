@@ -71,17 +71,17 @@ pages:
   1336_cross_profile_considerations.md:
     title: "1:33.6 Cross Profile Considerations"
   ITI-65.md:
-    title: "Provide Document Bundle [ITI-65]"
+    title: "2:3.65 Provide Document Bundle [ITI-65]"
   ITI-66.md:
-    title: "Find Document Lists [ITI-66]"
+    title: "2:3.66 Find Document Lists [ITI-66]"
   ITI-67.md:
-    title: "Find Document References [ITI-67]"
+    title: "2:3.67 Find Document References [ITI-67]"
   ITI-68.md:
-    title: "Retrieve Document [ITI-68]"
+    title: "2:3.68 Retrieve Document [ITI-68]"
   31_xds.md:
-    title: "4.2.4.1 Error Codes"
+    title: "3:4.2.4.1 Error Codes"
   32_fhir_maps.md:
-    title: "4.5 FHIR Maps"
+    title: "3:4.5 FHIR Maps"
   testplan.md:
     title: "Test Plan"
   a_issues.md:
