@@ -11,13 +11,13 @@
 
 * Transactions
 
-  - [Provide Document Bundle ITI-65](ITI-65.html)
+  - [Provide Document Bundle [ITI-65]](ITI-65.html)
 
-  - [Find Document Lists ITI-66](ITI-66.html)
+  - [Find Document Lists [ITI-66]](ITI-66.html)
 
-  - [Find Document References ITI-67](ITI-67.html)
+  - [Find Document References [ITI-67]](ITI-67.html)
 
-  - [Retrieve Document ITI-68](ITI-68.html)
+  - [Retrieve Document [ITI-68]](ITI-68.html)
 
 ## 1:33.4 MHD Overview
 The MHD Profile enables sharing of patient documents to, or from, mobile or constrained devices. Other IHE profiles, chiefly Cross-Enterprise Document Sharing (XDS), describe sharing of patient document in less constrained environments, and many of the concepts from those profiles are applicable to the MHD environment. For more information on IHE Document Sharing, see [Health Information Exchange: Enabling Document Sharing Using IHE Profiles](https://profiles.ihe.net/ITI/HIE-Whitepaper/index.html) White Paper.
@@ -60,11 +60,11 @@ The publication of a new document(s) is done using the Provide Document Bundle [
 In this use case, the mobile device needs access to existing documents. For example, a mobile device involved in a workflow needs to determine the current state of the workflow, or the mobile device needs to discover the most current medical summary. 
 
 #### 1:33.4.3.2 Discovery Retrieval of existing documents Process Flow
-The Find Document References [ITI-67](ITI-67.html) transaction is used to issue parameterized queries that result in a list of DocumentReference Resources, where a DocumentReference Resource carries the XDS DocumentEntry metadata, which is metadata about a document.
+The Find Document References [[ITI-67[](ITI-67.html) transaction is used to issue parameterized queries that result in a list of DocumentReference Resources, where a DocumentReference Resource carries the XDS DocumentEntry metadata, which is metadata about a document.
 
-Alternatively, the Find Document Lists [ITI-66](ITI-66.html) transaction is used to issue parameterized queries that result in a set of List Resources, where a List Resource carries the XDS SubmissionSet metadata for a set of DocumentEntry objects that were published as a set, or XDS Folder metadata for a set of DocumentEntry objects that are said to be members of the same grouping.
+Alternatively, the Find Document Lists [[ITI-66[](ITI-66.html) transaction is used to issue parameterized queries that result in a set of List Resources, where a List Resource carries the XDS SubmissionSet metadata for a set of DocumentEntry objects that were published as a set, or XDS Folder metadata for a set of DocumentEntry objects that are said to be members of the same grouping.
 
-The Retrieve Document [ITI-68](ITI-68.html) transaction is used to get the document itself.
+The Retrieve Document [[ITI-68[](ITI-68.html) transaction is used to get the document itself.
 
 <div>
 {%include usecase2-processflow.svg%}
@@ -74,7 +74,7 @@ The Retrieve Document [ITI-68](ITI-68.html) transaction is used to get the docum
 **Figure 1:33.4.3.2-1: Basic Process Flow in MHD Profile**
 
 ### 1:33.4.4 Mapping to RESTful operators
-The MHD Profile defines a set of transactions against FHIR Resources. These are summarized in Table 33.4.4-1. MHD does not use any additional extended or custom methods.
+The MHD Profile defines a set of transactions against FHIR Resources. These are summarized in Table 1:33.4.4-1. MHD does not use any additional extended or custom methods.
 
 **Table 1:33.4.4-1: REST Methods and Resources**
 
