@@ -6,7 +6,7 @@ The Retrieve Document [ITI-68] transaction is used by the Document Consumer to r
 
 ### 2:3.68.2 Actors Roles
 
-**Table 3.68.2-1: Actor Roles**
+**Table 2:3.68.2-1: Actor Roles**
 
 |Actor | Role |
 |-------------------+--------------------------|
@@ -26,7 +26,7 @@ The Retrieve Document [ITI-68] transaction is used by the Document Consumer to r
 
 <div style="clear: left"/>
 
-**Figure 3.68.4-1: Retrieve Document Interactions**
+**Figure 2:3.68.4-1: Retrieve Document Interactions**
 
 #### 2:3.68.4.1 Retrieve Document Request Message
 
@@ -62,9 +62,9 @@ The HTTP Response message is sent upon completion of the Retrieve Document Reque
 
 This message shall be an HTTP Response, as specified by RFC2616. When the requested document is returned, the Document Responder shall respond with HTTP Status Code 200. The HTTP message-body shall be the content of the requested document.
 
-Table 3.68.4.2.2-1 contains error situations and the HTTP Response.
+Table 2:3.68.4.2.2-1 contains error situations and the HTTP Response.
 
-**Table 3.68.4.2.2-1: HTTP Error Response Codes and Suggested Text**
+**Table 2:3.68.4.2.2-1: HTTP Error Response Codes and Suggested Text**
 
 |Situation	| HTTP Response |
 |-----------|---------------|
