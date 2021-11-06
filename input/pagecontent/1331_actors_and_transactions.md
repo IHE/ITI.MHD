@@ -21,7 +21,7 @@ optional transactions (labeled "O").
 <table border="1" borderspacing="0" style='border: 1px solid black; border-collapse: collapse'>
 <caption>
 <b>
-**Table 1:33.1-1: MHD Implementation Guide - Actors and Transactions**
+Table 1:33.1-1: MHD Implementation Guide - Actors and Transactions
 </b>
 </caption>
 <thead>
