@@ -1,9 +1,9 @@
 
-Options that may be selected for each actor in this implementation guide, are listed in Table 33.2-1 below. Dependencies 
+Options that may be selected for each actor in this implementation guide, are listed in Table 1:33.2-1 below. Dependencies 
 between options when applicable are specified in notes.
 
 <table border="1" style="border: 1px solid black; border-collapse: collapse">
-    <caption><b>Table 33.2-1 Actor Options</b></caption>
+    <caption><b>Table 1:33.2-1 Actor Options</b></caption>
     <thead>
         <tr style="background: gray;" class="odd">
             <td>Actor</td>
