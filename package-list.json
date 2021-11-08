@@ -13,7 +13,7 @@
  },
  {
   "version" : "4.0.2",  
-  "date" : "2021-11-05", 
+  "date" : "2021-11-08", 
   "desc" : "Normative release for Trial Implementation - IHE look-and-feel style change",   
   "path" : "http://profiles.ihe.net/ITI/MHD/4.0.2",   
   "status" : "trial-use",
