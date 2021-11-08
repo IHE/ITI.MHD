@@ -31,7 +31,7 @@ The result of the query is a Bundle containing List Resources that match the que
 
 <div style="clear: left"/>
 
-**Figure 3.66.4-1: Find Document Lists Interactions**
+**Figure 2:3.66.4-1: Find Document Lists Interactions**
 
 #### 2:3.66.4.1 Find Document Lists Request message
 
@@ -84,7 +84,7 @@ These parameters, of type string, specify the name parts of the author person wh
 This IHE extension on parameters defined as [List-SourceId](SearchParameter-List-SourceId.html), of type reference, specifies the source (author) value supplied in the List Resource. 
 
 **status**:
-This parameter, of type token, specifies the status of the List. If included in the query, the Document Consumer shall populate the code portion of the token with one of the codes in the following *Table 3.66.4.1.2.1-1: Values for code for status of List*. The system portion of the token shall not be populated.
+This parameter, of type token, specifies the status of the List. If included in the query, the Document Consumer shall populate the code portion of the token with one of the codes in the following *Table 2:3.66.4.1.2.1-1: Values for code for status of List*. The system portion of the token shall not be populated.
 
 **Table 2:3.66.4.1.2.1-1: Values for code for status of List**
 
@@ -133,9 +133,9 @@ The Document Responder shall process the query to discover the List entries that
 
 ###### 2:3.66.4.1.3.1 XDS on FHIR Option
 
-The Document Responder is grouped with an XDS Document Consumer when it supports the [XDS on FHIR](1332_actor_options.html#13322-xds-on-fhir-option) Option. The Document Responder shall map the query parameters as listed in Table 3.66.4.1.3-1 and shall execute a Registry Stored Query [ITI-18] for FindSubmissionSets or FindFolders. No additional query parameters as defined in FHIR are required of the Document Responder.
+The Document Responder is grouped with an XDS Document Consumer when it supports the [XDS on FHIR](1332_actor_options.html#13322-xds-on-fhir-option) Option. The Document Responder shall map the query parameters as listed in Table 2:3.66.4.1.3.1-1 and shall execute a Registry Stored Query [ITI-18] for FindSubmissionSets or FindFolders. No additional query parameters as defined in FHIR are required of the Document Responder.
 
-**Table 2:3.66.4.1.3-1: FindSubmissionSets Query Parameter Mapping**
+**Table 2:3.66.4.1.3.1-1: FindSubmissionSets Query Parameter Mapping**
 
 |ITI-66 Parameter Name	| ITI-18 Parameter Name |
 |code | "submissionset" |
@@ -152,7 +152,7 @@ Note 1: This FindSubmissionSets parameter is used when the greater than paramete
 
 Note 2: This FindSubmissionSets parameter is used when the less than parameter modifier is used on the created parameter. 
 
-**Table 2:3.66.4.1.3-2: FindFolders Query Parameter Mapping**
+**Table 2:3.66.4.1.3.1-2: FindFolders Query Parameter Mapping**
 
 |ITI-66 Parameter Name	| ITI-18 Parameter Name |
 |code | "folder" |
