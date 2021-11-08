@@ -152,7 +152,7 @@ The Document Recipient shall transform the Bundle content into a proper message 
 
 If the Provide Document Bundle Message contains a DocumentReference with a relatesTo element, the code shall be translated using the [AssociationType vs RelatesTo ConceptMap](ConceptMap-AssociationTypeVsRelatesTo.html).
 
-The Document Recipient shall map Folder type List Resources in the Bundle Resource to XDS Folders, as specified in [ITI TF-3: Table 4.5.1.1-1](32_fhir_maps.html#folder). The Document Registry may apply further constraints on Folder content and revision, for example removal of entries from Folders is not generally allowed.
+The Document Recipient shall map Folder type List Resources in the Bundle Resource to XDS Folders, as specified in [ITI TF-3: 4.5.1.1](32_fhir_maps.html#folder). The Document Registry may apply further constraints on Folder content and revision, for example removal of entries from Folders is not generally allowed.
 
 Some FHIR elements do not translate to XDS concepts; the handling of these elements is left to the implementer of the Document Recipient. 
 
