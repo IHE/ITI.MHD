@@ -98,7 +98,7 @@ This parameter, of type token, specifies the security labels of the document ref
 This parameter, of type token, specifies the specific practice setting of the DocumentReference Resource, or in Document Sharing nomenclature, the practiceSettingCode of the Document Entry. See [ITI TF-2x: Appendix Z.2](https://profiles.ihe.net/ITI/TF/Volume2/ch-Z.html#z.2-query-parameters) for additional constraints on the use of the token search parameter type.
 
 **status**:
-This parameter, of type token, specifies the status of the DocumentReference Resource, or in Document Sharing nomenclature, the availabilityStatus of the Document Entry. The Document Consumer shall populate the identifier portion of the token using one of the short codes in Table 3.67.4.1.2.1-1. The system portion of the token shall not be populated.
+This parameter, of type token, specifies the status of the DocumentReference Resource, or in Document Sharing nomenclature, the availabilityStatus of the Document Entry. The Document Consumer shall populate the identifier portion of the token using one of the short codes in Table 2:3.67.4.1.2.1-1. The system portion of the token shall not be populated.
 
 **type**:
 This parameter, of type token, specifies the specific type of the DocumentReference resource or in Document Sharing nomenclature, the typeCode of the Document Entry. See [ITI TF-2x: Appendix Z.2](https://profiles.ihe.net/ITI/TF/Volume2/ch-Z.html#z.2-query-parameters) for additional constraints on the use of the token search parameter type.
@@ -144,9 +144,9 @@ The Document Responder shall process the query to discover the DocumentReference
 
 ###### 2:3.67.4.1.3.1 XDS on FHIR Option
 
-The Document Responder is grouped with an XDS Document Consumer when it supports the [XDS on FHIR](1332_actor_options.html#13322-xds-on-fhir-option) Option. The Document Responder shall map the query parameters as listed in Table 3.67.4.1.3-1 and shall execute a Registry Stored Query [ITI-18] for FindDocuments or FindDocumentsByReferenceIdList (see [ITI TF-2a: 3.18.4.1.2.3.7.1](https://profiles.ihe.net/ITI/TF/Volume2/ITI-18.html#3.18.4.1.2.3.7.1) and [3.18.4.1.2.3.7.14](https://profiles.ihe.net/ITI/TF/Volume2/ITI-18.html#3.18.4.1.2.3.7.14) ). All of the query parameters in Table 3.67.4.1.3-1 shall be supported by the Document Responder. No additional query parameters as defined in FHIR are required of the Document Responder, but they may be offered.
+The Document Responder is grouped with an XDS Document Consumer when it supports the [XDS on FHIR](1332_actor_options.html#13322-xds-on-fhir-option) Option. The Document Responder shall map the query parameters as listed in Table 2:3.67.4.1.3.1-1 and shall execute a Registry Stored Query [ITI-18] for FindDocuments or FindDocumentsByReferenceIdList (see [ITI TF-2a: 3.18.4.1.2.3.7.1](https://profiles.ihe.net/ITI/TF/Volume2/ITI-18.html#3.18.4.1.2.3.7.1) and [3.18.4.1.2.3.7.14](https://profiles.ihe.net/ITI/TF/Volume2/ITI-18.html#3.18.4.1.2.3.7.14) ). All of the query parameters in Table 3.67.4.1.3-1 shall be supported by the Document Responder. No additional query parameters as defined in FHIR are required of the Document Responder, but they may be offered.
 
-**Table 2:3.67.4.1.3-1: ITI-18 FindDocuments Query Parameter Mapping**
+**Table 2:3.67.4.1.3.1-1: ITI-18 FindDocuments Query Parameter Mapping**
 
 | ITI-67 Parameter Name	| ITI-18 Parameter Name |
 |-----------|-----------|
@@ -180,7 +180,7 @@ Note 4: The $XDSDocumentEntryReferenceIdList can only be mapped when using the X
 
 Note 5: The FHIR DocumentReference does not yet have a query parameter for creationTime of the document, it has only a date element which is the creation date/time of the DocumentReference. For FHIR R4 we align these two elements so that query will function.
 
-**Table 2:3.67.4.1.2.1-1: Values for code for status of DocumentReference**
+**Table 2:3.67.4.1.3.1-2: Values for code for status of DocumentReference**
 
 |FHIR Code	|ebRIM Code |
 |-----------|-----------|
@@ -242,7 +242,7 @@ Where the documentReference Resource being returned has an XDS Association, this
 
 Resource Bundling shall comply with the guidelines in [ITI TF-2x: Appendix Z.1](https://profiles.ihe.net/ITI/TF/Volume2/ch-Z.html#z.1-resource-bundles). 
 
-##### 2:3.67.4.3 Expected Actions
+#### 2:3.67.4.3 Expected Actions
 
 If the Document Responder returns an HTTP redirect response (HTTP status codes 301, 302, 303, or 307), the Document Consumer shall follow the redirect, but may stop processing if it detects a loop. See RFC7231 Section 6.4 Redirection 3xx.
 
