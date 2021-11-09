@@ -4,14 +4,14 @@
 id: ihe.mhd.fhir
 canonical: http://profiles.ihe.net/ITI/MHD
 name: IHE_MHD
-version: 4.0.2
+version: 4.0.3
 fhirVersion: 4.0.1
 status: active
 title: "Mobile access to Health Documents (MHD)"
 description: ImplementationGuide for IHE IT Infrastructure Technical Framework Supplement Mobile access to Health Documents (MHD) Rev. 4.0.1 normative
 copyright: IHE http://www.ihe.net/Governance/#Intellectual_Property
 copyrightYear: 2020+
-releaseLabel: Trial-Implementation
+releaseLabel: ci-build
 publisher:
   name: Integrating the Healthcare Enterprise (IHE)
   url: http://ihe.net
