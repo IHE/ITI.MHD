@@ -62,7 +62,7 @@ Usage: #definition
 * code = #sourceId
 * base = #List
 * expression = "extension.where(url='http://profiles.ihe.net/ITI/MHD/StructureDefinition/SourceId').value"
-* type = #reference
+* type = #token
 
 
 Extension: IntendedRecipient
