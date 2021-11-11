@@ -37,7 +37,7 @@ Usage: #definition
 * status = #active
 * code = #designationType
 * base = #List
-* expression = "(extension('http://profiles.ihe.net/ITI/MHD/StructureDefinition/DesignationType').value as CodeableConcept)"
+* expression = "extension.where(url='http://profiles.ihe.net/ITI/MHD/StructureDefinition/DesignationType').value"
 * type = #token
 
 CodeSystem:  MHDlistTypes 

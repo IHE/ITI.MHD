@@ -61,7 +61,7 @@ Usage: #definition
 * status = #active
 * code = #sourceId
 * base = #List
-* expression = "(extension('http://profiles.ihe.net/ITI/MHD/StructureDefinition/SourceId').value as Reference)"
+* expression = "extension.where(url='http://profiles.ihe.net/ITI/MHD/StructureDefinition/SourceId').value"
 * type = #reference
 
 
