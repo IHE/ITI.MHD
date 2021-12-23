@@ -43,6 +43,7 @@ Usage: #definition
 CodeSystem:  MHDlistTypes 
 Title: "MHD List Types"
 Description:  "To use the List resource for two different use-cases we define a code-system with the types of List needed in MHD"
+* ^caseSensitive = true
 * #folder "Folder as a FHIR List"
 * #submissionset "SubmissionSet as a FHIR List"
 
