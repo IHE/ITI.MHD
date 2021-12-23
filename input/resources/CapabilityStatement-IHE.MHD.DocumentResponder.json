@@ -236,8 +236,8 @@
             {
               "name": "sourceId",
               "definition": "http://profiles.ihe.net/ITI/MHD/SearchParameter/List-SourceId",
-              "type": "reference",
-              "documentation": "This IHE extension on parameters defined as SearchParameter/List-SourceId, of type reference, specifies the source (author) value supplied in the List Resource."
+              "type": "token",
+              "documentation": "This IHE extension on parameters defined as SearchParameter/List-SourceId, of type token, specifies the source (author) value supplied in the List Resource."
             }
           ]
         },
