@@ -51,9 +51,9 @@ This guide is organized into four main sections:
 Click on any of the links above, head on over the [table of contents](toc.html), or
 if you are looking for a specific artifact, check out the [index](artifacts.html).
 
-#### Must Support`
+#### Must Support
 
-MHD uses `Must Support` in StructureDefinitions with the definition found in [Appendix Z](https://profiles.ihe.net/ITI/TF/Volume2/ch-Z.html#z.10-profiling-conventions-for-constraints-on-fhir). This is equivalent to IHE use of **R2**.
+MHD defines `Must Support` in StructureDefinition profiles as the element, when the minimal cardionality is zero, is **R2** `Required if Known`, as found in [Appendix Z](https://profiles.ihe.net/ITI/TF/Volume2/ch-Z.html#z.10-profiling-conventions-for-constraints-on-fhir). `Must Support` when the element minimal cardionality is not zero means **R**.
 
 #### Download 
 
