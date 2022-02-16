@@ -8,3 +8,7 @@ output/
 fsh-generated/
 www
 website
+/_genonce.sh
+/_gencontinuous.bat
+/_gencontinuous.sh
+/_genonce.bat
