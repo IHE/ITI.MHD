@@ -61,8 +61,8 @@ Usage: #definition
 * status = #active
 * code = #sourceId
 * base = #List
-* expression = "(extension('http://profiles.ihe.net/ITI/MHD/StructureDefinition/SourceId').value as Reference)"
-* type = #reference
+* expression = "(extension('http://profiles.ihe.net/ITI/MHD/StructureDefinition/SourceId').value as Token)"
+* type = #token
 
 
 Extension: IntendedRecipient

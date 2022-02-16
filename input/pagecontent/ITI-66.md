@@ -81,7 +81,7 @@ This parameter, of type token, specifies an identifier associated with the patie
 These parameters, of type string, specify the name parts of the author person which is associated with the List. See [ITI TF-2x: Appendix Z.2](https://profiles.ihe.net/ITI/TF/Volume2/ch-Z.html#z.2-query-parameters) for use of the string data type. This use of **source.given** and **source.family** follows the [FHIR Chaining Parameters](http://hl7.org/fhir/search.html#chaining) search methodology.
 
 **sourceId**:
-This IHE extension on parameters defined as [List-SourceId](SearchParameter-List-SourceId.html), of type reference, specifies the source (author) value supplied in the List Resource. 
+This IHE extension on parameters defined as [List-SourceId](SearchParameter-List-SourceId.html), of type token, specifies the source (author) value supplied in the List Resource. 
 
 **status**:
 This parameter, of type token, specifies the status of the List. If included in the query, the Document Consumer shall populate the code portion of the token with one of the codes in the following *Table 2:3.66.4.1.2.1-1: Values for code for status of List*. The system portion of the token shall not be populated.
