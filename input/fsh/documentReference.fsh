@@ -58,7 +58,6 @@ Description:    "A profile on the DocumentReference resource for MHD with Compre
 * type 1..1
 * category 1..1
 * subject 1..1
-* date 1..1
 * securityLabel 1..*
 * content.attachment.language 1..1
 * content.attachment.creation 1..1
