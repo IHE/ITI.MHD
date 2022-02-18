@@ -26,6 +26,7 @@ Description:    "A profile on the DocumentReference resource for MHD with minima
 * description 0..1
 * securityLabel 0..* MS
 * content 1..1
+* content ^definition = "The document and format referenced."
 * content.attachment.contentType 1..1
 * content.attachment.language 0..1 MS
 * content.attachment.data 0..0
