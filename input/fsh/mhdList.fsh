@@ -25,7 +25,7 @@ Id: ihe-designationType
 Title: "Clinical code of the List"
 Description: "Expresses contentType of submissionSet or the codeList of a Folder. Usually expressed in LOINC or SNOMED."
 * value[x] only CodeableConcept
-
+* valueCodeableConcept 1..1
 
 Instance: List-DesignationType
 InstanceOf: SearchParameter
