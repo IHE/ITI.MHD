@@ -12,6 +12,16 @@
   "current" : true
  },
  {
+  "version" : "4.1.0",
+  "date" : "2022-03-01",
+  "desc" : "Normative release for Trial Implementation - Technical Corrections and google analytics",
+  "path" : "http://profiles.ihe.net/ITI/MHD/4.1.0",
+  "status" : "trial-use",
+  "fhirversion" : "4.0.1",
+  "sequence" : "Trial Implementation",
+  "current" : true
+ },
+ {
   "version" : "4.0.2",
   "date" : "2021-11-08",
   "desc" : "Normative release for Trial Implementation - IHE look-and-feel style change",
@@ -19,7 +29,7 @@
   "status" : "trial-use",
   "fhirversion" : "4.0.1",
   "sequence" : "Trial Implementation",
-  "current" : true
+  "current" : false
  },
  {
   "version" : "4.0.1",
