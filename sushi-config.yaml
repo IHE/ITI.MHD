@@ -13,6 +13,7 @@ copyright: IHE http://www.ihe.net/Governance/#Intellectual_Property
 copyrightYear: 2020+
 #releaseLabel: ci-build
 releaseLabel: Trial-Implementation
+date: 2022-03-01
 publisher:
   - name: IHE IT Infrastructure Technical Committee
   - url: https://www.ihe.net/ihe_domains/it_infrastructure/
