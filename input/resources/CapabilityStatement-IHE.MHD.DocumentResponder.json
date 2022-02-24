@@ -5,7 +5,7 @@
     "status": "additional",
     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">\n\tThis Requirements CapabilityStatement describes the <a href=\"1331_actors_and_transactions.html#133114-document-responder\">Document Responder actor</a>.\n\t</div>"
   },
-  "url": "http://profiles.ihe.net/ITI/MHD/CapabilityStatement/IHE.MHD.DocumentResponder",
+  "url": "https://profiles.ihe.net/ITI/MHD/CapabilityStatement/IHE.MHD.DocumentResponder",
   "name": "IHE_MHD_DocumentResponder",
   "title": "Document Responder (server)",
   "status": "active",
@@ -46,7 +46,7 @@
       "resource": [
         {
           "type": "DocumentReference",
-          "profile": "http://profiles.ihe.net/ITI/MHD/StructureDefinition/IHE.MHD.Query.Minimal.DocumentReference",
+          "profile": "https://profiles.ihe.net/ITI/MHD/StructureDefinition/IHE.MHD.Query.Minimal.DocumentReference",
           "interaction": [
             {
               "code": "read"
@@ -82,7 +82,7 @@
             },
             {
               "name": "creation",
-              "definition": "http://profiles.ihe.net/ITI/MHD/SearchParameter/DocumentReference-Creation",
+              "definition": "https://profiles.ihe.net/ITI/MHD/SearchParameter/DocumentReference-Creation",
               "type": "date",
               "documentation": "When this document was created"
             },
@@ -162,13 +162,13 @@
         },
         {
           "type": "List",
-          "profile": "http://profiles.ihe.net/ITI/MHD/StructureDefinition/IHE.MHD.List",
+          "profile": "https://profiles.ihe.net/ITI/MHD/StructureDefinition/IHE.MHD.List",
           "supportedProfile": [
-            "http://profiles.ihe.net/ITI/MHD/StructureDefinition/IHE.MHD.UnContained.Comprehensive.SubmissionSet",
-			"http://profiles.ihe.net/ITI/MHD/StructureDefinition/IHE.MHD.Comprehensive.SubmissionSet",
-            "http://profiles.ihe.net/ITI/MHD/StructureDefinition/IHE.MHD.Minimal.SubmissionSet",
-			"http://profiles.ihe.net/ITI/MHD/StructureDefinition/IHE.MHD.Comprehensive.Folder",
-			"http://profiles.ihe.net/ITI/MHD/StructureDefinition/IHE.MHD.Minimal.Folder"
+            "https://profiles.ihe.net/ITI/MHD/StructureDefinition/IHE.MHD.UnContained.Comprehensive.SubmissionSet",
+			"https://profiles.ihe.net/ITI/MHD/StructureDefinition/IHE.MHD.Comprehensive.SubmissionSet",
+            "https://profiles.ihe.net/ITI/MHD/StructureDefinition/IHE.MHD.Minimal.SubmissionSet",
+			"https://profiles.ihe.net/ITI/MHD/StructureDefinition/IHE.MHD.Comprehensive.Folder",
+			"https://profiles.ihe.net/ITI/MHD/StructureDefinition/IHE.MHD.Minimal.Folder"
           ],
           "interaction": [
             {
@@ -229,13 +229,13 @@
             },
             {
               "name": "designationType",
-              "definition": "http://profiles.ihe.net/ITI/MHD/SearchParameter/List-DesignationType",
+              "definition": "https://profiles.ihe.net/ITI/MHD/SearchParameter/List-DesignationType",
               "type": "token",
               "documentation": "This IHE extension on parameters defined as SearchParameter/List-DesignationType, of type token, specifies the designation type of the List. The value of the designation type element indicates the clinical purpose of the SubmissionSet or Folder. Note that servers that do not support this extended search parameter will ignore it, and thus return more results than expected."
             },
             {
               "name": "sourceId",
-              "definition": "http://profiles.ihe.net/ITI/MHD/SearchParameter/List-SourceId",
+              "definition": "https://profiles.ihe.net/ITI/MHD/SearchParameter/List-SourceId",
               "type": "token",
               "documentation": "This IHE extension on parameters defined as SearchParameter/List-SourceId, of type token, specifies the source (author) value supplied in the List Resource."
             }

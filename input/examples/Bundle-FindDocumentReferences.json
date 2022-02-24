@@ -4,7 +4,7 @@
   "meta": {
     "lastUpdated": "2020-10-14T07:56:23.916+00:00",
     "profile": [
-      "http://profiles.ihe.net/ITI/MHD/StructureDefinition/IHE.MHD.FindDocumentReferencesComprehensiveResponseMessage"
+      "https://profiles.ihe.net/ITI/MHD/StructureDefinition/IHE.MHD.FindDocumentReferencesComprehensiveResponseMessage"
     ]
   },
   "type": "searchset",
@@ -23,7 +23,7 @@
         "id": "50383ae5-49e5-4dea-b0e6-660cb9e7b91f",
         "meta": {
             "profile": [
-                "http://profiles.ihe.net/ITI/MHD/StructureDefinition/IHE.MHD.Comprehensive.DocumentReference"
+                "https://profiles.ihe.net/ITI/MHD/StructureDefinition/IHE.MHD.Comprehensive.DocumentReference"
             ]
         },
         "contained": [

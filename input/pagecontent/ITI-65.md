@@ -52,7 +52,7 @@ The Document Source shall assure all FHIR resource elements are consistent with 
 For complete information on constructing a FHIR Bundle Resource, see [http://hl7.org/fhir/R4/bundle.html](http://hl7.org/fhir/R4/bundle.html)
 
 The FHIR Bundle.meta.profile shall have the following value depending on the Actor implementation of no options (Minimal Metadata), Comprehensive Metadata Option, or UnContained References Option: 
-- [Minimal Metadata](StructureDefinition-IHE.MHD.Minimal.ProvideBundle.html): `http://profiles.ihe.net/ITI/MHD/StructureDefinition/IHE.MHD.Minimal.ProvideBundle`
+- [Minimal Metadata](StructureDefinition-IHE.MHD.Minimal.ProvideBundle.html): `https://profiles.ihe.net/ITI/MHD/StructureDefinition/IHE.MHD.Minimal.ProvideBundle`
   - shall be a Transaction Bundle
   - all resources shall be compliant with minimal constraints, they may be marked minimal, comprehensive, or unContained
   - shall create a [SubmissionSet type List](StructureDefinition-IHE.MHD.Minimal.SubmissionSet.html) that is either minimal, comprehensive, or unContained
@@ -60,7 +60,7 @@ The FHIR Bundle.meta.profile shall have the following value depending on the Act
   - may create one or more [Binary](http://hl7.org/fhir/R4/binary.html)
   - may create/update one or more [Folder type List](StructureDefinition-IHE.MHD.Minimal.Folder.html) that is either minimal, comprehensive, or unContained
   - may create/update/read one [Patient](http://hl7.org/fhir/R4/patient.html)
-- [Comprehensive Metadata](StructureDefinition-IHE.MHD.Comprehensive.ProvideBundle.html): `http://profiles.ihe.net/ITI/MHD/StructureDefinition/IHE.MHD.Comprehensive.ProvideBundle`
+- [Comprehensive Metadata](StructureDefinition-IHE.MHD.Comprehensive.ProvideBundle.html): `https://profiles.ihe.net/ITI/MHD/StructureDefinition/IHE.MHD.Comprehensive.ProvideBundle`
   - this is otherwise known as XDS-on-FHIR
   - shall be a Transaction Bundle
   - all resources shall be compliant with comprehensive constraints, they may be marked comprehensive
@@ -69,7 +69,7 @@ The FHIR Bundle.meta.profile shall have the following value depending on the Act
   - may create one or more [Binary](http://hl7.org/fhir/R4/binary.html)
   - may create/update one or more [Folder type List](StructureDefinition-IHE.MHD.Comprehensive.Folder.html) that is comprehensive
   - may create/update/read one [Patient](http://hl7.org/fhir/R4/patient.html)
-- [UnContained Comprehensive Metadata](StructureDefinition-IHE.MHD.UnContained.Comprehensive.ProvideBundle.html): `http://profiles.ihe.net/ITI/MHD/StructureDefinition/IHE.MHD.UnContained.Comprehensive.ProvideBundle` 
+- [UnContained Comprehensive Metadata](StructureDefinition-IHE.MHD.UnContained.Comprehensive.ProvideBundle.html): `https://profiles.ihe.net/ITI/MHD/StructureDefinition/IHE.MHD.UnContained.Comprehensive.ProvideBundle` 
   - note that Minimal Metadata does not require containment, so UnContained Minimal is the same as Minimal Metadata
   - note that UnContained only applies to DocumentReference and SubmissionSet type Lists; so the following apply
   - shall be a Transaction Bundle

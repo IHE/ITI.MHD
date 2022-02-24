@@ -128,7 +128,7 @@ InstanceOf: ConceptMap
 Title:      "AssociationType vs RelatesTo"
 Description: "map between XDS Association Types and MHD FHIR DocumentReference relatesTo code."
 Usage: #definition
-* url = "http://profiles.ihe.net/ITI/MHD/ConceptMap/AssociationTypeVsRelatesTo"
+* url = "https://profiles.ihe.net/ITI/MHD/ConceptMap/AssociationTypeVsRelatesTo"
 * name =  "AssociationTypeVsRelatesTo"
 * status = #active
 * date = 2021-05-15
