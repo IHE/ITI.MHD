@@ -195,22 +195,22 @@ The transactions in this profile are summarized in the sections below.
 
 This transaction is used to transfer documents and metadata and is analogous to a [Provide and Register Document Set-b ITI-41](https://profiles.ihe.net/ITI/TF/Volume2/ITI-41.html) transaction.
 
-For more details see the detailed [ITI-65 transaction description](ITI-65.html)
+For more details see the detailed [ITI-65 transaction description](ITI-65.html).
 
 #### 1:33.1.2.2 Find Document Lists
 
 This transaction is used to issue parameterize queries that result in a List resource representing a SubmissionSet or a Folder.
 
-For more details see the detailed [ITI-66 transaction description](ITI-66.html)
+For more details see the detailed [ITI-66 transaction description](ITI-66.html).
 
 #### 1:33.1.2.3 Find Document References
 
 This transaction is used to issue parameterized queries that result in a list of Document Reference resources.
 
-For more details see the detailed [ITI-67 transaction description](ITI-67.html)
+For more details see the detailed [ITI-67 transaction description](ITI-67.html).
 
 #### 1:33.1.2.4 Retrieve Document
 
 This transaction is used to get documents.
 
-For more details see the detailed [ITI-68 transaction description](ITI-68.html)
+For more details see the detailed [ITI-68 transaction description](ITI-68.html).
