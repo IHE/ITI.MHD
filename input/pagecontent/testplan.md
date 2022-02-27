@@ -28,7 +28,7 @@ MHD does not mandate of the functionality to be provided by the data communicate
 ### Options
 
 * "Comprehensive Metadata" for the Document Source & Document Recipient
-* "XDS on FHIR" for the Document Recipient and Document Responder (i.e. XDS backend for server actors)
+* "XDS on FHIR" for the Document Recipient and Document Responder (i.e., XDS backend for server actors)
 * "Uncontained Reference" for all MHD actors
 
 ## Unit Test Procedure (Conformance Testing)
@@ -42,9 +42,9 @@ Unit testing this context entails testing a SUT with a simulator or validator to
 * Provider: NIST (US National Institute of Standards and Technology)
 * FHIR Toolkit online: https://tools.iheusa.org:9743/home
 * Tool distribution: https://github.com/usnistgov/asbestos/releases/
-  * Release 2.x.x is compatible with MHD version 3.x.
-  * As of June 2021, FHIR Toolkit is not compatible with MHD version 4.x.
-  * Features may be added to FHIR Toolkit in subsequent releases. Check release notes in the tool distribution link above.
+  * Release 2.x.x is compatible with MHD version 3.x
+  * As of June 2021, FHIR Toolkit is not compatible with MHD version 4.x
+  * Features may be added to FHIR Toolkit in subsequent releases. Check release notes in the tool distribution link above
 * Documentation (installation):  https://github.com/usnistgov/asbestos/wiki/xInstallation-Guide-v2.x.x
 * Tool support: http://groups.google.com/group/ihe-mhd-implementors
 * Actors (options) tested:  Document Source (minimal metadata), Document Source (comprehensive metadata), Document Source (minimal metadata), Document Source (comprehensive metadata)
