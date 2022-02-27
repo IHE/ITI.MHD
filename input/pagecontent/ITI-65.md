@@ -49,7 +49,7 @@ The Document Source shall assure all FHIR resource elements are consistent with 
 
 ###### 2:3.65.4.1.2.1 Bundle Resources
 
-For complete information on constructing a FHIR Bundle Resource, see [http://hl7.org/fhir/R4/bundle.html](http://hl7.org/fhir/R4/bundle.html)
+For complete information on constructing a FHIR Bundle Resource, see [http://hl7.org/fhir/R4/bundle.html](http://hl7.org/fhir/R4/bundle.html).
 
 The FHIR Bundle.meta.profile shall have the following value depending on the Actor implementation of no options (Minimal Metadata), Comprehensive Metadata Option, or UnContained References Option: 
 - [Minimal Metadata](StructureDefinition-IHE.MHD.Minimal.ProvideBundle.html): `http://profiles.ihe.net/ITI/MHD/StructureDefinition/IHE.MHD.Minimal.ProvideBundle`
@@ -195,7 +195,7 @@ Document Source should provide a CapabilityStatement Resource as described in [I
 
 ### 2:3.65.5 Security Considerations
 
-See [MHD Security Considerations](1335_security_considerations.html)
+See [MHD Security Considerations](1335_security_considerations.html).
 
 #### 2:3.65.5.1 Security Audit Considerations
 
