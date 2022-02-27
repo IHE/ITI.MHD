@@ -1,7 +1,7 @@
 {
  "package-id" : "ihe.mhd.fhir",
  "title" : "IHE Mobile Access to Health Documents",
- "canonical" : "http://profiles.ihe.net/ITI/MHD",
+ "canonical" : "https://profiles.ihe.net/ITI/MHD",
  "introduction" : "## The IHE Mobile Access to Health Documents (MHD)\r\nThis IHE Implementation Guide defined the FHIR access methods to Document Sharing.",
  "category" : "EHR Access",
  "list" : [{
@@ -12,20 +12,30 @@
   "current" : true
  },
  {
-  "version" : "4.0.2",
-  "date" : "2021-11-08",
-  "desc" : "Normative release for Trial Implementation - IHE look-and-feel style change",
-  "path" : "http://profiles.ihe.net/ITI/MHD/4.0.2",
+  "version" : "4.1.0",
+  "date" : "2022-03-01",
+  "desc" : "Normative release for Trial Implementation - Technical Corrections and google analytics",
+  "path" : "https://profiles.ihe.net/ITI/MHD/4.1.0",
   "status" : "trial-use",
   "fhirversion" : "4.0.1",
   "sequence" : "Trial Implementation",
   "current" : true
  },
  {
+  "version" : "4.0.2",
+  "date" : "2021-11-08",
+  "desc" : "Normative release for Trial Implementation - IHE look-and-feel style change",
+  "path" : "https://profiles.ihe.net/ITI/MHD/4.0.2",
+  "status" : "trial-use",
+  "fhirversion" : "4.0.1",
+  "sequence" : "Trial Implementation",
+  "current" : false
+ },
+ {
   "version" : "4.0.1",
   "date" : "2021-06-04",
   "desc" : "Normative release for Trial Implementation",
-  "path" : "http://profiles.ihe.net/ITI/MHD/4.0.1",
+  "path" : "https://profiles.ihe.net/ITI/MHD/4.0.1",
   "status" : "trial-use",
   "fhirversion" : "4.0.1",
   "sequence" : "Trial Implementation",
@@ -35,7 +45,7 @@
   "version" : "4.0.0-comment",
   "date" : "2021-04-02",
   "desc" : "Public Comment release for first IG authored version",
-  "path" : "http://profiles.ihe.net/ITI/MHD/4.0.0",
+  "path" : "https://profiles.ihe.net/ITI/MHD/4.0.0",
   "status" : "ballot",
   "fhirversion" : "4.0.1",
   "sequence" : "Public Comment",

@@ -5,7 +5,7 @@
     "status": "additional",
     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">\n\tThis Requirements CapabilityStatement describes the <a href=\"1331_actors_and_transactions.html#133111-document-source\">Document Source actor</a> with Comprehensive declared Option.\n\t</div>"
   },
-  "url": "http://profiles.ihe.net/ITI/MHD/CapabilityStatement/IHE.MHD.DocumentSource.Comprehensive",
+  "url": "https://profiles.ihe.net/ITI/MHD/CapabilityStatement/IHE.MHD.DocumentSource.Comprehensive",
   "name": "IHE_MHD_DocumentSource_Comprehensive",
   "title": "Document Source (publisher) implementing Comprehensive Metadata Option",
   "status": "active",
@@ -49,7 +49,7 @@
       "interaction": [
         {
           "code": "transaction",
-          "documentation": "http://profiles.ihe.net/ITI/MHD/StructureDefinition/IHE.MHD.UnContained.Comprehensive.ProvideBundle"
+          "documentation": "https://profiles.ihe.net/ITI/MHD/StructureDefinition/IHE.MHD.UnContained.Comprehensive.ProvideBundle"
         }
       ]
     }

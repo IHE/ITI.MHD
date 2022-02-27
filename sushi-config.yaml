@@ -2,26 +2,27 @@
 # | documentation of this sushi-config.yaml file https://fshschool.org/docs/sushi/configuration/               |
 # ╰────────────────────────────────────────────────────────────────────────────────────────────────────────────╯
 id: ihe.mhd.fhir
-canonical: http://profiles.ihe.net/ITI/MHD
+canonical: https://profiles.ihe.net/ITI/MHD
 name: IHE_MHD
-version: 4.0.3
+version: 4.1.0
 fhirVersion: 4.0.1
 status: active
 title: "Mobile access to Health Documents (MHD)"
-description: ImplementationGuide for IHE IT Infrastructure Technical Framework Supplement Mobile access to Health Documents (MHD) Rev. 4.0.1 normative
+description: ImplementationGuide for IHE IT Infrastructure Technical Framework Supplement Mobile access to Health Documents (MHD) Rev. 4.1.0 normative
 copyright: IHE http://www.ihe.net/Governance/#Intellectual_Property
 copyrightYear: 2020+
-releaseLabel: ci-build
+#releaseLabel: ci-build
+releaseLabel: Trial-Implementation
+date: 2022-03-01
 publisher:
-  name: Integrating the Healthcare Enterprise (IHE)
-  url: http://ihe.net
-  email: secretary@ihe.net
+  - name: IHE IT Infrastructure Technical Committee
+  - url: https://www.ihe.net/ihe_domains/it_infrastructure/
+  - email: iti@ihe.net
 contact:
-  - name: John Moehrke
+  - name: IHE IT Infrastructure Technical Committee
     telecom:
       - system: email
-        value: JohnMoehrke@gmail.com
-        use: work
+        value: iti@ihe.net
 license: CC-BY-SA-4.0
 jurisdiction: 'http://unstats.un.org/unsd/methods/m49/m49.htm#001'
 #dependencies:

@@ -5,7 +5,7 @@ Id:             IHE.MHD.Minimal.ProvideBundle
 Title:          "MHD Minimal Provide Document Bundle"
 Description:    "A profile on the Bundle transaction for ITI-65 Provide Document resources with Minimal metadata for MHD.
 
-- [Minimal Metadata](StructureDefinition-IHE.MHD.Minimal.ProvideBundle.html): `http://profiles.ihe.net/ITI/MHD/StructureDefinition/IHE.MHD.Minimal.ProvideBundle`
+- [Minimal Metadata](StructureDefinition-IHE.MHD.Minimal.ProvideBundle.html): `https://profiles.ihe.net/ITI/MHD/StructureDefinition/IHE.MHD.Minimal.ProvideBundle`
   - shall be a Transaction Bundle
   - all resources shall be compliant with minimal constraints, they may be marked minimal, comprehensive, or unContained
   - shall create a [SubmissionSet type List](StructureDefinition-IHE.MHD.Minimal.SubmissionSet.html) that is either minimal, comprehensive, or unContained
@@ -82,7 +82,7 @@ Id:             IHE.MHD.UnContained.Comprehensive.ProvideBundle
 Title:          "MHD UnContained Comprehensive Provide Document Bundle"
 Description:    "A profile on the Bundle transaction for ITI-65 Provide Document resources with UnContained allowed but requiring Comprehensive Metadata for MHD.
 
-- [UnContained Comprehensive Metadata](StructureDefinition-IHE.MHD.UnContained.Comprehensive.ProvideBundle.html): `http://profiles.ihe.net/ITI/MHD/StructureDefinition/IHE.MHD.UnContained.Comprehensive.ProvideBundle` 
+- [UnContained Comprehensive Metadata](StructureDefinition-IHE.MHD.UnContained.Comprehensive.ProvideBundle.html): `https://profiles.ihe.net/ITI/MHD/StructureDefinition/IHE.MHD.UnContained.Comprehensive.ProvideBundle` 
   - note that Minimal Metadata does not require containment, so UnContained Minimal is the same as Minimal Metadata
   - note that UnContained only applies to DocumentReference and SubmissionSet type Lists; so the following apply
   - shall be a Transaction Bundle
@@ -106,7 +106,7 @@ Id:             IHE.MHD.Comprehensive.ProvideBundle
 Title:          "MHD Comprehensive Provide Document Bundle"
 Description:    "A profile on the Bundle transaction for ITI-65 Provide Document resources with Comprehensive Metadata for MHD.
 
-- [Comprehensive Metadata](StructureDefinition-IHE.MHD.Comprehensive.ProvideBundle.html): `http://profiles.ihe.net/ITI/MHD/StructureDefinition/IHE.MHD.Comprehensive.ProvideBundle`
+- [Comprehensive Metadata](StructureDefinition-IHE.MHD.Comprehensive.ProvideBundle.html): `https://profiles.ihe.net/ITI/MHD/StructureDefinition/IHE.MHD.Comprehensive.ProvideBundle`
   - this is otherwise known as XDS-on-FHIR
   - shall be a Transaction Bundle
   - all resources shall be compliant with comprehensive constraints, they may be marked comprehensive
