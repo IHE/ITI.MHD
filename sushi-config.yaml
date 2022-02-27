@@ -1,9 +1,9 @@
 # ╭────────────────────────────────────────────sushi-config.yaml───────────────────────────────────────────────╮
 # | documentation of this sushi-config.yaml file https://fshschool.org/docs/sushi/configuration/               |
 # ╰────────────────────────────────────────────────────────────────────────────────────────────────────────────╯
-id: ihe.mhd.fhir
+id: ihe.iti.mhd
 canonical: https://profiles.ihe.net/ITI/MHD
-name: IHE_MHD
+name: IHE_ITI_MHD
 version: 4.1.0
 fhirVersion: 4.0.1
 status: active

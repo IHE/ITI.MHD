@@ -1,5 +1,5 @@
 {
- "package-id" : "ihe.mhd.fhir",
+ "package-id" : "ihe.iti.mhd",
  "title" : "IHE Mobile Access to Health Documents",
  "canonical" : "https://profiles.ihe.net/ITI/MHD",
  "introduction" : "## The IHE Mobile Access to Health Documents (MHD)\r\nThis IHE Implementation Guide defined the FHIR access methods to Document Sharing.",
