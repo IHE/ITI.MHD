@@ -60,7 +60,7 @@ The Document Consumer may supply, and the Document Responder shall be capable of
 The Document Consumer shall include search parameter `patient` or `patient.identifier`, `code`, and `status`. The other parameters described below are optional. The Document Responder shall implement the parameters described below. The Document Responder may choose to support additional query parameters beyond the subset listed below. Any additional query parameters supported shall be supported according to the core FHIR specification. Such additional parameters are considered out of scope for this transaction. Any additional parameters not supported should be ignored. See [http://hl7.org/fhir/R4/search.html#errors](http://hl7.org/fhir/R4/search.html#errors).
 
 **code**: 
-This parameter, of type token, specifies the code.coding value supplied in the List Resource. The value of the code element indicates the List of type SubmissionSet or Folder as indicated
+This parameter, of type token, specifies the code.coding value supplied in the List Resource. The value of the code element indicates the List of type SubmissionSet or Folder as indicated.
 
 **date**:
 This parameter, of type date, specifies the time when the List was created. See FHIR [http://hl7.org/fhir/R4/search.html#date](http://hl7.org/fhir/R4/search.html#date) for use of the date search type.
@@ -176,7 +176,7 @@ Query parameters of type token are used to represent codes and identifiers. See 
 The manner in which the Document Responder translates these parameters to ebXML to support the Registry Stored Query [ITI-18] transaction will depend on the type of the corresponding parameter within the FindSubmissionSets stored query (see [ITI TF-2: 3.18.4.1.2.3.7.2](https://profiles.ihe.net/ITI/TF/Volume2/ITI-18.html#3.18.4.1.2.3.7.2) ). 
 * If the token parameter translates to a codified stored query parameter, then the Document Responder shall represent the token parameter in the stored query as: `<Value>('code^^system')</Value>`
 * If the token parameter translates to a patient identifier in the FindSubmissionSets stored query, then the Document Responder shall represent the token parameter in the stored query as: `<Value>code^^^&amp;system&amp;ISO</Value>` 
-* If the token parameter translates to a simple string, then the code shall be used for the parameter and the system shall be ignored.
+* If the token parameter translates to a simple string, then the code shall be used for the parameter and the system shall be ignored
 
 **Translation of Name Components**
 
