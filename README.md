@@ -1,3 +1,14 @@
+# Improvements 2022
+
+- Alignment with $docref operation - [#109](https://github.com/IHE/ITI.MHD/issues/109)
+- Clarify replaceTo behaviour and mechanism - [#100](https://github.com/IHE/ITI.MHD/issues/100)
+- Constraints on Identifier - [#93](https://github.com/IHE/ITI.MHD/issues/93)
+- SubmisstionSet identifier 2.. cardionality is unclear - [#92](https://github.com/IHE/ITI.MHD/issues/92)
+- Support Bundle as an attachment type - [#91](https://github.com/IHE/ITI.MHD/issues/91)
+- Explain when including Patient in the Bundle is acceptable - [#89](https://github.com/IHE/ITI.MHD/issues/89)
+- Allow DocumentReference.context.encounter - [#88](https://github.com/IHE/ITI.MHD/issues/88)
+- other?
+
 # ITI.MHD 
 this GITHUB repository is under development by ITI Technical committee. 
 
