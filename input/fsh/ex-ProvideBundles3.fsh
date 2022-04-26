@@ -138,3 +138,119 @@ Usage: #inline
 * contentType = #text/plain
 * data = "SGVsbG8gV29ybGQ="
 
+
+Instance: aaaaaaaa-bbbb-cccc-eeee-e00333300003
+InstanceOf: Binary
+Title: "Dummy Binary document that says: Thanks for all the fish"
+Description: """
+For Bundling Example binary that 
+- holds \"Thanks for all the fish\"
+- hash e8e3172143001587cb7508446aa092eb51995809
+- base64 of ZThlMzE3MjE0MzAwMTU4N2NiNzUwODQ0NmFhMDkyZWI1MTk5NTgwOQ==
+- size 24
+"""
+Usage: #inline
+* meta.security = http://terminology.hl7.org/CodeSystem/v3-ActReason#HTEST
+* contentType = #text/plain
+* data = "VGhhbmtzIGZvciBhbGwgdGhlIGZpc2g="
+
+
+Instance:   aaaaaaaa-bbbb-cccc-ffff-e00333300002
+InstanceOf: IHE.MHD.Base.DocumentReference
+Title:      "DocumentReference for Comprehensive metadata beeing replaced"
+Description: "Example of a comprehensive DocumentReference resource beeing replaced"
+Usage: #inline
+* meta.security = http://terminology.hl7.org/CodeSystem/v3-ActReason#HTEST
+* masterIdentifier.system = "urn:ietf:rfc:3986"
+* masterIdentifier.value = "urn:oid:1.2.840.113556.1.8000.2554.53432.348.12973.17740.34205.4355.50220.62012"
+* identifier.system = "urn:ietf:rfc:3986"
+* identifier.value = "urn:uuid:7d5bb8ac-68ee-4926-85e7-b8aac8e1f09d"
+* status = #superseded
+* date = 2020-02-01T23:50:50-05:00
+* content.attachment.contentType = #text/plain
+
+Instance:   aaaaaaaa-bbbb-cccc-eeee-e00333300001
+InstanceOf: IHE.MHD.Comprehensive.SubmissionSet
+Title:      "SubmissionSet for Comprehensive metadata in a bundle with a replace"
+Description: "Example of a comprehensive submissionSet in List resource with an intended recipient used in a bundle."
+Usage: #inline
+* text.status = #extensions
+* text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\">SubmissionSet with Patient</div>"
+* meta.security = http://terminology.hl7.org/CodeSystem/v3-ActReason#HTEST
+* identifier[+].system = "urn:ietf:rfc:3986"
+* identifier[=].value = "urn:oid:1.2.129.6.58.92.88337.1"
+* identifier[=].use = #official
+* identifier[+].system = "http://example.org/documents"
+* identifier[=].value = "23425234-23470-1"
+* identifier[=].use = #usual
+* status = #current
+* mode = #working
+* code = MHDlistTypes#submissionset
+* date = 2020-02-02T23:50:50-05:00
+* entry[+].item = Reference(urn:uuid:aaaaaaaa-bbbb-cccc-eeee-e00333300002)
+* extension[sourceId].valueIdentifier.value = "urn:oid:1.2.3.4"
+* subject = Reference(Patient/ex-patient)
+* extension[designationType].valueCodeableConcept = http://snomed.info/sct#225728007
+
+
+Instance:   ex-comprehensiveProvideDocumentBundleReplace
+InstanceOf: IHE.MHD.Comprehensive.ProvideBundle
+Title:      "Provide Document Bundle with Comprehensive metadata of one document which replaces another document"
+Description: "Example of a comprehensive Provide Document Bundle for a publication which replaces another document.
+- The bundle contains
+  - SubmissionSet - identifies one documentReference
+  - DocumentReference - Two DocumentReferences, an update to the old DocumentReference and the new DocumentReferences relates to the old DocumentReference
+  - Binary - the document
+  - the Patient is contained in the DocumentReference
+  - the Patient is also a reference to a PIXm/PDQm retrieved Resource."
+Usage: #example
+* meta.security = http://terminology.hl7.org/CodeSystem/v3-ActReason#HTEST
+* type = #transaction
+* timestamp = 2020-02-02T23:50:50-05:00
+* entry[SubmissionSet].fullUrl = "urn:uuid:aaaaaaaa-bbbb-cccc-eeee-e00333300001"
+* entry[SubmissionSet].resource = aaaaaaaa-bbbb-cccc-eeee-e00333300001
+* entry[SubmissionSet].request.url = "List"
+* entry[SubmissionSet].request.method = #POST
+* entry[UpdateDocumentRefs].fullUrl = "urn:uuid:aaaaaaaa-bbbb-cccc-ffff-e00333300002"
+* entry[UpdateDocumentRefs].resource = aaaaaaaa-bbbb-cccc-ffff-e00333300002
+* entry[UpdateDocumentRefs].request.url = "DocumentReference?identifier=urn:ietf:rfc:3986|urn:uuid:7d5bb8ac-68ee-4926-85e7-b8aac8e1f09d"
+* entry[UpdateDocumentRefs].request.method = #PUT
+* entry[DocumentRefs].fullUrl = "urn:uuid:aaaaaaaa-bbbb-cccc-eeee-e00333300002"
+* entry[DocumentRefs].resource = aaaaaaaa-bbbb-cccc-eeee-e00333300002
+* entry[DocumentRefs].request.url = "DocumentReference"
+* entry[DocumentRefs].request.method = #POST
+* entry[Documents].fullUrl = "urn:uuid:aaaaaaaa-bbbb-cccc-eeee-e00333300003"
+* entry[Documents].resource = aaaaaaaa-bbbb-cccc-eeee-e00333300003
+* entry[Documents].request.url = "Binary"
+* entry[Documents].request.method = #POST
+
+Instance:   aaaaaaaa-bbbb-cccc-eeee-e00333300002
+InstanceOf: IHE.MHD.Comprehensive.DocumentReference
+Title:      "DocumentReference for Comprehensive metadata"
+Description: "Example of a comprehensive DocumentReference resource being used in a PUSH. This contains the Patient, thus equivilant of XDR/XDM use of sourcePatientInfo."
+Usage: #inline
+* meta.security = http://terminology.hl7.org/CodeSystem/v3-ActReason#HTEST
+* masterIdentifier.system = "urn:ietf:rfc:3986"
+* masterIdentifier.value = "urn:oid:1.2.840.113556.1.8000.2554.53432.348.12973.17740.34205.4355.50220.62012"
+* identifier.system = "urn:ietf:rfc:3986"
+* identifier.value = "urn:uuid:7d5bb8ac-68ee-4926-85e7-b8aac8e1f09d"
+* status = #current
+* contained[+] = aaaaaaaa-bbbb-cccc-dddd-e00333300004
+* context.sourcePatientInfo = Reference(aaaaaaaa-bbbb-cccc-dddd-e00333300004)
+* subject = Reference(Patient/ex-patient)
+* content.format = http://ihe.net/fhir/ihe.formatcode.fhir/CodeSystem/formatcode#urn:ihe:iti:xds-sd:text:2008
+* content.attachment.url = "urn:uuid:aaaaaaaa-bbbb-cccc-eeee-e00333300003"
+* content.attachment.contentType = #text/plain
+* content.attachment.hash = "ZThlMzE3MjE0MzAwMTU4N2NiNzUwODQ0NmFhMDkyZWI1MTk5NTgwOQ=="
+* content.attachment.size = 24
+* type = http://loinc.org#60591-5
+* category = http://loinc.org#11369-6
+* securityLabel = http://terminology.hl7.org/CodeSystem/v3-Confidentiality#R
+* context.facilityType = http://snomed.info/sct#82242000
+* context.practiceSetting =  http://snomed.info/sct#408467006
+* content.attachment.language = urn:ietf:bcp:47#en
+* content.attachment.creation = 2020-02-02T23:50:50-05:00
+* content.attachment.title = "Thanks for all the fish"
+* date = 2020-02-02T23:50:50-05:00
+* relatesTo.code = #replaces
+* relatesTo.target = Reference(urn:uuid:aaaaaaaa-bbbb-cccc-ffff-e00333300002)

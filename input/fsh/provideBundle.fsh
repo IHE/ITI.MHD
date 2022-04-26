@@ -15,14 +15,17 @@ Description:    "A profile on the Bundle transaction for ITI-65 Provide Document
   - may create/update/read one [Patient](http://hl7.org/fhir/R4/patient.html)"
 * meta.profile 1..*
 * type = #transaction
-* entry ^slicing.discriminator.type = #profile
-* entry ^slicing.discriminator.path = "resource"
+* entry ^slicing.discriminator[0].type = #profile
+* entry ^slicing.discriminator[0].path = "resource"
+* entry ^slicing.discriminator[1].type = #value
+* entry ^slicing.discriminator[1].path = "request.method"
 * entry ^slicing.rules = #closed
 * entry ^slicing.description = "Slicing based on the profile conformance of the entry"
 * entry and entry.resource MS
 * entry contains 
     SubmissionSet 1..1 and
     DocumentRefs 0..* and
+    UpdateDocumentRefs 0..* and
     Documents 0..* and
     Folders 0..* and
     Patient 0..1
@@ -36,10 +39,17 @@ Description:    "A profile on the Bundle transaction for ITI-65 Provide Document
 * entry[DocumentRefs].resource only 
     IHE.MHD.Minimal.DocumentReference 
 * entry[DocumentRefs] ^short = "the DocumentReference resources"
-* entry[DocumentRefs] ^definition = "any and all DocumentReference that are part of the SubmissionSet. These might be new, replacements, or other associations"
+* entry[DocumentRefs] ^definition = "any new DocumentReference that are part of the SubmissionSet. These might be new or other associations"
 * entry[DocumentRefs].resource 1..1
 * entry[DocumentRefs].request 1..1
 * entry[DocumentRefs].request.method = #POST
+* entry[UpdateDocumentRefs].resource only 
+    IHE.MHD.Base.DocumentReference 
+* entry[UpdateDocumentRefs] ^short = "the superseded DocumentReference resources"
+* entry[UpdateDocumentRefs] ^definition = "any updated DocumentReference that are part of the SubmissionSet if a new new DocumentReference replaces this DocumentReference."
+* entry[UpdateDocumentRefs].resource 1..1
+* entry[UpdateDocumentRefs].request 1..1
+* entry[UpdateDocumentRefs].request.method = #PUT
 * entry[Documents].resource ^type.code = "Binary"
 * entry[Documents].resource ^type.profile = Canonical(Binary)
 * entry[Documents] ^short = "the documents"

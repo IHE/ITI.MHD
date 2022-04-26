@@ -1,6 +1,15 @@
+Profile:        BaseDocumentReference
+Parent:         DocumentReference
+Id:             IHE.MHD.Base.DocumentReference
+Title:          "MHD DocumentReference Base"
+Description:    "A profile on the DocumentReference resource for MHD with base identifier constraints." 
+* modifierExtension 0..0
+* masterIdentifier 1..1
+* identifier 1..*
+
 // equivalent to MHD Minimal DocumentReference
 Profile:        MinimalDocumentReference
-Parent:         DocumentReference
+Parent:         IHE.MHD.Base.DocumentReference
 Id:             IHE.MHD.Minimal.DocumentReference
 Title:          "MHD DocumentReference Minimal"
 Description:    "A profile on the DocumentReference resource for MHD with minimal metadata constraints. 
@@ -9,9 +18,6 @@ Description:    "A profile on the DocumentReference resource for MHD with minima
 - the use defined here is FHIR DocumentReference implementation of the 
 - ebRIM implementation at [3:4.2.3.2 Document Entry](https://profiles.ihe.net/ITI/TF/Volume3/ch-4.2.html#4.2.3.2).
 - with use-cases and constraints found in [3:4.3 Additional Document Sharing Requirements](https://profiles.ihe.net/ITI/TF/Volume3/ch-4.3.html#4.3)"
-* modifierExtension 0..0
-* masterIdentifier 1..1
-* identifier 1..*
 * status 1..1
 * docStatus 0..0
 * type 0..1 MS
@@ -44,6 +50,12 @@ Description:    "A profile on the DocumentReference resource for MHD with minima
 * context.practiceSetting 0..1 MS
 * context.sourcePatientInfo 0..1 MS
 * context.related 0..*
+* obeys iti-mhd-repl
+
+Invariant:   iti-mhd-repl
+Description: "a DocumetReference replacements needs to relate to a superseded DocumentReference"
+Expression:  "relatesTo.empty() or (relatesTo.code='replaces' implies relatesTo.target.resolve().status = 'superseded')"
+Severity:    #error
 
 // equivalent to MHD DocumentReference Comprehensive UnContained Option
 Profile:        UnContainedComprehensiveDocumentReference
