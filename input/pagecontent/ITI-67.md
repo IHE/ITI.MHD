@@ -178,7 +178,7 @@ Note 3: The $XDSDocumentEntryType is not a supported query parameter in HL7 FHIR
 
 Note 4: The $XDSDocumentEntryReferenceIdList can only be mapped when using the XDS FindDocumentsByReferenceId query. This parameter support requires XDS [Reference ID Option](https://profiles.ihe.net/ITI/TF/Volume1/ch-10.html#10.2.6).
 
-Note 5: The FHIR DocumentReference does not yet have a query parameter for creationTime of the document, it has only a date element which is the creation date/time of the DocumentReference. For FHIR R4 we align these two elements so that query will function.
+Note 5: The FHIR R4 DocumentReference does not yet have a `.attachment.creation` query parameter, it has only a date element which is the creation date/time of the DocumentReference. MHD adds the search parameter `DocumentReference-Creation`, to provide the functionality of search against the document creation date/time.
 
 **Table 2:3.67.4.1.3.1-2: Values for code for status of DocumentReference**
 
