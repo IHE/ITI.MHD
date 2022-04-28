@@ -37,7 +37,7 @@ Description:    "A profile on the DocumentReference resource for MHD with minima
 * content.attachment.creation 0..1 MS
 * content.format 0..1 MS
 //* content.format from http://ihe.net/fhir/ihe.formatcode.fhir/ValueSet/formatcode (preferred)
-* context.encounter 0..0
+//* context.encounter 0..0
 * context.event 0..*
 * context.period 0..1 MS
 * context.facilityType 0..1 MS
@@ -115,6 +115,7 @@ Title: "XDS and MHD Mapping"
 * content.attachment.title -> "DocumentEntry.title"
 * type -> "DocumentEntry.typeCode"
 * masterIdentifier -> "DocumentEntry.uniqueId"
+* context.encounter -> "DocumentEntry.referenceIdList"
 * context.related -> "DocumentEntry.referenceIdList"
 * meta.profile -> "DocumentEntry.limitedMetadata"
 // DocumentEntry.objectType -- is not represented
