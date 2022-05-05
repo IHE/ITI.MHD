@@ -45,7 +45,7 @@ See [http://hl7.org/fhir/R4/http.html#transaction](http://hl7.org/fhir/R4/http.h
 
 The Provide Document Bundle message is sent to the base URL as defined in FHIR. See [http://hl7.org/fhir/R4/http.html](http://hl7.org/fhir/R4/http.html) for the definition of “HTTP” access methods and “base”.
 
-The Document Source shall assure all FHIR resource elements are consistent with the [Document Sharing metadata](https://profiles.ihe.net/ITI/TF/Volume3/index.html#4) requirements as specified for attributes [ITI TF-3: Table 4.3.1-3 “Sending Actor Metadata Attribute Optionality”](https://profiles.ihe.net/ITI/TF/Volume3/ch-4.3.html#4.3.1). The Document Source that supports the [Comprehensive Metadata](1332_actor_options.html#13322-xds-on-fhir-option) or the [XDS on FHIR](1332_actor_options.html#13322-xds-on-fhir-option) Options shall assure consistency with column “XDS DS”; otherwise, the Document Source shall assure consistency with column “XDR MS”. The Document Source shall not provide any entryUUID values.
+The Document Source shall assure all FHIR resource elements are consistent with the [Document Sharing metadata](https://profiles.ihe.net/ITI/TF/Volume3/index.html#4) requirements as specified for attributes [ITI TF-3: Table 4.3.1-3 “Sending Actor Metadata Attribute Optionality”](https://profiles.ihe.net/ITI/TF/Volume3/ch-4.3.html#4.3.1). The Document Source that supports the [Comprehensive Metadata](1332_actor_options.html#13322-xds-on-fhir-option) or the [XDS on FHIR](1332_actor_options.html#13322-xds-on-fhir-option) Options shall assure consistency with column “XDS DS”; otherwise, the Document Source shall assure consistency with column “XDR MS”. The Document Source shall not provide any entryUUID values. 
 
 ###### 2:3.65.4.1.2.1 Bundle Resources
 
@@ -92,11 +92,17 @@ The Document Source shall populate accurate .hash and .size for the document con
 
 Folders may be created or updated. A Document Recipient may require that an Updated Folder only have new .entry elements added as would be the requirement of XDS.
 
-Patient would typically only be allowed by the Document Recipient in PUSH interaction situations, but may be accepted for other reasons at the discretion of the Document Recipient actor policy.
+All DocumentReference.subject and List.subject values shall be populated with the identity of the Patient.
 
 ###### 2:3.65.4.1.2.2 Patient Identity
 
-All DocumentReference.subject, and List.subject values shall be References to a FHIR Patient Resource that may be obtained through use of [PDQm](https://profiles.ihe.net/ITI/TF/Volume1/ch-38.html), [PIXm](https://profiles.ihe.net/ITI/TF/Volume1/ch-41.html), or by some other means. If the Patient Resource is accessible to both the Document Source and Document Recipient via an external reference, it shall be included as an external reference. Otherwise, the Patient Resource shall be included in the Bundle.
+All DocumentReference.subject, and List.subject values shall be a Reference to a FHIR Patient Resource. The Patient Reference will be either to a Patient Resource that is in the Bundle, or to a Patient Resource hosted on a commonly accessible server. Recommendation is to use a commonly accessible Patient Resource reference, but some situations may need to include the Patient resource within the Bundle, or may allow use of a common Patient Identifier. 
+* A Patient Reference to a commonly accessible server may be obtained through use of [PDQm](https://profiles.ihe.net/ITI/TF/Volume1/ch-38.html), [PIXm](https://profiles.ihe.net/ITI/TF/Volume1/ch-41.html), [PMIR](https://profiles.ihe.net/ITI/TF/Volume1/ch-49.html), or by some other means. 
+* A Patient Resource carried within the Bundle would typically only be allowed by the Document Recipient in PUSH interaction situations where the Document Recipient will do matching to a Patient identity. 
+* The inclusion of a copy of a commonly accessible Patient Resource in the bundle is discouraged but not forbidden.
+* A commonly accessible logical reference using Patient Identifier, instead of a literal reference, may be acceptable where there is a common Identifier, such as a national individual identifier.
+
+If the Patient Resource is accessible to both the Document Source and Document Recipient via an external reference to a commonly accessible server then that external reference shall be used and the Patient Resource will not be included in the Bundle. Otherwise, the Patient Resource shall be included in the Bundle.
 
 When the [UnContained Reference Option](1332_actor_options.html#13323-uncontained-reference-option) is used, there is no need to populate the sourcePatientInfo element. Otherwise, when sourcePatientInfo is provided, the DocumentReference.context.sourcePatientInfo shall be a reference to a “contained” Patient Resource. That is, the source patient info is encoded in a Patient Resource within the DocumentReference.contained element (see [http://hl7.org/fhir/R4/references.html#contained](http://hl7.org/fhir/R4/references.html#contained) ).
 
@@ -149,6 +155,7 @@ If the recipient is known to be an XDR/XCDR community, the error codes `XDSUnkno
 This section applies to grouping MHD Document Recipient with [XDS](https://profiles.ihe.net/ITI/TF/Volume1/ch-10.html) [Document Source](https://profiles.ihe.net/ITI/TF/Volume1/ch-10.html#10.1.1.1) Actor, [XDR](https://profiles.ihe.net/ITI/TF/Volume1/ch-15.html) Document Source Actor, [XDR](https://profiles.ihe.net/ITI/TF/Volume1/ch-15.html) Limited-Metadata Document Source Actor, and [XDM](https://profiles.ihe.net/ITI/TF/Volume1/ch-16.html) Portable Media Creator Actor (e.g. with the [XDM ZIP over Email Option](https://profiles.ihe.net/ITI/TF/Volume1/ch-16.html#16.2.3) ). 
 
 The Document Recipient shall transform the Bundle content into a proper message for the Given grouped Actor (e.g. the XDS Document Source using the Provide and Register Document Set-b [ITI-41](https://profiles.ihe.net/ITI/TF/Volume2/ITI-41.html) transaction). The Document Recipient shall create appropriate metadata from Resources in the FHIR Bundle Resource, including SubmissionSet, DocumentEntry, Folder, and Associations. 
+The Documet Recipient shall create missing entryUUID values where necessary to satisfy XDS requirements.
 
 If the Provide Document Bundle Message contains a DocumentReference with a relatesTo element, the code shall be translated using the [AssociationType vs RelatesTo ConceptMap](ConceptMap-AssociationTypeVsRelatesTo.html).
 

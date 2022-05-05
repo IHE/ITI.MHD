@@ -11,7 +11,7 @@ Description:    "A profile on the DocumentReference resource for MHD with minima
 - with use-cases and constraints found in [3:4.3 Additional Document Sharing Requirements](https://profiles.ihe.net/ITI/TF/Volume3/ch-4.3.html#4.3)"
 * modifierExtension 0..0
 * masterIdentifier 1..1
-* identifier 1..*
+* identifier 0..* MS
 * status 1..1
 * docStatus 0..0
 * type 0..1 MS
@@ -21,7 +21,7 @@ Description:    "A profile on the DocumentReference resource for MHD with minima
 * date 0..1 MS
 * author 0..* MS
 * authenticator 0..1
-* custodian 0..0
+//* custodian 0..0
 * relatesTo 0..* MS
 * description 0..1
 * securityLabel 0..* MS
@@ -103,6 +103,7 @@ Title: "XDS and MHD Mapping"
 // DocumentEntry.homeCommunityId -- does not actually exist as metadata on DocumentEntry, and does not have a place in DocumentReference. might be encoded in the content.attachment.url
 * content.attachment.language -> "DocumentEntry.languageCode"
 * authenticator -> "DocumentEntry.legalAuthenticator"
+* custodian -> "not mapped"
 * content.attachment.contentType -> "DocumentEntry.mimeType"
 * subject -> "DocumentEntry.patientId"
 * context.practiceSetting -> "DocumentEntry.practiceSettingCode"
