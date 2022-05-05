@@ -21,7 +21,7 @@ Description:    "A profile on the DocumentReference resource for MHD with minima
 * date 0..1 MS
 * author 0..* MS
 * authenticator 0..1
-* custodian 0..0
+//* custodian 0..0
 * relatesTo 0..* MS
 * description 0..1
 * securityLabel 0..* MS
@@ -103,6 +103,7 @@ Title: "XDS and MHD Mapping"
 // DocumentEntry.homeCommunityId -- does not actually exist as metadata on DocumentEntry, and does not have a place in DocumentReference. might be encoded in the content.attachment.url
 * content.attachment.language -> "DocumentEntry.languageCode"
 * authenticator -> "DocumentEntry.legalAuthenticator"
+* custodian -> "not mapped"
 * content.attachment.contentType -> "DocumentEntry.mimeType"
 * subject -> "DocumentEntry.patientId"
 * context.practiceSetting -> "DocumentEntry.practiceSettingCode"
