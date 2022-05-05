@@ -11,7 +11,7 @@ Description:    "A profile on the DocumentReference resource for MHD with minima
 - with use-cases and constraints found in [3:4.3 Additional Document Sharing Requirements](https://profiles.ihe.net/ITI/TF/Volume3/ch-4.3.html#4.3)"
 * modifierExtension 0..0
 * masterIdentifier 1..1
-* identifier 1..*
+* identifier 0..* MS
 * status 1..1
 * docStatus 0..0
 * type 0..1 MS
