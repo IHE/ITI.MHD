@@ -84,14 +84,7 @@ These parameters, of type string, specify the name parts of the author person wh
 This IHE extension on parameters defined as [List-SourceId](SearchParameter-List-SourceId.html), of type token, specifies the source (author) value supplied in the List Resource. 
 
 **status**:
-This parameter, of type token, specifies the status of the List. If included in the query, the Document Consumer shall populate the code portion of the token with one of the codes in the following *Table 2:3.66.4.1.2.1-1: Values for code for status of List*. The system portion of the token shall not be populated.
-
-**Table 2:3.66.4.1.2.1-1: Values for code for status of List**
-
-|Code	| ebRIM Code |
-|current	| urn:oasis:names:tc:ebxml-regrep:StatusType:Approved |
-|superseded	| urn:oasis:names:tc:ebxml-regrep:StatusType:Deprecated |
-{: .grid}
+This parameter, of type token, specifies the status of the List. If included in the query, the Document Consumer shall populate the code portion of the token, the system portion of the token shall not be populated. See *Table 2:3.66.4.1.3.1-3: Values for status of List* for mapping to XDS on FHIR Option.
 
 ###### 2:3.66.4.1.2.2 Populating Expected Response Format
 
@@ -188,6 +181,14 @@ would translate to:
 ```
 <Value>^Welby^Marcus^^^</Value>
 ```
+
+**Table 2:3.66.4.1.3.1-3: Values for status of List**
+
+| status	| ebRIM Code |
+|current	| urn:oasis:names:tc:ebxml-regrep:StatusType:Approved |
+|superseded	| urn:oasis:names:tc:ebxml-regrep:StatusType:Deprecated |
+{: .grid}
+
 #### 2:3.66.4.2 Find Document Lists Response message
 
 The Document Responder returns a HTTP Status code appropriate to the processing as well as a list of the matching document list resources.
@@ -212,7 +213,7 @@ An informative StructureDefinition is outlined for [MHD Find Document Lists Resp
 
 The List Resources returned shall be compliant with the FHIR specification [http://hl7.org/fhir/R4/list.html](http://hl7.org/fhir/R4/list.html).
 
-The List Resources returned will be compliant with the [IHE restrictions on the List Resource](32_fhir_maps.html) and with the mapping of ebXML attributes to List elements to [SubmissionSet](32_fhir_maps.html#submissionSet) and to [Folder](32_fhir_maps.html#folder).
+The List Resources returned should be compliant with the [IHE restrictions on the List Resource](32_fhir_maps.html) and with the mapping of ebXML attributes to List elements to [SubmissionSet](32_fhir_maps.html#submissionSet) and to [Folder](32_fhir_maps.html#folder).
 
 ##### 2:3.66.4.2.3 Expected Actions
 

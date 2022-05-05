@@ -1,3 +1,10 @@
+Profile:        PatchParameters
+Parent:         Parameters
+Id:             IHE.MHD.Patch.Parameters
+Title:          "MHD DocumentReference Pactch Parameters"
+Description:    "A profile on the Parameters resource to update DocumentReference" 
+* parameter.name = "operation"
+
 // equivalent to MHD Minimal DocumentReference
 Profile:        MinimalDocumentReference
 Parent:         DocumentReference
@@ -11,7 +18,7 @@ Description:    "A profile on the DocumentReference resource for MHD with minima
 - with use-cases and constraints found in [3:4.3 Additional Document Sharing Requirements](https://profiles.ihe.net/ITI/TF/Volume3/ch-4.3.html#4.3)"
 * modifierExtension 0..0
 * masterIdentifier 1..1
-* identifier 1..*
+* identifier 0..* MS
 * status 1..1
 * docStatus 0..0
 * type 0..1 MS
@@ -21,7 +28,7 @@ Description:    "A profile on the DocumentReference resource for MHD with minima
 * date 0..1 MS
 * author 0..* MS
 * authenticator 0..1
-* custodian 0..0
+//* custodian 0..0
 * relatesTo 0..* MS
 * description 0..1
 * securityLabel 0..* MS
@@ -44,6 +51,12 @@ Description:    "A profile on the DocumentReference resource for MHD with minima
 * context.practiceSetting 0..1 MS
 * context.sourcePatientInfo 0..1 MS
 * context.related 0..*
+* obeys iti-mhd-repl
+
+Invariant:   iti-mhd-repl
+Description: "a DocumetReference replacements needs to relate to a superseded DocumentReference"
+Expression:  "relatesTo.empty() or (relatesTo.code='replaces' implies relatesTo.target.exists())"
+Severity:    #error
 
 // equivalent to MHD DocumentReference Comprehensive UnContained Option
 Profile:        UnContainedComprehensiveDocumentReference
@@ -103,6 +116,7 @@ Title: "XDS and MHD Mapping"
 // DocumentEntry.homeCommunityId -- does not actually exist as metadata on DocumentEntry, and does not have a place in DocumentReference. might be encoded in the content.attachment.url
 * content.attachment.language -> "DocumentEntry.languageCode"
 * authenticator -> "DocumentEntry.legalAuthenticator"
+* custodian -> "not mapped"
 * content.attachment.contentType -> "DocumentEntry.mimeType"
 * subject -> "DocumentEntry.patientId"
 * context.practiceSetting -> "DocumentEntry.practiceSettingCode"
@@ -139,8 +153,8 @@ Usage: #definition
 - Source Code - [XDS Association Types](https://profiles.ihe.net/ITI/TF/Volume3/ch-4.2.html#4.2.2) are indicated as URN, they are here indicated as system and code
 - Destination Code - [DocumentReference relatesTo code](http://hl7.org/fhir/valueset-document-relationship-type.html) are Required codes"
 * purpose = "show the mapping between Association Types and relatesTo code"
-* sourceUri = "urn:ihe:iti:2007:AssociationType"
-* targetUri = "http://hl7.org/fhir/document-relationship-type"
+* group.source = "urn:ihe:iti:2007:AssociationType"
+* group.target = "http://hl7.org/fhir/document-relationship-type"
 * group.element[+].code = #RPLC
 * group.element[=].target.equivalence = #equal
 * group.element[=].target.code = #replaces
