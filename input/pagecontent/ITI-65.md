@@ -100,7 +100,7 @@ All DocumentReference.subject, and List.subject values shall be a Reference to a
 * A Patient Reference to a commonly accessible server may be obtained through use of [PDQm](https://profiles.ihe.net/ITI/TF/Volume1/ch-38.html), [PIXm](https://profiles.ihe.net/ITI/TF/Volume1/ch-41.html), [PMIR](https://profiles.ihe.net/ITI/TF/Volume1/ch-49.html), or by some other means. 
 * A Patient Resource carried within the Bundle would typically only be allowed by the Document Recipient in PUSH interaction situations where the Document Recipient will do matching to a Patient identity. 
 * The inclusion of a copy of a commonly accessible Patient Resource in the bundle is discouraged but not forbidden.
-* A commonly accessible Patient Identifier may be acceptable where there is a common Identifier, such as a national individual identifier.
+* A commonly accessible logical reference using Patient Identifier, instead of a literal reference, may be acceptable where there is a common Identifier, such as a national individual identifier.
 
 If the Patient Resource is accessible to both the Document Source and Document Recipient via an external reference to a commonly accessible server then that external reference shall be used and the Patient Resource will not be included in the Bundle. Otherwise, the Patient Resource shall be included in the Bundle.
 
