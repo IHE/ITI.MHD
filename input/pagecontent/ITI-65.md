@@ -92,11 +92,17 @@ The Document Source shall populate accurate .hash and .size for the document con
 
 Folders may be created or updated. A Document Recipient may require that an Updated Folder only have new .entry elements added as would be the requirement of XDS.
 
-Patient would typically only be allowed by the Document Recipient in PUSH interaction situations, but may be accepted for other reasons at the discretion of the Document Recipient actor policy.
+All DocumentReference.subject and List.subject values shall be populated with the identity of the Patient.
 
 ###### 2:3.65.4.1.2.2 Patient Identity
 
-All DocumentReference.subject, and List.subject values shall be References to a FHIR Patient Resource that may be obtained through use of [PDQm](https://profiles.ihe.net/ITI/TF/Volume1/ch-38.html), [PIXm](https://profiles.ihe.net/ITI/TF/Volume1/ch-41.html), or by some other means. If the Patient Resource is accessible to both the Document Source and Document Recipient via an external reference, it shall be included as an external reference. Otherwise, the Patient Resource shall be included in the Bundle.
+All DocumentReference.subject, and List.subject values shall be a Reference to a FHIR Patient Resource. The Patient Reference will be either to a Patient Resource that is in the Bundle, or to a Patient Resource hosted on a commonly accessible server. Recommendation is to use a commonly accessible Patient Resource reference, but some situations may need to include the Patient resource within the Bundle, or may allow use of a common Patient Identifier. 
+* A Patient Reference to a commonly accessible server may be obtained through use of [PDQm](https://profiles.ihe.net/ITI/TF/Volume1/ch-38.html), [PIXm](https://profiles.ihe.net/ITI/TF/Volume1/ch-41.html), [PMIR](https://profiles.ihe.net/ITI/TF/Volume1/ch-49.html), or by some other means. 
+* A Patient Resource carried within the Bundle would typically only be allowed by the Document Recipient in PUSH interaction situations where the Document Recipient will do matching to a Patient identity. 
+* The inclusion of a copy of a commonly accessible Patient Resource in the bundle is discouraged but not forbidden.
+* A commonly accessible logical reference using Patient Identifier, instead of a literal reference, may be acceptable where there is a common Identifier, such as a national individual identifier.
+
+If the Patient Resource is accessible to both the Document Source and Document Recipient via an external reference to a commonly accessible server then that external reference shall be used and the Patient Resource will not be included in the Bundle. Otherwise, the Patient Resource shall be included in the Bundle.
 
 When the [UnContained Reference Option](1332_actor_options.html#13323-uncontained-reference-option) is used, there is no need to populate the sourcePatientInfo element. Otherwise, when sourcePatientInfo is provided, the DocumentReference.context.sourcePatientInfo shall be a reference to a “contained” Patient Resource. That is, the source patient info is encoded in a Patient Resource within the DocumentReference.contained element (see [http://hl7.org/fhir/R4/references.html#contained](http://hl7.org/fhir/R4/references.html#contained) ).
 
