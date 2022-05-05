@@ -12,6 +12,22 @@ Usage: #example
 * content.attachment.contentType = #text/plain
 * content.attachment.url = "http://example.com/nowhere.txt"
 
+Instance:   ex-DocumentReferenceMinimalEncounter
+InstanceOf: IHE.MHD.Minimal.DocumentReference
+Title:      "DocumentReference for Minimal metadata with an encounter"
+Description: "Example of a minimal DocumentReference resource. This has minimal metadata plus an encounter and custodian."
+Usage: #example
+* meta.security = http://terminology.hl7.org/CodeSystem/v3-ActReason#HTEST
+* masterIdentifier.system = "urn:ietf:rfc:3986"
+* masterIdentifier.value = "urn:oid:1.2.840.113556.1.8000.2554.53432.348.12973.17740.34205.4355.50220.62012"
+* identifier.system = "urn:ietf:rfc:3986"
+* identifier.value = "urn:uuid:7d5bb8ac-68ee-4926-85e7-b8aac8e1f09d"
+* status = #current
+* content.attachment.contentType = #text/plain
+* content.attachment.url = "http://example.com/nowhere.txt"
+* context.encounter = Reference(ex-encounter)
+* custodian = Reference(ex-organization)
+
 Instance:   ex-DocumentReferenceUnContained
 InstanceOf: IHE.MHD.UnContained.Comprehensive.DocumentReference
 Title:      "DocumentReference for Comprehensive minimally metadata"

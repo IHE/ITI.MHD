@@ -84,4 +84,12 @@ Usage: #example
 * telecom.system = #email
 * telecom.value = "JohnMoehrke@gmail.com"
 
-
+Instance: ex-encounter
+InstanceOf: Encounter
+Title: "Dummy Encounter example"
+Description: "Dummy Encounter example for completness sake. No actual use of this resource other than an example target"
+Usage: #example
+* meta.security = http://terminology.hl7.org/CodeSystem/v3-ActReason#HTEST
+* status = #in-progress
+* class = http://terminology.hl7.org/CodeSystem/v3-ActCode#AMB
+* subject = Reference(ex-patient)
