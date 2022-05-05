@@ -108,7 +108,7 @@ When the [UnContained Reference Option](1332_actor_options.html#13323-uncontaine
 
 ###### 2:3.65.4.1.2.3 Replace, Transform, Signs, and Append Associations
 
-The DocumentReference.relatesTo element indicates an association between DocumentReference resources. The relatesTo.target element in the provided DocumentReference points at the pre-existing DocumentReference that is being replaced, transformed, signed, or appended. The relatesTo.code element in the provided DocumentReference shall be the appropriate relationship type code defined in [http://hl7.org/fhir/R4/valueset-document-relationship-type.html](http://hl7.org/fhir/R4/valueset-document-relationship-type.html). 
+The DocumentReference.relatesTo element indicates an association between DocumentReference resources. The relatesTo.target element in the provided DocumentReference points at the pre-existing DocumentReference that is being replaced, transformed, signed, or appended. The relatesTo.code element in the provided DocumentReference shall be the appropriate relationship type code defined in [http://hl7.org/fhir/R4/valueset-document-relationship-type.html](http://hl7.org/fhir/R4/valueset-document-relationship-type.html). If a DocumentReference will be replaced, the to be replaced DocumentReference needs to be added and updated to status 'superseded' within the transaction bundle.
 
 ##### 2:3.65.4.1.3 Expected Actions
 

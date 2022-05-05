@@ -1,3 +1,10 @@
+Profile:        PatchParameters
+Parent:         Parameters
+Id:             IHE.MHD.Patch.Parameters
+Title:          "MHD DocumentReference Pactch Parameters"
+Description:    "A profile on the Parameters resource to update DocumentReference" 
+* parameter.name = "operation"
+
 // equivalent to MHD Minimal DocumentReference
 Profile:        MinimalDocumentReference
 Parent:         DocumentReference
@@ -44,6 +51,12 @@ Description:    "A profile on the DocumentReference resource for MHD with minima
 * context.practiceSetting 0..1 MS
 * context.sourcePatientInfo 0..1 MS
 * context.related 0..*
+* obeys iti-mhd-repl
+
+Invariant:   iti-mhd-repl
+Description: "a DocumetReference replacements needs to relate to a superseded DocumentReference"
+Expression:  "relatesTo.empty() or (relatesTo.code='replaces' implies relatesTo.target.exists())"
+Severity:    #error
 
 // equivalent to MHD DocumentReference Comprehensive UnContained Option
 Profile:        UnContainedComprehensiveDocumentReference
