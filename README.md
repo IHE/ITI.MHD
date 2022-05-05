@@ -21,7 +21,7 @@ stretch goal (not originally agreed to, but could be included if achieved in the
 ci-build -- http://build.fhir.org/ig/IHE/ITI.MHD/branches/Improvements-2022/index.html
 
 # ITI.MHD 
-this GITHUB repository is under development by ITI Technical committee. 
+This GITHUB repository is the source content for the [MHD publication](https://profiles.ihe.net/ITI/MHD/) by ITI Technical committee. 
 
 The Mobile access to Health Documents (MHD) Profile defines one standardized interface to 
 health documents (a.k.a., an Application Programming Interface (API)) for use by mobile devices 

@@ -139,8 +139,8 @@ Usage: #definition
 - Source Code - [XDS Association Types](https://profiles.ihe.net/ITI/TF/Volume3/ch-4.2.html#4.2.2) are indicated as URN, they are here indicated as system and code
 - Destination Code - [DocumentReference relatesTo code](http://hl7.org/fhir/valueset-document-relationship-type.html) are Required codes"
 * purpose = "show the mapping between Association Types and relatesTo code"
-* sourceUri = "urn:ihe:iti:2007:AssociationType"
-* targetUri = "http://hl7.org/fhir/document-relationship-type"
+* group.source = "urn:ihe:iti:2007:AssociationType"
+* group.target = "http://hl7.org/fhir/document-relationship-type"
 * group.element[+].code = #RPLC
 * group.element[=].target.equivalence = #equal
 * group.element[=].target.code = #replaces
