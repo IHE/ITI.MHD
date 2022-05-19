@@ -23,10 +23,17 @@ contact:
     telecom:
       - system: email
         value: iti@ihe.net
-license: CC-BY-SA-4.0
+license: CC-BY-4.0
 jurisdiction: 'http://unstats.un.org/unsd/methods/m49/m49.htm#001'
-#dependencies:
-#  https://profiles.ihe.net/fhir/ihe.formatcode.fhir: 0.2.4
+dependencies:
+  ihe.iti.balp:
+    id: iheitibasicaudit
+    uri: https://profiles.ihe.net/ITI/BALP/ImplementationGuide/ihe.iti.balp
+    version: 1.1.0
+  ihe.formatcode.fhir:
+    id: iheformatcodefhir
+    uri: https://profiles.ihe.net/fhir/ihe.formatcode.fhir/ImplementationGuide/ihe.formatcode.fhir
+    version: 1.1.0
  
 parameters:  # see https://confluence.hl7.org/display/FHIR/Implementation+Guide+Parameters
   path-resource:
