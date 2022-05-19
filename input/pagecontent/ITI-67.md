@@ -182,6 +182,8 @@ Note 5: The FHIR R4 DocumentReference does not yet have a `.attachment.creation`
 
 **Table 2:3.67.4.1.3.1-2: Values for code for status of DocumentReference**
 
+The following table is also available in a [concept map](ConceptMap-FhirStatusVsStatusCode.html) artifact.
+
 |FHIR Code	|ebRIM Code |
 |-----------|-----------|
 |current	|urn:oasis:names:tc:ebxml-regrep:StatusType:Approved |
@@ -236,7 +238,13 @@ Informative note: When the Document Consumer retrieves the document using the Do
 
 ###### 2:3.67.4.2.2.1.4 XDS Associations
 
-Where the documentReference Resource being returned has an XDS Association, this shall be represented in the DocumentReference.relatesTo element. Where the DocumentReference.relatesTo.target element holds the Reference to the other DocumentReference Resource, and the DocumentReference.relatesTo.code element holds the relationship type translated using the [AssociationType vs RelatesTo ConceptMap](ConceptMap-AssociationTypeVsRelatesTo.html).
+Where the DocumentReference Resource being returned has an XDS Association, this shall be represented in the DocumentReference.relatesTo element. Where the DocumentReference.relatesTo.target element holds the Reference to the other DocumentReference Resource, and the DocumentReference.relatesTo.code element holds the relationship type translated using the [AssociationType vs RelatesTo ConceptMap](ConceptMap-AssociationTypeVsRelatesTo.html).
+
+###### 2:3.67.4.2.2.1.5 XDS Identifiers to Resource References
+
+Where the DocumentReference Resource being returned is being translated from an XDS DocumentEntry, there will be identifiers in the DocumentEntry (e.g. ReferenceIdList) that may be represented in the DocumentReference as Resource References. The Document Responder is not required to convert identifiers into Resource References, but it is allowed to do this conversion. For example an identifier in ReferenceIdList may simply be copied into DocumentReference.content.related.identifier. Alternatively the ReferenceIdList may be resolved to a Resource Reference and that reference be placed into DocumentReference.content.related.reference.
+
+Identifiers in XDS are encoded using the [Document Sharing CXi Metadata datatype](https://profiles.ihe.net/ITI/TF/Volume3/ch-4.2.html#4.2.3.1.7), which will indicate the kind of identifier. This kind of identifier shall be used when mapping values into DocumentReference elements (See [Appendix Z.9.1.2](https://profiles.ihe.net/ITI/TF/Volume2/ch-Z.html#z.9.1.2-xds-cxi-mapped-to-fhir-identifier-type) ). Specifically the `CXi` Identifier Type Code of `urn:ihe:iti:xds:2015:encounterId` would indicate the Identifier value be mapped into DocumentReference.encounter. 
 
 ###### 2:3.67.4.2.2.2 Resource Bundling
 
