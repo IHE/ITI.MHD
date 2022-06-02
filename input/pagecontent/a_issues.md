@@ -1,5 +1,9 @@
 <div markdown="1" class="stu-note">
 
+### Significant changes since MHD Version 4.10
+- changed to AuditEvent profiling leveraging [Basic Audit Log Patterns (BALP) Release 1.1.0](https://profiles.ihe.net/ITI/BALP/index.html)
+  - changes to RESTful type, and query subtype
+
 ### Significant changes since MHD Version 3.2
 * Due to "breaking" changes, this version of MHD is Version 4.0.1
 * Canonical URLs are different, using '.' rather than '_' as the underbar is not allowed in Canonical URLs.
