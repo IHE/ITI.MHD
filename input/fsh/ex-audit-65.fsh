@@ -6,7 +6,7 @@ Usage: #example
 * meta.security = http://terminology.hl7.org/CodeSystem/v3-ActReason#HTEST
 * type = DCM#110107 "Import"
 * action = #C
-* subtype = urn:ihe:event-type-code#ITI-65 "Provide Document Bundle"
+* subtype[iti65] = urn:ihe:event-type-code#ITI-65 "Provide Document Bundle"
 //* severity = #Informational
 * recorded = 2020-04-29T09:49:00.000Z
 * outcome = http://terminology.hl7.org/CodeSystem/audit-event-outcome#0 "Success"
@@ -42,7 +42,7 @@ Usage: #example
 * meta.security = http://terminology.hl7.org/CodeSystem/v3-ActReason#HTEST
 * type = DCM#110106 "Export"
 * action = #R
-* subtype = urn:ihe:event-type-code#ITI-65 "Provide Document Bundle"
+* subtype[iti65] = urn:ihe:event-type-code#ITI-65 "Provide Document Bundle"
 //* severity = #Informational
 * recorded = 2020-04-29T09:49:00.000Z
 * outcome = http://terminology.hl7.org/CodeSystem/audit-event-outcome#0 "Success"

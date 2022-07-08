@@ -6,8 +6,8 @@ Usage: #example
 * meta.security = http://terminology.hl7.org/CodeSystem/v3-ActReason#HTEST
 * type = http://terminology.hl7.org/CodeSystem/audit-event-type#rest "Restful Operation"
 * action = #E
-* subtype[+] = http://hl7.org/fhir/restful-interaction#search "search"
-* subtype[+] = urn:ihe:event-type-code#ITI-67 "Find Document References"
+* subtype[anySearch] = http://hl7.org/fhir/restful-interaction#search "search"
+* subtype[iti67] = urn:ihe:event-type-code#ITI-67 "Find Document References"
 //* severity = #Informational
 * recorded = 2020-04-29T09:49:00.000Z
 * outcome = http://terminology.hl7.org/CodeSystem/audit-event-outcome#0 "Success"
@@ -44,8 +44,8 @@ Usage: #example
 * meta.security = http://terminology.hl7.org/CodeSystem/v3-ActReason#HTEST
 * type = http://terminology.hl7.org/CodeSystem/audit-event-type#rest "Restful Operation"
 * action = #E
-* subtype[+] = http://hl7.org/fhir/restful-interaction#search "search"
-* subtype[+] = urn:ihe:event-type-code#ITI-67 "Find Document References"
+* subtype[anySearch] = http://hl7.org/fhir/restful-interaction#search "search"
+* subtype[iti67] = urn:ihe:event-type-code#ITI-67 "Find Document References"
 //* severity = #Informational
 * recorded = 2020-04-29T09:49:00.000Z
 * outcome = http://terminology.hl7.org/CodeSystem/audit-event-outcome#0 "Success"
@@ -81,8 +81,8 @@ Usage: #example
 * meta.security = http://terminology.hl7.org/CodeSystem/v3-ActReason#HTEST
 * type = http://terminology.hl7.org/CodeSystem/audit-event-type#rest "Restful Operation"
 * action = #E
-* subtype[+] = http://hl7.org/fhir/restful-interaction#search "search"
-* subtype[+] = urn:ihe:event-type-code#ITI-67 "Find Document References"
+* subtype[anySearch] = http://hl7.org/fhir/restful-interaction#search "search"
+* subtype[iti67] = urn:ihe:event-type-code#ITI-67 "Find Document References"
 //* severity = #Informational
 * recorded = 2020-04-29T09:49:00.000Z
 * outcome = http://terminology.hl7.org/CodeSystem/audit-event-outcome#0 "Success"
