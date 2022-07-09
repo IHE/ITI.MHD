@@ -86,6 +86,8 @@ pages:
     title: "2:3.67 Find Document References [ITI-67]"
   ITI-68.md:
     title: "2:3.68 Retrieve Document [ITI-68]"
+  ITI-105.md:
+    title: "2:3.105 Simplified Publish [ITI-105]"
   31_xds.md:
     title: "3:4.2.4.1 Error Codes"
   32_fhir_maps.md:
@@ -114,6 +116,7 @@ menu:
     "Find Document Lists [ITI-66]": ITI-66.html
     "Find Document References [ITI-67]": ITI-67.html
     "Retrieve Document [ITI-68]": ITI-68.html
+    "Simplified Publish [ITI-105]": ITI-105.html
   Volume 3:
     "Error Codes": 31_xds.html
     "FHIR Maps": 32_fhir_maps.html

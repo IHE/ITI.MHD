@@ -1,4 +1,5 @@
 @startuml
+title Provide Document Bundle [ITI-65]
 hide footbox
 participant "Document Source" as DocumentSource
 participant "Document Recipient" as DocumentRecipient

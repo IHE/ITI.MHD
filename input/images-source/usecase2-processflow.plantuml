@@ -1,4 +1,5 @@
 @startuml
+title Basic Process Flow in MHD Profile
 hide footbox
 actor "Consumer of Documents"
 participant "Document Consumer" as DocumentConsumer

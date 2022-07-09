@@ -44,7 +44,7 @@ This use case presumes that the mobile device knows or discovers the patient ide
 This use case presumes that the sending mobile device knows the location of the receiving URL endpoints, likely through a configuration setting, or through a workflow driven by a web interface.
 
 #### 1:33.4.2.2 Publication of new documents Process Flow
-The publication of a new document(s) is done using the Provide Document Bundle [ITI-65](ITI-65.html) transaction, which carries both the document and its metadata. This transaction is analogous to an XDS Provide and Register Document Set-b [ITI-41](https://profiles.ihe.net/ITI/TF/Volume2/ITI-41.html) transaction.
+The publication of a new document(s) is done using the Provide Document Bundle [ITI-65](ITI-65.html) transaction or the Simplified Publish [ITI-105](ITI-105.html) transaction, which carries both the document and its metadata. The [ITI-65](ITI-65.html) transaction is analogous to an XDS Provide and Register Document Set-b [ITI-41](https://profiles.ihe.net/ITI/TF/Volume2/ITI-41.html) transaction. The [ITI-105](ITI-105.html) is a more simple transaction where the publication needs are more simple, moving the SubmissionSet mapping task to the Document Recipient.
 
 <div>
 {%include usecase1-processflow.svg%}
