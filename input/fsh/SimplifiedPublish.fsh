@@ -1,7 +1,4 @@
-// Simplefied Publish style ITI-105, one DocumentReference with .data holding the Document
-
-
-
+// Simplified Publish style ITI-105, one DocumentReference with .data holding the Document
 
 Profile:        SimplifiedPublishDocumentReference
 Parent:         DocumentReference
@@ -15,15 +12,14 @@ A profile on the DocumentReference resource for MHD Simplified Publish constrain
 - ebRIM implementation at [3:4.2.3.2 Document Entry](https://profiles.ihe.net/ITI/TF/Volume3/ch-4.2.html#4.2.3.2).
 - with use-cases and constraints found in [3:4.3 Additional Document Sharing Requirements](https://profiles.ihe.net/ITI/TF/Volume3/ch-4.3.html#4.3)
 
-Simplfied Publish
+Simplified Publish
 - Similar to Minimal Metadata constraints
   - must be status current
   - must **not** be a replacement request
   - must have a patient indicated
 - uses attachment.data to carry the document, rather than attachment.url
   - so that the Simplified Publish is a simple POST of the DocumentReference
-  - Document Recipient is expected to extract the .data, use .url 
-
+  - Document Recipient is expected to extract the .data, use .url
 """
 * modifierExtension 0..0
 * masterIdentifier 1..1
@@ -38,7 +34,6 @@ Simplfied Publish
 * date 0..1 MS
 * author 0..* MS
 * authenticator 0..1
-//* custodian 0..0
 * relatesTo 0..0
 * relatesTo ^short = "replace is not supported by Simplified Publish"
 * description 0..1
@@ -56,7 +51,6 @@ Simplfied Publish
 * content.attachment.creation 0..1 MS
 * content.format 0..1 MS
 //* content.format from http://ihe.net/fhir/ihe.formatcode.fhir/ValueSet/formatcode (preferred)
-//* context.encounter 0..0
 * context.event 0..*
 * context.period 0..1 MS
 * context.facilityType 0..1 MS

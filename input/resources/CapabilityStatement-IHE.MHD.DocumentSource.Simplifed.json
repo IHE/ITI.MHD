@@ -46,11 +46,18 @@
       "security": {
         "description": "Recommend IUA or SMART"
       },
-      "interaction": [
+      "resource": [
         {
-          "code": "transaction",
-          "documentation": "https://profiles.ihe.net/ITI/MHD/StructureDefinition/IHE.MHD.SimplifiedPublish"
-        },
+          "type": "DocumentReference",
+          "profile": "https://profiles.ihe.net/ITI/MHD/StructureDefinition/IHE.MHD.Query.SimplifiedPublish.DocumentReference",
+          "interaction": [
+            {
+              "code": "create"
+            }
+          ]
+        }
+      ],
+      "interaction": [
         {
           "code": "transaction",
           "documentation": "https://profiles.ihe.net/ITI/MHD/StructureDefinition/IHE.MHD.Minimal.ProvideBundle"

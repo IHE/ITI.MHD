@@ -9,7 +9,7 @@
   - [Find Document Lists \[ITI-66\]](ITI-66.html)
   - [Find Document References \[ITI-67\]](ITI-67.html)
   - [Retrieve Document \[ITI-68\]](ITI-68.html)
-  - [simplified Publish \[ITI-105\]](ITI-105.html)
+  - [Simplified Publish \[ITI-105\]](ITI-105.html)
 
 ## 1:33.4 MHD Overview
 The MHD Profile enables sharing of patient documents to, or from, mobile or constrained devices. Other IHE profiles, chiefly Cross-Enterprise Document Sharing (XDS), describe sharing of patient document in less constrained environments, and many of the concepts from those profiles are applicable to the MHD environment. For more information on IHE Document Sharing, see [Health Information Exchange: Enabling Document Sharing Using IHE Profiles](https://profiles.ihe.net/ITI/HIE-Whitepaper/index.html) White Paper.
@@ -74,7 +74,7 @@ The MHD Profile defines a set of transactions against FHIR Resources. These are 
 |--------|----------------------------------|------------------------------|----------------------------|
 | GET    | Find Document Reference [ITI-67] | Find Document Lists [ITI-66] | Retrieve Document [ITI-68] |
 | PUT    | Not Specified                    | Not Specified                | Not Specified              |
-| POST   | Provide Document Bundle [ITI-65] | Provide Document Bundle [ITI-65] | Provide Document Bundle [ITI-65] |
+| POST   | Provide Document Bundle [ITI-65]<br/>Simplified Publish [ITI-105] | Provide Document Bundle [ITI-65] | Provide Document Bundle [ITI-65] |
 | DELETE | Not Specified                    | Not Specified                | Not Specified              |
 | UPDATE | Not Specified                    | Not Specified                | Not Specified              |
 | HEAD   | Not Specified                    | Not Specified                | Not Specified              |

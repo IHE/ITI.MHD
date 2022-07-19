@@ -77,19 +77,19 @@ The [UnContained Reference Option](#13323-uncontained-reference-option) is not c
 
 #### 1:33.2.4 Simplified Publish Option
 
-The **Simplified Publish Option** recognizes that there are Document Source Actors that have simple publication needs that can be automated on the Document Recipient. The simplifications include:
+The **Simplified Publish Option** recognizes that there are Document Source Actors that have simple publication needs that can be automated on the Document Recipient Actor. The simplifications include:
 * Publishing one document at a time
 * The document must be included
 * No support for On-Demand or Delayed Document Assembly
-* No need to Replace
-* No need to use Folders
-* No need to specify the SubmissionSet metadata
-* No need to target a publication to a given intended recipient
+* No support for Replace
+* No support for Folders
+* No support for a defined SubmissionSet metadata
+* No support to target a publication to a given intended recipient
 
 The "need" may be simply that the Document Source is not capable to understand these features or does not need them.
 
 The Document Source claiming the Simplified Push Option shall implement use of [ITI-105](ITI-105.html) transaction to publish document content. The Document Source may also use [ITI-65](ITI-65.html).
 
-The Document Recipient claiming the Simplified Push Option shall implement the [ITI-105](ITI-105.html) transaction. The Document Recipient will translate the DocumentReference metadata elements into a SubmissionSet following the [PCC TF-2: 4.1.1 XDSSubmissionSet Metadata](https://www.ihe.net/uploadedFiles/Documents/PCC/IHE_PCC_TF_Vol2.pdf), and may have further metadata translation requirements specified by the local Document Sharing Community policy.
+The Document Recipient claiming the Simplified Push Option shall implement the [ITI-105](ITI-105.html) transaction. The Document Recipient will extract the document, translate the DocumentReference metadata elements into a SubmissionSet following the [PCC TF-2: 4.1.1 XDSSubmissionSet Metadata](https://www.ihe.net/uploadedFiles/Documents/PCC/IHE_PCC_TF_Vol2.pdf), and may have further metadata translation requirements specified by the local Document Sharing Community policy.
 
 TODO: use of the $generate operation may further simplify the publication...
