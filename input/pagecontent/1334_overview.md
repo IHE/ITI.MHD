@@ -1,23 +1,15 @@
 
-* Actors
-
+- Actors
   - [Document Source](1331_actors_and_transactions.html#133111-document-source)
-
   - [Document Recipient](1331_actors_and_transactions.html#133113-document-recipient)
-
   - [Document Consumer](1331_actors_and_transactions.html#133112-document-consumer)
-
   - [Document Responder](1331_actors_and_transactions.html#133114-document-responder)
-
-* Transactions
-
+- Transactions
   - [Provide Document Bundle \[ITI-65\]](ITI-65.html)
-
   - [Find Document Lists \[ITI-66\]](ITI-66.html)
-
   - [Find Document References \[ITI-67\]](ITI-67.html)
-
   - [Retrieve Document \[ITI-68\]](ITI-68.html)
+  - [simplified Publish \[ITI-105\]](ITI-105.html)
 
 ## 1:33.4 MHD Overview
 The MHD Profile enables sharing of patient documents to, or from, mobile or constrained devices. Other IHE profiles, chiefly Cross-Enterprise Document Sharing (XDS), describe sharing of patient document in less constrained environments, and many of the concepts from those profiles are applicable to the MHD environment. For more information on IHE Document Sharing, see [Health Information Exchange: Enabling Document Sharing Using IHE Profiles](https://profiles.ihe.net/ITI/HIE-Whitepaper/index.html) White Paper.
