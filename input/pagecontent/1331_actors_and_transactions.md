@@ -33,11 +33,19 @@ Table 1:33.1-1: MHD Implementation Guide - Actors and Transactions
 </thead>
 <tbody>
     <tr>
-        <td rowspan="2">
+        <td rowspan="3">
         <a href="1331_actors_and_transactions.html#133111-document-source">Document Source</a>
         </td>
         <td>
         <a href='ITI-65.html'>Provide Document Bundle [ITI-65]</a>
+        </td>
+        <td align='center'>
+        O
+        </td>
+        </tr>
+        <tr>
+        <td>
+        <a href='ITI-105.html'>Simplified Publish [ITI-105]</a>
         </td>
         <td align='center'>
         O
@@ -52,7 +60,7 @@ Table 1:33.1-1: MHD Implementation Guide - Actors and Transactions
         </td>
     </tr>
     <tr>
-        <td rowspan="2">
+        <td rowspan="3">
         <a href="1331_actors_and_transactions.html#133113-document-recipient">Document Recipient</a>
         </td>
         <td>
@@ -60,6 +68,14 @@ Table 1:33.1-1: MHD Implementation Guide - Actors and Transactions
         </td>
         <td align='center'>
         R
+        </td>
+        </tr>
+        <tr>
+        <td>
+        <a href='ITI-105.html'>Simplified Publish [ITI-105]</a>
+        </td>
+        <td align='center'>
+        O
         </td>
         </tr>
         <tr>
@@ -135,9 +151,12 @@ The actors in this profile are described in more detail in the sections below.
 
 #### 1:33.1.1.1 Document Source
 
-The Document Source is the producer and publisher of SubmissionSet, Folder, DocumentReference, and documents to a Document Recipient.
+The Document Source is the producer and publisher of Document Content to a Document Recipient.
 
-The following CapabilityStatements define the Actor capabilities
+The Document Source uses either the ITI-65 or ITI-105.
+
+The following CapabilityStatements define the Actor capabilities given the various Options
+* [Document Source implementing Simplified Publish Option](CapabilityStatement-IHE.MHD.DocumentSource.Simplified.html)
 * [Document Source](CapabilityStatement-IHE.MHD.DocumentSource.html) 
 * [Document Source implementing Comprehensive Metadata Option](CapabilityStatement-IHE.MHD.DocumentSource.Comprehensive.html)
 * [Document Source implementing UnContained Reference Option](CapabilityStatement-IHE.MHD.DocumentSource.UnContained.html)
@@ -157,6 +176,7 @@ The following CapabilityStatements define the Actor capabilities
 * [Document Recipient](CapabilityStatement-IHE.MHD.DocumentRecipient.html)
 * [Document Recipient implementing Comprehensive Metadata Option](CapabilityStatement-IHE.MHD.DocumentRecipient.Comprehensive.html)
 * [Document Recipient implementing UnContained Reference Option](CapabilityStatement-IHE.MHD.DocumentRecipient.UnContained.html)
+* [Document Recipient implementing Simplified Publish Option](CapabilityStatement-IHE.MHD.DocumentRecipient.Simplified.html)
 
 #### 1:33.1.1.4 Document Responder
 
@@ -191,6 +211,12 @@ For more details see the detailed [ITI-67 transaction description](ITI-67.html).
 This transaction is used to get documents.
 
 For more details see the detailed [ITI-68 transaction description](ITI-68.html).
+
+#### 1:33.1.2.5 Simplified Publish
+
+This transaction is used to publish a document and metadata. This transaction does not support publishing multiple documents, or replacing document entries. This transaction will produce a simplified SubmissionSet based solely on the DocumentReference and local configuration for metadata conversion.
+
+For more details see the detailed [ITI-105 transaction description](ITI-105.html).
 
 #### 1:33.1.2.6 Generate Metadata
 

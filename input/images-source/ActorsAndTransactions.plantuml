@@ -1,8 +1,9 @@
 @startuml
-agent "Document Source" as DocumentSource
-agent "Document Consumer" as DocumentConsumer
-agent "Document Responder" as DocumentResponder
-agent "Document Recipient" as DocumentRecipient
-DocumentConsumer -- DocumentResponder : "Find Document Lists [ITI-66] ↓\nFind Document References [ITI-67] ↓\nRetrieve Document [ITI-68] ↓"
-DocumentSource -- DocumentRecipient : "Provide Document Bundle [ITI-65] ↓\nGenerate Metadata [ITI-106] ↓"
+title MHD Actor Diagram
+agent "Document Source" as DocumentSource [[1331_actors_and_transactions.html#133111-document-source]]
+agent "Document Consumer" as DocumentConsumer [[1331_actors_and_transactions.html#133112-document-consumer]]
+agent "Document Responder" as DocumentResponder [[1331_actors_and_transactions.html#133113-document-recipient]]
+agent "Document Recipient" as DocumentRecipient [[1331_actors_and_transactions.html#133114-document-responder]]
+DocumentConsumer -- DocumentResponder : "[[ITI-66.html ITI-66 Find Document Lists]] ↓\n[[ITI-67.html ITI-67 Find Document References]] ↓\n[[ITI-68.html ITI-68 Retrieve Document]] ↓"
+DocumentSource -- DocumentRecipient : "[[ITI-65.html ITI-65 Provide Document Bundle]] ↓\n[[ITI-105.html ITI-105 Simplified Publish]] ↓\n[[ITI-106.html ITI-106 Generate Metadata]] ↓"
 @enduml

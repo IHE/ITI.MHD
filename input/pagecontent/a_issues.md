@@ -5,7 +5,8 @@
   - changes to RESTful type, and query subtype
 - Add Generate Metadata operation [ITI-106] that allows for one structured/coded document to be published.
   - Is the use of Operation preferrable to the Simplified Publish?
-
+- Add Simplified Publish [ITI-105] that allows for one DocumentReference with the document in the .data element to be published, expecting the Document Recipient to create the SubmissionSet derived off of the DocumentReference and Community mapping policy.
+  - Simplified Publish is not supporting Replace, given that the Document Source is expected to be highly simplified and thus not expected to understand Replace semantics. Also the SubmissionSet is not provided so there is no Provenance to the request to Replace.
 
 ### Significant changes since MHD Version 3.2
 * Due to "breaking" changes, this version of MHD is Version 4.0.1

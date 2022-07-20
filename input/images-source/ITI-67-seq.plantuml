@@ -1,4 +1,5 @@
 @startuml
+title Find Document References [ITI-67]
 hide footbox
 participant "Document Consumer" as DocumentConsumer
 participant "Document Responder" as DocumentResponder
