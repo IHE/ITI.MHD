@@ -1,10 +1,13 @@
 @startuml
+title Use Case 3 Process Flow
 hide footbox
 participant "Document Source" as DocumentSource
 participant "Document Recipient" as DocumentRecipient
-"DocumentSource" -> "DocumentRecipient" : 1. Document Source Initiates $generateMetadata with persist
-activate "DocumentRecipient"
-"DocumentRecipient" --> "DocumentSource" : 4. Document is Published
-deactivate "DocumentSource"
-deactivate "DocumentRecipient"
+DocumentSource -> DocumentRecipient : 1. invoke $generate-metadata operation
+activate DocumentSource
+activate DocumentRecipient
+DocumentRecipient -> DocumentRecipient : 2. inspect document \ncreate metadata
+DocumentSource <-- DocumentRecipient : 3. Document is Published
+deactivate DocumentRecipient
+deactivate DocumentSource
 @enduml

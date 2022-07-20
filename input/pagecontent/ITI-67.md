@@ -24,7 +24,7 @@ The Find Document References transaction is used to find DocumentReference Resou
 {%include ITI-67-seq.svg%}
 </div>
 
-<div style="clear: left"/>
+<br clear="all">
 
 **Figure 2:3.67.4-1: Find Document References Interactions**
 

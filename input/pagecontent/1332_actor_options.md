@@ -84,12 +84,14 @@ The [UnContained Reference Option](#13323-uncontained-reference-option) is not c
 #### 1:33.2.4 Simplified Publish Option
 
 The **Simplified Publish Option** recognizes that there are Document Source Actors that have simple publication needs that can be automated on the Document Recipient Actor. The simplifications include:
-* Publishing one document at a time
+* Publishing one document at a time 
+  * Any mime-type is supported
 * The document must be included
+* The Document Source can create the DocumentReference metadata and has some need to control the element values provided
 * No support for On-Demand or Delayed Document Assembly
 * No support for Replace
 * No support for Folders
-* No support for a defined SubmissionSet metadata
+* No support for a defined SubmissionSet metadata, the Document Recipient can deterministically create the SubmissionSet from the provided DocumentReference
 * No support to target a publication to a given intended recipient
 
 The "need" may be simply that the Document Source is not capable to understand these features or does not need them.
@@ -100,10 +102,12 @@ The Document Recipient claiming the Simplified Push Option shall implement the [
 
 #### 1:33.2.5 Generate Metadata Option
 
-The **Generate Metadata Option** recognizes that there are Document Source Actors that have super simple publication needs that can be automated on the Document Recipient Actor. The simplifications include:
+The **Generate Metadata Option** recognizes that there are Document Source Actors that have a structured and coded format of a document (CDA or FHIR-Document) and simple publication needs that can be automated on the Document Recipient Actor. The simplifications include:
 * Only the document is provided
+  * must be CDA or FHIR Document
 * Publishing one document at a time
 * The document must be included
+* The Document Recipient can deterministically create the DocumentReference metadata
 * No support for On-Demand or Delayed Document Assembly
 * No support for Replace
 * No support for Folders

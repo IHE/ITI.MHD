@@ -9,7 +9,7 @@ fhirVersion: 4.0.1
 status: active
 title: "Mobile access to Health Documents (MHD)"
 description: ImplementationGuide for IHE IT Infrastructure Technical Framework Supplement Mobile access to Health Documents (MHD)
-copyright: IHE http://www.ihe.net/Governance/#Intellectual_Property
+#copyright: IHE http://www.ihe.net/Governance/#Intellectual_Property
 copyrightYear: 2020+
 releaseLabel: ci-build
 #releaseLabel: Trial-Implementation
@@ -96,8 +96,14 @@ pages:
     title: "3:4.5 FHIR Maps"
   testplan.md:
     title: "Test Plan"
+    extension: 
+      - url: http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status
+        valueCode: informative
   a_issues.md:
     title: "Issues"
+    extension: 
+      - url: http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status
+        valueCode: informative
       
 
 # ╭────────────────────────────────────────────menu.xml────────────────────────────────────────────╮

@@ -4,7 +4,7 @@ This is the **Requirements** CapabilityStatement for a [Document Consumer](1331_
 {%include QueryActors.svg%}
 </div>
 
-<div style="clear: left"/>
+<br clear="all">
 
 **Figure: Query Actors Interactions**
 

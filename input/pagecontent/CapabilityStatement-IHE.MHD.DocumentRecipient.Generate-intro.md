@@ -6,7 +6,7 @@ The [Document Source](1331_actors_and_transactions.html#133111-document-source) 
 {%include ITI-106-seq.svg%}
 </div>
 
-<div style="clear: left"/>
+<br clear="all">
 
 **Figure: Generate Metadata Interactions**
 

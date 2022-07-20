@@ -9,7 +9,7 @@ Profile and the relevant transactions between them.
 {%include ActorsAndTransactions.svg%}
 </div>
 
-<div style="clear: left"/>
+<br clear="all">
 
 **Figure 1:33.1-1: MHD Actor Diagram**
 
