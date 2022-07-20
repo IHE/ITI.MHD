@@ -3,6 +3,8 @@
 ### Significant changes since MHD Version 4.10
 - changed to AuditEvent profiling leveraging [Basic Audit Log Patterns (BALP) Release 1.1.0](https://profiles.ihe.net/ITI/BALP/index.html)
   - changes to RESTful type, and query subtype
+- Add Simplified Publish [ITI-105] that allows for one DocumentReference with the document in the .data element to be published, expecting the Document Recipient to create the SubmissionSet derived off of the DocumentReference and Community mapping policy.
+  - Simplified Publish is not supporting Replace, given that the Document Source is expected to be highly simplified and thus not expected to understand Replace semantics. Also the SubmissionSet is not provided so there is no Provenance to the request to Replace.
 
 ### Significant changes since MHD Version 3.2
 * Due to "breaking" changes, this version of MHD is Version 4.0.1

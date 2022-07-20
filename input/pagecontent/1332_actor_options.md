@@ -10,51 +10,41 @@ between options when applicable are specified in notes.
             <td>Option Name</td>
         </tr>
     </thead>
-    <tbody>
-        
-                <tr>
-                
-                    <td rowspan='2'>Document Source</td>
-                
-                <td><a href="#13321-comprehensive-metadata-option">Comprehensive Metadata</a></td>
-                </tr>
-                <tr>
-                
-                <td><a href="#13323-uncontained-reference-option">UnContained Reference</a></td>
-                </tr>
-
-                <tr>
-                
-                    <td rowspan='3'>Document Recipient</td>
-                
-                <td><a href="#13321-comprehensive-metadata-option">Comprehensive Metadata</a></td>
-                </tr>
-                <tr>
-                
-                <td><a href="#13322-xds-on-fhir-option">XDS on FHIR</a></td>
-                </tr>
-                <tr>
-                
-                <td><a href="#13323-uncontained-reference-option">UnContained Reference</a></td>
-                </tr>
-                        
-                <tr>
-                
-                    <td rowspan='1'>Document Consumer</td>
-                
-                <td><a href="#13323-uncontained-reference-option">UnContained Reference</a></td>
-                </tr>
-            
-                <tr>
-                
-                    <td rowspan='2'>Document Responder</td>
-                                
-                <td><a href="#13322-xds-on-fhir-option">XDS on FHIR</a></td>
-                </tr>
-                <tr>
-                
-                <td><a href="#13323-uncontained-reference-option">UnContained Reference</a></td>
-                </tr>
+    <tbody>        
+        <tr>        
+            <td rowspan='3'>Document Source</td>       
+            <td><a href="#13321-comprehensive-metadata-option">Comprehensive Metadata</a></td>
+            </tr>
+            <tr>
+            <td><a href="#13323-uncontained-reference-option">UnContained Reference</a></td>
+            </tr>
+            <tr>
+            <td><a href="#13324-simplified-publish-option">Simplified Publish</a></td>
+        </tr>
+        <tr>
+            <td rowspan='4'>Document Recipient</td>        
+            <td><a href="#13321-comprehensive-metadata-option">Comprehensive Metadata</a></td>
+            </tr>
+            <tr>
+            <td><a href="#13322-xds-on-fhir-option">XDS on FHIR</a></td>
+            </tr>
+            <tr>        
+            <td><a href="#13323-uncontained-reference-option">UnContained Reference</a></td>
+            </tr>   
+            <tr>
+            <td><a href="#13324-simplified-publish-option">Simplified Publish</a></td>
+        </tr>
+        <tr>
+            <td rowspan='1'>Document Consumer</td>
+            <td><a href="#13323-uncontained-reference-option">UnContained Reference</a></td>
+        </tr>
+        <tr>
+            <td rowspan='2'>Document Responder</td>
+            <td><a href="#13322-xds-on-fhir-option">XDS on FHIR</a></td>
+            </tr>
+            <tr>
+            <td><a href="#13323-uncontained-reference-option">UnContained Reference</a></td>
+        </tr>
     </tbody>
 </table>
 
@@ -79,8 +69,27 @@ The [XDS on FHIR Option](#13322-xds-on-fhir-option) is not compatible with the [
 
 #### 1:33.2.3 UnContained Reference Option
 
-The [UnContained Reference Option](#13323-uncontained-reference-option) recognizes that a Community may choose to longitudinally maintain their provider and patient directories, for example, an [mCSD](https://profiles.ihe.net/ITI/TF/Volume1/ch-46.html) Care Services Selective Supplier and [PMIR](https://profiles.ihe.net/ITI/TF/Volume1/ch-49.html) Patient Identity Registry. When this longitudinal consistency is managed, then the author, authenticator, sourcePatientInfo, and author entries do not need to be a contained copy of the information known at the time of publication [ITI-65](ITI-65.html) since a Reference to the information in these directories will be valid over the full lifecycle of the entries. 
+The **UnContained Reference Option** recognizes that a Community may choose to longitudinally maintain their provider and patient directories, for example, an [mCSD](https://profiles.ihe.net/ITI/TF/Volume1/ch-46.html) Care Services Selective Supplier and [PMIR](https://profiles.ihe.net/ITI/TF/Volume1/ch-49.html) Patient Identity Registry. When this longitudinal consistency is managed, then the author, authenticator, sourcePatientInfo, and author entries do not need to be a contained copy of the information known at the time of publication [ITI-65](ITI-65.html) since a Reference to the information in these directories will be valid over the full lifecycle of the entries. 
 
 The actors that support the [UnContained Reference Option](#13323-uncontained-reference-option) shall be able to create and consume full URL values in the DocumentReference.author, the DocumentReference.authenticator, the DocumentReference.context.sourcePatientInfo, and the DocumentManifest.author. This requirement encourages the persisting of the information at the time the document is published. 
 
 The [UnContained Reference Option](#13323-uncontained-reference-option) is not compatible with the [XDS on FHIR Option](#13322-xds-on-fhir-option). A system may be able to support both options, but only one will be able to be used at a given deployment.
+
+#### 1:33.2.4 Simplified Publish Option
+
+The **Simplified Publish Option** recognizes that there are Document Source Actors that have simple publication needs that can be automated on the Document Recipient Actor. The simplifications include:
+* Publishing one document at a time
+* The document must be included
+* No support for On-Demand or Delayed Document Assembly
+* No support for Replace
+* No support for Folders
+* No support for a defined SubmissionSet metadata
+* No support to target a publication to a given intended recipient
+
+The "need" may be simply that the Document Source is not capable to understand these features or does not need them.
+
+The Document Source claiming the Simplified Push Option shall implement use of [ITI-105](ITI-105.html) transaction to publish document content. The Document Source may also use [ITI-65](ITI-65.html).
+
+The Document Recipient claiming the Simplified Push Option shall implement the [ITI-105](ITI-105.html) transaction. The Document Recipient will extract the document, translate the DocumentReference metadata elements into a SubmissionSet following the [PCC TF-2: 4.1.1 XDSSubmissionSet Metadata](https://www.ihe.net/uploadedFiles/Documents/PCC/IHE_PCC_TF_Vol2.pdf), and may have further metadata translation requirements specified by the local Document Sharing Community policy.
+
+TODO: use of the $generate operation may further simplify the publication...

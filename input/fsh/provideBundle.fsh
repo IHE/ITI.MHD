@@ -148,3 +148,4 @@ A profile on the Bundle transaction-response for ITI-65 Provide Document Bundle 
 * entry.response 1..
 * entry.response ^short = "Indicating the results of processing the entry"
 * entry.response.location 1..
+
