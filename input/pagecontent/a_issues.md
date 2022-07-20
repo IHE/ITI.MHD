@@ -3,6 +3,9 @@
 ### Significant changes since MHD Version 4.10
 - changed to AuditEvent profiling leveraging [Basic Audit Log Patterns (BALP) Release 1.1.0](https://profiles.ihe.net/ITI/BALP/index.html)
   - changes to RESTful type, and query subtype
+- Add Generate Metadata operation [ITI-106] that allows for one structured/coded document to be published.
+  - Is the use of Operation preferrable to the Simplified Publish?
+
 
 ### Significant changes since MHD Version 3.2
 * Due to "breaking" changes, this version of MHD is Version 4.0.1

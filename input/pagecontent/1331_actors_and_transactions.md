@@ -25,132 +25,109 @@ Table 1:33.1-1: MHD Implementation Guide - Actors and Transactions
 </b>
 </caption>
 <thead>
-<tr class="odd" style='background: gray;'>
+<tr style='background: gray;'>
 <th>Actors</th>
 <th>Transactions</th>
 <th>Optionality</th>
 </tr>
 </thead>
 <tbody>
-                
-<tr class="even">
-                        
-<td rowspan="1">
-<a href="1331_actors_and_transactions.html#133111-document-source">Document Source</a>
-</td>
-                        
-<td>
-<a href='ITI-65.html'>
-                        Provide Document Bundle [ITI-65]
-</a>
-</td>
-<td align='center'>
-                        R
-</td>
-</tr>
-
-<tr class="even">
-                        
-<td rowspan="1">
-<a href="1331_actors_and_transactions.html#133113-document-recipient">Document Recipient</a>
-</td>
-                        
-<td>
-<a href='ITI-65.html'>
-                        Provide Document Bundle [ITI-65]
-</a>
-</td>
-<td align='center'>
-                        R
-</td>
-</tr>
-                    
-
-                    
-<tr class="even">
-                        
-<td rowspan="3">
-<a href="1331_actors_and_transactions.html#133112-document-consumer">Document Consumer</a>
-</td>
-                        
-<td>
-<a href='ITI-66.html'>
-                        Find Document Lists [ITI-66]
-</a>
-</td>
-<td align='center'>
-                        R
-</td>
-</tr>
-                    
-<tr class="odd">
-                        
-<td>
-<a href='ITI-67.html'>
-                        Find Document References [ITI-67]
-</a>
-</td>
-<td align='center'>
-                        R
-</td>
-</tr>
-
-<tr class="even">
-                        
-<td>
-<a href='ITI-68.html'>
-                        Retrieve Document [ITI-68]
-</a>
-</td>
-<td align='center'>
-                        R
-</td>
-</tr>
-
-                    
-<tr class="odd">
-                        
-<td rowspan="3">
-<a href="1331_actors_and_transactions.html#133114-document-responder">Document Responder</a>
-</td>
-                        
-<td>
-<a href='ITI-66.html'>
-                        Find Document Lists [ITI-66]
-</a>
-</td>
-<td align='center'>
-                        R
-</td>
-</tr>
-                    
-<tr class="even">
-                        
-<td>
-<a href='ITI-67.html'>
-                        Find Document References [ITI-67]
-</a>
-</td>
-<td align='center'>
-                        R
-</td>
-</tr>
-
-<tr class="odd">
-                        
-<td>
-<a href='ITI-68.html'>
-                        Retrieve Document [ITI-68]
-</a>
-</td>
-<td align='center'>
-                        R
-</td>
-</tr>                    
+    <tr>
+        <td rowspan="2">
+        <a href="1331_actors_and_transactions.html#133111-document-source">Document Source</a>
+        </td>
+        <td>
+        <a href='ITI-65.html'>Provide Document Bundle [ITI-65]</a>
+        </td>
+        <td align='center'>
+        O
+        </td>
+        </tr>
+        <tr>
+        <td>
+        <a href='ITI-106.html'>Generate Metadata [ITI-106]</a>
+        </td>
+        <td align='center'>
+        O
+        </td>
+    </tr>
+    <tr>
+        <td rowspan="2">
+        <a href="1331_actors_and_transactions.html#133113-document-recipient">Document Recipient</a>
+        </td>
+        <td>
+        <a href='ITI-65.html'>Provide Document Bundle [ITI-65]</a>
+        </td>
+        <td align='center'>
+        R
+        </td>
+        </tr>
+        <tr>
+        <td>
+        <a href='ITI-106.html'>Generate Metadata [ITI-106]</a>
+        </td>
+        <td align='center'>
+        O
+        </td>
+    </tr>
+    <tr>
+        <td rowspan="3">
+        <a href="1331_actors_and_transactions.html#133112-document-consumer">Document Consumer</a>
+        </td>
+        <td>
+        <a href='ITI-66.html'>Find Document Lists [ITI-66]</a>
+        </td>
+        <td align='center'>
+        R
+        </td>
+        </tr>
+        <tr>
+        <td>
+        <a href='ITI-67.html'>Find Document References [ITI-67]</a>
+        </td>
+        <td align='center'>
+        R
+        </td>
+        </tr>
+        <tr>
+        <td>
+        <a href='ITI-68.html'>Retrieve Document [ITI-68]</a>
+        </td>
+        <td align='center'>
+        R
+        </td>
+    </tr>
+    <tr>
+        <td rowspan="3">
+        <a href="1331_actors_and_transactions.html#133114-document-responder">Document Responder</a>
+        </td>
+        <td>
+        <a href='ITI-66.html'>Find Document Lists [ITI-66]</a>
+        </td>
+        <td align='center'>
+        R
+        </td>
+        </tr>
+        <tr>
+        <td>
+        <a href='ITI-67.html'>Find Document References [ITI-67]</a>
+        </td>
+        <td align='center'>
+        R
+        </td>
+        </tr>
+        <tr>
+        <td>
+        <a href='ITI-68.html'>Retrieve Document [ITI-68]</a>
+        </td>
+        <td align='center'>
+        R
+        </td>
+    </tr>                    
 </tbody>
 </table>
         
-        
+Note: The Document Source shall implement at least one of the transactions.        
             
 
 ### 1:33.1.1 Actor Descriptions and Actor Profile Requirements
@@ -214,3 +191,9 @@ For more details see the detailed [ITI-67 transaction description](ITI-67.html).
 This transaction is used to get documents.
 
 For more details see the detailed [ITI-68 transaction description](ITI-68.html).
+
+#### 1:33.1.2.6 Generate Metadata
+
+This transaction is used to generate DocumentReference metadata given a document. The Document Source provides a document. The Document Responder will create, update, or use an existing DocumentReference instance. The Document Source indicates if the document should also be persisted.
+
+For more details see the detailed [ITI-106 transaction description](ITI-106.html).

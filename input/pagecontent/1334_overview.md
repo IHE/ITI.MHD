@@ -54,6 +54,19 @@ The publication of a new document(s) is done using the Provide Document Bundle [
 
 **Figure 1:33.4.2.2-1: Use Case 1 Process Flow**
 
+#### 1:33.4.2.3 Generate Metadata and Publish Process Flow
+An alternative flow supports the case where the Document Source has only a document. The document in this case must be of a structured and coded form such as CDA, or FHIR-Document. The Document Recipient inspects the document and generates a DocumentReference. When the *persist* parameter is used the document is persisted. The Document Recipient may need to create a SubmissionSet depending on the persistance and grouping requirements. 
+
+The Generate Metadata is a FHIR Operation defined in the Generate Metadata [ITI-106](ITI-106.html) transaction. 
+
+<div>
+{%include usecase3-processflow.svg%}
+</div>
+
+<div style="clear: left"/>
+
+**Figure 1:33.4.2.3-1: Use Case 1.b Process Flow**
+
 ### 1:33.4.3 Use Case 2: Discovery and Retrieval of existing documents
 
 #### 1:33.4.3.1 Discovery and Retrieval of existing documents Use Case Description

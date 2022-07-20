@@ -86,6 +86,8 @@ pages:
     title: "2:3.67 Find Document References [ITI-67]"
   ITI-68.md:
     title: "2:3.68 Retrieve Document [ITI-68]"
+  ITI-106.md:
+    title: "2:3.106 Generate Metadata [ITI-106]"
   31_xds.md:
     title: "3:4.2.4.1 Error Codes"
   32_fhir_maps.md:

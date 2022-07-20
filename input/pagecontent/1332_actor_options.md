@@ -10,54 +10,43 @@ between options when applicable are specified in notes.
             <td>Option Name</td>
         </tr>
     </thead>
-    <tbody>
-        
-                <tr>
-                
-                    <td rowspan='2'>Document Source</td>
-                
-                <td><a href="#13321-comprehensive-metadata-option">Comprehensive Metadata</a></td>
-                </tr>
-                <tr>
-                
-                <td><a href="#13323-uncontained-reference-option">UnContained Reference</a></td>
-                </tr>
-
-                <tr>
-                
-                    <td rowspan='3'>Document Recipient</td>
-                
-                <td><a href="#13321-comprehensive-metadata-option">Comprehensive Metadata</a></td>
-                </tr>
-                <tr>
-                
-                <td><a href="#13322-xds-on-fhir-option">XDS on FHIR</a></td>
-                </tr>
-                <tr>
-                
-                <td><a href="#13323-uncontained-reference-option">UnContained Reference</a></td>
-                </tr>
-                        
-                <tr>
-                
-                    <td rowspan='1'>Document Consumer</td>
-                
-                <td><a href="#13323-uncontained-reference-option">UnContained Reference</a></td>
-                </tr>
-            
-                <tr>
-                
-                    <td rowspan='2'>Document Responder</td>
-                                
-                <td><a href="#13322-xds-on-fhir-option">XDS on FHIR</a></td>
-                </tr>
-                <tr>
-                
-                <td><a href="#13323-uncontained-reference-option">UnContained Reference</a></td>
-                </tr>
+    <tbody>        
+        <tr>        
+            <td rowspan='3'>Document Source</td>       
+            <td><a href="#13321-comprehensive-metadata-option">Comprehensive Metadata</a></td>
+            </tr>
+            <tr>
+            <td><a href="#13323-uncontained-reference-option">UnContained Reference</a></td>
+            </tr>
+            <tr>
+            <td><a href="#13325-generate-metadata-option">Generate Metadata</a></td>
+        </tr>
+        <tr>
+            <td rowspan='4'>Document Recipient</td>        
+            <td><a href="#13321-comprehensive-metadata-option">Comprehensive Metadata</a></td>
+            </tr>
+            <tr>
+            <td><a href="#13322-xds-on-fhir-option">XDS on FHIR</a></td>
+            </tr>
+            <tr>        
+            <td><a href="#13323-uncontained-reference-option">UnContained Reference</a></td>
+            </tr>   
+            <tr>
+            <td><a href="#13325-generate-metadata-option">Generate Metadata</a></td>
+        </tr>
+        <tr>
+            <td rowspan='1'>Document Consumer</td>
+            <td><a href="#13323-uncontained-reference-option">UnContained Reference</a></td>
+        </tr>
+        <tr>
+            <td rowspan='2'>Document Responder</td>
+            <td><a href="#13322-xds-on-fhir-option">XDS on FHIR</a></td>
+            </tr>
+            <tr>
+            <td><a href="#13323-uncontained-reference-option">UnContained Reference</a></td>
+        </tr>
     </tbody>
 </table>
-
         
 The options in this guide are described in more detail in the sections below.
 
@@ -84,3 +73,22 @@ The [UnContained Reference Option](#13323-uncontained-reference-option) recogniz
 The actors that support the [UnContained Reference Option](#13323-uncontained-reference-option) shall be able to create and consume full URL values in the DocumentReference.author, the DocumentReference.authenticator, the DocumentReference.context.sourcePatientInfo, and the DocumentManifest.author. This requirement encourages the persisting of the information at the time the document is published. 
 
 The [UnContained Reference Option](#13323-uncontained-reference-option) is not compatible with the [XDS on FHIR Option](#13322-xds-on-fhir-option). A system may be able to support both options, but only one will be able to be used at a given deployment.
+
+#### 1:33.2.5 Generate Metadata Option
+
+The **Generate Metadata Option** recognizes that there are Document Source Actors that have super simple publication needs that can be automated on the Document Recipient Actor. The simplifications include:
+* Only the document is provided
+* Publishing one document at a time
+* The document must be included
+* No support for On-Demand or Delayed Document Assembly
+* No support for Replace
+* No support for Folders
+* No support for a defined SubmissionSet metadata
+* No support to target a publication to a given intended recipient
+
+The "need" may be simply that the Document Source is not capable to understand these features or does not need them.
+
+The Document Source claiming the Generate Metadata Option shall implement use of [ITI-106](ITI-106.html) transaction to submit a document content. The Document Source may also use [ITI-65](ITI-65.html).
+
+The Document Recipient claiming the Generate Metadata Option shall implement the [ITI-106](ITI-106.html) transaction. The Document Recipient will interpret the document, create or update a DocumentReference metadata, convert DocumentReference elements into a SubmissionSet. The metadata derivation shall following the [PCC TF-2: 4.1.1 XDSSubmissionSet Metadata](https://www.ihe.net/uploadedFiles/Documents/PCC/IHE_PCC_TF_Vol2.pdf), and may have further metadata translation requirements specified by the local Document Sharing Community policy.
+

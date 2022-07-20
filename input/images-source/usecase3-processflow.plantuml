@@ -1,0 +1,10 @@
+@startuml
+hide footbox
+participant "Document Source" as DocumentSource
+participant "Document Recipient" as DocumentRecipient
+"DocumentSource" -> "DocumentRecipient" : 1. Document Source Initiates $generateMetadata with persist
+activate "DocumentRecipient"
+"DocumentRecipient" --> "DocumentSource" : 4. Document is Published
+deactivate "DocumentSource"
+deactivate "DocumentRecipient"
+@enduml
