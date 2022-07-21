@@ -5,5 +5,5 @@ agent "Document Consumer" as DocumentConsumer [[1331_actors_and_transactions.htm
 agent "Document Responder" as DocumentResponder [[1331_actors_and_transactions.html#133113-document-recipient]]
 agent "Document Recipient" as DocumentRecipient [[1331_actors_and_transactions.html#133114-document-responder]]
 DocumentConsumer -- DocumentResponder : "[[ITI-66.html ITI-66 Find Document Lists]] ↓\n[[ITI-67.html ITI-67 Find Document References]] ↓\n[[ITI-68.html ITI-68 Retrieve Document]] ↓"
-DocumentSource -- DocumentRecipient : "[[ITI-65.html ITI-65 Provide Document Bundle]] ↓\n[[ITI-105.html ITI-105 Simplified Publish]] ↓"
+DocumentSource -- DocumentRecipient : "[[ITI-65.html ITI-65 Provide Document Bundle]] ↓\n[[ITI-105.html ITI-105 Simplified Publish]] ↓\n[[ITI-106.html ITI-106 Generate Metadata]] ↓"
 @enduml

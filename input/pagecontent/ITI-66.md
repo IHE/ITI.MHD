@@ -29,7 +29,7 @@ The result of the query is a Bundle containing List Resources that match the que
 {%include ITI-66-seq.svg%}
 </div>
 
-<div style="clear: left"/>
+<br clear="all">
 
 **Figure 2:3.66.4-1: Find Document Lists Interactions**
 

@@ -41,6 +41,7 @@ This guide is organized into four main sections:
    3. [3.67 Find Document References [ITI-67]](ITI-67.html)
    4. [3.68 Retrieve Document [ITI-68]](ITI-68.html)
    5. [3.105 Simplified Publish [ITI-105]](ITI-105.html)
+   6. [3.106 Generate Metadata [ITI-106]](ITI-106.html)
 
 3. Volume 3: Metadata
    1. [4.2 XDS Error Codes](31_xds.html)

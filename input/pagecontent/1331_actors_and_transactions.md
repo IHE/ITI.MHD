@@ -9,7 +9,7 @@ Profile and the relevant transactions between them.
 {%include ActorsAndTransactions.svg%}
 </div>
 
-<div style="clear: left"/>
+<br clear="all">
 
 **Figure 1:33.1-1: MHD Actor Diagram**
 
@@ -33,7 +33,7 @@ Table 1:33.1-1: MHD Implementation Guide - Actors and Transactions
 </thead>
 <tbody>
     <tr>
-        <td rowspan="2">
+        <td rowspan="3">
         <a href="1331_actors_and_transactions.html#133111-document-source">Document Source</a>
         </td>
         <td>
@@ -50,9 +50,17 @@ Table 1:33.1-1: MHD Implementation Guide - Actors and Transactions
         <td align='center'>
         O
         </td>
+        </tr>
+        <tr>
+        <td>
+        <a href='ITI-106.html'>Generate Metadata [ITI-106]</a>
+        </td>
+        <td align='center'>
+        O
+        </td>
     </tr>
     <tr>
-        <td rowspan="2">
+        <td rowspan="3">
         <a href="1331_actors_and_transactions.html#133113-document-recipient">Document Recipient</a>
         </td>
         <td>
@@ -65,6 +73,14 @@ Table 1:33.1-1: MHD Implementation Guide - Actors and Transactions
         <tr>
         <td>
         <a href='ITI-105.html'>Simplified Publish [ITI-105]</a>
+        </td>
+        <td align='center'>
+        O
+        </td>
+        </tr>
+        <tr>
+        <td>
+        <a href='ITI-106.html'>Generate Metadata [ITI-106]</a>
         </td>
         <td align='center'>
         O
@@ -201,3 +217,9 @@ For more details see the detailed [ITI-68 transaction description](ITI-68.html).
 This transaction is used to publish a document and metadata. This transaction does not support publishing multiple documents, or replacing document entries. This transaction will produce a simplified SubmissionSet based solely on the DocumentReference and local configuration for metadata conversion.
 
 For more details see the detailed [ITI-105 transaction description](ITI-105.html).
+
+#### 1:33.1.2.6 Generate Metadata
+
+This transaction is used to generate DocumentReference metadata given a document. The Document Source provides a document. The Document Responder will create, update, or use an existing DocumentReference instance. The Document Source indicates if the document should also be persisted.
+
+For more details see the detailed [ITI-106 transaction description](ITI-106.html).

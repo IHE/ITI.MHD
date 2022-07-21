@@ -24,7 +24,7 @@ The Retrieve Document [ITI-68] transaction is used by the Document Consumer to r
 {%include ITI-68-seq.svg%}
 </div>
 
-<div style="clear: left"/>
+<br clear="all">
 
 **Figure 2:3.68.4-1: Retrieve Document Interactions**
 

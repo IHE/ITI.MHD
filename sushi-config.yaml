@@ -9,7 +9,7 @@ fhirVersion: 4.0.1
 status: active
 title: "Mobile access to Health Documents (MHD)"
 description: ImplementationGuide for IHE IT Infrastructure Technical Framework Supplement Mobile access to Health Documents (MHD)
-copyright: IHE http://www.ihe.net/Governance/#Intellectual_Property
+#copyright: IHE http://www.ihe.net/Governance/#Intellectual_Property
 copyrightYear: 2020+
 releaseLabel: ci-build
 #releaseLabel: Trial-Implementation
@@ -88,14 +88,22 @@ pages:
     title: "2:3.68 Retrieve Document [ITI-68]"
   ITI-105.md:
     title: "2:3.105 Simplified Publish [ITI-105]"
+  ITI-106.md:
+    title: "2:3.106 Generate Metadata [ITI-106]"
   31_xds.md:
     title: "3:4.2.4.1 Error Codes"
   32_fhir_maps.md:
     title: "3:4.5 FHIR Maps"
   testplan.md:
     title: "Test Plan"
+    extension: 
+      - url: http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status
+        valueCode: informative
   a_issues.md:
     title: "Issues"
+    extension: 
+      - url: http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status
+        valueCode: informative
       
 
 # ╭────────────────────────────────────────────menu.xml────────────────────────────────────────────╮
@@ -117,6 +125,7 @@ menu:
     "Find Document References [ITI-67]": ITI-67.html
     "Retrieve Document [ITI-68]": ITI-68.html
     "Simplified Publish [ITI-105]": ITI-105.html
+    "Generate Metadata [ITI-106]": ITI-106.html
   Volume 3:
     "Error Codes": 31_xds.html
     "FHIR Maps": 32_fhir_maps.html
