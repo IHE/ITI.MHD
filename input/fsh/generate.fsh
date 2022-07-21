@@ -56,14 +56,14 @@ Usage: #example
 
 // TODO: example with a Document Bundle
 
-Instance: MHDgenerateMetadata
+Instance: generate-metadata
 InstanceOf: OperationDefinition
 Description: """
-The $generateMetadata Operation defintion. 
+The $generate-metadata Operation defintion. 
 
 This operation is needed as the $generate in FHIR R4 is not properly defined, and thus has incorrect parameters. 
-The MHD $generateMetadata should be replaced when MHD is upgraded to FHIR R5. 
-This MHD $generateMetadata is modeled after the expected changes in FHIR R5, and follows the example given in FHIR R4:
+The MHD $generate-metadata should be replaced when MHD is upgraded to FHIR R5. 
+This MHD $generate-metadata is modeled after the expected changes in FHIR R5, and follows the example given in FHIR R4:
 
 Input:
 - Binary 0..1 the *document* in Binary Resource format. Usually used with CDA documents.
@@ -72,9 +72,9 @@ Output:
 - reference to a DocumentReference with metadata generated from the *document*
 """
 Usage: #definition
-* url = "https://profiles.ihe.net/ITI/MHD/OperationDefinition/MHDgenerateMetadata"
-* name = "GenerateMetadata"
-* code = #generatemetadata
+* url = "https://profiles.ihe.net/ITI/MHD/OperationDefinition/generate-metadata"
+* name = "generate-metadata"
+* code = #generate-metadata
 * status = #active
 * kind = #operation
 * publisher = "Integrating the Healthcare Enterprise (IHE)"

@@ -51,8 +51,8 @@
           "type": "DocumentReference",
           "operation": [
             {
-              "name": "$generatemetadata",
-              "definition": "https://profiles.ihe.net/ITI/MHD/OperationDefinition/IHE.MHD.generateMetadata"
+              "name": "$generate-metadata",
+              "definition": "https://profiles.ihe.net/ITI/MHD/OperationDefinition/generate-metadata"
             }
           ]
         }
