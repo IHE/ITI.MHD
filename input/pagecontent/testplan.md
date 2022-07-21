@@ -40,12 +40,11 @@ Unit testing this context entails testing a SUT with a simulator or validator to
 #### FHIR Toolkit (aka "Asbestos") - Simulator and Validator
 
 * Provider: NIST (US National Institute of Standards and Technology)
-* FHIR Toolkit online: https://tools.iheusa.org:9743/home
+* FHIR Toolkit online status: https://github.com/usnistgov/asbestos/wiki/Online-tool-availability-status
 * Tool distribution: https://github.com/usnistgov/asbestos/releases/
-  * Release 2.x.x is compatible with MHD version 3.x
-  * As of June 2021, FHIR Toolkit is not compatible with MHD version 4.x
+  * Release 4.x.x is compatible with IHE MHD version 3.x and 4.0.1
   * Features may be added to FHIR Toolkit in subsequent releases. Check release notes in the tool distribution link above
-* Documentation (installation):  https://github.com/usnistgov/asbestos/wiki/xInstallation-Guide-v2.x.x
+* Documentation (installation):  https://github.com/usnistgov/asbestos/wiki/Installation-Guide
 * Tool support: http://groups.google.com/group/ihe-mhd-implementors
 * Actors (options) tested:  Document Source (minimal metadata), Document Source (comprehensive metadata), Document Source (minimal metadata), Document Source (comprehensive metadata)
 * Other notes:  
