@@ -1,11 +1,16 @@
 @startuml
 hide footbox
+autonumber
 participant "Document Consumer" as DocumentConsumer
 participant "Document Recipient" as DocumentRecipient
-activate "DocumentConsumer"
-activate "DocumentRecipient"
-"DocumentConsumer" -> "DocumentRecipient" : 1. Generate Metadata [ITI-106]
-return
-deactivate "DocumentConsumer"
-deactivate "DocumentRecipient"
+activate DocumentConsumer
+activate DocumentRecipient
+DocumentConsumer -> DocumentRecipient : Generate Metadata (document)
+DocumentRecipient -> DocumentRecipient : Extract the document
+DocumentRecipient -> DocumentRecipient : Create DocumentReference from document 
+DocumentRecipient --> DocumentRecipient : Create SubmissionSet from DocumentReference
+DocumentRecipient -> DocumentRecipient : persist (e.g. XDS Provide and Register)
+DocumentConsumer <-- DocumentRecipient : Generated DocumentReference
+deactivate DocumentConsumer
+deactivate DocumentRecipient
 @enduml

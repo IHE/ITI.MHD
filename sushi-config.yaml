@@ -125,6 +125,7 @@ menu:
     "Find Document References [ITI-67]": ITI-67.html
     "Retrieve Document [ITI-68]": ITI-68.html
     "Simplified Publish [ITI-105]": ITI-105.html
+    "Generate Metadata [ITI-106]": ITI-106.html
   Volume 3:
     "Error Codes": 31_xds.html
     "FHIR Maps": 32_fhir_maps.html

@@ -50,6 +50,5 @@ Usage: #example
 * agent[client].network.type = http://hl7.org/fhir/network-type#2 "IP Address"
 * entity[data].type = http://terminology.hl7.org/CodeSystem/audit-entity-type#2 "System Object"
 * entity[data].role = http://terminology.hl7.org/CodeSystem/object-role#4 "Domain Resource"
-* entity[data].what.reference = "http://www.example.com/document/2"
-
+* entity[data].what = Reference(ex-binary)
 
