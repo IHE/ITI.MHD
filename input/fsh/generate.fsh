@@ -73,7 +73,7 @@ Output:
 """
 Usage: #definition
 * url = "https://profiles.ihe.net/ITI/MHD/OperationDefinition/generate-metadata"
-* name = "generate-metadata"
+* name = "GenerateMetadata"
 * code = #generate-metadata
 * status = #active
 * kind = #operation
