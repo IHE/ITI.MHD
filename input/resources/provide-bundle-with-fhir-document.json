@@ -126,7 +126,33 @@
                   ]
                 }
               ]
+            },
+            {
+              "resourceType": "Practitioner",
+              "id": "aaaaaaaa-bbbb-cccc-dddd-e00333300006",
+              "text": {
+                "status": "generated",
+                "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">\n\n            <p>Dr Adam Careful</p>\n\n          </div>"
+              },
+              "identifier": [
+                {
+                  "system": "http://www.acme.org/practitioners",
+                  "value": "23"
+                }
+              ],
+              "name": [
+                {
+                  "family": "Careful",
+                  "given": [
+                    "Adam"
+                  ],
+                  "prefix": [
+                    "Dr"
+                  ]
+                }
+              ]
             }
+
           ],
           "masterIdentifier": {
             "system": "urn:ietf:rfc:3986",
@@ -163,7 +189,7 @@
           "date": "2020-02-01T23:50:50-05:00",
           "author": [
             {
-              "reference": "Practitioner/ex-practitioner"
+              "reference": "#aaaaaaaa-bbbb-cccc-dddd-e00333300006"
             }
           ],
           "securityLabel": [
@@ -196,7 +222,7 @@
           "context": {
             "encounter": [
                 {
-                "reference": "http://example.com/fhir/Encounter/doc-example"
+                "reference": "http://example.org/fhir/Encounter/doc-example"
                 }
             ],
             "facilityType": {
@@ -241,7 +267,7 @@
                 "timestamp": "2013-05-28T22:12:21Z",
                 "entry": [
                   {
-                    "fullUrl": "http://example.com/fhir/Composition/180f219f-97a8-486d-99d9-ed631fe4fc57",
+                    "fullUrl": "http://example.org/fhir/Composition/180f219f-97a8-486d-99d9-ed631fe4fc57",
                     "resource": {
                       "resourceType": "Composition",
                       "id": "180f219f-97a8-486d-99d9-ed631fe4fc57",
@@ -260,10 +286,10 @@
                         "text": "Discharge Summary from Responsible Clinician"
                       },
                       "subject": {
-                        "reference": "Patient/ex-patient"
+                        "reference": "http://example.org/fhir/Patient/ex-patient"
                       },
                       "encounter": {
-                        "reference": "http://example.com/fhir/Encounter/doc-example"
+                        "reference": "http://example.org/fhir/Encounter/doc-example"
                       },
                       "date": "2013-02-01T12:30:02Z",
                       "author": [
@@ -345,7 +371,7 @@
                     }
                   },
                   {
-                    "fullUrl": "Practitioner/ex-practitioner",
+                    "fullUrl": "http://example.org/fhir/Practitioner/ex-practitioner",
                     "resource": {
                       "resourceType": "Practitioner",
                       "id": "ex-practitioner",
@@ -376,7 +402,7 @@
                     }
                   },
                   {
-                    "fullUrl": "Patient/ex-patient",
+                    "fullUrl": "http://example.org/fhir/Patient/ex-patient",
                     "resource": {
                       "resourceType": "Patient",
                       "id": "ex-patient",
@@ -414,7 +440,7 @@
                     }
                   },
                   {
-                    "fullUrl": "http://example.com/fhir/Encounter/doc-example",
+                    "fullUrl": "http://example.org/fhir/Encounter/doc-example",
                     "resource": {
                       "resourceType": "Encounter",
                       "id": "doc-example",
@@ -442,7 +468,7 @@
                         }
                       ],
                       "subject": {
-                        "reference": "Patient/ex-patient"
+                        "reference": "http://example.org/fhir/Patient/ex-patient"
                       },
                       "period": {
                         "start": "2013-01-20T12:30:02Z",
@@ -477,10 +503,10 @@
                         "text": "Reason for admission"
                       },
                       "subject": {
-                        "reference": "Patient/ex-patient"
+                        "reference": "http://example.org/fhir/Patient/ex-patient"
                       },
                       "encounter": {
-                        "reference": "http://example.com/fhir/Encounter/doc-example"
+                        "reference": "http://example.org/fhir/Encounter/doc-example"
                       },
                       "valueString": "Acute Asthmatic attack. Was wheezing for days prior to admission."
                     }
@@ -508,11 +534,10 @@
                         "text": "Theophylline 200mg"
                       },
                       "subject": {
-                        "reference": "Patient/ex-patient"
+                        "reference": "http://example.org/fhir/Patient/ex-patient"
                       },
                       "requester": {
-                        "reference": "Practitioner/ex-practitioner",
-                        "display": "Peter Practitioner"
+                        "reference": "http://example.org/fhir/Practitioner/ex-practitioner"
                       },
                       "reasonCode": [
                         {
@@ -583,7 +608,7 @@
                         "text": "Ventolin Inhaler"
                       },
                       "subject": {
-                        "reference": "Patient/ex-patient"
+                        "reference": "http://example.org/fhir/Patient/ex-patient"
                       },
                       "dateAsserted": "2013-05-05T16:13:03Z"
                     }
@@ -623,7 +648,7 @@
                         "text": "Doxycycline"
                       },
                       "patient": {
-                        "reference": "Patient/ex-patient"
+                        "reference": "http://example.org/fhir/Patient/ex-patient"
                       },
                       "recordedDate": "2012-09-17",
                       "reaction": [
