@@ -4,12 +4,12 @@ Title: "Example Minimal Folder"
 Description:      "Folder in List resource conforming only to Minimal metadata"
 Usage: #example
 * meta.security = http://terminology.hl7.org/CodeSystem/v3-ActReason#HTEST
-* identifier[0].system = "urn:ietf:rfc:3986"
-* identifier[0].value = "urn:oid:1.2.129.6.58.92.88337.6"
-* identifier[0].use = #official
-* identifier[1].system = "http://example.org/documents"
-* identifier[1].value = "23425234-23476"
-* identifier[1].use = #usual
+* identifier[entryUUID].system = "urn:ietf:rfc:3986"
+* identifier[entryUUID].value = "urn:oid:1.2.129.6.58.92.88337.6"
+* identifier[entryUUID].use = #official
+* identifier[uniqueId].system = "http://example.org/documents"
+* identifier[uniqueId].value = "23425234-23476"
+* identifier[uniqueId].use = #usual
 * status = #current
 * mode = #working
 * code = MHDlistTypes#folder
@@ -23,12 +23,12 @@ Description:      "Folder in List resource conforming only to Comprehensive meta
 Usage: #example
 * meta.security = http://terminology.hl7.org/CodeSystem/v3-ActReason#HTEST
 * subject = Reference(Patient/ex-patient)
-* identifier[0].system = "urn:ietf:rfc:3986"
-* identifier[0].value = "urn:oid:1.2.129.6.58.92.88337.5"
-* identifier[0].use = #official
-* identifier[1].system = "http://example.org/documents"
-* identifier[1].value = "23425234-23475"
-* identifier[1].use = #usual
+* identifier[entryUUID].system = "urn:ietf:rfc:3986"
+* identifier[entryUUID].value = "urn:oid:1.2.129.6.58.92.88337.5"
+* identifier[entryUUID].use = #official
+* identifier[uniqueId].system = "http://example.org/documents"
+* identifier[uniqueId].value = "23425234-23475"
+* identifier[uniqueId].use = #usual
 * status = #current
 * mode = #working
 * title = "Example Folder with comprehensive metadata"
@@ -55,8 +55,8 @@ Usage: #example
 * link[0].url = "test.fhir.net/R4/fhir/List?patient=9876&code=folder&status=current&designationType=http://snomed.info/sct#225728007"
 * total = 1
 * timestamp = 2021-04-16T11:32:24Z
-* entry[0].fullUrl = "http://example.org/List/in-minimalFolder"
-* entry[0].resource = in-minimalFolder
+* entry[Folder].fullUrl = "http://example.org/List/in-minimalFolder"
+* entry[Folder].resource = in-minimalFolder
 
 Instance:   in-minimalFolder
 InstanceOf: IHE.MHD.Minimal.Folder
@@ -64,12 +64,12 @@ Title: "Example Minimal Folder"
 Description:      "Folder in List resource conforming only to Minimal metadata"
 Usage: #inline
 * meta.security = http://terminology.hl7.org/CodeSystem/v3-ActReason#HTEST
-* identifier[0].system = "urn:ietf:rfc:3986"
-* identifier[0].value = "urn:oid:1.2.129.6.58.92.88337.6"
-* identifier[0].use = #official
-* identifier[1].system = "http://example.org/documents"
-* identifier[1].value = "23425234-23476"
-* identifier[1].use = #usual
+* identifier[entryUUID].system = "urn:ietf:rfc:3986"
+* identifier[entryUUID].value = "urn:oid:1.2.129.6.58.92.88337.6"
+* identifier[entryUUID].use = #official
+* identifier[uniqueId].system = "http://example.org/documents"
+* identifier[uniqueId].value = "23425234-23476"
+* identifier[uniqueId].use = #usual
 * status = #current
 * mode = #working
 * code = MHDlistTypes#folder

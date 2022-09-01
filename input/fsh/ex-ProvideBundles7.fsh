@@ -54,12 +54,12 @@ Usage: #inline
 * text.status = #extensions
 * text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\">SubmissionSet with Patient</div>"
 * meta.security = http://terminology.hl7.org/CodeSystem/v3-ActReason#HTEST
-* identifier[+].system = "urn:ietf:rfc:3986"
-* identifier[=].value = "urn:oid:1.2.129.6.58.92.88337.1"
-* identifier[=].use = #official
-* identifier[+].system = "http://example.org/documents"
-* identifier[=].value = "23425234-23470-1"
-* identifier[=].use = #usual
+* identifier[entryUUID].system = "urn:ietf:rfc:3986"
+* identifier[entryUUID].value = "urn:oid:1.2.129.6.58.92.88337.1"
+* identifier[entryUUID].use = #official
+* identifier[uniqueId].system = "http://example.org/documents"
+* identifier[uniqueId].value = "23425234-23470-1"
+* identifier[uniqueId].use = #usual
 * status = #current
 * mode = #working
 * code = MHDlistTypes#submissionset
@@ -126,12 +126,12 @@ Usage: #inline
 * text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\">Folder with Patient</div>"
 * meta.security = http://terminology.hl7.org/CodeSystem/v3-ActReason#HTEST
 * subject = Reference(Patient/ex-patient)
-* identifier[0].system = "urn:ietf:rfc:3986"
-* identifier[0].value = "urn:oid:1.2.129.6.58.92.88337.5"
-* identifier[0].use = #official
-* identifier[1].system = "http://example.org/documents"
-* identifier[1].value = "23425234-23475"
-* identifier[1].use = #usual
+* identifier[entryUUID].system = "urn:ietf:rfc:3986"
+* identifier[entryUUID].value = "urn:oid:1.2.129.6.58.92.88337.5"
+* identifier[entryUUID].use = #official
+* identifier[uniqueId].system = "http://example.org/documents"
+* identifier[uniqueId].value = "23425234-23475"
+* identifier[uniqueId].use = #usual
 * status = #current
 * mode = #working
 * title = "Example Folder with comprehensive metadata"

@@ -4,12 +4,12 @@ Title:      "SubmissionSet for Minimal metadata"
 Description: "Example of a minimal submissionSet in List resource."
 Usage: #example
 * meta.security = http://terminology.hl7.org/CodeSystem/v3-ActReason#HTEST
-* identifier[0].system = "urn:ietf:rfc:3986"
-* identifier[0].value = "urn:oid:1.2.129.6.58.92.88337.4"
-* identifier[0].use = #official
-* identifier[1].system = "http://example.org/documents"
-* identifier[1].value = "23425234-23470"
-* identifier[1].use = #usual
+* identifier[entryUUID].system = "urn:ietf:rfc:3986"
+* identifier[entryUUID].value = "urn:oid:1.2.129.6.58.92.88337.4"
+* identifier[entryUUID].use = #official
+* identifier[uniqueId].system = "http://example.org/documents"
+* identifier[uniqueId].value = "23425234-23470"
+* identifier[uniqueId].use = #usual
 * status = #current
 * mode = #working
 * code = MHDlistTypes#submissionset
@@ -25,12 +25,12 @@ Description:      "SubmissionSet in List resource conforming minimally to Compre
 Usage: #example
 * meta.security = http://terminology.hl7.org/CodeSystem/v3-ActReason#HTEST
 * subject = Reference(Patient/ex-patient)
-* identifier[0].system = "urn:ietf:rfc:3986"
-* identifier[0].value = "urn:oid:1.2.129.6.58.92.88337.4"
-* identifier[0].use = #official
-* identifier[1].system = "http://example.org/documents"
-* identifier[1].value = "23425234-23470"
-* identifier[1].use = #usual
+* identifier[entryUUID].system = "urn:ietf:rfc:3986"
+* identifier[entryUUID].value = "urn:oid:1.2.129.6.58.92.88337.4"
+* identifier[entryUUID].use = #official
+* identifier[uniqueId].system = "http://example.org/documents"
+* identifier[uniqueId].value = "23425234-23470"
+* identifier[uniqueId].use = #usual
 * status = #current
 * mode = #working
 * title = "Example SubmissionSet for comprehensive metadata"
@@ -48,12 +48,12 @@ Description:      "SubmissionSet in List resource conforming Comprehensive metad
 Usage: #example
 * meta.security = http://terminology.hl7.org/CodeSystem/v3-ActReason#HTEST
 * subject = Reference(Patient/ex-patient)
-* identifier[0].system = "urn:ietf:rfc:3986"
-* identifier[0].value = "urn:oid:1.2.129.6.58.92.88337.4"
-* identifier[0].use = #official
-* identifier[1].system = "http://example.org/documents"
-* identifier[1].value = "23425234-23470"
-* identifier[1].use = #usual
+* identifier[entryUUID].system = "urn:ietf:rfc:3986"
+* identifier[entryUUID].value = "urn:oid:1.2.129.6.58.92.88337.4"
+* identifier[entryUUID].use = #official
+* identifier[uniqueId].system = "http://example.org/documents"
+* identifier[uniqueId].value = "23425234-23470"
+* identifier[uniqueId].use = #usual
 * status = #current
 * mode = #working
 * title = "Example SubmissionSet for comprehensive metadata with an intendedRecipient"
@@ -72,12 +72,12 @@ Description:      "SubmissionSet in List resource conforming fully to UnContaine
 Usage: #example
 * meta.security = http://terminology.hl7.org/CodeSystem/v3-ActReason#HTEST
 * subject = Reference(Patient/ex-patient)
-* identifier[0].system = "urn:ietf:rfc:3986"
-* identifier[0].value = "urn:oid:1.2.129.6.58.92.88337.4"
-* identifier[0].use = #official
-* identifier[1].system = "http://example.org/documents"
-* identifier[1].value = "23425234-23470"
-* identifier[1].use = #usual
+* identifier[entryUUID].system = "urn:ietf:rfc:3986"
+* identifier[entryUUID].value = "urn:oid:1.2.129.6.58.92.88337.4"
+* identifier[entryUUID].use = #official
+* identifier[uniqueId].system = "http://example.org/documents"
+* identifier[uniqueId].value = "23425234-23470"
+* identifier[uniqueId].use = #usual
 * status = #current
 * mode = #working
 * title = "Example SubmissionSet for comprehensive metadata"
@@ -97,12 +97,12 @@ Description:      "SubmissionSet in List resource conforming fully to Comprehens
 Usage: #example
 * meta.security = http://terminology.hl7.org/CodeSystem/v3-ActReason#HTEST
 * subject = Reference(Patient/ex-patient)
-* identifier[0].system = "urn:ietf:rfc:3986"
-* identifier[0].value = "urn:oid:1.2.129.6.58.92.88337.4"
-* identifier[0].use = #official
-* identifier[1].system = "http://example.org/documents"
-* identifier[1].value = "23425234-23470"
-* identifier[1].use = #usual
+* identifier[entryUUID].system = "urn:ietf:rfc:3986"
+* identifier[entryUUID].value = "urn:oid:1.2.129.6.58.92.88337.4"
+* identifier[entryUUID].use = #official
+* identifier[uniqueId].system = "http://example.org/documents"
+* identifier[uniqueId].value = "23425234-23470"
+* identifier[uniqueId].use = #usual
 * status = #current
 * mode = #working
 * title = "Example SubmissionSet for comprehensive metadata"
