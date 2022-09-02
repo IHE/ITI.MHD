@@ -54,9 +54,6 @@ Usage: #inline
 * text.status = #extensions
 * text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\">SubmissionSet with Patient</div>"
 * meta.security = http://terminology.hl7.org/CodeSystem/v3-ActReason#HTEST
-* identifier[entryUUID].system = "urn:ietf:rfc:3986"
-* identifier[entryUUID].value = "urn:oid:1.2.129.6.58.92.88337.1"
-* identifier[entryUUID].use = #official
 * identifier[uniqueId].system = "http://example.org/documents"
 * identifier[uniqueId].value = "23425234-23470-1"
 * identifier[uniqueId].use = #usual
@@ -79,8 +76,6 @@ Usage: #inline
 * meta.security = http://terminology.hl7.org/CodeSystem/v3-ActReason#HTEST
 * masterIdentifier.system = "urn:ietf:rfc:3986"
 * masterIdentifier.value = "urn:oid:1.2.840.113556.1.8000.2554.53432.348.12973.17740.34205.4355.50220.62012"
-* identifier.system = "urn:ietf:rfc:3986"
-* identifier.value = "urn:uuid:7d5bb8ac-68ee-4926-85e7-b8aac8e1f09d"
 * status = #current
 * contained[+] = aaaaaaaa-bbbb-cccc-dddd-e00777700004
 * context.sourcePatientInfo = Reference(aaaaaaaa-bbbb-cccc-dddd-e00777700004)
@@ -126,9 +121,6 @@ Usage: #inline
 * text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\">Folder with Patient</div>"
 * meta.security = http://terminology.hl7.org/CodeSystem/v3-ActReason#HTEST
 * subject = Reference(Patient/ex-patient)
-* identifier[entryUUID].system = "urn:ietf:rfc:3986"
-* identifier[entryUUID].value = "urn:oid:1.2.129.6.58.92.88337.5"
-* identifier[entryUUID].use = #official
 * identifier[uniqueId].system = "http://example.org/documents"
 * identifier[uniqueId].value = "23425234-23475"
 * identifier[uniqueId].use = #usual
