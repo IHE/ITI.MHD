@@ -55,8 +55,8 @@ Usage: #example
 * link[0].url = "test.fhir.net/R4/fhir/List?patient=9876&code=folder&status=current&designationType=http://snomed.info/sct#225728007"
 * total = 1
 * timestamp = 2021-04-16T11:32:24Z
-* entry[0].fullUrl = "http://example.org/List/in-minimalFolder"
-* entry[0].resource = in-minimalFolder
+* entry[Folder].fullUrl = "http://example.org/List/in-minimalFolder"
+* entry[Folder].resource = in-minimalFolder
 
 Instance:   in-minimalFolder
 InstanceOf: IHE.MHD.Minimal.Folder
