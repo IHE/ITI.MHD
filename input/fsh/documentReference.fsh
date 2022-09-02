@@ -19,6 +19,12 @@ Description:    "A profile on the DocumentReference resource for MHD with minima
 * modifierExtension 0..0
 * masterIdentifier 1..1
 * identifier 0..* MS
+* identifier ^slicing.discriminator.type = #value
+* identifier ^slicing.discriminator.path = "use"
+* identifier ^slicing.rules = #open
+* identifier contains entryUUID 0..*
+* identifier[entryUUID] ^short = "entryUUID"
+* identifier[entryUUID].use = #official
 * status 1..1
 * status from DocumentReferenceStats (required)
 * docStatus 0..0

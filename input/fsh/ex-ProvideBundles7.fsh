@@ -20,8 +20,8 @@ Usage: #example
 * entry[SubmissionSet].resource = aaaaaaaa-bbbb-cccc-dddd-e00777700001
 * entry[SubmissionSet].request.url = "List"
 * entry[SubmissionSet].request.method = #POST
-* entry[Folders].fullUrl = "List/e00777700005"
-* entry[Folders].resource = e00777700005
+* entry[Folders].fullUrl = "urn:uuid:aaaaaaaa-bbbb-cccc-dddd-e00777700005"
+* entry[Folders].resource = aaaaaaaa-bbbb-cccc-dddd-e00777700005
 * entry[Folders].request.url = "List"
 * entry[Folders].request.method = #PUT
 * entry[DocumentRefs].fullUrl = "urn:uuid:aaaaaaaa-bbbb-cccc-dddd-e00777700002"
@@ -62,7 +62,7 @@ Usage: #inline
 * code = MHDlistTypes#submissionset
 * date = 2004-10-25T23:50:50-05:00
 * entry[+].item = Reference(urn:uuid:aaaaaaaa-bbbb-cccc-dddd-e00777700002)
-* entry[+].item = Reference(List/e00777700005)
+* entry[+].item = Reference(urn:uuid:aaaaaaaa-bbbb-cccc-dddd-e00777700005)
 * extension[sourceId].valueIdentifier.value = "urn:oid:1.2.3.4"
 * subject = Reference(Patient/ex-patient)
 * extension[designationType].valueCodeableConcept = http://snomed.info/sct#225728007
@@ -112,7 +112,7 @@ Usage: #inline
 * data = "SGVsbG8gV29ybGQ="
 
 // the instance is simulating an existing
-Instance:   e00777700005
+Instance:   aaaaaaaa-bbbb-cccc-dddd-e00777700005
 InstanceOf: IHE.MHD.Comprehensive.Folder
 Title: "Example complete Comprehensive Folder"
 Description:      "Folder in List resource conforming Comprehensive metadata fully populated"

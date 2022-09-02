@@ -23,7 +23,7 @@ Simplified Publish
 """
 * modifierExtension 0..0
 * masterIdentifier 1..1
-* identifier 0..* MS
+* identifier 0..0
 * status 1..1
 * status = http://hl7.org/fhir/document-reference-status#current
 * docStatus 0..0
@@ -70,8 +70,6 @@ Usage: #example
 * meta.security = http://terminology.hl7.org/CodeSystem/v3-ActReason#HTEST
 * masterIdentifier.system = "urn:ietf:rfc:3986"
 * masterIdentifier.value = "urn:oid:1.2.840.113556.1.8000.2554.53432.348.12973.17740.34205.4355.60220.62012"
-* identifier.system = "urn:ietf:rfc:3986"
-* identifier.value = "urn:uuid:7d5bb8ac-68ee-4926-65e7-b8aac8e1f09d"
 * status = #current
 * content.attachment.contentType = #text/plain
 * content.attachment.data = "SGVsbG8gV29ybGQ="
