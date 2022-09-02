@@ -24,10 +24,10 @@ Usage: #example
 * meta.security = http://terminology.hl7.org/CodeSystem/v3-ActReason#HTEST
 * subject = Reference(Patient/ex-patient)
 * identifier[entryUUID].system = "urn:ietf:rfc:3986"
-* identifier[entryUUID].value = "urn:oid:1.2.129.6.58.92.88337.5"
+* identifier[entryUUID].value = "urn:oid:1.2.129.6.58.92.88337.6"
 * identifier[entryUUID].use = #official
 * identifier[uniqueId].system = "http://example.org/documents"
-* identifier[uniqueId].value = "23425234-23475"
+* identifier[uniqueId].value = "23425234-23476"
 * identifier[uniqueId].use = #usual
 * status = #current
 * mode = #working
