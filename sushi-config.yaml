@@ -28,7 +28,7 @@ jurisdiction: 'http://unstats.un.org/unsd/methods/m49/m49.htm#001'
 #dependencies:
 #  https://profiles.ihe.net/fhir/ihe.formatcode.fhir: 0.2.4
  
-parameters:  # see https://confluence.hl7.org/display/FHIR/Implementation+Guide+Parameters
+parameters:  # see http://build.fhir.org/ig/FHIR/fhir-tools-ig/branches/master/index.html
   path-resource:
     - input/resources
     - fsh-generated/resources
