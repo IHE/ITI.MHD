@@ -35,7 +35,7 @@ dependencies:
     uri: https://profiles.ihe.net/fhir/ihe.formatcode.fhir/ImplementationGuide/ihe.formatcode.fhir
     version: 1.1.0
  
-parameters:  # see https://confluence.hl7.org/display/FHIR/Implementation+Guide+Parameters
+parameters:  # see http://build.fhir.org/ig/FHIR/fhir-tools-ig/branches/master/index.html
   path-resource:
     - input/resources
     - fsh-generated/resources
