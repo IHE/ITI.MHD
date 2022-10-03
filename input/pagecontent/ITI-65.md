@@ -157,6 +157,7 @@ If the recipient is known to be an XDR/XCDR community, the error codes `XDSUnkno
 TODO: explain how to handle the document as a FHIR Document Bundle
 1) SHALL seralice as mime type given from client
 2) MAY also seralize as the other mime type and thus register two DocumentEntry with Transforms relationship
+3) can we use text in the simplified publish?
   
 This section applies to grouping MHD Document Recipient with [XDS](https://profiles.ihe.net/ITI/TF/Volume1/ch-10.html) [Document Source](https://profiles.ihe.net/ITI/TF/Volume1/ch-10.html#10.1.1.1) Actor, [XDR](https://profiles.ihe.net/ITI/TF/Volume1/ch-15.html) Document Source Actor, [XDR](https://profiles.ihe.net/ITI/TF/Volume1/ch-15.html) Limited-Metadata Document Source Actor, and [XDM](https://profiles.ihe.net/ITI/TF/Volume1/ch-16.html) Portable Media Creator Actor (e.g. with the [XDM ZIP over Email Option](https://profiles.ihe.net/ITI/TF/Volume1/ch-16.html#16.2.3) ). 
 
