@@ -24,7 +24,7 @@ The Provide Document Bundle [ITI-65] transaction passes a Provide Document Bundl
 {%include ITI-65-seq.svg%}
 </div>
 
-<div style="clear: left"/>
+<br clear="all">
 
 **Figure 2:3.65.4-1: Provide Document Bundle Interactions**
 
@@ -108,7 +108,7 @@ When the [UnContained Reference Option](1332_actor_options.html#13323-uncontaine
 
 ###### 2:3.65.4.1.2.3 Replace, Transform, Signs, and Append Associations
 
-The DocumentReference.relatesTo element indicates an association between DocumentReference resources. The relatesTo.target element in the provided DocumentReference points at the pre-existing DocumentReference that is being replaced, transformed, signed, or appended. The relatesTo.code element in the provided DocumentReference shall be the appropriate relationship type code defined in [http://hl7.org/fhir/R4/valueset-document-relationship-type.html](http://hl7.org/fhir/R4/valueset-document-relationship-type.html). 
+The DocumentReference.relatesTo element indicates an association between DocumentReference resources. The relatesTo.target element in the provided DocumentReference points at the pre-existing DocumentReference that is being replaced, transformed, signed, or appended. The relatesTo.code element in the provided DocumentReference shall be the appropriate relationship type code defined in [http://hl7.org/fhir/R4/valueset-document-relationship-type.html](http://hl7.org/fhir/R4/valueset-document-relationship-type.html). If a DocumentReference will be replaced, the to be replaced DocumentReference needs to be added and updated to status `superseded` within the transaction bundle.
 
 ##### 2:3.65.4.1.3 Expected Actions
 
@@ -154,8 +154,9 @@ If the recipient is known to be an XDR/XCDR community, the error codes `XDSUnkno
 
 This section applies to grouping MHD Document Recipient with [XDS](https://profiles.ihe.net/ITI/TF/Volume1/ch-10.html) [Document Source](https://profiles.ihe.net/ITI/TF/Volume1/ch-10.html#10.1.1.1) Actor, [XDR](https://profiles.ihe.net/ITI/TF/Volume1/ch-15.html) Document Source Actor, [XDR](https://profiles.ihe.net/ITI/TF/Volume1/ch-15.html) Limited-Metadata Document Source Actor, and [XDM](https://profiles.ihe.net/ITI/TF/Volume1/ch-16.html) Portable Media Creator Actor (e.g. with the [XDM ZIP over Email Option](https://profiles.ihe.net/ITI/TF/Volume1/ch-16.html#16.2.3) ). 
 
-The Document Recipient shall transform the Bundle content into a proper message for the Given grouped Actor (e.g. the XDS Document Source using the Provide and Register Document Set-b [ITI-41](https://profiles.ihe.net/ITI/TF/Volume2/ITI-41.html) transaction). The Document Recipient shall create appropriate metadata from Resources in the FHIR Bundle Resource, including SubmissionSet, DocumentEntry, Folder, and Associations. 
-The Documet Recipient shall create missing entryUUID values where necessary to satisfy XDS requirements.
+The Document Recipient shall transform the Bundle content into a proper message for the given grouped Actor (e.g. the XDS Document Source using the Provide and Register Document Set-b [ITI-41](https://profiles.ihe.net/ITI/TF/Volume2/ITI-41.html) transaction). The Document Recipient shall create appropriate metadata from Resources in the FHIR Bundle Resource, including SubmissionSet, DocumentEntry, Folder, and Associations. 
+
+Where values provided are References to FHIR resources (e.g. DocumentReference.encounter), the Reference should be converted to a [Document Sharing `CXi` Identifier Datatype](https://profiles.ihe.net/ITI/TF/Volume3/ch-4.2.html#4.2.3.1.7) for recording in the Document Sharing ebRIM using the Identifier Type Codes when appropriate (See [Appendix Z.9.1.2](https://profiles.ihe.net/ITI/TF/Volume2/ch-Z.html#z.9.1.2-xds-cxi-mapped-to-fhir-identifier-type) ). The conversion may be by using the referenced Resource business .identifier. Note, there is not an obvious coversion of a reference .id to `CXi` identifier. Note that DocumentReference.encounter would be mapped into DocumentEntry.referenceIdList as an Identifier Type Code of `urn:ihe:iti:xds:2015:encounterId`.
 
 If the Provide Document Bundle Message contains a DocumentReference with a relatesTo element, the code shall be translated using the [AssociationType vs RelatesTo ConceptMap](ConceptMap-AssociationTypeVsRelatesTo.html).
 
@@ -175,9 +176,9 @@ This message shall be sent when a success or error condition needs to be communi
 
 ##### 2:3.65.4.2.2 Message Semantics
 
-To enable the Document Source to know the outcome of processing the transaction, and the identities assigned to the resources by the Document Recipient, the Document Recipient shall return a Bundle, with `type` set to `transaction-response`, that contains one entry for each entry in the request, in the same order as received, with the `Bundle.entry.response.outcome` indicating the results of processing the entry warnings such as PartialFolderContentNotProcessed. The Document Recipient shall comply with FHIR [http://hl7.org/fhir/R4/bundle.html#transaction-response](http://hl7.org/fhir/R4/bundle.html#transaction-response) and [http://hl7.org/fhir/R4/http.html#transaction-response](http://hl7.org/fhir/R4/http.html#transaction-response). 
+To enable the Document Source to know the outcome of processing the transaction, and the identities assigned to the resources by the Document Recipient, the Document Recipient shall return a Bundle, with `type` set to `transaction-response`, that contains one entry for each entry in the request, in the same order as received, with the Bundle.entry.response.outcome indicating the results of processing the entry warnings such as PartialFolderContentNotProcessed. The Document Recipient shall comply with FHIR [http://hl7.org/fhir/R4/bundle.html#transaction-response](http://hl7.org/fhir/R4/bundle.html#transaction-response) and [http://hl7.org/fhir/R4/http.html#transaction-response](http://hl7.org/fhir/R4/http.html#transaction-response). 
 
-To indicate success the overall http `200` response is used. The `Bundle.entry.response.status` shall be `201` to indicate the Resource has been created, the `.location` element shall be populated, and the `.etag` element may be populated when the Document Recipient supports FHIR resource versioning.
+To indicate success the overall http `200` response is used. The Bundle.entry.response.status shall be `201` to indicate the Resource has been created, the .location element shall be populated, and the .etag element may be populated when the Document Recipient supports FHIR resource versioning.
 
 An informative StructureDefinition is outlined for [MHD Provide Bundle Document Response Message](StructureDefinition-IHE.MHD.ProvideDocumentBundleResponse.html), with an [example](StructureDefinition-IHE.MHD.ProvideDocumentBundleResponse-examples.html).
 

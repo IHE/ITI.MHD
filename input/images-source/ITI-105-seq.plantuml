@@ -1,12 +1,12 @@
 @startuml
-title Provide Document Bundle [ITI-65]
+title Publish Document Bundle [ITI-105]
 hide footbox
 participant "Document Source" as DocumentSource
 participant "Document Recipient" as DocumentRecipient
 activate "DocumentSource"
 activate "DocumentRecipient"
-"DocumentSource" -> "DocumentRecipient" : 1. Request to publish documents [ITI-65]
-"DocumentRecipient" --> "DocumentSource" : 2. Documents published [ITI-65]
+"DocumentSource" -> "DocumentRecipient" : 1. Request to publish document [ITI-105]
+"DocumentRecipient" --> "DocumentSource" : 2. Document published [ITI-105]
 deactivate "DocumentSource"
 deactivate "DocumentRecipient"
 @enduml

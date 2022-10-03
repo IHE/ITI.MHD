@@ -40,10 +40,12 @@ This guide is organized into four main sections:
    2. [3.66 Find Document Lists [ITI-66]](ITI-66.html)
    3. [3.67 Find Document References [ITI-67]](ITI-67.html)
    4. [3.68 Retrieve Document [ITI-68]](ITI-68.html)
+   5. [3.105 Simplified Publish [ITI-105]](ITI-105.html)
+   6. [3.106 Generate Metadata [ITI-106]](ITI-106.html)
 
 3. Volume 3: Metadata
    1. [4.2 XDS Error Codes](31_xds.html)
-   1. [4.5 FHIR Representation](32_fhir_maps.html)
+   2. [4.5 FHIR Representation](32_fhir_maps.html)
    
 4. Appendix
 	1. [Test Plan](testplan.html)

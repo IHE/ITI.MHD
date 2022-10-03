@@ -1,0 +1,76 @@
+{
+  "resourceType": "CapabilityStatement",
+  "id": "IHE.MHD.DocumentSource.Simplified",
+  "text": {
+    "status": "additional",
+    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">\n\tThis Requirements CapabilityStatement describes the <a href=\"1331_actors_and_transactions.html#133111-document-source\">Document Source actor</a> with the Simplified Publication declared Options.\n\t</div>"
+  },
+  "url": "https://profiles.ihe.net/ITI/MHD/CapabilityStatement/IHE.MHD.DocumentSource.Simplified",
+  "name": "IHE_MHD_DocumentSource_Simplified",
+  "title": "Document Source (publisher) implementing the Simplified Publish Option",
+  "status": "active",
+  "experimental": false,
+  "date": "2022-07-09T00:00:00-05:00",
+  "publisher": "Integrating the Healthcare Enterprise (IHE)",
+  "contact": [
+    {
+      "name": "IHE",
+      "telecom": [
+        {
+          "system": "url",
+          "value": "http://ihe.net"
+        }
+      ]
+    },
+    {
+      "name": "John Moehrke",
+      "telecom": [
+        {
+          "system": "email",
+          "value": "JohnMoehrke@gmail.com"
+        }
+      ]
+    }
+  ],
+  "description": "IHE ITI Mobile access to Health Documents (MHD) - Document Source (publisher) - with the Simplified Publication declared Options and may also declare other Options.",
+  "copyright": "IHE http://www.ihe.net/Governance/#Intellectual_Property",
+  "kind": "requirements",
+  "fhirVersion": "4.0.0",
+  "format": [
+    "application/fhir+xml",
+    "application/fhir+json"
+  ],
+  "rest": [
+    {
+      "mode": "client",
+      "security": {
+        "description": "Recommend IUA or SMART"
+      },
+      "resource": [
+        {
+          "type": "DocumentReference",
+          "profile": "https://profiles.ihe.net/ITI/MHD/StructureDefinition/IHE.MHD.Query.SimplifiedPublish.DocumentReference",
+          "interaction": [
+            {
+              "code": "create"
+            }
+          ]
+        }
+      ],
+      "interaction": [
+        {
+          "code": "transaction",
+          "documentation": "https://profiles.ihe.net/ITI/MHD/StructureDefinition/IHE.MHD.Minimal.ProvideBundle"
+        },
+        {
+          "code": "transaction",
+          "documentation": "https://profiles.ihe.net/ITI/MHD/StructureDefinition/IHE.MHD.UnContained.Comprehensive.ProvideBundle"
+        },
+        {
+          "code": "transaction",
+          "documentation": "https://profiles.ihe.net/ITI/MHD/StructureDefinition/IHE.MHD.Comprehensive.ProvideBundle"
+        }
+      ]
+    }
+  ]
+}

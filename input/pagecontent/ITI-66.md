@@ -29,7 +29,7 @@ The result of the query is a Bundle containing List Resources that match the que
 {%include ITI-66-seq.svg%}
 </div>
 
-<div style="clear: left"/>
+<br clear="all">
 
 **Figure 2:3.66.4-1: Find Document Lists Interactions**
 
@@ -209,11 +209,15 @@ The response shall adhere to the FHIR Bundle constraints specified in [ITI TF-2x
 
 An informative StructureDefinition is outlined for [MHD Find Document Lists Response message](StructureDefinition-IHE.MHD.FindDocumentListsResponseMessage.html), with an [example](Bundle-ex-findDocumentListsResponse.html).
 
-**List Resource Contents**
+##### 2:3.66.4.2.2.1 List Resource Contents
 
 The List Resources returned shall be compliant with the FHIR specification [http://hl7.org/fhir/R4/list.html](http://hl7.org/fhir/R4/list.html).
 
 The List Resources returned should be compliant with the [IHE restrictions on the List Resource](32_fhir_maps.html) and with the mapping of ebXML attributes to List elements to [SubmissionSet](32_fhir_maps.html#submissionSet) and to [Folder](32_fhir_maps.html#folder).
+
+###### 2:3.66.4.2.2.1.1 XDS Identifiers to Resource References
+
+Where the List Resource being returned is being translated from an XDS SubmissionSet or Folder, there will be identifiers in the SubmissionSet or Folder (e.g. IntendedRecipient) that may be represented in the List as Resource References. The Document Responder is not required to convert identifiers into Resource References, but it is allowed to do this conversion. 
 
 ##### 2:3.66.4.2.3 Expected Actions
 
