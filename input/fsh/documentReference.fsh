@@ -19,6 +19,12 @@ Description:    "A profile on the DocumentReference resource for MHD with minima
 * modifierExtension 0..0
 * masterIdentifier 1..1
 * identifier 0..* MS
+* identifier ^slicing.discriminator.type = #value
+* identifier ^slicing.discriminator.path = "use"
+* identifier ^slicing.rules = #open
+* identifier contains entryUUID 0..*
+* identifier[entryUUID] ^short = "entryUUID"
+* identifier[entryUUID].use = #official
 * status 1..1
 * status from DocumentReferenceStats (required)
 * docStatus 0..0
@@ -181,6 +187,7 @@ Usage: #definition
 ValueSet: DocumentReferenceStats
 Title: "MHD DocumentReference status codes"
 Description: "ValueSet that does not include entered-in-error as that does not map"
+* ^experimental = false
 * http://hl7.org/fhir/document-reference-status#current
 * http://hl7.org/fhir/document-reference-status#superseded
 

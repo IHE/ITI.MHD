@@ -18,7 +18,7 @@ Description:    "Defines constraints on the AuditEvent Resource to record when a
 * subtype ^slicing.rules = #open // allow other codes
 * subtype 1..
 * subtype contains iti65 1..1
-* subtype[iti65] = urn:ihe:event-type-code#ITI-65 "Provide Document Bundle" (exactly)
+* subtype[iti65] = urn:ihe:event-type-code#ITI-65 "Provide Document Bundle"
 // * severity in R5
 * recorded 1..1 // already required
 * outcome 1..1
@@ -86,7 +86,7 @@ Description:    "Defines constraints on the AuditEvent Resource to record when a
 * subtype ^slicing.rules = #open // allow other codes
 * subtype 1..
 * subtype contains iti65 1..1
-* subtype[iti65] = urn:ihe:event-type-code#ITI-65 "Provide Document Bundle" (exactly)
+* subtype[iti65] = urn:ihe:event-type-code#ITI-65 "Provide Document Bundle"
 // * severity in R5
 * recorded 1..1 // already required
 * outcome 1..1

@@ -4,7 +4,7 @@
 id: ihe.iti.mhd
 canonical: https://profiles.ihe.net/ITI/MHD
 name: IHE_ITI_MHD
-version: 4.1.1-cibuild
+version: 4.2.0-cibuild
 fhirVersion: 4.0.1
 status: active
 title: "Mobile access to Health Documents (MHD)"
@@ -29,7 +29,7 @@ dependencies:
   ihe.iti.balp:
     id: iheitibasicaudit
     uri: https://profiles.ihe.net/ITI/BALP/ImplementationGuide/ihe.iti.balp
-    version: 1.1.0
+    version: current
   ihe.formatcode.fhir:
     id: iheformatcodefhir
     uri: https://profiles.ihe.net/fhir/ihe.formatcode.fhir/ImplementationGuide/ihe.formatcode.fhir

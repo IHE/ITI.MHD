@@ -218,7 +218,7 @@ For more details see the detailed [ITI-68 transaction description](ITI-68.html).
 
 #### 1:33.1.2.5 Simplified Publish
 
-This transaction is used to publish a document and metadata. This transaction does not support publishing multiple documents, or replacing document entries. This transaction will produce a simplified SubmissionSet based solely on the DocumentReference and local configuration for metadata conversion.
+This transaction is used to publish a document and the document metadata. This transaction does not support publishing multiple documents. This transaction will produce a simplified SubmissionSet based solely on the DocumentReference, security context between Document Source and Document Recipient, and local configuration for metadata conversion.
 
 For more details see the detailed [ITI-105 transaction description](ITI-105.html).
 
