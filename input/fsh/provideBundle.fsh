@@ -27,6 +27,7 @@ Description:    "A profile on the Bundle transaction for ITI-65 Provide Document
     DocumentRefs 0..* and
     UpdateDocumentRefs 0..* and
     Documents 0..* and
+    FhirDocuments 0..* and
     Folders 0..* and
     Patient 0..1
 * entry[SubmissionSet].resource only
@@ -52,11 +53,19 @@ Description:    "A profile on the Bundle transaction for ITI-65 Provide Document
 * entry[UpdateDocumentRefs].request.method = #PATCH
 * entry[Documents].resource ^type.code = "Binary"
 * entry[Documents].resource ^type.profile = Canonical(Binary)
-* entry[Documents] ^short = "the documents"
-* entry[Documents] ^definition = "the documents referenced by the DocumentReference resources"
+* entry[Documents] ^short = "the Documents"
+* entry[Documents] ^definition = "the Documents referenced by the DocumentReference resources"
 * entry[Documents].resource 1..1
 * entry[Documents].request 1..1
-* entry[Documents].request.method = #POST
+* entry[FhirDocuments].request.method = #POST
+* entry[FhirDocuments].resource ^type.code = "Bundle"
+* entry[FhirDocuments].resource ^type.profile = Canonical(Bundle)
+// TODO Should there be more to be sure it is a FHIR Document Bundle?
+* entry[FhirDocuments] ^short = "the FHIR-FhirDocuments"
+* entry[FhirDocuments] ^definition = "the FHIR-FhirDocuments referenced by the DocumentReference resources"
+* entry[FhirDocuments].resource 1..1
+* entry[FhirDocuments].request 1..1
+* entry[FhirDocuments].request.method = #POST
 * entry[Folders].resource only 
     IHE.MHD.Minimal.Folder 
 * entry[Folders] ^short = "Folders"

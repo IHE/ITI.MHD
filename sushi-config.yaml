@@ -59,6 +59,10 @@ resources:
     name: Example FindDocumentReferences response
     description: An example of a searchset Bundle with one DocumentReference
     exampleBoolean: true
+  Bundle/ex-comprehensiveProvideDocumentBundleDocument:
+    name: Example Provide Bundle with a FHIR-Document
+    description: An example of a Provide Bundle with a single DocumentReference pointing at a FHIR-Document Bundle
+    exampleBoolean: true
 
 # ╭────────────────────────────────────────────pages───────────────────────────────────────────────╮
 # │  The pages property corresponds to IG.definition.page.                                         │

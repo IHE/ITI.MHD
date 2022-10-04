@@ -156,10 +156,12 @@ The Document Source is the producer and publisher of Document Content to a Docum
 The Document Source uses either the ITI-65 or ITI-105.
 
 The following CapabilityStatements define the Actor capabilities given the various Options
-* [Document Source implementing Simplified Publish Option](CapabilityStatement-IHE.MHD.DocumentSource.Simplified.html)
 * [Document Source](CapabilityStatement-IHE.MHD.DocumentSource.html) 
 * [Document Source implementing Comprehensive Metadata Option](CapabilityStatement-IHE.MHD.DocumentSource.Comprehensive.html)
 * [Document Source implementing UnContained Reference Option](CapabilityStatement-IHE.MHD.DocumentSource.UnContained.html)
+* [Document Source implementing Simplified Publish Option](CapabilityStatement-IHE.MHD.DocumentSource.Simplified.html)
+* [Document Source implementing Generate Metadata Option](CapabilityStatement-IHE.MHD.DocumentSource.Generate.html)
+* [Document Source implementing ITI-65 FHIR Documents Publish Option](CapabilityStatement-IHE.MHD.DocumentSource.Fdoc.html)
 
 #### 1:33.1.1.2 Document Consumer
 
@@ -177,6 +179,8 @@ The following CapabilityStatements define the Actor capabilities
 * [Document Recipient implementing Comprehensive Metadata Option](CapabilityStatement-IHE.MHD.DocumentRecipient.Comprehensive.html)
 * [Document Recipient implementing UnContained Reference Option](CapabilityStatement-IHE.MHD.DocumentRecipient.UnContained.html)
 * [Document Recipient implementing Simplified Publish Option](CapabilityStatement-IHE.MHD.DocumentRecipient.Simplified.html)
+* [Document Source implementing Generate Metadata Option](CapabilityStatement-IHE.MHD.DocumentSource.Generate.html)
+* [Document Source implementing ITI-65 FHIR Documents Publish Option](CapabilityStatement-IHE.MHD.DocumentSource.Fdoc.html)
 
 #### 1:33.1.1.4 Document Responder
 

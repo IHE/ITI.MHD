@@ -12,7 +12,7 @@ between options when applicable are specified in notes.
     </thead>
     <tbody>        
         <tr>        
-            <td rowspan='4'>Document Source</td>       
+            <td rowspan='5'>Document Source</td>       
             <td><a href="#13321-comprehensive-metadata-option">Comprehensive Metadata</a></td>
             </tr>
             <tr>
@@ -23,9 +23,12 @@ between options when applicable are specified in notes.
             </tr>
             <tr>
             <td><a href="#13325-generate-metadata-option">Generate Metadata</a></td>
+            </tr>
+            <tr>
+            <td><a href="#13326-iti-65-fhir-documents-publish-option">ITI-64 FHIR documents Publish</a></td>
         </tr>
         <tr>
-            <td rowspan='5'>Document Recipient</td>        
+            <td rowspan='6'>Document Recipient</td>        
             <td><a href="#13321-comprehensive-metadata-option">Comprehensive Metadata</a></td>
             </tr>
             <tr>
@@ -40,6 +43,9 @@ between options when applicable are specified in notes.
             </tr>
             <tr>
             <td><a href="#13325-generate-metadata-option">Generate Metadata</a></td>
+            </tr>
+            <tr>
+            <td><a href="#13326-iti-65-fhir-documents-publish-option">ITI-64 FHIR documents Publish</a></td>
         </tr>
         <tr>
             <td rowspan='1'>Document Consumer</td>
@@ -119,4 +125,10 @@ The "need" may be simply that the Document Source is not capable to understand t
 The Document Source claiming the Generate Metadata Option shall implement use of [ITI-106](ITI-106.html) transaction to submit a document content. The Document Source may also use [ITI-65](ITI-65.html).
 
 The Document Recipient claiming the Generate Metadata Option shall implement the [ITI-106](ITI-106.html) transaction. The Document Recipient will interpret the document, create or update a DocumentReference metadata, convert DocumentReference elements into a SubmissionSet. The metadata derivation shall following the [PCC TF-2: 4.1.1 XDSSubmissionSet Metadata](https://www.ihe.net/uploadedFiles/Documents/PCC/IHE_PCC_TF_Vol2.pdf), and may have further metadata translation requirements specified by the local Document Sharing Community policy.
+
+#### 1:33.2.6 ITI-65 FHIR Documents Publish Option
+
+The **ITI-65 FHIR Documents Publish Option** adds support to ITI-65 to carry a FHIR-Document encoded within the ITI-65, rather than needing this FHIR-Document encoded within a Binary.   Actors not declaring this option are expected to only support Binary documents in ITI-65.
+
+The Document Recipient Actor will process the FHIR-Document accordingly to the persistance needs that it supports (e.g. XDS, MHDS). 
 

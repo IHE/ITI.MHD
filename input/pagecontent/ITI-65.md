@@ -37,6 +37,8 @@ This method is invoked when the Document Source needs to submit one or more docu
 
 ##### 2:3.65.4.1.2 Message Semantics
 
+TODO: Look for uses of Binary, and replace with some new word that indicates it could be Binary, or FHIR Document Bundle.
+
 The Document Source shall initiate a FHIR “transaction” using a “create” action by sending an HTTP POST request method composed of a FHIR Bundle Resource containing: one SubmissionSet type List Resource; one or more DocumentReference Resources; zero or more Folder type List Resources; and zero or more Binary Resources to the Document Recipient. Refer to [ITI TF-3: 4.5.1](32_fhir_maps.html) for details on the FHIR Resources and how Document Sharing metadata attributes are mapped. 
 
 The media type of the HTTP body shall be either `application/fhir+json` or `application/fhir+xml`.
@@ -152,6 +154,11 @@ If the recipient is known to be an XDR/XCDR community, the error codes `XDSUnkno
 
 ###### 2:3.65.4.1.3.1 Grouping with Actors in other Document Sharing Profiles
 
+TODO: explain how to handle the document as a FHIR Document Bundle
+1) SHALL seralice as mime type given from client
+2) MAY also seralize as the other mime type and thus register two DocumentEntry with Transforms relationship
+3) can we use text in the simplified publish?
+  
 This section applies to grouping MHD Document Recipient with [XDS](https://profiles.ihe.net/ITI/TF/Volume1/ch-10.html) [Document Source](https://profiles.ihe.net/ITI/TF/Volume1/ch-10.html#10.1.1.1) Actor, [XDR](https://profiles.ihe.net/ITI/TF/Volume1/ch-15.html) Document Source Actor, [XDR](https://profiles.ihe.net/ITI/TF/Volume1/ch-15.html) Limited-Metadata Document Source Actor, and [XDM](https://profiles.ihe.net/ITI/TF/Volume1/ch-16.html) Portable Media Creator Actor (e.g. with the [XDM ZIP over Email Option](https://profiles.ihe.net/ITI/TF/Volume1/ch-16.html#16.2.3) ). 
 
 The Document Recipient shall transform the Bundle content into a proper message for the given grouped Actor (e.g. the XDS Document Source using the Provide and Register Document Set-b [ITI-41](https://profiles.ihe.net/ITI/TF/Volume2/ITI-41.html) transaction). The Document Recipient shall create appropriate metadata from Resources in the FHIR Bundle Resource, including SubmissionSet, DocumentEntry, Folder, and Associations. 
@@ -165,6 +172,8 @@ The Document Recipient shall map Folder type List Resources in the Bundle Resour
 Some FHIR elements do not translate to XDS concepts; the handling of these elements is left to the implementer of the Document Recipient. 
 
 Upon successful conversion of the FHIR Bundle to XDS Document Sharing metadata, the grouped source actor shall execute the appropriate transaction. The transaction result, and any error or warning messages, shall be reported to the MHD Document Source. The Document Recipient is responsible for translating the response to the appropriate HTTP Status Code and FHIR OperationOutcome Resource in the Provide Document Bundle Response Message.
+
+TODO: Add a MHDS grouping that allows for the FHIR Document Bundle being maintained as a FHIR Bundle thus enabling mime-type picking at retrieve. Unclear if there should/must be three DocumentReference recorded to enable three mime-types
 
 #### 2:3.65.4.2 Provide Document Bundle Response Message
 
