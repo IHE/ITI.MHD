@@ -15,7 +15,6 @@ A profile on the DocumentReference resource for MHD Simplified Publish constrain
 Simplified Publish
 - Similar to Minimal Metadata constraints
   - must be status current
-  - must **not** be a replacement request
   - must have a patient indicated
 - uses attachment.data to carry the document, rather than attachment.url
   - so that the Simplified Publish is a simple POST of the DocumentReference
@@ -34,8 +33,7 @@ Simplified Publish
 * date 0..1 MS
 * author 0..* MS
 * authenticator 0..1
-* relatesTo 0..0
-* relatesTo ^short = "replace is not supported by Simplified Publish"
+* relatesTo 0..* MS
 * description 0..1
 * securityLabel 0..* MS
 * content 1..1
