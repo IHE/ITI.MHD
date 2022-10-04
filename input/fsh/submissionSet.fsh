@@ -16,8 +16,13 @@ Description:    "A profile on the List resource for MHD SubmissionSet.
 * extension[designationType] 0..1 MS
 * extension contains SourceId named sourceId 1..1
 * extension contains IntendedRecipient named intendedRecipient 0..*
-* identifier 0..*
-* identifier ^short = "would hold SubmissionSet.entryUUID and SubmissionSet.uniqueId"
+* identifier ^slicing.discriminator.type = #value
+* identifier ^slicing.discriminator.path = "use"
+* identifier ^slicing.rules = #open
+* identifier contains uniqueId 0..1
+* identifier[uniqueId] only UniqueIdIdentifier
+* identifier contains entryUUID 0..*
+* identifier[entryUUID] only EntryUUIDIdentifier
 * status = #current
 * mode = #working
 * title 0..1
