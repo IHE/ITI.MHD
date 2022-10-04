@@ -14,7 +14,7 @@ Defines constraints on the Document Consumer AuditEvent Resource to record when 
 * modifierExtension 0..0
 * subtype 2..
 * subtype contains iti68 1..1
-* subtype[iti68] = urn:ihe:event-type-code#ITI-68 "Retrieve Document" (exactly)
+* subtype[iti68] = urn:ihe:event-type-code#ITI-68 "Retrieve Document"
 * entity[data].role = http://terminology.hl7.org/CodeSystem/object-role#3 "Report"
 * agent[client] obeys val-audit-source
 * agent[client] ^short = "Document Consumer"
@@ -43,7 +43,7 @@ Defines constraints on the Document Responder AuditEvent Resource to record when
 * modifierExtension 0..0
 * subtype 2..
 * subtype contains iti68 1..1
-* subtype[iti68] = urn:ihe:event-type-code#ITI-68 "Retrieve Document" (exactly)
+* subtype[iti68] = urn:ihe:event-type-code#ITI-68 "Retrieve Document"
 * entity[data].role = http://terminology.hl7.org/CodeSystem/object-role#3 "Report"
 * agent[server] obeys val-audit-source
 * agent[client] ^short = "Document Consumer"

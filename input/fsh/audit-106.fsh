@@ -15,7 +15,7 @@ Defines constraints on the AuditEvent Resource to record when a Generate Metadat
 * modifierExtension 0..0
 * subtype 2..
 * subtype contains iti106 1..1
-* subtype[iti106] = urn:ihe:event-type-code#ITI-106 "Generate Metadata" (exactly)
+* subtype[iti106] = urn:ihe:event-type-code#ITI-106 "Generate Metadata"
 * agent[server] obeys val-audit-source
 * agent[client] ^short = "Document Source"
 * agent[server] ^short = "Document Recipient"
@@ -41,7 +41,7 @@ Defines constraints on the AuditEvent Resource to record when a Generate Metadat
 * modifierExtension 0..0
 * subtype 2..
 * subtype contains iti106 1..1
-* subtype[iti106] = urn:ihe:event-type-code#ITI-106 "Generate Metadata" (exactly)
+* subtype[iti106] = urn:ihe:event-type-code#ITI-106 "Generate Metadata"
 * agent[client] obeys val-audit-source
 * agent[client] ^short = "Document Source"
 * agent[server] ^short = "Document Recipient"

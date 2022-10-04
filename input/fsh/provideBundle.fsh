@@ -74,12 +74,14 @@ Description:    "A profile on the Bundle transaction for ITI-65 Provide Document
 ValueSet: MHDprovideFolderActions
 Title: "MHD Folder List Types ValueSet"
 Description: "A ValueSet of the allowed actions in a ITI-65 Provide Document Bundle for the Folder List type Resources. Where Folders are allowed to be Updated in addition to Created."
+* ^experimental = false
 * http://hl7.org/fhir/http-verb#POST
 * http://hl7.org/fhir/http-verb#PUT
 
 ValueSet: MHDprovidePatientActions
 Title: "MHD Patient Types ValueSet"
 Description: "A ValueSet of the allowed actions in a ITI-65 Provide Document Bundle for the Patient type Resource. Where Patient would typically be indicated as a GET (read), but might be created or updated depending on policy."
+* ^experimental = false
 * http://hl7.org/fhir/http-verb#GET
 * http://hl7.org/fhir/http-verb#POST
 * http://hl7.org/fhir/http-verb#PUT

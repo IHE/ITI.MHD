@@ -15,7 +15,7 @@ Defines constraints on the AuditEvent Resource to record when a Simplified Publi
 * modifierExtension 0..0
 * subtype 2..
 * subtype contains iti105 1..1
-* subtype[iti105] = urn:ihe:event-type-code#ITI-105 "Simplified Publish" (exactly)
+* subtype[iti105] = urn:ihe:event-type-code#ITI-105 "Simplified Publish"
 * agent[server] obeys val-audit-source
 * agent[client] ^short = "Document Source"
 * agent[server] ^short = "Document Recipient"
@@ -49,7 +49,7 @@ Defines constraints on the AuditEvent Resource to record when a Simplified Publi
 * modifierExtension 0..0
 * subtype 2..
 * subtype contains iti105 1..1
-* subtype[iti105] = urn:ihe:event-type-code#ITI-105 "Simplified Publish" (exactly)
+* subtype[iti105] = urn:ihe:event-type-code#ITI-105 "Simplified Publish"
 * agent[client] obeys val-audit-source
 * agent[client] ^short = "Document Source"
 * agent[server] ^short = "Document Recipient"

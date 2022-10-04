@@ -14,7 +14,7 @@ Defines constraints on the AuditEvent Resource to record when a Find Document Re
 * modifierExtension 0..0
 * subtype 2..
 * subtype contains iti67 1..1
-* subtype[iti67] = urn:ihe:event-type-code#ITI-67 "Find Document References" (exactly)
+* subtype[iti67] = urn:ihe:event-type-code#ITI-67 "Find Document References"
 * agent[client] obeys val-audit-source
 * agent[client] ^short = "Document Consumer"
 * agent[server] ^short = "Document Responder"
@@ -38,7 +38,7 @@ Defines constraints on the AuditEvent Resource to record when a Find Document Re
 * modifierExtension 0..0
 * subtype 2..
 * subtype contains iti67 1..1
-* subtype[iti67] = urn:ihe:event-type-code#ITI-67 "Find Document References" (exactly)
+* subtype[iti67] = urn:ihe:event-type-code#ITI-67 "Find Document References"
 * agent[server] obeys val-audit-source
 * agent[client] ^short = "Document Consumer"
 * agent[server] ^short = "Document Responder"

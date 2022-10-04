@@ -14,7 +14,7 @@ Defines constraints on the AuditEvent Resource to record when a Find Document Li
 * modifierExtension 0..0
 * subtype 2..
 * subtype contains iti66 1..1
-* subtype[iti66] = urn:ihe:event-type-code#ITI-66 "Find Document Lists" (exactly)
+* subtype[iti66] = urn:ihe:event-type-code#ITI-66 "Find Document Lists"
 * agent[client] obeys val-audit-source
 * agent[client] ^short = "Document Consumer"
 * agent[server] ^short = "Document Responder"
@@ -41,7 +41,7 @@ Defines constraints on the AuditEvent Resource to record when a Find Document Li
 * modifierExtension 0..0
 * subtype 2..
 * subtype contains iti66 1..1
-* subtype[iti66] = urn:ihe:event-type-code#ITI-66 "Find Document Lists" (exactly)
+* subtype[iti66] = urn:ihe:event-type-code#ITI-66 "Find Document Lists"
 * agent[server] obeys val-audit-source
 * agent[client] ^short = "Document Consumer"
 * agent[server] ^short = "Document Responder"

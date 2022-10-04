@@ -187,6 +187,7 @@ Usage: #definition
 ValueSet: DocumentReferenceStats
 Title: "MHD DocumentReference status codes"
 Description: "ValueSet that does not include entered-in-error as that does not map"
+* ^experimental = false
 * http://hl7.org/fhir/document-reference-status#current
 * http://hl7.org/fhir/document-reference-status#superseded
 
