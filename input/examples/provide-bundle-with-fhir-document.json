@@ -159,7 +159,8 @@
           "identifier": [
             {
               "system": "urn:ietf:rfc:3986",
-              "value": "urn:uuid:7d5bb8ac-68ee-4926-85e7-b8aac8e1f09d"
+              "value": "urn:uuid:7d5bb8ac-68ee-4926-85e7-b8aac8e1f09d",
+              "use": "official"
             }
           ],
           "status": "current",
