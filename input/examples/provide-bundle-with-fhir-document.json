@@ -132,10 +132,6 @@
             {
               "resourceType": "Practitioner",
               "id": "aaaaaaaa-bbbb-cccc-dddd-e00333300006",
-              "text": {
-                "status": "generated",
-                "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">\n\n            <p>Dr Adam Careful</p>\n\n          </div>"
-              },
               "identifier": [
                 {
                   "system": "http://www.acme.org/practitioners",
