@@ -20,7 +20,7 @@ Description:    "A profile on the List resource for MHD SubmissionSet.
 * identifier ^slicing.discriminator.path = "use"
 * identifier ^slicing.rules = #open
 * identifier contains uniqueId 0..1
-* identifier[uniqueId] only UniqueIdIdentifier
+* identifier[uniqueId] only SubmissionSetUniqueIdIdentifier
 * identifier contains entryUUID 0..*
 * identifier[entryUUID] only EntryUUIDIdentifier
 * status = #current

@@ -2,11 +2,17 @@ Profile: UniqueIdIdentifier
 Parent: Identifier
 Id: IHE.MHD.UniqueIdIdentifier
 Title: "uniqueId Identifier"
-Description: "uniqueId Identifier holding a OID"
+Description: "uniqueId Identifier"
 * system 1..
 * system = "urn:ietf:rfc:3986" (exactly)
 * use = #usual
 * value 1..
+
+Profile: SubmissionSetUniqueIdIdentifier
+Parent: UniqueIdIdentifier
+Id: IHE.MHD.SubmissionSetUniqueIdIdentifier
+Title: "uniqueId Identifier for SubmissionSet"
+Description: "uniqueId Identifier holding a OID"
 * value obeys mhd-startswithoid
 
 Invariant: mhd-startswithoid
