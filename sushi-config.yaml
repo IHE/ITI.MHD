@@ -63,6 +63,10 @@ resources:
     name: Example Provide Bundle with a FHIR-Document
     description: An example of a Provide Bundle with a single DocumentReference pointing at a FHIR-Document Bundle
     exampleBoolean: true
+  Bundle/ex-fhir-document-bundle:
+    name: Example of a FHIR-Document Bundle
+    description: An example of a FHIR-Document Bundle
+    exampleBoolean: true
 
 # ╭────────────────────────────────────────────pages───────────────────────────────────────────────╮
 # │  The pages property corresponds to IG.definition.page.                                         │

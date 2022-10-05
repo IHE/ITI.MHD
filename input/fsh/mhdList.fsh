@@ -8,15 +8,6 @@ Description:    "A profile on the List resource for MHD. Used with both Folder a
 * modifierExtension 0..0
 // code is used ONLY to switch between folder and submissionSet
 * identifier 0..* 
-* identifier ^slicing.discriminator.type = #value
-* identifier ^slicing.discriminator.path = "use"
-* identifier ^slicing.rules = #open
-* identifier contains uniqueId 0..1
-* identifier[uniqueId] ^short = "uniqueId"
-* identifier[uniqueId].use = #usual
-* identifier contains entryUUID 0..*
-* identifier[entryUUID] ^short = "entryUUID"
-* identifier[entryUUID].use = #official
 * code 1..1
 * code from MHDlistTypesVS (required)
 
