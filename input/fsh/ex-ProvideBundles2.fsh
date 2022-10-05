@@ -83,8 +83,8 @@ Usage: #inline
 * text.status = #extensions
 * text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\">SubmissionSet with Patient</div>"
 * meta.security = http://terminology.hl7.org/CodeSystem/v3-ActReason#HTEST
-* identifier[uniqueId].system = "http://example.org/documents"
-* identifier[uniqueId].value = "23425234-23470-1"
+* identifier[uniqueId].system = "urn:ietf:rfc:3986"
+* identifier[uniqueId].value = "urn:oid:1.2.840.113556.1.8000.2554.58783.21864.3474.19410.44358.58254.41281.46344"
 * identifier[uniqueId].use = #usual
 * status = #current
 * mode = #working
