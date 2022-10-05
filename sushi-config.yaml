@@ -4,7 +4,7 @@
 id: ihe.iti.mhd
 canonical: https://profiles.ihe.net/ITI/MHD
 name: IHE_ITI_MHD
-version: 4.2.0-cibuild
+version: 4.2.0-current
 fhirVersion: 4.0.1
 status: active
 title: "Mobile access to Health Documents (MHD)"
@@ -49,7 +49,7 @@ parameters:  # see http://build.fhir.org/ig/FHIR/fhir-tools-ig/branches/master/i
   apply-publisher: 'true'
   apply-version: 'true'
   show-inherited-invariants: 'false'
-  usage-stats-opt-out: 'true'
+  usage-stats-opt-out: 'false'
   autoload-resources: 'true'
   shownav: 'true'
 
