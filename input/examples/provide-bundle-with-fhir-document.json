@@ -58,12 +58,12 @@
             {
               "use": "official",
               "system": "urn:ietf:rfc:3986",
-              "value": "urn:oid:1.2.129.6.58.92.88337.1"
+              "value": "urn:uuid:5d3d3a7d-82a6-4fe0-8d87-ee2cb87fa219"
             },
             {
               "use": "usual",
-              "system": "http://example.org/documents",
-              "value": "23425234-23470-1"
+              "system": "urn:ietf:rfc:3986",
+              "value": "urn:oid:1.2.129.6.58.92.88337.1"
             }
           ],
           "status": "current",
@@ -132,10 +132,6 @@
             {
               "resourceType": "Practitioner",
               "id": "aaaaaaaa-bbbb-cccc-dddd-e00333300006",
-              "text": {
-                "status": "generated",
-                "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">\n\n            <p>Dr Adam Careful</p>\n\n          </div>"
-              },
               "identifier": [
                 {
                   "system": "http://www.acme.org/practitioners",
@@ -163,7 +159,8 @@
           "identifier": [
             {
               "system": "urn:ietf:rfc:3986",
-              "value": "urn:uuid:7d5bb8ac-68ee-4926-85e7-b8aac8e1f09d"
+              "value": "urn:uuid:7d5bb8ac-68ee-4926-85e7-b8aac8e1f09d",
+              "use": "official"
             }
           ],
           "status": "current",
@@ -668,7 +665,7 @@
         },
         "request": {
           "method": "POST",
-          "url": "Binary"
+          "url": "Bundle"
         }
       }
     ]
