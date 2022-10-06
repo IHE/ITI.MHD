@@ -37,7 +37,7 @@ This method is invoked when the Document Source needs to submit one or more docu
 
 ##### 2:3.65.4.1.2 Message Semantics
 
-The Document Source shall initiate a FHIR “transaction” using a “create” action by sending an HTTP POST request method composed of a FHIR Bundle Resource containing: one SubmissionSet type List Resource; one or more DocumentReference Resources; zero or more Folder type List Resources; zero or more FHIR Document Bundle Resources; and zero or more Binary Resources to the Document Recipient. Refer to [ITI TF-3: 4.5.1](32_fhir_maps.html) for details on the FHIR Resources and how Document Sharing metadata attributes are mapped. 
+The Document Source shall initiate a FHIR “transaction” using a “create” action by sending an HTTP POST request method composed of a FHIR Bundle Resource containing: one SubmissionSet type List Resource; one or more DocumentReference Resources; zero or more Folder type List Resources; and zero or more Binary Resources to the Document Recipient. When implementing the **ITI-65 FHIR Document Publish** option a FHIR Document Bundle may be used in place of the Binary Resource. Refer to [ITI TF-3: 4.5.1](32_fhir_maps.html) for details on the FHIR Resources and how Document Sharing metadata attributes are mapped. 
 
 The media type of the HTTP body shall be either `application/fhir+json` or `application/fhir+xml`.
 
@@ -58,7 +58,7 @@ The FHIR Bundle.meta.profile shall have the following value depending on the Act
   - shall create a [SubmissionSet type List](StructureDefinition-IHE.MHD.Minimal.SubmissionSet.html) that is either minimal, comprehensive, or unContained
   - may create one or more [DocumentReference](StructureDefinition-IHE.MHD.Minimal.DocumentReference.html) that is either minimal, comprehensive, or unContained
     - with a document as a [Binary](http://hl7.org/fhir/R4/binary.html)
-    - or a [FHIR Document Bundle](http://hl7.org/fhir/R4/bundle.html)
+    - or, when implementing the **ITI-65 FHIR Document Publish** option, a [FHIR Document Bundle](http://hl7.org/fhir/R4/bundle.html)
   - may create/update one or more [Folder type List](StructureDefinition-IHE.MHD.Minimal.Folder.html) that is either minimal, comprehensive, or unContained
   - may create/update/read one [Patient](http://hl7.org/fhir/R4/patient.html)
 - [Comprehensive Metadata](StructureDefinition-IHE.MHD.Comprehensive.ProvideBundle.html): `https://profiles.ihe.net/ITI/MHD/StructureDefinition/IHE.MHD.Comprehensive.ProvideBundle`
@@ -68,7 +68,7 @@ The FHIR Bundle.meta.profile shall have the following value depending on the Act
   - shall create a [SubmissionSet type List](StructureDefinition-IHE.MHD.Comprehensive.SubmissionSet.html) that is comprehensive
   - may create one or more [DocumentReference](StructureDefinition-IHE.MHD.Comprehensive.DocumentReference.html) that is comprehensive
     - with a document as a [Binary](http://hl7.org/fhir/R4/binary.html)
-    - or a [FHIR Document Bundle](http://hl7.org/fhir/R4/bundle.html)
+    - or, when implementing the **ITI-65 FHIR Document Publish** option, a [FHIR Document Bundle](http://hl7.org/fhir/R4/bundle.html)
   - may create/update one or more [Folder type List](StructureDefinition-IHE.MHD.Comprehensive.Folder.html) that is comprehensive
   - may create/update/read one [Patient](http://hl7.org/fhir/R4/patient.html)
 - [UnContained Comprehensive Metadata](StructureDefinition-IHE.MHD.UnContained.Comprehensive.ProvideBundle.html): `https://profiles.ihe.net/ITI/MHD/StructureDefinition/IHE.MHD.UnContained.Comprehensive.ProvideBundle` 
@@ -79,7 +79,7 @@ The FHIR Bundle.meta.profile shall have the following value depending on the Act
   - shall create a [SubmissionSet type List](StructureDefinition-IHE.MHD.UnContained.Comprehensive.SubmissionSet.html) that is comprehensive or unContained
   - may create one or more [DocumentReference](StructureDefinition-IHE.MHD.UnContained.Comprehensive.DocumentReference.html) that is comprehensive or unContained
     - with a document as a [Binary](http://hl7.org/fhir/R4/binary.html)
-    - or a [FHIR Document Bundle](http://hl7.org/fhir/R4/bundle.html)
+    - or, when implementing the **ITI-65 FHIR Document Publish** option, a [FHIR Document Bundle](http://hl7.org/fhir/R4/bundle.html)
   - may create/update one or more [Folder type List](StructureDefinition-IHE.MHD.Comprehensive.Folder.html) that is comprehensive
   - may create/update/read one [Patient](http://hl7.org/fhir/R4/patient.html)
 
@@ -154,14 +154,11 @@ If the SubmissionSet `intendedRecipient` is populated, the Document Recipient SH
 
 If the recipient is known to be an XDR/XCDR community, the error codes `XDSUnknownCommunity` or `XDSUnavailableCommunity` may be used instead.
 
+If the recipient is not implmeenting **ITI-65 FHIR Document Publish** Option and there is a FHIR Document Bundle within the ITI-65 transaction Bundle; then Fail the transaction and return the code `FHIRdocumentNotSupported` as an error.
+
 ###### 2:3.65.4.1.3.1 Grouping with Actors in other Document Sharing Profiles
 
-TODO: explain how to handle the document as a FHIR Document Bundle
-1. SHALL seralice as mime type given from client
-2. MAY also seralize as the other mime type and thus register two DocumentEntry with Transforms relationship
-3. can we use text in the simplified publish?
-  
-This section applies to grouping MHD Document Recipient with [XDS](https://profiles.ihe.net/ITI/TF/Volume1/ch-10.html) [Document Source](https://profiles.ihe.net/ITI/TF/Volume1/ch-10.html#10.1.1.1) Actor, [XDR](https://profiles.ihe.net/ITI/TF/Volume1/ch-15.html) Document Source Actor, [XDR](https://profiles.ihe.net/ITI/TF/Volume1/ch-15.html) Limited-Metadata Document Source Actor, and [XDM](https://profiles.ihe.net/ITI/TF/Volume1/ch-16.html) Portable Media Creator Actor (e.g. with the [XDM ZIP over Email Option](https://profiles.ihe.net/ITI/TF/Volume1/ch-16.html#16.2.3) ). 
+This section applies to grouping the MHD Document Recipient Actor with [XDS](https://profiles.ihe.net/ITI/TF/Volume1/ch-10.html) [Document Source](https://profiles.ihe.net/ITI/TF/Volume1/ch-10.html#10.1.1.1) Actor, [XDR](https://profiles.ihe.net/ITI/TF/Volume1/ch-15.html) Document Source Actor, [XDR](https://profiles.ihe.net/ITI/TF/Volume1/ch-15.html) Limited-Metadata Document Source Actor, and [XDM](https://profiles.ihe.net/ITI/TF/Volume1/ch-16.html) Portable Media Creator Actor (e.g. with the [XDM ZIP over Email Option](https://profiles.ihe.net/ITI/TF/Volume1/ch-16.html#16.2.3) ). 
 
 The Document Recipient shall transform the Bundle content into a proper message for the given grouped Actor (e.g. the XDS Document Source using the Provide and Register Document Set-b [ITI-41](https://profiles.ihe.net/ITI/TF/Volume2/ITI-41.html) transaction). The Document Recipient shall create appropriate metadata from Resources in the FHIR Bundle Resource, including SubmissionSet, DocumentEntry, Folder, and Associations. 
 
@@ -173,9 +170,19 @@ The Document Recipient shall map Folder type List Resources in the Bundle Resour
 
 Some FHIR elements do not translate to XDS concepts; the handling of these elements is left to the implementer of the Document Recipient. 
 
+When implementing the **ITI-65 FHIR Document Publish** option, when a `DocumentReference.content.attachment.url` points at a FHIR Document Bundle within the ITI-65 Bundle; then the FHIR Document Bundle needs to be seralized into a binary format for propigation to the grouped Document Source Actor. This seralization shall be using the mime-type given in the ITI-65 transaction (i.e. json, xml), see [FHIR Seralization Formats Representations](http://hl7.org/fhir/R4/formats.html#wire). The MHD Document Recipient Actor is allowed to also seralize the document into the alternative mime-type format, when this is done the MHD Document Recipient also creates an additional DocumentEntry that replicates the origial DocumentReference elements as described above with a association relationship to the first DocumentEntry of `transforms`; calculate the hash and size and populate them appropriately; and the mime-type indicating the alternative mime-type.
+
 Upon successful conversion of the FHIR Bundle to XDS Document Sharing metadata, the grouped source actor shall execute the appropriate transaction. The transaction result, and any error or warning messages, shall be reported to the MHD Document Source. The Document Recipient is responsible for translating the response to the appropriate HTTP Status Code and FHIR OperationOutcome Resource in the Provide Document Bundle Response Message.
 
-TODO: Add a MHDS grouping that allows for the FHIR Document Bundle being maintained as a FHIR Bundle thus enabling mime-type picking at retrieve. Unclear if there should/must be three DocumentReference recorded to enable three mime-types
+###### 2:3.65.4.1.3.2 Grouping with MHDS Implementation Guide (Profile)
+
+This section applies to grouping the MHD Document Recipient Actor with [MHDS](https://profiles.ihe.net/ITI/MHDS) [Document Registry](https://profiles.ihe.net/ITI/MHDS/volume-1.html#150111-document-registry) Actor. As MHDS uses the same FHIR syntax, there is no changing of the ITI-65 bundle necessary.
+
+When implementing the **ITI-65 FHIR Document Publish** option; when a `DocumentReference.content.attachment.url` points at a FHIR Document Bundle within the ITI-65 Bundle; then 
+1. The MHD Document Recipient Actor should seralize the the FHIR Document Bundle into a Binary format for propigation to the grouped Document Registry Actor for persistance. This seralization shall be using the mime-type given in the ITI-65 transaction (i.e. json, xml), see [FHIR Seralization Formats Representations](http://hl7.org/fhir/R4/formats.html#wire), and place the seralized results into a new Binary resource. The MHD Document Recipient Actor shall add a DocumentReference and the Binary to the ITI-65 Bundle. The added DocumentReference is populated with the original DocumentReference element values; with a `.relatesTo` relationship to the first DocumentReference of `transforms`; associate the seralized content with this new Binary resource; calculate the hash and size and populate them appropriately; and set the mime-type appropriately. 
+2. The MHD Document Recipient Actor is allowed to also seralize the document into the alternative mime-type format, when this is done the MHD Document Recipient also creates an additional DocumentReference that replicates the origial DocumentReference elements; with a `.relatesTo` relationship to the first DocumentReference of `transforms`; associate the seralized content with this new Binary resource; calculate the hash and size and populate them appropriately; and set the mime-type indicating the alternative mime-type.
+
+These additional DocumentReference and Binary enable the Document Consumer to choose the best mime-type for that Document Consumer actor needs.
 
 #### 2:3.65.4.2 Provide Document Bundle Response Message
 

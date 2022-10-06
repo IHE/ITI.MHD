@@ -16,6 +16,7 @@
 |------------|------------|--------------------------|
 | UnknownRecipient | An IntendedRecipient is not recognized. | P |
 | UnavailableRecipient | An IntendedRecipient which would have been contacted was not available. | P |
+| FHIRdocumentNotSupported | A request to Publish a FHIR Document was attempted but not supported by the Document Recipient Actor. | P |
 {: .grid}
 
 ...
