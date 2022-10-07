@@ -154,7 +154,7 @@ If the SubmissionSet `intendedRecipient` is populated, the Document Recipient SH
 
 If the recipient is known to be an XDR/XCDR community, the error codes `XDSUnknownCommunity` or `XDSUnavailableCommunity` may be used instead.
 
-If the recipient is not implmeenting **ITI-65 FHIR Document Publish** Option and there is a FHIR Document Bundle within the ITI-65 transaction Bundle; then Fail the transaction and return the code `FHIRdocumentNotSupported` as an error.
+If the recipient is not implmeenting **ITI-65 FHIR Document Publish** Option and there is a FHIR Document Bundle within the ITI-65 transaction Bundle; then Fail the transaction and return the code `FHIRdocumentNotSupported` as an error. Document Source Actors may receive a FHIR validation error from Document Recipients that are unaware of the ITI-65 FHIR Document Publish option.
 
 ###### 2:3.65.4.1.3.1 Grouping with Actors in other Document Sharing Profiles
 

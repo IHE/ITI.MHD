@@ -10,7 +10,8 @@ Description:    "A profile on the Bundle transaction for ITI-65 Provide Document
   - all resources shall be compliant with minimal constraints, they may be marked minimal, comprehensive, or unContained
   - shall create a [SubmissionSet type List](StructureDefinition-IHE.MHD.Minimal.SubmissionSet.html) that is either minimal, comprehensive, or unContained
   - may create one or more [DocumentReference](StructureDefinition-IHE.MHD.Minimal.DocumentReference.html) that is either minimal, comprehensive, or unContained
-  - may create one or more [Binary](http://hl7.org/fhir/R4/binary.html)
+    - with a document as a [Binary](http://hl7.org/fhir/R4/binary.html)
+    - or, when implementing the **ITI-65 FHIR Document Publish** option, a [FHIR Document Bundle](http://hl7.org/fhir/R4/bundle.html)
   - may create/update one or more [Folder type List](StructureDefinition-IHE.MHD.Minimal.Folder.html) that is either minimal, comprehensive, or unContained
   - may create/update/read one [Patient](http://hl7.org/fhir/R4/patient.html)"
 * meta.profile 1..*
@@ -110,7 +111,8 @@ Description:    "A profile on the Bundle transaction for ITI-65 Provide Document
   - all resources shall be compliant with comprehensive unContained constraints, they may be marked comprehensive unContained
   - shall create a [SubmissionSet type List](StructureDefinition-IHE.MHD.Minimal.SubmissionSet.html) that is either minimal, comprehensive, or unContained
   - may create one or more [DocumentReference](StructureDefinition-IHE.MHD.Minimal.DocumentReference.html) that is either minimal, comprehensive, or unContained
-  - may create one or more [Binary](http://hl7.org/fhir/R4/binary.html)
+    - with a document as a [Binary](http://hl7.org/fhir/R4/binary.html)
+    - or, when implementing the **ITI-65 FHIR Document Publish** option, a [FHIR Document Bundle](http://hl7.org/fhir/R4/bundle.html)
   - may create/update one or more [Folder type List](StructureDefinition-IHE.MHD.Minimal.Folder.html) that is either minimal, comprehensive, or unContained
   - may create/update/read one [Patient](http://hl7.org/fhir/R4/patient.html)"
 * entry[SubmissionSet].resource only
@@ -133,7 +135,8 @@ Description:    "A profile on the Bundle transaction for ITI-65 Provide Document
   - all resources shall be compliant with comprehensive constraints, they may be marked comprehensive
   - shall create a [SubmissionSet type List](StructureDefinition-IHE.MHD.Minimal.SubmissionSet.html) that is either minimal, comprehensive, or unContained
   - may create one or more [DocumentReference](StructureDefinition-IHE.MHD.Minimal.DocumentReference.html) that is either minimal, comprehensive, or unContained
-  - may create one or more [Binary](http://hl7.org/fhir/R4/binary.html)
+    - with a document as a [Binary](http://hl7.org/fhir/R4/binary.html)
+    - or, when implementing the **ITI-65 FHIR Document Publish** option, a [FHIR Document Bundle](http://hl7.org/fhir/R4/bundle.html)
   - may create/update one or more [Folder type List](StructureDefinition-IHE.MHD.Minimal.Folder.html) that is either minimal, comprehensive, or unContained
   - may create/update/read one [Patient](http://hl7.org/fhir/R4/patient.html)"
 * entry[SubmissionSet].resource only
