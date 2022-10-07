@@ -1,14 +1,29 @@
 <div markdown="1" class="stu-note">
 
-### Significant changes since MHD Version 4.10
+### Significant changes since MHD Version 4.1.0
 - changed to AuditEvent profiling leveraging [Basic Audit Log Patterns (BALP) Release 1.1.0](https://profiles.ihe.net/ITI/BALP/index.html)
   - changes to RESTful type, and query subtype
-- Add an [Generate Metadata](1332_actor_options.html#13325-generate-metadata-option) that adds the [ITI-106](ITI-106.html) operation that allows for one structured/coded document to be published.
-  - Is the use of Operation preferrable to the Simplified Publish?
-- Add an [Simplified Publish](1332_actor_options.html#13324-simplified-publish-option) option that allows for one DocumentReference with the document in the .data element to be published, expecting the Document Recipient to create the SubmissionSet derived off of the DocumentReference and Community mapping policy.
-- Add an [ITI-65 FHIR Documents Publish](1332_actor_options.html#13326-iti-65-fhir-documents-publish-option) option with support in ITI-65 to include a FHIR Document Bundle as an alternative to Binary. This makes less the burden on the Document Source to seralize the content into an appropriate Binary format, as that requirement is moved to the Document Recipient. There are use-cases where the Document Recipient will use the FHIR Document Bundle directly, and there are requirements on the Document Recipient to seralize the FHIR Document Bundle when grouped with non-FHIR Actors like XDS/XDR/XDM.
-  - This is added as an option at this time to keep base compatibility with existing MHD. This may become normal functionality of ITI-65 eventually
-- Each of these new options may survive or may be removed. Please voice your interest, and sign up for IHE-Connectathon to test these options. Based on interest these Options may survive or be removed.
+- Added new features
+  - Add an [Generate Metadata](1332_actor_options.html#13325-generate-metadata-option) that adds the [ITI-106](ITI-106.html) operation that allows for one structured/coded document to be published.
+    - Is the use of Operation preferrable to the Simplified Publish?
+  - Add an [Simplified Publish](1332_actor_options.html#13324-simplified-publish-option) option that allows for one DocumentReference with the document in the .data element to be published, expecting the Document Recipient to create the SubmissionSet derived off of the DocumentReference and Community mapping policy.
+  - Add an [ITI-65 FHIR Documents Publish](1332_actor_options.html#13326-iti-65-fhir-documents-publish-option) option with support in ITI-65 to include a FHIR Document Bundle as an alternative to Binary. This makes less the burden on the Document Source to seralize the content into an appropriate Binary format, as that requirement is moved to the Document Recipient. There are use-cases where the Document Recipient will use the FHIR Document Bundle directly, and there are requirements on the Document Recipient to seralize the FHIR Document Bundle when grouped with non-FHIR Actors like XDS/XDR/XDM.
+    - This is added as an option at this time to keep base compatibility with existing MHD. This may become normal functionality of ITI-65 eventually
+  - Each of these new options may survive or may be removed. Please voice your interest, and sign up for IHE-Connectathon to test these options. Based on interest these Options may survive or be removed.
+- better clarity on types of Identifier
+
+
+Possibly will be in 4.1.1
+- added clarity on when ITI-65 would/should/could include a Patient resource, vs relying on Patient services like PIXm/PDQm/PMIR.
+- added a search parameter for searching against DocumentReference.content.attachment.creation
+- eliminated mandate for entryUUID in ITI-65 from the StructureDefinitions, it was already relaxed in the ITI-65 narrative.
+- allow .custodian element
+- allow .context.encounter element and indicate how it can be handled with legacy Document Sharing (e.g. XDS)
+- add clarification that search results do NOT need to be and may NOT be conformant to the MHD structureDefinition profiles. They will be in an enclosed environment, but the ITI-66 and ITI-67 transactions do not require that the results are compliant, simply that they meet the search parameters given.
+- added clarity on the benefits of using CXi datatype in DocumentEntry.referenceIdList to distinguish various kinds of identifiers.
+- moved status mapping table closer to where it is referenced
+- link testplan better to test tools
+- cleanup of various quality concerns illuminated by newer IG builder and validator.
 
 ### Significant changes since MHD Version 3.2
 * Due to "breaking" changes, this version of MHD is Version 4.0.1

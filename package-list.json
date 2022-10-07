@@ -12,16 +12,26 @@
   "current" : true
  },
  {
-  "version" : "4.1.0",
-  "date" : "2022-03-01",
-  "desc" : "Normative release for Trial Implementation - Technical Corrections and google analytics",
-  "path" : "https://profiles.ihe.net/ITI/MHD/4.1.0",
-  "status" : "trial-use",
+  "version" : "4.2.0-comment",
+  "date" : "2022-10-12",
+  "desc" : "Public-Comment for new features including alignment with BasicAudit, Generate Metadata, Simplified Publish, and Publish of FHIR-Documents.",
+  "path" : "https://profiles.ihe.net/ITI/MHD/4.2.0-comment",
+  "status" : "ballot",
   "fhirversion" : "4.0.1",
-  "sequence" : "Trial Implementation",
+  "sequence" : "Public Comment",
   "current" : true
  },
  {
+    "version" : "4.1.0",
+    "date" : "2022-03-01",
+    "desc" : "Normative release for Trial Implementation - Technical Corrections and google analytics",
+    "path" : "https://profiles.ihe.net/ITI/MHD/4.1.0",
+    "status" : "trial-use",
+    "fhirversion" : "4.0.1",
+    "sequence" : "Trial Implementation",
+    "current" : true
+   },
+   {
   "version" : "4.0.2",
   "date" : "2021-11-08",
   "desc" : "Normative release for Trial Implementation - IHE look-and-feel style change",

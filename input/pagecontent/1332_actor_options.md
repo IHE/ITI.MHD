@@ -25,7 +25,7 @@ between options when applicable are specified in notes.
             <td><a href="#13325-generate-metadata-option">Generate Metadata</a></td>
             </tr>
             <tr>
-            <td><a href="#13326-iti-65-fhir-documents-publish-option">ITI-64 FHIR documents Publish</a></td>
+            <td><a href="#13326-iti-65-fhir-documents-publish-option">ITI-65 FHIR documents Publish</a></td>
         </tr>
         <tr>
             <td rowspan='6'>Document Recipient</td>        
@@ -37,7 +37,6 @@ between options when applicable are specified in notes.
             <tr>        
             <td><a href="#13323-uncontained-reference-option">UnContained Reference</a></td>
             </tr>   
-            </tr>
             <tr>
             <td><a href="#13324-simplified-publish-option">Simplified Publish</a></td>
             </tr>
@@ -45,7 +44,7 @@ between options when applicable are specified in notes.
             <td><a href="#13325-generate-metadata-option">Generate Metadata</a></td>
             </tr>
             <tr>
-            <td><a href="#13326-iti-65-fhir-documents-publish-option">ITI-64 FHIR documents Publish</a></td>
+            <td><a href="#13326-iti-65-fhir-documents-publish-option">ITI-65 FHIR documents Publish</a></td>
         </tr>
         <tr>
             <td rowspan='1'>Document Consumer</td>

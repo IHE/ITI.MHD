@@ -153,7 +153,7 @@ The actors in this profile are described in more detail in the sections below.
 
 The Document Source is the producer and publisher of Document Content to a Document Recipient.
 
-The Document Source uses either the ITI-65 or ITI-105.
+The Document Source uses either the ITI-65, ITI-105, or ITI-106.
 
 The following CapabilityStatements define the Actor capabilities given the various Options
 * [Document Source](CapabilityStatement-IHE.MHD.DocumentSource.html) 
