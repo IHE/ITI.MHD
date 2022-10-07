@@ -7,7 +7,7 @@ DocumentSource -> DocumentRecipient : 1. invoke $generate-metadata operation
 activate DocumentSource
 activate DocumentRecipient
 DocumentRecipient -> DocumentRecipient : 2. inspect document \ncreate metadata
-DocumentSource <-- DocumentRecipient : 3. Document is Published
+DocumentSource <-- DocumentRecipient : 3. Document is published
 deactivate DocumentRecipient
 deactivate DocumentSource
 @enduml
