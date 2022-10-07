@@ -252,8 +252,6 @@ Resource Bundling shall comply with the guidelines in [ITI TF-2x: Appendix Z.1](
 
 #### 2:3.67.4.3 Expected Actions
 
-If the Document Responder returns an HTTP redirect response (HTTP status codes 301, 302, 303, or 307), the Document Consumer shall follow the redirect, but may stop processing if it detects a loop. See RFC7231 Section 6.4 Redirection 3xx.
-
 The Document Consumer shall process the results according to application-defined rules. The Document Consumer should be robust as the response may contain DocumentReference Resources that match the query parameters but are not compliant with the DocumentReference constraints defined here.
 
 #### 2:3.67.4.4 CapabilityStatement Resource

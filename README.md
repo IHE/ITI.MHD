@@ -6,10 +6,10 @@ This branch is dedicated to the improvements agreed to for 2022 Spring Quarter:
 - Constraints on Identifier - [#93](https://github.com/IHE/ITI.MHD/issues/93)
 - SubmisstionSet identifier 2.. cardionality is unclear - [#92](https://github.com/IHE/ITI.MHD/issues/92)
 - Allow DocumentReference.context.encounter - [#88](https://github.com/IHE/ITI.MHD/issues/88)
-- *Clarify replaceTo behaviour and mechanism* - [#100](https://github.com/IHE/ITI.MHD/issues/100)
+- Clarify replaceTo behaviour and mechanism - [#100](https://github.com/IHE/ITI.MHD/issues/100)
 - Support FHIR Document Bundle as an attachment type - [#91](https://github.com/IHE/ITI.MHD/issues/91)
 - Simplified publish - [#122](https://github.com/IHE/ITI.MHD/issues/122) -- Spencer
-- DocumentReference $generate operation -- [#123](https://github.com/IHE/ITI.MHD/issues/123)
+- DocumentReference $generate operation - [#123](https://github.com/IHE/ITI.MHD/issues/123)
 - Align AuditEvents with BasicAudit IG
 - include other fixes from master branch
     
@@ -30,3 +30,4 @@ This Continuous Build will appear http://build.fhir.org/ig/IHE/ITI.MHD/branches/
 
 Formal Publication at http://profiles.ihe.net/ITI/MHD
 
+History of publications at https://profiles.ihe.net/ITI/MHD/history.html 

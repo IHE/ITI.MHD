@@ -19,7 +19,7 @@
   "status" : "ballot",
   "fhirversion" : "4.0.1",
   "sequence" : "Public Comment",
-  "current" : true
+  "current" : false
  },
  {
     "version" : "4.1.0",

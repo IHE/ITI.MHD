@@ -221,8 +221,6 @@ Where the List Resource being returned is being translated from an XDS Submissio
 
 ##### 2:3.66.4.2.3 Expected Actions
 
-If the Document Responder returns an HTTP redirect response (HTTP status codes 301, 302, 303, or 307), the Document Consumer shall follow the redirect, but may stop processing if it detects a loop. See RFC7231 Section 6.4 Redirection 3xx.
-
 The Document Consumer shall process the results according to application-defined rules. The Document Consumer should be robust as the response may contain List Resources that match the query parameters but are not compliant with the List constraints defined in [ITI TF-3: 4.5](32_fhir_maps.html).
 
 #### 2:3.66.4.3 CapabilityStatement Resource
