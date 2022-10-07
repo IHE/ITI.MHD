@@ -4,7 +4,7 @@ hide footbox
 actor "Consumer of Documents"
 participant "Document Consumer" as DocumentConsumer
 participant "Document Responder" as DocumentResponder
-"Consumer of Documents" -> DocumentConsumer : 1. User Initiates Search
+"Consumer of Documents" -> DocumentConsumer : 1. User initiates Search
 activate "Consumer of Documents"
 activate DocumentConsumer
 DocumentConsumer -> DocumentResponder : 2. Query for available documents
