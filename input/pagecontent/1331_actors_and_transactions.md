@@ -224,6 +224,6 @@ For more details see the detailed [ITI-105 transaction description](ITI-105.html
 
 #### 1:33.1.2.6 Generate Metadata
 
-This transaction is used to generate DocumentReference metadata given a document. The Document Source provides a document. The Document Responder will create, update, or use an existing DocumentReference instance. The Document Source indicates if the document should also be persisted.
+This transaction is used to generate DocumentReference metadata given a document. The Document Source provides a document. The Document Responder will create, update, or use an existing DocumentReference instance. 
 
 For more details see the detailed [ITI-106 transaction description](ITI-106.html).

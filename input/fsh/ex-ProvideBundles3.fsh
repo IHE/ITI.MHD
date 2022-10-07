@@ -150,8 +150,22 @@ Usage: #inline
 * data = "VGhhbmtzIGZvciBhbGwgdGhlIGZpc2g="
 
 
+// example for artifacts presentation, replication of the #inline.
+Instance:   ex-patchParameters
+InstanceOf: PatchParameters
+Title:      "DocumentReference for Comprehensive metadata beeing replaced"
+Description: "Example of a comprehensive DocumentReference resource beeing replaced"
+Usage: #example
+* parameter.name = "operation"
+* parameter.part[0].name = "type"
+* parameter.part[=].valueCode = #replace
+* parameter.part[+].name = "path"
+* parameter.part[=].valueString = "DocumentReference.status"
+* parameter.part[+].name = "value"
+* parameter.part[=].valueCode = #superseded
+
 Instance:   aaaaaaaa-bbbb-cccc-ffff-e00333300002
-InstanceOf: Parameters
+InstanceOf: PatchParameters
 Title:      "DocumentReference for Comprehensive metadata beeing replaced"
 Description: "Example of a comprehensive DocumentReference resource beeing replaced"
 Usage: #inline

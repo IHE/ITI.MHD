@@ -78,11 +78,7 @@ The Document Responder may return other HTTP Status Codes. Guidance on handling 
 
 The Document Responder should complement the returned error code with a human readable description of the error condition.
 
-The Document Responder may return HTTP redirect responses (responses with HTTP Status Codes 301, 302, 303 or 307) in response to a request.See [RFC7231 Section 6.4 Redirection 3xx](https://tools.ietf.org/html/rfc7231#section-6.4). 
-
 ##### 2:3.68.4.2.3 Expected Actions
-
-If the Document Responder returns an HTTP redirect response (HTTP status codes 301, 302, 303, or 307), the Document Consumer shall follow the redirect, but may stop processing if it detects a loop. See [RFC7231 Section 6.4 Redirection 3xx](https://tools.ietf.org/html/rfc7231#section-6.4).
 
 The Document Consumer processes the results according to application-defined rules.
 

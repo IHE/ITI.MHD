@@ -1,6 +1,8 @@
 <div markdown="1" class="stu-note">
 
 ### Significant changes since MHD Version 4.1.0
+
+Version 4.2.0-comment
 - changed to AuditEvent profiling leveraging [Basic Audit Log Patterns (BALP) Release 1.1.0](https://profiles.ihe.net/ITI/BALP/index.html)
   - changes to RESTful type, and query subtype
 - Added new features
@@ -11,9 +13,9 @@
     - This is added as an option at this time to keep base compatibility with existing MHD. This may become normal functionality of ITI-65 eventually
   - Each of these new options may survive or may be removed. Please voice your interest, and sign up for IHE-Connectathon to test these options. Based on interest these Options may survive or be removed.
 - better clarity on types of Identifier
+- a method has been added to support DocumentReference replace that is used by the Document Source to mark the old/replaced DocumentReference instance as superseded.
 
-
-Possibly will be in 4.1.1
+#### Other changes
 - added clarity on when ITI-65 would/should/could include a Patient resource, vs relying on Patient services like PIXm/PDQm/PMIR.
 - added a search parameter for searching against DocumentReference.content.attachment.creation
 - eliminated mandate for entryUUID in ITI-65 from the StructureDefinitions, it was already relaxed in the ITI-65 narrative.
@@ -55,7 +57,8 @@ These issues were known as part of the publication, and IHE invites comments. Co
 * [MHD_065](https://github.com/IHE/ITI.MHD/issues/155): Is it needed to have a mapping between XDS RegistryError and FHIR OperationOutcome at the element level, and also addressing OperationOutcome.issue.code vocabulary could be mapped to the XDS error vocabulary between XDS https://profiles.ihe.net/ITI/TF/Volume3/ch-4.2.html#4.2.4.1 and FHIR OperationOutcome?
 * [MHD_066](https://github.com/IHE/ITI.MHD/issues/154): Note that On-Demand may become supported in FHIR R5 https://jira.hl7.org/browse/FHIR-22501
 * [MHD_067](https://github.com/IHE/ITI.MHD/issues/109): Potential use of $docref operation from HL7 Implementation Guide. This operation is currently in US-Core, and is being added/moved to IPA. It is unclear how MHD would be able to use just this operation without being fully dependant upon all of IPA.
-
+* [MHD_068](https://github.com/IHE/ITI.MHD/issues/197): Document Source "replace" methodology to better support FHIR backends like MHDS.
+ 
 ### Closed Issues
 These issues have been decided and documented in the publication.
 
