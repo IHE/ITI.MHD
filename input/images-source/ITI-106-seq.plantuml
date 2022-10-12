@@ -1,17 +1,17 @@
 @startuml
 hide footbox
 autonumber
-participant "Document Consumer" as DocumentConsumer
+participant "Document Source" as DocumentSource
 participant "Document Recipient" as DocumentRecipient
 autonumber
-activate DocumentConsumer
+activate DocumentSource
 activate DocumentRecipient
-DocumentConsumer -> DocumentRecipient : Generate Metadata (document)
+DocumentSource -> DocumentRecipient : Generate Metadata (document)
 DocumentRecipient -> DocumentRecipient : Extract the document
 DocumentRecipient -> DocumentRecipient : Create DocumentReference from document 
 DocumentRecipient --> DocumentRecipient : Create SubmissionSet from DocumentReference and context
 DocumentRecipient --> DocumentRecipient : persist (e.g. XDS Provide and Register)
-DocumentConsumer <-- DocumentRecipient : Generated DocumentReference
-deactivate DocumentConsumer
+DocumentSource <-- DocumentRecipient : Generated DocumentReference
+deactivate DocumentSource
 deactivate DocumentRecipient
 @enduml
