@@ -4,16 +4,14 @@
 id: ihe.iti.mhd
 canonical: https://profiles.ihe.net/ITI/MHD
 name: IHE_ITI_MHD
-version: 4.2.0-current
-fhirVersion: 4.0.1
 status: active
 title: "Mobile access to Health Documents (MHD)"
 description: ImplementationGuide for IHE IT Infrastructure Technical Framework Supplement Mobile access to Health Documents (MHD)
-#copyright: IHE http://www.ihe.net/Governance/#Intellectual_Property
-copyrightYear: 2020+
-releaseLabel: ci-build
+date: 2022-10-21
+version: 4.2.0-ballot
+#releaseLabel: ci-build
+releaselabel: ballot
 #releaseLabel: Trial-Implementation
-#date: 2022-03-01
 publisher:
   - name: IHE IT Infrastructure Technical Committee
   - url: https://www.ihe.net/ihe_domains/it_infrastructure/
@@ -23,7 +21,10 @@ contact:
     telecom:
       - system: email
         value: iti@ihe.net
+#copyright: IHE http://www.ihe.net/Governance/#Intellectual_Property
+copyrightYear: 2020+
 license: CC-BY-4.0
+fhirVersion: 4.0.1
 jurisdiction: 'http://unstats.un.org/unsd/methods/m49/m49.htm#001'
 dependencies:
   ihe.iti.balp:
@@ -104,14 +105,14 @@ pages:
     title: "3:4.5 FHIR Maps"
   testplan.md:
     title: "Test Plan"
-    extension: 
-      - url: http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status
-        valueCode: informative
+#    extension: 
+#      - url: http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status
+#        valueCode: informative
   a_issues.md:
     title: "Issues"
-    extension: 
-      - url: http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status
-        valueCode: informative
+#    extension: 
+#      - url: http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status
+#        valueCode: informative
       
 
 # ╭────────────────────────────────────────────menu.xml────────────────────────────────────────────╮
