@@ -18,19 +18,3 @@ History of publications at https://profiles.ihe.net/ITI/MHD/history.html
 
 The master branch, version 4.1.x, holds technical corrections independent of the Improvements 2022
 
-# Improvements 2022 - 4.2.x
-
-This branch is dedicated to the improvements agreed to for 2022 Fall Quarter as version 4.2.0 :
-
-- Explain when including Patient in the Bundle is acceptable - [#89](https://github.com/IHE/ITI.MHD/issues/89)
-- Constraints on Identifier - [#93](https://github.com/IHE/ITI.MHD/issues/93)
-- SubmisstionSet identifier 2.. cardionality is unclear - [#92](https://github.com/IHE/ITI.MHD/issues/92)
-- Allow DocumentReference.context.encounter - [#88](https://github.com/IHE/ITI.MHD/issues/88)
-- Clarify replaceTo behaviour and mechanism - [#100](https://github.com/IHE/ITI.MHD/issues/100)
-- Support FHIR Document Bundle as an attachment type - [#91](https://github.com/IHE/ITI.MHD/issues/91)
-- Simplified publish - [#122](https://github.com/IHE/ITI.MHD/issues/122) -- Spencer
-- DocumentReference $generate operation - [#123](https://github.com/IHE/ITI.MHD/issues/123)
-- Align AuditEvents with BasicAudit IG
-- include other fixes from master branch
-    
-ci-build -- http://build.fhir.org/ig/IHE/ITI.MHD/branches/Improvements-2022/index.html
