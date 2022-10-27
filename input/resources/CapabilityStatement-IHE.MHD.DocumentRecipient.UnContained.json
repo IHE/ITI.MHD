@@ -1,41 +1,14 @@
 {
   "resourceType": "CapabilityStatement",
   "id": "IHE.MHD.DocumentRecipient.UnContained",
-  "text": {
-    "status": "additional",
-    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">\n\tThis Requirements CapabilityStatement describes the <a href=\"1331_actors_and_transactions.html#133113-document-recipient\">Document Recipient actor</a> with UnContained declared Option.\n\t</div>"
-  },
   "url": "https://profiles.ihe.net/ITI/MHD/CapabilityStatement/IHE.MHD.DocumentRecipient.UnContained",
   "name": "IHE_MHD_DocumentRecipient_UnContained",
   "title": "Document Recipient implementing UnContained References Option",
   "status": "active",
   "experimental": false,
-  "date": "2021-02-22T00:00:00-05:00",
-  "publisher": "Integrating the Healthcare Enterprise (IHE)",
-  "contact": [
-    {
-      "name": "IHE",
-      "telecom": [
-        {
-          "system": "url",
-          "value": "http://ihe.net"
-        }
-      ]
-    },
-    {
-      "name": "John Moehrke",
-      "telecom": [
-        {
-          "system": "email",
-          "value": "JohnMoehrke@gmail.com"
-        }
-      ]
-    }
-  ],
   "description": "IHE ITI Mobile access to Health Documents (MHD) - Document Recipient - with UnContained declared Option.",
-  "copyright": "IHE http://www.ihe.net/Governance/#Intellectual_Property",
   "kind": "requirements",
-  "fhirVersion": "4.0.0",
+  "fhirVersion": "4.0.1",
   "format": [
     "application/fhir+xml",
     "application/fhir+json"
