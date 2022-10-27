@@ -1,23 +1,16 @@
 
-* Actors
-
+- Actors
   - [Document Source](1331_actors_and_transactions.html#133111-document-source)
-
   - [Document Recipient](1331_actors_and_transactions.html#133113-document-recipient)
-
   - [Document Consumer](1331_actors_and_transactions.html#133112-document-consumer)
-
   - [Document Responder](1331_actors_and_transactions.html#133114-document-responder)
-
-* Transactions
-
+- Transactions
   - [Provide Document Bundle \[ITI-65\]](ITI-65.html)
-
   - [Find Document Lists \[ITI-66\]](ITI-66.html)
-
   - [Find Document References \[ITI-67\]](ITI-67.html)
-
   - [Retrieve Document \[ITI-68\]](ITI-68.html)
+  - [Simplified Publish \[ITI-105\]](ITI-105.html)
+  - [Generate Metadata \[ITI-106\]](ITI-106.html)
 
 ## 1:33.4 MHD Overview
 The MHD Profile enables sharing of patient documents to, or from, mobile or constrained devices. Other IHE profiles, chiefly Cross-Enterprise Document Sharing (XDS), describe sharing of patient document in less constrained environments, and many of the concepts from those profiles are applicable to the MHD environment. For more information on IHE Document Sharing, see [Health Information Exchange: Enabling Document Sharing Using IHE Profiles](https://profiles.ihe.net/ITI/HIE-Whitepaper/index.html) White Paper.
@@ -37,22 +30,22 @@ These specific use cases can be generalized into two broad use cases. The first 
 ### 1:33.4.2 Use Case 1: Publication of new Documents
 
 #### 1:33.4.2.1 Publication of new documents Use Case Description
-In this use case, a new document or set of documents is published from the mobile device. For example, a mobile device is a medical device that is submitting new health measurements, or a mobile device has a user-interface used to capture user input such as a Patient Consent. This device-created content is formed by the application, implementing the MHD Document Source, into a Document and submitted with the metadata.
+In this use case, a new document or set of documents is published from the mobile device. For example, a mobile device is a medical device that is submitting new health measurements, or a mobile device has a user-interface used to capture user input such as a Patient Consent. The mobile device does not need to be classically mobile, just simply one using the http REST technology commonly available on mobile devices. This device-created content is formed by the application, implementing the MHD Document Source, into a Document and submitted with the metadata.
 
 This use case presumes that the mobile device knows or discovers the patient identity. The patient identity might be obtained through some IHE transactional method such as the Patient Demographics Query for Mobile [PDQm](https://profiles.ihe.net/ITI/TF/Volume1/ch-38.html) or Patient Identifier Cross-Reference for Mobile [PIXm](https://profiles.ihe.net/ITI/TF/Volume1/ch-41.html) Profile. The patient id might simply be entered via some device interface (RFID, Bar-Code), a user interface, or be specified in a configuration setting (e.g., mobile PHR application). The use case also allows for identity cross-referencing to be implemented by the Document Recipient. 
 
 This use case presumes that the sending mobile device knows the location of the receiving URL endpoints, likely through a configuration setting, or through a workflow driven by a web interface.
 
 #### 1:33.4.2.2 Publication of new documents Process Flow
-The publication of a new document(s) is done using the Provide Document Bundle [ITI-65](ITI-65.html) transaction, which carries both the document and its metadata. This transaction is analogous to an XDS Provide and Register Document Set-b [ITI-41](https://profiles.ihe.net/ITI/TF/Volume2/ITI-41.html) transaction.
+The publication of a new document(s) is done using the Provide Document Bundle [ITI-65](ITI-65.html) transaction or the Simplified Publish [ITI-105](ITI-105.html) transaction, which carries both the document and its metadata. The [ITI-65](ITI-65.html) transaction is analogous to an XDS Provide and Register Document Set-b [ITI-41](https://profiles.ihe.net/ITI/TF/Volume2/ITI-41.html) transaction. The [ITI-105](ITI-105.html) is a more simple transaction where the publication needs are more simple, moving the SubmissionSet mapping task to the Document Recipient.
 
 <div>
 {%include usecase1-processflow.svg%}
 </div>
-
-<div style="clear: left"/>
+<br clear="all">
 
 **Figure 1:33.4.2.2-1: Use Case 1 Process Flow**
+
 
 ### 1:33.4.3 Use Case 2: Discovery and Retrieval of existing documents
 
@@ -69,20 +62,34 @@ The Retrieve Document [\[ITI-68\]](ITI-68.html) transaction is used to get the d
 <div>
 {%include usecase2-processflow.svg%}
 </div>
-<div style="clear: left"/>
+<br clear="all">
 
 **Figure 1:33.4.3.2-1: Basic Process Flow in MHD Profile**
 
-### 1:33.4.4 Mapping to RESTful operators
-The MHD Profile defines a set of transactions against FHIR Resources. These are summarized in Table 1:33.4.4-1. MHD does not use any additional extended or custom methods.
 
-**Table 1:33.4.4-1: REST Methods and Resources**
+### 1:33.4.4 Use Case 3: Generate Metadata and Publish Process Flow
+An alternative flow to Use Case 1, supports the case where the Document Source has only a structured and coded document such as CDA, or FHIR-Document. The Document Recipient inspects the document and generates a DocumentReference. The Document Recipient may need to create a SubmissionSet depending on the persistance and grouping requirements. 
+
+The Generate Metadata is a FHIR Operation defined in the Generate Metadata [ITI-106](ITI-106.html) transaction. 
+
+<div>
+{%include usecase3-processflow.svg%}
+</div>
+<br clear="all">
+
+**Figure 1:33.4.4-1: Use Case 3 Process Flow**
+
+
+### 1:33.4.5 Mapping to RESTful operators
+The MHD Profile defines a set of transactions against FHIR Resources. These are summarized in Table 1:33.4.5-1. MHD does not use any additional extended or custom methods.
+
+**Table 1:33.4.5-1: REST Methods and Resources**
 
 | HTTP<br/>Method | Transactions on <br/> DocumentReference | Transactions on <br/> List | Transactions on Binary <br/> (document) |
 |--------|----------------------------------|------------------------------|----------------------------|
 | GET    | Find Document Reference [ITI-67] | Find Document Lists [ITI-66] | Retrieve Document [ITI-68] |
 | PUT    | Not Specified                    | Not Specified                | Not Specified              |
-| POST   | Provide Document Bundle [ITI-65] | Provide Document Bundle [ITI-65] | Provide Document Bundle [ITI-65] |
+| POST   | Provide Document Bundle [ITI-65]<br/>Simplified Publish [ITI-105] | Provide Document Bundle [ITI-65] | Provide Document Bundle [ITI-65] |
 | DELETE | Not Specified                    | Not Specified                | Not Specified              |
 | UPDATE | Not Specified                    | Not Specified                | Not Specified              |
 | HEAD   | Not Specified                    | Not Specified                | Not Specified              |

@@ -13,7 +13,12 @@ Description:    "Defines constraints on the AuditEvent Resource to record when a
 * modifierExtension 0..0
 * type = DCM#110107 "Import"
 * action = #C
-* subtype = urn:ihe:event-type-code#ITI-65 "Provide Document Bundle"
+* subtype ^slicing.discriminator.type = #value
+* subtype ^slicing.discriminator.path = "$this"
+* subtype ^slicing.rules = #open // allow other codes
+* subtype 1..
+* subtype contains iti65 1..1
+* subtype[iti65] = urn:ihe:event-type-code#ITI-65 "Provide Document Bundle"
 // * severity in R5
 * recorded 1..1 // already required
 * outcome 1..1
@@ -35,6 +40,8 @@ Description:    "Defines constraints on the AuditEvent Resource to record when a
 * agent[documentRecipient].who 1..1
 * agent[documentRecipient] obeys val-audit-source
 * agent[documentRecipient].network 1..1
+* agent[documentSource] ^short = "Document Source"
+* agent[documentRecipient] ^short = "Document Recipient"
 * entity 2..2
 * entity ^slicing.discriminator.type = #pattern
 * entity ^slicing.discriminator.path = "type"
@@ -51,6 +58,8 @@ Description:    "Defines constraints on the AuditEvent Resource to record when a
 * entity[submissionSet].role = http://terminology.hl7.org/CodeSystem/object-role#20 "Job"
 * entity[submissionSet].what 1..1
 * entity[submissionSet].what only Reference(List) 
+* entity[patient] ^short = "Patient"
+* entity[submissionSet] ^short = "SubmissionSet"
 
 Invariant: val-audit-source
 Description: "The Audit Source is this agent too."
@@ -72,7 +81,12 @@ Description:    "Defines constraints on the AuditEvent Resource to record when a
 * modifierExtension 0..0
 * type = DCM#110106 "Export"
 * action = #R
-* subtype = urn:ihe:event-type-code#ITI-65 "Provide Document Bundle"
+* subtype ^slicing.discriminator.type = #value
+* subtype ^slicing.discriminator.path = "$this"
+* subtype ^slicing.rules = #open // allow other codes
+* subtype 1..
+* subtype contains iti65 1..1
+* subtype[iti65] = urn:ihe:event-type-code#ITI-65 "Provide Document Bundle"
 // * severity in R5
 * recorded 1..1 // already required
 * outcome 1..1
@@ -94,6 +108,8 @@ Description:    "Defines constraints on the AuditEvent Resource to record when a
 * agent[documentRecipient].type = DCM#110152 "Destination Role ID"
 * agent[documentRecipient].who 1..1
 * agent[documentRecipient].network 1..1
+* agent[documentSource] ^short = "Document Source"
+* agent[documentRecipient] ^short = "Document Recipient"
 * entity 2..2
 * entity ^slicing.discriminator.type = #pattern
 * entity ^slicing.discriminator.path = "type"
@@ -110,4 +126,6 @@ Description:    "Defines constraints on the AuditEvent Resource to record when a
 * entity[submissionSet].role = http://terminology.hl7.org/CodeSystem/object-role#20 "Job"
 * entity[submissionSet].what 1..1
 * entity[submissionSet].what only Reference(List) 
+* entity[patient] ^short = "Patient"
+* entity[submissionSet] ^short = "SubmissionSet"
 

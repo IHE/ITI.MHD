@@ -4,7 +4,7 @@ This is the **Requirements** CapabilityStatement for a [Document Responder](1331
 {%include QueryActors.svg%}
 </div>
 
-<div style="clear: left"/>
+<br clear="all">
 
 **Figure: Query Actors Interactions**
 

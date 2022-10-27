@@ -5,10 +5,10 @@ Description:      "Folder in List resource conforming only to Minimal metadata"
 Usage: #example
 * meta.security = http://terminology.hl7.org/CodeSystem/v3-ActReason#HTEST
 * identifier[entryUUID].system = "urn:ietf:rfc:3986"
-* identifier[entryUUID].value = "urn:oid:1.2.129.6.58.92.88337.6"
+* identifier[entryUUID].value = "urn:uuid:5e2d58a3-2286-4a0e-8637-86f51be2d184"
 * identifier[entryUUID].use = #official
-* identifier[uniqueId].system = "http://example.org/documents"
-* identifier[uniqueId].value = "23425234-23476"
+* identifier[uniqueId].system = "urn:ietf:rfc:3986"
+* identifier[uniqueId].value = "urn:oid:1.2.840.113556.1.8000.2554.58783.21864.3474.19410.44358.58254.41281.46391"
 * identifier[uniqueId].use = #usual
 * status = #current
 * mode = #working
@@ -24,10 +24,10 @@ Usage: #example
 * meta.security = http://terminology.hl7.org/CodeSystem/v3-ActReason#HTEST
 * subject = Reference(Patient/ex-patient)
 * identifier[entryUUID].system = "urn:ietf:rfc:3986"
-* identifier[entryUUID].value = "urn:oid:1.2.129.6.58.92.88337.6"
+* identifier[entryUUID].value = "urn:uuid:0a468477-5dd1-4a81-bddf-8d5ee9b0cac3"
 * identifier[entryUUID].use = #official
-* identifier[uniqueId].system = "http://example.org/documents"
-* identifier[uniqueId].value = "23425234-23476"
+* identifier[uniqueId].system = "urn:ietf:rfc:3986"
+* identifier[uniqueId].value = "urn:oid:1.2.840.113556.1.8000.2554.58783.21864.3474.19410.44358.58254.41281.46341"
 * identifier[uniqueId].use = #usual
 * status = #current
 * mode = #working
@@ -65,10 +65,10 @@ Description:      "Folder in List resource conforming only to Minimal metadata"
 Usage: #inline
 * meta.security = http://terminology.hl7.org/CodeSystem/v3-ActReason#HTEST
 * identifier[entryUUID].system = "urn:ietf:rfc:3986"
-* identifier[entryUUID].value = "urn:oid:1.2.129.6.58.92.88337.6"
+* identifier[entryUUID].value = "urn:uuid:29bef0e7-bb06-46b8-8241-ca2a5f8f7f2c"
 * identifier[entryUUID].use = #official
-* identifier[uniqueId].system = "http://example.org/documents"
-* identifier[uniqueId].value = "23425234-23476"
+* identifier[uniqueId].system = "urn:ietf:rfc:3986"
+* identifier[uniqueId].value = "urn:oid:1.2.840.113556.1.8000.2554.58783.21864.3474.19410.44358.58254.41281.46342"
 * identifier[uniqueId].use = #usual
 * status = #current
 * mode = #working

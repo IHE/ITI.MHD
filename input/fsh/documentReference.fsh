@@ -1,3 +1,10 @@
+Profile:        PatchParameters
+Parent:         Parameters
+Id:             IHE.MHD.Patch.Parameters
+Title:          "MHD DocumentReference Patch Parameters"
+Description:    "A profile on the Parameters resource to update DocumentReference" 
+* parameter.name = "operation"
+
 // equivalent to MHD Minimal DocumentReference
 Profile:        MinimalDocumentReference
 Parent:         DocumentReference
@@ -10,9 +17,16 @@ Description:    "A profile on the DocumentReference resource for MHD with minima
 - ebRIM implementation at [3:4.2.3.2 Document Entry](https://profiles.ihe.net/ITI/TF/Volume3/ch-4.2.html#4.2.3.2).
 - with use-cases and constraints found in [3:4.3 Additional Document Sharing Requirements](https://profiles.ihe.net/ITI/TF/Volume3/ch-4.3.html#4.3)"
 * modifierExtension 0..0
+* masterIdentifier only UniqueIdIdentifier
 * masterIdentifier 1..1
 * identifier 0..* MS
+* identifier ^slicing.discriminator.type = #value
+* identifier ^slicing.discriminator.path = "use"
+* identifier ^slicing.rules = #open
+* identifier contains entryUUID 0..*
+* identifier[entryUUID] only EntryUUIDIdentifier
 * status 1..1
+* status from DocumentReferenceStats (required)
 * docStatus 0..0
 * type 0..1 MS
 * category 0..1 MS
@@ -36,14 +50,20 @@ Description:    "A profile on the DocumentReference resource for MHD with minima
 * content.attachment.title 0..1
 * content.attachment.creation 0..1 MS
 * content.format 0..1 MS
-//* content.format from http://ihe.net/fhir/ihe.formatcode.fhir/ValueSet/formatcode (preferred)
-* context.encounter 0..0
+* content.format from http://ihe.net/fhir/ihe.formatcode.fhir/ValueSet/formatcode (preferred)
+//* context.encounter 0..0
 * context.event 0..*
 * context.period 0..1 MS
 * context.facilityType 0..1 MS
 * context.practiceSetting 0..1 MS
 * context.sourcePatientInfo 0..1 MS
 * context.related 0..*
+* obeys iti-mhd-repl
+
+Invariant:   iti-mhd-repl
+Description: "a DocumetReference replacements needs to relate to a superseded DocumentReference"
+Expression:  "relatesTo.empty() or (relatesTo.code='replaces' implies relatesTo.target.exists())"
+Severity:    #error
 
 // equivalent to MHD DocumentReference Comprehensive UnContained Option
 Profile:        UnContainedComprehensiveDocumentReference
@@ -116,7 +136,8 @@ Title: "XDS and MHD Mapping"
 * content.attachment.title -> "DocumentEntry.title"
 * type -> "DocumentEntry.typeCode"
 * masterIdentifier -> "DocumentEntry.uniqueId"
-* context.related -> "DocumentEntry.referenceIdList"
+* context.encounter -> "DocumentEntry.referenceIdList with CXi encoding for urn:ihe:iti:xds:2015:encounterId"
+* context.related -> "DocumentEntry.referenceIdList using CXi encoding for type when possible"
 * meta.profile -> "DocumentEntry.limitedMetadata"
 // DocumentEntry.objectType -- is not represented
 * relatesTo -> "DocumentEntry Associations"
@@ -161,4 +182,35 @@ Usage: #definition
 * group.element[=].target.equivalence = #inexact
 * group.element[=].target.code = #transforms
 * group.element[=].target.comment = "An XDS IsSnapshotOf is a new instance of what is defined in the parent DocumentEntry (DocumentReference), thus it is a transform in a manner, but is not exactly a transform of the parent document."
+
+
+ValueSet: DocumentReferenceStats
+Title: "MHD DocumentReference status codes"
+Description: "ValueSet that does not include entered-in-error as that does not map"
+* ^experimental = false
+* http://hl7.org/fhir/document-reference-status#current
+* http://hl7.org/fhir/document-reference-status#superseded
+
+
+Instance:   FhirStatusVsStatusCode
+InstanceOf: ConceptMap
+Title:      "FHIR status vs ebRIM Status Type Code"
+Description: "map between XDS ebRIM Status Type Codes and MHD FHIR DocumentReference.status code."
+Usage: #definition
+* url = "https://profiles.ihe.net/ITI/MHD/ConceptMap/FhirStatusVsStatusCode"
+* name =  "FhirStatusVsStatusCode"
+* status = #active
+* date = 2022-05-05
+* publisher = "IHE"
+* description = "map between XDS ebRIM Status Type Codes and MHD FHIR DocumentReference.status code. Table 2:3.67.4.1.3.1-2. Note that the codes given are used without a system in both FHIR and ebRIM."
+* purpose = "show the mapping between ebRIM Status Type Codes and FHIR .status code"
+* group.source = "urn:ietf:rfc:3986"
+* group.target = "http://hl7.org/fhir/document-reference-status"
+* group.element[+].code = #urn:oasis:names:tc:ebxml-regrep:StatusType:Approved
+* group.element[=].target.equivalence = #equal
+* group.element[=].target.code = #current
+* group.element[+].code = #urn:oasis:names:tc:ebxml-regrep:StatusType:Deprecated
+* group.element[=].target.equivalence = #equal
+* group.element[=].target.code = #superseded
+
 

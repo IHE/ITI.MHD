@@ -10,8 +10,13 @@ Description:    "A profile on the List resource for MHD use as a Folder with min
 - ebRIM implementation at [3:4.2.3.4 Folder Attributes](https://profiles.ihe.net/ITI/TF/Volume3/ch-4.2.html#4.2.3.4).
 - with use-cases and constraints found in [3:4.3 Additional Document Sharing Requirements](https://profiles.ihe.net/ITI/TF/Volume3/ch-4.3.html#4.3)"
 * extension[designationType] 0..* MS
-* identifier 0..*
-* identifier ^short = "would hold Folder.entryUUID and Folder.uniqueId"
+* identifier ^slicing.discriminator.type = #value
+* identifier ^slicing.discriminator.path = "use"
+* identifier ^slicing.rules = #open
+* identifier contains uniqueId 0..1
+* identifier[uniqueId] only UniqueIdIdentifier
+* identifier contains entryUUID 0..*
+* identifier[entryUUID] only EntryUUIDIdentifier
 //* status 
 * mode = #working
 * title 0..1
