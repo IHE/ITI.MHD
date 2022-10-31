@@ -16,6 +16,9 @@
   "rest": [
     {
       "mode": "client",
+      "security": {
+			  "description": "Recommend [ATNA](https://profiles.ihe.net/ITI/TF/Volume1/ch-9.html), encouraged [IHE-IUA](https://profiles.ihe.net/ITI/IUA/index.html) or SMART-on-FHIR"
+      },
       "resource": [
         {
           "type": "DocumentReference",
