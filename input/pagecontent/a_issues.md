@@ -1,5 +1,32 @@
 <div markdown="1" class="stu-note">
 
+### Significant changes since MHD Version 4.1.0
+
+Version 4.2.0-comment
+- changed to AuditEvent profiling leveraging [Basic Audit Log Patterns (BALP) Release 1.1.0](https://profiles.ihe.net/ITI/BALP/index.html)
+  - changes to RESTful type, and query subtype
+- Added new features
+  - Add an [Generate Metadata](1332_actor_options.html#13325-generate-metadata-option) that adds the [ITI-106](ITI-106.html) operation that allows for one structured/coded document to be published.
+    - Is the use of Operation preferrable to the Simplified Publish?
+  - Add an [Simplified Publish](1332_actor_options.html#13324-simplified-publish-option) option that allows for one DocumentReference with the document in the .data element to be published, expecting the Document Recipient to create the SubmissionSet derived off of the DocumentReference and Community mapping policy.
+  - Add an [ITI-65 FHIR Documents Publish](1332_actor_options.html#13326-iti-65-fhir-documents-publish-option) option with support in ITI-65 to include a FHIR Document Bundle as an alternative to Binary. This makes less the burden on the Document Source to seralize the content into an appropriate Binary format, as that requirement is moved to the Document Recipient. There are use-cases where the Document Recipient will use the FHIR Document Bundle directly, and there are requirements on the Document Recipient to seralize the FHIR Document Bundle when grouped with non-FHIR Actors like XDS/XDR/XDM.
+    - This is added as an option at this time to keep base compatibility with existing MHD. This may become normal functionality of ITI-65 eventually
+  - Each of these new options may survive or may be removed. Please voice your interest, and sign up for IHE-Connectathon to test these options. Based on interest these Options may survive or be removed.
+- better clarity on types of Identifier
+- a method has been added to support DocumentReference replace that is used by the Document Source to mark the old/replaced DocumentReference instance as superseded.
+
+#### Other changes
+- added clarity on when ITI-65 would/should/could include a Patient resource, vs relying on Patient services like PIXm/PDQm/PMIR.
+- added a search parameter for searching against DocumentReference.content.attachment.creation
+- eliminated mandate for entryUUID in ITI-65 from the StructureDefinitions, it was already relaxed in the ITI-65 narrative.
+- allow .custodian element
+- allow .context.encounter element and indicate how it can be handled with legacy Document Sharing (e.g. XDS)
+- add clarification that search results do NOT need to be and may NOT be conformant to the MHD structureDefinition profiles. They will be in an enclosed environment, but the ITI-66 and ITI-67 transactions do not require that the results are compliant, simply that they meet the search parameters given.
+- added clarity on the benefits of using CXi datatype in DocumentEntry.referenceIdList to distinguish various kinds of identifiers.
+- moved status mapping table closer to where it is referenced
+- link testplan better to test tools
+- cleanup of various quality concerns illuminated by newer IG builder and validator.
+
 ### Significant changes since MHD Version 3.2
 * Due to "breaking" changes, this version of MHD is Version 4.0.1
 * Canonical URLs are different, using '.' rather than '_' as the underbar is not allowed in Canonical URLs.
@@ -16,20 +43,22 @@ Please review the open issues and provide your response to the questions and sta
 IHE welcomes [New Issues](https://github.com/IHE/ITI.MHD/issues/new/choose) from the GitHub community. 
 For those without GitHub access, issues may be submitted to the [Public Comment form](https://www.ihe.net/resources/public_comment/).
 
-As issues are submitted they will be managed on the [PDQm GitHub Issues](https://github.com/IHE/ITI.MHD/issues), where discussion and workarounds may be found. These issues, when critical, will be processed using the normal [IHE Change Proposal](https://wiki.ihe.net/index.php/Category:CPs) management and balloting. 
+As issues are submitted they will be managed on the [MHD GitHub Issues](https://github.com/IHE/ITI.MHD/issues), where discussion and workarounds may be found. These issues, when critical, will be processed using the normal [IHE Change Proposal](https://wiki.ihe.net/index.php/Category:CPs) management and balloting. 
 It is important to note that as soon as a Change Proposal is approved, it carries the same weight as a published Implementation Guide (i.e., it is testable at an [IHE Connectathon](https://www.ihe.net/participate/connectathon/) from the time it is approved, even if it will not be integrated until several months later).
 
 ### Open Issues
-These issues were known as part of the publication, and IHE invites comments.
+These issues were known as part of the publication, and IHE invites comments. Comments can be submitted to [iticomments@googlegroups.com](mailto:iticomments@googlegroups.com) or may be submitted as comments to the specific GitHUB issue identified for that Open-Issue.
 
-* MHD_063: Should MHD defined CapabilityStatement requirements so that a client can determine that the server supports MHD and which MHD server actor? Today we do require servers to support metadata endpoint returning their CapabilityStatment, but do not require it to contain anything specifically. We could first require that the CapabilityStatment.implementationGuide be populated with MHD canonical IG URL. We could additionally require specific .transaction values for DocumentRecipient, and .rest.resource.supportedProfile for DocumentResponder. Might we need an extension in .transaction to be more specific for Document Recipient? Should a DocumentRecipient need to publish that it is capable of receiving a create/update on these .rest resources (which we only defined thru the transaction, not individually REST)? Might we add an extension on CapabilityStatement.implementationGuide to hold the actor name and options? 
-* MHD_061: The new IUA supplement includes guidance on use of OAuth scopes when grouped with MHD. That text updates MHD, but be maintained in MHD until IUA goes Final Text. see https://profiles.ihe.net/ITI/IUA/index.html#33-mhd-profile
-* MHD_055: List.source does not allow for Organization which is needed for SubmissionSet.author. So created an extension (SourceOrg) to hold the SubmissionSet sourceId as a Reference(Organization). This could be reverted if the submitted CR changes R5 https://jira.hl7.org/browse/FHIR-30154 
-* MHD_058: The profile requires that the document submitted is encoded in a FHIR Binary. Is there interest in also allowing a Bundle of type Document? This would be useful when publishing FHIR-Documents. The FHIR-Document would still need to be seralized into a Bundle of type Document, but that Bundle would not need to be further encoded into a Binary (e.g. base64 encoding). Note that the mime-type in this case would be forced to be the same mime-type as the ITI-65 Bundle, where a Document Source wants to encode ITI-65 in a mime-type that is different than the document, the Binary methodology would need to be used.
+* [MHD_063](https://github.com/IHE/ITI.MHD/issues/158): Should MHD defined CapabilityStatement requirements so that a client can determine that the server supports MHD and which MHD server actor? Today we do require servers to support metadata endpoint returning their CapabilityStatment, but do not require it to contain anything specifically. We could first require that the CapabilityStatment.implementationGuide be populated with MHD canonical IG URL. We could additionally require specific .transaction values for DocumentRecipient, and .rest.resource.supportedProfile for DocumentResponder. Might we need an extension in .transaction to be more specific for Document Recipient? Should a DocumentRecipient need to publish that it is capable of receiving a create/update on these .rest resources (which we only defined thru the transaction, not individually REST)? Might we add an extension on CapabilityStatement.implementationGuide to hold the actor name and options? 
+* [MHD_061](https://github.com/IHE/ITI.MHD/issues/157): The new IUA supplement includes guidance on use of OAuth scopes when grouped with MHD. That text updates MHD, but be maintained in MHD until IUA goes Final Text. see https://profiles.ihe.net/ITI/IUA/index.html#33-mhd-profile
+* [MHD_055](https://github.com/IHE/ITI.MHD/issues/156): List.source does not allow for Organization which is needed for SubmissionSet.author. So created an extension (SourceOrg) to hold the SubmissionSet sourceId as a Reference(Organization). This could be reverted if the submitted CR changes R5 https://jira.hl7.org/browse/FHIR-30154 
+* [MHD_058](https://github.com/IHE/ITI.MHD/issues/91): The profile requires that the document submitted is encoded in a FHIR Binary. Is there interest in also allowing a Bundle of type Document? This would be useful when publishing FHIR-Documents. The FHIR-Document would still need to be seralized into a Bundle of type Document, but that Bundle would not need to be further encoded into a Binary (e.g. base64 encoding). Note that the mime-type in this case would be forced to be the same mime-type as the ITI-65 Bundle, where a Document Source wants to encode ITI-65 in a mime-type that is different than the document, the Binary methodology would need to be used.
   * note that retrieve (ITI-68) does allow the Document Client to ask for the document content in various mime types, thus allowing support for preferred mime type encoding if the Document Responder has the ability to return the content in a encoding other than the DocumentReference indicates.
-* MHD_065: Is it needed to have a mapping between XDS RegistryError and FHIR OperationOutcome at the element level, and also addressing OperationOutcome.issue.code vocabulary could be mapped to the XDS error vocabulary between XDS https://profiles.ihe.net/ITI/TF/Volume3/ch-4.2.html#4.2.4.1 and FHIR OperationOutcome?
-* MHD_066: Note that On-Demand may become supported in FHIR R5 https://jira.hl7.org/browse/FHIR-22501
-
+* [MHD_065](https://github.com/IHE/ITI.MHD/issues/155): Is it needed to have a mapping between XDS RegistryError and FHIR OperationOutcome at the element level, and also addressing OperationOutcome.issue.code vocabulary could be mapped to the XDS error vocabulary between XDS https://profiles.ihe.net/ITI/TF/Volume3/ch-4.2.html#4.2.4.1 and FHIR OperationOutcome?
+* [MHD_066](https://github.com/IHE/ITI.MHD/issues/154): Note that On-Demand may become supported in FHIR R5 https://jira.hl7.org/browse/FHIR-22501
+* [MHD_067](https://github.com/IHE/ITI.MHD/issues/109): Potential use of $docref operation from HL7 Implementation Guide. This operation is currently in US-Core, and is being added/moved to IPA. It is unclear how MHD would be able to use just this operation without being fully dependant upon all of IPA.
+* [MHD_068](https://github.com/IHE/ITI.MHD/issues/197): Document Source "replace" methodology to better support FHIR backends like MHDS.
+ 
 ### Closed Issues
 These issues have been decided and documented in the publication.
 

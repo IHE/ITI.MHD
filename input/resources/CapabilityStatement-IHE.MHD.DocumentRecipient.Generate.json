@@ -1,0 +1,49 @@
+{
+  "resourceType": "CapabilityStatement",
+  "id": "IHE.MHD.DocumentRecipient.Generate",
+  "url": "https://profiles.ihe.net/ITI/MHD/CapabilityStatement/IHE.MHD.DocumentRecipient.Generate",
+  "name": "IHE_MHD_DocumentRecipient_Generate",
+  "title": "Document Recipient implementing Generate Metadata Option",
+  "status": "active",
+  "experimental": false,
+  "description": "IHE ITI Mobile access to Health Documents (MHD) - Document Recipient - with Generate Metadata declared Option.",
+  "kind": "requirements",
+  "fhirVersion": "4.0.1",
+  "format": [
+    "application/fhir+xml",
+    "application/fhir+json"
+  ],
+  "rest": [
+    {
+      "mode": "server",
+      "security": {
+			  "description": "Recommend [ATNA](https://profiles.ihe.net/ITI/TF/Volume1/ch-9.html), encouraged [IHE-IUA](https://profiles.ihe.net/ITI/IUA/index.html) or SMART-on-FHIR"
+      },
+      "resource": [
+        {
+          "type": "DocumentReference",
+          "operation": [
+            {
+              "name": "$generate-metadata",
+              "definition": "https://profiles.ihe.net/ITI/MHD/OperationDefinition/generate-metadata"
+            }
+          ]
+        }
+      ],
+      "interaction": [
+        {
+          "code": "transaction",
+          "documentation": "https://profiles.ihe.net/ITI/MHD/StructureDefinition/IHE.MHD.Minimal.ProvideBundle"
+        },
+        {
+          "code": "transaction",
+          "documentation": "https://profiles.ihe.net/ITI/MHD/StructureDefinition/IHE.MHD.UnContained.Comprehensive.ProvideBundle"
+        },
+        {
+          "code": "transaction",
+          "documentation": "https://profiles.ihe.net/ITI/MHD/StructureDefinition/IHE.MHD.Comprehensive.ProvideBundle"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "resourceType": "CapabilityStatement",
+  "id": "IHE.MHD.DocumentSource.Fdoc",
+  "url": "https://profiles.ihe.net/ITI/MHD/CapabilityStatement/IHE.MHD.DocumentSource.Fdoc",
+  "name": "IHE_MHD_DocumentSource_Fdoc",
+  "title": "Document Source (publisher) implementing ITI-65 FHIR Documents Publish Option",
+  "status": "active",
+  "experimental": false,
+  "description": "IHE ITI Mobile access to Health Documents (MHD) - Document Source (publisher) - with ITI-65 FHIR Documents Publish Option.",
+  "kind": "requirements",
+  "fhirVersion": "4.0.1",
+  "format": [
+    "application/fhir+xml",
+    "application/fhir+json"
+  ],
+  "rest": [
+    {
+      "mode": "client",
+      "security": {
+			  "description": "Recommend [ATNA](https://profiles.ihe.net/ITI/TF/Volume1/ch-9.html), encouraged [IHE-IUA](https://profiles.ihe.net/ITI/IUA/index.html) or SMART-on-FHIR"
+      },
+      "interaction": [
+        {
+          "code": "transaction",
+          "documentation": "https://profiles.ihe.net/ITI/MHD/StructureDefinition/IHE.MHD.Minimal.ProvideBundle"
+        },
+        {
+          "code": "transaction",
+          "documentation": "https://profiles.ihe.net/ITI/MHD/StructureDefinition/IHE.MHD.UnContained.Comprehensive.ProvideBundle"
+        },
+        {
+          "code": "transaction",
+          "documentation": "https://profiles.ihe.net/ITI/MHD/StructureDefinition/IHE.MHD.Comprehensive.ProvideBundle"
+        }
+      ]
+    }
+  ]
+}

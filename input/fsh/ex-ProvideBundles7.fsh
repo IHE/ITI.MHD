@@ -20,8 +20,8 @@ Usage: #example
 * entry[SubmissionSet].resource = aaaaaaaa-bbbb-cccc-dddd-e00777700001
 * entry[SubmissionSet].request.url = "List"
 * entry[SubmissionSet].request.method = #POST
-* entry[Folders].fullUrl = "List/e00777700005"
-* entry[Folders].resource = e00777700005
+* entry[Folders].fullUrl = "urn:uuid:aaaaaaaa-bbbb-cccc-dddd-e00777700005"
+* entry[Folders].resource = aaaaaaaa-bbbb-cccc-dddd-e00777700005
 * entry[Folders].request.url = "List"
 * entry[Folders].request.method = #PUT
 * entry[DocumentRefs].fullUrl = "urn:uuid:aaaaaaaa-bbbb-cccc-dddd-e00777700002"
@@ -54,15 +54,15 @@ Usage: #inline
 * text.status = #extensions
 * text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\">SubmissionSet with Patient</div>"
 * meta.security = http://terminology.hl7.org/CodeSystem/v3-ActReason#HTEST
-* identifier[uniqueId].system = "http://example.org/documents"
-* identifier[uniqueId].value = "23425234-23470-1"
+* identifier[uniqueId].system = "urn:ietf:rfc:3986"
+* identifier[uniqueId].value = "urn:oid:1.2.840.113556.1.8000.2554.58783.21864.3474.19410.44358.58254.41281.46352"
 * identifier[uniqueId].use = #usual
 * status = #current
 * mode = #working
 * code = MHDlistTypes#submissionset
 * date = 2004-10-25T23:50:50-05:00
 * entry[+].item = Reference(urn:uuid:aaaaaaaa-bbbb-cccc-dddd-e00777700002)
-* entry[+].item = Reference(List/e00777700005)
+* entry[+].item = Reference(urn:uuid:aaaaaaaa-bbbb-cccc-dddd-e00777700005)
 * extension[sourceId].valueIdentifier.value = "urn:oid:1.2.3.4"
 * subject = Reference(Patient/ex-patient)
 * extension[designationType].valueCodeableConcept = http://snomed.info/sct#225728007
@@ -112,7 +112,7 @@ Usage: #inline
 * data = "SGVsbG8gV29ybGQ="
 
 // the instance is simulating an existing
-Instance:   e00777700005
+Instance:   aaaaaaaa-bbbb-cccc-dddd-e00777700005
 InstanceOf: IHE.MHD.Comprehensive.Folder
 Title: "Example complete Comprehensive Folder"
 Description:      "Folder in List resource conforming Comprehensive metadata fully populated"
@@ -121,8 +121,8 @@ Usage: #inline
 * text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\">Folder with Patient</div>"
 * meta.security = http://terminology.hl7.org/CodeSystem/v3-ActReason#HTEST
 * subject = Reference(Patient/ex-patient)
-* identifier[uniqueId].system = "http://example.org/documents"
-* identifier[uniqueId].value = "23425234-23475"
+* identifier[uniqueId].system = "urn:ietf:rfc:3986"
+* identifier[uniqueId].value = "urn:oid:1.2.840.113556.1.8000.2554.58783.21864.3474.19410.44358.58254.41281.46353"
 * identifier[uniqueId].use = #usual
 * status = #current
 * mode = #working

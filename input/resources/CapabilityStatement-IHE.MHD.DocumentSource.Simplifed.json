@@ -1,0 +1,49 @@
+{
+  "resourceType": "CapabilityStatement",
+  "id": "IHE.MHD.DocumentSource.Simplified",
+  "url": "https://profiles.ihe.net/ITI/MHD/CapabilityStatement/IHE.MHD.DocumentSource.Simplified",
+  "name": "IHE_MHD_DocumentSource_Simplified",
+  "title": "Document Source (publisher) implementing the Simplified Publish Option",
+  "status": "active",
+  "experimental": false,
+  "description": "IHE ITI Mobile access to Health Documents (MHD) - Document Source (publisher) - with the Simplified Publication declared Options and may also declare other Options.",
+  "kind": "requirements",
+  "fhirVersion": "4.0.1",
+  "format": [
+    "application/fhir+xml",
+    "application/fhir+json"
+  ],
+  "rest": [
+    {
+      "mode": "client",
+      "security": {
+			  "description": "Recommend [ATNA](https://profiles.ihe.net/ITI/TF/Volume1/ch-9.html), encouraged [IHE-IUA](https://profiles.ihe.net/ITI/IUA/index.html) or SMART-on-FHIR"
+      },
+      "resource": [
+        {
+          "type": "DocumentReference",
+          "profile": "https://profiles.ihe.net/ITI/MHD/StructureDefinition/IHE.MHD.Query.SimplifiedPublish.DocumentReference",
+          "interaction": [
+            {
+              "code": "create"
+            }
+          ]
+        }
+      ],
+      "interaction": [
+        {
+          "code": "transaction",
+          "documentation": "https://profiles.ihe.net/ITI/MHD/StructureDefinition/IHE.MHD.Minimal.ProvideBundle"
+        },
+        {
+          "code": "transaction",
+          "documentation": "https://profiles.ihe.net/ITI/MHD/StructureDefinition/IHE.MHD.UnContained.Comprehensive.ProvideBundle"
+        },
+        {
+          "code": "transaction",
+          "documentation": "https://profiles.ihe.net/ITI/MHD/StructureDefinition/IHE.MHD.Comprehensive.ProvideBundle"
+        }
+      ]
+    }
+  ]
+}

@@ -17,7 +17,7 @@
     {
       "mode": "client",
       "security": {
-        "description": "Recommend IUA or SMART"
+			  "description": "Recommend [ATNA](https://profiles.ihe.net/ITI/TF/Volume1/ch-9.html), encouraged [IHE-IUA](https://profiles.ihe.net/ITI/IUA/index.html) or SMART-on-FHIR"
       },
       "interaction": [
         {

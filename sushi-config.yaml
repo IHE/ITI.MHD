@@ -4,16 +4,14 @@
 id: ihe.iti.mhd
 canonical: https://profiles.ihe.net/ITI/MHD
 name: IHE_ITI_MHD
-version: 4.1.1-current
-fhirVersion: 4.0.1
 status: active
 title: "Mobile access to Health Documents (MHD)"
 description: ImplementationGuide for IHE IT Infrastructure Technical Framework Supplement Mobile access to Health Documents (MHD)
-copyright: IHE http://www.ihe.net/Governance/#Intellectual_Property
-copyrightYear: 2020+
+#date: 2022-10-21
+version: 4.2.1-current
 releaseLabel: ci-build
+#releaselabel: ballot
 #releaseLabel: Trial-Implementation
-#date: 2022-03-01
 publisher:
   - name: IHE IT Infrastructure Technical Committee
   - url: https://www.ihe.net/ihe_domains/it_infrastructure/
@@ -23,10 +21,20 @@ contact:
     telecom:
       - system: email
         value: iti@ihe.net
+#copyright: IHE http://www.ihe.net/Governance/#Intellectual_Property
+copyrightYear: 2020+
 license: CC-BY-4.0
+fhirVersion: 4.0.1
 jurisdiction: 'http://unstats.un.org/unsd/methods/m49/m49.htm#001'
-#dependencies:
-#  https://profiles.ihe.net/fhir/ihe.formatcode.fhir: 0.2.4
+dependencies:
+  ihe.iti.balp:
+    id: iheitibasicaudit
+    uri: https://profiles.ihe.net/ITI/BALP/ImplementationGuide/ihe.iti.balp
+    version: 1.1.1
+  ihe.formatcode.fhir:
+    id: iheformatcodefhir
+    uri: https://profiles.ihe.net/fhir/ihe.formatcode.fhir/ImplementationGuide/ihe.formatcode.fhir
+    version: 1.1.0
  
 parameters:  # see http://build.fhir.org/ig/FHIR/fhir-tools-ig/branches/master/index.html
   path-resource:
@@ -51,6 +59,14 @@ resources:
   Bundle/Bundle-FindDocumentReferences:
     name: Example FindDocumentReferences response
     description: An example of a searchset Bundle with one DocumentReference
+    exampleBoolean: true
+  Bundle/ex-comprehensiveProvideDocumentBundleDocument:
+    name: Example Provide Bundle with a FHIR-Document
+    description: An example of a Provide Bundle with a single DocumentReference pointing at a FHIR-Document Bundle
+    exampleBoolean: true
+  Bundle/ex-fhir-document-bundle:
+    name: Example of a FHIR-Document Bundle
+    description: An example of a FHIR-Document Bundle
     exampleBoolean: true
 
 # ╭────────────────────────────────────────────pages───────────────────────────────────────────────╮
@@ -79,20 +95,24 @@ pages:
     title: "2:3.67 Find Document References [ITI-67]"
   ITI-68.md:
     title: "2:3.68 Retrieve Document [ITI-68]"
+  ITI-105.md:
+    title: "2:3.105 Simplified Publish [ITI-105]"
+  ITI-106.md:
+    title: "2:3.106 Generate Metadata [ITI-106]"
   31_xds.md:
     title: "3:4.2.4.1 Error Codes"
   32_fhir_maps.md:
     title: "3:4.5 FHIR Maps"
   testplan.md:
     title: "Test Plan"
-    extension: 
-      - url: http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status
-        valueCode: informative
+#    extension: 
+#      - url: http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status
+#        valueCode: informative
   a_issues.md:
     title: "Issues"
-    extension: 
-      - url: http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status
-        valueCode: informative
+#    extension: 
+#      - url: http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status
+#        valueCode: informative
       
 
 # ╭────────────────────────────────────────────menu.xml────────────────────────────────────────────╮
@@ -113,6 +133,8 @@ menu:
     "Find Document Lists [ITI-66]": ITI-66.html
     "Find Document References [ITI-67]": ITI-67.html
     "Retrieve Document [ITI-68]": ITI-68.html
+    "Simplified Publish [ITI-105]": ITI-105.html
+    "Generate Metadata [ITI-106]": ITI-106.html
   Volume 3:
     "Error Codes": 31_xds.html
     "FHIR Maps": 32_fhir_maps.html

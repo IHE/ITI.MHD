@@ -1,4 +1,5 @@
 @startuml
+title Retrieve Document [ITI-68]
 hide footbox
 participant "Document Consumer" as DocumentConsumer
 participant "Document Responder" as DocumentResponder
