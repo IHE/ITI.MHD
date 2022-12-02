@@ -4,8 +4,8 @@ This section corresponds to transaction [ITI-66] of the IHE Technical Framework.
 
 The Find Document Lists [ITI-66] transaction is used to find List Resources that satisfy a set of parameters. It is equivalent to the: 
 
-* FindSubmissionSets query in the Registry Stored Query [ITI-18](https://profiles.ihe.net/ITI/TF/Volume2/ITI-18.html) transaction, as documented in [ITI TF-2: 3.18.4.1.2.3.7.2](https://profiles.ihe.net/ITI/TF/Volume2/ITI-18.html#3.18.4.1.2.3.7.2). 
-* FindFolders query in the Registry Stored Query [ITI-18](https://profiles.ihe.net/ITI/TF/Volume2/ITI-18.html) transaction, as documented in [ITI TF-2: 3.18.4.1.2.3.7.3](https://profiles.ihe.net/ITI/TF/Volume2/ITI-18.html#3.18.4.1.2.3.7.3). 
+* FindSubmissionSets query in the Registry Stored Query [\[ITI-18\]](https://profiles.ihe.net/ITI/TF/Volume2/ITI-18.html) transaction, as documented in [ITI TF-2: 3.18.4.1.2.3.7.2](https://profiles.ihe.net/ITI/TF/Volume2/ITI-18.html#3.18.4.1.2.3.7.2). 
+* FindFolders query in the Registry Stored Query [\[ITI-18\]](https://profiles.ihe.net/ITI/TF/Volume2/ITI-18.html) transaction, as documented in [ITI TF-2: 3.18.4.1.2.3.7.3](https://profiles.ihe.net/ITI/TF/Volume2/ITI-18.html#3.18.4.1.2.3.7.3). 
 
 The result of the query is a Bundle containing List Resources that match the query parameters.
 
@@ -84,7 +84,7 @@ These parameters, of type string, specify the name parts of the author person wh
 This IHE extension on parameters defined as [List-SourceId](SearchParameter-List-SourceId.html), of type token, specifies the source (author) value supplied in the List Resource. 
 
 **status**:
-This parameter, of type token, specifies the status of the List. If included in the query, the Document Consumer shall populate the code portion of the token, the system portion of the token shall not be populated. See *Table 2:3.66.4.1.3.1-3: Values for status of List* for mapping to XDS on FHIR Option.
+This parameter, of type token, specifies the status of the List. If included in the query, the Document Consumer shall populate the code portion of the token, the system portion of the token shall not be populated. See Table 2:3.66.4.1.3.1-3: Values for status of List for mapping to XDS on FHIR Option.
 
 ###### 2:3.66.4.1.2.2 Populating Expected Response Format
 
@@ -95,12 +95,12 @@ See [ITI TF-2x: Appendix Z.6](https://profiles.ihe.net/ITI/TF/Volume2/ch-Z.html#
 ###### 2:3.66.4.1.2.3 Example List search
 
 For example given:
-* FHIR server root is `http://test.fhir.org/R4/fhir`
-* Patient reference id is `9876`
-* looking for a SubmissionSet
-* status of current
-* with clinical code from loinc of `1234-5`
-* examples do not include all http headers such as the security headers						   
+- FHIR server root is `http://test.fhir.org/R4/fhir`
+- Patient reference id is `9876`
+- looking for a SubmissionSet
+- status of current
+- with clinical code from loinc of `1234-5`
+- examples do not include all http headers such as the security headers						   
 
 ###### 2:3.66.4.1.2.3.1 Example GET
 ```
@@ -130,7 +130,7 @@ The Document Responder is grouped with an XDS Document Consumer when it supports
 
 **Table 2:3.66.4.1.3.1-1: FindSubmissionSets Query Parameter Mapping**
 
-|ITI-66 Parameter Name	| ITI-18 Parameter Name |
+|[ITI-66] Parameter Name	| [ITI-18] Parameter Name |
 |code | "submissionset" |
 |patient or patient.identifier	| $XDSSubmissionSetPatientId |
 |date (Note 1)	| $XDSSubmissionSetSubmissionTimeFrom |
@@ -147,7 +147,7 @@ Note 2: This FindSubmissionSets parameter is used when the less than parameter m
 
 **Table 2:3.66.4.1.3.1-2: FindFolders Query Parameter Mapping**
 
-|ITI-66 Parameter Name	| ITI-18 Parameter Name |
+|[ITI-66] Parameter Name	| [ITI-18] Parameter Name |
 |code | "folder" |
 |patient or patient.identifier	| $XDSFolderPatientId |
 |date (Note 1)	| $XDSFolderLastUpdateTimeFrom |
@@ -217,7 +217,7 @@ The List Resources returned should be compliant with the [IHE restrictions on th
 
 ###### 2:3.66.4.2.2.1.1 XDS Identifiers to Resource References
 
-Where the List Resource being returned is being translated from an XDS SubmissionSet or Folder, there will be identifiers in the SubmissionSet or Folder (e.g. IntendedRecipient) that may be represented in the List as Resource References. The Document Responder is not required to convert identifiers into Resource References, but it is allowed to do this conversion. 
+Where the List Resource being returned is being translated from an XDS SubmissionSet or Folder, there will be identifiers in the SubmissionSet or Folder (e.g., IntendedRecipient) that may be represented in the List as Resource References. The Document Responder is not required to convert identifiers into Resource References, but it is allowed to do this conversion. 
 
 ##### 2:3.66.4.2.3 Expected Actions
 
@@ -226,8 +226,8 @@ The Document Consumer shall process the results according to application-defined
 #### 2:3.66.4.3 CapabilityStatement Resource
 
 Document Responders implementing this transaction shall provide a CapabilityStatement Resource as described in [ITI TF-2x: Appendix Z.3](https://profiles.ihe.net/ITI/TF/Volume2/ch-Z.html#z.3-capabilitystatement-resource) indicating the transaction has been implemented. 
-* Requirements CapabilityStatement for [Document Consumer](CapabilityStatement-IHE.MHD.DocumentConsumer.html)
-* Requirements CapabilityStatement for [Document Responder](CapabilityStatement-IHE.MHD.DocumentResponder.html)
+- Requirements CapabilityStatement for [Document Consumer](CapabilityStatement-IHE.MHD.DocumentConsumer.html)
+- Requirements CapabilityStatement for [Document Responder](CapabilityStatement-IHE.MHD.DocumentResponder.html)
 
 
 ### 2:3.66.5 Security Considerations
@@ -238,12 +238,12 @@ This transaction should not return information that the Document Consumer is not
 
 #### 2:3.66.5.1 Security Audit Considerations
 
-The security audit criteria are similar to those for the Registry Stored Query [ITI-18](https://profiles.ihe.net/ITI/TF/Volume2/ITI-18.html) transaction.
+The security audit criteria are similar to those for the Registry Stored Query [\[ITI-18\]](https://profiles.ihe.net/ITI/TF/Volume2/ITI-18.html) transaction.
 
 ##### 2:3.66.5.1.1 Document Consumer Audit
 
-The Document Consumer when grouped with ATNA Secure Node or Secure Application actor shall be able to record a [Find Document Lists Consumer Audit Event Log](StructureDefinition-IHE.MHD.FindDocumentLists.Audit.Consumer.html). [Audit Example for a Find Document Lists transaction from consumer perspective](AuditEvent-ex-auditFindDocumentLists-consumer.html).
+The Document Consumer when grouped with ATNA Secure Node or Secure Application Actor shall be able to record a [Find Document Lists Consumer Audit Event Log](StructureDefinition-IHE.MHD.FindDocumentLists.Audit.Consumer.html). [Audit Example for a Find Document Lists transaction from consumer perspective](AuditEvent-ex-auditFindDocumentLists-consumer.html).
 
 ##### 2:3.66.5.1.2 Document Responder Audit
 
-The Document Responder when grouped with ATNA Secure Node or Secure Application actor shall be able to record a [Find Document Lists Responder Audit Event Log](StructureDefinition-IHE.MHD.FindDocumentLists.Audit.Responder.html). [Audit Example for a Find Document Lists Transaction from responder perspective](AuditEvent-ex-auditFindDocumentLists-responder.html).
+The Document Responder when grouped with ATNA Secure Node or Secure Application Actor shall be able to record a [Find Document Lists Responder Audit Event Log](StructureDefinition-IHE.MHD.FindDocumentLists.Audit.Responder.html). [Audit Example for a Find Document Lists Transaction from responder perspective](AuditEvent-ex-auditFindDocumentLists-responder.html).
