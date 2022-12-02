@@ -28,7 +28,7 @@ The Find Document References transaction is used to find DocumentReference Resou
 
 **Figure 2:3.67.4-1: Find Document References Interactions**
 
-#### 2:3.67.4.1 Find Document References Request message
+#### 2:3.67.4.1 Find Document References Request Message
 
 This message uses the search method parameterized query to obtain DocumentReference Resources from the Document Responder. 
 
@@ -109,14 +109,14 @@ The FHIR standard provides encodings for responses as either XML or JSON. The Do
 
 See [ITI TF-2x: Appendix Z.6](https://profiles.ihe.net/ITI/TF/Volume2/ch-Z.html#z.6-populating-the-expected-response-format) for details. 
 
-###### 2:3.67.4.1.2.3 Example DocumentReference search
+###### 2:3.67.4.1.2.3 Example DocumentReference Search
 
 For example given:
-* FHIR server root is `http://test.fhir.org/R4/fhir`
-* Patient reference id is `9876`
-* status of current
-* with clinical code from loinc of `1234-5`
-* examples do not include all http headers such as the security headers
+- FHIR server root is `http://test.fhir.org/R4/fhir`
+- Patient reference id is `9876`
+- status of current
+- with clinical code from loinc of `1234-5`
+- examples do not include all http headers such as the security headers
 
 ###### 2:3.67.4.1.2.3.1 Example GET
 ```
@@ -128,7 +128,7 @@ GET test.fhir.net/R4/fhir/DocumentReference?patient=9876&status=current&type=htt
 POST test.fhir.net/R4/fhir/DocumentReference/_search?patient=9876&status=current&type=http://loinc.org|1234-5
 ```
 
-###### 2:3.67.4.1.2.3.3 Example POST body
+###### 2:3.67.4.1.2.3.3 Example POST Body
 ```
 POST test.fhir.net/R4/fhir/DocumentReference/_search	  
 Host test.fhir.net
@@ -148,7 +148,7 @@ The Document Responder is grouped with an XDS Document Consumer when it supports
 
 **Table 2:3.67.4.1.3.1-1: ITI-18 FindDocuments Query Parameter Mapping**
 
-| ITI-67 Parameter Name	| ITI-18 Parameter Name |
+| [ITI-67] Parameter Name	| [ITI-18] Parameter Name |
 |-----------|-----------|
 | patient or patient.identifier	| $XDSDocumentEntryPatientId |
 | creation (Note 1) (Note 5)	| $XDSDocumentEntryCreationTimeFrom |
@@ -216,7 +216,7 @@ The DocumentReference Resources returned should be compliant with the [MHD metad
 
 ###### 2:3.67.4.2.2.1.1 Document location
 
-The Document Responder shall place into the DocumentReference.content.attachment.url element a full URL that can be used by the Document Consumer to retrieve the document using the Retrieve Document [ITI-68](ITI-68.html) transaction. IHE does not specify the format of the URL. There are many ways to encode this URL that allow for easy processing on a [Retrieve Document](ITI-68.html) transaction. Some examples are to encode homeCommunityId, repositoryUniqueId, uniqueId, and patientId into the URL. This could be done in many ways including using character separators or directory separators. In this way, the Document Responder can support many communities, and/or many repositories. 
+The Document Responder shall place into the DocumentReference.content.attachment.url element a full URL that can be used by the Document Consumer to retrieve the document using the Retrieve Document [\[ITI-68\]](ITI-68.html) transaction. IHE does not specify the format of the URL. There are many ways to encode this URL that allow for easy processing on a [Retrieve Document](ITI-68.html) transaction. Some examples are to encode homeCommunityId, repositoryUniqueId, uniqueId, and patientId into the URL. This could be done in many ways including using character separators or directory separators. In this way, the Document Responder can support many communities, and/or many repositories. 
 
 ###### 2:3.67.4.2.2.1.2 Support for On-Demand Documents
 
@@ -224,7 +224,7 @@ The Document Responder shall place into the DocumentReference.content.attachment
 
 On-Demand Documents are indicated in the DocumentReference by the DocumentReference.content.attachment with an absent .hash and .size element. For more background on [On-Demand Documents](https://profiles.ihe.net/ITI/TF/Volume1/ch-10.html#10.2.7). There is no need to declare an On-Demand Documents Option in MHD. 
 
-Informative note: When the Document Consumer retrieves the document using the Document location, then the retrieved document might exist as an [IsSnapshotOf Association according to XDS ITI-43](https://profiles.ihe.net/ITI/TF/Volume2/ITI-43.html#3.43.4.2.3). The IsSnapshotOf Association is identified as a new DocumentReference with relatesTo.code of `transforms`.
+Informative note: When the Document Consumer retrieves the document using the Document location, then the retrieved document might exist as an [IsSnapshotOf Association according to XDS [\ITI-43\]](https://profiles.ihe.net/ITI/TF/Volume2/ITI-43.html#3.43.4.2.3). The IsSnapshotOf Association is identified as a new DocumentReference with relatesTo.code of `transforms`.
 
 ###### 2:3.67.4.2.2.1.3 Support for Delayed Document Assembly
 
@@ -234,7 +234,7 @@ Delayed Document Assembly is distinct from On-Demand Documents in that Delayed D
 
 Delayed Document Assembly are indicated in the DocumentReference by the DocumentReference.content.attachment with an .size element of `0` (zero), and a .hash element with the fixed value `da39a3ee5e6b4b0d3255bfef95601890afd80709` (SHA1 hash of a zero length file). For more background on the [Delayed Document Assembly](https://profiles.ihe.net/ITI/TF/Volume1/ch-10.html#10.2.10). There is no need to declare a Delayed Document Assembly in MHD. 
 
-Informative note: When the Document Consumer retrieves the document using the Document location, then the retrieved document actual size and hash is updated in the DocumentReference. In this way the Document Consumer may retrieve the updated DocumentReference after successful retrival of the document to find the size and hash for content integrity validation.
+Informative note: When the Document Consumer retrieves the document using the Document location, then the retrieved document actual size and hash is updated in the DocumentReference. In this way the Document Consumer may retrieve the updated DocumentReference after successful retrieval of the document to find the size and hash for content integrity validation.
 
 ###### 2:3.67.4.2.2.1.4 XDS Associations
 
@@ -242,7 +242,7 @@ Where the DocumentReference Resource being returned has an XDS Association, this
 
 ###### 2:3.67.4.2.2.1.5 XDS Identifiers to Resource References
 
-Where the DocumentReference Resource being returned is being translated from an XDS DocumentEntry, there will be identifiers in the DocumentEntry (e.g. ReferenceIdList) that may be represented in the DocumentReference as Resource References. The Document Responder is not required to convert identifiers into Resource References, but it is allowed to do this conversion. For example an identifier in ReferenceIdList may simply be copied into DocumentReference.content.related.identifier. Alternatively the ReferenceIdList may be resolved to a Resource Reference and that reference be placed into DocumentReference.content.related.reference.
+Where the DocumentReference Resource being returned is being translated from an XDS DocumentEntry, there will be identifiers in the DocumentEntry (e.g., ReferenceIdList) that may be represented in the DocumentReference as Resource References. The Document Responder is not required to convert identifiers into Resource References, but it is allowed to do this conversion. For example an identifier in ReferenceIdList may simply be copied into DocumentReference.content.related.identifier. Alternatively the ReferenceIdList may be resolved to a Resource Reference and that reference be placed into DocumentReference.content.related.reference.
 
 Identifiers in XDS are encoded using the [Document Sharing CXi Metadata datatype](https://profiles.ihe.net/ITI/TF/Volume3/ch-4.2.html#4.2.3.1.7), which will indicate the kind of identifier. This kind of identifier shall be used when mapping values into DocumentReference elements (See [Appendix Z.9.1.2](https://profiles.ihe.net/ITI/TF/Volume2/ch-Z.html#z.9.1.2-xds-cxi-mapped-to-fhir-identifier-type) ). Specifically the `CXi` Identifier Type Code of `urn:ihe:iti:xds:2015:encounterId` would indicate the Identifier value be mapped into DocumentReference.encounter. 
 
@@ -257,8 +257,8 @@ The Document Consumer shall process the results according to application-defined
 #### 2:3.67.4.4 CapabilityStatement Resource
 
 Document Responders implementing this transaction shall provide a CapabilityStatement Resource as described in [ITI TF-2x: Appendix Z.3](https://profiles.ihe.net/ITI/TF/Volume2/ch-Z.html#z.3-capabilitystatement-resource) indicating the transaction has been implemented. 
-* Requirements CapabilityStatement for [Document Consumer](CapabilityStatement-IHE.MHD.DocumentConsumer.html)
-* Requirements CapabilityStatement for [Document Responder](CapabilityStatement-IHE.MHD.DocumentResponder.html)
+- Requirements CapabilityStatement for [Document Consumer](CapabilityStatement-IHE.MHD.DocumentConsumer.html)
+- Requirements CapabilityStatement for [Document Responder](CapabilityStatement-IHE.MHD.DocumentResponder.html)
 
 ### 2:3.67.5 Security Considerations
 
@@ -270,12 +270,12 @@ Given that the Document Responder is responsible for the URL placed into Documen
 
 #### 2:3.67.5.1 Security Audit Considerations
 
-The security audit criteria are similar to those for the Registry Stored Query [ITI-18](https://profiles.ihe.net/ITI/TF/Volume2/ITI-18.html#3.18.5) transaction. 
+The security audit criteria are similar to those for the Registry Stored Query [\[ITI-18\]](https://profiles.ihe.net/ITI/TF/Volume2/ITI-18.html#3.18.5) transaction. 
 
 ##### 2:3.67.5.1.1 Document Consumer Audit
 
-The Document Consumer when grouped with ATNA Secure Node or Secure Application actor shall be able to record a [Find Document References Consumer Audit Event Log](StructureDefinition-IHE.MHD.FindDocumentReferences.Audit.Consumer.html). [Audit Example for a Find Document References transaction from consumer perspective](AuditEvent-ex-auditFindDocumentReferences-consumer.html). 
+The Document Consumer when grouped with ATNA Secure Node or Secure Application Actor shall be able to record a [Find Document References Consumer Audit Event Log](StructureDefinition-IHE.MHD.FindDocumentReferences.Audit.Consumer.html). [Audit Example for a Find Document References transaction from consumer perspective](AuditEvent-ex-auditFindDocumentReferences-consumer.html). 
 
 ##### 2:3.67.5.1.2 Document Responder Audit
 
-The Document Responder when grouped with ATNA Secure Node or Secure Application actor shall be able to record a [Find Document References Responder Audit Event Log](StructureDefinition-IHE.MHD.FindDocumentReferences.Audit.Responder.html). [Audit Example for a Find Document Lists Transaction from responder perspective](AuditEvent-ex-auditFindDocumentReferences-responder.html). 
+The Document Responder when grouped with ATNA Secure Node or Secure Application Actor shall be able to record a [Find Document References Responder Audit Event Log](StructureDefinition-IHE.MHD.FindDocumentReferences.Audit.Responder.html). [Audit Example for a Find Document Lists Transaction from responder perspective](AuditEvent-ex-auditFindDocumentReferences-responder.html). 
