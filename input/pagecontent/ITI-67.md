@@ -190,7 +190,7 @@ The following table is also available in a [concept map](ConceptMap-FhirStatusVs
 |superseded	|urn:oasis:names:tc:ebxml-regrep:StatusType:Deprecated |
 {: .grid}
 
-#### 2:3.67.4.2 Find Document References Response message
+#### 2:3.67.4.2 Find Document References Response Message
 
 The Document Responder returns a HTTP Status code appropriate to the processing as well as a Bundle of the matching DocumentReference Resources.
 
@@ -214,7 +214,7 @@ The DocumentReference Resources returned shall be compliant with the FHIR specif
 
 The DocumentReference Resources returned should be compliant with the [MHD metadata](32_fhir_maps.html) for the IHE restrictions on DocumentReference Resource and with the [mapping to DocumentEntry](32_fhir_maps.html#documentEntry) from IHE Document Sharing profiles (e.g., XDS) to FHIR. 
 
-###### 2:3.67.4.2.2.1.1 Document location
+###### 2:3.67.4.2.2.1.1 Document Location
 
 The Document Responder shall place into the DocumentReference.content.attachment.url element a full URL that can be used by the Document Consumer to retrieve the document using the Retrieve Document [\[ITI-68\]](ITI-68.html) transaction. IHE does not specify the format of the URL. There are many ways to encode this URL that allow for easy processing on a [Retrieve Document](ITI-68.html) transaction. Some examples are to encode homeCommunityId, repositoryUniqueId, uniqueId, and patientId into the URL. This could be done in many ways including using character separators or directory separators. In this way, the Document Responder can support many communities, and/or many repositories. 
 
