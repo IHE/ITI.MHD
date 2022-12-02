@@ -33,7 +33,7 @@ The result of the query is a Bundle containing List Resources that match the que
 
 **Figure 2:3.66.4-1: Find Document Lists Interactions**
 
-#### 2:3.66.4.1 Find Document Lists Request message
+#### 2:3.66.4.1 Find Document Lists Request Message
 
 This message uses the search method parameterized query to obtain List Resources from the Document Responder. 
 
@@ -92,7 +92,7 @@ The FHIR standard provides encodings for responses as either XML or JSON. The Do
 
 See [ITI TF-2x: Appendix Z.6](https://profiles.ihe.net/ITI/TF/Volume2/ch-Z.html#z.6-populating-the-expected-response-format) for details. 
 
-###### 2:3.66.4.1.2.3 Example List search
+###### 2:3.66.4.1.2.3 Example List Search
 
 For example given:
 - FHIR server root is `http://test.fhir.org/R4/fhir`
@@ -112,7 +112,7 @@ GET test.fhir.net/R4/fhir/List?patient=9876&code=submissionset&status=current&de
 POST test.fhir.net/R4/fhir/List/_search?patient=9876&code=submissionset&status=current&designationType=http://loinc.org|1234-5
 ```
 
-###### 2:3.66.4.1.2.3.3 Example POST body
+###### 2:3.66.4.1.2.3.3 Example POST Body
 ```
 POST test.fhir.net/R4/fhir/List/_search
 Content-Type: application/x-www-form-urlencoded
@@ -189,7 +189,7 @@ would translate to:
 |superseded	| urn:oasis:names:tc:ebxml-regrep:StatusType:Deprecated |
 {: .grid}
 
-#### 2:3.66.4.2 Find Document Lists Response message
+#### 2:3.66.4.2 Find Document Lists Response Message
 
 The Document Responder returns a HTTP Status code appropriate to the processing as well as a list of the matching document list resources.
 
