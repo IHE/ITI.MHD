@@ -2,7 +2,7 @@
 
 ### Significant changes since MHD Version 4.1.0
 
-Version 4.2.0-comment
+Version 4.2.0
 - changed to AuditEvent profiling leveraging [Basic Audit Log Patterns (BALP) Release 1.1.0](https://profiles.ihe.net/ITI/BALP/index.html)
   - changes to RESTful type, and query subtype
 - Added new features

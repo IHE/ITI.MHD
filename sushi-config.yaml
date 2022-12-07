@@ -7,7 +7,7 @@ name: IHE_ITI_MHD
 status: active
 title: "Mobile access to Health Documents (MHD)"
 description: ImplementationGuide for IHE IT Infrastructure Technical Framework Supplement Mobile access to Health Documents (MHD)
-date: 2022-12-01
+date: 2022-12-07
 version: 4.2.0
 #releaseLabel: ci-build
 #releaselabel: ballot
