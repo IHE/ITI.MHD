@@ -29,11 +29,11 @@ This guide is organized into four main sections:
 
 1. Volume 1: Use-Case analysis
    1. [33.1 MHD Actors and Transactions](1331_actors_and_transactions.html)
-   1. [33.2 MHD Actor Options](1332_actor_options.html)
-   1. [33.3 MHD Actor Required Groupings](1333_required_grouping.html)
-   1. [33.4 MHD Overview](1334_overview.html)
-   2. [33.5 MHD Security Considerations](1335_security_considerations.html)
-   3. [33.6 MHD Cross Profile Considerations](1336_cross_profile_considerations.html)
+   2. [33.2 MHD Actor Options](1332_actor_options.html)
+   3. [33.3 MHD Actor Required Groupings](1333_required_grouping.html)
+   4. [33.4 MHD Overview](1334_overview.html)
+   5. [33.5 MHD Security Considerations](1335_security_considerations.html)
+   6. [33.6 MHD Cross Profile Considerations](1336_cross_profile_considerations.html)
 
 2. Volume 2: Transaction Detail
    1. [3.65 Provide Document Bundle [ITI-65]](ITI-65.html)
@@ -50,7 +50,7 @@ This guide is organized into four main sections:
 4. Appendix
 	1. [Test Plan](testplan.html)
 
-Click on any of the links above, head on over the [table of contents](toc.html), or
+Click on any of the links above, see the [table of contents](toc.html), or
 if you are looking for a specific artifact, check out the [index](artifacts.html).
 
 #### Must Support
