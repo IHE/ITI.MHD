@@ -40,7 +40,7 @@ The Document Consumer wants to obtain a document.
 
 The Document Consumer sends a HTTP GET request to the server. The Document Consumer request may be to retrieve the document content referenced by a DocumentReference.content.attachment.url. 
 
-The Document Consumer may provide HTTP Accept header, according to the semantics of the HTTP protocols (see RFC2616, Section 14.1).  This enables the Document Consumer to indicate prefered mime-types such that the Document Responder could provide the document requested in an encoding other than the encoding indicated in the DocumentReference. For example, indicating `application/fhir+json` could result in the response from the Document Responder being a json FHIR Bundle of type `document` with all the content encoded as FHIR resources.
+The Document Consumer may provide HTTP Accept header, according to the semantics of the HTTP protocols (see RFC2616, Section 14.1).  This enables the Document Consumer to indicate preferred mime-types such that the Document Responder could provide the document requested in an encoding other than the encoding indicated in the DocumentReference. For example, indicating `application/fhir+json` could result in the response from the Document Responder being a json FHIR Bundle of type `document` with all the content encoded as FHIR resources.
 
 The only MIME type assured to be returned is the MIME type indicated in the DocumentReference.content.attachment.contentType.
 
@@ -87,8 +87,8 @@ The .hash and .size, when populated, represent the content in the MIME type indi
 #### 2:3.68.4.3 CapabilityStatement Resource
 
 Document Responders implementing this transaction shall provide a CapabilityStatement Resource as described in [ITI TF-2x: Appendix Z.3](https://profiles.ihe.net/ITI/TF/Volume2/ch-Z.html#z.3-capabilitystatement-resource) indicating the transaction has been implemented. 
-* Requirements CapabilityStatement for [Document Consumer](CapabilityStatement-IHE.MHD.DocumentConsumer.html)
-* Requirements CapabilityStatement for [Document Responder](CapabilityStatement-IHE.MHD.DocumentResponder.html)
+- Requirements CapabilityStatement for [Document Consumer](CapabilityStatement-IHE.MHD.DocumentConsumer.html)
+- Requirements CapabilityStatement for [Document Responder](CapabilityStatement-IHE.MHD.DocumentResponder.html)
 
 ### 2:3.68.5 Security Considerations
 
@@ -102,8 +102,8 @@ The security audit criteria are similar to those for the Retrieve Document Set-b
 
 ##### 2:3.68.5.1.1 Document Consumer Audit
 
-The Document Consumer when grouped with ATNA Secure Node or Secure Application actor shall be able to record a [Retrieve Document Consumer Audit Event Log](StructureDefinition-IHE.MHD.RetrieveDocument.Audit.Consumer.html). [Audit Example for a Retrieve Document transaction from consumer perspective](AuditEvent-ex-auditRetrieveDocument-consumer.html). 
+The Document Consumer when grouped with ATNA Secure Node or Secure Application Actor shall be able to record a [Retrieve Document Consumer Audit Event Log](StructureDefinition-IHE.MHD.RetrieveDocument.Audit.Consumer.html). [Audit Example for a Retrieve Document transaction from consumer perspective](AuditEvent-ex-auditRetrieveDocument-consumer.html). 
 
 ##### 2:3.68.5.1.2 Document Responder Audit
 
-The Document Responder when grouped with ATNA Secure Node or Secure Application actor shall be able to record a [Retrieve Document Responder Audit Event Log](StructureDefinition-IHE.MHD.RetrieveDocument.Audit.Responder.html). [Audit Example for a Find Document Lists Transaction from responder perspective](AuditEvent-ex-auditRetrieveDocument-responder.html). 
+The Document Responder when grouped with ATNA Secure Node or Secure Application Actor shall be able to record a [Retrieve Document Responder Audit Event Log](StructureDefinition-IHE.MHD.RetrieveDocument.Audit.Responder.html). [Audit Example for a Find Document Lists Transaction from responder perspective](AuditEvent-ex-auditRetrieveDocument-responder.html). 
