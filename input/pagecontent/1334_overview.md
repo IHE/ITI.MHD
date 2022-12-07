@@ -27,17 +27,17 @@ The MHD Profile supports a broad set of the XDS use cases and functionality whil
 
 These specific use cases can be generalized into two broad use cases. The first is the general use case of publishing new document(s) from the mobile device. The second general use case is where the mobile device needs to discover available documents and retrieve documents of interest. There are clearly complex use cases that combine these two general use cases; however, they are not specifically described in this profile. When more complex use cases are encountered, use of one of the more robust Document Sharing profiles is more appropriate. 
 
-### 1:33.4.2 Use Case 1: Publication of new Documents
+### 1:33.4.2 Use Case 1: Publication of New Documents
 
-#### 1:33.4.2.1 Publication of new documents Use Case Description
+#### 1:33.4.2.1 Publication of New Documents Use Case Description
 In this use case, a new document or set of documents is published from the mobile device. For example, a mobile device is a medical device that is submitting new health measurements, or a mobile device has a user-interface used to capture user input such as a Patient Consent. The mobile device does not need to be classically mobile, just simply one using the http REST technology commonly available on mobile devices. This device-created content is formed by the application, implementing the MHD Document Source, into a Document and submitted with the metadata.
 
 This use case presumes that the mobile device knows or discovers the patient identity. The patient identity might be obtained through some IHE transactional method such as the Patient Demographics Query for Mobile [PDQm](https://profiles.ihe.net/ITI/TF/Volume1/ch-38.html) or Patient Identifier Cross-Reference for Mobile [PIXm](https://profiles.ihe.net/ITI/TF/Volume1/ch-41.html) Profile. The patient id might simply be entered via some device interface (RFID, Bar-Code), a user interface, or be specified in a configuration setting (e.g., mobile PHR application). The use case also allows for identity cross-referencing to be implemented by the Document Recipient. 
 
 This use case presumes that the sending mobile device knows the location of the receiving URL endpoints, likely through a configuration setting, or through a workflow driven by a web interface.
 
-#### 1:33.4.2.2 Publication of new documents Process Flow
-The publication of a new document(s) is done using the Provide Document Bundle [ITI-65](ITI-65.html) transaction or the Simplified Publish [ITI-105](ITI-105.html) transaction, which carries both the document and its metadata. The [ITI-65](ITI-65.html) transaction is analogous to an XDS Provide and Register Document Set-b [ITI-41](https://profiles.ihe.net/ITI/TF/Volume2/ITI-41.html) transaction. The [ITI-105](ITI-105.html) is a more simple transaction where the publication needs are more simple, moving the SubmissionSet mapping task to the Document Recipient.
+#### 1:33.4.2.2 Publication of New Documents Process Flow
+The publication of a new document(s) is done using the Provide Document Bundle [\[ITI-65\]](ITI-65.html) transaction or the Simplified Publish [\[ITI-105\]](ITI-105.html) transaction, which carries both the document and its metadata. The [\[ITI-65\]](ITI-65.html) transaction is analogous to an XDS Provide and Register Document Set-b [\[ITI-41\]](https://profiles.ihe.net/ITI/TF/Volume2/ITI-41.html) transaction. The [\[ITI-105\]](ITI-105.html) is a more simple transaction where the publication needs are more simple, moving the SubmissionSet mapping task to the Document Recipient.
 
 <div>
 {%include usecase1-processflow.svg%}
@@ -47,12 +47,12 @@ The publication of a new document(s) is done using the Provide Document Bundle [
 **Figure 1:33.4.2.2-1: Use Case 1 Process Flow**
 
 
-### 1:33.4.3 Use Case 2: Discovery and Retrieval of existing documents
+### 1:33.4.3 Use Case 2: Discovery and Retrieval of Existing Documents
 
-#### 1:33.4.3.1 Discovery and Retrieval of existing documents Use Case Description
+#### 1:33.4.3.1 Discovery and Retrieval of Existing Documents Use Case Description
 In this use case, the mobile device needs access to existing documents. For example, a mobile device involved in a workflow needs to determine the current state of the workflow, or the mobile device needs to discover the most current medical summary. 
 
-#### 1:33.4.3.2 Discovery Retrieval of existing documents Process Flow
+#### 1:33.4.3.2 Discovery Retrieval of Existing Documents Process Flow
 The Find Document References [\[ITI-67\]](ITI-67.html) transaction is used to issue parameterized queries that result in a list of DocumentReference Resources, where a DocumentReference Resource carries the XDS DocumentEntry metadata, which is metadata about a document.
 
 Alternatively, the Find Document Lists [\[ITI-66\]](ITI-66.html) transaction is used to issue parameterized queries that result in a set of List Resources, where a List Resource carries the XDS SubmissionSet metadata for a set of DocumentEntry objects that were published as a set, or XDS Folder metadata for a set of DocumentEntry objects that are said to be members of the same grouping.
@@ -70,7 +70,7 @@ The Retrieve Document [\[ITI-68\]](ITI-68.html) transaction is used to get the d
 ### 1:33.4.4 Use Case 3: Generate Metadata and Publish Process Flow
 An alternative flow to Use Case 1, supports the case where the Document Source has only a structured and coded document such as CDA, or FHIR-Document. The Document Recipient inspects the document and generates a DocumentReference. The Document Recipient may need to create a SubmissionSet depending on the persistance and grouping requirements. 
 
-The Generate Metadata is a FHIR Operation defined in the Generate Metadata [ITI-106](ITI-106.html) transaction. 
+The Generate Metadata is a FHIR Operation defined in the Generate Metadata [\[ITI-106\]](ITI-106.html) transaction. 
 
 <div>
 {%include usecase3-processflow.svg%}
@@ -80,7 +80,7 @@ The Generate Metadata is a FHIR Operation defined in the Generate Metadata [ITI-
 **Figure 1:33.4.4-1: Use Case 3 Process Flow**
 
 
-### 1:33.4.5 Mapping to RESTful operators
+### 1:33.4.5 Mapping to RESTful Operators
 The MHD Profile defines a set of transactions against FHIR Resources. These are summarized in Table 1:33.4.5-1. MHD does not use any additional extended or custom methods.
 
 **Table 1:33.4.5-1: REST Methods and Resources**
@@ -97,4 +97,4 @@ The MHD Profile defines a set of transactions against FHIR Resources. These are 
 | TRACE  | Not Specified                    | Not Specified                | Not Specified              |
 {: .grid}
 
-Note: Items are marked *Not Specified* because the MHD Profile is focused on core Document Sharing (XDS, XDR, etc.) capability and is not trying to address the larger use-case of metadata update.
+Note: Items are marked *Not Specified* because the MHD Profile is focused on core Document Sharing (XDS, XDR, etc.) capability and is not trying to address the larger use case of metadata update.
