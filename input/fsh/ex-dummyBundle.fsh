@@ -12,7 +12,6 @@ Usage: #inline
 * date = 2020-02-01T23:50:50-05:00
 // note that this resource is non MHD profiled DocumentReference, so the format code must follow FHIR core valueSet
 * content.format = http://ihe.net/fhir/ihe.formatcode.fhir/CodeSystem/formatcode#urn:ihe:iti:xds-sd:text:2008
-//* content.format = http://ihe.net/fhir/ValueSet/IHE.FormatCode.codesystem#urn:ihe:iti:xds-sd:text:2008
 //* content.format = urn:oid:1.3.6.1.4.1.19376.1.2.3#urn:ihe:iti:xds-sd:text:2008
 * content.attachment.url = "urn:uuid:cccccccc-2222-0000-0000-000000000002"
 * content.attachment.contentType = #text/plain
