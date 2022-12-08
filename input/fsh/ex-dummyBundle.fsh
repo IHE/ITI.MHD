@@ -20,6 +20,7 @@ Usage: #inline
 * content.attachment.size = 11
 
 
+
 Instance: cccccccc-2222-0000-0000-000000000002
 InstanceOf: Binary
 Title: "Dummy Binary document that says: Hello World"
