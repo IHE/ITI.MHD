@@ -224,7 +224,7 @@ The Document Responder shall place into the DocumentReference.content.attachment
 
 On-Demand Documents are indicated in the DocumentReference by the DocumentReference.content.attachment with an absent .hash and .size element. For more background on [On-Demand Documents](https://profiles.ihe.net/ITI/TF/Volume1/ch-10.html#10.2.7). There is no need to declare an On-Demand Documents Option in MHD. 
 
-Informative note: When the Document Consumer retrieves the document using the Document location, then the retrieved document might exist as an [IsSnapshotOf Association according to XDS [\ITI-43\]](https://profiles.ihe.net/ITI/TF/Volume2/ITI-43.html#3.43.4.2.3). The IsSnapshotOf Association is identified as a new DocumentReference with relatesTo.code of `transforms`.
+Informative note: When the Document Consumer retrieves the document using the Document location, then the retrieved document might exist as an [IsSnapshotOf Association according to XDS \[ITI-43\]](https://profiles.ihe.net/ITI/TF/Volume2/ITI-43.html#3.43.4.2.3). The IsSnapshotOf Association is identified as a new DocumentReference with relatesTo.code of `transforms`.
 
 ###### 2:3.67.4.2.2.1.3 Support for Delayed Document Assembly
 
