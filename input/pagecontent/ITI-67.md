@@ -250,11 +250,11 @@ Identifiers in XDS are encoded using the [Document Sharing CXi Metadata datatype
 
 Resource Bundling shall comply with the guidelines in [ITI TF-2x: Appendix Z.1](https://profiles.ihe.net/ITI/TF/Volume2/ch-Z.html#z.1-resource-bundles). 
 
-#### 2:3.67.4.3 Expected Actions
+#### 2:3.67.4.2.3 Expected Actions
 
 The Document Consumer shall process the results according to application-defined rules. The Document Consumer should be robust as the response may contain DocumentReference Resources that match the query parameters but are not compliant with the DocumentReference constraints defined here.
 
-#### 2:3.67.4.4 CapabilityStatement Resource
+#### 2:3.67.4.3 CapabilityStatement Resource
 
 Document Responders implementing this transaction shall provide a CapabilityStatement Resource as described in [ITI TF-2x: Appendix Z.3](https://profiles.ihe.net/ITI/TF/Volume2/ch-Z.html#z.3-capabilitystatement-resource) indicating the transaction has been implemented. 
 - Requirements CapabilityStatement for [Document Consumer](CapabilityStatement-IHE.MHD.DocumentConsumer.html)
