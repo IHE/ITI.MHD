@@ -48,6 +48,8 @@ Extension: SourceId
 Id: ihe-sourceId
 Title: "Publisher organization identity of the SubmissionSet"
 Description: "The globally unique, immutable, identifier of the entity that contributed the SubmissionSet. When a broker is involved in sending SubmissionSets from a collection of client systems, it shall use a different sourceId for submissions from each separate system to allow for tracking. The format of the identifier is an OID."
+* ^context[+].type = #element
+* ^context[=].expression = "List"
 * value[x] only Identifier
 * valueIdentifier 1..1
 
@@ -55,6 +57,8 @@ Extension: AuthorOrg
 Id: ihe-authorOrg
 Title: "Author organization of the SubmissionSet"
 Description: "When the author of the SubmissionSet is an Organization, this extension shall be used."
+* ^context[+].type = #element
+* ^context[=].expression = "List.source"
 * value[x] only Reference(Organization)
 * valueReference 1..1
 
@@ -76,6 +80,8 @@ Extension: IntendedRecipient
 Id: ihe-intendedRecipient
 Title: "Intended recipient of the SubmissionSet"
 Description: "holds the identity of the organization or person the SubmissionSet is intended. For XDR and eMail (e.g. Direct) this tends to be a Practitioner or Patient with a telecom holding an email, but this is not strictly required."
+* ^context[+].type = #element
+* ^context[=].expression = "List"
 * value[x] only Reference(Practitioner or Organization or Patient or RelatedPerson or Group or Device or Location)
 * valueReference 1..1
 

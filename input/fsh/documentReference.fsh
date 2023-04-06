@@ -152,6 +152,9 @@ Description: "map between XDS Association Types and MHD FHIR DocumentReference r
 Usage: #definition
 * url = "https://profiles.ihe.net/ITI/MHD/ConceptMap/AssociationTypeVsRelatesTo"
 * name =  "AssociationTypeVsRelatesTo"
+* title = "AssociationType vs RelatesTo"
+* description = "map between XDS Association Types and MHD FHIR DocumentReference relatesTo code."
+* experimental = false
 * status = #active
 * date = 2021-05-15
 * publisher = "IHE"
@@ -202,8 +205,10 @@ Usage: #definition
 * status = #active
 * date = 2022-05-05
 * publisher = "IHE"
+* title = "FHIR status vs ebRIM Status Type Code"
 * description = "map between XDS ebRIM Status Type Codes and MHD FHIR DocumentReference.status code. Table 2:3.67.4.1.3.1-2. Note that the codes given are used without a system in both FHIR and ebRIM."
 * purpose = "show the mapping between ebRIM Status Type Codes and FHIR .status code"
+* experimental = false
 * group.source = "urn:ietf:rfc:3986"
 * group.target = "http://hl7.org/fhir/document-reference-status"
 * group.element[+].code = #urn:oasis:names:tc:ebxml-regrep:StatusType:Approved
