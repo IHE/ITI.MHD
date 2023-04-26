@@ -1,9 +1,12 @@
 == Suppressed Messages ==
 # IHE code system used but never defined by IHE as a formal codeSystem
 Code System URI 'urn:ihe:event-type-code' is unknown so the code cannot be validated
+Unknown Source Code System urn:ihe:iti:2007:AssociationType, so the source codes cannot be checked
+Unknown Source Code System urn:ietf:rfc:3986, so the source codes cannot be checked
 
 # for this example we use FHIR core DocumentReference, and thus core valueset is used. validator can't find this
-INFORMATION: Bundle/ex-dummyBundleDocAndBinary: Bundle.entry[0].resource.ofType(DocumentReference).content[0].format: The Coding provided (http://ihe.net/fhir/ihe.formatcode.fhir/CodeSystem/formatcode#urn:ihe:iti:xds-sd:text:2008) is not in the value set 'DocumentReference Format Code Set' (http://hl7.org/fhir/ValueSet/formatcodes|4.0.1), and a code is recommended to come from this value set.  (error message = Not in value set http://hl7.org/fhir/ValueSet/formatcodes)
+INFORMATION: Bundle/ex-dummyBundleDocAndBinary: Bundle.entry[0].resource/*DocumentReference/cccccccc-2222-0000-0000-000000000001*/.content[0].format: The Coding provided (http://ihe.net/fhir/ihe.formatcode.fhir/CodeSystem/formatcode#urn:ihe:iti:xds-sd:text:2008) is not in the value set 'DocumentReference Format Code Set' (http://hl7.org/fhir/ValueSet/formatcodes|4.0.1), and a code is recommended to come from this value set.  (error message = Not in value set http://hl7.org/fhir/ValueSet/formatcodes)
+
 
 # profile for MHD that is just structural and thus has no examples
 WARNING: StructureDefinition.where(url = 'https://profiles.ihe.net/ITI/MHD/StructureDefinition/IHE.MHD.List'): The Implementation Guide contains no examples for this profile
