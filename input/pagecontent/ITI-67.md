@@ -170,9 +170,9 @@ The Document Responder is grouped with an XDS Document Consumer when it supports
 | related (Note 4)	| $XDSDocumentEntryReferenceIdList |
 {: .grid}
 
-Note 1: This FindDocuments parameter is used when the greater than parameter modifier is used on the given parameter. 
+Note 1: This FindDocuments parameter is used when the greater or equal to (`ge`) parameter modifier is used on the given parameter. 
 
-Note 2: This FindDocuments parameter is used when the less than parameter modifier is used on the given parameter. 
+Note 2: This FindDocuments parameter is used when the less than (`lt`) parameter modifier is used on the given parameter. 
 
 Note 3: The $XDSDocumentEntryType is not a supported query parameter in HL7 FHIR.
 
