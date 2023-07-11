@@ -34,7 +34,6 @@ This guide is organized into four main sections:
    4. [33.4 MHD Overview](1334_overview.html)
    5. [33.5 MHD Security Considerations](1335_security_considerations.html)
    6. [33.6 MHD Cross Profile Considerations](1336_cross_profile_considerations.html)
-
 2. Volume 2: Transaction Detail
    1. [3.65 Provide Document Bundle [ITI-65]](ITI-65.html)
    2. [3.66 Find Document Lists [ITI-66]](ITI-66.html)
@@ -42,44 +41,16 @@ This guide is organized into four main sections:
    4. [3.68 Retrieve Document [ITI-68]](ITI-68.html)
    5. [3.105 Simplified Publish [ITI-105]](ITI-105.html)
    6. [3.106 Generate Metadata [ITI-106]](ITI-106.html)
-
 3. Volume 3: Metadata
    1. [4.2 XDS Error Codes](31_xds.html)
    2. [4.5 FHIR Representation](32_fhir_maps.html)
-   
-4. Appendix
-	1. [Test Plan](testplan.html)
+4. Other
+   1. [Download and Analysis](download.html)
+   2. [Test Plan](testplan.html)
 
 Click on any of the links above, see the [table of contents](toc.html), or
 if you are looking for a specific artifact, check out the [index](artifacts.html).
 
 #### Must Support
 
-MHD defines `Must Support` in StructureDefinition profiles as the element, when the minimal cardionality is zero, is **R2** `Required if Known`, as found in [Appendix Z](https://profiles.ihe.net/ITI/TF/Volume2/ch-Z.html#z.10-profiling-conventions-for-constraints-on-fhir). `Must Support` when the element minimal cardionality is not zero means **R**.
-
-#### Download 
-
-You can also download:
-
-* [this entire guide](full-ig.zip),
-* the definition resources in [json](definitions.json.zip), [xml](definitions.xml.zip), [ttl](definitions.ttl.zip), or [csv](csvs.zip) format, or
-* the example resources in [json](examples.json.zip), [xml](examples.xml.zip) or [ttl](examples.ttl.zip) format.
-
-The source code for this Implementation Guide can be found on IHE GitHub [https://github.com/IHE/ITI.MHD](https://github.com/IHE/ITI.MHD).
-
-
-#### Cross Version Analysis
-
-{% include cross-version-analysis.xhtml %}
-
-#### Dependency Table
-
-{% include dependency-table.xhtml %}
-
-#### Globals Table
-
-{% include globals-table.xhtml %}
-
-#### IP Statements
-
-{% include ip-statements.xhtml %}
+MHD defines `Must Support` in StructureDefinition profiles as the element, when the minimal cardinality is zero, is **R2** `Required if Known`, as found in [Appendix Z](https://profiles.ihe.net/ITI/TF/Volume2/ch-Z.html#z.10-profiling-conventions-for-constraints-on-fhir). `Must Support` when the element minimal cardinality is not zero means **R**.
