@@ -1,0 +1,53 @@
+<TestScript xmlns="http://hl7.org/fhir">
+<!-- JFM - No idea what this extension is or what it does, but it is not a ligitimate extension
+    <modifierExtension url="urn:module">
+        <extension url="urn:fixture-in">
+            <valueString value="request"/>
+        </extension>
+        <extension url="urn:fixture-in">
+            <valueString value="response"/>
+        </extension>
+    </modifierExtension>
+-->
+
+    <id value="BR-BundleRequirements"/>
+    <name value="bundleRequirements"/>
+    <description value="Evaluate PDB-request Bundle"/>
+
+    <test>
+    <description value="Bundle requirements."/>
+
+    <action>
+        <assert id="BR_1">
+            <description value="Bundle.entry.fullUrl."/>
+            <compareToSourceId value="request"/>
+            <compareToSourceExpression value="Bundle.entry.fullUrl.startsWith('http') or Bundle.entry.fullUrl.startsWith('urn:uuid:') or Bundle.entry.fullUrl.startsWith('urn:oid:')"/>
+            <warningOnly value="false"/>
+        </assert>
+    </action>
+    <action>
+        <assert id="BR_2">
+            <description value="FullUrl must be unique in a bundle."/>
+            <compareToSourceId value="request"/>
+            <compareToSourceExpression value="Bundle.entry.where(fullUrl.exists()).select(fullUrl&amp;resource.meta.versionId).isDistinct()"/>
+            <warningOnly value="false"/>
+        </assert>
+    </action>
+    <action>
+        <assert id="BR_3">
+            <description value="Bundle: Each entry SHALL carry request details."/>
+            <compareToSourceId value="request"/>
+            <compareToSourceExpression value="Bundle.entry.all(request.exists() and request.method = 'POST' and request.url.exists())"/>
+            <warningOnly value="false"/>
+        </assert>
+    </action>
+    <action>
+        <assert id="BR_4">
+            <description value="Bundle.entry.request.url"/>
+            <compareToSourceId value="request"/>
+            <compareToSourceExpression value="Bundle.entry.all(request.url = resource.type().name or request.url = fullUrl)"/>
+            <warningOnly value="false"/>
+        </assert>
+    </action>
+</test>
+</TestScript>

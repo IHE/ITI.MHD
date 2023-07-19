@@ -1,0 +1,110 @@
+<TestScript xmlns="http://hl7.org/fhir">
+<!-- JFM - No idea what this extension is or what it does, but it is not a ligitimate extension
+    <modifierExtension url="urn:module">
+        <extension url="urn:fixture-in">
+            <valueString value="request"/>
+        </extension>
+        <extension url="urn:fixture-in">
+            <valueString value="response"/>
+        </extension>
+    </modifierExtension>
+-->
+
+    <id value="DR-DocumentReferenceRequirements"/>
+    <name value="documentReferenceValidations"/>
+    <description value="Evaluate PDB-request Bundle"/>
+
+    <test>
+    <description value="DocumentReference requirements."/>
+    <action>
+        <assert id="DR_1">
+            <description value="DocumentReference: Every DocumentReference has single content element."/>
+            <compareToSourceId value="request"/>
+            <compareToSourceExpression value="Bundle.entry.resource.where(is(DocumentReference)).exists() and Bundle.entry.resource.where(is(DocumentReference) and content.exists() and content.count() = 1).count() = Bundle.entry.resource.where(is(DocumentReference)).count()"/>
+            <warningOnly value="false"/>
+        </assert>
+    </action>
+    <action>
+        <assert id="DR_2">
+            <description value="DocumentReference: DocumentReference has content.attachment.url."/>
+            <compareToSourceId value="request"/>
+            <compareToSourceExpression value="Bundle.entry.resource.all(is(FHIR.DocumentReference) implies content.attachment.url.exists())"/>
+            <warningOnly value="false"/>
+        </assert>
+    </action>
+    <action>
+        <assert id="DR_3">
+            <description value="DocumentReference: DocumentReference.content.attachment has contentType."/>
+            <compareToSourceId value="request"/>
+            <compareToSourceExpression value="Bundle.entry.resource.all(is(FHIR.DocumentReference)) implies content.attachment.contentType.exists()"/>
+            <warningOnly value="false"/>
+        </assert>
+    </action>
+    <action>
+        <assert id="DR_4">
+            <description value="DocumentReference: DocumentReference.content.attachment.data is not allowed."/>
+            <compareToSourceId value="request"/>
+            <compareToSourceExpression value="Bundle.entry.resource.all(is(FHIR.DocumentReference)) implies content.attachment.data.exists().not()"/>
+            <warningOnly value="false"/>
+        </assert>
+    </action>
+
+    <action>
+        <assert id="DR_5">
+            <description value="DocumentReference: Binary Resource shall be in the Bundle."/>
+            <compareToSourceId value="request"/>
+            <compareToSourceExpression value="Bundle.entry.select(resource as DocumentReference).content.attachment.url ~ Bundle.entry.where(resource is Binary).fullUrl"/>
+            <warningOnly value="false"/>
+        </assert>
+    </action>
+    <action>
+        <assert id="DR_6">
+            <description value="DocumentReference: DocumentReference content attachment contentType is equivalent to Binary contentType|MHDPDBAttachmentContentType"/>
+            <compareToSourceId value="request"/>
+            <compareToSourceExpression value="Bundle.entry.select(resource as DocumentReference).select(content.attachment.url.value + content.attachment.contentType.value) ~ Bundle.entry.where(resource is Binary).select(fullUrl.value + resource.contentType.value)"/>
+            <warningOnly value="false"/>
+        </assert>
+    </action>
+
+    <action>
+        <assert id="DR_7">
+            <description value="When sourcePatientInfo is provided, it must be contained."/>
+            <compareToSourceId value="request"/>
+            <compareToSourceExpression value="Bundle.entry.select(resource as DocumentReference).select(iif (context.exists() and context.sourcePatientInfo.exists(), context.sourcePatientInfo.reference in contained.where(is(Patient)).id , true)).allTrue()"/>
+            <warningOnly value="false"/>
+        </assert>
+    </action>
+    <action>
+        <assert id="DR_8">
+            <description value="DocumentReference: author, if it exists, is a reference to a contained Practitioner, PractitionerRole, Organization, Device, Patient, RelatedPerson Resource"/>
+            <compareToSourceId value="request"/>
+            <compareToSourceExpression value="Bundle.entry.resource.((is(FHIR.DocumentReference) and author.exists()) implies (author.reference in contained.(Practitioner.id | PractitionerRole.id | Organization.id | Device.id | Patient.id | RelatedPerson.id)))"/>
+            <warningOnly value="false"/>
+        </assert>
+    </action>
+    <action>
+        <assert id="DR_9">
+            <description value="DocumentReference: authenticator, if it exists, is a reference to a contained Practitioner, PractitionerRole, Organization Resource"/>
+            <compareToSourceId value="request"/>
+            <compareToSourceExpression value="Bundle.entry.resource.((is(FHIR.DocumentReference) and authenticator.exists()) implies (authenticator.reference in contained.(Practitioner.id | PractitionerRole.id | Organization.id)))"/>
+            <warningOnly value="false"/>
+        </assert>
+    </action>
+    <action>
+        <assert id="DR_10">
+            <description value="DocumentReference: masterIdentifier is required"/>
+            <compareToSourceId value="request"/>
+            <compareToSourceExpression value="Bundle.entry.resource.where(is(FHIR.DocumentReference)).masterIdentifier.exists()"/>
+            <warningOnly value="false"/>
+        </assert>
+    </action>
+    <action>
+        <assert id="DR_11">
+            <description value="DocumentReference: status is one of current, superseded, entered-in-error"/>
+            <compareToSourceId value="request"/>
+            <compareToSourceExpression value="Bundle.entry.resource.where(is(FHIR.DocumentReference) and status.exists()).status in ('current' | 'superseded' | 'entered-in-error')"/>
+            <warningOnly value="false"/>
+        </assert>
+    </action>
+ </test>
+</TestScript>
