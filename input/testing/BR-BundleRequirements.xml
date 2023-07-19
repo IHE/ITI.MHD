@@ -11,7 +11,7 @@
 -->
 
     <id value="BR-BundleRequirements"/>
-    <name value="bundleRequirements"/>
+    <name value="BundleRequirements"/>
     <description value="Evaluate PDB-request Bundle"/>
 
     <test>

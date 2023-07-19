@@ -11,7 +11,7 @@
 -->
 
     <id value="DR-DocumentReferenceRequirements"/>
-    <name value="documentReferenceValidations"/>
+    <name value="DocumentReferenceValidations"/>
     <description value="Evaluate PDB-request Bundle"/>
 
     <test>
