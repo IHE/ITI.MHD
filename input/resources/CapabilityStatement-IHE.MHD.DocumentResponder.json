@@ -99,6 +99,11 @@
               "documentation": "Who/what is the subject of the document"
             },
             {
+              "name": "patient.identifier",
+              "type": "token",
+              "documentation": "An Identifier for Who/what is the subject of the document"
+            },
+            {
               "name": "period",
               "definition": "http://hl7.org/fhir/SearchParameter/DocumentReference-period",
               "type": "date",
@@ -190,6 +195,12 @@
               "definition": "http://hl7.org/fhir/SearchParameter/clinical-patient",
               "type": "reference",
               "documentation": "This parameter is of type Reference(Patient). The Document Consumer may get this reference through the use of the PDQm or PIXm Profiles, or by some other method. When the patient parameter is used, the Patient reference would need to be accessible to both the Document Consumer and the Document Responder."
+            },
+            {
+              "name": "subject.identifier",
+              "type": "token",
+              "documentation": "An Identifier for Who/what is the subject of the document"
+
             },
             {
               "name": "source",
