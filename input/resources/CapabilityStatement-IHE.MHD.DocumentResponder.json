@@ -45,12 +45,6 @@
               "documentation": "When the resource version last changed"
             },
             {
-              "name": "author",
-              "definition": "http://hl7.org/fhir/SearchParameter/DocumentReference-author",
-              "type": "reference",
-              "documentation": "Who and/or what authored the document"
-            },
-            {
               "name": "author.given",
               "type": "string",
               "documentation": "These parameters, of type string, specify the name parts of the author person, which is associated with the DocumentReference Resource, or in Document Sharing nomenclature, the author of the Document Entry. See ITI TF-2x: Appendix Z.2 for use of the string data type."
