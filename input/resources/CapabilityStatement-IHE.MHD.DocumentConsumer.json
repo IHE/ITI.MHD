@@ -51,6 +51,16 @@
               "documentation": "Who and/or what authored the document"
             },
             {
+              "name": "author.given",
+              "type": "string",
+              "documentation": "These parameters, of type string, specify the name parts of the author person, which is associated with the DocumentReference Resource, or in Document Sharing nomenclature, the author of the Document Entry. See ITI TF-2x: Appendix Z.2 for use of the string data type."
+            },
+            {
+              "name": "author.family",
+              "type": "string",
+              "documentation": "These parameters, of type string, specify the name parts of the author person, which is associated with the DocumentReference Resource, or in Document Sharing nomenclature, the author of the Document Entry. See ITI TF-2x: Appendix Z.2 for use of the string data type."
+            },
+            {
               "name": "category",
               "definition": "http://hl7.org/fhir/SearchParameter/DocumentReference-category",
               "type": "token",
@@ -184,21 +194,24 @@
               "documentation": "This parameter, of type token, specifies an identifier for this List. The search results represent the results of a search on List.masterIdentifier and List.identifier. See ITI TF-2x: Appendix Z.2 for additional constraints on the use of the token search parameter type."
             },
             {
-              "name": "subject",
+              "name": "patient",
               "definition": "http://hl7.org/fhir/SearchParameter/clinical-patient",
               "type": "reference",
               "documentation": "This parameter is of type Reference(Patient). The Document Consumer may get this reference through the use of the PDQm or PIXm Profiles, or by some other method. When the patient parameter is used, the Patient reference would need to be accessible to both the Document Consumer and the Document Responder."
             },
             {
-              "name": "subject.identifier",
+              "name": "patient.identifier",
               "type": "token",
               "documentation": "An Identifier for Who/what is the subject of the document"
-
             },
             {
-              "name": "source",
-              "definition": "http://hl7.org/fhir/SearchParameter/List-source",
-              "type": "reference",
+              "name": "source.given",
+              "type": "string",
+              "documentation": "These parameters, of type string, specify the name parts of the author person which is associated with the List. See ITI TF-2x: Appendix Z.2 for use of the string data type."
+            },
+            {
+              "name": "source.family",
+              "type": "string",
               "documentation": "These parameters, of type string, specify the name parts of the author person which is associated with the List. See ITI TF-2x: Appendix Z.2 for use of the string data type."
             },
             {
