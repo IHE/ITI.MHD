@@ -10,9 +10,11 @@
     </modifierExtension>
 -->
 
-    <extension url="http://hl7.org/fhir/5.0/StructureDefinition/extension-TestScript.scope.artifact"> 
-            <valueCanonical value="https://profiles.ihe.net/ITI/MHD/StructureDefinition/IHE.MHD.Comprehensive.ProvideBundle"/>
+  <extension url="http://hl7.org/fhir/5.0/StructureDefinition/extension-TestScript.scope">
+    <extension url="http://hl7.org/fhir/5.0/StructureDefinition/extension-TestScript.scope.artifact">
+      <valueCanonical value="https://profiles.ihe.net/ITI/MHD/StructureDefinition/IHE.MHD.Comprehensive.ProvideBundle"/>
     </extension>
+  </extension>
     <id value="BR-BundleRequirements"/>
     <name value="BundleRequirements"/>
     <description value="Evaluate PDB-request Bundle"/>
