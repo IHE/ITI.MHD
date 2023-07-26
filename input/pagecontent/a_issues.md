@@ -1,5 +1,14 @@
 <div markdown="1" class="stu-note">
 
+### Significant changes since MHD Version 4.2.0
+
+Version 4.2.1
+- quality improvements
+- downloads and analysis page
+- add context to extensions
+- CP-ITI-1254 Date range clarity, 
+- capabilityStatement improvements.
+
 ### Significant changes since MHD Version 4.1.0
 
 Version 4.2.0

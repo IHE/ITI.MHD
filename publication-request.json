@@ -1,23 +1,17 @@
 {
  "package-id" : "ihe.iti.mhd",
- "version" : "4.2.0",
- "path" : "https://profiles.ihe.net/ITI/MHD/4.2.0",
- "milestone" : true,
+ "version" : "4.2.1",
+ "path" : "https://profiles.ihe.net/ITI/MHD/4.2.1",
+ "mode" : "milestone",
  "status" : "trial-use",
  "sequence": "Publication",
- "desc" : "Trial Implementation - alignment with BasicAudit (BALP), Generate Metadata Option, Simplified Publish Option, and Publish of FHIR-Documents Option.",
- "descmd" : "Version 4.2.0
- - changed to AuditEvent profiling leveraging [Basic Audit Log Patterns (BALP) Release 1.1.0](https://profiles.ihe.net/ITI/BALP/index.html)
-   - changes to RESTful type, and query subtype
- - Added new features
-   - Add an [Generate Metadata](1332_actor_options.html#13325-generate-metadata-option) that adds the [ITI-106](ITI-106.html) operation that allows for one structured/coded document to be published.
-     - Is the use of Operation preferrable to the Simplified Publish?
-   - Add an [Simplified Publish](1332_actor_options.html#13324-simplified-publish-option) option that allows for one DocumentReference with the document in the .data element to be published, expecting the Document Recipient to create the SubmissionSet derived off of the DocumentReference and Community mapping policy.
-   - Add an [ITI-65 FHIR Documents Publish](1332_actor_options.html#13326-iti-65-fhir-documents-publish-option) option with support in ITI-65 to include a FHIR Document Bundle as an alternative to Binary. This makes less the burden on the Document Source to seralize the content into an appropriate Binary format, as that requirement is moved to the Document Recipient. There are use-cases where the Document Recipient will use the FHIR Document Bundle directly, and there are requirements on the Document Recipient to seralize the FHIR Document Bundle when grouped with non-FHIR Actors like XDS/XDR/XDM.
-     - This is added as an option at this time to keep base compatibility with existing MHD. This may become normal functionality of ITI-65 eventually
-   - Each of these new options may survive or may be removed. Please voice your interest, and sign up for IHE-Connectathon to test these options. Based on interest these Options may survive or be removed.
- - better clarity on types of Identifier
- - a method has been added to support DocumentReference replace that is used by the Document Source to mark the old/replaced DocumentReference instance as superseded.",
+ "desc" : "Trial Implementation - quality, CP-ITI-1254, capabilityStatement improvements.",
+ "descmd" : "Version 4.2.1
+- quality improvements
+- downloads and analysis page
+- add context to extensions
+- CP-ITI-1254 Date range clarity, 
+- capabilityStatement improvements.",
  "changes" : "a_issues.html"
 }
 
