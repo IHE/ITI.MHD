@@ -141,9 +141,9 @@ The Document Responder is grouped with an XDS Document Consumer when it supports
 |status	| $XDSSubmissionSetStatus |
 {: .grid}
 
-Note 1: This FindSubmissionSets parameter is used when the greater than parameter modifier is used on the created parameter.
+Note 1: This FindSubmissionSets parameter is used when the greater or equal to (`ge`) parameter modifier is used on the created parameter.
 
-Note 2: This FindSubmissionSets parameter is used when the less than parameter modifier is used on the created parameter. 
+Note 2: This FindSubmissionSets parameter is used when the less than (`lt`) parameter modifier is used on the created parameter. 
 
 **Table 2:3.66.4.1.3.1-2: FindFolders Query Parameter Mapping**
 
@@ -156,9 +156,9 @@ Note 2: This FindSubmissionSets parameter is used when the less than parameter m
 |status	| $XDSFolderStatus |
 {: .grid}
 
-Note 1: This FindFolder parameter is used when the greater than parameter modifier is used on the created parameter.
+Note 1: This FindFolder parameter is used when the greater or equal to (`ge`) parameter modifier is used on the created parameter.
 
-Note 2: This FindFolder parameter is used when the less than parameter modifier is used on the created parameter. 
+Note 2: This FindFolder parameter is used when the less than (`lt`) parameter modifier is used on the created parameter. 
 
 Note 3: Parameters specific to "submissionset" shall be silently ignored.
 
