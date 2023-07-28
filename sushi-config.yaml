@@ -103,9 +103,6 @@ pages:
     title: "3:4.2.4.1 Error Codes"
   32_fhir_maps.md:
     title: "3:4.5 FHIR Maps"
-  download.md:
-    title: "Download and Analysis"
-    generation: markdown
   testplan.md:
     title: "Test Plan"
 #    extension: 
@@ -116,6 +113,9 @@ pages:
 #    extension: 
 #      - url: http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status
 #        valueCode: informative
+  download.md:
+    title: "Download and Analysis"
+    generation: markdown
       
 
 # ╭────────────────────────────────────────────menu.xml────────────────────────────────────────────╮
@@ -141,6 +141,6 @@ menu:
   Volume 3:
     "Error Codes": 31_xds.html
     "FHIR Maps": 32_fhir_maps.html
-  Download: download.html
-  Test Plan: testplan.html
   Artifact Index: artifacts.html
+  Test Plan: testplan.html
+  Download: download.html

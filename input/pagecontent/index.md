@@ -27,26 +27,26 @@ part of the [IHE Document Sharing Health Information Exchange](https://profiles.
 
 This guide is organized into four main sections:
 
-1. Volume 1: Use-Case analysis
-   1. [33.1 MHD Actors and Transactions](1331_actors_and_transactions.html)
-   2. [33.2 MHD Actor Options](1332_actor_options.html)
-   3. [33.3 MHD Actor Required Groupings](1333_required_grouping.html)
-   4. [33.4 MHD Overview](1334_overview.html)
-   5. [33.5 MHD Security Considerations](1335_security_considerations.html)
-   6. [33.6 MHD Cross Profile Considerations](1336_cross_profile_considerations.html)
-2. Volume 2: Transaction Detail
-   1. [3.65 Provide Document Bundle [ITI-65]](ITI-65.html)
-   2. [3.66 Find Document Lists [ITI-66]](ITI-66.html)
-   3. [3.67 Find Document References [ITI-67]](ITI-67.html)
-   4. [3.68 Retrieve Document [ITI-68]](ITI-68.html)
-   5. [3.105 Simplified Publish [ITI-105]](ITI-105.html)
-   6. [3.106 Generate Metadata [ITI-106]](ITI-106.html)
-3. Volume 3: Metadata
-   1. [4.2 XDS Error Codes](31_xds.html)
-   2. [4.5 FHIR Representation](32_fhir_maps.html)
-4. Other
-   1. [Download and Analysis](download.html)
-   2. [Test Plan](testplan.html)
+- Volume 1: Use-Case analysis
+  - [33.1 MHD Actors and Transactions](1331_actors_and_transactions.html)
+  - [33.2 MHD Actor Options](1332_actor_options.html)
+  - [33.3 MHD Actor Required Groupings](1333_required_grouping.html)
+  - [33.4 MHD Overview](1334_overview.html)
+  - [33.5 MHD Security Considerations](1335_security_considerations.html)
+  - [33.6 MHD Cross Profile Considerations](1336_cross_profile_considerations.html)
+- Volume 2: Transaction Detail
+  - [3.65 Provide Document Bundle [ITI-65]](ITI-65.html)
+  - [3.66 Find Document Lists [ITI-66]](ITI-66.html)
+  - [3.67 Find Document References [ITI-67]](ITI-67.html)
+  - [3.68 Retrieve Document [ITI-68]](ITI-68.html)
+  - [3.105 Simplified Publish [ITI-105]](ITI-105.html)
+  - [3.106 Generate Metadata [ITI-106]](ITI-106.html)
+- Volume 3: Metadata
+  - [4.2 XDS Error Codes](31_xds.html)
+  - [4.5 FHIR Representation](32_fhir_maps.html)
+- Other
+  - [Test Plan](testplan.html)
+  - [Download and Analysis](download.html)
 
 Click on any of the links above, see the [table of contents](toc.html), or
 if you are looking for a specific artifact, check out the [index](artifacts.html).
