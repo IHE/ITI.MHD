@@ -16,7 +16,7 @@ part of the [IHE Document Sharing Health Information Exchange](https://profiles.
 
 <div markdown="1" class="stu-note">
 
-| [Significant Changes, Open, and Closed Issues](a_issues.html) |
+| [Significant Changes, Open and Closed Issues](a_issues.html) |
 {: .grid}
 
 **[Search this IG](https://www.google.com/search?q=site%3Ahttps%3A%2F%2Fprofiles.ihe.net%2FITI%2FMHD&rlz=1C1GCEU_enUS815US815&sxsrf=ALeKk02egtK8A20vWkRrPApvkcoQjnIiDA%3A1620864970799&ei=ym-cYPmMMMq6tQa8vre4CA&oq=site%3Ahttps%3A%2F%2Fprofiles.ihe.net%2FITI%2FMHD&gs_lcp=Cgdnd3Mtd2l6EANQ7CZYmDBg9TdoAXAAeACAAWaIAcIDkgEDNS4xmAEAoAEBqgEHZ3dzLXdpesABAQ&sclient=gws-wiz&ved=0ahUKEwj5mcDGsMXwAhVKXc0KHTzfDYcQ4dUDCA4&uact=5)**
@@ -25,31 +25,31 @@ part of the [IHE Document Sharing Health Information Exchange](https://profiles.
 
 #### Organization of This Guide 
 
-This guide is organized into four main sections:
+This guide is organized into the following sections:
 
 - Volume 1: Use-Case analysis
-  - [33.1 MHD Actors and Transactions](1331_actors_and_transactions.html)
-  - [33.2 MHD Actor Options](1332_actor_options.html)
-  - [33.3 MHD Actor Required Groupings](1333_required_grouping.html)
-  - [33.4 MHD Overview](1334_overview.html)
-  - [33.5 MHD Security Considerations](1335_security_considerations.html)
-  - [33.6 MHD Cross Profile Considerations](1336_cross_profile_considerations.html)
+  - [Actors and Transactions](1331_actors_and_transactions.html)
+  - [Actor Options](1332_actor_options.html)
+  - [Actor Required Groupings](1333_required_grouping.html)
+  - [Overview](1334_overview.html)
+  - [Security Considerations](1335_security_considerations.html)
+  - [Cross Profile Considerations](1336_cross_profile_considerations.html)
 - Volume 2: Transaction Detail
-  - [3.65 Provide Document Bundle [ITI-65]](ITI-65.html)
-  - [3.66 Find Document Lists [ITI-66]](ITI-66.html)
-  - [3.67 Find Document References [ITI-67]](ITI-67.html)
-  - [3.68 Retrieve Document [ITI-68]](ITI-68.html)
-  - [3.105 Simplified Publish [ITI-105]](ITI-105.html)
-  - [3.106 Generate Metadata [ITI-106]](ITI-106.html)
+  - [Provide Document Bundle [ITI-65]](ITI-65.html)
+  - [Find Document Lists [ITI-66]](ITI-66.html)
+  - [Find Document References [ITI-67]](ITI-67.html)
+  - [Retrieve Document [ITI-68]](ITI-68.html)
+  - [Simplified Publish [ITI-105]](ITI-105.html)
+  - [Generate Metadata [ITI-106]](ITI-106.html)
 - Volume 3: Metadata
-  - [4.2 XDS Error Codes](31_xds.html)
-  - [4.5 FHIR Representation](32_fhir_maps.html)
+  - [XDS Error Codes](31_xds.html)
+  - [FHIR Representation](32_fhir_maps.html)
 - Other
   - [Test Plan](testplan.html)
   - [Download and Analysis](download.html)
 
-Click on any of the links above, see the [table of contents](toc.html), or
-if you are looking for a specific artifact, check out the [index](artifacts.html).
+Click on any of the links above, see the [Table of Contents](toc.html), or
+if you are looking for a specific artifact, see the index of [Artifacts](artifacts.html).
 
 #### Must Support
 
