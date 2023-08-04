@@ -68,6 +68,14 @@ resources:
     name: Example of a FHIR-Document Bundle
     description: An example of a FHIR-Document Bundle
     exampleBoolean: true
+  TestScript/DR-DocumentReferenceRequirements:
+    name: Document Reference Requirements
+    description: something useful
+    exampleBoolean: false
+  TestScript/BR-BundleRequirements:
+    name: Document Bundle Requirements
+    description: something useful
+    exampleBoolean: false
 
 # ╭────────────────────────────────────────────pages───────────────────────────────────────────────╮
 # │  The pages property corresponds to IG.definition.page.                                         │
