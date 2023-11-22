@@ -305,7 +305,7 @@ Usage: #example
 * link[0].url = "test.fhir.net/R4/fhir/DocumentReference?patient=9876&status=current"
 * total = 1
 * timestamp = 2021-04-16T11:32:24Z
-* entry[0].fullUrl = "http://example.org/DocumentReference/ex-DocumentReferenceMinimal"
+* entry[0].fullUrl = "http://example.org/DocumentReference/in-DocumentReferenceMinimal"
 * entry[0].resource = in-DocumentReferenceMinimal
 
 Instance:   in-DocumentReferenceMinimal

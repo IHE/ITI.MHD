@@ -7,11 +7,11 @@ name: IHE_ITI_MHD
 status: active
 title: "Mobile access to Health Documents (MHD)"
 description: ImplementationGuide for IHE IT Infrastructure Technical Framework Supplement Mobile access to Health Documents (MHD)
-date: 2022-08-04
-version: 4.2.1
-#releaseLabel: ci-build
+#date: 2022-08-04
+version: 4.2.2-current
+releaseLabel: ci-build
 #releaselabel: ballot
-releaseLabel: Trial-Implementation
+#releaseLabel: Trial-Implementation
 publisher:
   - name: IHE IT Infrastructure Technical Committee
   - url: https://www.ihe.net/ihe_domains/it_infrastructure/
@@ -30,11 +30,11 @@ dependencies:
   ihe.iti.balp:
     id: iheitibasicaudit
     uri: https://profiles.ihe.net/ITI/BALP/ImplementationGuide/ihe.iti.balp
-    version: 1.1.x
+    version: current
   ihe.formatcode.fhir:
     id: iheformatcodefhir
     uri: https://profiles.ihe.net/fhir/ihe.formatcode.fhir/ImplementationGuide/ihe.formatcode.fhir
-    version: 1.1.x
+    version: current
  
 parameters:  # see http://build.fhir.org/ig/FHIR/fhir-tools-ig/branches/master/index.html
   path-resource:
