@@ -20,7 +20,7 @@ Description: "uniqueId Identifier holding a OID"
 Invariant: mhd-startswithoid
 Description: "value must start with urn:oid:"
 Severity: #error
-Expression: "value.startsWith('urn:oid:')"
+Expression: "startsWith('urn:oid:')"
 
 Profile: EntryUUIDIdentifier
 Parent: Identifier
@@ -36,4 +36,4 @@ Description: "entryUUID Identifier holding a UUID"
 Invariant: mhd-startswithuuid
 Description: "value must start with urn:uuid:"
 Severity: #error
-Expression: "value.startsWith('urn:uuid:')"
+Expression: "startsWith('urn:uuid:')"
