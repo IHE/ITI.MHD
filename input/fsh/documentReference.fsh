@@ -58,13 +58,7 @@ Description:    "A profile on the DocumentReference resource for MHD with minima
 * context.sourcePatientInfo 0..1 MS
 * context.related 0..*
 * relatesTo 0..* MS
-* relatesTo obeys iti-mhd-repl
 
-
-Invariant:   iti-mhd-repl
-Description: "a DocumetReference replacements needs to relate to a superseded DocumentReference"
-Expression:  "code='replaces' implies target.exists()"
-Severity:    #error
 
 // equivalent to MHD DocumentReference Comprehensive UnContained Option
 Profile:        UnContainedComprehensiveDocumentReference
