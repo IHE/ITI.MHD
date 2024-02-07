@@ -72,7 +72,7 @@ Usage: #definition
 * status = #active
 * code = #sourceId
 * base = #List
-* expression = "(extension('https://profiles.ihe.net/ITI/MHD/StructureDefinition/SourceId').value.ofType(Identifier))"
+* expression = "(extension('https://profiles.ihe.net/ITI/MHD/StructureDefinition/ihe-sourceId').value.ofType(Identifier))"
 * type = #token
 
 
