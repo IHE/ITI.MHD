@@ -42,10 +42,10 @@ Description:    "Defines constraints on the AuditEvent Resource to record when a
 * agent[documentRecipient].network 1..1
 * agent[documentSource] ^short = "Document Source"
 * agent[documentRecipient] ^short = "Document Recipient"
-* entity 2..2
+* entity 2..
 * entity ^slicing.discriminator.type = #pattern
 * entity ^slicing.discriminator.path = "type"
-* entity ^slicing.rules = #closed
+* entity ^slicing.rules = #open
 * entity ^slicing.description = "patient and submission set involved"
 * entity contains
 	patient 1..1 and
@@ -110,10 +110,10 @@ Description:    "Defines constraints on the AuditEvent Resource to record when a
 * agent[documentRecipient].network 1..1
 * agent[documentSource] ^short = "Document Source"
 * agent[documentRecipient] ^short = "Document Recipient"
-* entity 2..2
+* entity 2..
 * entity ^slicing.discriminator.type = #pattern
 * entity ^slicing.discriminator.path = "type"
-* entity ^slicing.rules = #closed
+* entity ^slicing.rules = #open
 * entity ^slicing.description = "patient and submission set involved"
 * entity contains
 	patient 1..1 and
