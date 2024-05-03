@@ -26,7 +26,7 @@ Description:    "A profile on the Bundle transaction for ITI-65 Provide Document
 * entry contains 
     SubmissionSet 1..1 and
     DocumentRefs 0..* and
-    UpdateDocumentRefs 0..* and
+//    UpdateDocumentRefs 0..* and
     Documents 0..* and
     FhirDocuments 0..* and
     Folders 0..* and
@@ -45,6 +45,7 @@ Description:    "A profile on the Bundle transaction for ITI-65 Provide Document
 * entry[DocumentRefs].resource 1..1
 * entry[DocumentRefs].request 1..1
 * entry[DocumentRefs].request.method = #POST
+/*
 * entry[UpdateDocumentRefs].resource only 
     IHE.MHD.Patch.Parameters 
 * entry[UpdateDocumentRefs] ^short = "the superseded DocumentReference resources"
@@ -52,6 +53,7 @@ Description:    "A profile on the Bundle transaction for ITI-65 Provide Document
 * entry[UpdateDocumentRefs].resource 1..1
 * entry[UpdateDocumentRefs].request 1..1
 * entry[UpdateDocumentRefs].request.method = #PATCH
+*/
 * entry[Documents].resource ^type.code = "Binary"
 * entry[Documents].resource ^type.profile = Canonical(Binary)
 * entry[Documents] ^short = "the Documents"

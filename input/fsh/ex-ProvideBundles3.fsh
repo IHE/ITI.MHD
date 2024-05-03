@@ -151,6 +151,7 @@ Usage: #inline
 
 
 // example for artifacts presentation, replication of the #inline.
+/*
 Instance:   ex-patchParameters
 InstanceOf: PatchParameters
 Title:      "DocumentReference for Comprehensive metadata beeing replaced"
@@ -176,6 +177,7 @@ Usage: #inline
 * parameter.part[=].valueString = "DocumentReference.status"
 * parameter.part[+].name = "value"
 * parameter.part[=].valueCode = #superseded
+*/
 
 Instance:   aaaaaaaa-bbbb-cccc-eeee-e00333300001
 InstanceOf: IHE.MHD.Comprehensive.SubmissionSet
@@ -216,10 +218,12 @@ Usage: #example
 * entry[SubmissionSet].resource = aaaaaaaa-bbbb-cccc-eeee-e00333300001
 * entry[SubmissionSet].request.url = "List"
 * entry[SubmissionSet].request.method = #POST
+/*
 * entry[UpdateDocumentRefs].fullUrl = "urn:uuid:aaaaaaaa-bbbb-cccc-ffff-e00333300002"
 * entry[UpdateDocumentRefs].resource = aaaaaaaa-bbbb-cccc-ffff-e00333300002
 * entry[UpdateDocumentRefs].request.url = "DocumentReference/ex-documentreference"
 * entry[UpdateDocumentRefs].request.method = #PATCH
+*/
 * entry[DocumentRefs].fullUrl = "urn:uuid:aaaaaaaa-bbbb-cccc-eeee-e00333300002"
 * entry[DocumentRefs].resource = aaaaaaaa-bbbb-cccc-eeee-e00333300002
 * entry[DocumentRefs].request.url = "DocumentReference"

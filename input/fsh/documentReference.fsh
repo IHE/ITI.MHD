@@ -1,9 +1,11 @@
+/*
 Profile:        PatchParameters
 Parent:         Parameters
 Id:             IHE.MHD.Patch.Parameters
 Title:          "MHD DocumentReference Patch Parameters"
 Description:    "A profile on the Parameters resource to update DocumentReference" 
 * parameter.name = "operation"
+*/
 
 // equivalent to MHD Minimal DocumentReference
 Profile:        MinimalDocumentReference
