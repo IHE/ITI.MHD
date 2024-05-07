@@ -103,7 +103,7 @@ The "need" may be simply that the Document Source is not capable to understand t
 
 The Document Source claiming the Simplified Push Option shall implement use of [ITI-105](ITI-105.html) transaction to publish document content. The Document Source may also use [ITI-65](ITI-65.html).
 
-The Document Recipient claiming the Simplified Push Option shall implement the [ITI-105](ITI-105.html) transaction. The Document Recipient will extract the document, translate the DocumentReference metadata elements into a SubmissionSet following the [PCC TF-2: 4.1.1 XDSSubmissionSet Metadata](https://www.ihe.net/uploadedFiles/Documents/PCC/IHE_PCC_TF_Vol2.pdf), and may have further metadata translation requirements specified by the local Document Sharing Community policy.
+The Document Recipient claiming the Simplified Push Option shall implement the [ITI-105](ITI-105.html) transaction. The Document Recipient will extract the document, translate the DocumentReference metadata elements into a SubmissionSet following the [PCC TF-2: 4.1 Medical Document Binding to Document Sharing Metadata](https://profiles.ihe.net/ITI/sIPS/pcc.html#41-medical-document-binding-to-document-sharing-metadata), and may have further metadata translation requirements specified by the local Document Sharing Community policy.
 
 ### 1:33.2.5 Generate Metadata Option
 
@@ -123,7 +123,7 @@ The "need" may be simply that the Document Source is not capable to understand t
 
 The Document Source claiming the Generate Metadata Option shall implement use of [ITI-106](ITI-106.html) transaction to submit a document content. The Document Source may also use [ITI-65](ITI-65.html).
 
-The Document Recipient claiming the Generate Metadata Option shall implement the [ITI-106](ITI-106.html) transaction. The Document Recipient will interpret the document, create or update a DocumentReference metadata, convert DocumentReference elements into a SubmissionSet. The metadata derivation shall following the [PCC TF-2: 4.1.1 XDSSubmissionSet Metadata](https://www.ihe.net/uploadedFiles/Documents/PCC/IHE_PCC_TF_Vol2.pdf), and may have further metadata translation requirements specified by the local Document Sharing Community policy.
+The Document Recipient claiming the Generate Metadata Option shall implement the [ITI-106](ITI-106.html) transaction. The Document Recipient will interpret the document, create or update a DocumentReference metadata, convert DocumentReference elements into a SubmissionSet. The metadata derivation shall following the [PCC TF-2: 4.1 Medical Document Binding to Document Sharing Metadata](https://profiles.ihe.net/ITI/sIPS/pcc.html#41-medical-document-binding-to-document-sharing-metadata), and may have further metadata translation requirements specified by the local Document Sharing Community policy.
 
 ### 1:33.2.6 ITI-65 FHIR Documents Publish Option
 
