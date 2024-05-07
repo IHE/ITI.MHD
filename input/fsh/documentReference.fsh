@@ -103,7 +103,7 @@ Mapping: DocumentEntry-Mapping
 Source:	MinimalDocumentReference
 Target: "XDS"
 Title: "XDS and MHD Mapping"
-* -> "XDS DocumentEntry" "Used in the context of the IHE MHD ImplementationGuide"
+* -> "XDS DocumentEntry: Used in the context of the IHE MHD ImplementationGuide"
 * category -> "DocumentEntry.classCode"
 * author -> "DocumentEntry.author"
 * status -> "DocumentEntry.availabilityStatus"

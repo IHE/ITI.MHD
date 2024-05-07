@@ -57,7 +57,7 @@ Mapping: Folder-Mapping
 Source:	IHE.MHD.Minimal.Folder
 Target: "XDS"
 Title: "XDS and MHD Mapping"
-* -> "XDS Folder" "Used in the context of the IHE MHD ImplementationGuide"
+* -> "XDS Folder: Used in the context of the IHE MHD ImplementationGuide"
 * meta.profile -> "Folder.limitedMetadata"
 * extension[designationType] -> "Folder.codeList"
 * identifier -> "Folder.entryUUID and Folder.uniqueId"

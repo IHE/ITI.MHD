@@ -122,7 +122,7 @@ Mapping: SubmissionSet-Mapping
 Source:	IHE.MHD.Minimal.SubmissionSet
 Target: "XDS"
 Title: "XDS and MHD Mapping"
-* -> "XDS SubmissionSet" "Used in the context of the IHE MHD ImplementationGuide"
+* -> "XDS SubmissionSet: Used in the context of the IHE MHD ImplementationGuide"
 * meta.profile -> "SubmissionSet.limitedMetadata"
 * extension[sourceId] -> "SubmissionSet.sourceId"
 * extension[intendedRecipient] -> "SubmissionSet.intendedRecipient"
