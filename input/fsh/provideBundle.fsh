@@ -12,6 +12,7 @@ Description:    "A profile on the Bundle transaction for ITI-65 Provide Document
   - may create one or more [DocumentReference](StructureDefinition-IHE.MHD.Minimal.DocumentReference.html) that is either minimal, comprehensive, or unContained
     - with a document as a [Binary](http://hl7.org/fhir/R4/binary.html)
     - or, when implementing the **ITI-65 FHIR Document Publish** option, a [FHIR Document Bundle](http://hl7.org/fhir/R4/bundle.html)
+  - when DocumentReference replace is used the UpdateDocumentRefs slice is used to indicate the superseded DocumentReference
   - may create/update one or more [Folder type List](StructureDefinition-IHE.MHD.Minimal.Folder.html) that is either minimal, comprehensive, or unContained
   - may create/update/read one [Patient](http://hl7.org/fhir/R4/patient.html)"
 * meta.profile 1..*

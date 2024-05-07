@@ -2,7 +2,7 @@ Profile:        PatchParameters
 Parent:         Parameters
 Id:             IHE.MHD.Patch.Parameters
 Title:          "MHD DocumentReference Patch Parameters"
-Description:    "A profile on the Parameters resource to update DocumentReference" 
+Description:    "A profile on the Parameters resource to update the superseded DocumentReference status." 
 * parameter ^slicing.discriminator.type = #value
 * parameter ^slicing.discriminator.path = "name"
 * parameter ^slicing.rules = #open
