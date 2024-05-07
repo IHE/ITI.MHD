@@ -117,7 +117,7 @@ When the [UnContained Reference Option](1332_actor_options.html#13323-uncontaine
 
 The DocumentReference.relatesTo element indicates an association between DocumentReference resources. The relatesTo.target element in the provided DocumentReference points at the pre-existing DocumentReference that is being replaced, transformed, signed, or appended. The relatesTo.code element in the provided DocumentReference shall be the appropriate relationship type code defined in [http://hl7.org/fhir/R4/valueset-document-relationship-type.html](http://hl7.org/fhir/R4/valueset-document-relationship-type.html). 
 
-If a DocumentReference will be replaced, the to be replaced DocumentReference needs to be added and updated to status `superseded` within the transaction bundle with the [UpdateDocumentsRef slice](StructureDefinition-IHE.MHD.Minimal.ProvideBundle.html) (see [Example Bundle: Provide Document Bundle with Comprehensive metadata of one document which replaces another document](Bundle-ex-comprehensiveProvideDocumentBundleReplace.html) entry 2).
+If a DocumentReference is being replaced, that DocumentReference needs to have the `status` element updated to `superseded` within the transaction bundle with the [UpdateDocumentsRef slice](StructureDefinition-IHE.MHD.Minimal.ProvideBundle.html) (see [Example Bundle: Provide Document Bundle with Comprehensive metadata of one document which replaces another document](Bundle-ex-comprehensiveProvideDocumentBundleReplace.html) entry 2).
 
 ##### 2:3.65.4.1.3 Expected Actions
 
