@@ -2,8 +2,22 @@ Profile:        PatchParameters
 Parent:         Parameters
 Id:             IHE.MHD.Patch.Parameters
 Title:          "MHD DocumentReference Patch Parameters"
-Description:    "A profile on the Parameters resource to update DocumentReference" 
-* parameter.name = "operation"
+Description:    "A profile on the Parameters resource to update the superseded DocumentReference status." 
+* parameter ^slicing.discriminator.type = #value
+* parameter ^slicing.discriminator.path = "name"
+* parameter ^slicing.rules = #open
+* parameter contains operation 1..1
+* parameter[operation].name = "operation"
+* parameter[operation].part ^slicing.discriminator.type = #value
+* parameter[operation].part ^slicing.discriminator.path = "name"
+* parameter[operation].part ^slicing.rules = #open
+* parameter[operation].part contains path 1..1 and type 1..1 and value 1..1
+* parameter[operation].part[type].name = "type"
+* parameter[operation].part[type].valueCode = #replace
+* parameter[operation].part[path].name = "path"
+* parameter[operation].part[path].valueString = "DocumentReference.status"
+* parameter[operation].part[value].name = "value"
+* parameter[operation].part[value].valueCode = #superseded
 
 // equivalent to MHD Minimal DocumentReference
 Profile:        MinimalDocumentReference
