@@ -46,3 +46,7 @@ Reference to draft CodeSystem http://terminology.hl7.org/CodeSystem/dose-rate-ty
 # YES we want to point informatively at MHDS and NOT to have a dependency.
 The link 'https://profiles.ihe.net/ITI/MHDS' for "MHDS" cannot be resolved
 The link 'https://profiles.ihe.net/ITI/MHDS/volume-1.html#150111-document-registry' for "Document Registry" cannot be resolved
+
+# YES we know some examples use old codes. That old code use is not important to the example use
+INFORMATION: Bundle/Bundle-FindDocumentReferences: Bundle.entry[0].resource.context.facilityType.coding[0].code: The code '264358009' is valid but is not active
+INFORMATION: Bundle/Bundle-FindDocumentReferences: Bundle.entry[0].resource/*DocumentReference/50383ae5-49e5-4dea-b0e6-660cb9e7b91f*/.context.facilityType.coding[0].code: The code '264358009' is valid but is not active

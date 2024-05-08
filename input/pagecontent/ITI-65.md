@@ -59,6 +59,7 @@ The FHIR Bundle.meta.profile shall have the following value depending on the act
   - may create one or more [DocumentReference](StructureDefinition-IHE.MHD.Minimal.DocumentReference.html) that is either minimal, comprehensive, or unContained
     - with a document as a [Binary](http://hl7.org/fhir/R4/binary.html)
     - or, when implementing the **ITI-65 FHIR Document Publish** option, a [FHIR Document Bundle](http://hl7.org/fhir/R4/bundle.html)
+  - when DocumentReference replace is used the UpdateDocumentRefs slice is used to indicate the superseded DocumentReference
   - may create/update one or more [Folder type List](StructureDefinition-IHE.MHD.Minimal.Folder.html) that is either minimal, comprehensive, or unContained
   - may create/update/read one [Patient](http://hl7.org/fhir/R4/patient.html)
 - [Comprehensive Metadata](StructureDefinition-IHE.MHD.Comprehensive.ProvideBundle.html): `https://profiles.ihe.net/ITI/MHD/StructureDefinition/IHE.MHD.Comprehensive.ProvideBundle`
@@ -69,6 +70,7 @@ The FHIR Bundle.meta.profile shall have the following value depending on the act
   - may create one or more [DocumentReference](StructureDefinition-IHE.MHD.Comprehensive.DocumentReference.html) that is comprehensive
     - with a document as a [Binary](http://hl7.org/fhir/R4/binary.html)
     - or, when implementing the **ITI-65 FHIR Document Publish** Option, a [FHIR Document Bundle](http://hl7.org/fhir/R4/bundle.html)
+  - when DocumentReference replace is used the UpdateDocumentRefs slice is used to indicate the superseded DocumentReference
   - may create/update one or more [Folder type List](StructureDefinition-IHE.MHD.Comprehensive.Folder.html) that is comprehensive
   - may create/update/read one [Patient](http://hl7.org/fhir/R4/patient.html)
 - [UnContained Comprehensive Metadata](StructureDefinition-IHE.MHD.UnContained.Comprehensive.ProvideBundle.html): `https://profiles.ihe.net/ITI/MHD/StructureDefinition/IHE.MHD.UnContained.Comprehensive.ProvideBundle` 
@@ -80,6 +82,7 @@ The FHIR Bundle.meta.profile shall have the following value depending on the act
   - may create one or more [DocumentReference](StructureDefinition-IHE.MHD.UnContained.Comprehensive.DocumentReference.html) that is comprehensive or unContained
     - with a document as a [Binary](http://hl7.org/fhir/R4/binary.html)
     - or, when implementing the **ITI-65 FHIR Document Publish** Option, a [FHIR Document Bundle](http://hl7.org/fhir/R4/bundle.html)
+  - when DocumentReference replace is used the UpdateDocumentRefs slice is used to indicate the superseded DocumentReference
   - may create/update one or more [Folder type List](StructureDefinition-IHE.MHD.Comprehensive.Folder.html) that is comprehensive
   - may create/update/read one [Patient](http://hl7.org/fhir/R4/patient.html)
 
@@ -112,7 +115,9 @@ When the [UnContained Reference Option](1332_actor_options.html#13323-uncontaine
 
 ###### 2:3.65.4.1.2.3 Replace, Transform, Signs, and Append Associations
 
-The DocumentReference.relatesTo element indicates an association between DocumentReference resources. The relatesTo.target element in the provided DocumentReference points at the pre-existing DocumentReference that is being replaced, transformed, signed, or appended. The relatesTo.code element in the provided DocumentReference shall be the appropriate relationship type code defined in [http://hl7.org/fhir/R4/valueset-document-relationship-type.html](http://hl7.org/fhir/R4/valueset-document-relationship-type.html). If a DocumentReference will be replaced, the to be replaced DocumentReference needs to be added and updated to status `superseded` within the transaction bundle (see [Example Bundle: Provide Document Bundle with Comprehensive metadata of one document which replaces another document](Bundle-ex-comprehensiveProvideDocumentBundleReplace.html) entry 2).
+The DocumentReference.relatesTo element indicates an association between DocumentReference resources. The relatesTo.target element in the provided DocumentReference points at the pre-existing DocumentReference that is being replaced, transformed, signed, or appended. The relatesTo.code element in the provided DocumentReference shall be the appropriate relationship type code defined in [http://hl7.org/fhir/R4/valueset-document-relationship-type.html](http://hl7.org/fhir/R4/valueset-document-relationship-type.html). 
+
+If a DocumentReference is being replaced, that DocumentReference needs to have the `status` element updated to `superseded` within the transaction bundle with the [UpdateDocumentsRef slice](StructureDefinition-IHE.MHD.Minimal.ProvideBundle.html) (see [Example Bundle: Provide Document Bundle with Comprehensive metadata of one document which replaces another document](Bundle-ex-comprehensiveProvideDocumentBundleReplace.html) entry 2).
 
 ##### 2:3.65.4.1.3 Expected Actions
 
