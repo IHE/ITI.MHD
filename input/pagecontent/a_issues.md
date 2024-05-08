@@ -1,6 +1,20 @@
 <div markdown="1" class="stu-note">
 
-### Significant changes since MHD Version 4.2.0
+### Signficant changes in MHD Version 4.2.2
+
+Version 4.2.2
+ Quality improvements
+- List-SourceId bad cast to Token by @JohnMoehrke in https://github.com/IHE/ITI.MHD/pull/217
+- fix possible identifier value invariant bug by @JohnMoehrke in https://github.com/IHE/ITI.MHD/pull/215
+- Update documentReference.fsh by @JohnMoehrke in https://github.com/IHE/ITI.MHD/pull/218
+- IG Builder warnings ignored by @JohnMoehrke in https://github.com/IHE/ITI.MHD/pull/219
+- build cleaning  by @JohnMoehrke in https://github.com/IHE/ITI.MHD/pull/225
+- mapping had an extra column due to a second string by @JohnMoehrke in https://github.com/IHE/ITI.MHD/pull/228
+- reference to PCC section should use sIPS extract by @JohnMoehrke in https://github.com/IHE/ITI.MHD/pull/224
+- open the slicing on audit entity by @JohnMoehrke in https://github.com/IHE/ITI.MHD/pull/221
+- Profiling of Bundle with PATCH #222 by @oliveregger in https://github.com/IHE/ITI.MHD/pull/227",
+
+### Significant changes in MHD Version 4.2.1
 
 Version 4.2.1
 - quality improvements
@@ -9,7 +23,7 @@ Version 4.2.1
 - CP-ITI-1254 Date range clarity, 
 - capabilityStatement improvements.
 
-### Significant changes since MHD Version 4.1.0
+### Significant changes in MHD Version 4.2.0
 
 Version 4.2.0
 - changed to AuditEvent profiling leveraging [Basic Audit Log Patterns (BALP) Release 1.1.0](https://profiles.ihe.net/ITI/BALP/index.html)
@@ -36,7 +50,8 @@ Version 4.2.0
 - link testplan better to test tools
 - cleanup of various quality concerns illuminated by newer IG builder and validator.
 
-### Significant changes since MHD Version 3.2
+### Significant changes in MHD Version 4.0.1
+
 - Due to "breaking" changes, this version of MHD is Version 4.0.1
 - Canonical URLs are different, using '.' rather than '_' as the underbar is not allowed in Canonical URLs.
 - DocumentManifest has been replaced by List. Thus both SubmissionSet and Folder are supported with List Resource.
