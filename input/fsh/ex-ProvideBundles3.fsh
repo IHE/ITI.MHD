@@ -156,26 +156,26 @@ InstanceOf: PatchParameters
 Title:      "DocumentReference for Comprehensive metadata beeing replaced"
 Description: "Example of a comprehensive DocumentReference resource beeing replaced"
 Usage: #example
-* parameter.name = "operation"
-* parameter.part[0].name = "type"
-* parameter.part[=].valueCode = #replace
-* parameter.part[+].name = "path"
-* parameter.part[=].valueString = "DocumentReference.status"
-* parameter.part[+].name = "value"
-* parameter.part[=].valueCode = #superseded
+* parameter[operation].name = "operation"
+* parameter[operation].part[type].name = "type"
+* parameter[operation].part[type].valueCode = #replace
+* parameter[operation].part[path].name = "path"
+* parameter[operation].part[path].valueString = "DocumentReference.status"
+* parameter[operation].part[value].name = "value"
+* parameter[operation].part[value].valueCode = #superseded
 
 Instance:   aaaaaaaa-bbbb-cccc-ffff-e00333300002
 InstanceOf: PatchParameters
 Title:      "DocumentReference for Comprehensive metadata beeing replaced"
 Description: "Example of a comprehensive DocumentReference resource beeing replaced"
 Usage: #inline
-* parameter.name = "operation"
-* parameter.part[0].name = "type"
-* parameter.part[=].valueCode = #replace
-* parameter.part[+].name = "path"
-* parameter.part[=].valueString = "DocumentReference.status"
-* parameter.part[+].name = "value"
-* parameter.part[=].valueCode = #superseded
+* parameter[operation].name = "operation"
+* parameter[operation].part[type].name = "type"
+* parameter[operation].part[type].valueCode = #replace
+* parameter[operation].part[path].name = "path"
+* parameter[operation].part[path].valueString = "DocumentReference.status"
+* parameter[operation].part[value].name = "value"
+* parameter[operation].part[value].valueCode = #superseded
 
 Instance:   aaaaaaaa-bbbb-cccc-eeee-e00333300001
 InstanceOf: IHE.MHD.Comprehensive.SubmissionSet

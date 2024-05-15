@@ -1,6 +1,8 @@
 <div markdown="1" class="stu-note">
 
-This Test Plan page is a prototype. We expect the maturity of the content will improve over time.  For now, we summarize high level testing scope and available tools. Comments are welcome.
+We expect the maturity of testing will improve over time independent of the versions of MHD.
+
+This page was last updated May 2024.
 </div>
 
 ## Introduction
@@ -9,11 +11,11 @@ MHD is an API between four actors. The transactions between actors specify seman
 
 The overall scope of MHD testing is affected by the infrastructure that MHD is connected to. For example, where the Document Responder and Document Recipient are grouped with XDS or MHDS infrastructure, more tests apply.
 
-MHD does not mandate the functionality to be provided by the data communicated via MHD transations. How MHD actors use the data communicated via these transaction is out-of-scope for MHD testing, but may apply to other related Implementation Guides or IHE Profiles.
+MHD does not mandate the functionality to be provided by the data communicated via MHD transactions. How MHD actors use the data communicated via these transaction is out-of-scope for MHD testing, but may apply to other related Implementation Guides or IHE Profiles.
 
 ## High-level Test Scope
 
-### ITI-65 Provide Document Bundle
+### Submit [ITI-65], [ITI-105], and [ITI-106]
 
 - Document Source publishes document and folder combinations
   - Note that the Document Content is not material to these tests. It could be a simple text file, CDA, FHIR-Document, PNG image, DICOM KOS, or anything that has a mime type
@@ -24,12 +26,6 @@ MHD does not mandate the functionality to be provided by the data communicated v
 
 - Document Consumer requests query for List (Submission Set & Folder), query for DocumentReference, and retrieve document
 - Document Responder responds to query and retrieve as appropriate
-
-### Options
-
-- "Comprehensive Metadata" for the Document Source & Document Recipient
-- "XDS on FHIR" for the Document Recipient and Document Responder (i.e., XDS backend for server actors)
-- "Uncontained Reference" for all MHD actors
 
 ## Unit Test Procedure (Conformance Testing)
 
@@ -61,19 +57,61 @@ Unit testing this context entails testing a SUT with a simulator or validator to
 
 Integration Testing in this context is where two SUT of paired actors test against each other.  Integration testing is often limited by the capability of the client (Document Source or Document Consumer), which may support only a subset of the semantics required to be supported by the server (Document Recipient or Document Responder).  Full message semantics and failure-modes are more thoroughly exercised with unit (conformance) tests.
 
-The tests listed below are defined in Gazelle Master Model (https://gazelle.ihe.net/GMM) and are performed by systems testing MHD at IHE Connectathons.
+The tests listed below are defined in Gazelle Master Model (https://gazelle.ihe.net/GMM) and are performed by systems testing MHD at IHE Connectathons. Note the following links into the Gazelle Master Model do require a account to view.
 
+- [Capability Statement Checks](https://gazelle.ihe.net/GMM/test.seam?id=13700)
+  
 ### Document Source --> Document Recipient Interoperability Tests
 
-- MHD_Create_ITI-65
-- MHD_Create_with_List
-- MHD_Submit_XDSonFHIR
-- MHD_XDSonFHIR_Replace
-- MHD_XDSonFHIR_Append
-- MHD_XDSonFHIR_Transform
+- [Setup proxy tools](https://gazelle.ihe.net/GMM/test.seam?id=13690)
+- Document Recipient without **Comprehensive Metadata Option** - [MHD_11_Toolkit_RecipMinimal](https://gazelle.ihe.net/GMM/test.seam?id=13691)
+  - Should be Document Recipient declaring **UnContained Option** can handle it.
+- Document Recipient with **Comprehensive Metadata Option** - [MHD_12_Toolkit_RecipComprehensiv](https://gazelle.ihe.net/GMM/test.seam?id=13692)
+- [MHD_22_ProvideDocBundle_ITI-65](https://gazelle.ihe.net/GMM/test.seam?id=13427) - Testing of ITI-65
+  - alternative flows for **Comprehensive Metadata Option** and **UnContained Option** and **XDS on FHIR Option**
+  - alternative flows for Replace, Append, and Transform
+- Document Source with **Comprehensive Metadata Option** - [MHD_13_Toolkit_SourceComprehensive](https://gazelle.ihe.net/GMM/test.seam?id=13693)
+  - alternative flow for **UnContained Option**
+- [MHD_22a_ITI-65_Resource_Check](https://gazelle.ihe.net/GMM/test.seam?id=13713) - AuditEvent tests
+- [MHD_25_Create_with_List_Resource](https://gazelle.ihe.net/GMM/test.seam?id=13699) -- testing Folders
+
+#### Document Recipient - XDS on FHIR Option
+
+- [MHD_70_Submit_XDSonFHIR](https://gazelle.ihe.net/GMM/test.seam?id=13698) - basic ITI-65 test of Document Recipient declaring **XDS On FHIR Option**
+- [MHD_71_XDSonFHIR_Replace](https://gazelle.ihe.net/GMM/test.seam?id=13694)
+- [MHD_72_XDSonFHIR_Append](https://gazelle.ihe.net/GMM/test.seam?id=13695)
+- [MHD_73_XDSonFHIR_Transform](https://gazelle.ihe.net/GMM/test.seam?id=13696)
 
 ### Document Consumer --> Document Responder Interoperability Tests
 
-- MHD_Search_ITI-66
-- MHD_SearchRead_ITI-67_ITI-68
-- MHD_QryRetr_XDSonFHIR
+- [MHD_30a_ITI-66_Resource_Check](https://gazelle.ihe.net/GMM/test.seam?id=13709) - AuditEvent tests
+- [MHD_30_FindDocumentLists_ITI-66](https://gazelle.ihe.net/GMM/test.seam?id=13727) - Test ITI-66
+  - should be Document Consumer declaring **UnContained Option** can handle it.
+- [MHD_30a_ITI-66_Resource_Check](https://gazelle.ihe.net/GMM/test.seam?id=13709) - AuditEvent tests
+- [MHD_31a-ITI-67_Resource_Check](https://gazelle.ihe.net/GMM/test.seam?id=13711) AuditEvent tests
+- [MHD_31_FindDocReferences_ITI-67](https://gazelle.ihe.net/GMM/test.seam?id=13726) - Test ITI-67
+  - should be Document Consumer declaring **UnContained Option** can handle it.
+- [MHD_33a-ITI-68_Resource_Check](https://gazelle.ihe.net/GMM/test.seam?id=13714) AuditEvent tests
+- [MHD_32_RetrieveDocument_ITI-68](https://gazelle.ihe.net/GMM/test.seam?id=13725) - test ITI-68
+
+#### XDS on FHIR Option
+
+- [MHD_75_QryRetr_XDSonFHIR](https://gazelle.ihe.net/GMM/test.seam?id=13697) - The Doc Responder supports the XDS on FHIR and is grouped with an XDS Document Consumer
+
+### Additional Tests not included in Gazelle today
+
+- Update a Folder, where the test is focused on creating a Folder, but the ITI-65 supports updating an existing folder.
+- UnContained is not tested specifically for Practitioner not being contained
+- Should be tests for Replace, Transform, or Append for non XDS on FHIR situations (aka MHDS, or just push)
+
+#### Simplified Publish Option
+
+- no tests for this option:
+
+#### Generate Metadata Option
+
+- no tests for this option:
+
+#### ITI-65 FHIR Documents Publish Option
+
+- no tests for this option
