@@ -27,6 +27,10 @@ MHD does not mandate the functionality to be provided by the data communicated v
 - Document Consumer requests query for List (Submission Set & Folder), query for DocumentReference, and retrieve document
 - Document Responder responds to query and retrieve as appropriate
 
+### End-to-End testing
+
+The best case testing would be to have Document Source submit various content, combinations, and transforms; and these are detected to have happened correctly by using a Document Consumer. This kind of end-to-end testing can't be done in all cases, such as PUSH, but can be used when the Document Recipient and Document Responder are grouped with a Document Sharing infrastructure. Such as using the XDSonFHIR option, MHDS, or simply having MHD as a direct API to an XDS Registry/Repository.
+
 ## Unit Test Procedure (Conformance Testing)
 
 Unit testing this context entails testing a SUT with a simulator or validator tool.  A simulator is a implementation of an actor that is designed specifically to test the opposite pair actor. The simulator might be a reference implementation or may be a specially designed test-bench.  Often, when a reference implementation is used, the negative tests are harder to simulate. A validator is a implementation that can check conformance. A validator may be a simulator, but may also be a standalone tool used to validate only a message encoding. Some reference implementations may be able to validate to a StructureDefinition profile, but often these do not include sufficient constraints given the overall actor conformance criteria. 
@@ -103,6 +107,7 @@ The tests listed below are defined in Gazelle Master Model (https://gazelle.ihe.
 - Update a Folder, where the test is focused on creating a Folder, but the ITI-65 supports updating an existing folder.
 - UnContained is not tested specifically for Practitioner not being contained
 - Should be tests for Replace, Transform, or Append for non XDS on FHIR situations (aka MHDS, or just push)
+- Test MHD as a direct API to XDS Registry/Repository. Where the MHD Document Recipient to XDS Document Source is logical and not exposed; and where the MHD Document Responder to XDS Document Consumer is logical and not exposed. 
 
 #### Simplified Publish Option
 
