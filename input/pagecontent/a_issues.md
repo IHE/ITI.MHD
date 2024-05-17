@@ -3,7 +3,7 @@
 ### Signficant changes in MHD Version 4.2.2
 
 Version 4.2.2
- Quality improvements
+- Quality improvements
 - List-SourceId bad cast to Token by @JohnMoehrke in https://github.com/IHE/ITI.MHD/pull/217
 - fix possible identifier value invariant bug by @JohnMoehrke in https://github.com/IHE/ITI.MHD/pull/215
 - Update documentReference.fsh by @JohnMoehrke in https://github.com/IHE/ITI.MHD/pull/218
@@ -12,7 +12,8 @@ Version 4.2.2
 - mapping had an extra column due to a second string by @JohnMoehrke in https://github.com/IHE/ITI.MHD/pull/228
 - reference to PCC section should use sIPS extract by @JohnMoehrke in https://github.com/IHE/ITI.MHD/pull/224
 - open the slicing on audit entity by @JohnMoehrke in https://github.com/IHE/ITI.MHD/pull/221
-- Profiling of Bundle with PATCH #222 by @oliveregger in https://github.com/IHE/ITI.MHD/pull/227",
+- Profiling of Bundle with PATCH #222 by @oliveregger in https://github.com/IHE/ITI.MHD/pull/227
+- Updates to testplan to align with Gazelle and identify improvements to the tests
 
 ### Significant changes in MHD Version 4.2.1
 
