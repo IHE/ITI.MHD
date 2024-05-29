@@ -49,7 +49,7 @@ Description:    "A profile on the Bundle transaction for ITI-65 Provide Document
 * entry[UpdateDocumentRefs].resource only 
     IHE.MHD.Patch.Parameters 
 * entry[UpdateDocumentRefs] ^short = "the superseded DocumentReference resources"
-* entry[UpdateDocumentRefs] ^definition = "any updated DocumentReference that are part of the SubmissionSet if a new new DocumentReference replaces this DocumentReference."
+* entry[UpdateDocumentRefs] ^definition = "any updated DocumentReference that are part of the SubmissionSet if a new DocumentReference replaces this DocumentReference."
 * entry[UpdateDocumentRefs].resource 1..1
 * entry[UpdateDocumentRefs].request 1..1
 * entry[UpdateDocumentRefs].request.method = #PATCH
