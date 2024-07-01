@@ -31,6 +31,7 @@ Description: "entryUUID Identifier holding a UUID"
 * system = "urn:ietf:rfc:3986" (exactly)
 * value 1..
 * value obeys mhd-startswithuuid
+* use 1..1
 * use = #official
 
 CodeSystem:  MHDDocumentIDTypes 
