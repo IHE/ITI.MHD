@@ -111,6 +111,9 @@ Usage: #example
 * identifier[entryUUID].system = "urn:ietf:rfc:3986"
 * identifier[entryUUID].value = "urn:uuid:0c287d32-01e3-4d87-9953-9fcc9404eb21"
 * identifier[entryUUID].use = #official
+* identifier[logicalID].system = "urn:ietf:rfc:3986"
+* identifier[logicalID].value = "urn:uuid:4f24b606-be7f-44b7-bc06-803d77925146"
+* identifier[logicalID].type.coding.code = MHDDocumentIDTypes#logicalID
 * status = #current
 * content.attachment.contentType = #text/plain
 * content.attachment.url = "http://example.com/nowhere.txt"
@@ -144,6 +147,11 @@ Usage: #example
 * content.attachment.size = 190
 * relatesTo.code = #appends
 * relatesTo.target = Reference(DocumentReference/ex-documentreference)
+* extension[repositoryUniqueId].valueIdentifier.id = "urn:oid:1.2.3.14.15.926"
+* extension[repositoryUniqueId].valueIdentifier.system = "urn:ietf:rfc:3986"
+* extension[version].valuePositiveInt = 42
+* extension[documentAvailability].valueCoding.code = #urn:ihe:iti:2010:DocumentAvailability:Online
+* extension[documentAvailability].valueCoding.system = "urn:ietf:rfc:3986"
 
 Instance:   ex-DocumentReferenceComprehensiveDelayedAssembly
 InstanceOf: IHE.MHD.Comprehensive.DocumentReference
