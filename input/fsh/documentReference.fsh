@@ -19,6 +19,40 @@ Description:    "A profile on the Parameters resource to update the superseded D
 * parameter[operation].part[value].name = "value"
 * parameter[operation].part[value].valueCode = #superseded
 
+
+Extension: RepositoryUniqueId
+Id: ihe-repositoryUniqueId
+Title: "XDS Document Repository ID"
+Description: "ID of XDS Document Repository where the document's binary contents are stored"
+* ^context[+].type = #element
+* ^context[=].expression = "DocumentReference"
+* value[x] only Identifier
+* valueIdentifier 1..1
+* valueIdentifier.system 1..1
+* valueIdentifier.system = "urn:ietf:rfc:3986"
+* valueIdentifier.id obeys mhd-startswithoid
+
+Extension: Version
+Id: ihe-version 
+Title: "Version of the Document Entry"
+Description: "holds the current version of the Document Entry"
+* ^context[+].type = #element
+* ^context[=].expression = "DocumentReference"
+* value[x] only positiveInt
+* valuePositiveInt 1..1
+
+Extension: DocumentAvailability
+Id: ihe-documentAvailability
+Title: "Status of the document in the XDS Document Repository"
+Description: "holds the status of the document in the XDS Document Repository"
+* ^context[+].type = #element
+* ^context[=].expression = "DocumentReference"
+* value[x] only Coding
+* valueCoding 1..1
+* valueCoding.system 1..1
+* valueCoding.system = "urn:ietf:rfc:3986"
+
+
 // equivalent to MHD Minimal DocumentReference
 Profile:        MinimalDocumentReference
 Parent:         DocumentReference
@@ -31,14 +65,22 @@ Description:    "A profile on the DocumentReference resource for MHD with minima
 - ebRIM implementation at [3:4.2.3.2 Document Entry](https://profiles.ihe.net/ITI/TF/Volume3/ch-4.2.html#4.2.3.2).
 - with use-cases and constraints found in [3:4.3 Additional Document Sharing Requirements](https://profiles.ihe.net/ITI/TF/Volume3/ch-4.3.html#4.3)"
 * modifierExtension 0..0
+* extension ^slicing.discriminator.type = #value
+* extension ^slicing.discriminator.path = "url"
+* extension ^slicing.rules = #open
+* extension contains
+    RepositoryUniqueId named repositoryUniqueId 0..1 and
+    Version named version 0..1 and
+    DocumentAvailability named documentAvailability 0..1
 * masterIdentifier only UniqueIdIdentifier
 * masterIdentifier 1..1
 * identifier 0..* MS
-* identifier ^slicing.discriminator.type = #value
-* identifier ^slicing.discriminator.path = "use"
+* identifier ^slicing.discriminator.type = #profile
+* identifier ^slicing.discriminator.path = "$this"
 * identifier ^slicing.rules = #open
-* identifier contains entryUUID 0..*
+* identifier contains entryUUID 0..* and logicalID 0..*
 * identifier[entryUUID] only EntryUUIDIdentifier
+* identifier[logicalID] only LogicalIDIdentifier
 * status 1..1
 * status from DocumentReferenceStats (required)
 * docStatus 0..0
@@ -124,7 +166,8 @@ Title: "XDS and MHD Mapping"
 * description -> "DocumentEntry.comments"
 * securityLabel -> "DocumentEntry.confidentialityCode"
 * content.attachment.creation -> "DocumentEntry.creationTime"
-* identifier -> "DocumentEntry.entryUUID"
+* identifier[entryUUID] -> "DocumentEntry.entryUUID"
+* identifier[logicalID] -> "DocumentEntry.logicalID"
 * context.event -> "DocumentEntry.eventCodeList"
 * content.format -> "DocumentEntry.formatCode"
 * content.attachment.hash -> "DocumentEntry.hash"
@@ -152,6 +195,9 @@ Title: "XDS and MHD Mapping"
 * relatesTo -> "DocumentEntry Associations"
 * relatesTo.code -> "DocumentEntry Associations.type"
 * relatesTo.target -> "DocumentEntry Associations.reference"
+* extension[repositoryUniqueId] -> "DocumentEntry.repositoryUniqueId"
+* extension[version] -> "DocumentEntry.version"
+* extension[documentAvailability] -> "DocumentEntry.documentAvailability"
 
 
 Instance:   AssociationTypeVsRelatesTo

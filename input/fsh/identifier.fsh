@@ -33,6 +33,28 @@ Description: "entryUUID Identifier holding a UUID"
 * value obeys mhd-startswithuuid
 * use = #official
 
+CodeSystem:  MHDDocumentIDTypes 
+Title: "MHD DocumentId Types"
+Description:  "Different types of document IDs"
+* ^caseSensitive = true
+* ^experimental = false
+* #entryUUID "DocumentEntry.entryUUID"
+* #logicalID "DocumentEntry.logicalID"
+* #uniqueID "DocumentEntry.uniqueID" 
+
+Profile: LogicalIDIdentifier
+Parent: Identifier
+Id: IHE.MHD.LogicalID.Identifier
+Title: "logicalID Identifier"
+Description: "logicalID Identifier holding a UUID"
+* system 1..
+* system = "urn:ietf:rfc:3986" (exactly)
+* value 1..
+* value obeys mhd-startswithuuid
+* use 0..0
+* type 1..1
+* type.coding = MHDDocumentIDTypes#logicalID
+
 Invariant: mhd-startswithuuid
 Description: "value must start with urn:uuid:"
 Severity: #error
