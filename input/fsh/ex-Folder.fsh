@@ -52,7 +52,7 @@ Usage: #example
 * meta.security = http://terminology.hl7.org/CodeSystem/v3-ActReason#HTEST
 * type = #searchset
 * link[0].relation = "self"
-* link[0].url = "test.fhir.net/R4/fhir/List?patient=9876&code=folder&status=current&designationType=http://snomed.info/sct#225728007"
+* link[0].url = "test.fhir.net/R4/fhir/List?patient=9876&code=folder&status=current&designationType=http://snomed.info/sct|225728007"
 * total = 1
 * timestamp = 2021-04-16T11:32:24Z
 * entry[Folder].fullUrl = "http://example.org/List/in-minimalFolder"
