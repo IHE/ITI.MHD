@@ -8,7 +8,7 @@ activate DocumentSource
 activate DocumentRecipient
 DocumentSource -> DocumentRecipient : Request to publish documents [ITI-65]
 DocumentRecipient -> DocumentRecipient : validate content received
-DocumentRecipient --> DocumentRecipient : propigate to Grouped Actor (e.g. XDS Provide and Register)
+DocumentRecipient --> DocumentRecipient : propagate to Grouped Actor (e.g. XDS Provide and Register)
 DocumentRecipient --> DocumentSource : Documents published [ITI-65]
 deactivate DocumentSource
 deactivate DocumentRecipient

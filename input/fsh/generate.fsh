@@ -82,7 +82,7 @@ Usage: #definition
 * description = """
 A client can ask a server to generate a documentReference from a document.
 The server reads the existing document and generates a matching DocumentReference resource, or returns one it has previously generated. 
-The server will persist the document and the DocumentReference; and may propigate based on grouping with other Actors.
+The server will persist the document and the DocumentReference; and may propagate based on grouping with other Actors.
 Servers may be able to return or generate document references for the following types of content:
 - CDA
 - FHIR Document
