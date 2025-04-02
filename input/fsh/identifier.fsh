@@ -6,6 +6,7 @@ Description: "uniqueId Identifier
 
 - see [Appendix Z](https://profiles.ihe.net/ITI/TF/Volume2/ch-Z.html#z.9.1-identifier-type)"
 * system 1..
+* use 1..
 * use = #usual
 * value 1..
 
@@ -31,6 +32,7 @@ Description: "entryUUID Identifier holding a UUID"
 * system = "urn:ietf:rfc:3986" (exactly)
 * value 1..
 * value obeys mhd-startswithuuid
+* use 1..
 * use = #official
 
 Invariant: mhd-startswithuuid
