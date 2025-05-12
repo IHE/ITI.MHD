@@ -55,7 +55,7 @@ Description:    "A profile on the List resource for MHD Comprehensive Metadata F
 //  mappings to XDS 
 Mapping: Folder-Mapping
 Source:	IHE.MHD.Minimal.Folder
-Target: "XDS"
+Target: "https://www.ihe.net"
 Title: "XDS and MHD Mapping"
 * -> "XDS Folder: Used in the context of the IHE MHD ImplementationGuide"
 * meta.profile -> "Folder.limitedMetadata"

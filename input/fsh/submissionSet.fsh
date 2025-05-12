@@ -120,7 +120,7 @@ Description:    "A profile on the List resource for MHD Comprehensive Submission
 // mappings to XDS 
 Mapping: SubmissionSet-Mapping
 Source:	IHE.MHD.Minimal.SubmissionSet
-Target: "XDS"
+Target: "https://www.ihe.net"
 Title: "XDS and MHD Mapping"
 * -> "XDS SubmissionSet: Used in the context of the IHE MHD ImplementationGuide"
 * meta.profile -> "SubmissionSet.limitedMetadata"
