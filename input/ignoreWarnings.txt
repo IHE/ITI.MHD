@@ -1,6 +1,8 @@
 == Suppressed Messages ==
 # IHE code system used but never defined by IHE as a formal codeSystem
 A definition for CodeSystem 'urn:ihe:event-type-code' could not be found, so the code cannot be validated
+URL value 'urn:ihe:event-type-code' does not resolve
+URL value 'urn:ihe:iti:2007:AssociationType' does not resolve
 
 # FHIR R4 had the valueset setup wrong. We are using the proper system value
 The Coding provided (http://ihe.net/fhir/ihe.formatcode.fhir/CodeSystem/formatcode#urn:ihe:iti:xds-sd:text:2008) was not found in the value set 'DocumentReference Format Code Set' (http://hl7.org/fhir/ValueSet/formatcodes|4.0.1), and a code is recommended to come from this value set.  (error message = The provided code 'http://ihe.net/fhir/ihe.formatcode.fhir/CodeSystem/formatcode#urn:ihe:iti:xds-sd:text:2008' was not found in the value set 'http://hl7.org/fhir/ValueSet/formatcodes|4.0.1')
@@ -50,3 +52,7 @@ The link 'https://profiles.ihe.net/ITI/MHDS/volume-1.html#150111-document-regist
 # YES we know some examples use old codes. That old code use is not important to the example use
 INFORMATION: Bundle/Bundle-FindDocumentReferences: Bundle.entry[0].resource.context.facilityType.coding[0].code: The code '264358009' is valid but is not active
 INFORMATION: Bundle/Bundle-FindDocumentReferences: Bundle.entry[0].resource/*DocumentReference/50383ae5-49e5-4dea-b0e6-660cb9e7b91f*/.context.facilityType.coding[0].code: The code '264358009' is valid but is not active
+
+# comes from core. Not anything we can document
+The extension http://hl7.org/fhir/StructureDefinition/elementdefinition-maxValueSet|5.2.0 is deprecated
+

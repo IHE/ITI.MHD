@@ -38,7 +38,7 @@ When the Document Consumer needs to discover DocumentReference Resources matchin
 
 ##### 2:3.67.4.1.2 Message Semantics
 
-The Document Consumer executes an HTTP search against the Document Responders DocumentReference URL. The search target follows the FHIR HTTP specification, addressing the DocumentReference Resource [http://hl7.org/fhir/R4/http.html](http://hl7.org/fhir/R4/http.html):
+The Document Consumer executes an HTTP search against the Document Responders DocumentReference URL. The search target follows the FHIR HTTP specification, addressing the DocumentReference Resource [FHIR http.html]({{site.data.fhir.path}}http.html):
 ```
 [base]/DocumentReference?<query>
 ```
@@ -46,14 +46,14 @@ This URL is configurable by the Document Responder and is subject to the followi
 
 The `<query>` represents a series of encoded name-value pairs representing the filter for the query, as specified in Section [Query Search Parameters](#23674121-query-search-parameters), as well as control parameters to modify the behavior of the Document Responder such as response format, or pagination.
 
-The Document Consumer may use GET or POST based searches. The Document Responder shall support both GET and POST based searches [http://hl7.org/fhir/R4/http.html#search](http://hl7.org/fhir/R4/http.html#search).
+The Document Consumer may use GET or POST based searches. The Document Responder shall support both GET and POST based searches [FHIR http.html#search]({{site.data.fhir.path}}http.html#search).
 
 
 ###### 2:3.67.4.1.2.1 Query Search Parameters
 
 The Document Consumer may supply, and the Document Responder shall be capable of processing, all query parameters listed below. All query parameter values shall be appropriately encoded per RFC3986 “percent” encoding rules. Note that percent encoding does restrict the character set to a subset of ASCII characters which is used for encoding all other characters used in the URL.
 
-The Document Consumer shall include search parameter `patient` or `patient.identifier`, and `status`. The other parameters described below are optional. The Document Responder must implement the parameters described below. The Document Responder may choose to support additional query parameters beyond the subset listed below. Any additional query parameters supported shall be supported according to the core FHIR specification. Such additional parameters are considered out of scope for this transaction. Any additional parameters not supported should be ignored. See [http://hl7.org/fhir/R4/search.html#errors](http://hl7.org/fhir/R4/search.html#errors). 
+The Document Consumer shall include search parameter `patient` or `patient.identifier`, and `status`. The other parameters described below are optional. The Document Responder must implement the parameters described below. The Document Responder may choose to support additional query parameters beyond the subset listed below. Any additional query parameters supported shall be supported according to the core FHIR specification. Such additional parameters are considered out of scope for this transaction. Any additional parameters not supported should be ignored. See [FHIR search.html#errors]({{site.data.fhir.path}}search.html#errors). 
 
 **author.given** and **author.family**:
 These parameters, of type string, specify the name parts of the author person, which is associated with the DocumentReference Resource, or in Document Sharing nomenclature, the author of the Document Entry. See [ITI TF-2x: Appendix Z.2](https://profiles.ihe.net/ITI/TF/Volume2/ch-Z.html#z.2-query-parameters) for use of the string data type.  This use of **author.given** and **author.family** follows the [FHIR Chaining Parameters](http://hl7.org/fhir/search.html#chaining) search methodology.
@@ -62,10 +62,10 @@ These parameters, of type string, specify the name parts of the author person, w
 This parameter, of type token, specifies the general classification of the DocumentReference Resource, or in Document Sharing nomenclature, the classCode of the Document Entry. See [ITI TF-2x: Appendix Z.2](https://profiles.ihe.net/ITI/TF/Volume2/ch-Z.html#z.2-query-parameters) for additional constraints on the use of the token search parameter type.
 
 **creation**:
-This IHE defined parameter defined as [DocumentReference-Creation](SearchParameter-DocumentReference-Creation.html), of type dateTime, specifies a search against the DocumentReference.content.attachment.creation. See FHIR [http://hl7.org/fhir/R4/search.html#date](http://hl7.org/fhir/R4/search.html#date) for use of the date search type.
+This IHE defined parameter defined as [DocumentReference-Creation](SearchParameter-DocumentReference-Creation.html), of type dateTime, specifies a search against the DocumentReference.content.attachment.creation. See FHIR [FHIR search.html#date]({{site.data.fhir.path}}search.html#date) for use of the date search type.
 
 **date**:
-This parameter, of type date, specifies the time when the DocumentReference was created. See FHIR [http://hl7.org/fhir/R4/search.html#date](http://hl7.org/fhir/R4/search.html#date) for use of the date search type.
+This parameter, of type date, specifies the time when the DocumentReference was created. See FHIR [FHIR search.html#date]({{site.data.fhir.path}}search.html#date) for use of the date search type.
 
 **event**:
 This parameter, of type token, specifies the main clinical acts documented by the DocumentReference Resource, or in Document Sharing nomenclature, the eventCodeList of the Document Entry. See [ITI TF-2x: Appendix Z.2](https://profiles.ihe.net/ITI/TF/Volume2/ch-Z.html#z.2-query-parameters) for additional constraints on the use of the token search parameter type.
@@ -86,7 +86,7 @@ This parameter is of type Reference(Patient). The Document Consumer may get this
 This parameter, of type token, specifies an identifier associated with the patient to which the DocumentReference Resource is assigned.  See [ITI TF-2x: Appendix Z.2](https://profiles.ihe.net/ITI/TF/Volume2/ch-Z.html#z.2-query-parameters) for additional constraints on the use of the token search parameter type. This use of **patient.identifier** follows the [FHIR Chaining Parameters](http://hl7.org/fhir/search.html#chaining) search methodology.
 
 **period**:
-This parameter, of type date, represents the time of service that is being documented by the DocumentReference. The period search parameter specifies an interval which the time of service overlaps. In Document Sharing nomenclature, this query parameter represents from/to parameters for the serviceStartTime and serviceStopTime of the Document Entry. See FHIR [http://hl7.org/fhir/R4/search.html#date](http://hl7.org/fhir/R4/search.html#date) for use of the date search type.
+This parameter, of type date, represents the time of service that is being documented by the DocumentReference. The period search parameter specifies an interval which the time of service overlaps. In Document Sharing nomenclature, this query parameter represents from/to parameters for the serviceStartTime and serviceStopTime of the Document Entry. See FHIR [FHIR search.html#date]({{site.data.fhir.path}}search.html#date) for use of the date search type.
 
 **related**:
 This parameter, of type reference, represents other identifiers associated with the DocumentReference Resource, or in Document Sharing nomenclature, the referenceIdList of the Document Entry. 
@@ -202,7 +202,7 @@ The Document Responder completed processing of the Find Document Reference Reque
 
 Based on the query results, the Document Responder will either return an error or success. Guidance on handling Access Denied related to use of 200, 403 and 404 can be found in [ITI TF-2x: Appendix Z.7](https://profiles.ihe.net/ITI/TF/Volume2/ch-Z.html#z.8-mobile-security-considerations). 
 
-When the Document Responder needs to report an error, it shall use HTTP error response codes and should include a FHIR OperationOutcome with more details on the failure. See FHIR [http://hl7.org/fhir/R4/http.html](http://hl7.org/fhir/R4/http.html) and [http://hl7.org/fhir/R4/operationoutcome.html](http://hl7.org/fhir/R4/operationoutcome.html).
+When the Document Responder needs to report an error, it shall use HTTP error response codes and should include a FHIR OperationOutcome with more details on the failure. See FHIR [FHIR http.html]({{site.data.fhir.path}}http.html) and [FHIR operationoutcome.html]({{site.data.fhir.path}}operationoutcome.html).
 
 If the Find Document References message is processed successfully, whether or not any DocumentReference Resources are found, the HTTP status code shall be 200. The Find Document References Response message shall be a Bundle Resource containing zero or more DocumentReference Resources. If the Document Responder is sending warnings, the Bundle Resource shall also contain an OperationOutcome Resource that contains those warnings.
 
@@ -210,7 +210,7 @@ The response shall adhere to the FHIR Bundle constraints specified in [ITI TF-2x
 
 ###### 2:3.67.4.2.2.1 DocumentReference Resource Contents
 
-The DocumentReference Resources returned shall be compliant with the FHIR specification [http://hl7.org/fhir/R4/documentreference.html](http://hl7.org/fhir/R4/documentreference.html).
+The DocumentReference Resources returned shall be compliant with the FHIR specification [FHIR documentreference.html]({{site.data.fhir.path}}documentreference.html).
 
 The DocumentReference Resources returned should be compliant with the [MHD metadata](32_fhir_maps.html) for the IHE restrictions on DocumentReference Resource and with the [mapping to DocumentEntry](32_fhir_maps.html#documentEntry) from IHE Document Sharing profiles (e.g., XDS) to FHIR. 
 
