@@ -25,7 +25,7 @@ contact:
 copyrightYear: 2020+
 license: CC-BY-4.0
 fhirVersion: 4.0.1
-jurisdiction: 'http://unstats.un.org/unsd/methods/m49/m49.htm#001'
+jurisdiction: http://unstats.un.org/unsd/methods/m49/m49.htm#001 "World"
 dependencies:
   ihe.iti.balp:
     id: iheitibasicaudit

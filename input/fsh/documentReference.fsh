@@ -37,7 +37,7 @@ Description:    "A profile on the DocumentReference resource for MHD with minima
 * identifier ^slicing.discriminator.type = #value
 * identifier ^slicing.discriminator.path = "use"
 * identifier ^slicing.rules = #open
-* identifier contains entryUUID 0..*
+* identifier contains entryUUID 0..* MS
 * identifier[entryUUID] only EntryUUIDIdentifier
 * status 1..1
 * status from DocumentReferenceStats (required)
@@ -115,7 +115,7 @@ Description:    "A profile on the DocumentReference resource for MHD Comprehensi
 // mappings to XDS 
 Mapping: DocumentEntry-Mapping
 Source:	MinimalDocumentReference
-Target: "XDS"
+Target: "urn:ihe:iti:xds:documententry"
 Title: "XDS and MHD Mapping"
 * -> "XDS DocumentEntry: Used in the context of the IHE MHD ImplementationGuide"
 * category -> "DocumentEntry.classCode"
