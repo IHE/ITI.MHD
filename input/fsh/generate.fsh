@@ -59,15 +59,16 @@ Usage: #example
 Instance: generate-metadata
 InstanceOf: OperationDefinition
 Description: """
-The $generate-metadata Operation defintion. 
+The $generate-metadata Operation definition. 
 
 This operation is needed as the $generate in FHIR R4 is not properly defined, and thus has incorrect parameters. 
 The MHD $generate-metadata should be replaced when MHD is upgraded to FHIR R5. 
 This MHD $generate-metadata is modeled after the expected changes in FHIR R5, and follows the example given in FHIR R4:
 
 Input:
-- Binary 0..1 the *document* in Binary Resource format. Usually used with CDA documents.
-- Bundle 0..1 the *document* in FHIR-Document form of a Bundle of kind Document
+- the document that is either a Binary or a document Bundle
+  - Binary 0..1 the *document* in Binary Resource format. Usually used with CDA documents.
+  - Bundle 0..1 the *document* in FHIR-Document form of a Bundle of kind Document
 Output:
 - reference to a DocumentReference with metadata generated from the *document*
 """
@@ -80,12 +81,7 @@ Usage: #definition
 * publisher = "Integrating the Healthcare Enterprise (IHE)"
 * title = "Generate a DocumentReference from a document"
 * description = """
-A client can ask a server to generate a documentReference from a document.
-The server reads the existing document and generates a matching DocumentReference resource, or returns one it has previously generated. 
-The server will persist the document and the DocumentReference; and may propagate based on grouping with other Actors.
-Servers may be able to return or generate document references for the following types of content:
-- CDA
-- FHIR Document
+[ITI-106](ITI-106.html)
 """
 * system = false
 * type = true
@@ -95,3 +91,19 @@ Servers may be able to return or generate document references for the following 
 * resource[0] = #DocumentReference
 * inputProfile = Canonical(IHE.MHD.GenerateMetadata.Parameters.In)
 * outputProfile = Canonical(IHE.MHD.GenerateMetadata.Parameters.Out)
+* parameter[0].name = #document
+* parameter[0].use = #in
+* parameter[0].min = 1
+* parameter[0].max = "1"
+* parameter[0].type = #Any
+* parameter[0].targetProfile[+] = Canonical(Binary)
+* parameter[0].targetProfile[+] = Canonical(Bundle)
+* parameter[0].documentation = "[Generate Metadata Request Message](ITI-106.html#2310641-generate-metadata-request-message)"
+* parameter[1].name = #DocumentReference
+* parameter[1].use = #out
+* parameter[1].min = 1
+* parameter[1].max = "1"
+* parameter[1].type = #Reference
+* parameter[1].targetProfile[+] = Canonical(DocumentReference)
+* parameter[1].documentation = "[Generate Metadata Response Message](ITI-106.html#2310642-generate-metadata-response-message)"
+
