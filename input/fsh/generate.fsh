@@ -81,7 +81,7 @@ Usage: #definition
 * publisher = "Integrating the Healthcare Enterprise (IHE)"
 * title = "Generate a DocumentReference from a document"
 * description = """
-[ITI-106](ITI-106.html)
+Generate Metadata [ITI-106](ITI-106.html) transaction Operation.
 """
 * system = false
 * type = true
