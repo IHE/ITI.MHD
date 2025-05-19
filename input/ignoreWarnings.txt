@@ -52,7 +52,7 @@ There are multiple different potential matches for the url 'http://hl7.org/fhir/
 Type_Specific_Checks_DT_URL_Resolve
 
 # this is an international realm IG
-The IG is not for the international realm, and it uses SNOMED CT, so it should fix the SCT edition in the expansion parameters
+# The IG is not for the international realm, and it uses SNOMED CT, so it should fix the SCT edition in the expansion parameters
 
 # need to ignore these pattern warnings coming from BALP until BALP is updated 
 INFORMATION: StructureDefinition/IHE.MHD.FindDocumentLists.Audit.Consumer: StructureDefinition.snapshot.element[19].slicing.discriminator[0]: The discriminator type 'pattern' is deprecated in R5+. For future compatibility, you could consider using type=value with a pattern[x] instead (if this is not an inherited slicing)
@@ -75,3 +75,10 @@ INFORMATION: StructureDefinition/IHE.MHD.SimplifiedPublish.Audit.Recipient: Stru
 INFORMATION: StructureDefinition/IHE.MHD.SimplifiedPublish.Audit.Recipient: StructureDefinition.snapshot.element[106].slicing.discriminator[0]: The discriminator type 'pattern' is deprecated in R5+. For future compatibility, you could consider using type=value with a pattern[x] instead (if this is not an inherited slicing)
 INFORMATION: StructureDefinition/IHE.MHD.SimplifiedPublish.Audit.Source: StructureDefinition.snapshot.element[19].slicing.discriminator[0]: The discriminator type 'pattern' is deprecated in R5+. For future compatibility, you could consider using type=value with a pattern[x] instead (if this is not an inherited slicing)
 INFORMATION: StructureDefinition/IHE.MHD.SimplifiedPublish.Audit.Source: StructureDefinition.snapshot.element[106].slicing.discriminator[0]: The discriminator type 'pattern' is deprecated in R5+. For future compatibility, you could consider using type=value with a pattern[x] instead (if this is not an inherited slicing)
+
+# borrowed Document Bundle has issues that we don't care about (note removed signature as that threw errors)
+WARNING: Parameters/ex-input-doc-bundle: Parameters.parameter[0].resource/*Bundle/ex-fhir-document-bundle*/.entry[4].resource: Best Practice Recommendation: In general, all observations should have a performer
+WARNING: Parameters/ex-input-doc-bundle: Parameters.parameter[0].resource/*Bundle/ex-fhir-document-bundle*/.entry[4].resource: Best Practice Recommendation: In general, all observations should have an effective[x] ()
+WARNING: Parameters/ex-input-doc-bundle: Parameters.parameter[0].resource/*Bundle/ex-fhir-document-bundle*/.entry[0].resource/*Composition/180f219f-97a8-486d-99d9-ed631fe4fc57*/: Constraint failed: dom-6: 'A resource should have narrative for robust management' (defined in http://hl7.org/fhir/StructureDefinition/DomainResource) (Best Practice Recommendation)
+WARNING: Parameters/ex-input-doc-bundle: Parameters.parameter[0].resource/*Bundle/ex-fhir-document-bundle*/.entry[4].resource/*Observation/null*/: Best Practice Recommendation: In general, all observations should have a performer
+WARNING: Parameters/ex-input-doc-bundle: Parameters.parameter[0].resource/*Bundle/ex-fhir-document-bundle*/.entry[4].resource/*Observation/null*/: Best Practice Recommendation: In general, all observations should have an effective[x] ()
