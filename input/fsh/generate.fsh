@@ -77,7 +77,7 @@ Generate Metadata [ITI-106](ITI-106.html) transaction Operation.
   - Binary 0..1 the *document* in Binary Resource format. Usually used with CDA documents.
   - Bundle 0..1 the *document* in FHIR-Document form of a Bundle of kind Document
 - representative profile of Input Parameters [IHE.MHD.GenerateMetadata.Parameters.In](StructureDefinition-IHE.MHD.GenerateMetadata.Parameters.In.html)
-- example of a [Parameters input](StructureDefinition-IHE.MHD.GenerateMetadata.Parameters.In-examples.html)
+- example of [input Parameters](StructureDefinition-IHE.MHD.GenerateMetadata.Parameters.In-examples.html)
 """
 * parameter[1].name = #DocumentReference
 * parameter[1].use = #out
