@@ -23,7 +23,7 @@ Description:    "A profile on the Bundle transaction for ITI-65 Provide Document
 * entry ^slicing.discriminator[1].path = "request.method"
 * entry ^slicing.rules = #closed
 * entry ^slicing.description = "Slicing based on the profile conformance of the entry"
-* entry and entry.resource MS
+//* entry and entry.resource MS
 * entry contains 
     SubmissionSet 1..1 and
     DocumentRefs 0..* and
