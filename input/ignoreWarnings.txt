@@ -1,8 +1,6 @@
 == Suppressed Messages ==
 # IHE code system used but never defined by IHE as a formal codeSystem
 A definition for CodeSystem 'urn:ihe:event-type-code' could not be found, so the code cannot be validated
-URL value 'urn:ihe:event-type-code' does not resolve
-URL value 'urn:ihe:iti:2007:AssociationType' does not resolve
 
 # FHIR R4 had the valueset setup wrong. We are using the proper system value
 The Coding provided (http://ihe.net/fhir/ihe.formatcode.fhir/CodeSystem/formatcode#urn:ihe:iti:xds-sd:text:2008) was not found in the value set 'DocumentReference Format Code Set' (http://hl7.org/fhir/ValueSet/formatcodes|4.0.1), and a code is recommended to come from this value set.  (error message = The provided code 'http://ihe.net/fhir/ihe.formatcode.fhir/CodeSystem/formatcode#urn:ihe:iti:xds-sd:text:2008' was not found in the value set 'http://hl7.org/fhir/ValueSet/formatcodes|4.0.1')
@@ -50,31 +48,6 @@ There are multiple different potential matches for the url 'http://hl7.org/fhir/
 
 # these are all examples that are good enough
 Type_Specific_Checks_DT_URL_Resolve
-
-# this is an international realm IG
-# The IG is not for the international realm, and it uses SNOMED CT, so it should fix the SCT edition in the expansion parameters
-
-# need to ignore these pattern warnings coming from BALP until BALP is updated 
-INFORMATION: StructureDefinition/IHE.MHD.FindDocumentLists.Audit.Consumer: StructureDefinition.snapshot.element[19].slicing.discriminator[0]: The discriminator type 'pattern' is deprecated in R5+. For future compatibility, you could consider using type=value with a pattern[x] instead (if this is not an inherited slicing)
-INFORMATION: StructureDefinition/IHE.MHD.FindDocumentLists.Audit.Consumer: StructureDefinition.snapshot.element[106].slicing.discriminator[0]: The discriminator type 'pattern' is deprecated in R5+. For future compatibility, you could consider using type=value with a pattern[x] instead (if this is not an inherited slicing)
-INFORMATION: StructureDefinition/IHE.MHD.FindDocumentLists.Audit.Responder: StructureDefinition.snapshot.element[19].slicing.discriminator[0]: The discriminator type 'pattern' is deprecated in R5+. For future compatibility, you could consider using type=value with a pattern[x] instead (if this is not an inherited slicing)
-INFORMATION: StructureDefinition/IHE.MHD.FindDocumentLists.Audit.Responder: StructureDefinition.snapshot.element[106].slicing.discriminator[0]: The discriminator type 'pattern' is deprecated in R5+. For future compatibility, you could consider using type=value with a pattern[x] instead (if this is not an inherited slicing)
-INFORMATION: StructureDefinition/IHE.MHD.FindDocumentReferences.Audit.Consumer: StructureDefinition.snapshot.element[19].slicing.discriminator[0]: The discriminator type 'pattern' is deprecated in R5+. For future compatibility, you could consider using type=value with a pattern[x] instead (if this is not an inherited slicing)
-INFORMATION: StructureDefinition/IHE.MHD.FindDocumentReferences.Audit.Consumer: StructureDefinition.snapshot.element[106].slicing.discriminator[0]: The discriminator type 'pattern' is deprecated in R5+. For future compatibility, you could consider using type=value with a pattern[x] instead (if this is not an inherited slicing)
-INFORMATION: StructureDefinition/IHE.MHD.FindDocumentReferences.Audit.Responder: StructureDefinition.snapshot.element[19].slicing.discriminator[0]: The discriminator type 'pattern' is deprecated in R5+. For future compatibility, you could consider using type=value with a pattern[x] instead (if this is not an inherited slicing)
-INFORMATION: StructureDefinition/IHE.MHD.FindDocumentReferences.Audit.Responder: StructureDefinition.snapshot.element[106].slicing.discriminator[0]: The discriminator type 'pattern' is deprecated in R5+. For future compatibility, you could consider using type=value with a pattern[x] instead (if this is not an inherited slicing)
-INFORMATION: StructureDefinition/IHE.MHD.GenerateMetadata.Audit.Recipient: StructureDefinition.snapshot.element[19].slicing.discriminator[0]: The discriminator type 'pattern' is deprecated in R5+. For future compatibility, you could consider using type=value with a pattern[x] instead (if this is not an inherited slicing)
-INFORMATION: StructureDefinition/IHE.MHD.GenerateMetadata.Audit.Recipient: StructureDefinition.snapshot.element[106].slicing.discriminator[0]: The discriminator type 'pattern' is deprecated in R5+. For future compatibility, you could consider using type=value with a pattern[x] instead (if this is not an inherited slicing)
-INFORMATION: StructureDefinition/IHE.MHD.GenerateMetadata.Audit.Source: StructureDefinition.snapshot.element[19].slicing.discriminator[0]: The discriminator type 'pattern' is deprecated in R5+. For future compatibility, you could consider using type=value with a pattern[x] instead (if this is not an inherited slicing)
-INFORMATION: StructureDefinition/IHE.MHD.GenerateMetadata.Audit.Source: StructureDefinition.snapshot.element[106].slicing.discriminator[0]: The discriminator type 'pattern' is deprecated in R5+. For future compatibility, you could consider using type=value with a pattern[x] instead (if this is not an inherited slicing)
-INFORMATION: StructureDefinition/IHE.MHD.RetrieveDocument.Audit.Consumer: StructureDefinition.snapshot.element[19].slicing.discriminator[0]: The discriminator type 'pattern' is deprecated in R5+. For future compatibility, you could consider using type=value with a pattern[x] instead (if this is not an inherited slicing)
-INFORMATION: StructureDefinition/IHE.MHD.RetrieveDocument.Audit.Consumer: StructureDefinition.snapshot.element[106].slicing.discriminator[0]: The discriminator type 'pattern' is deprecated in R5+. For future compatibility, you could consider using type=value with a pattern[x] instead (if this is not an inherited slicing)
-INFORMATION: StructureDefinition/IHE.MHD.RetrieveDocument.Audit.Responder: StructureDefinition.snapshot.element[19].slicing.discriminator[0]: The discriminator type 'pattern' is deprecated in R5+. For future compatibility, you could consider using type=value with a pattern[x] instead (if this is not an inherited slicing)
-INFORMATION: StructureDefinition/IHE.MHD.RetrieveDocument.Audit.Responder: StructureDefinition.snapshot.element[106].slicing.discriminator[0]: The discriminator type 'pattern' is deprecated in R5+. For future compatibility, you could consider using type=value with a pattern[x] instead (if this is not an inherited slicing)
-INFORMATION: StructureDefinition/IHE.MHD.SimplifiedPublish.Audit.Recipient: StructureDefinition.snapshot.element[19].slicing.discriminator[0]: The discriminator type 'pattern' is deprecated in R5+. For future compatibility, you could consider using type=value with a pattern[x] instead (if this is not an inherited slicing)
-INFORMATION: StructureDefinition/IHE.MHD.SimplifiedPublish.Audit.Recipient: StructureDefinition.snapshot.element[106].slicing.discriminator[0]: The discriminator type 'pattern' is deprecated in R5+. For future compatibility, you could consider using type=value with a pattern[x] instead (if this is not an inherited slicing)
-INFORMATION: StructureDefinition/IHE.MHD.SimplifiedPublish.Audit.Source: StructureDefinition.snapshot.element[19].slicing.discriminator[0]: The discriminator type 'pattern' is deprecated in R5+. For future compatibility, you could consider using type=value with a pattern[x] instead (if this is not an inherited slicing)
-INFORMATION: StructureDefinition/IHE.MHD.SimplifiedPublish.Audit.Source: StructureDefinition.snapshot.element[106].slicing.discriminator[0]: The discriminator type 'pattern' is deprecated in R5+. For future compatibility, you could consider using type=value with a pattern[x] instead (if this is not an inherited slicing)
 
 # borrowed Document Bundle has issues that we don't care about (note removed signature as that threw errors)
 WARNING: Parameters/ex-input-doc-bundle: Parameters.parameter[0].resource/*Bundle/ex-fhir-document-bundle*/.entry[4].resource: Best Practice Recommendation: In general, all observations should have a performer
