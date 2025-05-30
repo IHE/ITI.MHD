@@ -25,7 +25,7 @@ Description:    "Defines constraints on the AuditEvent Resource to record when a
 * outcomeDesc MS // encouraged
 // source is already required, see invariant val-audit-source use
 * agent 2..*
-* agent ^slicing.discriminator.type = #pattern
+* agent ^slicing.discriminator.type = #value
 * agent ^slicing.discriminator.path = "type"
 * agent ^slicing.rules = #open
 * agent ^slicing.description = "source, recipient, and possibly the user who participated"
@@ -43,7 +43,7 @@ Description:    "Defines constraints on the AuditEvent Resource to record when a
 * agent[documentSource] ^short = "Document Source"
 * agent[documentRecipient] ^short = "Document Recipient"
 * entity 2..
-* entity ^slicing.discriminator.type = #pattern
+* entity ^slicing.discriminator.type = #value
 * entity ^slicing.discriminator.path = "type"
 * entity ^slicing.rules = #open
 * entity ^slicing.description = "patient and submission set involved"
@@ -93,7 +93,7 @@ Description:    "Defines constraints on the AuditEvent Resource to record when a
 * outcomeDesc MS // encouraged
 // source is already required, see invariant val-audit-source use
 * agent 2..*
-* agent ^slicing.discriminator.type = #pattern
+* agent ^slicing.discriminator.type = #value
 * agent ^slicing.discriminator.path = "type"
 * agent ^slicing.rules = #open
 * agent ^slicing.description = "source, recipient, and possibly the user who participated"
@@ -111,7 +111,7 @@ Description:    "Defines constraints on the AuditEvent Resource to record when a
 * agent[documentSource] ^short = "Document Source"
 * agent[documentRecipient] ^short = "Document Recipient"
 * entity 2..
-* entity ^slicing.discriminator.type = #pattern
+* entity ^slicing.discriminator.type = #value
 * entity ^slicing.discriminator.path = "type"
 * entity ^slicing.rules = #open
 * entity ^slicing.description = "patient and submission set involved"
