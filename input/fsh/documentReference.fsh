@@ -37,7 +37,7 @@ Description:    "A profile on the DocumentReference resource for MHD with minima
 * identifier ^slicing.discriminator.type = #value
 * identifier ^slicing.discriminator.path = "use"
 * identifier ^slicing.rules = #open
-* identifier contains entryUUID 0..*
+* identifier contains entryUUID 0..* MS
 * identifier[entryUUID] only EntryUUIDIdentifier
 * status 1..1
 * status from DocumentReferenceStats (required)
@@ -115,7 +115,7 @@ Description:    "A profile on the DocumentReference resource for MHD Comprehensi
 // mappings to XDS 
 Mapping: DocumentEntry-Mapping
 Source:	MinimalDocumentReference
-Target: "XDS"
+Target: "urn:ihe:iti:xds:documententry"
 Title: "XDS and MHD Mapping"
 * -> "XDS DocumentEntry: Used in the context of the IHE MHD ImplementationGuide"
 * category -> "DocumentEntry.classCode"
@@ -136,8 +136,8 @@ Title: "XDS and MHD Mapping"
 * content.attachment.contentType -> "DocumentEntry.mimeType"
 * subject -> "DocumentEntry.patientId"
 * context.practiceSetting -> "DocumentEntry.practiceSettingCode"
-* content.attachment.url -> "DocumentEntry.repositoryUniqueId or DocumentEntry.URI"
-* context.period.start -> "DocumetEntry.serviceStartTime"
+* content.attachment.url -> "DocumentEntry.repositoryUniqueId+DocumentEntry.uniqueId or DocumentEntry.URI"
+* context.period.start -> "DocumentEntry.serviceStartTime"
 * context.period.end -> "DocumentEntry.serviceStopTime"
 * content.attachment.size -> "DocumentEntry.size"
 * context.sourcePatientInfo.identifier -> "DocumentEntry.sourcePatientId"

@@ -22,7 +22,7 @@
       "resource": [
         {
           "type": "DocumentReference",
-          "profile": "https://profiles.ihe.net/ITI/MHD/StructureDefinition/IHE.MHD.Query.Minimal.DocumentReference",
+          "profile": "https://profiles.ihe.net/ITI/MHD/StructureDefinition/IHE.MHD.Minimal.DocumentReference",
           "interaction": [
             {
               "code": "read"
