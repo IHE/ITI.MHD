@@ -127,7 +127,7 @@ Title: "XDS and MHD Mapping"
 * identifier -> "DocumentEntry.entryUUID"
 * context.event -> "DocumentEntry.eventCodeList"
 * content.format -> "DocumentEntry.formatCode"
-* content.attachment.hash -> "DocumentEntry.hash"
+* content.attachment.hash -> "DocumentEntry.hash (beware of encoding changes)"
 * context.facilityType -> "DocumentEntry.healthcareFacilityTypeCode"
 // DocumentEntry.homeCommunityId -- does not actually exist as metadata on DocumentEntry, and does not have a place in DocumentReference. might be encoded in the content.attachment.url
 * content.attachment.language -> "DocumentEntry.languageCode"

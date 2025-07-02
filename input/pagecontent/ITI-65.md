@@ -95,7 +95,7 @@ The Document Source shall populate accurate .hash and .size for the document con
 - Where the document content is a FHIR Document Bundle Resource instance, the .hash and size shall be absent from the DocumentReference Resource. 
 - Where the document content is hosted elsewhere, the .hash and the .size shall represent the document content that would be retrieved using the mime-type specified in contentType element. 
 - Where the document content is [On-Demand Document Option](https://profiles.ihe.net/ITI/TF/Volume1/ch-10.html#10.2.7), the .hash and the .size shall be absent from the DocumentReference Resource. See On-Demand Document [Use Cases Summary](https://profiles.ihe.net/ITI/TF/Volume1/ch-10.html#10.4.11.3). 
-- Where the document content is [Delayed Document Assembly](https://profiles.ihe.net/ITI/TF/Volume1/ch-10.html#10.2.10), the .size of `0` (zero), and the .hash with the fixed value `da39a3ee5e6b4b0d3255bfef95601890afd80709` (SHA1 hash of a zero length file).
+- Where the document content is [Delayed Document Assembly](https://profiles.ihe.net/ITI/TF/Volume1/ch-10.html#10.2.10), the .size of `0` (zero), and the .hash with the fixed value `2jmj7l5rSw0yVb/vlWAYkK/YBwk=` (SHA1 hash of a zero length file).
 
 Folders may be created or updated. A Document Recipient may require that an Updated Folder only have new .entry elements added as would be the requirement of XDS.
 
