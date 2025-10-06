@@ -33,6 +33,13 @@ The conformance requirements are different between Comprehensive, minimal, and U
 
 Resources are not required to carry the meta.profile element and may only carry the profile element defined for the Provide Document Bundle [ITI-65] transaction, as the Receiver is not required to add the profile tags. The value of the meta.profile is a soft indicator of conformance expectation. Receivers may choose to validate actual conformance and fail transactions due to non-conformance.
 
+The hash of document is encoded differently in the DocumentReference resource and in the DocumentEntry metadata.
+While the DocumentEntry contains the hexadecimal representation of the hash digest, the DocumentReference resource contains the base64-encoding of the hash digest.
+For example:
+
+- `DocumentEntry.hash` value: `e8e3172143001587cb7508446aa092eb51995809`
+- `DocumentReference.attachment.hash` value: `6OMXIUMAFYfLdQhEaqCS61GZWAk=`
+
 ### 3:4.5.2 SubmissionSet Metadata Attributes {#submissionSet}
 
 The documented [mapping of the metadata elements](StructureDefinition-IHE.MHD.Minimal.SubmissionSet-mappings.html#mappings-for-xds-and-mhd-mapping-urn-ihe-iti-xds-submissionset) associated with a [Document Sharing SubmissionSet object](https://profiles.ihe.net/ITI/TF/Volume3/ch-4.2.html#4.2.3.3) attributes.
