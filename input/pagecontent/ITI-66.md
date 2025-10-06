@@ -43,7 +43,7 @@ When the Document Consumer needs to discover List Resources matching various met
 
 ##### 2:3.66.4.1.2 Message Semantics
 
-The Document Consumer executes an HTTP search against the Document Responder List endpoint. The search target follows the FHIR HTTP specification, addressing the List Resource [http://hl7.org/fhir/R4/http.html](http://hl7.org/fhir/R4/http.html):
+The Document Consumer executes an HTTP search against the Document Responder List endpoint. The search target follows the FHIR HTTP specification, addressing the List Resource [FHIR http.html]({{site.data.fhir.path}}http.html):
 ```
 [base]/List?<query>
 ```
@@ -51,19 +51,19 @@ This URL is configurable by the Document Responder and is subject to the followi
 
 The `<query>` represents a series of encoded name-value pairs representing the filter for the query as well as control parameters to modify the behavior of the Document Responder such as response format, or pagination.
 
-The Document Consumer may use GET or POST based searches. The Document Responder shall support both GET and POST based searches [http://hl7.org/fhir/R4/http.html#search](http://hl7.org/fhir/R4/http.html#search).
+The Document Consumer may use GET or POST based searches. The Document Responder shall support both GET and POST based searches [FHIR http.html#search]({{site.data.fhir.path}}http.html#search).
 
 ###### 2:3.66.4.1.2.1 Query Search Parameters
 
 The Document Consumer may supply, and the Document Responder shall be capable of processing all query parameters listed below. All query parameter values shall be appropriately encoded per RFC3986 “percent” encoding rules. Note that percent encoding does restrict the character set to a subset of ASCII characters which is used for encoding all other characters used in the URL.
 
-The Document Consumer shall include search parameter `patient` or `patient.identifier`, `code`, and `status`. The other parameters described below are optional. The Document Responder shall implement the parameters described below. The Document Responder may choose to support additional query parameters beyond the subset listed below. Any additional query parameters supported shall be supported according to the core FHIR specification. Such additional parameters are considered out of scope for this transaction. Any additional parameters not supported should be ignored. See [http://hl7.org/fhir/R4/search.html#errors](http://hl7.org/fhir/R4/search.html#errors).
+The Document Consumer shall include search parameter `patient` or `patient.identifier`, `code`, and `status`. The other parameters described below are optional. The Document Responder shall implement the parameters described below. The Document Responder may choose to support additional query parameters beyond the subset listed below. Any additional query parameters supported shall be supported according to the core FHIR specification. Such additional parameters are considered out of scope for this transaction. Any additional parameters not supported should be ignored. See [FHIR search.html#errors]({{site.data.fhir.path}}search.html#errors).
 
 **code**: 
 This parameter, of type token, specifies the code.coding value supplied in the List Resource. The value of the code element indicates the List of type SubmissionSet or Folder as indicated.
 
 **date**:
-This parameter, of type date, specifies the time when the List was created. See FHIR [http://hl7.org/fhir/R4/search.html#date](http://hl7.org/fhir/R4/search.html#date) for use of the date search type.
+This parameter, of type date, specifies the time when the List was created. See FHIR [FHIR search.html#date]({{site.data.fhir.path}}search.html#date) for use of the date search type.
 
 **designationType**:
 This IHE extension on parameters defined as [List-DesignationType](SearchParameter-List-DesignationType.html), of type token, specifies the designation type of the List. The value of the designation type element expresses contentType of submissionSet or the codeList of a Folder. Usually expressed in LOINC or SNOMED. Note that servers that do not support this extended search parameter will ignore it, and thus return more results than expected.
@@ -201,7 +201,7 @@ The Document Responder completed processing of the Find Document Lists message.
 
 Based on the query results, the Document Responder will either return an error or success. Guidance on handling Access Denied related to use of 200, 403 and 404 can be found in [ITI TF-2x: Appendix Z.7](https://profiles.ihe.net/ITI/TF/Volume2/ch-Z.html#z.8-mobile-security-considerations).
 
-When the Document Responder needs to report an error, it shall use HTTP error response codes and should include a FHIR OperationOutcome with more details on the failure. See FHIR [http://hl7.org/fhir/R4/http.html](http://hl7.org/fhir/R4/http.html) and [http://hl7.org/fhir/R4/operationoutcome.html](http://hl7.org/fhir/R4/operationoutcome.html).
+When the Document Responder needs to report an error, it shall use HTTP error response codes and should include a FHIR OperationOutcome with more details on the failure. See FHIR [FHIR http.html]({{site.data.fhir.path}}http.html) and [FHIR operationoutcome.html]({{site.data.fhir.path}}operationoutcome.html).
 
 If the Find Document Lists message is processed successfully, whether or not any List Resources are found, the HTTP status code shall be 200. The Find Document Lists Response message shall be a Bundle Resource containing zero or more List Resources. If the Document Responder is sending warnings, the Bundle Resource shall also contain an OperationOutcome Resource that contains those warnings.
 
@@ -211,7 +211,7 @@ An informative StructureDefinition is outlined for [MHD Find Document Lists Resp
 
 ##### 2:3.66.4.2.2.1 List Resource Contents
 
-The List Resources returned shall be compliant with the FHIR specification [http://hl7.org/fhir/R4/list.html](http://hl7.org/fhir/R4/list.html).
+The List Resources returned shall be compliant with the FHIR specification [FHIR list.html]({{site.data.fhir.path}}list.html).
 
 The List Resources returned should be compliant with the [IHE restrictions on the List Resource](32_fhir_maps.html) and with the mapping of ebXML attributes to List elements to [SubmissionSet](32_fhir_maps.html#submissionSet) and to [Folder](32_fhir_maps.html#folder).
 
