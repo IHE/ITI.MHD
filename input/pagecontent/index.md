@@ -16,6 +16,8 @@ part of the [IHE Document Sharing Health Information Exchange](https://profiles.
 
 <div markdown="1" class="stu-note">
 
+This IG is founded on HL7 FHIR Revision {{site.data.fhir.version}} found at {{site.data.fhir.path}}
+
 | [Significant Changes, Open and Closed Issues](a_issues.html) |
 {: .grid}
 

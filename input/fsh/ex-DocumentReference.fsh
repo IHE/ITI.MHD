@@ -305,7 +305,7 @@ Usage: #example
 * meta.security = http://terminology.hl7.org/CodeSystem/v3-ActReason#HTEST
 * type = #searchset
 * link[0].relation = #self
-* link[0].url = "fhir.example.com/R4/fhir/DocumentReference?patient=9876&status=current"
+* link[0].url = "fhir.example.com/fhir/DocumentReference?patient=9876&status=current"
 * total = 1
 * timestamp = 2021-04-16T11:32:24Z
 * entry[0].fullUrl = "http://example.org/DocumentReference/in-DocumentReferenceMinimal"

@@ -62,7 +62,7 @@
             },
             {
               "name": "creation",
-              "definition": "https://profiles.ihe.net/ITI/MHD/SearchParameter/DocumentReference-Creation",
+              "definition": "http://hl7.org/fhir/SearchParameter/DocumentReference-creation",
               "type": "date",
               "documentation": "When this document was created"
             },

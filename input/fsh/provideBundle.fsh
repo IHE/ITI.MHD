@@ -10,11 +10,11 @@ Description:    "A profile on the Bundle transaction for ITI-65 Provide Document
   - all resources shall be compliant with minimal constraints, they may be marked minimal, comprehensive, or unContained
   - shall create a [SubmissionSet type List](StructureDefinition-IHE.MHD.Minimal.SubmissionSet.html) that is either minimal, comprehensive, or unContained
   - may create one or more [DocumentReference](StructureDefinition-IHE.MHD.Minimal.DocumentReference.html) that is either minimal, comprehensive, or unContained
-    - with a document as a [Binary](http://hl7.org/fhir/R4/binary.html)
-    - or, when implementing the **ITI-65 FHIR Document Publish** option, a [FHIR Document Bundle](http://hl7.org/fhir/R4/bundle.html)
+    - with a document as a [Binary](http://hl7.org/fhir/R5/binary.html)
+    - or, when implementing the **ITI-65 FHIR Document Publish** option, a [FHIR Document Bundle](http://hl7.org/fhir/R5/bundle.html)
   - when DocumentReference replace is used the UpdateDocumentRefs slice is used to indicate the superseded DocumentReference
   - may create/update one or more [Folder type List](StructureDefinition-IHE.MHD.Minimal.Folder.html) that is either minimal, comprehensive, or unContained
-  - may create/update/read one [Patient](http://hl7.org/fhir/R4/patient.html)"
+  - may create/update/read one [Patient](http://hl7.org/fhir/R5/patient.html)"
 * meta.profile 1..*
 * type = #transaction
 * entry ^slicing.discriminator[0].type = #profile
@@ -112,10 +112,10 @@ Description:    "A profile on the Bundle transaction for ITI-65 Provide Document
   - all resources shall be compliant with comprehensive unContained constraints, they may be marked comprehensive unContained
   - shall create a [SubmissionSet type List](StructureDefinition-IHE.MHD.Minimal.SubmissionSet.html) that is either minimal, comprehensive, or unContained
   - may create one or more [DocumentReference](StructureDefinition-IHE.MHD.Minimal.DocumentReference.html) that is either minimal, comprehensive, or unContained
-    - with a document as a [Binary](http://hl7.org/fhir/R4/binary.html)
-    - or, when implementing the **ITI-65 FHIR Document Publish** option, a [FHIR Document Bundle](http://hl7.org/fhir/R4/bundle.html)
+    - with a document as a [Binary](http://hl7.org/fhir/R5/binary.html)
+    - or, when implementing the **ITI-65 FHIR Document Publish** option, a [FHIR Document Bundle](http://hl7.org/fhir/R5/bundle.html)
   - may create/update one or more [Folder type List](StructureDefinition-IHE.MHD.Minimal.Folder.html) that is either minimal, comprehensive, or unContained
-  - may create/update/read one [Patient](http://hl7.org/fhir/R4/patient.html)"
+  - may create/update/read one [Patient](http://hl7.org/fhir/R5/patient.html)"
 * entry[SubmissionSet].resource only
     IHE.MHD.UnContained.Comprehensive.SubmissionSet
 * entry[DocumentRefs].resource only 
@@ -136,10 +136,10 @@ Description:    "A profile on the Bundle transaction for ITI-65 Provide Document
   - all resources shall be compliant with comprehensive constraints, they may be marked comprehensive
   - shall create a [SubmissionSet type List](StructureDefinition-IHE.MHD.Minimal.SubmissionSet.html) that is either minimal, comprehensive, or unContained
   - may create one or more [DocumentReference](StructureDefinition-IHE.MHD.Minimal.DocumentReference.html) that is either minimal, comprehensive, or unContained
-    - with a document as a [Binary](http://hl7.org/fhir/R4/binary.html)
-    - or, when implementing the **ITI-65 FHIR Document Publish** option, a [FHIR Document Bundle](http://hl7.org/fhir/R4/bundle.html)
+    - with a document as a [Binary](http://hl7.org/fhir/R5/binary.html)
+    - or, when implementing the **ITI-65 FHIR Document Publish** option, a [FHIR Document Bundle](http://hl7.org/fhir/R5/bundle.html)
   - may create/update one or more [Folder type List](StructureDefinition-IHE.MHD.Minimal.Folder.html) that is either minimal, comprehensive, or unContained
-  - may create/update/read one [Patient](http://hl7.org/fhir/R4/patient.html)"
+  - may create/update/read one [Patient](http://hl7.org/fhir/R5/patient.html)"
 * entry[SubmissionSet].resource only
     IHE.MHD.Comprehensive.SubmissionSet
 * entry[DocumentRefs].resource only 

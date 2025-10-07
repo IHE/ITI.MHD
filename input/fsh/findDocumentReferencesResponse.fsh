@@ -30,6 +30,7 @@ Description:    "A profile on the Find Document References Comprehensive Respons
 * entry[DocumentReference].resource 1..
 * entry[DocumentReference].resource only ComprehensiveDocumentReference
 
+/* No longer needed in R5
 Instance: DocumentReference-Creation
 InstanceOf: SearchParameter
 Title: "search on the DocumentReference.content.attachment.creation element"
@@ -44,3 +45,4 @@ Usage: #definition
 * expression = "DocumentReference.content.attachment.creation"
 * processingMode = #normal
 * type = #date
+*/

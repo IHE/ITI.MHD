@@ -21,7 +21,7 @@ The result of the query is a Bundle containing List Resources that match the que
 
 ### 2:3.66.3 Referenced Standards
 
-**FHIR-R4** [HL7 FHIR Release 4.0](http://www.hl7.org/FHIR/R4)
+**FHIR** [HL7 FHIR]({{site.data.fhir.path}})
 
 ### 2:3.66.4 Messages
 
@@ -95,7 +95,7 @@ See [ITI TF-2x: Appendix Z.6](https://profiles.ihe.net/ITI/TF/Volume2/ch-Z.html#
 ###### 2:3.66.4.1.2.3 Example List Search
 
 For example given:
-- FHIR server root is `http://test.fhir.org/R4/fhir`
+- FHIR server root is `http://fhir.example.com/fhir`
 - Patient reference id is `9876`
 - looking for a SubmissionSet
 - status of current
@@ -104,17 +104,17 @@ For example given:
 
 ###### 2:3.66.4.1.2.3.1 Example GET
 ```
-GET fhir.example.com/R4/fhir/List?patient=9876&code=submissionset&status=current&designationType=http://loinc.org|1234-5
+GET fhir.example.com/fhir/List?patient=9876&code=submissionset&status=current&designationType=http://loinc.org|1234-5
 ```
 
 ###### 2:3.66.4.1.2.3.2 Example POST
 ```
-POST fhir.example.com/R4/fhir/List/_search?patient=9876&code=submissionset&status=current&designationType=http://loinc.org|1234-5
+POST fhir.example.com/fhir/List/_search?patient=9876&code=submissionset&status=current&designationType=http://loinc.org|1234-5
 ```
 
 ###### 2:3.66.4.1.2.3.3 Example POST Body
 ```
-POST fhir.example.com/R4/fhir/List/_search
+POST fhir.example.com/fhir/List/_search
 Content-Type: application/x-www-form-urlencoded
 
 patient=9876&code=submissionset&status=current&designationType=http://loinc.org|1234-5
@@ -164,7 +164,7 @@ Note 3: Parameters specific to "submissionset" shall be silently ignored.
 
 **Translation of Token Parameter**
 
-Query parameters of type token are used to represent codes and identifiers. See [https://www.hl7.org/fhir/R4/search.html#token](https://www.hl7.org/fhir/R4/search.html#token). 
+Query parameters of type token are used to represent codes and identifiers. See [search.html#token]({{site.data.fhir.path}}search.html#token). 
 
 The manner in which the Document Responder translates these parameters to ebXML to support the Registry Stored Query [ITI-18] transaction will depend on the type of the corresponding parameter within the FindSubmissionSets stored query (see [ITI TF-2: 3.18.4.1.2.3.7.2](https://profiles.ihe.net/ITI/TF/Volume2/ITI-18.html#3.18.4.1.2.3.7.2) ). 
 * If the token parameter translates to a codified stored query parameter, then the Document Responder shall represent the token parameter in the stored query as: `<Value>('code^^system')</Value>`

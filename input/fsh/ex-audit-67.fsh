@@ -28,9 +28,9 @@ Usage: #example
 * entity[query].role = http://terminology.hl7.org/CodeSystem/object-role#24 "Query"
 * entity[query].detail.type.text = "Query Description" 
 * entity[query].detail.valueString = """
-GET fhir.example.com/R4/fhir/DocumentReference?patient=9876&status=current&type=http://loinc.org|1234-5
+GET fhir.example.com/fhir/DocumentReference?patient=9876&status=current&type=http://loinc.org|1234-5
 """
-* entity[query].query = "R0VUIHRlc3QuZmhpci5uZXQvUjQvZmhpci9Eb2N1bWVudFJlZmVyZW5jZT9wYXRpZW50PTk4NzYmc3RhdHVzPWN1cnJlbnQmdHlwZT1odHRwOi8vbG9pbmMub3JnfDEyMzQtNQo="
+* entity[query].query = "R0VUIHRlc3QuZmhpci5uZXQvZmhpci9Eb2N1bWVudFJlZmVyZW5jZT9wYXRpZW50PTk4NzYmc3RhdHVzPWN1cnJlbnQmdHlwZT1odHRwOi8vbG9pbmMub3JnfDEyMzQtNQo="
 
 
 Instance: ex-auditFindDocumentReferences-responder
@@ -63,9 +63,9 @@ Usage: #example
 * entity[query].role = http://terminology.hl7.org/CodeSystem/object-role#24 "Query"
 * entity[query].detail.type.text = "Query Description" 
 * entity[query].detail.valueString = """
-GET fhir.example.com/R4/fhir/DocumentReference?patient=9876&status=current&type=http://loinc.org|1234-5
+GET fhir.example.com/fhir/DocumentReference?patient=9876&status=current&type=http://loinc.org|1234-5
 """
-* entity[query].query = "R0VUIHRlc3QuZmhpci5uZXQvUjQvZmhpci9Eb2N1bWVudFJlZmVyZW5jZT9wYXRpZW50PTk4NzYmc3RhdHVzPWN1cnJlbnQmdHlwZT1odHRwOi8vbG9pbmMub3JnfDEyMzQtNQo="
+* entity[query].query = "R0VUIHRlc3QuZmhpci5uZXQvZmhpci9Eb2N1bWVudFJlZmVyZW5jZT9wYXRpZW50PTk4NzYmc3RhdHVzPWN1cnJlbnQmdHlwZT1odHRwOi8vbG9pbmMub3JnfDEyMzQtNQo="
 
 Instance: ex-auditFindDocumentReferences-post-responder
 InstanceOf: IHE.MHD.FindDocumentReferences.Audit.Responder
@@ -97,12 +97,12 @@ Usage: #example
 * entity[query].role = http://terminology.hl7.org/CodeSystem/object-role#24 "Query"
 * entity[query].detail.type.text = "Query Description" 
 * entity[query].detail.valueString = """
-POST fhir.example.com/R4/fhir/DocumentReference/_search
+POST fhir.example.com/fhir/DocumentReference/_search
 Host fhir.example.com
 Content-Type: application/x-www-form-urlencoded
-Accept: application/fhir+json; fhirVersion=4.0
+Accept: application/fhir+json
 
 patient=9876&status=current&type=http://loinc.org|1234-5
 """
-* entity[query].query = "UE9TVCB0ZXN0LmZoaXIubmV0L1I0L2ZoaXIvRG9jdW1lbnRSZWZlcmVuY2UvX3NlYXJjaApIb3N0IHRlc3QuZmhpci5uZXQKQ29udGVudC1UeXBlOiBhcHBsaWNhdGlvbi94LXd3dy1mb3JtLXVybGVuY29kZWQKQWNjZXB0OiBhcHBsaWNhdGlvbi9maGlyK2pzb247IGZoaXJWZXJzaW9uPTQuMAoKcGF0aWVudD05ODc2JnN0YXR1cz1jdXJyZW50JnR5cGU9aHR0cDovL2xvaW5jLm9yZ3wxMjM0LTUK"
+* entity[query].query = "UE9TVCB0ZXN0LmZoaXIubmV0L2ZoaXIvRG9jdW1lbnRSZWZlcmVuY2UvX3NlYXJjaApIb3N0IHRlc3QuZmhpci5uZXQKQ29udGVudC1UeXBlOiBhcHBsaWNhdGlvbi94LXd3dy1mb3JtLXVybGVuY29kZWQKQWNjZXB0OiBhcHBsaWNhdGlvbi9maGlyK2pzb24KCnBhdGllbnQ9OTg3NiZzdGF0dXM9Y3VycmVudCZ0eXBlPWh0dHA6Ly9sb2luYy5vcmd8MTIzNC01Cg=="
 

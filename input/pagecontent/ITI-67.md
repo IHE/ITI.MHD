@@ -16,7 +16,7 @@ The Find Document References transaction is used to find DocumentReference Resou
 
 ### 2:3.67.3 Referenced Standards
 
-**FHIR-R4** [HL7 FHIR Release 4.0](http://www.hl7.org/FHIR/R4)
+**FHIR** [HL7 FHIR]({{site.data.fhir.path}})
 
 ### 2:3.67.4 Messages
 
@@ -62,7 +62,7 @@ These parameters, of type string, specify the name parts of the author person, w
 This parameter, of type token, specifies the general classification of the DocumentReference Resource, or in Document Sharing nomenclature, the classCode of the Document Entry. See [ITI TF-2x: Appendix Z.2](https://profiles.ihe.net/ITI/TF/Volume2/ch-Z.html#z.2-query-parameters) for additional constraints on the use of the token search parameter type.
 
 **creation**:
-This IHE defined parameter defined as [DocumentReference-Creation](SearchParameter-DocumentReference-Creation.html), of type dateTime, specifies a search against the DocumentReference.content.attachment.creation. See FHIR [FHIR search.html#date]({{site.data.fhir.path}}search.html#date) for use of the date search type.
+This parameter, of type dateTime, specifies a search against the DocumentReference.content.attachment.creation. See FHIR [FHIR search.html#date]({{site.data.fhir.path}}search.html#date) for use of the date search type.
 
 **date**:
 This parameter, of type date, specifies the time when the DocumentReference was created. See FHIR [FHIR search.html#date]({{site.data.fhir.path}}search.html#date) for use of the date search type.
@@ -112,35 +112,38 @@ See [ITI TF-2x: Appendix Z.6](https://profiles.ihe.net/ITI/TF/Volume2/ch-Z.html#
 ###### 2:3.67.4.1.2.3 Example DocumentReference Search
 
 For example given:
-- FHIR server root is `http://test.fhir.org/R4/fhir`
+- FHIR server root is `http://fhir.example.com/fhir`
 - Patient reference id is `9876`
 - status of current
 - with clinical code from loinc of `1234-5`
 - examples do not include all http headers such as the security headers
 
 ###### 2:3.67.4.1.2.3.1 Example GET
+
 ```
-GET fhir.example.com/R4/fhir/DocumentReference?patient=9876&status=current&type=http://loinc.org|1234-5
+GET fhir.example.com/fhir/DocumentReference?patient=9876&status=current&type=http://loinc.org|1234-5
 ```
 
 ###### 2:3.67.4.1.2.3.2 Example POST
+
 ```
-POST fhir.example.com/R4/fhir/DocumentReference/_search?patient=9876&status=current&type=http://loinc.org|1234-5
+POST fhir.example.com/fhir/DocumentReference/_search?patient=9876&status=current&type=http://loinc.org|1234-5
 ```
 
 ###### 2:3.67.4.1.2.3.3 Example POST Body
+
 ```
-POST fhir.example.com/R4/fhir/DocumentReference/_search	  
+POST fhir.example.com/fhir/DocumentReference/_search
 Host fhir.example.com
 Content-Type: application/x-www-form-urlencoded
-Accept: application/fhir+json; fhirVersion=4.0										  
+Accept: application/fhir+json
 
 patient=9876&status=current&type=http://loinc.org|1234-5
 ```
 
 ##### 2:3.67.4.1.3 Expected Actions
 
-The Document Responder shall process the query to discover the DocumentReference entries that match the search parameters given. 
+The Document Responder shall process the query to discover the DocumentReference entries that match the search parameters given.
 
 ###### 2:3.67.4.1.3.1 XDS on FHIR Option
 
@@ -151,8 +154,8 @@ The Document Responder is grouped with an XDS Document Consumer when it supports
 | [ITI-67] Parameter Name	| [ITI-18] Parameter Name |
 |-----------|-----------|
 | patient or patient.identifier	| $XDSDocumentEntryPatientId |
-| creation (Note 1) (Note 5)	| $XDSDocumentEntryCreationTimeFrom |
-| creation (Note 2) (Note 5)	| $XDSDocumentEntryCreationTimeTo |
+| creation (Note 1)	| $XDSDocumentEntryCreationTimeFrom |
+| creation (Note 2)	| $XDSDocumentEntryCreationTimeTo |
 | author.given / author.family	| $XDSDocumentEntryAuthorPerson |
 | status	| $XDSDocumentEntryStatus |
 | (Not supported) (Note 3)	| $XDSDocumentEntryType |
@@ -177,8 +180,6 @@ Note 2: This FindDocuments parameter is used when the less than (`lt`) parameter
 Note 3: The $XDSDocumentEntryType is not a supported query parameter in HL7 FHIR.
 
 Note 4: The $XDSDocumentEntryReferenceIdList can only be mapped when using the XDS FindDocumentsByReferenceId query. This parameter support requires XDS [Reference ID Option](https://profiles.ihe.net/ITI/TF/Volume1/ch-10.html#10.2.6).
-
-Note 5: The FHIR R4 DocumentReference does not yet have a `.attachment.creation` query parameter, it has only a date element which is the creation date/time of the DocumentReference. MHD adds the search parameter `DocumentReference-Creation`, to provide the functionality of search against the document creation date/time.
 
 **Table 2:3.67.4.1.3.1-2: Values for code for status of DocumentReference**
 

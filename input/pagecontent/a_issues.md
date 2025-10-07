@@ -11,6 +11,7 @@
   - Did not put most specific code into AuditEvent.code, keeping it in AuditEvent.category to keep scope limited
 - removed some examples that were only sourced in json, which is harder to align across FHIR releases
 - converted the FHIR Document json to FSH, as it is easier to transition to R5 there.
+- FHIR R5 DocumentReference search does include the `creation` parameter that was missing in R4
 
 ### Significant changes in MHD Version 4.2.2
 

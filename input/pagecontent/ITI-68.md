@@ -16,7 +16,7 @@ The Retrieve Document [ITI-68] transaction is used by the Document Consumer to r
 
 ### 2:3.68.3 Referenced Standards
 
-**FHIR-R4** [HL7 FHIR Release 4.0](http://www.hl7.org/FHIR/R4)
+**FHIR** [HL7 FHIR]({{site.data.fhir.path}})
 
 ### 2:3.68.4 Messages
 
