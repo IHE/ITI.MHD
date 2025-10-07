@@ -1,6 +1,18 @@
 <div markdown="1" class="stu-note">
 
-### Signficant changes in MHD Version 4.2.2
+### Significant changes in MHD Version 5.0.0
+
+- Conversion to FHIR R5
+- Added tables to Volume 3 as the new mapping rendering from IgPublisher is less table based, and the table can hold both R4 and R5 mapping so that the changes are more clear.
+- No change to Folders and SubmissionSet mapping
+  - could possibly use List.source rather than extension (sourceOrg), but .source is 0..1 -- see https://jira.hl7.org/browse/FHIR-53061
+- AuditEvent -- did not convert BALP, rather imported the profiles and renamed
+  - Did not use FHIR R5 AuditEvent.patient, keeping the profiling closer to the FHIR R4 use to keep scope limited
+  - Did not put most specific code into AuditEvent.code, keeping it in AuditEvent.category to keep scope limited
+- removed some examples that were only sourced in json, which is harder to align across FHIR releases
+- converted the FHIR Document json to FSH, as it is easier to transition to R5 there.
+
+### Significant changes in MHD Version 4.2.2
 
 Version 4.2.2
 - Quality improvements
@@ -77,6 +89,7 @@ These issues were known as part of the publication, and IHE invites comments. Co
 - [MHD_063](https://github.com/IHE/ITI.MHD/issues/158): Should MHD defined CapabilityStatement requirements so that a client can determine that the server supports MHD and which MHD server actor? Today we do require servers to support metadata endpoint returning their CapabilityStatment, but do not require it to contain anything specifically. We could first require that the CapabilityStatment.implementationGuide be populated with MHD canonical IG URL. We could additionally require specific .transaction values for DocumentRecipient, and .rest.resource.supportedProfile for DocumentResponder. Might we need an extension in .transaction to be more specific for Document Recipient? Should a DocumentRecipient need to publish that it is capable of receiving a create/update on these .rest resources (which we only defined thru the transaction, not individually REST)? Might we add an extension on CapabilityStatement.implementationGuide to hold the actor name and options? 
 - [MHD_061](https://github.com/IHE/ITI.MHD/issues/157): The new IUA supplement includes guidance on use of OAuth scopes when grouped with MHD. That text updates MHD, but be maintained in MHD until IUA goes Final Text. see https://profiles.ihe.net/ITI/IUA/index.html#33-mhd-profile
 - [MHD_055](https://github.com/IHE/ITI.MHD/issues/156): List.source does not allow for Organization which is needed for SubmissionSet.author. So created an extension (SourceOrg) to hold the SubmissionSet sourceId as a Reference(Organization). This could be reverted if the submitted CR changes R5 https://jira.hl7.org/browse/FHIR-30154 
+  - in FHIR R5 .source was updated with other types, but is still 0..1. See https://jira.hl7.org/browse/FHIR-53061
 - [MHD_058](https://github.com/IHE/ITI.MHD/issues/91): The profile requires that the document submitted is encoded in a FHIR Binary. Is there interest in also allowing a Bundle of type Document? This would be useful when publishing FHIR-Documents. The FHIR-Document would still need to be seralized into a Bundle of type Document, but that Bundle would not need to be further encoded into a Binary (e.g. base64 encoding). Note that the mime-type in this case would be forced to be the same mime-type as the ITI-65 Bundle, where a Document Source wants to encode ITI-65 in a mime-type that is different than the document, the Binary methodology would need to be used.
   - note that retrieve (ITI-68) does allow the Document Client to ask for the document content in various mime types, thus allowing support for preferred mime type encoding if the Document Responder has the ability to return the content in a encoding other than the DocumentReference indicates.
 - [MHD_065](https://github.com/IHE/ITI.MHD/issues/155): Is it needed to have a mapping between XDS RegistryError and FHIR OperationOutcome at the element level, and also addressing OperationOutcome.issue.code vocabulary could be mapped to the XDS error vocabulary between XDS https://profiles.ihe.net/ITI/TF/Volume3/ch-4.2.html#4.2.4.1 and FHIR OperationOutcome?

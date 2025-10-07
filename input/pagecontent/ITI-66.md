@@ -104,17 +104,17 @@ For example given:
 
 ###### 2:3.66.4.1.2.3.1 Example GET
 ```
-GET test.fhir.net/R4/fhir/List?patient=9876&code=submissionset&status=current&designationType=http://loinc.org|1234-5
+GET fhir.example.com/R4/fhir/List?patient=9876&code=submissionset&status=current&designationType=http://loinc.org|1234-5
 ```
 
 ###### 2:3.66.4.1.2.3.2 Example POST
 ```
-POST test.fhir.net/R4/fhir/List/_search?patient=9876&code=submissionset&status=current&designationType=http://loinc.org|1234-5
+POST fhir.example.com/R4/fhir/List/_search?patient=9876&code=submissionset&status=current&designationType=http://loinc.org|1234-5
 ```
 
 ###### 2:3.66.4.1.2.3.3 Example POST Body
 ```
-POST test.fhir.net/R4/fhir/List/_search
+POST fhir.example.com/R4/fhir/List/_search
 Content-Type: application/x-www-form-urlencoded
 
 patient=9876&code=submissionset&status=current&designationType=http://loinc.org|1234-5

@@ -8,7 +8,7 @@ status: active
 title: "Mobile access to Health Documents (MHD)"
 description: ImplementationGuide for IHE IT Infrastructure Technical Framework Supplement Mobile access to Health Documents (MHD)
 #date: 2024-05-23
-version: 4.2.3-current
+version: 5.0.0-current
 releaseLabel: ci-build
 #releaselabel: ballot
 #releaseLabel: Trial-Implementation
@@ -24,17 +24,8 @@ contact:
 #copyright: IHE http://www.ihe.net/Governance/#Intellectual_Property
 copyrightYear: 2020+
 license: CC-BY-4.0
-fhirVersion: 4.0.1
-jurisdiction: http://unstats.un.org/unsd/methods/m49/m49.htm#001 "World"
-dependencies:
-  ihe.iti.balp:
-    id: iheitibasicaudit
-    uri: https://profiles.ihe.net/ITI/BALP/ImplementationGuide/ihe.iti.balp
-    version: current # 1.1.x
-  ihe.formatcode.fhir:
-    id: iheformatcodefhir
-    uri: https://profiles.ihe.net/fhir/ihe.formatcode.fhir/ImplementationGuide/ihe.formatcode.fhir
-    version: 1.4.x
+fhirVersion: 5.0.0
+jurisdiction: 'http://unstats.un.org/unsd/methods/m49/m49.htm#001'
  
 parameters:  # see http://build.fhir.org/ig/FHIR/fhir-tools-ig/branches/master/index.html
   path-resource:
@@ -55,19 +46,7 @@ parameters:  # see http://build.fhir.org/ig/FHIR/fhir-tools-ig/branches/master/i
   shownav: 'true'
 
 # additional examples that need descriptions
-resources:
-  Bundle/Bundle-FindDocumentReferences:
-    name: Example FindDocumentReferences response
-    description: An example of a searchset Bundle with one DocumentReference
-    exampleBoolean: true
-  Bundle/ex-comprehensiveProvideDocumentBundleDocument:
-    name: Example Provide Bundle with a FHIR-Document
-    description: An example of a Provide Bundle with a single DocumentReference pointing at a FHIR-Document Bundle
-    exampleBoolean: true
-  Bundle/ex-fhir-document-bundle:
-    name: Example of a FHIR-Document Bundle
-    description: An example of a FHIR-Document Bundle
-    exampleBoolean: true
+
 
 # ╭────────────────────────────────────────────pages───────────────────────────────────────────────╮
 # │  The pages property corresponds to IG.definition.page.                                         │

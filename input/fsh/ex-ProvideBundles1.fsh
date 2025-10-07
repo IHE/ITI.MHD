@@ -15,7 +15,7 @@ Note that in the case of the Patient, it is likely this successful create is jus
 Usage: #example
 * meta.security = http://terminology.hl7.org/CodeSystem/v3-ActReason#HTEST
 * type = #transaction-response
-* link[0].relation = "self"
+* link[0].relation = #self
 * link[0].url = "http://example.com/fhir"
 * entry[+].response.status = "201 Created"
 * entry[=].response.location = "List/1"
@@ -108,11 +108,11 @@ Title:      "DocumentReference for Minimal metadata"
 Description: "Example of a minimal DocumentReference resource. This points at a Binary also in the bundle."
 Usage: #inline
 * meta.security = http://terminology.hl7.org/CodeSystem/v3-ActReason#HTEST
-* masterIdentifier.system = "urn:ietf:rfc:3986"
-* masterIdentifier.value = "urn:oid:1.2.840.113556.1.8000.2554.53432.348.12973.17740.34205.4355.50220.62012"
+* identifier[uniqueId].system = "urn:ietf:rfc:3986"
+* identifier[uniqueId].value = "urn:oid:1.2.840.113556.1.8000.2554.53432.348.12973.17740.34205.4355.50220.62012"
 * status = #current
 * subject = Reference(urn:uuid:aaaaaaaa-bbbb-cccc-dddd-e00111100004)
-* content.format = http://ihe.net/fhir/ihe.formatcode.fhir/CodeSystem/formatcode#urn:ihe:iti:xds-sd:text:2008
+* content.profile.valueCoding = http://ihe.net/fhir/ihe.formatcode.fhir/CodeSystem/formatcode#urn:ihe:iti:xds-sd:text:2008
 * content.attachment.url = "urn:uuid:aaaaaaaa-bbbb-cccc-dddd-e00111100003"
 * content.attachment.contentType = #text/plain
 * content.attachment.hash = "MGE0ZDU1YThkNzc4ZTUwMjJmYWI3MDE5NzdjNWQ4NDBiYmM0ODZkMA=="

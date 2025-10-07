@@ -11,18 +11,18 @@ Description:    "Defines constraints on the AuditEvent Resource to record when a
 - shall have a patient entity
 - shall have a submission set identity entity"
 * modifierExtension 0..0
-* type = DCM#110107 "Import"
+* code = DCM#110107 "Import"
 * action = #C
-* subtype ^slicing.discriminator.type = #value
-* subtype ^slicing.discriminator.path = "$this"
-* subtype ^slicing.rules = #open // allow other codes
-* subtype 1..
-* subtype contains iti65 1..1
-* subtype[iti65] = urn:ihe:event-type-code#ITI-65 "Provide Document Bundle"
+* category ^slicing.discriminator.type = #value
+* category ^slicing.discriminator.path = "$this"
+* category ^slicing.rules = #open // allow other codes
+* category 1..
+* category contains iti65 1..1
+* category[iti65] = urn:ihe:event-type-code#ITI-65 "Provide Document Bundle"
 // * severity in R5
 * recorded 1..1 // already required
-* outcome 1..1
-* outcomeDesc MS // encouraged
+* outcome.code 1..1
+* outcome.detail.text MS // encouraged
 // source is already required, see invariant val-audit-source use
 * agent 2..*
 * agent ^slicing.discriminator.type = #value
@@ -35,26 +35,24 @@ Description:    "Defines constraints on the AuditEvent Resource to record when a
 	// may be many including app identity, user identity, etc
 * agent[documentSource].type = DCM#110153 "Source Role ID"
 * agent[documentSource].who 1..1
-* agent[documentSource].network 1..1
+* agent[documentSource].network[x] 1..1
 * agent[documentRecipient].type = DCM#110152 "Destination Role ID"
 * agent[documentRecipient].who 1..1
 * agent[documentRecipient] obeys val-audit-source
-* agent[documentRecipient].network 1..1
+* agent[documentRecipient].network[x] 1..1
 * agent[documentSource] ^short = "Document Source"
 * agent[documentRecipient] ^short = "Document Recipient"
 * entity 2..
 * entity ^slicing.discriminator.type = #value
-* entity ^slicing.discriminator.path = "type"
+* entity ^slicing.discriminator.path = "role"
 * entity ^slicing.rules = #open
 * entity ^slicing.description = "patient and submission set involved"
 * entity contains
 	patient 1..1 and
 	submissionSet 1..1
-* entity[patient].type = http://terminology.hl7.org/CodeSystem/audit-entity-type#1 "Person"
 * entity[patient].role = http://terminology.hl7.org/CodeSystem/object-role#1 "Patient"
 * entity[patient].what 1..1
 * entity[patient].what only Reference(Patient)
-* entity[submissionSet].type = http://terminology.hl7.org/CodeSystem/audit-entity-type#2 "System Object"
 * entity[submissionSet].role = http://terminology.hl7.org/CodeSystem/object-role#20 "Job"
 * entity[submissionSet].what 1..1
 * entity[submissionSet].what only Reference(List) 
@@ -79,18 +77,18 @@ Description:    "Defines constraints on the AuditEvent Resource to record when a
 - shall have a patient entity
 - shall have a submission set identity entity"
 * modifierExtension 0..0
-* type = DCM#110106 "Export"
+* code = DCM#110106 "Export"
 * action = #R
-* subtype ^slicing.discriminator.type = #value
-* subtype ^slicing.discriminator.path = "$this"
-* subtype ^slicing.rules = #open // allow other codes
-* subtype 1..
-* subtype contains iti65 1..1
-* subtype[iti65] = urn:ihe:event-type-code#ITI-65 "Provide Document Bundle"
+* category ^slicing.discriminator.type = #value
+* category ^slicing.discriminator.path = "$this"
+* category ^slicing.rules = #open // allow other codes
+* category 1..
+* category contains iti65 1..1
+* category[iti65] = urn:ihe:event-type-code#ITI-65 "Provide Document Bundle"
 // * severity in R5
 * recorded 1..1 // already required
-* outcome 1..1
-* outcomeDesc MS // encouraged
+* outcome.code 1..1
+* outcome.detail.text MS // encouraged
 // source is already required, see invariant val-audit-source use
 * agent 2..*
 * agent ^slicing.discriminator.type = #value
@@ -104,28 +102,44 @@ Description:    "Defines constraints on the AuditEvent Resource to record when a
 * agent[documentSource].type = DCM#110153 "Source Role ID"
 * agent[documentSource].who 1..1
 * agent[documentSource] obeys val-audit-source
-* agent[documentSource].network 1..1
+* agent[documentSource].network[x] 1..1
 * agent[documentRecipient].type = DCM#110152 "Destination Role ID"
 * agent[documentRecipient].who 1..1
-* agent[documentRecipient].network 1..1
+* agent[documentRecipient].network[x] 1..1
 * agent[documentSource] ^short = "Document Source"
 * agent[documentRecipient] ^short = "Document Recipient"
 * entity 2..
 * entity ^slicing.discriminator.type = #value
-* entity ^slicing.discriminator.path = "type"
+* entity ^slicing.discriminator.path = "role"
 * entity ^slicing.rules = #open
 * entity ^slicing.description = "patient and submission set involved"
 * entity contains
 	patient 1..1 and
 	submissionSet 1..1
-* entity[patient].type = http://terminology.hl7.org/CodeSystem/audit-entity-type#1 "Person"
 * entity[patient].role = http://terminology.hl7.org/CodeSystem/object-role#1 "Patient"
 * entity[patient].what 1..1
 * entity[patient].what only Reference(Patient)
-* entity[submissionSet].type = http://terminology.hl7.org/CodeSystem/audit-entity-type#2 "System Object"
 * entity[submissionSet].role = http://terminology.hl7.org/CodeSystem/object-role#20 "Job"
 * entity[submissionSet].what 1..1
 * entity[submissionSet].what only Reference(List) 
 * entity[patient] ^short = "Patient"
 * entity[submissionSet] ^short = "SubmissionSet"
 
+CodeSystem: BasicAuditEntityType
+Title: "Entity Types that are defined in IHE BasicAudit"
+Description: """
+These are new codes used in BasicAudit IG, where AuditEvent.entity is used to hold a specific kind of data that is not covered by the existing valueSet.
+"""
+* ^caseSensitive = true
+* ^experimental = false
+* #XrequestId "transport specific unique identifier where http X-Request-Id is used"
+
+
+
+ValueSet: BasicAuditEntityTypesVS
+Title: "Entity Types used by IHE BasicAudit"
+Description: """
+For use with AuditEvent.entity.type.  This includes codes defined in the BasicAudit.
+"""
+* ^experimental = false
+* codes from system BasicAuditEntityType

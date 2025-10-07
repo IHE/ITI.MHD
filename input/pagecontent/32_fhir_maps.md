@@ -16,7 +16,47 @@ When encoding XDS identifiers into FHIR Resource data elements of type Identifie
 
 #### 3:4.5.1.1 DocumentEntry Metadata Attributes {#documentEntry}
 
-The documented [mapping of the metadata elements](StructureDefinition-IHE.MHD.Minimal.DocumentReference-mappings.html#mappings-for-xds-and-mhd-mapping-urn-ihe-iti-xds-documententry) associated with a [Document Sharing DocumentEntry object](https://profiles.ihe.net/ITI/TF/Volume3/ch-4.2.html#4.2.3.2) attributes.
+The documented [mapping of the metadata elements](StructureDefinition-IHE.MHD.Minimal.DocumentReference-mappings.html) associated with a [Document Sharing DocumentEntry object](https://profiles.ihe.net/ITI/TF/Volume3/ch-4.2.html#4.2.3.2) attributes.
+
+The mapping in table form
+
+| [DocumentEntry](https://profiles.ihe.net/ITI/TF/Volume3/ch-4.2.html#4.2.3.2)         | [R4 DocumentReference](https://hl7.org/fhir/R4/documentreference.html) | [R5 DocumentReference](https://hl7.org/fhir/R5/documentreference.html) |
+|-----------------------|-------------------------------|-----------------------------------|
+| limitedMetadata       | meta.profile                  | meta.profile                      |
+| uniqueId              | masterIdentifier              | identifier                        |
+| entryUUID             | identifier                    | identifier                        |
+| availabilityStatus    | status                        | status                            |
+| typeCode              | type                          | type                              |
+| classCode             | category                      | category                          |
+| patientId             | subject                       | subject                           |
+| author                | author                        | author                            |
+| legalAuthenticator    | authenticator                 | attester                          |
+| Associations          |                               |                                   |
+|  .type                | relatesTo.code                | relatesTo.code                    |
+|  .reference           | relatesTo.target              | relatesTo.target                  |
+| comments              | description                   | description                       |
+| confidentialityCode   | securityLabel                 | securityLabel                     |
+| mimeType              | content.attachment.contentType | content.attachment.contentType   |
+| languageCode          | content.attachment.language   | content.attachment.language       |
+| repositoryUniqueId    | content.attachment.url        | content.attachment.url            |
+| URI                   | content.attachment.url        | content.attachment.url            |
+| size                  | content.attachment.size       | content.attachment.size           |
+| hash                  | content.attachment.hash       | content.attachment.hash           |
+| title                 | content.attachment.title      | content.attachment.title          |
+| creationTime          | content.attachment.creation   | content.attachment.creation       |
+| formatCode            | content.format                | content.profile                   |
+| referenceIdList       |                               |                                   |
+|   type encounterId    | context.encounter             | context                           |
+|   procedures          | context.related               | basedOn                           |
+|   all other           | context.related               | event.reference                   |
+| eventCodeList         | context.event                 | event.concept                     |
+| serviceStartTime      | context.period.start          | period.start                      |
+| serviceStopTime       | context.period.end            | period.end                        |
+| healthcareFacilityTypeCode | context.facilityType     | facilityType                      |
+| practiceSettingCode   | context.practiceSettingCode   | practiceSetting                   |
+| sourcePatientInfo     | sourcePatientInfo.reference   | extension (sourcePatient)         |
+| sourcePatientId       | sourcePatientInfo.identifier  | extension (sourcePatient)         |
+{: .grid}
 
 Note: FHIR contains an informative mapping that is intended to be equivalent and can be found at [FHIR documentReference XDS mapping]({{site.data.fhir.path}}documentreference-mappings.html#xds). For the purposes of IHE MHD conformance the mapping documented here (in IHE) are normative.
 
@@ -35,7 +75,27 @@ Resources are not required to carry the meta.profile element and may only carry 
 
 ### 3:4.5.2 SubmissionSet Metadata Attributes {#submissionSet}
 
-The documented [mapping of the metadata elements](StructureDefinition-IHE.MHD.Minimal.SubmissionSet-mappings.html#mappings-for-xds-and-mhd-mapping-urn-ihe-iti-xds-submissionset) associated with a [Document Sharing SubmissionSet object](https://profiles.ihe.net/ITI/TF/Volume3/ch-4.2.html#4.2.3.3) attributes.
+The documented [mapping of the metadata elements](StructureDefinition-IHE.MHD.Minimal.SubmissionSet-mappings.html) associated with a [Document Sharing SubmissionSet object](https://profiles.ihe.net/ITI/TF/Volume3/ch-4.2.html#4.2.3.3) attributes.
+
+| [SubmissionSet](https://profiles.ihe.net/ITI/TF/Volume3/ch-4.2.html#4.2.3.3) | [R4 List](https://hl7.org/fhir/R4/list.html) | [R5 List](https://hl7.org/fhir/R5/list.html) |
+|-----------------------|-------------------------------|-------------------------------|
+| limitedMetadata       | meta.profile                  | meta.profile                  |
+| contentTypeCode       | extension (designationType)   | extension (designationType)   |
+| sourceId              | extension (sourceId)          | extension (sourceId)          |
+| intendedRecipient     | extension (intendedRecipient) | extension (intendedRecipient) |
+| entryUUID             | identifier                    | identifier                    |
+| uniqueId              | identifier                    | identifier                    |
+| availabilityStatus    | status                        | status                        |
+| title                 | title                         | title                         |
+| patientId             | subject                       | subject                       |
+| submissionTime        | date                          | date                          |
+| author                |                               |                               |
+|   when Organization   | extension (authorOrg)         | extension (authorOrg)         |
+|   when Practitioner   | source                        | source                        |
+| comments              | note                          | note                          |
+| DocumentEntry(s)      | entry.item                    | entry.item                    |
+| Folder(s)             | entry.item                    | entry.item                    |
+{: .grid}
 
 #### 3:4.5.2.1 SubmissionSet List StructureDefinition
 
@@ -50,9 +110,23 @@ Resources are not required to carry the meta.profile element and may only carry 
 
 ### 3:4.5.3 Folder Metadata Attributes {#folder}
 
-The documented [mapping of the metadata elements](StructureDefinition-IHE.MHD.Minimal.Folder-mappings.html#mappings-for-xds-and-mhd-mapping-urn-ihe-iti-xds-folder) associated with a [Document Sharing Folder object](https://profiles.ihe.net/ITI/TF/Volume3/ch-4.2.html#4.2.3.4) attributes.
+The documented [mapping of the metadata elements](StructureDefinition-IHE.MHD.Minimal.Folder-mappings.html) associated with a [Document Sharing Folder object](https://profiles.ihe.net/ITI/TF/Volume3/ch-4.2.html#4.2.3.4) attributes.
 
 Note that FHIR List Resource in the FHIR core specification does not include a Mapping to XDS.
+
+| [Folder](https://profiles.ihe.net/ITI/TF/Volume3/ch-4.2.html#4.2.3.4) | [R4 List](https://hl7.org/fhir/R4/list.html) | [R5 List](https://hl7.org/fhir/R5/list.html) |
+|-----------------------|-------------------------------|-------------------------------|
+| limitedMetadata       | meta.profile                  | meta.profile                  |
+| contentTypeCode       | extension (designationType)   | extension (designationType)   |
+| entryUUID             | identifier                    | identifier                    |
+| uniqueId              | identifier                    | identifier                    |
+| availabilityStatus    | status                        | status                        |
+| title                 | title                         | title                         |
+| patientId             | subject                       | subject                       |
+| lastUpdateTime        | date                          | date                          |
+| comments              | note                          | note                          |
+| DocumentEntry(s)      | entry.item                    | entry.item                    |
+{: .grid}
 
 #### 3:4.5.3.1 Folder StructureDefinition
 

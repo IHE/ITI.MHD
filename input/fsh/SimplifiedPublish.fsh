@@ -21,8 +21,14 @@ Simplified Publish
   - Document Recipient is expected to extract the .data, use .url
 """
 * modifierExtension 0..0
-* masterIdentifier 1..1
-* identifier 0..0
+* identifier 1..1 MS
+* identifier ^slicing.discriminator.type = #value
+* identifier ^slicing.discriminator.path = "use"
+* identifier ^slicing.rules = #open
+* identifier contains 
+    uniqueId 1..1 MS
+* identifier[uniqueId].use = #usual
+* identifier[uniqueId] only UniqueIdIdentifier
 * status 1..1
 * status = http://hl7.org/fhir/document-reference-status#current
 * docStatus 0..0
@@ -32,7 +38,8 @@ Simplified Publish
 * subject only Reference(Patient)
 * date 0..1 MS
 * author 0..* MS
-* authenticator 0..1
+* attester 0..1
+* attester.party 1..1
 * relatesTo 0..* MS
 * description 0..1
 * securityLabel 0..* MS
@@ -47,14 +54,16 @@ Simplified Publish
 * content.attachment.hash 0..1
 * content.attachment.title 0..1
 * content.attachment.creation 0..1 MS
-* content.format 0..1 MS
-//* content.format from http://ihe.net/fhir/ihe.formatcode.fhir/ValueSet/formatcode (preferred)
-* context.event 0..*
-* context.period 0..1 MS
-* context.facilityType 0..1 MS
-* context.practiceSetting 0..1 MS
-* context.sourcePatientInfo 0..1 MS
-* context.related 0..*
+* content.profile 0..1 MS
+* content.profile.valueCoding 1..1
+//* content.profile.valueCoding from http://ihe.net/fhir/ihe.formatcode.fhir/ValueSet/formatcode (preferred)
+* event 0..*
+* event.concept 1..1
+* period 0..1 MS
+* facilityType 0..1 MS
+* practiceSetting 0..1 MS
+* context 0..*
+* extension contains http://hl7.org/fhir/StructureDefinition/documentreference-sourcepatient named sourcePatientInfo 0..1 MS
 
 
 
@@ -66,11 +75,11 @@ Title:      "DocumentReference for Simplified Publish with an encounter"
 Description: "Example of a Simplified Publish DocumentReference resource. This has minimal metadata plus an encounter and custodian."
 Usage: #example
 * meta.security = http://terminology.hl7.org/CodeSystem/v3-ActReason#HTEST
-* masterIdentifier.system = "urn:ietf:rfc:3986"
-* masterIdentifier.value = "urn:oid:1.2.840.113556.1.8000.2554.53432.348.12973.17740.34205.4355.60220.62012"
+* identifier[uniqueId].system = "urn:ietf:rfc:3986"
+* identifier[uniqueId].value = "urn:oid:1.2.840.113556.1.8000.2554.53432.348.12973.17740.34205.4355.60220.62012"
 * status = #current
 * content.attachment.contentType = #text/plain
 * content.attachment.data = "SGVsbG8gV29ybGQ="
 * subject = Reference(Patient/ex-patient)
-* context.encounter = Reference(ex-encounter)
+* context = Reference(ex-encounter)
 * custodian = Reference(ex-organization)

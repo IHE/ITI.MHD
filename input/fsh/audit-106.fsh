@@ -1,5 +1,5 @@
 Profile:        AuditGenerateMetadataRecipient
-Parent:         IHE.BasicAudit.PatientCreate
+Parent:         IHE.BasicAudit.MHD5.PatientCreate
 Id:             IHE.MHD.GenerateMetadata.Audit.Recipient
 Title:          "Audit Event for Generate Metadata ITI-106 Transaction at Recipient"
 Description:    """
@@ -13,9 +13,9 @@ Defines constraints on the AuditEvent Resource to record when a Generate Metadat
 - shall have a documentReference identity entity
 """
 * modifierExtension 0..0
-* subtype 2..
-* subtype contains iti106 1..1
-* subtype[iti106] = urn:ihe:event-type-code#ITI-106 "Generate Metadata"
+* category 2..
+* category contains iti106 1..1
+* category[iti106] = urn:ihe:event-type-code#ITI-106 "Generate Metadata"
 * agent[server] obeys val-audit-source
 * agent[client] ^short = "Document Source"
 * agent[server] ^short = "Document Recipient"
@@ -25,7 +25,7 @@ Defines constraints on the AuditEvent Resource to record when a Generate Metadat
 
 
 Profile:        AuditGenerateMetadataSource
-Parent:         IHE.BasicAudit.Create
+Parent:         IHE.BasicAudit.MHD5.Create
 Id:             IHE.MHD.GenerateMetadata.Audit.Source
 Title:          "Audit Event for Generate Metadata ITI-106 Transaction at Source"
 Description:    """
@@ -39,9 +39,9 @@ Defines constraints on the AuditEvent Resource to record when a Generate Metadat
 - note the Document Source may add a patient if it knows it.
 """
 * modifierExtension 0..0
-* subtype 2..
-* subtype contains iti106 1..1
-* subtype[iti106] = urn:ihe:event-type-code#ITI-106 "Generate Metadata"
+* category 2..
+* category contains iti106 1..1
+* category[iti106] = urn:ihe:event-type-code#ITI-106 "Generate Metadata"
 * agent[client] obeys val-audit-source
 * agent[client] ^short = "Document Source"
 * agent[server] ^short = "Document Recipient"

@@ -68,14 +68,14 @@
             },
             {
               "name": "date",
-              "definition": "http://hl7.org/fhir/SearchParameter/DocumentReference-date",
+              "definition": "http://hl7.org/fhir/SearchParameter/clinical-date",
               "type": "date",
               "documentation": "When this document reference was created"
             },
             {
-              "name": "event",
-              "definition": "http://hl7.org/fhir/SearchParameter/DocumentReference-event",
-              "type": "token",
+              "name": "event-reference",
+              "definition": "http://hl7.org/fhir/SearchParameter/DocumentReference-event-reference",
+              "type": "reference",
               "documentation": "Main clinical acts documented"
             },
             {
@@ -86,7 +86,7 @@
             },
             {
               "name": "format",
-              "definition": "http://hl7.org/fhir/SearchParameter/DocumentReference-format",
+              "definition": "http://hl7.org/fhir/SearchParameter/DocumentReference-format-code",
               "type": "token",
               "documentation": "Format/content rules for the document"
             },
@@ -115,9 +115,15 @@
             },
             {
               "name": "related",
-              "definition": "http://hl7.org/fhir/SearchParameter/DocumentReference-related",
+              "definition": "http://hl7.org/fhir/SearchParameter/DocumentReference-event-reference",
               "type": "reference",
               "documentation": "Related Resource"
+            },
+            {
+              "name": "relatesto",
+              "definition": "http://hl7.org/fhir/SearchParameter/DocumentReference-relatesto",
+              "type": "reference",
+              "documentation": "Related DocumentReference"
             },
             {
               "name": "security-label",

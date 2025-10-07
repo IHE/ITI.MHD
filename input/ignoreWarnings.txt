@@ -2,9 +2,6 @@
 # IHE code system used but never defined by IHE as a formal codeSystem
 A definition for CodeSystem 'urn:ihe:event-type-code' could not be found, so the code cannot be validated
 
-# FHIR R4 had the valueset setup wrong. We are using the proper system value
-The Coding provided (http://ihe.net/fhir/ihe.formatcode.fhir/CodeSystem/formatcode#urn:ihe:iti:xds-sd:text:2008) was not found in the value set 'DocumentReference Format Code Set' (http://hl7.org/fhir/ValueSet/formatcodes|4.0.1), and a code is recommended to come from this value set.  (error message = The provided code 'http://ihe.net/fhir/ihe.formatcode.fhir/CodeSystem/formatcode#urn:ihe:iti:xds-sd:text:2008' was not found in the value set 'http://hl7.org/fhir/ValueSet/formatcodes|4.0.1')
-
 # profile for MHD that is just structural and thus has no examples
 WARNING: StructureDefinition.where(url = 'https://profiles.ihe.net/ITI/MHD/StructureDefinition/IHE.MHD.List'): The Implementation Guide contains no examples for this profile
 
@@ -13,20 +10,13 @@ MSG_DRAFT
 
 # The concept map is from a conceptual valueset from IHE, so there is no formal definition. not a problem the source checking isn't done
 The Source Code System urn:ihe:iti:2007:AssociationType is not fully defined and populated, and no sourceScope is specified, so the source code checking will not be performed
+TYPE_SPECIFIC_CHECKS_DT_CANONICAL_RESOLVE
 
 # The concept map is from EB-Registry defined values, so we are using rfc3986. not a problem the source checking isn't done
 The Source Code System urn:ietf:rfc:3986 is not fully defined and populated, and no sourceScope is specified, so the source code checking will not be performed
 
 # some examples are underpopulated, the full population is not important for the use-case being explained
-WARNING: Bundle/ex-fhir-document-bundle: Bundle.entry[4].resource/*Observation/null*/: Best Practice Recommendation: In general, all observations should have a performer
-WARNING: Bundle/ex-fhir-document-bundle: Bundle.entry[4].resource/*Observation/null*/: Best Practice Recommendation: In general, all observations should have an effective[x] ()
-WARNING: Bundle/ex-fhir-document-bundle: Bundle.entry[4].resource: Best Practice Recommendation: In general, all observations should have a performer
-WARNING: Bundle/ex-fhir-document-bundle: Bundle.entry[4].resource: Best Practice Recommendation: In general, all observations should have an effective[x] ()
-WARNING: Bundle/ex-comprehensiveProvideDocumentBundleDocument: Bundle.entry[2].resource/*Bundle/father*/.entry[4].resource: Best Practice Recommendation: In general, all observations should have a performer
-WARNING: Bundle/ex-comprehensiveProvideDocumentBundleDocument: Bundle.entry[2].resource/*Bundle/father*/.entry[4].resource: Best Practice Recommendation: In general, all observations should have an effective[x] ()
 WARNING: Bundle/ex-comprehensiveProvideDocumentBundleDocument: Bundle.entry[2].resource.entry[0].resource/*Composition/180f219f-97a8-486d-99d9-ed631fe4fc57*/: Constraint failed: dom-6: 'A resource should have narrative for robust management' (defined in http://hl7.org/fhir/StructureDefinition/DomainResource) (Best Practice Recommendation)
-WARNING: Bundle/ex-comprehensiveProvideDocumentBundleDocument: Bundle.entry[2].resource.entry[4].resource/*Observation/null*/: Best Practice Recommendation: In general, all observations should have a performer
-WARNING: Bundle/ex-comprehensiveProvideDocumentBundleDocument: Bundle.entry[2].resource.entry[4].resource/*Observation/null*/: Best Practice Recommendation: In general, all observations should have an effective[x] ()
 WARNING: Bundle/ex-comprehensiveProvideDocumentBundleDocument: Bundle.entry[2].resource.entry[4].resource: Best Practice Recommendation: In general, all observations should have a performer
 WARNING: Bundle/ex-comprehensiveProvideDocumentBundleDocument: Bundle.entry[2].resource.entry[4].resource: Best Practice Recommendation: In general, all observations should have an effective[x] ()
 
@@ -34,24 +24,35 @@ WARNING: Bundle/ex-comprehensiveProvideDocumentBundleDocument: Bundle.entry[2].r
 The link 'https://profiles.ihe.net/ITI/MHDS' for "MHDS" cannot be resolved
 The link 'https://profiles.ihe.net/ITI/MHDS/volume-1.html#150111-document-registry' for "Document Registry" cannot be resolved
 
-# YES we know some examples use old codes. That old code use is not important to the example use
-INFORMATION: Bundle/Bundle-FindDocumentReferences: Bundle.entry[0].resource.context.facilityType.coding[0].code: The code '264358009' is valid but is not active
-INFORMATION: Bundle/Bundle-FindDocumentReferences: Bundle.entry[0].resource/*DocumentReference/50383ae5-49e5-4dea-b0e6-660cb9e7b91f*/.context.facilityType.coding[0].code: The code '264358009' is valid but is not active
-
-# comes from core. Not anything we can document
-The extension http://hl7.org/fhir/StructureDefinition/elementdefinition-maxValueSet|5.2.0 is deprecated
-
-# we don't need to pin the version of these
-There are multiple different potential matches for the url 'http://terminology.hl7.org/ValueSet/v3-ActCode'.%
-There are multiple different potential matches for the url 'http://terminology.hl7.org/ValueSet/v3-PurposeOfUse'.%
-There are multiple different potential matches for the url 'http://hl7.org/fhir/ValueSet/object-lifecycle-events'.%
+# known and a problem in fhir core 
+MSG_DEPRECATED
+MSG_EXPERIMENTAL
+SD_ED_EXPERIMENTAL_BINDING
 
 # these are all examples that are good enough
 Type_Specific_Checks_DT_URL_Resolve
+All_observations_should_have_an_effectiveDateTime_or_an_effectivePeriod
+All_observations_should_have_a_performer
+
+# The fdoc example fhir document is just a sample.
+Constraint failed: dom-6: 'A resource should have narrative for robust management' (defined in http://hl7.org/fhir/StructureDefinition/DomainResource) (Best Practice Recommendation)
 
 # borrowed Document Bundle has issues that we don't care about (note removed signature as that threw errors)
-WARNING: Parameters/ex-input-doc-bundle: Parameters.parameter[0].resource/*Bundle/ex-fhir-document-bundle*/.entry[4].resource: Best Practice Recommendation: In general, all observations should have a performer
-WARNING: Parameters/ex-input-doc-bundle: Parameters.parameter[0].resource/*Bundle/ex-fhir-document-bundle*/.entry[4].resource: Best Practice Recommendation: In general, all observations should have an effective[x] ()
 WARNING: Parameters/ex-input-doc-bundle: Parameters.parameter[0].resource/*Bundle/ex-fhir-document-bundle*/.entry[0].resource/*Composition/180f219f-97a8-486d-99d9-ed631fe4fc57*/: Constraint failed: dom-6: 'A resource should have narrative for robust management' (defined in http://hl7.org/fhir/StructureDefinition/DomainResource) (Best Practice Recommendation)
 WARNING: Parameters/ex-input-doc-bundle: Parameters.parameter[0].resource/*Bundle/ex-fhir-document-bundle*/.entry[4].resource/*Observation/null*/: Best Practice Recommendation: In general, all observations should have a performer
 WARNING: Parameters/ex-input-doc-bundle: Parameters.parameter[0].resource/*Bundle/ex-fhir-document-bundle*/.entry[4].resource/*Observation/null*/: Best Practice Recommendation: In general, all observations should have an effective[x] ()
+
+
+# These are profiles imported from BALP, and thus no examples are relevant here.
+WARNING: StructureDefinition.where(url = 'https://profiles.ihe.net/ITI/MHD/StructureDefinition/IHE.BasicAudit.MHD5.Create'): The Implementation Guide contains no examples for this profile
+WARNING: StructureDefinition.where(url = 'https://profiles.ihe.net/ITI/MHD/StructureDefinition/IHE.BasicAudit.MHD5.PatientCreate'): The Implementation Guide contains no examples for this profile
+WARNING: StructureDefinition.where(url = 'https://profiles.ihe.net/ITI/MHD/StructureDefinition/IHE.BasicAudit.MHD5.PatientQuery'): The Implementation Guide contains no examples for this profile
+WARNING: StructureDefinition.where(url = 'https://profiles.ihe.net/ITI/MHD/StructureDefinition/IHE.BasicAudit.MHD5.PatientRead'): The Implementation Guide contains no examples for this profile
+WARNING: StructureDefinition.where(url = 'https://profiles.ihe.net/ITI/MHD/StructureDefinition/IHE.BasicAudit.MHD5.Query'): The Implementation Guide contains no examples for this profile
+WARNING: StructureDefinition.where(url = 'https://profiles.ihe.net/ITI/MHD/StructureDefinition/IHE.BasicAudit.MHD5.Read'): The Implementation Guide contains no examples for this profile
+WARNING: StructureDefinition/IHE.MHD.Comprehensive.DocumentReference: StructureDefinition.snapshot.element[43]: Constraint failed: eld-24: 'pattern[x] should be used rather than fixed[x]' (defined in http://hl7.org/fhir/StructureDefinition/ElementDefinition) (Best Practice Recommendation)
+
+# Sushi is doing this, not me. I can't tell how to fix. It is not clear to me these are a problem.
+Constraint failed: eld-24: 'pattern[x] should be used rather than fixed[x]' (defined in http://hl7.org/fhir/StructureDefinition/ElementDefinition) (Best Practice Recommendation)
+Constraint failed: eld-27: 'Mappings SHOULD be unique by key' (defined in http://hl7.org/fhir/StructureDefinition/ElementDefinition)
+

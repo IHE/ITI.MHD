@@ -31,6 +31,7 @@ Usage: #definition
 * code = #designationType
 * base = #List
 * expression = "(extension('https://profiles.ihe.net/ITI/MHD/StructureDefinition/ihe-designationType').value.ofType(CodeableConcept))"
+* processingMode = #normal
 * type = #token
 
 CodeSystem:  MHDlistTypes 

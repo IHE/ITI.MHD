@@ -42,4 +42,5 @@ Usage: #definition
 * code = #creation
 * base = #DocumentReference
 * expression = "DocumentReference.content.attachment.creation"
+* processingMode = #normal
 * type = #date

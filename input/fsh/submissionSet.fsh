@@ -73,6 +73,7 @@ Usage: #definition
 * code = #sourceId
 * base = #List
 * expression = "(extension('https://profiles.ihe.net/ITI/MHD/StructureDefinition/ihe-sourceId').value.ofType(Identifier))"
+* processingMode = #normal
 * type = #token
 
 

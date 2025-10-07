@@ -1,23 +1,13 @@
 {
  "package-id" : "ihe.iti.mhd",
- "version" : "4.2.2",
- "path" : "https://profiles.ihe.net/ITI/MHD/4.2.2",
- "mode" : "milestone",
- "status" : "trial-use",
+ "version" : "5.0.0-comment",
+ "path" : "https://profiles.ihe.net/ITI/MHD/5.0.0-comment",
+ "mode" : "working",
+ "status" : "ballot",
  "sequence": "Publication",
- "desc" : "Trial Implementation - Quality improvements.",
- "descmd" : "Version 4.2.2
-- Quality improvements
-- List-SourceId bad cast to Token by @JohnMoehrke in https://github.com/IHE/ITI.MHD/pull/217
-- fix possible identifier value invariant bug by @JohnMoehrke in https://github.com/IHE/ITI.MHD/pull/215
-- Update documentReference.fsh by @JohnMoehrke in https://github.com/IHE/ITI.MHD/pull/218
-- IG Builder warnings ignored by @JohnMoehrke in https://github.com/IHE/ITI.MHD/pull/219
-- build cleaning  by @JohnMoehrke in https://github.com/IHE/ITI.MHD/pull/225
-- mapping had an extra column due to a second string by @JohnMoehrke in https://github.com/IHE/ITI.MHD/pull/228
-- reference to PCC section should use sIPS extract by @JohnMoehrke in https://github.com/IHE/ITI.MHD/pull/224
-- open the slicing on audit entity by @JohnMoehrke in https://github.com/IHE/ITI.MHD/pull/221
-- Profiling of Bundle with PATCH #222 by @oliveregger in https://github.com/IHE/ITI.MHD/pull/227
-- Updates to testplan to align with Gazelle and identify improvements to the tests",
+ "desc" : "Public-Comment: Conversion of MHD to FHIR R5.",
+ "descmd" : "Version 5.0.0-comment
+ - Conversion of MHD to FHIR R5",
  "changes" : "a_issues.html"
 }
 

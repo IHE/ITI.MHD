@@ -4,8 +4,8 @@ Title:      "DocumentReference for Minimal metadata"
 Description: "Example of a minimal DocumentReference resource. This is very unlikely to be acceptable anywhere, but it is the minimum required."
 Usage: #example
 * meta.security = http://terminology.hl7.org/CodeSystem/v3-ActReason#HTEST
-* masterIdentifier.system = "urn:ietf:rfc:3986"
-* masterIdentifier.value = "urn:oid:1.2.840.113556.1.8000.2554.53432.348.12973.17740.34205.4355.50220.62012"
+* identifier[uniqueId].system = "urn:ietf:rfc:3986"
+* identifier[uniqueId].value = "urn:oid:1.2.840.113556.1.8000.2554.53432.348.12973.17740.34205.4355.50220.62012"
 * identifier[entryUUID].system = "urn:ietf:rfc:3986"
 * identifier[entryUUID].value = "urn:uuid:7d5bb8ac-68ee-4926-85e7-b8aac8e1f09d"
 * identifier[entryUUID].use = #official
@@ -19,15 +19,15 @@ Title:      "DocumentReference for Minimal metadata with an encounter"
 Description: "Example of a minimal DocumentReference resource. This has minimal metadata plus an encounter and custodian."
 Usage: #example
 * meta.security = http://terminology.hl7.org/CodeSystem/v3-ActReason#HTEST
-* masterIdentifier.system = "urn:ietf:rfc:3986"
-* masterIdentifier.value = "urn:oid:1.2.840.113556.1.8000.2554.53432.348.12973.17740.34205.4355.50220.62012"
+* identifier[uniqueId].system = "urn:ietf:rfc:3986"
+* identifier[uniqueId].value = "urn:oid:1.2.840.113556.1.8000.2554.53432.348.12973.17740.34205.4355.50220.62012"
 * identifier[entryUUID].system = "urn:ietf:rfc:3986"
 * identifier[entryUUID].value = "urn:uuid:7d5bb8ac-68ee-4926-85e7-b8aac8e1f09d"
 * identifier[entryUUID].use = #official
 * status = #current
 * content.attachment.contentType = #text/plain
 * content.attachment.url = "http://example.com/nowhere.txt"
-* context.encounter = Reference(ex-encounter)
+* context = Reference(ex-encounter)
 * custodian = Reference(ex-organization)
 
 Instance:   ex-DocumentReferenceUnContained
@@ -36,8 +36,8 @@ Title:      "DocumentReference for Comprehensive minimally metadata"
 Description: "Example of a Comprehensive DocumentReference resource. This is minimally filled for all mandatory elements."
 Usage: #example
 * meta.security = http://terminology.hl7.org/CodeSystem/v3-ActReason#HTEST
-* masterIdentifier.system = "urn:ietf:rfc:3986"
-* masterIdentifier.value = "urn:oid:1.2.840.113556.1.8000.2554.58783.21864.3474.19410.44358.58254.41281.46340"
+* identifier[uniqueId].system = "urn:ietf:rfc:3986"
+* identifier[uniqueId].value = "urn:oid:1.2.840.113556.1.8000.2554.58783.21864.3474.19410.44358.58254.41281.46340"
 * identifier[entryUUID].system = "urn:ietf:rfc:3986"
 * identifier[entryUUID].value = "urn:uuid:0c287d32-01e3-4d87-9953-9fcc9404eb21"
 * identifier[entryUUID].use = #official
@@ -52,10 +52,10 @@ Usage: #example
 * securityLabel = http://terminology.hl7.org/CodeSystem/v3-Confidentiality#N
 * content.attachment.language = urn:ietf:bcp:47#en
 * content.attachment.creation = 2020-12-31T23:50:50-05:00
-* context.facilityType = http://snomed.info/sct#82242000
-* context.practiceSetting =  http://snomed.info/sct#408467006
-* content.format = http://ihe.net/fhir/ihe.formatcode.fhir/CodeSystem/formatcode#urn:ihe:iti:xds-sd:text:2008
-* context.sourcePatientInfo = Reference(Patient/ex-patient)
+* facilityType = http://snomed.info/sct#82242000
+* practiceSetting =  http://snomed.info/sct#408467006
+* content.profile.valueCoding = http://ihe.net/fhir/ihe.formatcode.fhir/CodeSystem/formatcode#urn:ihe:iti:xds-sd:text:2008
+* extension[sourcePatient].valueReference = Reference(Patient/ex-patient)
 
 Instance:   ex-DocumentReferenceUnContainedFully
 InstanceOf: IHE.MHD.UnContained.Comprehensive.DocumentReference
@@ -63,8 +63,8 @@ Title:      "DocumentReference for Comprehensive minimally filled metadata"
 Description: "Example of a UnContained References Option with Comprehensive DocumentReference resource. This is fully filled for all mandatory elements and optional elements."
 Usage: #example
 * meta.security = http://terminology.hl7.org/CodeSystem/v3-ActReason#HTEST
-* masterIdentifier.system = "urn:ietf:rfc:3986"
-* masterIdentifier.value = "urn:oid:1.2.840.113556.1.8000.2554.58783.21864.3474.19410.44358.58254.41281.46340"
+* identifier[uniqueId].system = "urn:ietf:rfc:3986"
+* identifier[uniqueId].value = "urn:oid:1.2.840.113556.1.8000.2554.58783.21864.3474.19410.44358.58254.41281.46340"
 * identifier[entryUUID].system = "urn:ietf:rfc:3986"
 * identifier[entryUUID].value = "urn:uuid:0c287d32-01e3-4d87-9953-9fcc9404eb21"
 * identifier[entryUUID].use = #official
@@ -79,25 +79,26 @@ Usage: #example
 * securityLabel = http://terminology.hl7.org/CodeSystem/v3-Confidentiality#N
 * content.attachment.language = urn:ietf:bcp:47#en
 * content.attachment.creation = 2020-12-31T23:50:50-05:00
-* context.facilityType = http://snomed.info/sct#82242000
-* context.practiceSetting =  http://snomed.info/sct#408467006
-* content.format = http://ihe.net/fhir/ihe.formatcode.fhir/CodeSystem/formatcode#urn:ihe:iti:xds-sd:text:2008
+* facilityType = http://snomed.info/sct#82242000
+* practiceSetting =  http://snomed.info/sct#408467006
+* content.profile.valueCoding = http://ihe.net/fhir/ihe.formatcode.fhir/CodeSystem/formatcode#urn:ihe:iti:xds-sd:text:2008
 // optional elements
 * author = Reference(Practitioner/ex-practitioner)
-* authenticator = Reference(Practitioner/ex-practitioner)
-* context.sourcePatientInfo = Reference(Patient/ex-patient)
-* context.period.start = 2020-12-31T23:50:50-05:00
-* context.period.end = 2020-12-31T23:50:50-05:00
-* context.event = http://terminology.hl7.org/CodeSystem/v3-ActCode#ACCTRECEIVABLE
-* context.related.identifier.system = "urn:ietf:rfc:3986"
-* context.related.identifier.value = "urn:oid:1.2.840.113556.1.8000.2554.17917.46600.21181.17878.33419.62048.57128.2759"
-* content.format = http://ihe.net/fhir/ihe.formatcode.fhir/CodeSystem/formatcode#urn:ihe:iti:xds-sd:text:2008
+* attester.party = Reference(Practitioner/ex-practitioner)
+* attester.mode = http://hl7.org/fhir/composition-attestation-mode#professional
+* extension[sourcePatient].valueReference = Reference(Patient/ex-patient)
+* period.start = 2020-12-31T23:50:50-05:00
+* period.end = 2020-12-31T23:50:50-05:00
+* event.concept = http://terminology.hl7.org/CodeSystem/v3-ActCode#ACCTRECEIVABLE
+* event.reference.identifier.system = "urn:ietf:rfc:3986"
+* event.reference.identifier.value = "urn:oid:1.2.840.113556.1.8000.2554.17917.46600.21181.17878.33419.62048.57128.2759"
+* content.profile.valueCoding = http://ihe.net/fhir/ihe.formatcode.fhir/CodeSystem/formatcode#urn:ihe:iti:xds-sd:text:2008
 * content.attachment.title = "DocumentReference for Comprehensive minimally filled metadata"
 * description = "Example of a Comprehensive DocumentReference resource. This is minimally filled for all mandatory elements."
 // note the sha1 hash of a zero file is da39a3ee5e6b4b0d3255bfef95601890afd80709
 * content.attachment.hash = "ZGEzOWEzZWU1ZTZiNGIwZDMyNTViZmVmOTU2MDE4OTBhZmQ4MDcwOQ=="
 * content.attachment.size = 0
-* relatesTo.code = #appends
+* relatesTo.code = http://hl7.org/fhir/document-relationship-type#appends
 * relatesTo.target = Reference(DocumentReference/ex-documentreference)
 
 Instance:   ex-DocumentReferenceComprehensive
@@ -106,8 +107,8 @@ Title:      "DocumentReference for Comprehensive fully filled metadata"
 Description: "Example of a Comprehensive DocumentReference resource. This is fully filled for all mandatory elements and all optional elements."
 Usage: #example
 * meta.security = http://terminology.hl7.org/CodeSystem/v3-ActReason#HTEST
-* masterIdentifier.system = "urn:ietf:rfc:3986"
-* masterIdentifier.value = "urn:oid:1.2.840.113556.1.8000.2554.58783.21864.3474.19410.44358.58254.41281.46340"
+* identifier[uniqueId].system = "urn:ietf:rfc:3986"
+* identifier[uniqueId].value = "urn:oid:1.2.840.113556.1.8000.2554.58783.21864.3474.19410.44358.58254.41281.46340"
 * identifier[entryUUID].system = "urn:ietf:rfc:3986"
 * identifier[entryUUID].value = "urn:uuid:0c287d32-01e3-4d87-9953-9fcc9404eb21"
 * identifier[entryUUID].use = #official
@@ -122,27 +123,28 @@ Usage: #example
 * securityLabel = http://terminology.hl7.org/CodeSystem/v3-Confidentiality#N
 * content.attachment.language = urn:ietf:bcp:47#en
 * content.attachment.creation = 2020-12-31T23:50:50-05:00
-* context.facilityType = http://snomed.info/sct#82242000
-* context.practiceSetting =  http://snomed.info/sct#408467006
-* content.format = http://ihe.net/fhir/ihe.formatcode.fhir/CodeSystem/formatcode#urn:ihe:iti:xds-sd:text:2008
+* facilityType = http://snomed.info/sct#82242000
+* practiceSetting =  http://snomed.info/sct#408467006
+* content.profile.valueCoding = http://ihe.net/fhir/ihe.formatcode.fhir/CodeSystem/formatcode#urn:ihe:iti:xds-sd:text:2008
 // optional elements
 * author = Reference(in-author)
-* authenticator = Reference(in-author)
-* context.sourcePatientInfo = Reference(in-patient)
+* attester.party = Reference(in-author)
+* attester.mode = http://hl7.org/fhir/composition-attestation-mode#professional
+* extension[sourcePatient].valueReference  = Reference(in-patient)
 * contained[0] = in-author
 * contained[1] = in-patient
-* context.period.start = 2020-12-31T23:50:50-05:00
-* context.period.end = 2020-12-31T23:50:50-05:00
-* context.event = http://terminology.hl7.org/CodeSystem/v3-ActCode#ACCTRECEIVABLE
-* context.related.identifier.system = "urn:ietf:rfc:3986"
-* context.related.identifier.value = "urn:oid:1.2.840.113556.1.8000.2554.17917.46600.21181.17878.33419.62048.57128.2759"
+* period.start = 2020-12-31T23:50:50-05:00
+* period.end = 2020-12-31T23:50:50-05:00
+* event.concept = http://terminology.hl7.org/CodeSystem/v3-ActCode#ACCTRECEIVABLE
+* event.reference.identifier.system = "urn:ietf:rfc:3986"
+* event.reference.identifier.value = "urn:oid:1.2.840.113556.1.8000.2554.17917.46600.21181.17878.33419.62048.57128.2759"
 * content.attachment.title = "DocumentReference for Comprehensive fully filled metadata"
 * description = "Example of a Comprehensive DocumentReference resource. This is fully filled for all mandatory elements and all optional elements."
 // note the sha1 hash of actual content should be used. This hash 8a38f2633006fd535149c44a3a73f312437b3478
 // is of some random content.
 * content.attachment.hash = "OGEzOGYyNjMzMDA2ZmQ1MzUxNDljNDRhM2E3M2YzMTI0MzdiMzQ3OA=="
 * content.attachment.size = 190
-* relatesTo.code = #appends
+* relatesTo.code = http://hl7.org/fhir/document-relationship-type#appends
 * relatesTo.target = Reference(DocumentReference/ex-documentreference)
 
 Instance:   ex-DocumentReferenceComprehensiveDelayedAssembly
@@ -157,8 +159,8 @@ Description: "Example of a Comprehensive DocumentReference resource.
   - and the DocumentReference would be updated with the resulting hash and size thus becoming a static entry"
 Usage: #example
 * meta.security = http://terminology.hl7.org/CodeSystem/v3-ActReason#HTEST
-* masterIdentifier.system = "urn:ietf:rfc:3986"
-* masterIdentifier.value = "urn:oid:1.2.840.113556.1.8000.2554.58783.21864.3474.19410.44358.58254.41281.47340"
+* identifier[uniqueId].system = "urn:ietf:rfc:3986"
+* identifier[uniqueId].value = "urn:oid:1.2.840.113556.1.8000.2554.58783.21864.3474.19410.44358.58254.41281.47340"
 * identifier[entryUUID].system = "urn:ietf:rfc:3986"
 * identifier[entryUUID].value = "urn:uuid:0c287d32-01e3-4d87-9953-9fcc9407eb21"
 * identifier[entryUUID].use = #official
@@ -174,26 +176,27 @@ Usage: #example
 * securityLabel = http://terminology.hl7.org/CodeSystem/v3-Confidentiality#N
 * content.attachment.language = urn:ietf:bcp:47#en
 * content.attachment.creation = 2020-12-31T23:50:50-05:00
-* context.facilityType = http://snomed.info/sct#82242000
-* context.practiceSetting =  http://snomed.info/sct#408467006
-* content.format = http://ihe.net/fhir/ihe.formatcode.fhir/CodeSystem/formatcode#urn:ihe:iti:xds-sd:text:2008
+* facilityType = http://snomed.info/sct#82242000
+* practiceSetting =  http://snomed.info/sct#408467006
+* content.profile.valueCoding = http://ihe.net/fhir/ihe.formatcode.fhir/CodeSystem/formatcode#urn:ihe:iti:xds-sd:text:2008
 // optional elements
 * author = Reference(in-author)
-* authenticator = Reference(in-author)
-* context.sourcePatientInfo = Reference(in-patient)
+* attester.party = Reference(in-author)
+* attester.mode = http://hl7.org/fhir/composition-attestation-mode#professional
+* extension[sourcePatient].valueReference  = Reference(in-patient)
 * contained[0] = in-author
 * contained[1] = in-patient
-* context.period.start = 2020-12-31T23:50:50-05:00
-* context.period.end = 2020-12-31T23:50:50-05:00
-* context.event = http://terminology.hl7.org/CodeSystem/v3-ActCode#ACCTRECEIVABLE
-* context.related.identifier.system = "urn:ietf:rfc:3986"
-* context.related.identifier.value = "urn:oid:1.2.840.113556.1.8000.2554.17917.46600.21181.17878.33419.62048.57128.2759"
+* period.start = 2020-12-31T23:50:50-05:00
+* period.end = 2020-12-31T23:50:50-05:00
+* event.concept = http://terminology.hl7.org/CodeSystem/v3-ActCode#ACCTRECEIVABLE
+* event.reference.identifier.system = "urn:ietf:rfc:3986"
+* event.reference.identifier.value = "urn:oid:1.2.840.113556.1.8000.2554.17917.46600.21181.17878.33419.62048.57128.2759"
 * content.attachment.title = "DocumentReference for Comprehensive fully filled metadata"
 * description = "Example of a Comprehensive DocumentReference resource. This is fully filled for all mandatory elements and all optional elements."
 // note the sha1 hash of a zero file is da39a3ee5e6b4b0d3255bfef95601890afd80709
 * content.attachment.hash = "ZGEzOWEzZWU1ZTZiNGIwZDMyNTViZmVmOTU2MDE4OTBhZmQ4MDcwOQ=="
 * content.attachment.size = 0
-* relatesTo.code = #appends
+* relatesTo.code = http://hl7.org/fhir/document-relationship-type#appends
 * relatesTo.target = Reference(DocumentReference/ex-documentreference)
 
 Instance:   ex-DocumentReferenceComprehensiveOnDemand
@@ -208,8 +211,8 @@ Description: "Example of a Comprehensive DocumentReference resource.
   - and a linked snapshot DocumentReference would be created with the resulting hash and size thus becoming a static entry"
 Usage: #example
 * meta.security = http://terminology.hl7.org/CodeSystem/v3-ActReason#HTEST
-* masterIdentifier.system = "urn:ietf:rfc:3986"
-* masterIdentifier.value = "urn:oid:1.2.840.113556.1.8000.2554.58783.21864.3474.19410.44358.58254.41281.57340"
+* identifier[uniqueId].system = "urn:ietf:rfc:3986"
+* identifier[uniqueId].value = "urn:oid:1.2.840.113556.1.8000.2554.58783.21864.3474.19410.44358.58254.41281.57340"
 * identifier[entryUUID].system = "urn:ietf:rfc:3986"
 * identifier[entryUUID].value = "urn:uuid:0c287d32-01e3-4d87-9953-9fc59407eb21"
 * identifier[entryUUID].use = #official
@@ -225,11 +228,11 @@ Usage: #example
 * securityLabel = http://terminology.hl7.org/CodeSystem/v3-Confidentiality#N
 * content.attachment.language = urn:ietf:bcp:47#en
 * content.attachment.creation = 2020-12-31T23:50:50-05:00
-* context.facilityType = http://snomed.info/sct#82242000
-* context.practiceSetting =  http://snomed.info/sct#408467006
-* content.format = http://ihe.net/fhir/ihe.formatcode.fhir/CodeSystem/formatcode#urn:ihe:iti:xds-sd:text:2008
+* facilityType = http://snomed.info/sct#82242000
+* practiceSetting =  http://snomed.info/sct#408467006
+* content.profile.valueCoding = http://ihe.net/fhir/ihe.formatcode.fhir/CodeSystem/formatcode#urn:ihe:iti:xds-sd:text:2008
 // note the size and hash are NOT included at all
-* context.sourcePatientInfo = Reference(in-patient)
+* extension[sourcePatient].valueReference  = Reference(in-patient)
 * contained[0] = in-patient
 
 
@@ -241,8 +244,8 @@ Description: "Example of a Comprehensive DocumentReference resource.
 - This specifies a Document in a Binary."
 Usage: #example
 * meta.security = http://terminology.hl7.org/CodeSystem/v3-ActReason#HTEST
-* masterIdentifier.system = "urn:ietf:rfc:3986"
-* masterIdentifier.value = "urn:oid:1.2.840.113556.1.8000.2554.58783.21864.3474.19410.44358.58254.41381.57340"
+* identifier[uniqueId].system = "urn:ietf:rfc:3986"
+* identifier[uniqueId].value = "urn:oid:1.2.840.113556.1.8000.2554.58783.21864.3474.19410.44358.58254.41381.57340"
 * identifier[entryUUID].system = "urn:ietf:rfc:3986"
 * identifier[entryUUID].value = "urn:uuid:0c287d32-01e3-4d87-9953-91c59407eb21"
 * identifier[entryUUID].use = #official
@@ -253,10 +256,10 @@ Usage: #example
 * subject = Reference(Patient/ex-patient)
 * date = 2020-02-01T23:50:50-05:00
 * securityLabel = http://terminology.hl7.org/CodeSystem/v3-Confidentiality#R
-* context.facilityType = http://snomed.info/sct#82242000
-* context.practiceSetting =  http://snomed.info/sct#408467006
-* content.format = http://ihe.net/fhir/ihe.formatcode.fhir/CodeSystem/formatcode#urn:ihe:iti:xds-sd:text:2008
-* context.sourcePatientInfo = Reference(in-patient)
+* facilityType = http://snomed.info/sct#82242000
+* practiceSetting =  http://snomed.info/sct#408467006
+* content.profile.valueCoding = http://ihe.net/fhir/ihe.formatcode.fhir/CodeSystem/formatcode#urn:ihe:iti:xds-sd:text:2008
+* extension[sourcePatient].valueReference  = Reference(in-patient)
 * contained[0] = in-patient
 * content.attachment.language = urn:ietf:bcp:47#en
 * content.attachment.creation = 2020-02-01T23:50:50-05:00
@@ -301,8 +304,8 @@ Description: "Example of a Find Document References Bundle Search Set with a sin
 Usage: #example
 * meta.security = http://terminology.hl7.org/CodeSystem/v3-ActReason#HTEST
 * type = #searchset
-* link[0].relation = "self"
-* link[0].url = "test.fhir.net/R4/fhir/DocumentReference?patient=9876&status=current"
+* link[0].relation = #self
+* link[0].url = "fhir.example.com/R4/fhir/DocumentReference?patient=9876&status=current"
 * total = 1
 * timestamp = 2021-04-16T11:32:24Z
 * entry[0].fullUrl = "http://example.org/DocumentReference/in-DocumentReferenceMinimal"
@@ -314,8 +317,8 @@ Title:      "DocumentReference for Minimal metadata"
 Description: "Example of a minimal DocumentReference resource. This is very unlikely to be acceptable anywhere, but it is the minimum required."
 Usage: #inline
 * meta.security = http://terminology.hl7.org/CodeSystem/v3-ActReason#HTEST
-* masterIdentifier.system = "urn:ietf:rfc:3986"
-* masterIdentifier.value = "urn:oid:1.2.840.113556.1.8000.2554.53432.348.12973.17740.34205.4355.50220.62012"
+* identifier[uniqueId].system = "urn:ietf:rfc:3986"
+* identifier[uniqueId].value = "urn:oid:1.2.840.113556.1.8000.2554.53432.348.12973.17740.34205.4355.50220.62012"
 * identifier[entryUUID].system = "urn:ietf:rfc:3986"
 * identifier[entryUUID].value = "urn:uuid:7d5bb8ac-68ee-4926-85e7-b8aac8e1f09d"
 * identifier[entryUUID].use = #official

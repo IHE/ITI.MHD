@@ -31,13 +31,18 @@ Description:    "A profile on the DocumentReference resource for MHD with minima
 - ebRIM implementation at [3:4.2.3.2 Document Entry](https://profiles.ihe.net/ITI/TF/Volume3/ch-4.2.html#4.2.3.2).
 - with use-cases and constraints found in [3:4.3 Additional Document Sharing Requirements](https://profiles.ihe.net/ITI/TF/Volume3/ch-4.3.html#4.3)"
 * modifierExtension 0..0
-* masterIdentifier only UniqueIdIdentifier
-* masterIdentifier 1..1
+//* identifier[uniqueId] only UniqueIdIdentifier
+//* identifier[uniqueId] 1..1
 * identifier 0..* MS
 * identifier ^slicing.discriminator.type = #value
 * identifier ^slicing.discriminator.path = "use"
 * identifier ^slicing.rules = #open
-* identifier contains entryUUID 0..* MS
+* identifier contains 
+    uniqueId 1..1 MS and
+    entryUUID 0..* MS
+* identifier[uniqueId].use = #usual
+* identifier[uniqueId] only UniqueIdIdentifier
+* identifier[entryUUID].use = #official
 * identifier[entryUUID] only EntryUUIDIdentifier
 * status 1..1
 * status from DocumentReferenceStats (required)
@@ -48,7 +53,8 @@ Description:    "A profile on the DocumentReference resource for MHD with minima
 * subject only Reference(Patient)
 * date 0..1 MS
 * author 0..* MS
-* authenticator 0..1
+* attester 0..1
+* attester.party 1..1
 //* custodian 0..0
 * description 0..1
 * securityLabel 0..* MS
@@ -62,17 +68,18 @@ Description:    "A profile on the DocumentReference resource for MHD with minima
 * content.attachment.hash 0..1
 * content.attachment.title 0..1
 * content.attachment.creation 0..1 MS
-* content.format 0..1 MS
-* content.format from http://ihe.net/fhir/ihe.formatcode.fhir/ValueSet/formatcode (preferred)
+* content.profile 0..1 MS
+* content.profile.valueCoding 1..1
+//* content.profile.valueCoding from http://ihe.net/fhir/ihe.formatcode.fhir/ValueSet/formatcode (preferred)
 //* context.encounter 0..0
-* context.event 0..*
-* context.period 0..1 MS
-* context.facilityType 0..1 MS
-* context.practiceSetting 0..1 MS
-* context.sourcePatientInfo 0..1 MS
-* context.related 0..*
+* event 0..*
+* event.concept 1..1
+* period 0..1 MS
+* facilityType 0..1 MS
+* practiceSetting 0..1 MS
+* context 0..*
 * relatesTo 0..* MS
-
+* extension contains http://hl7.org/fhir/StructureDefinition/documentreference-sourcepatient named sourcePatient 0..1 MS
 
 // equivalent to MHD DocumentReference Comprehensive UnContained Option
 Profile:        UnContainedComprehensiveDocumentReference
@@ -91,11 +98,11 @@ Description:    "A profile on the DocumentReference resource for MHD with Compre
 * securityLabel 1..*
 * content.attachment.language 1..1
 * content.attachment.creation 1..1
-* content.format 1..1
-* context 1..1
-* context.facilityType 1..1
-* context.practiceSetting 1..1
-* context.sourcePatientInfo 1..1 
+* content.profile 1..1
+* content.profile.valueCoding 1..1
+* facilityType 1..1
+* practiceSetting 1..1
+* extension[sourcePatient].valueReference 1..1 
 
 // equivalent to MHD Comprehensive DocumentReference - contained
 Profile:        ComprehensiveDocumentReference
@@ -109,8 +116,8 @@ Description:    "A profile on the DocumentReference resource for MHD Comprehensi
 - ebRIM implementation at [3:4.2.3.2 Document Entry](https://profiles.ihe.net/ITI/TF/Volume3/ch-4.2.html#4.2.3.2).
 - with use-cases and constraints found in [3:4.3 Additional Document Sharing Requirements](https://profiles.ihe.net/ITI/TF/Volume3/ch-4.3.html#4.3)"
 * author ^type.aggregation = #contained
-* authenticator ^type.aggregation = #contained
-* context.sourcePatientInfo ^type.aggregation = #contained
+* attester.party ^type.aggregation = #contained
+* extension[sourcePatient].valueReference ^type.aggregation = #contained
 
 // mappings to XDS 
 Mapping: DocumentEntry-Mapping
@@ -125,28 +132,28 @@ Title: "XDS and MHD Mapping"
 * securityLabel -> "DocumentEntry.confidentialityCode"
 * content.attachment.creation -> "DocumentEntry.creationTime"
 * identifier -> "DocumentEntry.entryUUID"
-* context.event -> "DocumentEntry.eventCodeList"
-* content.format -> "DocumentEntry.formatCode"
+* event.concept -> "DocumentEntry.eventCodeList"
+* content.profile -> "DocumentEntry.formatCode"
 * content.attachment.hash -> "DocumentEntry.hash"
-* context.facilityType -> "DocumentEntry.healthcareFacilityTypeCode"
+* facilityType -> "DocumentEntry.healthcareFacilityTypeCode"
 // DocumentEntry.homeCommunityId -- does not actually exist as metadata on DocumentEntry, and does not have a place in DocumentReference. might be encoded in the content.attachment.url
 * content.attachment.language -> "DocumentEntry.languageCode"
-* authenticator -> "DocumentEntry.legalAuthenticator"
+* attester.party -> "DocumentEntry.legalAuthenticator"
 * custodian -> "not mapped"
 * content.attachment.contentType -> "DocumentEntry.mimeType"
 * subject -> "DocumentEntry.patientId"
-* context.practiceSetting -> "DocumentEntry.practiceSettingCode"
-* content.attachment.url -> "DocumentEntry.repositoryUniqueId+DocumentEntry.uniqueId or DocumentEntry.URI"
-* context.period.start -> "DocumentEntry.serviceStartTime"
-* context.period.end -> "DocumentEntry.serviceStopTime"
+* practiceSetting -> "DocumentEntry.practiceSettingCode"
+* content.attachment.url -> "DocumentEntry.repositoryUniqueId or DocumentEntry.URI"
+* period.start -> "DocumentEntry.serviceStartTime"
+* period.end -> "DocumentEntry.serviceStopTime"
 * content.attachment.size -> "DocumentEntry.size"
-* context.sourcePatientInfo.identifier -> "DocumentEntry.sourcePatientId"
-* context.sourcePatientInfo.reference -> "DocumentEntry.sourcePatientInfo"
+* extension[sourcePatient].valueReference.identifier -> "DocumentEntry.sourcePatientId"
+* extension[sourcePatient].valueReference.reference -> "DocumentEntry.sourcePatientInfo"
 * content.attachment.title -> "DocumentEntry.title"
 * type -> "DocumentEntry.typeCode"
-* masterIdentifier -> "DocumentEntry.uniqueId"
-* context.encounter -> "DocumentEntry.referenceIdList with CXi encoding for urn:ihe:iti:xds:2015:encounterId"
-* context.related -> "DocumentEntry.referenceIdList using CXi encoding for type when possible"
+* identifier -> "DocumentEntry.uniqueId"
+* context -> "DocumentEntry.referenceIdList with CXi encoding for urn:ihe:iti:xds:2015:encounterId"
+* event.reference -> "DocumentEntry.referenceIdList using CXi encoding for type when possible"
 * meta.profile -> "DocumentEntry.limitedMetadata"
 // DocumentEntry.objectType -- is not represented
 * relatesTo -> "DocumentEntry Associations"
@@ -175,23 +182,23 @@ Usage: #definition
 * group.source = "urn:ihe:iti:2007:AssociationType"
 * group.target = "http://hl7.org/fhir/document-relationship-type"
 * group.element[+].code = #RPLC
-* group.element[=].target.equivalence = #equal
+* group.element[=].target.relationship = #equivalent
 * group.element[=].target.code = #replaces
 * group.element[+].code = #XFRM
-* group.element[=].target.equivalence = #equal
+* group.element[=].target.relationship = #equivalent
 * group.element[=].target.code = #transforms
 * group.element[+].code = #APND
-* group.element[=].target.equivalence = #equal
+* group.element[=].target.relationship = #equivalent
 * group.element[=].target.code = #appends
 * group.element[+].code = #XFRM_RPLC
-* group.element[=].target.equivalence = #narrower
+* group.element[=].target.relationship = #equivalent
 * group.element[=].target.code = #replaces
 * group.element[=].target.comment = "An XDS Transform Replacement is both a document that replaces and transforms. The mapping here indicates Replace as that is the most specific change."
 * group.element[+].code = #signs
-* group.element[=].target.equivalence = #equal
+* group.element[=].target.relationship = #equivalent
 * group.element[=].target.code = #signs
 * group.element[+].code = #IsSnapshotOf
-* group.element[=].target.equivalence = #inexact
+* group.element[=].target.relationship = #equivalent
 * group.element[=].target.code = #transforms
 * group.element[=].target.comment = "An XDS IsSnapshotOf is a new instance of what is defined in the parent DocumentEntry (DocumentReference), thus it is a transform in a manner, but is not exactly a transform of the parent document."
 
@@ -221,10 +228,10 @@ Usage: #definition
 * group.source = "urn:ietf:rfc:3986"
 * group.target = "http://hl7.org/fhir/document-reference-status"
 * group.element[+].code = #urn:oasis:names:tc:ebxml-regrep:StatusType:Approved
-* group.element[=].target.equivalence = #equal
+* group.element[=].target.relationship = #equivalent
 * group.element[=].target.code = #current
 * group.element[+].code = #urn:oasis:names:tc:ebxml-regrep:StatusType:Deprecated
-* group.element[=].target.equivalence = #equal
+* group.element[=].target.relationship = #equivalent
 * group.element[=].target.code = #superseded
 
 

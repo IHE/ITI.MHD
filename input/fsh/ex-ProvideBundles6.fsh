@@ -14,7 +14,7 @@ Response bundle example given ex-unContainedComprehensiveProvideDocumentBundleCo
 Usage: #example
 * meta.security = http://terminology.hl7.org/CodeSystem/v3-ActReason#HTEST
 * type = #transaction-response
-* link[0].relation = "self"
+* link[0].relation = #self
 * link[0].url = "http://example.com/fhir"
 * entry[+].response.status = "201 Created"
 * entry[=].response.location = "List/501"
@@ -93,12 +93,12 @@ Title:      "DocumentReference for UnContained Comprehensive metadata"
 Description: "Example of a comprehensive uncontained DocumentReference resource being used in a PUSH. This contains the Patient, thus equivilant of XDR/XDM use of sourcePatientInfo."
 Usage: #inline
 * meta.security = http://terminology.hl7.org/CodeSystem/v3-ActReason#HTEST
-* masterIdentifier.system = "urn:ietf:rfc:3986"
-* masterIdentifier.value = "urn:oid:1.2.840.113556.1.8000.2554.53432.348.12973.17740.34205.4355.50220.62012"
+* identifier[uniqueId].system = "urn:ietf:rfc:3986"
+* identifier[uniqueId].value = "urn:oid:1.2.840.113556.1.8000.2554.53432.348.12973.17740.34205.4355.50220.62012"
 * status = #current
 * subject = Reference(Patient/ex-patient)
-* context.sourcePatientInfo = Reference(Patient/ex-patient)
-* content.format = http://ihe.net/fhir/ihe.formatcode.fhir/CodeSystem/formatcode#urn:ihe:iti:xds-sd:text:2008
+* extension[sourcePatient].valueReference = Reference(Patient/ex-patient)
+* content.profile.valueCoding = http://ihe.net/fhir/ihe.formatcode.fhir/CodeSystem/formatcode#urn:ihe:iti:xds-sd:text:2008
 * content.attachment.url = "urn:uuid:aaaaaaaa-bbbb-cccc-dddd-e00666600003"
 * content.attachment.contentType = #text/plain
 * content.attachment.hash = "MGE0ZDU1YThkNzc4ZTUwMjJmYWI3MDE5NzdjNWQ4NDBiYmM0ODZkMA=="
@@ -106,23 +106,24 @@ Usage: #inline
 * type = http://loinc.org#60591-5
 * category = http://loinc.org#11369-6
 * securityLabel = http://terminology.hl7.org/CodeSystem/v3-Confidentiality#R
-* context.facilityType = http://snomed.info/sct#82242000
-* context.practiceSetting =  http://snomed.info/sct#408467006
+* facilityType = http://snomed.info/sct#82242000
+* practiceSetting =  http://snomed.info/sct#408467006
 * content.attachment.language = urn:ietf:bcp:47#en
 * content.attachment.creation = 2020-02-01T23:50:50-05:00
 * content.attachment.title = "Hello World"
 * date = 2020-02-01T23:50:50-05:00
 * author[+] = Reference(Organization/ex-organization)
 * author[+] = Reference(Practitioner/ex-practitioner)
-* authenticator[+] = Reference(Organization/ex-organization)
-* relatesTo.code = #appends
+* attester[+].party = Reference(Organization/ex-organization)
+* attester[=].mode = http://hl7.org/fhir/composition-attestation-mode#professional
+* relatesTo.code = http://hl7.org/fhir/document-relationship-type#appends
 * relatesTo.target = Reference(DocumentReference/ex-DocumentReferenceComprehensive)
 * description = "a complete comprehensive metadata document reference"
-* context.event = http://terminology.hl7.org/CodeSystem/v3-ActCode#PATDOC
-* context.period.start = 1990-02-01T23:50:50-05:00
-* context.period.end = 2020-02-01T23:50:50-05:00
-* context.related.identifier.system =  "urn:ietf:rfc:3986"
-* context.related.identifier.value = "urn:uuid:7d5bb8ac-68ee-4926-85e7-baaaaaaaaaad"
+* event.concept = http://terminology.hl7.org/CodeSystem/v3-ActCode#PATDOC
+* period.start = 1990-02-01T23:50:50-05:00
+* period.end = 2020-02-01T23:50:50-05:00
+* event.reference.identifier.system =  "urn:ietf:rfc:3986"
+* event.reference.identifier.value = "urn:uuid:7d5bb8ac-68ee-4926-85e7-baaaaaaaaaad"
 
 
 Instance: aaaaaaaa-bbbb-cccc-dddd-e00666600003

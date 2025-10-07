@@ -1,5 +1,5 @@
 Profile:        AuditSimplifiedPublishRecipient
-Parent:         IHE.BasicAudit.PatientCreate
+Parent:         IHE.BasicAudit.MHD5.PatientCreate
 Id:             IHE.MHD.SimplifiedPublish.Audit.Recipient
 Title:          "Audit Event for Simplified Publish ITI-105 Transaction at Recipient"
 Description:    """
@@ -13,9 +13,9 @@ Defines constraints on the AuditEvent Resource to record when a Simplified Publi
 - shall have a documentReference identity entity
 """
 * modifierExtension 0..0
-* subtype 2..
-* subtype contains iti105 1..1
-* subtype[iti105] = urn:ihe:event-type-code#ITI-105 "Simplified Publish"
+* category 2..
+* category contains iti105 1..1
+* category[iti105] = urn:ihe:event-type-code#ITI-105 "Simplified Publish"
 * agent[server] obeys val-audit-source
 * agent[client] ^short = "Document Source"
 * agent[server] ^short = "Document Recipient"
@@ -33,7 +33,7 @@ Defines constraints on the AuditEvent Resource to record when a Simplified Publi
 
 
 Profile:        AuditSimplifiedPublishSource
-Parent:         IHE.BasicAudit.PatientCreate
+Parent:         IHE.BasicAudit.MHD5.PatientCreate
 Id:             IHE.MHD.SimplifiedPublish.Audit.Source
 Title:          "Audit Event for Simplified Publish ITI-105 Transaction at Source"
 Description:    """
@@ -47,9 +47,9 @@ Defines constraints on the AuditEvent Resource to record when a Simplified Publi
 - shall have a documentReference identity entity
 """
 * modifierExtension 0..0
-* subtype 2..
-* subtype contains iti105 1..1
-* subtype[iti105] = urn:ihe:event-type-code#ITI-105 "Simplified Publish"
+* category 2..
+* category contains iti105 1..1
+* category[iti105] = urn:ihe:event-type-code#ITI-105 "Simplified Publish"
 * agent[client] obeys val-audit-source
 * agent[client] ^short = "Document Source"
 * agent[server] ^short = "Document Recipient"

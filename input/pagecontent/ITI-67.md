@@ -120,18 +120,18 @@ For example given:
 
 ###### 2:3.67.4.1.2.3.1 Example GET
 ```
-GET test.fhir.net/R4/fhir/DocumentReference?patient=9876&status=current&type=http://loinc.org|1234-5
+GET fhir.example.com/R4/fhir/DocumentReference?patient=9876&status=current&type=http://loinc.org|1234-5
 ```
 
 ###### 2:3.67.4.1.2.3.2 Example POST
 ```
-POST test.fhir.net/R4/fhir/DocumentReference/_search?patient=9876&status=current&type=http://loinc.org|1234-5
+POST fhir.example.com/R4/fhir/DocumentReference/_search?patient=9876&status=current&type=http://loinc.org|1234-5
 ```
 
 ###### 2:3.67.4.1.2.3.3 Example POST Body
 ```
-POST test.fhir.net/R4/fhir/DocumentReference/_search	  
-Host test.fhir.net
+POST fhir.example.com/R4/fhir/DocumentReference/_search	  
+Host fhir.example.com
 Content-Type: application/x-www-form-urlencoded
 Accept: application/fhir+json; fhirVersion=4.0										  
 
