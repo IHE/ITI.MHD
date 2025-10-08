@@ -14,7 +14,7 @@ Description: "The Input Parameters for the $generate-metadata operation
 * parameter contains
     document 1..1
 * parameter[document] ^short = "document"
-* parameter[document].name = "document" (exactly)
+* parameter[document].name = "document" //(exactly)
 * parameter[document].value[x] 0..0
 * parameter[document].resource 1..1
 * parameter[document].resource only Binary or Bundle

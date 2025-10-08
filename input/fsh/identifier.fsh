@@ -15,7 +15,7 @@ Parent: UniqueIdIdentifier
 Id: IHE.MHD.SubmissionSetUniqueIdIdentifier
 Title: "uniqueId Identifier for SubmissionSet"
 Description: "uniqueId Identifier holding a OID"
-* system = "urn:ietf:rfc:3986" (exactly)
+* system = "urn:ietf:rfc:3986" //(exactly)
 * value obeys mhd-startswithoid
 
 Invariant: mhd-startswithoid
@@ -29,7 +29,7 @@ Id: IHE.MHD.EntryUUID.Identifier
 Title: "entryUUID Identifier"
 Description: "entryUUID Identifier holding a UUID"
 * system 1..
-* system = "urn:ietf:rfc:3986" (exactly)
+* system = "urn:ietf:rfc:3986" //(exactly)
 * value 1..
 * value obeys mhd-startswithuuid
 * use 1..

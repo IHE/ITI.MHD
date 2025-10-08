@@ -121,7 +121,7 @@ Description:    "A profile on the DocumentReference resource for MHD Comprehensi
 
 // mappings to XDS 
 Mapping: DocumentEntry-Mapping
-Source:	MinimalDocumentReference
+Source:	IHE.MHD.Minimal.DocumentReference
 Target: "urn:ihe:iti:xds:documententry"
 Title: "XDS and MHD Mapping"
 * -> "XDS DocumentEntry: Used in the context of the IHE MHD ImplementationGuide"
@@ -131,9 +131,10 @@ Title: "XDS and MHD Mapping"
 * description -> "DocumentEntry.comments"
 * securityLabel -> "DocumentEntry.confidentialityCode"
 * content.attachment.creation -> "DocumentEntry.creationTime"
-* identifier -> "DocumentEntry.entryUUID"
+* identifier[entryUUID] -> "DocumentEntry.entryUUID"
+* identifier[uniqueId] -> "DocumentEntry.uniqueId"
 * event.concept -> "DocumentEntry.eventCodeList"
-* content.profile -> "DocumentEntry.formatCode"
+* content.profile.valueCoding -> "DocumentEntry.formatCode"
 * content.attachment.hash -> "DocumentEntry.hash"
 * facilityType -> "DocumentEntry.healthcareFacilityTypeCode"
 // DocumentEntry.homeCommunityId -- does not actually exist as metadata on DocumentEntry, and does not have a place in DocumentReference. might be encoded in the content.attachment.url
@@ -151,7 +152,6 @@ Title: "XDS and MHD Mapping"
 * extension[sourcePatient].valueReference.reference -> "DocumentEntry.sourcePatientInfo"
 * content.attachment.title -> "DocumentEntry.title"
 * type -> "DocumentEntry.typeCode"
-* identifier -> "DocumentEntry.uniqueId"
 * context -> "DocumentEntry.referenceIdList with CXi encoding for urn:ihe:iti:xds:2015:encounterId"
 * event.reference -> "DocumentEntry.referenceIdList using CXi encoding for type when possible"
 * meta.profile -> "DocumentEntry.limitedMetadata"

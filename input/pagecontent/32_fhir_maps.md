@@ -23,8 +23,8 @@ The mapping in table form
 | [DocumentEntry](https://profiles.ihe.net/ITI/TF/Volume3/ch-4.2.html#4.2.3.2)         | [R4 DocumentReference](https://hl7.org/fhir/R4/documentreference.html) | [R5 DocumentReference](https://hl7.org/fhir/R5/documentreference.html) |
 |-----------------------|-------------------------------|-----------------------------------|
 | limitedMetadata       | meta.profile                  | meta.profile                      |
-| uniqueId              | masterIdentifier              | identifier                        |
-| entryUUID             | identifier                    | identifier                        |
+| uniqueId              | masterIdentifier              | identifier (uniqueId)             |
+| entryUUID             | identifier                    | identifier (entryUUID)            |
 | availabilityStatus    | status                        | status                            |
 | typeCode              | type                          | type                              |
 | classCode             | category                      | category                          |
@@ -44,7 +44,7 @@ The mapping in table form
 | hash                  | content.attachment.hash       | content.attachment.hash           |
 | title                 | content.attachment.title      | content.attachment.title          |
 | creationTime          | content.attachment.creation   | content.attachment.creation       |
-| formatCode            | content.format                | content.profile                   |
+| formatCode            | content.format                | content.profile.valueCoding       |
 | referenceIdList       |                               |                                   |
 |   type encounterId    | context.encounter             | context                           |
 |   procedures          | context.related               | basedOn                           |
