@@ -21,7 +21,7 @@ The result of the query is a Bundle containing List Resources that match the que
 
 ### 2:3.66.3 Referenced Standards
 
-**FHIR** [HL7 FHIR]({{site.data.fhir.path}})
+**HL7 FHIR** Revision {{site.data.fhir.version}} found at [{{site.data.fhir.path}}]({{site.data.fhir.path}})
 
 ### 2:3.66.4 Messages
 

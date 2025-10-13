@@ -16,7 +16,7 @@ The Find Document References transaction is used to find DocumentReference Resou
 
 ### 2:3.67.3 Referenced Standards
 
-**FHIR** [HL7 FHIR]({{site.data.fhir.path}})
+**HL7 FHIR** Revision {{site.data.fhir.version}} found at [{{site.data.fhir.path}}]({{site.data.fhir.path}})
 
 ### 2:3.67.4 Messages
 
