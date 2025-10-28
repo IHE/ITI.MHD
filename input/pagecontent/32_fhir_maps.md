@@ -16,7 +16,7 @@ When encoding XDS identifiers into FHIR Resource data elements of type Identifie
 
 #### 3:4.5.1.1 DocumentEntry Metadata Attributes {#documentEntry}
 
-The documented [mapping of the metadata elements](StructureDefinition-IHE.MHD.Minimal.DocumentReference-mappings.html#mappings-for-xds-and-mhd-mapping-urn-ihe-iti-xds-documententry) associated with a [Document Sharing DocumentEntry object](https://profiles.ihe.net/ITI/TF/Volume3/ch-4.2.html#4.2.3.2) attributes.
+The documented [mapping of the metadata elements](StructureDefinition-IHE.MHD.Minimal.DocumentReference-mappings.html) associated with a [Document Sharing DocumentEntry object](https://profiles.ihe.net/ITI/TF/Volume3/ch-4.2.html#4.2.3.2) attributes.
 
 Note: FHIR contains an informative mapping that is intended to be equivalent and can be found at [FHIR documentReference XDS mapping]({{site.data.fhir.path}}documentreference-mappings.html#xds). For the purposes of IHE MHD conformance the mapping documented here (in IHE) are normative.
 
@@ -35,7 +35,7 @@ Resources are not required to carry the meta.profile element and may only carry 
 
 ### 3:4.5.2 SubmissionSet Metadata Attributes {#submissionSet}
 
-The documented [mapping of the metadata elements](StructureDefinition-IHE.MHD.Minimal.SubmissionSet-mappings.html#mappings-for-xds-and-mhd-mapping-urn-ihe-iti-xds-submissionset) associated with a [Document Sharing SubmissionSet object](https://profiles.ihe.net/ITI/TF/Volume3/ch-4.2.html#4.2.3.3) attributes.
+The documented [mapping of the metadata elements](StructureDefinition-IHE.MHD.Minimal.SubmissionSet-mappings.html) associated with a [Document Sharing SubmissionSet object](https://profiles.ihe.net/ITI/TF/Volume3/ch-4.2.html#4.2.3.3) attributes.
 
 #### 3:4.5.2.1 SubmissionSet List StructureDefinition
 
@@ -50,7 +50,7 @@ Resources are not required to carry the meta.profile element and may only carry 
 
 ### 3:4.5.3 Folder Metadata Attributes {#folder}
 
-The documented [mapping of the metadata elements](StructureDefinition-IHE.MHD.Minimal.Folder-mappings.html#mappings-for-xds-and-mhd-mapping-urn-ihe-iti-xds-folder) associated with a [Document Sharing Folder object](https://profiles.ihe.net/ITI/TF/Volume3/ch-4.2.html#4.2.3.4) attributes.
+The documented [mapping of the metadata elements](StructureDefinition-IHE.MHD.Minimal.Folder-mappings.html) associated with a [Document Sharing Folder object](https://profiles.ihe.net/ITI/TF/Volume3/ch-4.2.html#4.2.3.4) attributes.
 
 Note that FHIR List Resource in the FHIR core specification does not include a Mapping to XDS.
 
