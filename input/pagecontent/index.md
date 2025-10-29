@@ -17,7 +17,7 @@ part of the [IHE Document Sharing Health Information Exchange](https://profiles.
 <div markdown="1" class="stu-note">
 
 <br/>
-This IG is founded on HL7 FHIR Revision {{site.data.fhir.version}} found at {{site.data.fhir.path}}
+This IG is founded on HL7 FHIR Revision {{site.data.fhir.version}} found at {{site.data.fhir.path}}. This IG is made available for use, but is not the recommended version of MHD or FHIR. The current recommendation from IHE is to use FHIR R4, and thus MHD based on FHIR R4. Current MHD is available at [https://profiles.ihe.net/ITI/MHD](https://profiles.ihe.net/ITI/MHD/index.html).
 
 | [Significant Changes, Open and Closed Issues](a_issues.html) |
 {: .grid}
