@@ -150,7 +150,7 @@ ValueSet: DataSources
 Title: "participant source types for RESTful create"
 Description: "create agent participant types for user operators that are in REST"
 * ^experimental = false
-* http://terminology.hl7.org/CodeSystem/v3-ParticipationType#AUT "Author"
+* http://terminology.hl7.org/CodeSystem/v3-ParticipationType#AUT "author (originator)"
 * http://terminology.hl7.org/CodeSystem/v3-ParticipationType#INF "Informant"
 * http://terminology.hl7.org/CodeSystem/v3-ParticipationType#CST "Custodian"
 
