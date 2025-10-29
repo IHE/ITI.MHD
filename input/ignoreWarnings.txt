@@ -45,4 +45,5 @@ WARNING: StructureDefinition.where(url = 'https://profiles.ihe.net/ITI/MHD/Struc
 WARNING: StructureDefinition.where(url = 'https://profiles.ihe.net/ITI/MHD/StructureDefinition/IHE.BasicAudit.MHD5.Query'): The Implementation Guide contains no examples for this profile
 WARNING: StructureDefinition.where(url = 'https://profiles.ihe.net/ITI/MHD/StructureDefinition/IHE.BasicAudit.MHD5.Read'): The Implementation Guide contains no examples for this profile
 
-
+# the addition of a narrative in the R5 version pointing back to the R4 version causes the IG Publisher to give an error, this because it knows that the target is an IG and it knows that this IG didn't depend on that IG (which we certainly don't want to do). So the best we can do is ignore the warning.
+The link 'https://profiles.ihe.net/ITI/MHD/index.html' for "https://profiles.ihe.net/ITI/MHD" cannot be resolved
