@@ -46,16 +46,16 @@ The mapping in table form
 | creationTime          | content.attachment.creation   | content.attachment.creation       |
 | formatCode            | content.format                | content.profile.valueCoding       |
 | referenceIdList       |                               |                                   |
-|   type encounterId    | context.encounter             | context                           |
-|   procedures          | context.related               | basedOn                           |
-|   all other           | context.related               | event.reference                   |
+| ... type encounterId  | context.encounter             | context                           |
+| ... procedures        | context.related               | basedOn                           |
+| ... all other         | context.related               | event.reference                   |
 | eventCodeList         | context.event                 | event.concept                     |
 | serviceStartTime      | context.period.start          | period.start                      |
 | serviceStopTime       | context.period.end            | period.end                        |
 | healthcareFacilityTypeCode | context.facilityType     | facilityType                      |
 | practiceSettingCode   | context.practiceSettingCode   | practiceSetting                   |
-| sourcePatientInfo     | sourcePatientInfo.reference   | extension (sourcePatient)         |
-| sourcePatientId       | sourcePatientInfo.identifier  | extension (sourcePatient)         |
+| sourcePatientInfo     | sourcePatientInfo.reference   | extension ([sourcePatient](https://hl7.org/fhir/extensions/StructureDefinition-documentreference-sourcepatient.html))         |
+| sourcePatientId       | sourcePatientInfo.identifier  | extension ([sourcePatient](https://hl7.org/fhir/extensions/StructureDefinition-documentreference-sourcepatient.html))         |
 {: .grid}
 
 Note: FHIR contains an informative mapping that is intended to be equivalent and can be found at [FHIR documentReference XDS mapping]({{site.data.fhir.path}}documentreference-mappings.html#xds). For the purposes of IHE MHD conformance the mapping documented here (in IHE) are normative.

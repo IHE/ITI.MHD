@@ -111,7 +111,7 @@ All DocumentReference.subject, and List.subject values shall be a Reference to a
 
 If the Patient Resource is accessible to both the Document Source and Document Recipient via an external reference to a commonly accessible server then that external reference shall be used and the Patient Resource will not be included in the Bundle. Otherwise, the Patient Resource shall be included in the Bundle.
 
-When the [UnContained Reference Option](1332_actor_options.html#13323-uncontained-reference-option) is used, there is no need to populate the sourcePatientInfo element. Otherwise, when sourcePatientInfo is provided, the DocumentReference.context.sourcePatientInfo shall be a reference to a “contained” Patient Resource. That is, the source patient info is encoded in a Patient Resource within the DocumentReference.contained element (see [FHIR references.html#contained]({{site.data.fhir.path}}references.html#contained) ).
+When the [UnContained Reference Option](1332_actor_options.html#13323-uncontained-reference-option) is used, there is no need to populate the sourcePatient extension. Otherwise, when the sourcePatient extension is provided, the sourcePatient extension shall be a reference to a “contained” Patient Resource. That is, the source patient info is encoded in a Patient Resource within the DocumentReference.contained element (see [FHIR references.html#contained]({{site.data.fhir.path}}references.html#contained) ).
 
 ###### 2:3.65.4.1.2.3 Replace, Transform, Signs, and Append Associations
 
