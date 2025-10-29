@@ -198,7 +198,7 @@
               "name": "identifier",
               "definition": "http://hl7.org/fhir/SearchParameter/clinical-identifier",
               "type": "token",
-              "documentation": "This parameter, of type token, specifies an identifier for this List. The search results represent the results of a search on List.masterIdentifier and List.identifier. See ITI TF-2x: Appendix Z.2 for additional constraints on the use of the token search parameter type."
+              "documentation": "This parameter, of type token, specifies an identifier for this List. The search results represent the results of a search on List.identifier. See ITI TF-2x: Appendix Z.2 for additional constraints on the use of the token search parameter type."
             },
             {
               "name": "patient",
