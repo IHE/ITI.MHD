@@ -3,6 +3,7 @@
 ### Significant changes in MHD Version 5.0.0
 
 - Conversion to FHIR R5
+- Clear STU-NOTE at the top of index.html to indicate this release relative to current FHIR R4
 - Added tables to Volume 3 as the new mapping rendering from IgPublisher is less table based, and the table can hold both R4 and R5 mapping so that the changes are more clear.
 - No change to Folders and SubmissionSet mapping
   - could possibly use List.source rather than extension (sourceOrg), but .source is 0..1 -- see https://jira.hl7.org/browse/FHIR-53061
