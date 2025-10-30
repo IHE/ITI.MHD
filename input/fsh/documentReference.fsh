@@ -186,7 +186,7 @@ Usage: #definition
 * group.element[=].target.relationship = #equivalent
 * group.element[=].target.code = #replaces
 * group.element[+].code = #XFRM
-* group.element[=].target.relationship = #equivalent
+* group.element[=].target.relationship = #source-is-narrower-than-target
 * group.element[=].target.code = #transforms
 * group.element[+].code = #APND
 * group.element[=].target.relationship = #equivalent
@@ -199,7 +199,7 @@ Usage: #definition
 * group.element[=].target.relationship = #equivalent
 * group.element[=].target.code = #signs
 * group.element[+].code = #IsSnapshotOf
-* group.element[=].target.relationship = #equivalent
+* group.element[=].target.relationship = #related-to
 * group.element[=].target.code = #transforms
 * group.element[=].target.comment = "An XDS IsSnapshotOf is a new instance of what is defined in the parent DocumentEntry (DocumentReference), thus it is a transform in a manner, but is not exactly a transform of the parent document."
 
