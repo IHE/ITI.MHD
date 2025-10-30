@@ -1,4 +1,10 @@
 
+<div markdown="1" class="stu-note">
+
+This IG is founded on HL7 FHIR Revision {{site.data.fhir.version}} found at {{site.data.fhir.path}}. This present MHD IG is made available for use, but is not the recommended version of MHD or FHIR. The family of [Document Sharing Health Information Exchange](https://profiles.ihe.net/ITI/HIE-Whitepaper/index.html) Implementation Guides have not been converted to FHIR R5, and there are fewer implementations of FHIR R5. This FHIR R5 founded MHD is derived from the FHIR R4 MHD which is the main focus. Current MHD is founded on FHIR R4 to support the broadest availability, it is available at [https://profiles.ihe.net/ITI/MHD](https://profiles.ihe.net/ITI/MHD/index.html).
+
+</div>
+
 Applications specific to resource-constrained and mobile devices are an emerging platform for healthcare-enhancing software. The MHD Profile is not limited to mobile devices, using the term “mobile” only as a grouping for mobile applications, mobile devices or any other systems that are resource and platform-constrained. These constraints may drive the implementer to use simpler network interface technology. There are numerous deployed implementations of [Document Sharing Health Information Exchange](https://profiles.ihe.net/ITI/HIE-Whitepaper/index.html) that need a simpler network interface technology, for example those hosted by a Health Information Exchange (HIE), large health provider electronic health record (EHR), or personal health record (PHR). 
 
 The Mobile access to Health Documents (MHD) Profile defines one standardized interface to [health document sharing](https://profiles.ihe.net/ITI/HIE-Whitepaper/index.html) (a.k.a. an Application Programming Interface (API)) for use by mobile devices so that deployment of mobile applications is more consistent and reusable. In this context, mobile devices include tablets, smart-phones, and embedded devices including home-health devices. This profile is also applicable to more capable systems where needs are simple, such as pulling the latest summary for display. The critical aspects of the "mobile device" are that it is resource-constrained, has a simple programming environment (e.g., JSON, JavaScript), simple protocol stack (e.g., HTTP), and simple display functionality (e.g., HTML browser). The goal is, in part, to avoid burdening the client with additional libraries such as those that are necessary to process SOAP, WSSE, MIME-Multipart, MTOM/XOP, ebRIM, and multi-depth XML. 
@@ -17,7 +23,7 @@ part of the [IHE Document Sharing Health Information Exchange](https://profiles.
 <div markdown="1" class="stu-note">
 
 <br/>
-This IG is founded on HL7 FHIR Revision {{site.data.fhir.version}} found at {{site.data.fhir.path}}. This IG is made available for use, but is not the recommended version of MHD or FHIR. The current recommendation from IHE is to use FHIR R4, and thus MHD based on FHIR R4. Current MHD is available at [https://profiles.ihe.net/ITI/MHD](https://profiles.ihe.net/ITI/MHD/index.html).
+This IG is founded on HL7 FHIR Revision {{site.data.fhir.version}} found at {{site.data.fhir.path}}.
 
 | [Significant Changes, Open and Closed Issues](a_issues.html) |
 {: .grid}
