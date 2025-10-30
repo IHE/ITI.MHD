@@ -90,8 +90,9 @@ Usage: #example
 * period.start = 2020-12-31T23:50:50-05:00
 * period.end = 2020-12-31T23:50:50-05:00
 * event.concept = http://terminology.hl7.org/CodeSystem/v3-ActCode#ACCTRECEIVABLE
-* event.reference.identifier.system = "urn:ietf:rfc:3986"
-* event.reference.identifier.value = "urn:oid:1.2.840.113556.1.8000.2554.17917.46600.21181.17878.33419.62048.57128.2759"
+// use extension[referenceId] as there is no clear identifier type
+* extension[referenceId].valueIdentifier.system = "urn:ietf:rfc:3986"
+* extension[referenceId].valueIdentifier.value = "urn:oid:1.2.840.113556.1.8000.2554.17917.46600.21181.17878.33419.62048.57128.2759"
 * content.profile.valueCoding = http://ihe.net/fhir/ihe.formatcode.fhir/CodeSystem/formatcode#urn:ihe:iti:xds-sd:text:2008
 * content.attachment.title = "DocumentReference for Comprehensive minimally filled metadata"
 * description = "Example of a Comprehensive DocumentReference resource. This is minimally filled for all mandatory elements."
@@ -136,8 +137,9 @@ Usage: #example
 * period.start = 2020-12-31T23:50:50-05:00
 * period.end = 2020-12-31T23:50:50-05:00
 * event.concept = http://terminology.hl7.org/CodeSystem/v3-ActCode#ACCTRECEIVABLE
-* event.reference.identifier.system = "urn:ietf:rfc:3986"
-* event.reference.identifier.value = "urn:oid:1.2.840.113556.1.8000.2554.17917.46600.21181.17878.33419.62048.57128.2759"
+// use extension[referenceId] as there is no clear identifier type
+* extension[referenceId].valueIdentifier.system = "urn:ietf:rfc:3986"
+* extension[referenceId].valueIdentifier.value = "urn:oid:1.2.840.113556.1.8000.2554.17917.46600.21181.17878.33419.62048.57128.2759"
 * content.attachment.title = "DocumentReference for Comprehensive fully filled metadata"
 * description = "Example of a Comprehensive DocumentReference resource. This is fully filled for all mandatory elements and all optional elements."
 // note the sha1 hash of actual content should be used. This hash 8a38f2633006fd535149c44a3a73f312437b3478
@@ -189,8 +191,9 @@ Usage: #example
 * period.start = 2020-12-31T23:50:50-05:00
 * period.end = 2020-12-31T23:50:50-05:00
 * event.concept = http://terminology.hl7.org/CodeSystem/v3-ActCode#ACCTRECEIVABLE
-* event.reference.identifier.system = "urn:ietf:rfc:3986"
-* event.reference.identifier.value = "urn:oid:1.2.840.113556.1.8000.2554.17917.46600.21181.17878.33419.62048.57128.2759"
+// use extension[referenceId] as there is no clear identifier type
+* extension[referenceId].valueIdentifier.system = "urn:ietf:rfc:3986"
+* extension[referenceId].valueIdentifier.value = "urn:oid:1.2.840.113556.1.8000.2554.17917.46600.21181.17878.33419.62048.57128.2759"
 * content.attachment.title = "DocumentReference for Comprehensive fully filled metadata"
 * description = "Example of a Comprehensive DocumentReference resource. This is fully filled for all mandatory elements and all optional elements."
 // note the sha1 hash of a zero file is da39a3ee5e6b4b0d3255bfef95601890afd80709

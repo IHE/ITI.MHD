@@ -73,13 +73,24 @@ Description:    "A profile on the DocumentReference resource for MHD with minima
 //* content.profile.valueCoding from http://ihe.net/fhir/ihe.formatcode.fhir/ValueSet/formatcode (preferred)
 //* context.encounter 0..0
 * event 0..*
-* event.concept 1..1
+* event.concept 1..
 * period 0..1 MS
 * facilityType 0..1 MS
 * practiceSetting 0..1 MS
 * context 0..*
 * relatesTo 0..* MS
 * extension contains http://hl7.org/fhir/StructureDefinition/documentreference-sourcepatient named sourcePatient 0..1 MS
+* extension contains ReferenceId named referenceId 0..* MS
+
+
+Extension: ReferenceId
+Id: ihe-referenceId
+Title: "Holds values from DocumentEntry.referenceIdList that are not appropriate for .context or .basedOn"
+Description: "This extension holds values from DocumentEntry.referenceIdList that are not appropriate for .context or .basedOn. This extension can hold any identifier that is related to the DocumentReference. This extension is added for FHIR R5 as DocumentReference does not have a .context.related element, and this extension will not be needed in R6 as there is a DocumentReference.related element there."
+* ^context[+].type = #element
+* ^context[=].expression = "DocumentReference"
+* value[x] only Identifier
+* valueIdentifier 1..1
 
 // equivalent to MHD DocumentReference Comprehensive UnContained Option
 Profile:        UnContainedComprehensiveDocumentReference
@@ -153,8 +164,8 @@ Title: "XDS and MHD Mapping"
 * content.attachment.title -> "DocumentEntry.title"
 * type -> "DocumentEntry.typeCode"
 * context -> "DocumentEntry.referenceIdList with CXi encoding for urn:ihe:iti:xds:2015:encounterId"
-* basedOn -> "DocumentEntry.referenceIdList with CXi encoding for procedures"
-* event.reference -> "DocumentEntry.referenceIdList using CXi encoding for type when possible"
+* basedOn -> "DocumentEntry.referenceIdList with CXi encoding for procedures, urn:ihe:iti:xds:2013:accession, urn:ihe:iti:xds:2013:referral, urn:ihe:iti:xds:2013:order, or urn:ihe:iti:xds:2016:studyInstanceUID"
+* extension[referenceId] -> "DocumentEntry.referenceIdList for other types using CXi encoding for type when possible (e.g., urn:ihe:iti:xds:2013:uniqueId, urn:ihe:iti:xdw:2013:workflowInstanceId)"
 * meta.profile -> "DocumentEntry.limitedMetadata"
 // DocumentEntry.objectType -- is not represented
 * relatesTo -> "DocumentEntry Associations"

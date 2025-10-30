@@ -122,8 +122,9 @@ Usage: #inline
 * event.concept = http://terminology.hl7.org/CodeSystem/v3-ActCode#PATDOC
 * period.start = 1990-02-01T23:50:50-05:00
 * period.end = 2020-02-01T23:50:50-05:00
-* event.reference.identifier.system =  "urn:ietf:rfc:3986"
-* event.reference.identifier.value = "urn:uuid:7d5bb8ac-68ee-4926-85e7-baaaaaaaaaad"
+// use extension[referenceId] as there is no clear identifier type
+* extension[referenceId].valueIdentifier.system =  "urn:ietf:rfc:3986"
+* extension[referenceId].valueIdentifier.value = "urn:uuid:7d5bb8ac-68ee-4926-85e7-baaaaaaaaaad"
 
 
 Instance: aaaaaaaa-bbbb-cccc-dddd-e00666600003
