@@ -47,3 +47,7 @@ WARNING: StructureDefinition.where(url = 'https://profiles.ihe.net/ITI/MHD/Struc
 
 # the addition of a narrative in the R5 version pointing back to the R4 version causes the IG Publisher to give an error, this because it knows that the target is an IG and it knows that this IG didn't depend on that IG (which we certainly don't want to do). So the best we can do is ignore the warning.
 The link 'https://profiles.ihe.net/ITI/MHD/index.html' for "https://profiles.ihe.net/ITI/MHD" cannot be resolved
+
+# Used in an example
+WARNING: Bundle/FindDocumentReferences: Bundle.entry[0].resource.facilityType.coding[0]: The concept '264358009' has a status of inactive and its use should be reviewed
+WARNING: Bundle/FindDocumentReferences: Bundle.entry[0].resource/*DocumentReference/50383ae5-49e5-4dea-b0e6-660cb9e7b91f*/.facilityType.coding[0]: The concept '264358009' has a status of inactive and its use should be reviewed
