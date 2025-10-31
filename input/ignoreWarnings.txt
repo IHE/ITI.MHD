@@ -35,8 +35,9 @@ The link 'https://profiles.ihe.net/ITI/MHDS' for "MHDS" cannot be resolved
 The link 'https://profiles.ihe.net/ITI/MHDS/volume-1.html#150111-document-registry' for "Document Registry" cannot be resolved
 
 # YES we know some examples use old codes. That old code use is not important to the example use
-INFORMATION: Bundle/Bundle-FindDocumentReferences: Bundle.entry[0].resource.context.facilityType.coding[0].code: The code '264358009' is valid but is not active
-INFORMATION: Bundle/Bundle-FindDocumentReferences: Bundle.entry[0].resource/*DocumentReference/50383ae5-49e5-4dea-b0e6-660cb9e7b91f*/.context.facilityType.coding[0].code: The code '264358009' is valid but is not active
+WARNING: Bundle/FindDocumentReferences: Bundle.entry[0].resource.context.facilityType.coding[0]: The concept '264358009' has a status of inactive and its use should be reviewed
+WARNING: Bundle/FindDocumentReferences: Bundle.entry[0].resource/*DocumentReference/50383ae5-49e5-4dea-b0e6-660cb9e7b91f*/.context.facilityType.coding[0]: The concept '264358009' has a status of inactive and its use should be reviewed
+
 
 # comes from core. Not anything we can document
 The extension http://hl7.org/fhir/StructureDefinition/elementdefinition-maxValueSet|5.2.0 is deprecated
@@ -71,3 +72,6 @@ WARNING: Parameters/ex-input-doc-bundle: Parameters.parameter[0].resource/*Bundl
 WARNING: Parameters/ex-input-doc-bundle: Parameters.parameter[0].resource/*Bundle/ex-fhir-document-bundle*/.entry[5].resource/*MedicationRequest/fdoc-medicationrequest*/: Constraint failed: dom-6: 'A resource should have narrative for robust management' (defined in http://hl7.org/fhir/StructureDefinition/DomainResource) (Best Practice Recommendation)
 WARNING: Parameters/ex-input-doc-bundle: Parameters.parameter[0].resource/*Bundle/ex-fhir-document-bundle*/.entry[6].resource/*MedicationStatement/fdoc-medicationstatement*/: Constraint failed: dom-6: 'A resource should have narrative for robust management' (defined in http://hl7.org/fhir/StructureDefinition/DomainResource) (Best Practice Recommendation)
 WARNING: Parameters/ex-input-doc-bundle: Parameters.parameter[0].resource/*Bundle/ex-fhir-document-bundle*/.entry[7].resource/*AllergyIntolerance/fdoc-allergyintolerance*/: Constraint failed: dom-6: 'A resource should have narrative for robust management' (defined in http://hl7.org/fhir/StructureDefinition/DomainResource) (Best Practice Recommendation)
+
+# Inherited issue from current released BALP. Nothing more we can do here.
+The discriminator type 'pattern' is deprecated in R5+. For future compatibility, you could consider using type=value with a pattern[x] instead (if this is not an inherited slicing)
