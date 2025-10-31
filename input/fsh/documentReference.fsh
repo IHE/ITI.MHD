@@ -114,7 +114,7 @@ Description:    "A profile on the DocumentReference resource for MHD Comprehensi
 
 // mappings to XDS 
 Mapping: DocumentEntry-Mapping
-Source:	MinimalDocumentReference
+Source:	IHE.MHD.Minimal.DocumentReference
 Target: "urn:ihe:iti:xds:documententry"
 Title: "XDS and MHD Mapping"
 * -> "XDS DocumentEntry: Used in the context of the IHE MHD ImplementationGuide"

@@ -8,10 +8,10 @@ status: active
 title: "Mobile access to Health Documents (MHD)"
 description: ImplementationGuide for IHE IT Infrastructure Technical Framework Supplement Mobile access to Health Documents (MHD)
 #date: 2024-05-23
-version: 4.2.3-current
-releaseLabel: ci-build
+version: 4.2.3
+#releaseLabel: ci-build
 #releaselabel: ballot
-#releaseLabel: Trial-Implementation
+releaseLabel: Trial-Implementation
 publisher:
   - name: IHE IT Infrastructure Technical Committee
   - url: https://www.ihe.net/ihe_domains/it_infrastructure/
@@ -54,20 +54,7 @@ parameters:  # see http://build.fhir.org/ig/FHIR/fhir-tools-ig/branches/master/i
   autoload-resources: 'true'
   shownav: 'true'
 
-# additional examples that need descriptions
-resources:
-  Bundle/Bundle-FindDocumentReferences:
-    name: Example FindDocumentReferences response
-    description: An example of a searchset Bundle with one DocumentReference
-    exampleBoolean: true
-  Bundle/ex-comprehensiveProvideDocumentBundleDocument:
-    name: Example Provide Bundle with a FHIR-Document
-    description: An example of a Provide Bundle with a single DocumentReference pointing at a FHIR-Document Bundle
-    exampleBoolean: true
-  Bundle/ex-fhir-document-bundle:
-    name: Example of a FHIR-Document Bundle
-    description: An example of a FHIR-Document Bundle
-    exampleBoolean: true
+
 
 # ╭────────────────────────────────────────────pages───────────────────────────────────────────────╮
 # │  The pages property corresponds to IG.definition.page.                                         │

@@ -1,5 +1,13 @@
 <div markdown="1" class="stu-note">
 
+### Signficant changes in MHD Version 4.2.3
+
+- Quality improvements
+- conversion of json examples to sushi
+- addition of an indication of use of FHIR R4 on index.html page
+- remove narrative comment about masterIdentifier in the CapabilityStatements for List
+- Identifier profiles mandate .use is populated
+
 ### Signficant changes in MHD Version 4.2.2
 
 Version 4.2.2

@@ -16,7 +16,7 @@ The Provide Document Bundle [ITI-65] transaction passes a Provide Document Bundl
 
 ### 2:3.65.3 Referenced Standards
 
-**FHIR-R4** [HL7 FHIR Release 4.0](http://www.hl7.org/FHIR/R4)
+**HL7 FHIR** Revision {{site.data.fhir.version}} found at [{{site.data.fhir.path}}]({{site.data.fhir.path}})
 
 ### 2:3.65.4 Messages
 
