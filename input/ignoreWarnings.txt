@@ -18,15 +18,9 @@ The Source Code System urn:ihe:iti:2007:AssociationType is not fully defined and
 The Source Code System urn:ietf:rfc:3986 is not fully defined and populated, and no sourceScope is specified, so the source code checking will not be performed
 
 # some examples are underpopulated, the full population is not important for the use-case being explained
-WARNING: Bundle/ex-fhir-document-bundle: Bundle.entry[4].resource/*Observation/null*/: Best Practice Recommendation: In general, all observations should have a performer
-WARNING: Bundle/ex-fhir-document-bundle: Bundle.entry[4].resource/*Observation/null*/: Best Practice Recommendation: In general, all observations should have an effective[x] ()
 WARNING: Bundle/ex-fhir-document-bundle: Bundle.entry[4].resource: Best Practice Recommendation: In general, all observations should have a performer
 WARNING: Bundle/ex-fhir-document-bundle: Bundle.entry[4].resource: Best Practice Recommendation: In general, all observations should have an effective[x] ()
-WARNING: Bundle/ex-comprehensiveProvideDocumentBundleDocument: Bundle.entry[2].resource/*Bundle/father*/.entry[4].resource: Best Practice Recommendation: In general, all observations should have a performer
-WARNING: Bundle/ex-comprehensiveProvideDocumentBundleDocument: Bundle.entry[2].resource/*Bundle/father*/.entry[4].resource: Best Practice Recommendation: In general, all observations should have an effective[x] ()
 WARNING: Bundle/ex-comprehensiveProvideDocumentBundleDocument: Bundle.entry[2].resource.entry[0].resource/*Composition/180f219f-97a8-486d-99d9-ed631fe4fc57*/: Constraint failed: dom-6: 'A resource should have narrative for robust management' (defined in http://hl7.org/fhir/StructureDefinition/DomainResource) (Best Practice Recommendation)
-WARNING: Bundle/ex-comprehensiveProvideDocumentBundleDocument: Bundle.entry[2].resource.entry[4].resource/*Observation/null*/: Best Practice Recommendation: In general, all observations should have a performer
-WARNING: Bundle/ex-comprehensiveProvideDocumentBundleDocument: Bundle.entry[2].resource.entry[4].resource/*Observation/null*/: Best Practice Recommendation: In general, all observations should have an effective[x] ()
 WARNING: Bundle/ex-comprehensiveProvideDocumentBundleDocument: Bundle.entry[2].resource.entry[4].resource: Best Practice Recommendation: In general, all observations should have a performer
 WARNING: Bundle/ex-comprehensiveProvideDocumentBundleDocument: Bundle.entry[2].resource.entry[4].resource: Best Practice Recommendation: In general, all observations should have an effective[x] ()
 
@@ -42,11 +36,6 @@ WARNING: Bundle/FindDocumentReferences: Bundle.entry[0].resource/*DocumentRefere
 # comes from core. Not anything we can document
 The extension http://hl7.org/fhir/StructureDefinition/elementdefinition-maxValueSet|5.2.0 is deprecated
 
-# we don't need to pin the version of these
-There are multiple different potential matches for the url 'http://terminology.hl7.org/ValueSet/v3-ActCode'.%
-There are multiple different potential matches for the url 'http://terminology.hl7.org/ValueSet/v3-PurposeOfUse'.%
-There are multiple different potential matches for the url 'http://hl7.org/fhir/ValueSet/object-lifecycle-events'.%
-
 # these are all examples that are good enough
 Type_Specific_Checks_DT_URL_Resolve
 
@@ -54,8 +43,6 @@ Type_Specific_Checks_DT_URL_Resolve
 WARNING: Parameters/ex-input-doc-bundle: Parameters.parameter[0].resource/*Bundle/ex-fhir-document-bundle*/.entry[4].resource: Best Practice Recommendation: In general, all observations should have a performer
 WARNING: Parameters/ex-input-doc-bundle: Parameters.parameter[0].resource/*Bundle/ex-fhir-document-bundle*/.entry[4].resource: Best Practice Recommendation: In general, all observations should have an effective[x] ()
 WARNING: Parameters/ex-input-doc-bundle: Parameters.parameter[0].resource/*Bundle/ex-fhir-document-bundle*/.entry[0].resource/*Composition/180f219f-97a8-486d-99d9-ed631fe4fc57*/: Constraint failed: dom-6: 'A resource should have narrative for robust management' (defined in http://hl7.org/fhir/StructureDefinition/DomainResource) (Best Practice Recommendation)
-WARNING: Parameters/ex-input-doc-bundle: Parameters.parameter[0].resource/*Bundle/ex-fhir-document-bundle*/.entry[4].resource/*Observation/null*/: Best Practice Recommendation: In general, all observations should have a performer
-WARNING: Parameters/ex-input-doc-bundle: Parameters.parameter[0].resource/*Bundle/ex-fhir-document-bundle*/.entry[4].resource/*Observation/null*/: Best Practice Recommendation: In general, all observations should have an effective[x] ()
 All_observations_should_have_a_performer
 All_observations_should_have_an_effectiveDateTime_or_an_effectivePeriod
 WARNING: Bundle/ex-comprehensiveProvideDocumentBundleDocument: Bundle.entry[2].resource/*Bundle/ex-fhir-document-bundle*/.entry[1].resource/*Practitioner/fdoc-practitioner*/: Constraint failed: dom-6: 'A resource should have narrative for robust management' (defined in http://hl7.org/fhir/StructureDefinition/DomainResource) (Best Practice Recommendation)
@@ -72,6 +59,3 @@ WARNING: Parameters/ex-input-doc-bundle: Parameters.parameter[0].resource/*Bundl
 WARNING: Parameters/ex-input-doc-bundle: Parameters.parameter[0].resource/*Bundle/ex-fhir-document-bundle*/.entry[5].resource/*MedicationRequest/fdoc-medicationrequest*/: Constraint failed: dom-6: 'A resource should have narrative for robust management' (defined in http://hl7.org/fhir/StructureDefinition/DomainResource) (Best Practice Recommendation)
 WARNING: Parameters/ex-input-doc-bundle: Parameters.parameter[0].resource/*Bundle/ex-fhir-document-bundle*/.entry[6].resource/*MedicationStatement/fdoc-medicationstatement*/: Constraint failed: dom-6: 'A resource should have narrative for robust management' (defined in http://hl7.org/fhir/StructureDefinition/DomainResource) (Best Practice Recommendation)
 WARNING: Parameters/ex-input-doc-bundle: Parameters.parameter[0].resource/*Bundle/ex-fhir-document-bundle*/.entry[7].resource/*AllergyIntolerance/fdoc-allergyintolerance*/: Constraint failed: dom-6: 'A resource should have narrative for robust management' (defined in http://hl7.org/fhir/StructureDefinition/DomainResource) (Best Practice Recommendation)
-
-# Inherited issue from current released BALP. Nothing more we can do here.
-The discriminator type 'pattern' is deprecated in R5+. For future compatibility, you could consider using type=value with a pattern[x] instead (if this is not an inherited slicing)

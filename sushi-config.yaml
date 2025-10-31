@@ -30,7 +30,7 @@ dependencies:
   ihe.iti.balp:
     id: iheitibasicaudit
     uri: https://profiles.ihe.net/ITI/BALP/ImplementationGuide/ihe.iti.balp
-    version: 1.1.x
+    version: 1.1.4
   ihe.formatcode.fhir:
     id: iheformatcodefhir
     uri: https://profiles.ihe.net/fhir/ihe.formatcode.fhir/ImplementationGuide/ihe.formatcode.fhir
