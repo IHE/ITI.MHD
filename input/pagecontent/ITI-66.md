@@ -68,6 +68,9 @@ This parameter, of type date, specifies the time when the List was created. See 
 **designationType**:
 This IHE extension on parameters defined as [List-DesignationType](SearchParameter-List-DesignationType.html), of type token, specifies the designation type of the List. The value of the designation type element expresses contentType of submissionSet or the codeList of a Folder. Usually expressed in LOINC or SNOMED. Note that servers that do not support this extended search parameter will ignore it, and thus return more results than expected.
 
+**homeCommunityId**:
+This IHE extension on parameters defined as [IHE-HomeCommunityIds](SearchParameter-IHE-HomeCommunityIds.html), of type token, specifies the homeCommunityId value supplied in the List Resource. This parameter will only function when the [Targeted Communities Option](1332_actor_options.html#13327-target-communities-option) is declared, and where the backend also supports it (e.g., [XCA Targeted Communities](https://profiles.ihe.net/ITI/TF/Volume1/ch-18.html#18.2.6).)
+
 **identifier**:
 This parameter, of type token, specifies an identifier for this List. The search results represent the results of a search on List.identifier. See [ITI TF-2x: Appendix Z.2](https://profiles.ihe.net/ITI/TF/Volume2/ch-Z.html#z.2-query-parameters) for additional constraints on the use of the token search parameter type. 
 
@@ -188,6 +191,12 @@ would translate to:
 |current	| urn:oasis:names:tc:ebxml-regrep:StatusType:Approved |
 |superseded	| urn:oasis:names:tc:ebxml-regrep:StatusType:Deprecated |
 {: .grid}
+
+###### 2:3.66.4.1.3.2 Target Communities Option
+
+The Document Responder SHOULD populate the **homeCommunityIds** extension when a value for these are available and policy allows them to be populated. The population of these elements is identified in the [Target Communities Option](https://profiles.ihe.net/ITI/TF/Volume1/ch-18.html#18.2.6) but the extension population are allowed at anytime.
+
+The Document Responser declaring the **Target Communities Option** SHALL support the [IHE-HomeCommunityIds](SearchParameter-IHE-HomeCommunityIds.html) search parameter, and shall return an error when the homeCommunityId can not be fulfilled. The Document Consumer declaring the **Target Communities Option** MAY use this search parameter. Actors not declaring the **Target Communities Option** may support the search parameter. Support for the Search parameter SHALL be declared in the product/implementation CapabilityStatement.
 
 #### 2:3.66.4.2 Find Document Lists Response Message
 

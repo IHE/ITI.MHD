@@ -297,16 +297,18 @@ Usage: #inline
 Instance:   ex-findDocumentReferencesResponse
 InstanceOf: IHE.MHD.FindDocumentReferencesResponseMessage
 Title:      "Example of a Find Document References Response Message"
-Description: "Example of a Find Document References Bundle Search Set with a single DocumentReference"
+Description: "Example of a Find Document References Bundle Search Set with minimal DocumentReference, and one with a homeCommunityId and retrieveLocationURI value populated."
 Usage: #example
 * meta.security = http://terminology.hl7.org/CodeSystem/v3-ActReason#HTEST
 * type = #searchset
 * link[0].relation = "self"
 * link[0].url = "test.fhir.net/R4/fhir/DocumentReference?patient=9876&status=current"
-* total = 1
+* total = 2
 * timestamp = 2021-04-16T11:32:24Z
-* entry[0].fullUrl = "http://example.org/DocumentReference/in-DocumentReferenceMinimal"
-* entry[0].resource = in-DocumentReferenceMinimal
+* entry[+].fullUrl = "http://example.org/DocumentReference/in-DocumentReferenceMinimal"
+* entry[=].resource = in-DocumentReferenceMinimal
+* entry[+].fullUrl = "http://example.org/DocumentReference/in-DocumentReferenceMinimalCommunity"
+* entry[=].resource = in-DocumentReferenceMinimalCommunity
 
 Instance:   in-DocumentReferenceMinimal
 InstanceOf: IHE.MHD.Minimal.DocumentReference
@@ -322,3 +324,22 @@ Usage: #inline
 * status = #current
 * content.attachment.contentType = #text/plain
 * content.attachment.url = "http://example.com/nowhere.txt"
+
+Instance:   in-DocumentReferenceMinimalCommunity
+InstanceOf: IHE.MHD.Minimal.DocumentReference
+Title:      "DocumentReference for Minimal metadata with homeCommunityId"
+Description: "Example of a minimal DocumentReference resource with a homeCommunityId. This is very unlikely to be acceptable anywhere, but it is the minimum required. Note using UUIDs for the OIDs, because the tooling would not allow me to use the official OID root for extensions - 2.999 - https://oid-base.com/get/2.999"
+Usage: #inline
+* meta.security = http://terminology.hl7.org/CodeSystem/v3-ActReason#HTEST
+* masterIdentifier.system = "urn:ietf:rfc:3986"
+* masterIdentifier.value = "urn:oid:1.2.840.113556.1.8000.2554.53432.348.12973.17740.34205.4355.50220.62013"
+* identifier[entryUUID].system = "urn:ietf:rfc:3986"
+* identifier[entryUUID].value = "urn:uuid:7d5bb8ac-68ee-4926-85e7-b8aac8e1f09e"
+* identifier[entryUUID].use = #official
+* status = #current
+* content.attachment.contentType = #text/plain
+* content.attachment.url = "http://example.com/nowhere2.txt"
+* extension[homeCommunityId].valueIdentifier.system = "urn:ietf:rfc:3986"
+* extension[homeCommunityId].valueIdentifier.value = "urn:oid:1.2.840.113556.1.8000.2554.53432.348.12973.17740.34205.4355.50220.62013"
+* extension[retrieveLocationUID].valueIdentifier.system = "urn:ietf:rfc:3986"
+* extension[retrieveLocationUID].valueIdentifier.value = "urn:oid:1.2.840.113556.1.8000.2554.53432.348.12973.17740.34205.4355.50220.62014"

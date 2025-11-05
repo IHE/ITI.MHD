@@ -72,6 +72,8 @@ Description:    "A profile on the DocumentReference resource for MHD with minima
 * context.sourcePatientInfo 0..1 MS
 * context.related 0..*
 * relatesTo 0..* MS
+* extension contains HomeCommunityId named homeCommunityId 0..1
+* extension contains RetrieveLocationUID named retrieveLocationUID 0..1
 
 
 // equivalent to MHD DocumentReference Comprehensive UnContained Option

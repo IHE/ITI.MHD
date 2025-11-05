@@ -39,3 +39,45 @@ Invariant: mhd-startswithuuid
 Description: "value must start with urn:uuid:"
 Severity: #error
 Expression: "startsWith('urn:uuid:')"
+
+Extension: HomeCommunityId
+Id: ihe-HomeCommunityId
+Title: "The homeCommunityId where this artifact lives"
+Description: "The globally unique, immutable, identifier of the homeCommunityId entity where this artifact exists. The format of the identifier is an OID."
+* ^context[+].type = #element
+* ^context[=].expression = "DocumentReference"
+* ^context[+].type = #element
+* ^context[=].expression = "List"
+* value[x] only Identifier
+* valueIdentifier 1..1
+* valueIdentifier.system = "urn:ietf:rfc:3986" //(exactly)
+* valueIdentifier.value obeys mhd-startswithoid
+
+
+
+Extension: RetrieveLocationUID
+Id: ihe-RetrieveLocationUID
+Title: "The retrieveLocationUID where the document lives"
+Description: "The globally unique, immutable, identifier of the retrieveLocationUID entity where the document exists. The format of the identifier is an OID."
+* ^context[+].type = #element
+* ^context[=].expression = "DocumentReference"
+* value[x] only Identifier
+* valueIdentifier 1..1
+* valueIdentifier.system = "urn:ietf:rfc:3986" //(exactly)
+* valueIdentifier.value obeys mhd-startswithoid
+
+
+Instance: IHE-HomeCommunityIds
+InstanceOf: SearchParameter
+Title: "search on the IHE defined extension for homeCommunityId"
+Usage: #definition
+* url = "https://profiles.ihe.net/ITI/MHD/SearchParameter/IHE-HomeCommunityIds"
+* description = "This SearchParameter enables finding Lists by the homeCommunityId where DocumentReference, submissionSet, or folder exist."
+* name = "HomeCommunityId"
+* status = #active
+* code = #homeCommunityId
+* base[+] = #List
+* base[+] = #DocumentReference
+* expression = "(extension('https://profiles.ihe.net/ITI/MHD/StructureDefinition/ihe-HomeCommunityId').value.ofType(Identifier))"
+* type = #token
+

@@ -76,6 +76,9 @@ This parameter, of type token, specifies the kind of facility found in DocumentR
 **format**:
 This parameter, of type token, specifies the format of the DocumentReference Resource, or in Document Sharing nomenclature, the formatCode of the Document Entry. See [ITI TF-2x: Appendix Z.2](https://profiles.ihe.net/ITI/TF/Volume2/ch-Z.html#z.2-query-parameters) for additional constraints on the use of the token search parameter type.
 
+**homeCommunityId**:
+This IHE extension on parameters defined as [IHE-HomeCommunityIds](SearchParameter-IHE-HomeCommunityIds.html), of type token, specifies the homeCommunityId value supplied in the DocumentReference Resource. This parameter will only function when the [Targeted Communities Option](1332_actor_options.html#13327-target-communities-option) is declared, and where the backend also supports it (e.g., [XCA Targeted Communities](https://profiles.ihe.net/ITI/TF/Volume1/ch-18.html#18.2.6).)
+
 **identifier**:
 This parameter, of type token, specifies an identifier for this DocumentReference and/or the contained document. The search results represent the results of a search on DocumentReference.masterIdentifier and DocumentReference.identifier. See [ITI TF-2x: Appendix Z.2](https://profiles.ihe.net/ITI/TF/Volume2/ch-Z.html#z.2-query-parameters) for additional constraints on the use of the token search parameter type. 
 
@@ -245,6 +248,12 @@ Where the DocumentReference Resource being returned has an XDS Association, this
 Where the DocumentReference Resource being returned is being translated from an XDS DocumentEntry, there will be identifiers in the DocumentEntry (e.g., ReferenceIdList) that may be represented in the DocumentReference as Resource References. The Document Responder is not required to convert identifiers into Resource References, but it is allowed to do this conversion. For example an identifier in ReferenceIdList may simply be copied into DocumentReference.content.related.identifier. Alternatively the ReferenceIdList may be resolved to a Resource Reference and that reference be placed into DocumentReference.content.related.reference.
 
 Identifiers in XDS are encoded using the [Document Sharing CXi Metadata datatype](https://profiles.ihe.net/ITI/TF/Volume3/ch-4.2.html#4.2.3.1.7), which will indicate the kind of identifier. This kind of identifier shall be used when mapping values into DocumentReference elements (See [Appendix Z.9.1.2](https://profiles.ihe.net/ITI/TF/Volume2/ch-Z.html#z.9.1.2-xds-cxi-mapped-to-fhir-identifier-type) ). Specifically the `CXi` Identifier Type Code of `urn:ihe:iti:xds:2015:encounterId` would indicate the Identifier value be mapped into DocumentReference.encounter. 
+
+###### 2:3.67.4.2.2.1.6 Target Communities Option
+
+The Document Responder SHOULD populate the **homeCommunityIds** and **retrieveLocationURI** extensions when a value for these are available and policy allows them to be populated. The population of these elements is identified in the [Target Communities Option](https://profiles.ihe.net/ITI/TF/Volume1/ch-18.html#18.2.6) but the extensions are allowed at anytime.
+
+The Document Responser declaring the **Target Communities Option** SHALL support the [IHE-HomeCommunityIds](SearchParameter-IHE-HomeCommunityIds.html) search parameter, and shall return an error when the homeCommunityId can not be fulfilled. The Document Consumer declaring the **Target Communities Option** MAY use this search parameter. Actors not declaring the **Target Communities Option** may support the search parameter. Support for the Search parameter SHALL be declared in the product/implementation CapabilityStatement.
 
 ###### 2:3.67.4.2.2.2 Resource Bundling
 
