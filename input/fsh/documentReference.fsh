@@ -73,7 +73,7 @@ Description:    "A profile on the DocumentReference resource for MHD with minima
 * context.related 0..*
 * relatesTo 0..* MS
 * extension contains HomeCommunityId named homeCommunityId 0..1
-* extension contains RetrieveLocationUID named retrieveLocationUID 0..1
+* extension contains RetrieveLocationUID named repositoryUniqueId 0..1
 
 
 // equivalent to MHD DocumentReference Comprehensive UnContained Option
@@ -154,7 +154,8 @@ Title: "XDS and MHD Mapping"
 * relatesTo -> "DocumentEntry Associations"
 * relatesTo.code -> "DocumentEntry Associations.type"
 * relatesTo.target -> "DocumentEntry Associations.reference"
-
+* extension[homeCommunityId] -> "DocumentEntry.homeCommunityId"
+* extension[repositoryUniqueId] -> "DocumentEntry.repositoryUniqueId"
 
 Instance:   AssociationTypeVsRelatesTo
 InstanceOf: ConceptMap

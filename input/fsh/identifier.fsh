@@ -57,8 +57,8 @@ Description: "The globally unique, immutable, identifier of the homeCommunityId 
 
 Extension: RetrieveLocationUID
 Id: ihe-RetrieveLocationUID
-Title: "The retrieveLocationUID where the document lives"
-Description: "The globally unique, immutable, identifier of the retrieveLocationUID entity where the document exists. The format of the identifier is an OID."
+Title: "The repositoryUniqueId where the document lives"
+Description: "The globally unique, immutable, identifier of the repositoryUniqueId entity where the document exists. The format of the identifier is an OID."
 * ^context[+].type = #element
 * ^context[=].expression = "DocumentReference"
 * value[x] only Identifier

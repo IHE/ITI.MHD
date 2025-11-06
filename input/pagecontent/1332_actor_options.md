@@ -139,5 +139,5 @@ The Document Recipient will process the FHIR-Document accordingly to the persist
 
 ### 1:33.2.7 Target Communities Option
 
-The **Target Communities Option** adds support for homeCommunityId and retrieveLocationUID to the Document Responder and Document Consumer actors. Support includes populating the homeCommunityId and retrieveLocationUID when it is available and policy allows for the element to be populated. Document Responder SHALL support the search parameters, and the Document Consumer may use these search parameters.
+The **Target Communities Option** adds support for homeCommunityId and repositoryUniqueId to the Document Responder and Document Consumer actors. Support includes populating the homeCommunityId and repositoryUniqueId when it is available and policy allows for the element to be populated. Document Responder SHALL support the search parameters, and the Document Consumer may use these search parameters.
 

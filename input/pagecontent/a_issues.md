@@ -2,7 +2,7 @@
 
 ### next
 
-- Add homeCommunityId and retrieveLocationUID support on Document Responder and Document Consumer with option for Search
+- Add homeCommunityId and repositoryUniqueId support on Document Responder and Document Consumer with option for Search
 
 ### Signficant changes in MHD Version 4.2.3
 
