@@ -297,7 +297,7 @@ Usage: #inline
 Instance:   ex-findDocumentReferencesResponse
 InstanceOf: IHE.MHD.FindDocumentReferencesResponseMessage
 Title:      "Example of a Find Document References Response Message"
-Description: "Example of a Find Document References Bundle Search Set with minimal DocumentReference, and one with a homeCommunityId and retrieveLocationURI value populated."
+Description: "Example of a Find Document References Bundle Search Set with minimal DocumentReference, and one with a homeCommunityId value populated."
 Usage: #example
 * meta.security = http://terminology.hl7.org/CodeSystem/v3-ActReason#HTEST
 * type = #searchset
@@ -341,5 +341,4 @@ Usage: #inline
 * content.attachment.url = "http://example.com/nowhere2.txt"
 * extension[homeCommunityId].valueIdentifier.system = "urn:ietf:rfc:3986"
 * extension[homeCommunityId].valueIdentifier.value = "urn:oid:1.2.840.113556.1.8000.2554.53432.348.12973.17740.34205.4355.50220.62013"
-* extension[repositoryUniqueId].valueIdentifier.system = "urn:ietf:rfc:3986"
-* extension[repositoryUniqueId].valueIdentifier.value = "urn:oid:1.2.840.113556.1.8000.2554.53432.348.12973.17740.34205.4355.50220.62014"
+

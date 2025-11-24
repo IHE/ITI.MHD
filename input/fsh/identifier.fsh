@@ -55,29 +55,17 @@ Description: "The globally unique, immutable, identifier of the homeCommunityId 
 
 
 
-Extension: RetrieveLocationUID
-Id: ihe-RetrieveLocationUID
-Title: "The repositoryUniqueId where the document lives"
-Description: "The globally unique, immutable, identifier of the repositoryUniqueId entity where the document exists. The format of the identifier is an OID."
-* ^context[+].type = #element
-* ^context[=].expression = "DocumentReference"
-* value[x] only Identifier
-* valueIdentifier 1..1
-* valueIdentifier.system = "urn:ietf:rfc:3986" //(exactly)
-* valueIdentifier.value obeys mhd-startswithoid
-
-
-Instance: IHE-HomeCommunityIds
+Instance: IHE-TargetCommunityIdList
 InstanceOf: SearchParameter
 Title: "search on the IHE defined extension for homeCommunityId"
 Usage: #definition
-* url = "https://profiles.ihe.net/ITI/MHD/SearchParameter/IHE-HomeCommunityIds"
-* description = "This SearchParameter enables finding Lists by the homeCommunityId where DocumentReference, submissionSet, or folder exist."
-* name = "HomeCommunityId"
+* url = "https://profiles.ihe.net/ITI/MHD/SearchParameter/IHE-TargetCommunityIdList"
+* description = "This SearchParameter enables finding by the homeCommunityId where DocumentReference, submissionSet, or folder exist."
+* name = "TargetCommunityIdList"
 * status = #active
-* code = #homeCommunityId
+* code = #targetCommunityIdList
 * base[+] = #List
 * base[+] = #DocumentReference
-* expression = "(extension('https://profiles.ihe.net/ITI/MHD/StructureDefinition/ihe-HomeCommunityId').value.ofType(Identifier))"
+* expression = "(extension('https://profiles.ihe.net/ITI/MHD/StructureDefinition/IHE-TargetCommunityIdList').value.ofType(Identifier))"
 * type = #token
 

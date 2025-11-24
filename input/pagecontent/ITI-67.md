@@ -76,9 +76,6 @@ This parameter, of type token, specifies the kind of facility found in DocumentR
 **format**:
 This parameter, of type token, specifies the format of the DocumentReference Resource, or in Document Sharing nomenclature, the formatCode of the Document Entry. See [ITI TF-2x: Appendix Z.2](https://profiles.ihe.net/ITI/TF/Volume2/ch-Z.html#z.2-query-parameters) for additional constraints on the use of the token search parameter type.
 
-**homeCommunityId**:
-This IHE extension on parameters defined as [IHE-HomeCommunityIds](SearchParameter-IHE-HomeCommunityIds.html), of type token, specifies the homeCommunityId value supplied in the DocumentReference Resource. This parameter will only function when the [Targeted Communities Option](1332_actor_options.html#13327-target-communities-option) is declared, and where the backend also supports it (e.g., [XCA Targeted Communities](https://profiles.ihe.net/ITI/TF/Volume1/ch-18.html#18.2.6).)
-
 **identifier**:
 This parameter, of type token, specifies an identifier for this DocumentReference and/or the contained document. The search results represent the results of a search on DocumentReference.masterIdentifier and DocumentReference.identifier. See [ITI TF-2x: Appendix Z.2](https://profiles.ihe.net/ITI/TF/Volume2/ch-Z.html#z.2-query-parameters) for additional constraints on the use of the token search parameter type. 
 
@@ -102,6 +99,9 @@ This parameter, of type token, specifies the specific practice setting of the Do
 
 **status**:
 This parameter, of type token, specifies the status of the DocumentReference Resource, or in Document Sharing nomenclature, the availabilityStatus of the Document Entry. The Document Consumer shall populate the identifier portion of the token using one of the short codes in Table 2:3.67.4.1.2.1-1. The system portion of the token shall not be populated.
+
+**targetCommunityIdList**:
+This IHE extension on parameters defined as [IHE-TargetCommunityIdList](SearchParameter-IHE-TargetCommunityIdList.html), of type token, specifies the homeCommunityId value supplied in the DocumentReference Resource. This parameter will only function when the [Targeted Communities Option](1332_actor_options.html#13327-target-communities-option) is declared, and where the backend also supports it (e.g., [XCA Targeted Communities](https://profiles.ihe.net/ITI/TF/Volume1/ch-18.html#18.2.6).)
 
 **type**:
 This parameter, of type token, specifies the specific type of the DocumentReference resource or in Document Sharing nomenclature, the typeCode of the Document Entry. See [ITI TF-2x: Appendix Z.2](https://profiles.ihe.net/ITI/TF/Volume2/ch-Z.html#z.2-query-parameters) for additional constraints on the use of the token search parameter type.
@@ -171,6 +171,7 @@ The Document Responder is grouped with an XDS Document Consumer when it supports
 | security-label	| $XDSDocumentEntryConfidentialityCode |
 | format	| $XDSDocumentEntryFormatCode |
 | related (Note 4)	| $XDSDocumentEntryReferenceIdList |
+| targetCommunityIdList | $targetCommunityIdList |
 {: .grid}
 
 Note 1: This FindDocuments parameter is used when the greater or equal to (`ge`) parameter modifier is used on the given parameter. 
@@ -251,9 +252,9 @@ Identifiers in XDS are encoded using the [Document Sharing CXi Metadata datatype
 
 ###### 2:3.67.4.2.2.1.6 Target Communities Option
 
-The Document Responder SHOULD populate the **homeCommunityIds** and **retrieveLocationURI** extensions when a value for these are available and policy allows them to be populated. The population of these elements is identified in the [Target Communities Option](https://profiles.ihe.net/ITI/TF/Volume1/ch-18.html#18.2.6) but the extensions are allowed at anytime.
+The Document Responder SHOULD populate the **homeCommunityId** extension when a value is available and policy allows it to be populated. The population of this element is identified in the [Target Communities Option](1332_actor_options.html#13327-target-communities-option) but the extensions are allowed at is time.
 
-The Document Responser declaring the **Target Communities Option** SHALL support the [IHE-HomeCommunityIds](SearchParameter-IHE-HomeCommunityIds.html) search parameter, and shall return an error when the homeCommunityId can not be fulfilled. The Document Consumer declaring the **Target Communities Option** MAY use this search parameter. Actors not declaring the **Target Communities Option** may support the search parameter. Support for the Search parameter SHALL be declared in the product/implementation CapabilityStatement.
+The Document Responser declaring the **Target Communities Option** SHALL support the [targetCommunityIdList](SearchParameter-IHE-TargetCommunityIdList.html) search parameter, and shall return an error when the homeCommunityId can not be fulfilled, See [XCA Target Communities Option](https://profiles.ihe.net/ITI/TF/Volume1/ch-18.html#18.2.6). The Document Consumer declaring the **Target Communities Option** MAY use this search parameter. Actors not declaring the **Target Communities Option** may support the search parameter. Support for the Search parameter SHALL be declared in the product/implementation CapabilityStatement.
 
 ###### 2:3.67.4.2.2.2 Resource Bundling
 

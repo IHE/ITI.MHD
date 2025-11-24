@@ -227,10 +227,10 @@
               "documentation": "This IHE extension on parameters defined as SearchParameter/List-SourceId, of type token, specifies the source (author) value supplied in the List Resource."
             },
             {
-              "name": "homeCommunityIds",
-              "definition": "https://profiles.ihe.net/ITI/MHD/SearchParameter/IHE-HomeCommunityIds",
+              "name": "targetCommunityIdList",
+              "definition": "https://profiles.ihe.net/ITI/MHD/SearchParameter/IHE-TargetCommunityIdList",
               "type": "token",
-              "documentation": "This SearchParameter enables finding Lists by the homeCommunityId where DocumentReference, submissionSet, or folder exist."
+              "documentation": "This SearchParameter enables finding by the homeCommunityId where DocumentReference, submissionSet, or folder exist."
             }
           ]
         },

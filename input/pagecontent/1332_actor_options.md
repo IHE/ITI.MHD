@@ -47,14 +47,14 @@ between options when applicable are specified in notes.
             <td><a href="#13326-iti-65-fhir-documents-publish-option">ITI-65 FHIR documents Publish</a></td>
         </tr>
         <tr>
-            <td rowspan='1'>Document Consumer</td>
+            <td rowspan='2'>Document Consumer</td>
             <td><a href="#13323-uncontained-reference-option">UnContained Reference</a></td>
             </tr>
             <tr>
             <td><a href="#13327-target-communities-option">Target Communities</a></td>
         </tr>
         <tr>
-            <td rowspan='2'>Document Responder</td>
+            <td rowspan='3'>Document Responder</td>
             <td><a href="#13322-xds-on-fhir-option">XDS on FHIR</a></td>
             </tr>
             <tr>
@@ -139,5 +139,5 @@ The Document Recipient will process the FHIR-Document accordingly to the persist
 
 ### 1:33.2.7 Target Communities Option
 
-The **Target Communities Option** adds support for homeCommunityId and repositoryUniqueId to the Document Responder and Document Consumer actors. Support includes populating the homeCommunityId and repositoryUniqueId when it is available and policy allows for the element to be populated. Document Responder SHALL support the search parameters, and the Document Consumer may use these search parameters.
+The **Target Communities Option** adds support for homeCommunityId to the Document Responder and Document Consumer actors. Support includes populating the homeCommunityId when it is available and policy allows for the element to be populated. Document Responder SHALL support the search parameter, and the Document Consumer may use these search parameter.
 

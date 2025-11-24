@@ -73,7 +73,6 @@ Description:    "A profile on the DocumentReference resource for MHD with minima
 * context.related 0..*
 * relatesTo 0..* MS
 * extension contains HomeCommunityId named homeCommunityId 0..1
-* extension contains RetrieveLocationUID named repositoryUniqueId 0..1
 
 
 // equivalent to MHD DocumentReference Comprehensive UnContained Option
@@ -131,7 +130,6 @@ Title: "XDS and MHD Mapping"
 * content.format -> "DocumentEntry.formatCode"
 * content.attachment.hash -> "DocumentEntry.hash"
 * context.facilityType -> "DocumentEntry.healthcareFacilityTypeCode"
-// DocumentEntry.homeCommunityId -- does not actually exist as metadata on DocumentEntry, and does not have a place in DocumentReference. might be encoded in the content.attachment.url
 * content.attachment.language -> "DocumentEntry.languageCode"
 * authenticator -> "DocumentEntry.legalAuthenticator"
 * custodian -> "not mapped"
@@ -155,7 +153,6 @@ Title: "XDS and MHD Mapping"
 * relatesTo.code -> "DocumentEntry Associations.type"
 * relatesTo.target -> "DocumentEntry Associations.reference"
 * extension[homeCommunityId] -> "DocumentEntry.homeCommunityId"
-* extension[repositoryUniqueId] -> "DocumentEntry.repositoryUniqueId"
 
 Instance:   AssociationTypeVsRelatesTo
 InstanceOf: ConceptMap
