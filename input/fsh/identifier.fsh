@@ -66,6 +66,6 @@ Usage: #definition
 * code = #targetCommunityIdList
 * base[+] = #List
 * base[+] = #DocumentReference
-* expression = "(extension('https://profiles.ihe.net/ITI/MHD/SearchParameter/IHE-TargetCommunityIdList').value.ofType(Identifier))"
+* expression = "(extension('https://profiles.ihe.net/ITI/MHD/StructureDefinition/ihe-HomeCommunityId').value.ofType(Identifier))"
 * type = #token
 
