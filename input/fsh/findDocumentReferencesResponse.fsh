@@ -12,7 +12,8 @@ Description:    "A profile on the Find Document References Response message for 
 * entry contains DocumentReference 0..*
 * entry[DocumentReference] ^short = "DocumentReference"
 * entry[DocumentReference].resource 1..
-* entry[DocumentReference].resource only MinimalDocumentReference
+//* entry[DocumentReference].resource only MinimalDocumentReference
+* entry[DocumentReference].resource only DocumentReference
 
 Profile:        FindDocumentReferencesComprehensiveResponse
 Parent:         Bundle
