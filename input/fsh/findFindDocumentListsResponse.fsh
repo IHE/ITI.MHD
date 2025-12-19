@@ -7,7 +7,7 @@ Description:    "A profile on the Find Document Lists Response message for ITI-6
 * total 1..
 * entry ^slicing.discriminator[0].type = #profile
 * entry ^slicing.discriminator[0].path = "resource"
-* entry ^slicing.rules = #closed
+* entry ^slicing.rules = #open
 * entry contains 
   SubmissionSet 0..* and
   Folder 0..*
