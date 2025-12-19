@@ -20,7 +20,7 @@ The Source Code System urn:ietf:rfc:3986 is not fully defined and populated, and
 # some examples are underpopulated, the full population is not important for the use-case being explained
 WARNING: Bundle/ex-fhir-document-bundle: Bundle.entry[4].resource: Best Practice Recommendation: In general, all observations should have a performer
 WARNING: Bundle/ex-fhir-document-bundle: Bundle.entry[4].resource: Best Practice Recommendation: In general, all observations should have an effective[x] ()
-WARNING: Bundle/ex-comprehensiveProvideDocumentBundleDocument: Bundle.entry[2].resource.entry[0].resource/*Composition/180f219f-97a8-486d-99d9-ed631fe4fc57*/: Constraint failed: dom-6: 'A resource should have narrative for robust management' (defined in http://hl7.org/fhir/StructureDefinition/DomainResource) (Best Practice Recommendation)
+Constraint failed: dom-6: 'A resource should have narrative for robust management (text.`div`.exists())' (defined in http://hl7.org/fhir/StructureDefinition/DomainResource) (Best Practice Recommendation)
 WARNING: Bundle/ex-comprehensiveProvideDocumentBundleDocument: Bundle.entry[2].resource.entry[4].resource: Best Practice Recommendation: In general, all observations should have a performer
 WARNING: Bundle/ex-comprehensiveProvideDocumentBundleDocument: Bundle.entry[2].resource.entry[4].resource: Best Practice Recommendation: In general, all observations should have an effective[x] ()
 
