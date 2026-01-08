@@ -25,14 +25,14 @@ The MHD Profile supports a broad set of the XDS use cases and functionality whil
 * Electronic measurement devices participating in XDW workflows and pulling medical history documents from an HIE.
 * A General Practitioner physician’s office with minimal IT capabilities using a mobile application to connect to an HIE or EHR.
 
-These specific use cases can be generalized into two broad use cases. The first is the general use case of publishing new document(s) from the mobile device. The second general use case is where the mobile device needs to discover available documents and retrieve documents of interest. There are clearly complex use cases that combine these two general use cases; however, they are not specifically described in this profile. When more complex use cases are encountered, use of one of the more robust Document Sharing profiles is more appropriate. 
+These specific use cases can be generalized into two broad use cases. The first is the general use case of publishing new document(s) from the mobile device. The second general use case is where the mobile device needs to discover available documents and retrieve documents of interest. There are clearly complex use cases that combine these two general use cases; however, they are not specifically described in this profile. When more complex use cases are encountered, use of one of the more robust Document Sharing profiles is more appropriate.
 
 ### 1:33.4.2 Use Case 1: Publication of New Documents
 
 #### 1:33.4.2.1 Publication of New Documents Use Case Description
 In this use case, a new document or set of documents is published from the mobile device. For example, a mobile device is a medical device that is submitting new health measurements, or a mobile device has a user-interface used to capture user input such as a Patient Consent. The mobile device does not need to be classically mobile, just simply one using the http REST technology commonly available on mobile devices. This device-created content is formed by the application, implementing the MHD Document Source, into a Document and submitted with the metadata.
 
-This use case presumes that the mobile device knows or discovers the patient identity. The patient identity might be obtained through some IHE transactional method such as the Patient Demographics Query for Mobile [PDQm](https://profiles.ihe.net/ITI/TF/Volume1/ch-38.html) or Patient Identifier Cross-Reference for Mobile [PIXm](https://profiles.ihe.net/ITI/TF/Volume1/ch-41.html) Profile. The patient id might simply be entered via some device interface (RFID, Bar-Code), a user interface, or be specified in a configuration setting (e.g., mobile PHR application). The use case also allows for identity cross-referencing to be implemented by the Document Recipient. 
+This use case presumes that the mobile device knows or discovers the patient identity. The patient identity might be obtained through some IHE transactional method such as the Patient Demographics Query for Mobile [PDQm](https://profiles.ihe.net/ITI/TF/Volume1/ch-38.html) or Patient Identifier Cross-Reference for Mobile [PIXm](https://profiles.ihe.net/ITI/TF/Volume1/ch-41.html) Profile. The patient id might simply be entered via some device interface (RFID, Bar-Code), a user interface, or be specified in a configuration setting (e.g., mobile PHR application). The use case also allows for identity cross-referencing to be implemented by the Document Recipient.
 
 This use case presumes that the sending mobile device knows the location of the receiving URL endpoints, likely through a configuration setting, or through a workflow driven by a web interface.
 
@@ -50,10 +50,12 @@ The publication of a new document(s) is done using the Provide Document Bundle [
 ### 1:33.4.3 Use Case 2: Discovery and Retrieval of Existing Documents
 
 #### 1:33.4.3.1 Discovery and Retrieval of Existing Documents Use Case Description
-In this use case, the mobile device needs access to existing documents. For example, a mobile device involved in a workflow needs to determine the current state of the workflow, or the mobile device needs to discover the most current medical summary. 
+In this use case, the mobile device needs access to existing documents. For example, a mobile device involved in a workflow needs to determine the current state of the workflow, or the mobile device needs to discover the most current medical summary. In some cases, the device may even need to find documents based on their content.
 
 #### 1:33.4.3.2 Discovery Retrieval of Existing Documents Process Flow
 The Find Document References [\[ITI-67\]](ITI-67.html) transaction is used to issue parameterized queries that result in a list of DocumentReference Resources, where a DocumentReference Resource carries the XDS DocumentEntry metadata, which is metadata about a document.
+
+If Document Consumer and Document Responder support the Full-Text Search Option, the Find Document References [\[ITI-67\]](ITI-67.html) transaction can be further refined to search the content of documents as well in order to identify matching DocumentReferences.
 
 Alternatively, the Find Document Lists [\[ITI-66\]](ITI-66.html) transaction is used to issue parameterized queries that result in a set of List Resources, where a List Resource carries the XDS SubmissionSet metadata for a set of DocumentEntry objects that were published as a set, or XDS Folder metadata for a set of DocumentEntry objects that are said to be members of the same grouping.
 
@@ -68,9 +70,9 @@ The Retrieve Document [\[ITI-68\]](ITI-68.html) transaction is used to get the d
 
 
 ### 1:33.4.4 Use Case 3: Generate Metadata and Publish Process Flow
-An alternative flow to Use Case 1, supports the case where the Document Source has only a structured and coded document such as CDA, or FHIR-Document. The Document Recipient inspects the document and generates a DocumentReference. The Document Recipient may need to create a SubmissionSet depending on the persistance and grouping requirements. 
+An alternative flow to Use Case 1, supports the case where the Document Source has only a structured and coded document such as CDA, or FHIR-Document. The Document Recipient inspects the document and generates a DocumentReference. The Document Recipient may need to create a SubmissionSet depending on the persistance and grouping requirements.
 
-The Generate Metadata is a FHIR Operation defined in the Generate Metadata [\[ITI-106\]](ITI-106.html) transaction. 
+The Generate Metadata is a FHIR Operation defined in the Generate Metadata [\[ITI-106\]](ITI-106.html) transaction.
 
 <div>
 {%include usecase3-processflow.svg%}
