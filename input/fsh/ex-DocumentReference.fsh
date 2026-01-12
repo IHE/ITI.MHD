@@ -8,7 +8,6 @@ Usage: #example
 * identifier[uniqueId].value = "urn:oid:1.2.840.113556.1.8000.2554.53432.348.12973.17740.34205.4355.50220.62012"
 * identifier[entryUUID].system = "urn:ietf:rfc:3986"
 * identifier[entryUUID].value = "urn:uuid:7d5bb8ac-68ee-4926-85e7-b8aac8e1f09d"
-* identifier[entryUUID].use = #official
 * status = #current
 * content.attachment.contentType = #text/plain
 * content.attachment.url = "http://example.com/nowhere.txt"
@@ -23,7 +22,6 @@ Usage: #example
 * identifier[uniqueId].value = "urn:oid:1.2.840.113556.1.8000.2554.53432.348.12973.17740.34205.4355.50220.62012"
 * identifier[entryUUID].system = "urn:ietf:rfc:3986"
 * identifier[entryUUID].value = "urn:uuid:7d5bb8ac-68ee-4926-85e7-b8aac8e1f09d"
-* identifier[entryUUID].use = #official
 * status = #current
 * content.attachment.contentType = #text/plain
 * content.attachment.url = "http://example.com/nowhere.txt"
@@ -40,7 +38,6 @@ Usage: #example
 * identifier[uniqueId].value = "urn:oid:1.2.840.113556.1.8000.2554.58783.21864.3474.19410.44358.58254.41281.46340"
 * identifier[entryUUID].system = "urn:ietf:rfc:3986"
 * identifier[entryUUID].value = "urn:uuid:0c287d32-01e3-4d87-9953-9fcc9404eb21"
-* identifier[entryUUID].use = #official
 * status = #current
 * content.attachment.contentType = #text/plain
 * content.attachment.url = "http://example.com/nowhere.txt"
@@ -67,7 +64,6 @@ Usage: #example
 * identifier[uniqueId].value = "urn:oid:1.2.840.113556.1.8000.2554.58783.21864.3474.19410.44358.58254.41281.46340"
 * identifier[entryUUID].system = "urn:ietf:rfc:3986"
 * identifier[entryUUID].value = "urn:uuid:0c287d32-01e3-4d87-9953-9fcc9404eb21"
-* identifier[entryUUID].use = #official
 * status = #current
 * content.attachment.contentType = #text/plain
 * content.attachment.url = "http://example.com/nowhere.txt"
@@ -112,7 +108,6 @@ Usage: #example
 * identifier[uniqueId].value = "urn:oid:1.2.840.113556.1.8000.2554.58783.21864.3474.19410.44358.58254.41281.46340"
 * identifier[entryUUID].system = "urn:ietf:rfc:3986"
 * identifier[entryUUID].value = "urn:uuid:0c287d32-01e3-4d87-9953-9fcc9404eb21"
-* identifier[entryUUID].use = #official
 * status = #current
 * content.attachment.contentType = #text/plain
 * content.attachment.url = "http://example.com/nowhere.txt"
@@ -165,7 +160,6 @@ Usage: #example
 * identifier[uniqueId].value = "urn:oid:1.2.840.113556.1.8000.2554.58783.21864.3474.19410.44358.58254.41281.47340"
 * identifier[entryUUID].system = "urn:ietf:rfc:3986"
 * identifier[entryUUID].value = "urn:uuid:0c287d32-01e3-4d87-9953-9fcc9407eb21"
-* identifier[entryUUID].use = #official
 * status = #current
 * content.attachment.contentType = #text/plain
 // This URL would be used to retrieve the content, and in this case that is when the content would be created
@@ -218,7 +212,6 @@ Usage: #example
 * identifier[uniqueId].value = "urn:oid:1.2.840.113556.1.8000.2554.58783.21864.3474.19410.44358.58254.41281.57340"
 * identifier[entryUUID].system = "urn:ietf:rfc:3986"
 * identifier[entryUUID].value = "urn:uuid:0c287d32-01e3-4d87-9953-9fc59407eb21"
-* identifier[entryUUID].use = #official
 * status = #current
 * content.attachment.contentType = #text/plain
 // This URL would be used to retrieve the content, and in this case that is when the content would be created
@@ -251,7 +244,6 @@ Usage: #example
 * identifier[uniqueId].value = "urn:oid:1.2.840.113556.1.8000.2554.58783.21864.3474.19410.44358.58254.41381.57340"
 * identifier[entryUUID].system = "urn:ietf:rfc:3986"
 * identifier[entryUUID].value = "urn:uuid:0c287d32-01e3-4d87-9953-91c59407eb21"
-* identifier[entryUUID].use = #official
 * status = #current
 * content.attachment.contentType = #text/plain
 * type = http://loinc.org#60591-5
@@ -324,7 +316,6 @@ Usage: #inline
 * identifier[uniqueId].value = "urn:oid:1.2.840.113556.1.8000.2554.53432.348.12973.17740.34205.4355.50220.62012"
 * identifier[entryUUID].system = "urn:ietf:rfc:3986"
 * identifier[entryUUID].value = "urn:uuid:7d5bb8ac-68ee-4926-85e7-b8aac8e1f09d"
-* identifier[entryUUID].use = #official
 * status = #current
 * content.attachment.contentType = #text/plain
 * content.attachment.url = "http://example.com/nowhere.txt"

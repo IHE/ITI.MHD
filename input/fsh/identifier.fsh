@@ -6,9 +6,9 @@ Description: "uniqueId Identifier
 
 - see [Appendix Z](https://profiles.ihe.net/ITI/TF/Volume2/ch-Z.html#z.9.1-identifier-type)"
 * system 1..
-* use 1..
-* use = #usual
 * value 1..
+* type 1..1
+* type = MHDIdentifierType#uniqueId
 
 Profile: SubmissionSetUniqueIdIdentifier
 Parent: UniqueIdIdentifier
@@ -32,10 +32,27 @@ Description: "entryUUID Identifier holding a UUID"
 * system = "urn:ietf:rfc:3986" //(exactly)
 * value 1..
 * value obeys mhd-startswithuuid
-* use 1..
-* use = #official
+* type 1..1
+* type = MHDIdentifierType#entryUUID
 
 Invariant: mhd-startswithuuid
 Description: "value must start with urn:uuid:"
 Severity: #error
 Expression: "startsWith('urn:uuid:')"
+
+CodeSystem: MHDIdentifierType
+Id: IHE.MHD.MHDIdentifierType
+Title: "IHE MHD Identifier Types"
+Description: "Code System for Identifier.type values defined in IHE MHD"
+* ^caseSensitive = true
+* ^experimental = false
+* #entryUUID "Identifier type for XDS entryUUID"
+* #uniqueId "Identifier type for XDS UniqueId"
+
+ValueSet: MHDIdentifierTypeVS
+Id: IHE.MHD.MHDIdentifierTypeVS
+Title: "IHE MHD Identifier Types ValueSet"
+Description: "ValueSet for Identifier.type values defined in IHE MHD"
+* ^experimental = false
+* MHDIdentifierType#entryUUID
+* MHDIdentifierType#uniqueId
