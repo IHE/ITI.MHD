@@ -54,12 +54,10 @@ Instance: aaaaaaaa-bbbb-cccc-dddd-e00888800002
 InstanceOf: IHE.MHD.Comprehensive.DocumentReference
 Usage: #inline
 * meta.security = $v3-ActReason#HTEST
-* masterIdentifier.system = "urn:ietf:rfc:3986"
-* masterIdentifier.value = "urn:uuid:0c3151bd-1cbf-4d64-b04d-cd9187a4c6e0"
-* masterIdentifier.use = #usual
+* identifier[uniqueId].system = "urn:ietf:rfc:3986"
+* identifier[uniqueId].value = "urn:uuid:0c3151bd-1cbf-4d64-b04d-cd9187a4c6e0"
 * identifier[entryUUID].system = "urn:ietf:rfc:3986"
 * identifier[entryUUID].value = "urn:uuid:7d5bb8ac-68ee-4926-85e7-b8aac8e1f09d"
-* identifier[entryUUID].use = #official
 * status = #current
 * type = $loinc#28655-9
 * category = $loinc#11369-6

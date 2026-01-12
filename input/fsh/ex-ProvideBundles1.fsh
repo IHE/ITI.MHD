@@ -108,8 +108,8 @@ Title:      "DocumentReference for Minimal metadata"
 Description: "Example of a minimal DocumentReference resource. This points at a Binary also in the bundle."
 Usage: #inline
 * meta.security = http://terminology.hl7.org/CodeSystem/v3-ActReason#HTEST
-* masterIdentifier.system = "urn:ietf:rfc:3986"
-* masterIdentifier.value = "urn:oid:1.2.840.113556.1.8000.2554.53432.348.12973.17740.34205.4355.50220.62012"
+* identifier[uniqueId].system = "urn:ietf:rfc:3986"
+* identifier[uniqueId].value = "urn:oid:1.2.840.113556.1.8000.2554.53432.348.12973.17740.34205.4355.50220.62012"
 * status = #current
 * subject = Reference(urn:uuid:aaaaaaaa-bbbb-cccc-dddd-e00111100004)
 * content.format = http://ihe.net/fhir/ihe.formatcode.fhir/CodeSystem/formatcode#urn:ihe:iti:xds-sd:text:2008
