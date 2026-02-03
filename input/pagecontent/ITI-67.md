@@ -302,6 +302,8 @@ The Document Consumer shall process the results according to application-defined
 Document Responders implementing this transaction shall provide a CapabilityStatement Resource as described in [ITI TF-2x: Appendix Z.3](https://profiles.ihe.net/ITI/TF/Volume2/ch-Z.html#z.3-capabilitystatement-resource) indicating the transaction has been implemented.
 - Requirements CapabilityStatement for [Document Consumer](CapabilityStatement-IHE.MHD.DocumentConsumer.html)
 - Requirements CapabilityStatement for [Document Responder](CapabilityStatement-IHE.MHD.DocumentResponder.html)
+- Requirements CapabilityStatement for [Document Consumer with Full-Text Search Option](CapabilityStatement-IHE.MHD.DocumentConsumer.FullTextSearch.html)
+- Requirements CapabilityStatement for [Document Responder with Full-Text Search Option](CapabilityStatement-IHE.MHD.DocumentResponder.FullTextSearch.html)
 
 ### 2:3.67.5 Security Considerations
 
