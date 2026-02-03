@@ -36,4 +36,4 @@ Usage: #example
     * extension[matchSnippet][+]
       * extension[snippet].valueString = "A history of <match>hypertension</match> was noted during the previous hospital admission."
       * extension[pageNumber].valueString = "23"
-    * extension[totalHits].valueInteger = 1
+    * extension[totalHits].valueInteger = 2
