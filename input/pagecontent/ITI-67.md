@@ -275,10 +275,6 @@ Delayed Document Assembly are indicated in the DocumentReference by the Document
 Informative note: When the Document Consumer retrieves the document using the Document location, then the retrieved document actual size and hash is updated in the DocumentReference. In this way the Document Consumer may retrieve the updated DocumentReference after successful retrieval of the document to find the size and hash for content integrity validation.
 
 
-###### 2:3.67.4.2.2.1.4 Full-Text Search Option
-
-TODO: Describe Snippet mechanism/extension(s)
-
 ###### 2:3.67.4.2.2.1.4 XDS Associations
 
 Where the DocumentReference Resource being returned has an XDS Association, this shall be represented in the DocumentReference.relatesTo element. Where the DocumentReference.relatesTo.target element holds the Reference to the other DocumentReference Resource, and the DocumentReference.relatesTo.code element holds the relationship type translated using the [AssociationType vs RelatesTo ConceptMap](ConceptMap-AssociationTypeVsRelatesTo.html).
@@ -288,6 +284,43 @@ Where the DocumentReference Resource being returned has an XDS Association, this
 Where the DocumentReference Resource being returned is being translated from an XDS DocumentEntry, there will be identifiers in the DocumentEntry (e.g., ReferenceIdList) that may be represented in the DocumentReference as Resource References. The Document Responder is not required to convert identifiers into Resource References, but it is allowed to do this conversion. For example an identifier in ReferenceIdList may simply be copied into DocumentReference.content.related.identifier. Alternatively the ReferenceIdList may be resolved to a Resource Reference and that reference be placed into DocumentReference.content.related.reference.
 
 Identifiers in XDS are encoded using the [Document Sharing CXi Metadata datatype](https://profiles.ihe.net/ITI/TF/Volume3/ch-4.2.html#4.2.3.1.7), which will indicate the kind of identifier. This kind of identifier shall be used when mapping values into DocumentReference elements (See [Appendix Z.9.1.2](https://profiles.ihe.net/ITI/TF/Volume2/ch-Z.html#z.9.1.2-xds-cxi-mapped-to-fhir-identifier-type) ). Specifically the `CXi` Identifier Type Code of `urn:ihe:iti:xds:2015:encounterId` would indicate the Identifier value be mapped into DocumentReference.encounter.
+
+
+###### 2:3.67.4.2.2.1.6 Full-Text Search Option
+
+The [Full-Text Search Match Snippet](./StructureDefinition-full-text-search-match-snippet.html) and the [Full-Text Search Match Total Hits](./StructureDefinition-full-text-search-match-total-hits.html) extensions are used in the context of the Full-Text Search Option to provide a more detailed representation of search results. 
+
+The Match Snippet extension is intended to extract relevant text excerpts (snippets) from a document that contain the searched term. These snippets are provided in the extension’s value element and highlight the matched term using the <i>&lt;match&gt; &lt;/match&gt;</i> tag. In addition, the page number of the document on which the match was found is indicated. A Document Responder shall return a snippet for each match found within a document. If the number of identified snippets exceeds ten, the Document Responder may return only the first ten snippets.
+
+The Match Total Hits extension provides an aggregated overview of the search results within a document. It indicates the total number of matches found across the entire document based on the full-text search. A Document Responder shall populate the Match Total Hits extension within the search element of each entry in the Bundle representing the full-text search result set. The Match Total Hits extension shall specify the total number of matches found within the document as an integer value. This value reflects the total number of matches across the entire document and is not limited to the number of returned snippets.
+
+**Full-Text Search Match Example**
+
+```json
+"search": {
+  "extension": [
+    {
+      "url": "https://profiles.ihe.net/ITI/MHD/StructureDefinition/full-text-search-match-snippet",
+      "extension": [
+        {
+          "url": "snippet",
+          "valueString": "The patient was diagnosed with <match>hypertension</match> and started on antihypertensive therapy."
+        },
+        {
+          "url": "pageNumber",
+          "valueString": "1"
+        }
+      ]
+    },
+    {
+      "url": "https://profiles.ihe.net/ITI/MHD/StructureDefinition/full-text-search-match-total-hits",
+      "valueInteger": 1
+    }
+  ],
+  "mode": "match",
+  "score": 0.9
+}
+```
 
 ###### 2:3.67.4.2.2.2 Resource Bundling
 
