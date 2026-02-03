@@ -31,8 +31,8 @@ Description:    "A profile on the Find Document References Response message for 
       The score element indicates the relevance value of a document in the context of a full-text search. This value is calculated based on the degree of correspondence between the search query and the document content. A higher score indicates a stronger relevance to the specified search criteria.
       """
     * extension contains
-      FullTextSearchMatchSnippet named MatchSnippet 0.. and
-      FullTextSearchMatchTotalHits named TotalHits 0..1
+      FullTextSearchMatchSnippet named matchSnippet 0.. and
+      FullTextSearchMatchTotalHits named totalHits 0..1
 
 
 Extension: FullTextSearchMatchSnippet
@@ -43,14 +43,14 @@ Description: "This extension contains a text snippet describing the context of a
 * ^context.expression = "Bundle.entry.search"
 * extension ^slicing.rules = #closed
 * extension contains
-    Snippet 0..1 and
-    PageNumber 0..1
-* extension[Snippet]
+    snippet 0..1 and
+    pageNumber 0..1
+* extension[snippet]
   * value[x] only string
   * valueString 1..1
     * ^short = "Human-readable text snippet describing the context of the search match."
     * ^definition = "This value contains a short, human-readable text snippet that describes the context of the search match. It enables quick orientation by presenting relevant content from the identified document or resource."
-* extension[PageNumber]
+* extension[pageNumber]
   * value[x] only string
   * valueString 1..1
     * ^short = "For paginated documents (e.g. PDF), indicates the page on which the full-text search match was found."

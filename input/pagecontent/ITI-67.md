@@ -279,10 +279,6 @@ Delayed Document Assembly are indicated in the DocumentReference by the Document
 Informative note: When the Document Consumer retrieves the document using the Document location, then the retrieved document actual size and hash is updated in the DocumentReference. In this way the Document Consumer may retrieve the updated DocumentReference after successful retrieval of the document to find the size and hash for content integrity validation.
 
 
-###### 2:3.67.4.2.2.1.4 Full-Text Search Option
-
-TODO: Describe Snippet mechanism/extension(s)
-
 ###### 2:3.67.4.2.2.1.4 XDS Associations
 
 Where the DocumentReference Resource being returned has an XDS Association, this shall be represented in the DocumentReference.relatesTo element. Where the DocumentReference.relatesTo.target element holds the Reference to the other DocumentReference Resource, and the DocumentReference.relatesTo.code element holds the relationship type translated using the [AssociationType vs RelatesTo ConceptMap](ConceptMap-AssociationTypeVsRelatesTo.html).
@@ -298,6 +294,42 @@ Identifiers in XDS are encoded using the [Document Sharing CXi Metadata datatype
 The Document Responder SHOULD populate the **homeCommunityId** extension when a value is available and policy allows it to be populated. The population of this element is identified in the [Target Communities Option](1332_actor_options.html#13327-target-communities-option).
 
 The Document Responder declaring the **Target Communities Option** shall support the [targetCommunityIdList](SearchParameter-IHE-TargetCommunityIdList.html) search parameter, and shall return an error when the homeCommunityId can not be fulfilled, See [XCA Target Communities Option](https://profiles.ihe.net/ITI/TF/Volume1/ch-18.html#18.2.6). The Document Consumer declaring the **Target Communities Option** MAY use this search parameter. Actors not declaring the **Target Communities Option** may support the search parameter. Support for the Search parameter shall be declared in the product/implementation CapabilityStatement.
+
+###### 2:3.67.4.2.2.1.6 Full-Text Search Option
+
+The [Full-Text Search Match Snippet](./StructureDefinition-full-text-search-match-snippet.html) and the [Full-Text Search Match Total Hits](./StructureDefinition-full-text-search-match-total-hits.html) extensions are used in the context of the Full-Text Search Option to provide a more detailed representation of search results. 
+
+The Match Snippet extension is intended to extract relevant text excerpts (snippets) from a document that contain the searched term. These snippets are provided in the extension’s value element and highlight the matched term using the <i>&lt;match&gt; &lt;/match&gt;</i> tag. In addition, the page number of the document on which the match was found is indicated. A Document Responder shall return a snippet for each match found within a document. If the number of identified snippets exceeds ten, the Document Responder may return only the first ten snippets.
+
+The Match Total Hits extension provides an aggregated overview of the search results within a document. It indicates the total number of matches found across the entire document based on the full-text search. A Document Responder shall populate the Match Total Hits extension within the search element of each entry in the Bundle representing the full-text search result set. The Match Total Hits extension shall specify the total number of matches found within the document as an integer value. This value reflects the total number of matches across the entire document and is not limited to the number of returned snippets.
+
+**Full-Text Search Match Example**
+
+```json
+"search": {
+  "extension": [
+    {
+      "url": "https://profiles.ihe.net/ITI/MHD/StructureDefinition/full-text-search-match-snippet",
+      "extension": [
+        {
+          "url": "snippet",
+          "valueString": "The patient was diagnosed with <match>hypertension</match> and started on antihypertensive therapy."
+        },
+        {
+          "url": "pageNumber",
+          "valueString": "1"
+        }
+      ]
+    },
+    {
+      "url": "https://profiles.ihe.net/ITI/MHD/StructureDefinition/full-text-search-match-total-hits",
+      "valueInteger": 1
+    }
+  ],
+  "mode": "match",
+  "score": 0.9
+}
+```
 
 ###### 2:3.67.4.2.2.2 Resource Bundling
 
