@@ -36,7 +36,7 @@ Description:    "A profile on the Find Document References Response message for 
 
 
 Extension: FullTextSearchMatchSnippet
-Id: full-text-search-match-snippet
+Id: ihe-full-text-search-match-snippet
 Title: "Full-Text Search Match Snippet"
 Description: "This extension contains a text snippet describing the context of a full-text search match. It highlights relevant content that corresponds to the provided search terms and provides a concise preview of the search result."
 * ^context.type = #element
@@ -58,7 +58,7 @@ Description: "This extension contains a text snippet describing the context of a
 
 
 Extension: FullTextSearchMatchTotalHits
-Id: full-text-search-match-total-hits
+Id: ihe-full-text-search-match-total-hits
 Title: "Full-Text Search Match Total Hits"
 Description: "This extension contains the total number of full-text search matches found within a document (e.g. a PDF)."
 * ^context.type = #element
