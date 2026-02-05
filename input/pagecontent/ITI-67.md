@@ -288,9 +288,9 @@ Identifiers in XDS are encoded using the [Document Sharing CXi Metadata datatype
 
 ###### 2:3.67.4.2.2.1.6 Full-Text Search Option
 
-The [Full-Text Search Match Snippet](./StructureDefinition-full-text-search-match-snippet.html) and the [Full-Text Search Match Total Hits](./StructureDefinition-full-text-search-match-total-hits.html) extensions are used in the context of the Full-Text Search Option to provide a more detailed representation of search results. 
+The [Full-Text Search Match Snippet](./StructureDefinition-ihe-full-text-search-match-snippet.html) and the [Full-Text Search Match Total Hits](./StructureDefinition-ihe-full-text-search-match-total-hits.html) extensions are used in the context of the Full-Text Search Option to provide a more detailed representation of search results. 
 
-The Match Snippet extension is intended to extract relevant text excerpts (snippets) from a document that contain the searched term. These snippets are provided in the extension’s value element and highlight the matched term using the <i>&lt;match&gt; &lt;/match&gt;</i> tag. In addition, the page number of the document on which the match was found is indicated. A Document Responder shall return a snippet for each match found within a document. If the number of identified snippets exceeds ten, the Document Responder may return only the first ten snippets.
+The Match Snippet extension is intended to extract relevant text excerpts (snippets) from a document that contain the searched term. These snippets are provided in the extension’s value element and highlight the matched term using the <i>&lt;mark&gt; &lt;/mark&gt;</i> tag. In addition, the page number of the document on which the match was found is indicated. A Document Responder shall return a snippet for each match found within a document. If the number of identified snippets exceeds ten, the Document Responder may return only the first ten snippets.
 
 The Match Total Hits extension provides an aggregated overview of the search results within a document. It indicates the total number of matches found across the entire document based on the full-text search. A Document Responder shall populate the Match Total Hits extension within the search element of each entry in the Bundle representing the full-text search result set. The Match Total Hits extension shall specify the total number of matches found within the document as an integer value. This value reflects the total number of matches across the entire document and is not limited to the number of returned snippets.
 
@@ -300,11 +300,11 @@ The Match Total Hits extension provides an aggregated overview of the search res
 "search": {
   "extension": [
     {
-      "url": "https://profiles.ihe.net/ITI/MHD/StructureDefinition/full-text-search-match-snippet",
+      "url": "https://profiles.ihe.net/ITI/MHD/StructureDefinition/ihe-full-text-search-match-snippet",
       "extension": [
         {
           "url": "snippet",
-          "valueString": "The patient was diagnosed with <match>hypertension</match> and started on antihypertensive therapy."
+          "valueString": "The patient was diagnosed with <mark>hypertension</mark> and started on antihypertensive therapy."
         },
         {
           "url": "pageNumber",
@@ -313,7 +313,7 @@ The Match Total Hits extension provides an aggregated overview of the search res
       ]
     },
     {
-      "url": "https://profiles.ihe.net/ITI/MHD/StructureDefinition/full-text-search-match-total-hits",
+      "url": "https://profiles.ihe.net/ITI/MHD/StructureDefinition/ihe-full-text-search-match-total-hits",
       "valueInteger": 1
     }
   ],

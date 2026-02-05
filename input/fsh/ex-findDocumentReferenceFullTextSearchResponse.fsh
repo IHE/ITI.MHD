@@ -31,9 +31,9 @@ Usage: #example
     * mode = #match
     * score = 0.9
     * extension[matchSnippet][+]
-      * extension[snippet].valueString = "The patient was diagnosed with <match>hypertension</match> and started on antihypertensive therapy."
+      * extension[snippet].valueString = "The patient was diagnosed with <mark>hypertension</mark> and started on antihypertensive therapy."
       * extension[pageNumber].valueString = "1"
     * extension[matchSnippet][+]
-      * extension[snippet].valueString = "A history of <match>hypertension</match> was noted during the previous hospital admission."
+      * extension[snippet].valueString = "A history of <mark>hypertension</mark> was noted during the previous hospital admission."
       * extension[pageNumber].valueString = "23"
     * extension[totalHits].valueInteger = 2

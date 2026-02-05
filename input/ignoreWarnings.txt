@@ -59,3 +59,7 @@ WARNING: Parameters/ex-input-doc-bundle: Parameters.parameter[0].resource/*Bundl
 WARNING: Parameters/ex-input-doc-bundle: Parameters.parameter[0].resource/*Bundle/ex-fhir-document-bundle*/.entry[5].resource/*MedicationRequest/fdoc-medicationrequest*/: Constraint failed: dom-6: 'A resource should have narrative for robust management' (defined in http://hl7.org/fhir/StructureDefinition/DomainResource) (Best Practice Recommendation)
 WARNING: Parameters/ex-input-doc-bundle: Parameters.parameter[0].resource/*Bundle/ex-fhir-document-bundle*/.entry[6].resource/*MedicationStatement/fdoc-medicationstatement*/: Constraint failed: dom-6: 'A resource should have narrative for robust management' (defined in http://hl7.org/fhir/StructureDefinition/DomainResource) (Best Practice Recommendation)
 WARNING: Parameters/ex-input-doc-bundle: Parameters.parameter[0].resource/*Bundle/ex-fhir-document-bundle*/.entry[7].resource/*AllergyIntolerance/fdoc-allergyintolerance*/: Constraint failed: dom-6: 'A resource should have narrative for robust management' (defined in http://hl7.org/fhir/StructureDefinition/DomainResource) (Best Practice Recommendation)
+
+
+# The IG intentionally uses markup-like markers in example string values to demonstrate highlighting of full-text search results.
+The string value contains text that looks like embedded HTML tags. If this content is rendered to HTML without appropriate post-processing, it may be a security risk
