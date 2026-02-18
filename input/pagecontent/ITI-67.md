@@ -135,11 +135,83 @@ The MHD profile does not prescribe how the Document Responder should implement f
 
 **Valid Query Examples**
 
-TODO: Add some examples that show how to utilize the above search rules.
+<ul>
+  <li><strong>Single terms</strong>:
+    <ul>
+      <li><code>diabetes</code>: Searches for words in the document that contain the sequence "diabetes" (case-insensitive, possible matches include 'diabetes', 'Prediabetes').</li>
+      <li><code>hypertension</code>: Searches for words containing "hypertension" (case-insensitive, e.g., 'hypertension', 'Hypertensive').</li>
+      <li><code>pain</code>: Searches for words containing "pain" (case-insensitive, e.g., 'pain', 'complaint').</li>
+    </ul>
+  </li>
+  <li><strong>Phrases with quotation marks</strong>:
+    <ul>
+      <li><code>"diabetes"</code>: Searches for the exact word "diabetes" (case-insensitive, matches 'diabetes' and 'Diabetes').</li>
+      <li><code>"chronic pain"</code>: Searches for the exact phrase "chronic pain", including the space (case-insensitive).</li>
+      <li><code>"cardiovascular disease"</code>: Searches for the exact phrase "cardiovascular disease" (case-insensitive).</li>
+    </ul>
+  </li>
+  <li><strong>Use of Boolean operators</strong>:
+    <ul>
+      <li><code>diabetes AND hypertension</code>: Searches for documents containing both "diabetes" and "hypertension" (case-insensitive).</li>
+      <li><code>asthma OR "chronic pain"</code>: Searches for documents containing either "asthma" or the phrase "chronic pain" (both case-insensitive).</li>
+      <li><code>NOT cancer</code>: Searches for documents that do not contain the word or word part "cancer" (case-insensitive).</li>
+    </ul>
+  </li>
+  <li><strong>Use of parentheses to adjust evaluation order</strong>:
+    <ul>
+      <li><code>(diabetes OR hypertension) AND asthma</code>: Forces the "OR" to be evaluated before the "AND".</li>
+      <li><code>("chronic pain" OR asthma) AND NOT cancer</code>: Another example using parentheses and multiple boolean operators.</li>
+    </ul>
+  </li>
+  <li><strong>Query without parentheses, relying on operator precedence</strong>:
+    <ul>
+      <li><code>NOT diabetes AND asthma OR hypertension</code></li>
+      <li><em>Explanation</em>:
+        <ul>
+          <li>The <code>NOT</code> operator has the highest precedence and is evaluated first, so it checks that "diabetes" is not present.</li>
+          <li>The <code>AND</code> operator is next, so the query evaluation would ensure that "asthma" is present and "diabetes" is not.</li>
+          <li>The <code>OR</code> operator is evaluated last. A document matches if it contains "asthma" and not "diabetes", or if it contains "hypertension".</li>
+          <li>An equivalent query would be: <code>(NOT diabetes AND asthma) OR hypertension</code></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
 
 **Invalid Query Examples**
 
-TODO: Add some examples that show how to utilize the above search rules NOT :-).
+<ul>
+  <li><strong>Invalid use of operators</strong>:
+    <ul>
+      <li><code>diabetes AND OR hypertension</code>
+        <br><em>Reason</em>: Combining <code>AND</code> and <code>OR</code> without a search term in between is not allowed.</li>
+    </ul>
+  </li>
+  <li><strong>Missing quotation marks for phrases</strong>:
+    <ul>
+      <li><code>chronic pain AND asthma</code>
+        <br><em>Reason</em>: A phrase like "chronic pain" must be enclosed in quotation marks to be recognized as a single term. Otherwise, the search would return an error.</li>
+    </ul>
+  </li>
+  <li><strong>Disallowed nested parentheses</strong>:
+    <ul>
+      <li><code>(diabetes OR (hypertension AND asthma))</code>
+        <br><em>Reason</em>: Nested parentheses are not allowed. Only one level of parentheses is permitted.</li>
+    </ul>
+  </li>
+  <li><strong>Incomplete logical expressions</strong>:
+    <ul>
+      <li><code>NOT AND diabetes</code>
+        <br><em>Reason</em>: <code>NOT</code> must precede a specific search term or phrase, not another operator.</li>
+    </ul>
+  </li>
+  <li><strong>Incorrect placement of parentheses</strong>:
+    <ul>
+      <li><code>diabetes OR )hypertension AND asthma(</code>
+        <br><em>Reason</em>: Parentheses are incorrectly placed. Parentheses must be properly opened and closed.</li>
+    </ul>
+  </li>
+</ul>
 
 ###### 2:3.67.4.1.2.2 Populating Expected Response Format
 
@@ -288,7 +360,7 @@ Identifiers in XDS are encoded using the [Document Sharing CXi Metadata datatype
 
 ###### 2:3.67.4.2.2.1.6 Full-Text Search Option
 
-The [Full-Text Search Match Snippet](./StructureDefinition-ihe-full-text-search-match-snippet.html) and the [Full-Text Search Match Total Hits](./StructureDefinition-ihe-full-text-search-match-total-hits.html) extensions are used in the context of the Full-Text Search Option to provide a more detailed representation of search results. 
+The [Full-Text Search Match Snippet](./StructureDefinition-ihe-full-text-search-match-snippet.html) and the [Full-Text Search Match Total Hits](./StructureDefinition-ihe-full-text-search-match-total-hits.html) extensions are used in the context of the Full-Text Search Option to provide a more detailed representation of search results.
 
 The Match Snippet extension is intended to extract relevant text excerpts (snippets) from a document that contain the searched term. These snippets are provided in the extension’s value element and highlight the matched term using the <i>&lt;mark&gt; &lt;/mark&gt;</i> tag. In addition, the page number of the document on which the match was found is indicated. A Document Responder shall return a snippet for each match found within a document. If the number of identified snippets exceeds ten, the Document Responder may return only the first ten snippets.
 
