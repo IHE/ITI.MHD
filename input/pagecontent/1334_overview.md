@@ -55,7 +55,9 @@ In this use case, the mobile device needs access to existing documents. For exam
 #### 1:33.4.3.2 Discovery Retrieval of Existing Documents Process Flow
 The Find Document References [\[ITI-67\]](ITI-67.html) transaction is used to issue parameterized queries that result in a list of DocumentReference Resources, where a DocumentReference Resource carries the XDS DocumentEntry metadata, which is metadata about a document.
 
+<div class="new-content">
 If Document Consumer and Document Responder support the Full-Text Search Option, the Find Document References [\[ITI-67\]](ITI-67.html) transaction can be further refined to search the content of documents as well in order to identify matching DocumentReferences.
+</div> <!-- new content marker -->
 
 Alternatively, the Find Document Lists [\[ITI-66\]](ITI-66.html) transaction is used to issue parameterized queries that result in a set of List Resources, where a List Resource carries the XDS SubmissionSet metadata for a set of DocumentEntry objects that were published as a set, or XDS Folder metadata for a set of DocumentEntry objects that are said to be members of the same grouping.
 

@@ -169,7 +169,12 @@ The Document Consumer queries Document Responder for SubmissionSet, Folder, and 
 
 The following CapabilityStatements define the actor capabilities
 * [Document Consumer](CapabilityStatement-IHE.MHD.DocumentConsumer.html)
+
+<div class="new-content">
+New option introduced.
+</div> <!-- new-content marker -->
 * [Document Consumer implementing Full-Text Search Option](CapabilityStatement-IHE.MHD.DocumentConsumer.FulltextSearch.html)
+
 
 #### 1:33.1.1.3 Document Recipient
 
@@ -189,7 +194,11 @@ The Document Responder responds with SubmissionSet, Folder, and DocumentReferenc
 
 The following CapabilityStatements define the actor capabilities
 * [Document Responder](CapabilityStatement-IHE.MHD.DocumentResponder.html)
+<div class="new-content">
+New option introduced.
+</div> <!-- new-content marker -->
 * [Document Responder implementing Full-Text Search Option](CapabilityStatement-IHE.MHD.DocumentResponder.FulltextSearch.html)
+
 
 ### 1:33.1.2 Transaction Descriptions
 The transactions in this profile are summarized in the sections below.

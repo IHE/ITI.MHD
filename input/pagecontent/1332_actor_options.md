@@ -2,6 +2,9 @@
 Options that may be selected for each actor in this implementation guide, are listed in Table 1:33.2-1 below. Dependencies
 between options when applicable are specified in notes.
 
+<div class="new-content">
+Added full text search option to the table.
+</div> <!-- new-content marker -->
 <table border="1" style="border: 1px solid black; border-collapse: collapse">
     <caption><b>Table 1:33.2-1 Actor Options</b></caption>
     <thead>
@@ -137,6 +140,8 @@ The **ITI-65 FHIR Documents Publish Option** adds support to ITI-65 to carry a F
 
 The Document Recipient will process the FHIR-Document accordingly to the persistence needs that it supports (e.g., XDS, MHDS).
 
+
 ### 1:33.2.7 Full-Text Search Option
 
-While ITI-67 already supports metadata-based filtering of documents, the **Full-Text Search Option** enables you to search the full text of documents as well. It enables simple word matching and advanced searches, such as combining words with logical operators (OR, AND, NOT) and phrase searches.
+<div class="new-content">
+While ITI-67 already supports metadata-based filtering of documents, the **Full-Text Search Option** enables you to search the full text of documents as well. It enables simple word matching and advanced searches, such as combining words with logical operators (OR, AND, NOT) and phrase searches.</div> <!-- new content marker -->
