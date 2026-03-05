@@ -143,8 +143,8 @@ The MHD profile does not prescribe how the Document Responder should implement f
   <li><strong>Single terms</strong>:
     <ul>
       <li><code>diabetes</code>: Searches for words in the document that contain the sequence "diabetes" (case-insensitive, possible matches include 'diabetes', 'Prediabetes').</li>
-      <li><code>hypertension</code>: Searches for words containing "hypertension" (case-insensitive, e.g., 'hypertension', 'Hypertensive').</li>
-      <li><code>pain</code>: Searches for words containing "pain" (case-insensitive, e.g., 'pain', 'complaint').</li>
+      <li><code>hypertension</code>: Searches for words containing "hypertension" (case-insensitive, e.g., 'hypertension', 'Hypertension').</li>
+      <li><code>pain</code>: Searches for words containing "pain" (case-insensitive, e.g., 'pain', 'painful', but also 'Spain').</li>
     </ul>
   </li>
   <li><strong>Phrases with quotation marks</strong>:
