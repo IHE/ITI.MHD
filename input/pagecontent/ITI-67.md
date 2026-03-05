@@ -106,7 +106,11 @@ This IHE extension on parameters defined as [IHE-TargetCommunityIdList](SearchPa
 **type**:
 This parameter, of type token, specifies the specific type of the DocumentReference resource or in Document Sharing nomenclature, the typeCode of the Document Entry. See [ITI TF-2x: Appendix Z.2](https://profiles.ihe.net/ITI/TF/Volume2/ch-Z.html#z.2-query-parameters) for additional constraints on the use of the token search parameter type.
 
+<div class="new-content">
+Section on new full text search option.
+</div>
 ###### 2:3.67.4.1.2.1.1 Full-Text Search Option
+
 
 If the Full-Text Search Option is supported, the Document Consumer must be able to make use of the **_content** parameter that specifies terms or phrases that are used to search document content in the documents managed by the Document Responder. The Document Responder must match the full-text search parameters in combination with any metadata-based search parameters defined in the same query (i.e. only if a document matches the filter from **_content** query and the meta-data based filter parameters, the document is considered a match).
 
@@ -366,6 +370,10 @@ Identifiers in XDS are encoded using the [Document Sharing CXi Metadata datatype
 The Document Responder SHOULD populate the **homeCommunityId** extension when a value is available and policy allows it to be populated. The population of this element is identified in the [Target Communities Option](1332_actor_options.html#13327-target-communities-option).
 
 The Document Responder declaring the **Target Communities Option** shall support the [targetCommunityIdList](SearchParameter-IHE-TargetCommunityIdList.html) search parameter, and shall return an error when the homeCommunityId can not be fulfilled, See [XCA Target Communities Option](https://profiles.ihe.net/ITI/TF/Volume1/ch-18.html#18.2.6). The Document Consumer declaring the **Target Communities Option** MAY use this search parameter. Actors not declaring the **Target Communities Option** may support the search parameter. Support for the Search parameter shall be declared in the product/implementation CapabilityStatement.
+
+<div class="new-content">
+Section on new full text search option.
+</div>
 
 ###### 2:3.67.4.2.2.1.6 Full-Text Search Option
 
