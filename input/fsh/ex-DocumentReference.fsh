@@ -339,6 +339,5 @@ Usage: #inline
 * status = #current
 * content.attachment.contentType = #text/plain
 * content.attachment.url = "http://example.com/nowhere2.txt"
-* extension[homeCommunityId].valueIdentifier.system = "urn:ietf:rfc:3986"
-* extension[homeCommunityId].valueIdentifier.value = "urn:oid:1.2.840.113556.1.8000.2554.53432.348.12973.17740.34205.4355.50220.62013"
+* extension[homeCommunityId].valueOid = "urn:oid:2.999.123.1740.205.55.20.13"
 

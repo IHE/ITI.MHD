@@ -42,16 +42,14 @@ Expression: "startsWith('urn:uuid:')"
 
 Extension: HomeCommunityId
 Id: ihe-HomeCommunityId
-Title: "The homeCommunityId where this artifact lives"
-Description: "The globally unique, immutable, identifier of the homeCommunityId entity where this artifact exists. The format of the identifier is an OID."
+Title: "The homeCommunityId where the artifact resides"
+Description: "The globally unique, immutable, identifier of the homeCommunityId entity where this artifact resides. The format of the value is an OID."
 * ^context[+].type = #element
 * ^context[=].expression = "DocumentReference"
 * ^context[+].type = #element
 * ^context[=].expression = "List"
-* value[x] only Identifier
-* valueIdentifier 1..1
-* valueIdentifier.system = "urn:ietf:rfc:3986" //(exactly)
-* valueIdentifier.value obeys mhd-startswithoid
+* value[x] only oid
+* valueOid 1..1
 
 
 
@@ -66,6 +64,6 @@ Usage: #definition
 * code = #targetCommunityIdList
 * base[+] = #List
 * base[+] = #DocumentReference
-* expression = "(extension('https://profiles.ihe.net/ITI/MHD/StructureDefinition/ihe-HomeCommunityId').value.ofType(Identifier))"
-* type = #token
+* expression = "(extension('https://profiles.ihe.net/ITI/MHD/StructureDefinition/ihe-HomeCommunityId').value.ofType(oid))"
+* type = #uri
 

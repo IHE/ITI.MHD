@@ -87,7 +87,7 @@ This IHE extension on parameters defined as [List-SourceId](SearchParameter-List
 This parameter, of type token, specifies the status of the List. If included in the query, the Document Consumer shall populate the code portion of the token, the system portion of the token shall not be populated. See Table 2:3.66.4.1.3.1-3: Values for status of List for mapping to XDS on FHIR Option.
 
 **targetCommunityIdList**:
-This IHE extension on parameters defined as [IHE-TargetCommunityIdList](SearchParameter-IHE-TargetCommunityIdList.html), of type token, specifies the homeCommunityId value supplied in the List Resource. This parameter will only function when the [Targeted Communities Option](1332_actor_options.html#13327-target-communities-option) is declared, and where the backend also supports it (e.g., [XCA Targeted Communities](https://profiles.ihe.net/ITI/TF/Volume1/ch-18.html#18.2.6).)
+This IHE extension on parameters defined as [IHE-TargetCommunityIdList](SearchParameter-IHE-TargetCommunityIdList.html), of type uri, specifies the homeCommunityId value supplied in the List Resource. This parameter will only function when the [Target Communities Option](1332_actor_options.html#13327-target-communities-option) is declared, and where the backend also supports it (e.g., [XCA Target Communities](https://profiles.ihe.net/ITI/TF/Volume1/ch-18.html#18.2.6).)
 
 ###### 2:3.66.4.1.2.2 Populating Expected Response Format
 
