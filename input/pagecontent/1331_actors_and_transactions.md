@@ -173,7 +173,7 @@ The following CapabilityStatements define the actor capabilities
 <div class="new-content">
 New option introduced.
 </div> <!-- new-content marker -->
-* [Document Consumer implementing Full-Text Search Option](CapabilityStatement-IHE.MHD.DocumentConsumer.FulltextSearch.html)
+* [Document Consumer implementing Full-Text Search Option](CapabilityStatement-IHE.MHD.DocumentConsumer.FullTextSearch.html)
 
 
 #### 1:33.1.1.3 Document Recipient
@@ -197,7 +197,7 @@ The following CapabilityStatements define the actor capabilities
 <div class="new-content">
 New option introduced.
 </div> <!-- new-content marker -->
-* [Document Responder implementing Full-Text Search Option](CapabilityStatement-IHE.MHD.DocumentResponder.FulltextSearch.html)
+* [Document Responder implementing Full-Text Search Option](CapabilityStatement-IHE.MHD.DocumentResponder.FullTextSearch.html)
 
 
 ### 1:33.1.2 Transaction Descriptions
