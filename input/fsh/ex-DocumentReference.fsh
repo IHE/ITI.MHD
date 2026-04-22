@@ -269,7 +269,7 @@ Usage: #example
 * content.attachment.url = "Binary/ex-b-binary"
 * content.attachment.title = "Hello World"
 * content.attachment.contentType = #text/plain
-* content.attachment.hash = "MGE0ZDU1YThkNzc4ZTUwMjJmYWI3MDE5NzdjNWQ4NDBiYmM0ODZkMA=="
+* content.attachment.hash = "Ck1VqNd45QIvq3AZd8XYQLvEhtA="
 * content.attachment.size = 11
 
 Instance: ex-b-binary
@@ -278,7 +278,7 @@ Title: "Example document that says: Hello World"
 Description: "Example binary that holds just Hello World
 - size 11
 - hash 0a4d55a8d778e5022fab701977c5d840bbc486d0
-- base64 of the hash MGE0ZDU1YThkNzc4ZTUwMjJmYWI3MDE5NzdjNWQ4NDBiYmM0ODZkMA=="
+- base64 of the hash Ck1VqNd45QIvq3AZd8XYQLvEhtA="
 Usage: #example
 * meta.security = http://terminology.hl7.org/CodeSystem/v3-ActReason#HTEST
 * contentType = #text/plain
