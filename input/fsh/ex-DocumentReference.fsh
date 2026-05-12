@@ -4,6 +4,8 @@ Title:      "DocumentReference for Minimal metadata"
 Description: "Example of a minimal DocumentReference resource. This is very unlikely to be acceptable anywhere, but it is the minimum required."
 Usage: #example
 * meta.security = http://terminology.hl7.org/CodeSystem/v3-ActReason#HTEST
+* masterIdentifier.system = "urn:ietf:rfc:3986"
+* masterIdentifier.value = "urn:oid:1.2.840.113556.1.8000.2554.53432.348.12973.17740.34205.4355.50220.62012"
 * identifier[uniqueId].system = "urn:ietf:rfc:3986"
 * identifier[uniqueId].value = "urn:oid:1.2.840.113556.1.8000.2554.53432.348.12973.17740.34205.4355.50220.62012"
 * identifier[entryUUID].system = "urn:ietf:rfc:3986"
@@ -18,6 +20,8 @@ Title:      "DocumentReference for Minimal metadata with an encounter"
 Description: "Example of a minimal DocumentReference resource. This has minimal metadata plus an encounter and custodian."
 Usage: #example
 * meta.security = http://terminology.hl7.org/CodeSystem/v3-ActReason#HTEST
+* masterIdentifier.system = "urn:ietf:rfc:3986"
+* masterIdentifier.value = "urn:oid:1.2.840.113556.1.8000.2554.53432.348.12973.17740.34205.4355.50220.62012"
 * identifier[uniqueId].system = "urn:ietf:rfc:3986"
 * identifier[uniqueId].value = "urn:oid:1.2.840.113556.1.8000.2554.53432.348.12973.17740.34205.4355.50220.62012"
 * identifier[entryUUID].system = "urn:ietf:rfc:3986"
@@ -34,6 +38,8 @@ Title:      "DocumentReference for Comprehensive minimally metadata"
 Description: "Example of a Comprehensive DocumentReference resource. This is minimally filled for all mandatory elements."
 Usage: #example
 * meta.security = http://terminology.hl7.org/CodeSystem/v3-ActReason#HTEST
+* masterIdentifier.system = "urn:ietf:rfc:3986"
+* masterIdentifier.value = "urn:oid:1.2.840.113556.1.8000.2554.58783.21864.3474.19410.44358.58254.41281.46340"
 * identifier[uniqueId].system = "urn:ietf:rfc:3986"
 * identifier[uniqueId].value = "urn:oid:1.2.840.113556.1.8000.2554.58783.21864.3474.19410.44358.58254.41281.46340"
 * identifier[entryUUID].system = "urn:ietf:rfc:3986"
@@ -60,6 +66,8 @@ Title:      "DocumentReference for Comprehensive minimally filled metadata"
 Description: "Example of a UnContained References Option with Comprehensive DocumentReference resource. This is fully filled for all mandatory elements and optional elements."
 Usage: #example
 * meta.security = http://terminology.hl7.org/CodeSystem/v3-ActReason#HTEST
+* masterIdentifier.system = "urn:ietf:rfc:3986"
+* masterIdentifier.value = "urn:oid:1.2.840.113556.1.8000.2554.58783.21864.3474.19410.44358.58254.41281.46340"
 * identifier[uniqueId].system = "urn:ietf:rfc:3986"
 * identifier[uniqueId].value = "urn:oid:1.2.840.113556.1.8000.2554.58783.21864.3474.19410.44358.58254.41281.46340"
 * identifier[entryUUID].system = "urn:ietf:rfc:3986"
@@ -102,6 +110,8 @@ Title:      "DocumentReference for Comprehensive fully filled metadata"
 Description: "Example of a Comprehensive DocumentReference resource. This is fully filled for all mandatory elements and all optional elements."
 Usage: #example
 * meta.security = http://terminology.hl7.org/CodeSystem/v3-ActReason#HTEST
+* masterIdentifier.system = "urn:ietf:rfc:3986"
+* masterIdentifier.value = "urn:oid:1.2.840.113556.1.8000.2554.58783.21864.3474.19410.44358.58254.41281.46340"
 * identifier[uniqueId].system = "urn:ietf:rfc:3986"
 * identifier[uniqueId].value = "urn:oid:1.2.840.113556.1.8000.2554.58783.21864.3474.19410.44358.58254.41281.46340"
 * identifier[entryUUID].system = "urn:ietf:rfc:3986"
@@ -152,6 +162,8 @@ Description: "Example of a Comprehensive DocumentReference resource.
   - and the DocumentReference would be updated with the resulting hash and size thus becoming a static entry"
 Usage: #example
 * meta.security = http://terminology.hl7.org/CodeSystem/v3-ActReason#HTEST
+* masterIdentifier.system = "urn:ietf:rfc:3986"
+* masterIdentifier.value = "urn:oid:1.2.840.113556.1.8000.2554.58783.21864.3474.19410.44358.58254.41281.47340"
 * identifier[uniqueId].system = "urn:ietf:rfc:3986"
 * identifier[uniqueId].value = "urn:oid:1.2.840.113556.1.8000.2554.58783.21864.3474.19410.44358.58254.41281.47340"
 * identifier[entryUUID].system = "urn:ietf:rfc:3986"
@@ -202,6 +214,8 @@ Description: "Example of a Comprehensive DocumentReference resource.
   - and a linked snapshot DocumentReference would be created with the resulting hash and size thus becoming a static entry"
 Usage: #example
 * meta.security = http://terminology.hl7.org/CodeSystem/v3-ActReason#HTEST
+* masterIdentifier.system = "urn:ietf:rfc:3986"
+* masterIdentifier.value = "urn:oid:1.2.840.113556.1.8000.2554.58783.21864.3474.19410.44358.58254.41281.57340"
 * identifier[uniqueId].system = "urn:ietf:rfc:3986"
 * identifier[uniqueId].value = "urn:oid:1.2.840.113556.1.8000.2554.58783.21864.3474.19410.44358.58254.41281.57340"
 * identifier[entryUUID].system = "urn:ietf:rfc:3986"
@@ -234,6 +248,8 @@ Description: "Example of a Comprehensive DocumentReference resource.
 - This specifies a Document in a Binary."
 Usage: #example
 * meta.security = http://terminology.hl7.org/CodeSystem/v3-ActReason#HTEST
+* masterIdentifier.system = "urn:ietf:rfc:3986"
+* masterIdentifier.value = "urn:oid:1.2.840.113556.1.8000.2554.58783.21864.3474.19410.44358.58254.41381.57340"
 * identifier[uniqueId].system = "urn:ietf:rfc:3986"
 * identifier[uniqueId].value = "urn:oid:1.2.840.113556.1.8000.2554.58783.21864.3474.19410.44358.58254.41381.57340"
 * identifier[entryUUID].system = "urn:ietf:rfc:3986"
@@ -306,6 +322,8 @@ Title:      "DocumentReference for Minimal metadata"
 Description: "Example of a minimal DocumentReference resource. This is very unlikely to be acceptable anywhere, but it is the minimum required."
 Usage: #inline
 * meta.security = http://terminology.hl7.org/CodeSystem/v3-ActReason#HTEST
+* masterIdentifier.system = "urn:ietf:rfc:3986"
+* masterIdentifier.value = "urn:oid:1.2.840.113556.1.8000.2554.53432.348.12973.17740.34205.4355.50220.62012"
 * identifier[uniqueId].system = "urn:ietf:rfc:3986"
 * identifier[uniqueId].value = "urn:oid:1.2.840.113556.1.8000.2554.53432.348.12973.17740.34205.4355.50220.62012"
 * identifier[entryUUID].system = "urn:ietf:rfc:3986"

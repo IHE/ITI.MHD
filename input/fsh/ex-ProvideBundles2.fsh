@@ -102,8 +102,8 @@ Title:      "DocumentReference for Minimal metadata"
 Description: "Example of a minimal DocumentReference resource being used in a PUSH. This contains only the sourcePatientInfo, thus equivilant of XDR/XDM use of sourcePatientInfo."
 Usage: #inline
 * meta.security = http://terminology.hl7.org/CodeSystem/v3-ActReason#HTEST
-* identifier[uniqueId].system = "urn:ietf:rfc:3986"
-* identifier[uniqueId].value = "urn:oid:1.2.840.113556.1.8000.2554.53432.348.12973.17740.34205.4355.50220.62012"
+* masterIdentifier.system = "urn:ietf:rfc:3986"
+* masterIdentifier.value = "urn:oid:1.2.840.113556.1.8000.2554.53432.348.12973.17740.34205.4355.50220.62012"
 * status = #current
 * contained[+] = aaaaaaaa-bbbb-cccc-dddd-e00222200004
 * context.sourcePatientInfo  = Reference(aaaaaaaa-bbbb-cccc-dddd-e00222200004)
