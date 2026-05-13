@@ -111,6 +111,10 @@ The documented [mapping of the metadata elements](StructureDefinition-IHE.MHD.Mi
 | Folder(s)             | entry.item                    | entry.item                    |
 {: .grid}
 
+### 3:4.5.2 SubmissionSet Metadata Attributes {#submissionSet}
+
+The documented [mapping of the metadata elements](StructureDefinition-IHE.MHD.Minimal.SubmissionSet-mappings.html) associated with a [Document Sharing SubmissionSet object](https://profiles.ihe.net/ITI/TF/Volume3/ch-4.2.html#4.2.3.3) attributes.
+
 #### 3:4.5.2.1 SubmissionSet List StructureDefinition
 
 The conformance requirements are different between Comprehensive, Minimal, and UnContained References. The canonical URI is found as the "Defining URL:":

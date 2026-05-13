@@ -165,7 +165,7 @@ Usage: #inline
 * content.profile.valueCoding = http://ihe.net/fhir/ihe.formatcode.fhir/CodeSystem/formatcode#urn:ihe:iti:xds-sd:text:2008
 * content.attachment.url = "urn:uuid:aaaaaaaa-bbbb-cccc-dddd-e00444400006"
 * content.attachment.contentType = #text/plain
-* content.attachment.hash = "Y2QzNmIzNzA3NThhMjU5YjM0ODQ1MDg0YTZjYzM4NDczY2I5NWUyNw=="
+* content.attachment.hash = "zTazcHWKJZs0hFCEpsw4Rzy5Xic="
 * content.attachment.size = 445
 * type = http://loinc.org#60591-5
 * category = http://loinc.org#11369-6
@@ -186,7 +186,7 @@ For Bundling Example binary that
 - holds \"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\"
 - size 445
 - hash cd36b370758a259b34845084a6cc38473cb95e27
-- base64 of the hash Y2QzNmIzNzA3NThhMjU5YjM0ODQ1MDg0YTZjYzM4NDczY2I5NWUyNw==
+- base64 of the hash zTazcHWKJZs0hFCEpsw4Rzy5Xic=
 """
 Usage: #inline
 * meta.security = http://terminology.hl7.org/CodeSystem/v3-ActReason#HTEST

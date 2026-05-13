@@ -79,7 +79,7 @@ Description:    "A profile on the DocumentReference resource for MHD with minima
 * relatesTo 0..* MS
 * extension contains http://hl7.org/fhir/StructureDefinition/documentreference-sourcepatient named sourcePatient 0..1 MS
 * extension contains ReferenceId named referenceId 0..* MS
-
+* extension contains HomeCommunityId named homeCommunityId 0..1
 
 Extension: ReferenceId
 Id: ihe-referenceId
@@ -168,7 +168,7 @@ Title: "XDS and MHD Mapping"
 * relatesTo -> "DocumentEntry Associations"
 * relatesTo.code -> "DocumentEntry Associations.type"
 * relatesTo.target -> "DocumentEntry Associations.reference"
-
+* extension[homeCommunityId] -> "DocumentEntry.homeCommunityId"
 
 Instance:   AssociationTypeVsRelatesTo
 InstanceOf: ConceptMap
