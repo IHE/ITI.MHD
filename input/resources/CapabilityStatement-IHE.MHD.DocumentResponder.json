@@ -22,7 +22,7 @@
       "resource": [
         {
           "type": "DocumentReference",
-          "profile": "https://profiles.ihe.net/ITI/MHD/StructureDefinition/IHE.MHD.Minimal.DocumentReference",
+          "supportedProfile": ["https://profiles.ihe.net/ITI/MHD/StructureDefinition/IHE.MHD.Minimal.DocumentReference"],
           "interaction": [
             {
               "code": "read"
@@ -147,8 +147,8 @@
         },
         {
           "type": "List",
-          "profile": "https://profiles.ihe.net/ITI/MHD/StructureDefinition/IHE.MHD.List",
           "supportedProfile": [
+            "https://profiles.ihe.net/ITI/MHD/StructureDefinition/IHE.MHD.List",
             "https://profiles.ihe.net/ITI/MHD/StructureDefinition/IHE.MHD.UnContained.Comprehensive.SubmissionSet",
 			"https://profiles.ihe.net/ITI/MHD/StructureDefinition/IHE.MHD.Comprehensive.SubmissionSet",
             "https://profiles.ihe.net/ITI/MHD/StructureDefinition/IHE.MHD.Minimal.SubmissionSet",

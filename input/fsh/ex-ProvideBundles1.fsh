@@ -115,7 +115,7 @@ Usage: #inline
 * content.format = http://ihe.net/fhir/ihe.formatcode.fhir/CodeSystem/formatcode#urn:ihe:iti:xds-sd:text:2008
 * content.attachment.url = "urn:uuid:aaaaaaaa-bbbb-cccc-dddd-e00111100003"
 * content.attachment.contentType = #text/plain
-* content.attachment.hash = "MGE0ZDU1YThkNzc4ZTUwMjJmYWI3MDE5NzdjNWQ4NDBiYmM0ODZkMA=="
+* content.attachment.hash = "Ck1VqNd45QIvq3AZd8XYQLvEhtA="
 * content.attachment.size = 11
 
 Instance: aaaaaaaa-bbbb-cccc-dddd-e00111100003
@@ -126,7 +126,7 @@ For Bundling Example binary that
 - holds \"Hello World\"
 - size 11
 - hash 0a4d55a8d778e5022fab701977c5d840bbc486d0
-- base64 of the hash MGE0ZDU1YThkNzc4ZTUwMjJmYWI3MDE5NzdjNWQ4NDBiYmM0ODZkMA==
+- base64 of the hash Ck1VqNd45QIvq3AZd8XYQLvEhtA=
 """
 Usage: #inline
 * meta.security = http://terminology.hl7.org/CodeSystem/v3-ActReason#HTEST

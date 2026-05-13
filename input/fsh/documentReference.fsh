@@ -35,10 +35,16 @@ Description:    "A profile on the DocumentReference resource for MHD with minima
 * masterIdentifier 1..1
 * identifier 0..* MS
 * identifier ^slicing.discriminator.type = #value
-* identifier ^slicing.discriminator.path = "use"
+* identifier ^slicing.discriminator.path = "type"
 * identifier ^slicing.rules = #open
-* identifier contains entryUUID 0..* MS
+* identifier contains entryUUID 0..1 MS
 * identifier[entryUUID] only EntryUUIDIdentifier
+* identifier[entryUUID] ^short = "Business identifier for the DocumentReference"
+* identifier[entryUUID]. ^definition = "The Business identifier for the DocumentReference which maps to the DocumentEntry.entryUUID in XDS. This is used to refer to the DocumentReference itself as a record of the Document's metadata, as opposed to the UniqueId element which identifies the document which is pointed at by the document reference."
+* identifier contains uniqueId 0..1 MS
+* identifier[uniqueId] only UniqueIdIdentifier
+* identifier[uniqueId] ^short = "Unique identifier for the referenced Document"
+* identifier[uniqueId] ^definition = "The unique identifier for the referenced Document which maps to the DocumentEntry.uniqueId in XDS. This is used to identify the document which is pointed at by the DocumentReference Resource, as opposed to the entryUUID element which identifies the DocumentReference Resource itself. If this is present, then the identifier SHALL be the same as the one found in masterIdentifier."
 * status 1..1
 * status from DocumentReferenceStats (required)
 * docStatus 0..0
@@ -49,7 +55,6 @@ Description:    "A profile on the DocumentReference resource for MHD with minima
 * date 0..1 MS
 * author 0..* MS
 * authenticator 0..1
-//* custodian 0..0
 * description 0..1
 * securityLabel 0..* MS
 * content 1..1
@@ -64,7 +69,6 @@ Description:    "A profile on the DocumentReference resource for MHD with minima
 * content.attachment.creation 0..1 MS
 * content.format 0..1 MS
 * content.format from http://ihe.net/fhir/ihe.formatcode.fhir/ValueSet/formatcode (preferred)
-//* context.encounter 0..0
 * context.event 0..*
 * context.period 0..1 MS
 * context.facilityType 0..1 MS

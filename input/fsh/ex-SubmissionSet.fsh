@@ -6,7 +6,7 @@ Usage: #example
 * meta.security = http://terminology.hl7.org/CodeSystem/v3-ActReason#HTEST
 * identifier[entryUUID].system = "urn:ietf:rfc:3986"
 * identifier[entryUUID].value = "urn:uuid:40b3366f-7e4b-4d02-bbac-901aaa8d7183"
-* identifier[entryUUID].use = #official
+* identifier[entryUUID].type = MHDIdentifierType#entryUUID
 * identifier[uniqueId].system = "urn:ietf:rfc:3986"
 * identifier[uniqueId].value = "urn:oid:1.2.840.113556.1.8000.2554.58783.21864.3474.19410.44358.58254.41281.46354"
 * identifier[uniqueId].use = #usual
@@ -27,7 +27,7 @@ Usage: #example
 * subject = Reference(Patient/ex-patient)
 * identifier[entryUUID].system = "urn:ietf:rfc:3986"
 * identifier[entryUUID].value = "urn:uuid:340d303b-b889-4d44-b766-27f14c212236"
-* identifier[entryUUID].use = #official
+* identifier[entryUUID].type = MHDIdentifierType#entryUUID
 * identifier[uniqueId].system = "urn:ietf:rfc:3986"
 * identifier[uniqueId].value = "urn:oid:1.2.840.113556.1.8000.2554.58783.21864.3474.19410.44358.58254.41281.46355"
 * identifier[uniqueId].use = #usual

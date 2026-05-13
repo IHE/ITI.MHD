@@ -17,12 +17,16 @@ Description:    "A profile on the List resource for MHD SubmissionSet.
 * extension contains SourceId named sourceId 1..1
 * extension contains IntendedRecipient named intendedRecipient 0..*
 * identifier ^slicing.discriminator.type = #value
-* identifier ^slicing.discriminator.path = "use"
+* identifier ^slicing.discriminator.path = "type"
 * identifier ^slicing.rules = #open
-* identifier contains uniqueId 0..1 MS
+* identifier contains uniqueId 0..1 MS 
 * identifier[uniqueId] only SubmissionSetUniqueIdIdentifier
-* identifier contains entryUUID 0..* MS
+* identifier[uniqueId] ^short = "SubmissionSet.uniqueId"
+* identifier[uniqueId] ^definition = "The XDS UniqueId for the SubmissionSet. Globally unique identifier for the SubmissionSet assigned by the creating entity."
+* identifier contains entryUUID 0..1 MS
 * identifier[entryUUID] only EntryUUIDIdentifier
+* identifier[entryUUID] ^short = "SubmissionSet.entryUUID"
+* identifier[entryUUID] ^definition = "The XDS entryUUID for the SubmissionSet. A globally unique identifier used to identify the XDS SubmissionSet in ebRIM."
 * status = #current
 * mode = #working
 * title 0..1
