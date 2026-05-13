@@ -10,6 +10,7 @@ Description:    "A profile on the List resource for MHD. Used with both Folder a
 * identifier 0..* 
 * code 1..1
 * code from MHDlistTypesVS (required)
+* extension contains HomeCommunityId named homeCommunityId 0..1
 
 Extension: DesignationType
 Id: ihe-designationType
