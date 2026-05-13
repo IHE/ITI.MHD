@@ -31,19 +31,18 @@ Description:    "A profile on the DocumentReference resource for MHD with minima
 - ebRIM implementation at [3:4.2.3.2 Document Entry](https://profiles.ihe.net/ITI/TF/Volume3/ch-4.2.html#4.2.3.2).
 - with use-cases and constraints found in [3:4.3 Additional Document Sharing Requirements](https://profiles.ihe.net/ITI/TF/Volume3/ch-4.3.html#4.3)"
 * modifierExtension 0..0
-//* identifier[uniqueId] only UniqueIdIdentifier
-//* identifier[uniqueId] 1..1
-* identifier 0..* MS
+* identifier 1..* MS
 * identifier ^slicing.discriminator.type = #value
-* identifier ^slicing.discriminator.path = "use"
+* identifier ^slicing.discriminator.path = "type"
 * identifier ^slicing.rules = #open
-* identifier contains 
-    uniqueId 1..1 MS and
-    entryUUID 0..* MS
-* identifier[uniqueId].use = #usual
-* identifier[uniqueId] only UniqueIdIdentifier
-* identifier[entryUUID].use = #official
+* identifier contains entryUUID 0..1 MS
 * identifier[entryUUID] only EntryUUIDIdentifier
+* identifier[entryUUID] ^short = "Business identifier for the DocumentReference"
+* identifier[entryUUID]. ^definition = "The Business identifier for the DocumentReference which maps to the DocumentEntry.entryUUID in XDS. This is used to refer to the DocumentReference itself as a record of the Document's metadata, as opposed to the UniqueId element which identifies the document which is pointed at by the document reference."
+* identifier contains uniqueId 1..1 MS
+* identifier[uniqueId] only UniqueIdIdentifier
+* identifier[uniqueId] ^short = "Unique identifier for the referenced Document"
+* identifier[uniqueId] ^definition = "The unique identifier for the referenced Document which maps to the DocumentEntry.uniqueId in XDS. This is used to identify the document which is pointed at by the DocumentReference Resource, as opposed to the entryUUID element which identifies the DocumentReference Resource itself."
 * status 1..1
 * status from DocumentReferenceStats (required)
 * docStatus 0..0
@@ -55,7 +54,6 @@ Description:    "A profile on the DocumentReference resource for MHD with minima
 * author 0..* MS
 * attester 0..1
 * attester.party 1..1
-//* custodian 0..0
 * description 0..1
 * securityLabel 0..* MS
 * content 1..1
@@ -142,8 +140,7 @@ Title: "XDS and MHD Mapping"
 * description -> "DocumentEntry.comments"
 * securityLabel -> "DocumentEntry.confidentialityCode"
 * content.attachment.creation -> "DocumentEntry.creationTime"
-* identifier[entryUUID] -> "DocumentEntry.entryUUID"
-* identifier[uniqueId] -> "DocumentEntry.uniqueId"
+* identifier -> "DocumentEntry.entryUUID and DocumentEntry.uniqueId"
 * event.concept -> "DocumentEntry.eventCodeList"
 * content.profile.valueCoding -> "DocumentEntry.formatCode"
 * content.attachment.hash -> "DocumentEntry.hash"

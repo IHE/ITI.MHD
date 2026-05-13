@@ -11,13 +11,16 @@ Description:    "A profile on the List resource for MHD use as a Folder with min
 - with use-cases and constraints found in [3:4.3 Additional Document Sharing Requirements](https://profiles.ihe.net/ITI/TF/Volume3/ch-4.3.html#4.3)"
 * extension[designationType] 0..* MS
 * identifier ^slicing.discriminator.type = #value
-* identifier ^slicing.discriminator.path = "use"
+* identifier ^slicing.discriminator.path = "type"
 * identifier ^slicing.rules = #open
 * identifier contains uniqueId 0..1 MS
 * identifier[uniqueId] only UniqueIdIdentifier
-* identifier contains entryUUID 0..* MS
+* identifier[uniqueId] ^short = "Folder.uniqueId"
+* identifier[uniqueId] ^definition = "The XDS UniqueId for the Folder. Globally unique identifier for the Folder."
+* identifier contains entryUUID 0..1 MS
 * identifier[entryUUID] only EntryUUIDIdentifier
-//* status 
+* identifier[entryUUID] ^short = "Folder.entryUUID"
+* identifier[entryUUID] ^definition = "The XDS entryUUID for the Folder. A globally unique identifier used to identify the XDS Folder entry in ebRIM."
 * mode = #working
 * title 0..1
 * code = MHDlistTypes#folder

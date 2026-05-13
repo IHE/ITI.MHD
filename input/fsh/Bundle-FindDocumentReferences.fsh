@@ -21,8 +21,6 @@ InstanceOf: IHE.MHD.Comprehensive.DocumentReference
 Usage: #inline
 * identifier[uniqueId].system = "urn:ietf:rfc:3986"
 * identifier[uniqueId].value = "urn:oid:1.3.6.1.4.1.12559.11.13.2.1.2951"
-* identifier[uniqueId].use = #usual
-* identifier[entryUUID].use = #official
 * identifier[entryUUID].system = "urn:ietf:rfc:3986"
 * identifier[entryUUID].value = "urn:uuid:50383ae5-49e5-4dea-b0e6-660cb9e7b91f"
 * status = #current
