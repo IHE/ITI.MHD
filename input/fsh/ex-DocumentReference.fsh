@@ -95,7 +95,7 @@ Usage: #example
 * content.attachment.title = "DocumentReference for Comprehensive minimally filled metadata"
 * description = "Example of a Comprehensive DocumentReference resource. This is minimally filled for all mandatory elements."
 // note the sha1 hash of a zero file is da39a3ee5e6b4b0d3255bfef95601890afd80709
-* content.attachment.hash = "ZGEzOWEzZWU1ZTZiNGIwZDMyNTViZmVmOTU2MDE4OTBhZmQ4MDcwOQ=="
+* content.attachment.hash = "2jmj7l5rSw0yVb/vlWAYkK/YBwk="
 * content.attachment.size = 0
 * relatesTo.code = #appends
 * relatesTo.target = Reference(DocumentReference/ex-documentreference)
@@ -140,7 +140,7 @@ Usage: #example
 * description = "Example of a Comprehensive DocumentReference resource. This is fully filled for all mandatory elements and all optional elements."
 // note the sha1 hash of actual content should be used. This hash 8a38f2633006fd535149c44a3a73f312437b3478
 // is of some random content.
-* content.attachment.hash = "OGEzOGYyNjMzMDA2ZmQ1MzUxNDljNDRhM2E3M2YzMTI0MzdiMzQ3OA=="
+* content.attachment.hash = "ijjyYzAG/VNRScRKOnPzEkN7NHg="
 * content.attachment.size = 190
 * relatesTo.code = #appends
 * relatesTo.target = Reference(DocumentReference/ex-documentreference)
@@ -191,7 +191,7 @@ Usage: #example
 * content.attachment.title = "DocumentReference for Comprehensive fully filled metadata"
 * description = "Example of a Comprehensive DocumentReference resource. This is fully filled for all mandatory elements and all optional elements."
 // note the sha1 hash of a zero file is da39a3ee5e6b4b0d3255bfef95601890afd80709
-* content.attachment.hash = "ZGEzOWEzZWU1ZTZiNGIwZDMyNTViZmVmOTU2MDE4OTBhZmQ4MDcwOQ=="
+* content.attachment.hash = "2jmj7l5rSw0yVb/vlWAYkK/YBwk="
 * content.attachment.size = 0
 * relatesTo.code = #appends
 * relatesTo.target = Reference(DocumentReference/ex-documentreference)
@@ -263,7 +263,7 @@ Usage: #example
 * content.attachment.url = "Binary/ex-b-binary"
 * content.attachment.title = "Hello World"
 * content.attachment.contentType = #text/plain
-* content.attachment.hash = "MGE0ZDU1YThkNzc4ZTUwMjJmYWI3MDE5NzdjNWQ4NDBiYmM0ODZkMA=="
+* content.attachment.hash = "Ck1VqNd45QIvq3AZd8XYQLvEhtA="
 * content.attachment.size = 11
 
 Instance: ex-b-binary
@@ -272,7 +272,7 @@ Title: "Example document that says: Hello World"
 Description: "Example binary that holds just Hello World
 - size 11
 - hash 0a4d55a8d778e5022fab701977c5d840bbc486d0
-- base64 of the hash MGE0ZDU1YThkNzc4ZTUwMjJmYWI3MDE5NzdjNWQ4NDBiYmM0ODZkMA=="
+- base64 of the hash Ck1VqNd45QIvq3AZd8XYQLvEhtA="
 Usage: #example
 * meta.security = http://terminology.hl7.org/CodeSystem/v3-ActReason#HTEST
 * contentType = #text/plain
