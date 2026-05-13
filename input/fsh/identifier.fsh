@@ -40,7 +40,6 @@ Description: "value must start with urn:uuid:"
 Severity: #error
 Expression: "startsWith('urn:uuid:')"
 
-<<<<<<< CP-ITI-MHD-homeCommunityId
 Extension: HomeCommunityId
 Id: ihe-HomeCommunityId
 Title: "The homeCommunityId where the artifact resides"
@@ -51,7 +50,6 @@ Description: "The globally unique, immutable, identifier of the homeCommunityId 
 * ^context[=].expression = "List"
 * value[x] only oid
 * valueOid 1..1
-
 
 
 Instance: IHE-TargetCommunityIdList
@@ -68,7 +66,6 @@ Usage: #definition
 * expression = "(extension('https://profiles.ihe.net/ITI/MHD/StructureDefinition/ihe-HomeCommunityId').value.ofType(oid))"
 * type = #uri
 
-=======
 CodeSystem: MHDIdentifierType
 Id: IHE.MHD.MHDIdentifierType
 Title: "IHE MHD Identifier Types"
@@ -85,4 +82,3 @@ Description: "ValueSet for Identifier.type values defined in IHE MHD"
 * ^experimental = false
 * MHDIdentifierType#entryUUID
 * MHDIdentifierType#uniqueId
->>>>>>> master
