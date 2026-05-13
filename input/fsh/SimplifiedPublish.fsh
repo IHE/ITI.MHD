@@ -22,7 +22,18 @@ Simplified Publish
 """
 * modifierExtension 0..0
 * masterIdentifier 1..1
-* identifier 0..0
+* identifier 0..* 
+* identifier ^slicing.discriminator.type = #value
+* identifier ^slicing.discriminator.path = "type"
+* identifier ^slicing.rules = #open
+* identifier contains entryUUID 0..0
+* identifier[entryUUID] only EntryUUIDIdentifier
+* identifier[entryUUID] ^short = "Business identifier for the DocumentReference"
+* identifier[entryUUID]. ^definition = "The Business identifier for the DocumentReference which maps to the DocumentEntry.entryUUID in XDS. This is used to refer to the DocumentReference itself as a record of the Document's metadata, as opposed to the UniqueId element which identifies the document which is pointed at by the document reference. This element SHALL NOT be provided by the client for simplified publish and will instead be assigned by the server."
+* identifier contains uniqueId 0..1 MS
+* identifier[uniqueId] only UniqueIdIdentifier
+* identifier[uniqueId] ^short = "Unique identifier for the referenced Document"
+* identifier[uniqueId] ^definition = "The unique identifier for the referenced Document which maps to the DocumentEntry.uniqueId in XDS. This is used to identify the document which is pointed at by the DocumentReference Resource, as opposed to the entryUUID element which identifies the DocumentReference Resource itself. If this element is present, it SHALL be the smae as masterIdentifier."
 * status 1..1
 * status = http://hl7.org/fhir/document-reference-status#current
 * docStatus 0..0
@@ -68,6 +79,8 @@ Usage: #example
 * meta.security = http://terminology.hl7.org/CodeSystem/v3-ActReason#HTEST
 * masterIdentifier.system = "urn:ietf:rfc:3986"
 * masterIdentifier.value = "urn:oid:1.2.840.113556.1.8000.2554.53432.348.12973.17740.34205.4355.60220.62012"
+* identifier[uniqueId].system = "urn:ietf:rfc:3986"
+* identifier[uniqueId].value = "urn:oid:1.2.840.113556.1.8000.2554.53432.348.12973.17740.34205.4355.60220.62012"
 * status = #current
 * content.attachment.contentType = #text/plain
 * content.attachment.data = "SGVsbG8gV29ybGQ="
