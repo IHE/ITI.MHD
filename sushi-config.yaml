@@ -45,8 +45,6 @@ parameters:  # see http://build.fhir.org/ig/FHIR/fhir-tools-ig/branches/master/i
   autoload-resources: 'true'
   shownav: 'true'
 
-# additional examples that need descriptions
-
 
 # ╭────────────────────────────────────────────pages───────────────────────────────────────────────╮
 # │  The pages property corresponds to IG.definition.page.                                         │

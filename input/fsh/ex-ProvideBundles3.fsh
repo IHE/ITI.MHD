@@ -141,7 +141,7 @@ Description: """
 For Bundling Example binary that 
 - holds \"Thanks for all the fish\"
 - hash e8e3172143001587cb7508446aa092eb51995809
-- base64 of ZThlMzE3MjE0MzAwMTU4N2NiNzUwODQ0NmFhMDkyZWI1MTk5NTgwOQ==
+- base64 of 6OMXIUMAFYfLdQhEaqCS61GZWAk=
 - size 24
 """
 Usage: #inline
@@ -244,7 +244,7 @@ Usage: #inline
 * content.profile.valueCoding = http://ihe.net/fhir/ihe.formatcode.fhir/CodeSystem/formatcode#urn:ihe:iti:xds-sd:text:2008
 * content.attachment.url = "urn:uuid:aaaaaaaa-bbbb-cccc-eeee-e00333300003"
 * content.attachment.contentType = #text/plain
-* content.attachment.hash = "ZThlMzE3MjE0MzAwMTU4N2NiNzUwODQ0NmFhMDkyZWI1MTk5NTgwOQ=="
+* content.attachment.hash = "6OMXIUMAFYfLdQhEaqCS61GZWAk="
 * content.attachment.size = 24
 * type = http://loinc.org#60591-5
 * category = http://loinc.org#11369-6

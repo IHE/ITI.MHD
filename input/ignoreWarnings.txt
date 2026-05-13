@@ -31,6 +31,13 @@ MSG_DEPRECATED
 MSG_EXPERIMENTAL
 SD_ED_EXPERIMENTAL_BINDING
 
+# YES we know some examples use old codes. That old code use is not important to the example use
+WARNING: Bundle/FindDocumentReferences: Bundle.entry[0].resource.context.facilityType.coding[0]: The concept '264358009' has a status of inactive and its use should be reviewed
+WARNING: Bundle/FindDocumentReferences: Bundle.entry[0].resource/*DocumentReference/50383ae5-49e5-4dea-b0e6-660cb9e7b91f*/.context.facilityType.coding[0]: The concept '264358009' has a status of inactive and its use should be reviewed
+
+# comes from core. Not anything we can document
+The extension http://hl7.org/fhir/StructureDefinition/elementdefinition-maxValueSet|5.2.0 is deprecated
+
 # these are all examples that are good enough
 Type_Specific_Checks_DT_URL_Resolve
 All_observations_should_have_an_effectiveDateTime_or_an_effectivePeriod
@@ -53,3 +60,4 @@ The link 'https://profiles.ihe.net/ITI/MHD/index.html' for "https://profiles.ihe
 # Used in an example
 WARNING: Bundle/FindDocumentReferences: Bundle.entry[0].resource.facilityType.coding[0]: The concept '264358009' has a status of inactive and its use should be reviewed
 WARNING: Bundle/FindDocumentReferences: Bundle.entry[0].resource/*DocumentReference/50383ae5-49e5-4dea-b0e6-660cb9e7b91f*/.facilityType.coding[0]: The concept '264358009' has a status of inactive and its use should be reviewed
+
