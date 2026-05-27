@@ -145,10 +145,16 @@
             },
             {
               "name": "type",
-              "definition": "http://hl7.org/fhir/SearchParameter/clinical-patient",
-              "type": "reference",
+              "definition": "http://hl7.org/fhir/SearchParameter/clinical-type",
+              "type": "token",
               "documentation": "Kind of document (LOINC if possible)"
-            }
+            },
+            {
+              "name": "targetCommunityIdList",
+              "definition": "https://profiles.ihe.net/ITI/MHD/SearchParameter/IHE-TargetCommunityIdList",
+              "type": "uri",
+              "documentation": "This SearchParameter enables finding by the homeCommunityId where DocumentReference, submissionSet, or folder exist."
+            }          
           ]
         },
         {

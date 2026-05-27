@@ -325,7 +325,7 @@ Usage: #inline
 Instance:   in-DocumentReferenceMinimalCommunity
 InstanceOf: IHE.MHD.Minimal.DocumentReference
 Title:      "DocumentReference for Minimal metadata with homeCommunityId"
-Description: "Example of a minimal DocumentReference resource with a homeCommunityId. This is very unlikely to be acceptable anywhere, but it is the minimum required. Note using UUIDs for the OIDs, because the tooling would not allow me to use the official OID root for extensions - 2.999 - https://oid-base.com/get/2.999"
+Description: "Example of a minimal DocumentReference resource with a homeCommunityId. This is very unlikely to be acceptable anywhere, but it is the minimum required."
 Usage: #inline
 * meta.security = http://terminology.hl7.org/CodeSystem/v3-ActReason#HTEST
 * identifier[uniqueId].system = "urn:ietf:rfc:3986"

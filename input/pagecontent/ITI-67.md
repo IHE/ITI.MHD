@@ -255,7 +255,7 @@ Identifiers in XDS are encoded using the [Document Sharing CXi Metadata datatype
 
 The Document Responder SHOULD populate the **homeCommunityId** extension when a value is available and policy allows it to be populated. The population of this element is identified in the [Target Communities Option](1332_actor_options.html#13327-target-communities-option).
 
-The Document Responser declaring the **Target Communities Option** SHALL support the [targetCommunityIdList](SearchParameter-IHE-TargetCommunityIdList.html) search parameter, and shall return an error when the homeCommunityId can not be fulfilled, See [XCA Target Communities Option](https://profiles.ihe.net/ITI/TF/Volume1/ch-18.html#18.2.6). The Document Consumer declaring the **Target Communities Option** MAY use this search parameter. Actors not declaring the **Target Communities Option** may support the search parameter. Support for the Search parameter SHALL be declared in the product/implementation CapabilityStatement.
+The Document Responder declaring the **Target Communities Option** shall support the [targetCommunityIdList](SearchParameter-IHE-TargetCommunityIdList.html) search parameter, and shall return an error when the homeCommunityId can not be fulfilled, See [XCA Target Communities Option](https://profiles.ihe.net/ITI/TF/Volume1/ch-18.html#18.2.6). The Document Consumer declaring the **Target Communities Option** MAY use this search parameter. Actors not declaring the **Target Communities Option** may support the search parameter. Support for the Search parameter shall be declared in the product/implementation CapabilityStatement.
 
 ###### 2:3.67.4.2.2.2 Resource Bundling
 
