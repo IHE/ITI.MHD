@@ -139,8 +139,8 @@
             },
             {
               "name": "type",
-              "definition": "http://hl7.org/fhir/SearchParameter/clinical-patient",
-              "type": "reference",
+              "definition": "http://hl7.org/fhir/SearchParameter/clinical-type",
+              "type": "token",
               "documentation": "Kind of document (LOINC if possible)"
             }
           ]
