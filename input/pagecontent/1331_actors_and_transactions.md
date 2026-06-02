@@ -169,6 +169,7 @@ The Document Consumer queries Document Responder for SubmissionSet, Folder, and 
 
 The following CapabilityStatements define the actor capabilities
 * [Document Consumer](CapabilityStatement-IHE.MHD.DocumentConsumer.html)
+* [Document Consumer implementing Target Communities Option](CapabilityStatement-IHE.MHD.DocumentConsumer.Target.html)
 
 #### 1:33.1.1.3 Document Recipient
 
@@ -188,8 +189,10 @@ The Document Responder responds with SubmissionSet, Folder, and DocumentReferenc
 
 The following CapabilityStatements define the actor capabilities
 * [Document Responder](CapabilityStatement-IHE.MHD.DocumentResponder.html)
+* [Document Responder implementing Target Communities Option](CapabilityStatement-IHE.MHD.DocumentResponder.Target.html)
 
 ### 1:33.1.2 Transaction Descriptions
+
 The transactions in this profile are summarized in the sections below.
 
 #### 1:33.1.2.1 Provide Document Bundle

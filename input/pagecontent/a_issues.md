@@ -1,5 +1,9 @@
 <div markdown="1" class="stu-note">
 
+### next
+
+- Add homeCommunityId support on Document Responder and Document Consumer with option for Search
+
 ### Signficant changes in MHD Version 4.2.3
 
 - Quality improvements

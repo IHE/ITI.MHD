@@ -40,6 +40,32 @@ Description: "value must start with urn:uuid:"
 Severity: #error
 Expression: "startsWith('urn:uuid:')"
 
+Extension: HomeCommunityId
+Id: ihe-HomeCommunityId
+Title: "The homeCommunityId where the artifact resides"
+Description: "The globally unique, immutable, identifier of the homeCommunityId entity where this artifact resides. The format of the value is an OID."
+* ^context[+].type = #element
+* ^context[=].expression = "DocumentReference"
+* ^context[+].type = #element
+* ^context[=].expression = "List"
+* value[x] only oid
+* valueOid 1..1
+
+
+Instance: IHE-TargetCommunityIdList
+InstanceOf: SearchParameter
+Title: "search on the IHE defined extension for homeCommunityId"
+Usage: #definition
+* url = "https://profiles.ihe.net/ITI/MHD/SearchParameter/IHE-TargetCommunityIdList"
+* description = "This SearchParameter enables finding by the homeCommunityId where DocumentReference, submissionSet, or folder exist."
+* name = "TargetCommunityIdList"
+* status = #active
+* code = #targetCommunityIdList
+* base[+] = #List
+* base[+] = #DocumentReference
+* expression = "(extension('https://profiles.ihe.net/ITI/MHD/StructureDefinition/ihe-HomeCommunityId').value.ofType(oid))"
+* type = #uri
+
 CodeSystem: MHDIdentifierType
 Id: IHE.MHD.MHDIdentifierType
 Title: "IHE MHD Identifier Types"
