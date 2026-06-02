@@ -1,12 +1,12 @@
 {
   "resourceType": "CapabilityStatement",
-  "id": "IHE.MHD.DocumentConsumer",
-  "url": "https://profiles.ihe.net/ITI/MHD/CapabilityStatement/IHE.MHD.DocumentConsumer",
-  "name": "IHE_MHD_DocumentConsumer",
-  "title": "Document Consumer (client)",
+  "id": "IHE.MHD.DocumentConsumer.Target",
+  "url": "https://profiles.ihe.net/ITI/MHD/CapabilityStatement/IHE.MHD.DocumentConsumer.Target",
+  "name": "IHE_MHD_DocumentConsumer_Target",
+  "title": "Document Consumer (client) - Target Communities Option",
   "status": "active",
   "experimental": false,
-  "description": "IHE ITI Mobile access to Health Documents (MHD) - Document Consumer (client).",
+  "description": "IHE ITI Mobile access to Health Documents (MHD) - Document Consumer (client) - Target Communities Option.",
   "kind": "requirements",
   "fhirVersion": "5.0.0",
   "format": [
@@ -148,7 +148,13 @@
               "definition": "http://hl7.org/fhir/SearchParameter/clinical-type",
               "type": "token",
               "documentation": "Kind of document (LOINC if possible)"
-            }
+            },
+            {
+              "name": "targetCommunityIdList",
+              "definition": "https://profiles.ihe.net/ITI/MHD/SearchParameter/IHE-TargetCommunityIdList",
+              "type": "uri",
+              "documentation": "This SearchParameter enables finding by the homeCommunityId where DocumentReference, submissionSet, or folder exist."
+            }          
           ]
         },
         {
@@ -231,6 +237,12 @@
               "definition": "https://profiles.ihe.net/ITI/MHD/SearchParameter/List-SourceId",
               "type": "token",
               "documentation": "This IHE extension on parameters defined as SearchParameter/List-SourceId, of type token, specifies the source (author) value supplied in the List Resource."
+            },
+            {
+              "name": "targetCommunityIdList",
+              "definition": "https://profiles.ihe.net/ITI/MHD/SearchParameter/IHE-TargetCommunityIdList",
+              "type": "uri",
+              "documentation": "This SearchParameter enables finding by the homeCommunityId where DocumentReference, submissionSet, or folder exist."
             }
           ]
         },

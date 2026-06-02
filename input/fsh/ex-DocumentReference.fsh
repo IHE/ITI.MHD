@@ -93,7 +93,7 @@ Usage: #example
 * content.attachment.title = "DocumentReference for Comprehensive minimally filled metadata"
 * description = "Example of a Comprehensive DocumentReference resource. This is minimally filled for all mandatory elements."
 // note the sha1 hash of a zero file is da39a3ee5e6b4b0d3255bfef95601890afd80709
-* content.attachment.hash = "ZGEzOWEzZWU1ZTZiNGIwZDMyNTViZmVmOTU2MDE4OTBhZmQ4MDcwOQ=="
+* content.attachment.hash = "2jmj7l5rSw0yVb/vlWAYkK/YBwk="
 * content.attachment.size = 0
 * relatesTo.code = http://hl7.org/fhir/document-relationship-type#appends
 * relatesTo.target = Reference(DocumentReference/ex-documentreference)
@@ -139,7 +139,7 @@ Usage: #example
 * description = "Example of a Comprehensive DocumentReference resource. This is fully filled for all mandatory elements and all optional elements."
 // note the sha1 hash of actual content should be used. This hash 8a38f2633006fd535149c44a3a73f312437b3478
 // is of some random content.
-* content.attachment.hash = "OGEzOGYyNjMzMDA2ZmQ1MzUxNDljNDRhM2E3M2YzMTI0MzdiMzQ3OA=="
+* content.attachment.hash = "ijjyYzAG/VNRScRKOnPzEkN7NHg="
 * content.attachment.size = 190
 * relatesTo.code = http://hl7.org/fhir/document-relationship-type#appends
 * relatesTo.target = Reference(DocumentReference/ex-documentreference)
@@ -191,7 +191,7 @@ Usage: #example
 * content.attachment.title = "DocumentReference for Comprehensive fully filled metadata"
 * description = "Example of a Comprehensive DocumentReference resource. This is fully filled for all mandatory elements and all optional elements."
 // note the sha1 hash of a zero file is da39a3ee5e6b4b0d3255bfef95601890afd80709
-* content.attachment.hash = "ZGEzOWEzZWU1ZTZiNGIwZDMyNTViZmVmOTU2MDE4OTBhZmQ4MDcwOQ=="
+* content.attachment.hash = "2jmj7l5rSw0yVb/vlWAYkK/YBwk="
 * content.attachment.size = 0
 * relatesTo.code = http://hl7.org/fhir/document-relationship-type#appends
 * relatesTo.target = Reference(DocumentReference/ex-documentreference)
@@ -295,16 +295,18 @@ Usage: #inline
 Instance:   ex-findDocumentReferencesResponse
 InstanceOf: IHE.MHD.FindDocumentReferencesResponseMessage
 Title:      "Example of a Find Document References Response Message"
-Description: "Example of a Find Document References Bundle Search Set with a single DocumentReference"
+Description: "Example of a Find Document References Bundle Search Set with minimal DocumentReference, and one with a homeCommunityId value populated."
 Usage: #example
 * meta.security = http://terminology.hl7.org/CodeSystem/v3-ActReason#HTEST
 * type = #searchset
 * link[0].relation = #self
 * link[0].url = "fhir.example.com/fhir/DocumentReference?patient=9876&status=current"
-* total = 1
+* total = 2
 * timestamp = 2021-04-16T11:32:24Z
-* entry[0].fullUrl = "http://example.org/DocumentReference/in-DocumentReferenceMinimal"
-* entry[0].resource = in-DocumentReferenceMinimal
+* entry[+].fullUrl = "http://example.org/DocumentReference/in-DocumentReferenceMinimal"
+* entry[=].resource = in-DocumentReferenceMinimal
+* entry[+].fullUrl = "http://example.org/DocumentReference/in-DocumentReferenceMinimalCommunity"
+* entry[=].resource = in-DocumentReferenceMinimalCommunity
 
 Instance:   in-DocumentReferenceMinimal
 InstanceOf: IHE.MHD.Minimal.DocumentReference
@@ -319,3 +321,19 @@ Usage: #inline
 * status = #current
 * content.attachment.contentType = #text/plain
 * content.attachment.url = "http://example.com/nowhere.txt"
+
+Instance:   in-DocumentReferenceMinimalCommunity
+InstanceOf: IHE.MHD.Minimal.DocumentReference
+Title:      "DocumentReference for Minimal metadata with homeCommunityId"
+Description: "Example of a minimal DocumentReference resource with a homeCommunityId. This is very unlikely to be acceptable anywhere, but it is the minimum required."
+Usage: #inline
+* meta.security = http://terminology.hl7.org/CodeSystem/v3-ActReason#HTEST
+* identifier[uniqueId].system = "urn:ietf:rfc:3986"
+* identifier[uniqueId].value = "urn:oid:1.2.840.113556.1.8000.2554.53432.348.12973.17740.34205.4355.50220.62013"
+* identifier[entryUUID].system = "urn:ietf:rfc:3986"
+* identifier[entryUUID].value = "urn:uuid:7d5bb8ac-68ee-4926-85e7-b8aac8e1f09e"
+* status = #current
+* content.attachment.contentType = #text/plain
+* content.attachment.url = "http://example.com/nowhere2.txt"
+* extension[homeCommunityId].valueOid = "urn:oid:2.999.123.1740.205.55.20.13"
+

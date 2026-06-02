@@ -1,12 +1,12 @@
 {
   "resourceType": "CapabilityStatement",
-  "id": "IHE.MHD.DocumentConsumer",
-  "url": "https://profiles.ihe.net/ITI/MHD/CapabilityStatement/IHE.MHD.DocumentConsumer",
-  "name": "IHE_MHD_DocumentConsumer",
-  "title": "Document Consumer (client)",
+  "id": "IHE.MHD.DocumentResponder.Target",
+  "url": "https://profiles.ihe.net/ITI/MHD/CapabilityStatement/IHE.MHD.DocumentResponder.Target",
+  "name": "IHE_MHD_DocumentResponder_Target",
+  "title": "Document Responder (server) - Target Communities Option",
   "status": "active",
   "experimental": false,
-  "description": "IHE ITI Mobile access to Health Documents (MHD) - Document Consumer (client).",
+  "description": "IHE ITI Mobile access to Health Documents (MHD) - Document Responder (server) - Target Communities Option.",
   "kind": "requirements",
   "fhirVersion": "5.0.0",
   "format": [
@@ -15,7 +15,7 @@
   ],
   "rest": [
     {
-      "mode": "client",
+      "mode": "server",
       "security": {
 			  "description": "Recommend [ATNA](https://profiles.ihe.net/ITI/TF/Volume1/ch-9.html), encouraged [IHE-IUA](https://profiles.ihe.net/ITI/IUA/index.html) or SMART-on-FHIR"
       },
@@ -148,12 +148,25 @@
               "definition": "http://hl7.org/fhir/SearchParameter/clinical-type",
               "type": "token",
               "documentation": "Kind of document (LOINC if possible)"
+            },
+            {
+              "name": "targetCommunityIdList",
+              "definition": "https://profiles.ihe.net/ITI/MHD/SearchParameter/IHE-TargetCommunityIdList",
+              "type": "uri",
+              "documentation": "This SearchParameter enables finding by the homeCommunityId where DocumentReference, submissionSet, or folder exist."
             }
           ]
         },
         {
           "type": "List",
-          "supportedProfile": ["https://profiles.ihe.net/ITI/MHD/StructureDefinition/IHE.MHD.List"],
+          "supportedProfile": [
+            "https://profiles.ihe.net/ITI/MHD/StructureDefinition/IHE.MHD.List",
+            "https://profiles.ihe.net/ITI/MHD/StructureDefinition/IHE.MHD.UnContained.Comprehensive.SubmissionSet",
+			"https://profiles.ihe.net/ITI/MHD/StructureDefinition/IHE.MHD.Comprehensive.SubmissionSet",
+            "https://profiles.ihe.net/ITI/MHD/StructureDefinition/IHE.MHD.Minimal.SubmissionSet",
+			"https://profiles.ihe.net/ITI/MHD/StructureDefinition/IHE.MHD.Comprehensive.Folder",
+			"https://profiles.ihe.net/ITI/MHD/StructureDefinition/IHE.MHD.Minimal.Folder"
+          ],
           "interaction": [
             {
               "code": "read"
@@ -231,6 +244,12 @@
               "definition": "https://profiles.ihe.net/ITI/MHD/SearchParameter/List-SourceId",
               "type": "token",
               "documentation": "This IHE extension on parameters defined as SearchParameter/List-SourceId, of type token, specifies the source (author) value supplied in the List Resource."
+            },
+            {
+              "name": "targetCommunityIdList",
+              "definition": "https://profiles.ihe.net/ITI/MHD/SearchParameter/IHE-TargetCommunityIdList",
+              "type": "uri",
+              "documentation": "This SearchParameter enables finding by the homeCommunityId where DocumentReference, submissionSet, or folder exist."
             }
           ]
         },

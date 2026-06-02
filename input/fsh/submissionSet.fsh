@@ -149,4 +149,5 @@ Title: "XDS and MHD Mapping"
 * entry.date -> "n/a"
 * entry.item -> "references to DocumentReference(s) and Folder List(s)"
 * emptyReason -> "n/a"
+* extension[homeCommunityId] -> "SubmissionSet.homeCommunityId"
 

@@ -8,7 +8,7 @@
   "experimental": false,
   "description": "IHE ITI Mobile access to Health Documents (MHD) - Document Recipient - with Comprehensive declared Option.",
   "kind": "requirements",
-  "fhirVersion": "4.0.1",
+  "fhirVersion": "5.0.0",
   "format": [
     "application/fhir+xml",
     "application/fhir+json"
