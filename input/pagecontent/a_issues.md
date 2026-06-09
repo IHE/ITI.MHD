@@ -1,5 +1,14 @@
 <div markdown="1" class="stu-note">
 
+### Significant changes in MHD Version 5.1.0
+
+- clarify xds hexBinary encoding and FHIR base64 encoding (CP-ITI-1325-02)
+- relaxed search profiling, no profile constraints on ITI-66 and ITI-67 responses (CP-ITI-1327-00, closes [#260](https://github.com/IHE/ITI.MHD/issues/260) and [#261](
+https://github.com/IHE/ITI.MHD/issues/261))
+- add homeCommunityId support on Document Responder and Document Consumer with Target Communities Option (CP-ITI-1326-02)
+- differentiate entryUUID vs uniqueID with Identifier.type rather than Identifier.use (CP-ITI-1328-01)
+- quality improvements and updated ig dependencies
+
 ### Significant changes in MHD Version 5.0.0
 
 - Conversion to FHIR R5
