@@ -1,12 +1,12 @@
 {
  "package-id" : "ihe.iti.mhd",
- "version" : "4.2.3",
- "path" : "https://profiles.ihe.net/ITI/MHD/4.2.3",
+ "version" : "4.2.4",
+ "path" : "https://profiles.ihe.net/ITI/MHD/4.2.4",
  "mode" : "milestone",
  "status" : "trial-use",
  "sequence": "Publication",
  "desc" : "Trial Implementation - Quality improvements.",
- "descmd" : "Version 4.2.3
+ "descmd" : "Version 4.2.4"
 
 - Quality improvements
 - conversion of json examples to sushi
@@ -14,6 +14,7 @@
 - remove narrative comment about masterIdentifier in the CapabilityStatements for List
 - Identifier profiles mandate .use is populated",
  "changes" : "a_issues.html"
+ "first" : false
 }
 
 
