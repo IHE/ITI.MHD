@@ -7,12 +7,6 @@
  "sequence": "Publication",
  "desc" : "Trial Implementation - Quality improvements.",
  "descmd" : "Version 4.2.4"
-
-- Quality improvements
-- conversion of json examples to sushi
-- addition of an indication of use of FHIR R4 on index.html page
-- remove narrative comment about masterIdentifier in the CapabilityStatements for List
-- Identifier profiles mandate .use is populated",
  "changes" : "a_issues.html"
  "first" : false
 }
