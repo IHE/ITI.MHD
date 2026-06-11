@@ -6,7 +6,7 @@
  "status" : "trial-use",
  "sequence": "Publication",
  "desc" : "Trial Implementation - Quality improvements.",
- "descmd" : "Version 4.2.4"
+ "descmd" : "IHE ITI MHD Version 4.2.4"
  "changes" : "a_issues.html"
  "first" : false
 }
