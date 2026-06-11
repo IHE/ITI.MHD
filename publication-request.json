@@ -1,7 +1,7 @@
 {
  "package-id" : "ihe.iti.mhd",
  "version" : "4.2.4",
- "path" : "https://profiles.ihe.net/ITI/MHD/4.2.3",
+ "path" : "https://profiles.ihe.net/ITI/MHD/4.2.4",
  "mode" : "milestone",
  "status" : "trial-use",
  "sequence": "Publication",
