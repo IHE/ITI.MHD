@@ -1,10 +1,15 @@
 <div markdown="1" class="stu-note">
 
-### next
+### Significant changes in MHD Version 4.2.4
 
-- Add homeCommunityId support on Document Responder and Document Consumer with option for Search
+- clarify xds hexBinary encoding and FHIR base64 encoding (CP-ITI-1325-02)
+- relaxed search profiling, no profile constraints on ITI-66 and ITI-67 responses (CP-ITI-1327-00, closes [#260](https://github.com/IHE/ITI.MHD/issues/260) and [#261](
+https://github.com/IHE/ITI.MHD/issues/261))
+- add homeCommunityId support on Document Responder and Document Consumer with Target Communities Option (CP-ITI-1326-02)
+- differentiate entryUUID vs uniqueID with Identifier.type rather than Identifier.use (CP-ITI-1328-01)
+- quality improvements and updated ig dependencies
 
-### Signficant changes in MHD Version 4.2.3
+### Significant changes in MHD Version 4.2.3
 
 - Quality improvements
 - conversion of json examples to sushi
@@ -12,7 +17,7 @@
 - remove narrative comment about masterIdentifier in the CapabilityStatements for List
 - Identifier profiles mandate .use is populated
 
-### Signficant changes in MHD Version 4.2.2
+### Significant changes in MHD Version 4.2.2
 
 Version 4.2.2
 - Quality improvements
