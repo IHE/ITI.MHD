@@ -8,10 +8,10 @@ status: active
 title: "Mobile access to Health Documents (MHD)"
 description: ImplementationGuide for IHE IT Infrastructure Technical Framework Supplement Mobile access to Health Documents (MHD)
 #date: 2024-05-23
-version: 4.2.4-current
-releaseLabel: ci-build
+version: 4.2.4
+# releaseLabel: ci-build
 #releaselabel: ballot
-#releaseLabel: Trial-Implementation
+releaseLabel: Trial-Implementation
 publisher:
   - name: IHE IT Infrastructure Technical Committee
   - url: https://www.ihe.net/ihe_domains/it_infrastructure/
@@ -34,7 +34,7 @@ dependencies:
   ihe.formatcode.fhir:
     id: iheformatcodefhir
     uri: https://profiles.ihe.net/fhir/ihe.formatcode.fhir/ImplementationGuide/ihe.formatcode.fhir
-    version: 1.4.x
+    version: 1.5.x
  
 parameters:  # see http://build.fhir.org/ig/FHIR/fhir-tools-ig/branches/master/index.html
   path-resource:

@@ -1,19 +1,14 @@
 {
  "package-id" : "ihe.iti.mhd",
- "version" : "4.2.3",
- "path" : "https://profiles.ihe.net/ITI/MHD/4.2.3",
+ "version" : "4.2.4",
+ "path" : "https://profiles.ihe.net/ITI/MHD/4.2.4",
  "mode" : "milestone",
  "status" : "trial-use",
  "sequence": "Publication",
- "desc" : "Trial Implementation - Quality improvements.",
- "descmd" : "Version 4.2.3
-
-- Quality improvements
-- conversion of json examples to sushi
-- addition of an indication of use of FHIR R4 on index.html page
-- remove narrative comment about masterIdentifier in the CapabilityStatements for List
-- Identifier profiles mandate .use is populated",
- "changes" : "a_issues.html"
+ "desc" : "Trial Implementation - Quality improvements",
+ "descmd" : "Version 4.2.4",
+ "changes" : "a_issues.html",
+ "first": false
 }
 
 
