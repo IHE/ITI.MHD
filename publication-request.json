@@ -1,12 +1,12 @@
 {
  "package-id" : "ihe.iti.mhd",
- "version" : "4.2.4",
- "path" : "https://profiles.ihe.net/ITI/MHD/4.2.4",
+ "version" : "4.2.5-comment",
+ "path" : "https://profiles.ihe.net/ITI/MHD/4.2.5-comment",
  "mode" : "milestone",
- "status" : "trial-use",
+ "status" : "ballot",
  "sequence": "Publication",
- "desc" : "Trial Implementation - Quality improvements",
- "descmd" : "Version 4.2.4",
+ "desc" : "Trial Implementation - Publication for comment",
+ "descmd" : "Version 4.2.5-comment",
  "changes" : "a_issues.html",
  "first": false
 }

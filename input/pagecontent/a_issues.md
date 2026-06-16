@@ -1,5 +1,9 @@
 <div markdown="1" class="stu-note">
 
+### Significant changes in MHD Version 4.2.5
+
+- add **Full-Text Search Option** to search the full text of documents
+
 ### Significant changes in MHD Version 4.2.4
 
 - clarify xds hexBinary encoding and FHIR base64 encoding (CP-ITI-1325-02)
