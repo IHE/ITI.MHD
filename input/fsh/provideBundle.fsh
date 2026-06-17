@@ -96,6 +96,7 @@ Description: "A ValueSet of the allowed actions in a ITI-65 Provide Document Bun
 * http://hl7.org/fhir/http-verb#GET
 * http://hl7.org/fhir/http-verb#POST
 * http://hl7.org/fhir/http-verb#PUT
+* http://hl7.org/fhir/http-verb#PATCH
 
 
 
