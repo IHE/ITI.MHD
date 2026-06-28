@@ -61,3 +61,15 @@ The link 'https://profiles.ihe.net/ITI/MHD/index.html' for "https://profiles.ihe
 WARNING: Bundle/FindDocumentReferences: Bundle.entry[0].resource.facilityType.coding[0]: The concept '264358009' has a status of inactive and its use should be reviewed
 WARNING: Bundle/FindDocumentReferences: Bundle.entry[0].resource/*DocumentReference/50383ae5-49e5-4dea-b0e6-660cb9e7b91f*/.facilityType.coding[0]: The concept '264358009' has a status of inactive and its use should be reviewed
 
+# The IG intentionally uses markup-like markers in example string values to demonstrate highlighting of full-text search results.
+The string value contains text that looks like embedded HTML tags. If this content is rendered to HTML without appropriate post-processing, it may be a security risk
+
+
+# we need to define on a IHE level how to assign oids first
+WARNING: Resource: The resource CodeSystem/IHE.MHD.MHDIdentifierType should have an OID assigned to cater for possible use with OID based terminology systems e.g. CDA usage (OIDs are easy to assign - see https://build.fhir.org/ig/FHIR/fhir-tools-ig/CodeSystem-ig-parameters.html#ig-parameters-auto-oid-root)
+WARNING: Resource: The resource CodeSystem/MHDlistTypes should have an OID assigned to cater for possible use with OID based terminology systems e.g. CDA usage (OIDs are easy to assign - see https://build.fhir.org/ig/FHIR/fhir-tools-ig/CodeSystem-ig-parameters.html#ig-parameters-auto-oid-root)
+WARNING: Resource: The resource ValueSet/DocumentReferenceStats should have an OID assigned to cater for possible use with OID based terminology systems e.g. CDA usage (OIDs are easy to assign - see https://build.fhir.org/ig/FHIR/fhir-tools-ig/CodeSystem-ig-parameters.html#ig-parameters-auto-oid-root)
+WARNING: Resource: The resource ValueSet/IHE.MHD.MHDIdentifierTypeVS should have an OID assigned to cater for possible use with OID based terminology systems e.g. CDA usage (OIDs are easy to assign - see https://build.fhir.org/ig/FHIR/fhir-tools-ig/CodeSystem-ig-parameters.html#ig-parameters-auto-oid-root)
+WARNING: Resource: The resource ValueSet/MHDlistTypesVS should have an OID assigned to cater for possible use with OID based terminology systems e.g. CDA usage (OIDs are easy to assign - see https://build.fhir.org/ig/FHIR/fhir-tools-ig/CodeSystem-ig-parameters.html#ig-parameters-auto-oid-root)
+WARNING: Resource: The resource ValueSet/MHDprovideFolderActions should have an OID assigned to cater for possible use with OID based terminology systems e.g. CDA usage (OIDs are easy to assign - see https://build.fhir.org/ig/FHIR/fhir-tools-ig/CodeSystem-ig-parameters.html#ig-parameters-auto-oid-root)
+WARNING: Resource: The resource ValueSet/MHDprovidePatientActions should have an OID assigned to cater for possible use with OID based terminology systems e.g. CDA usage (OIDs are easy to assign - see https://build.fhir.org/ig/FHIR/fhir-tools-ig/CodeSystem-ig-parameters.html#ig-parameters-auto-oid-root)
