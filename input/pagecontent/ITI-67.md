@@ -109,10 +109,10 @@ This parameter, of type token, specifies the specific type of the DocumentRefere
 <div class="new-content">
 Section on new full text search option.
 </div>
+
 ###### 2:3.67.4.1.2.1.1 Full-Text Search Option
 
-
-If the Full-Text Search Option is supported, the Document Consumer must be able to make use of the `full-text` search parameter that specifies terms or phrases that are used to search document content in the documents managed by the Document Responder. The Document Responder must match the `full-text` search parameters in combination with any metadata-based search parameters defined in the same query (i.e. only if a document matches the filter from `full-text` query and the meta-data based filter parameters, the document is considered a match).
+If the Full-Text Search Option is supported, the `full-text` search parameter specifies terms or phrases used to search the textual content of the document available via `DocumentReference.content.attachment.url` in the documents managed by the Document Responder. The Document Responder must match the `full-text` search parameter in combination with any metadata-based search parameters defined in the same query (i.e. a document is considered a match only if it matches both the full-text search and the metadata-based filter parameters).
 
 The Document Responder SHALL support the [full-text search parameter](./SearchParameter-DocumentReference-Full-Text-Search.html) for searching the textual content of the document available via `DocumentReference.content.attachment.url`. The search rules for this parameter SHALL follow the [ODATA Search](https://docs.oasis-open.org/odata/odata/v4.0/cs01/part1-protocol/odata-v4.0-cs01-part1-protocol.html#_The_$search_System)specification with the following additions:
 
