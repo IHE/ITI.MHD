@@ -112,29 +112,13 @@ Section on new full text search option.
 ###### 2:3.67.4.1.2.1.1 Full-Text Search Option
 
 
-If the Full-Text Search Option is supported, the Document Consumer must be able to make use of the **_content** parameter that specifies terms or phrases that are used to search document content in the documents managed by the Document Responder. The Document Responder must match the full-text search parameters in combination with any metadata-based search parameters defined in the same query (i.e. only if a document matches the filter from **_content** query and the meta-data based filter parameters, the document is considered a match).
+If the Full-Text Search Option is supported, the Document Consumer must be able to make use of the `full-text` search parameter that specifies terms or phrases that are used to search document content in the documents managed by the Document Responder. The Document Responder must match the `full-text` search parameters in combination with any metadata-based search parameters defined in the same query (i.e. only if a document matches the filter from `full-text` query and the meta-data based filter parameters, the document is considered a match).
 
-The Document Responder shall support the semantics of the logical operators OR, AND defined in [ODATA Search](https://docs.oasis-open.org/odata/odata/v4.0/cs01/part1-protocol/odata-v4.0-cs01-part1-protocol.html#_The_$search_System), amended by the following rules:
+The Document Responder SHALL support the [full-text search parameter](./SearchParameter-DocumentReference-Full-Text-Search.html) for searching the textual content of the document available via `DocumentReference.content.attachment.url`. The search rules for this parameter SHALL follow the [ODATA Search](https://docs.oasis-open.org/odata/odata/v4.0/cs01/part1-protocol/odata-v4.0-cs01-part1-protocol.html#_The_$search_System)specification with the following additions:
 
-  <ul>
-    <li>All search terms are encoded as a single string (search string).</li>
-    <li>Each search term may include any uppercase and lowercase letters, digits and hyphens.</li>
-    <li>Each search term (and the entire search string) is encoded in UTF-8 (any escaping required for transmission is not included here).</li>
-    <li>Search terms are matched case-insensitively, i.e., the Document Responder shall ignore case differences.</li>
-    <li>Search terms are found at any position within a word (beginning, middle, end).</li>
-    <li>Instead of a single search term, multiple search terms can be combined as a so-called "phrase" by enclosing them in double quotation marks (") and separating them with spaces. If a document contains the search terms in the phrase in the same order and spelling (also separated by spaces), the document is considered a match. The content of a phrase is also searched case-insensitively.</li>
-    <li>Search terms (including entire phrases) can be combined into a logical expression using the Boolean operators (and keywords) <i>AND</i> and <i>OR</i>, and can be negated with <i>NOT</i> if needed:
-      <ul>
-        <li><i>AND</i>: Both search terms/phrases must be found in a document for it to be considered a match.</li>
-        <li><i>OR</i>: At least one of the two search terms/phrases must be found in a document for it to be considered a match.</li>
-        <li><i>NOT</i>: Any search term/phrase can be negated by prefixing it with <i>NOT</i>; the document is considered a match if the search term/phrase cannot be found in the document. This also applies to individual terms not combined with <i>AND</i>/<i>OR</i>.</li>
-        <li>Boolean keywords within phrases are treated as regular search terms. Phrases can be combined as a whole with the mentioned Boolean operators, just like individual search terms.</li>
-        <li>The precedence of the Boolean operators is as follows: <i>NOT</i> (highest) > <i>AND</i> > <i>OR</i> (lowest).</li>
-        <li>Simple round brackets "(" and ")" can be used to adjust the evaluation order (precedence) of individual search terms/phrases in a Boolean expression. Nested parentheses are not allowed.</li>
-      </ul>
-    </li>
-    <li>Multiple search terms/phrases must always be combined using <i>AND</i> or <i>OR</i>.</li>
-  </ul>
+- Search terms SHALL be matched case-insensitively.
+- Search terms SHALL be matched at any position within a word (beginning, middle, or end).
+- Search expressions SHALL support at least a single level of bracket nesting.
 
 The Document Consumer must support at least a subset of the capabilities described above and may utilize metadata-based and content-based search parameters either independently or in combination.
 
@@ -379,7 +363,7 @@ Section on new full text search option.
 
 The [Full-Text Search Match Snippet](./StructureDefinition-ihe-full-text-search-match-snippet.html) and the [Full-Text Search Match Total Hits](./StructureDefinition-ihe-full-text-search-match-total-hits.html) extensions are used in the context of the Full-Text Search Option to provide a more detailed representation of search results.
 
-The Match Snippet extension is intended to extract relevant text excerpts (snippets) from a document that contain the searched term. These snippets are provided in the extension’s value element and highlight the matched term using the <i>&lt;mark&gt; &lt;/mark&gt;</i> tag. In addition, the page number of the document on which the match was found is indicated. A Document Responder shall return a snippet for each match found within a document. If the number of identified snippets exceeds ten, the Document Responder may return only the first ten snippets.
+The Match Snippet extension is intended to extract relevant text excerpts (snippets) from a document that contain the searched term. These snippets are provided in the extension’s value element and highlight the matched term using the <i>&lt;mark&gt; &lt;/mark&gt;</i> tag. If the document format is page-oriented, such as PDF, the page number where the match was found is included as well. A Document Responder SHOULD return a snippet for each match found within a document. If the number of identified snippets exceeds ten, the Document Responder MAY return only the first ten snippets.
 
 The Match Total Hits extension provides an aggregated overview of the search results within a document. It indicates the total number of matches found across the entire document based on the full-text search. A Document Responder shall populate the Match Total Hits extension within the search element of each entry in the Bundle representing the full-text search result set. The Match Total Hits extension shall specify the total number of matches found within the document as an integer value. This value reflects the total number of matches across the entire document and is not limited to the number of returned snippets.
 
