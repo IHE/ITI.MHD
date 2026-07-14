@@ -97,6 +97,12 @@
               "documentation": "Format/content rules for the document"
             },
             {
+              "name": "full-text",
+              "definition": "https://profiles.ihe.net/ITI/MHD/SearchParameter/DocumentReference-Full-Text-Search",
+              "type": "string",
+              "documentation": "Searches the textual content of the represented document available via DocumentReference.content.attachment.url"
+            },
+            {
               "name": "identifier",
               "definition": "http://hl7.org/fhir/SearchParameter/clinical-identifier",
               "type": "token",

@@ -67,3 +67,19 @@ Description: "This extension contains the total number of full-text search match
 * valueInteger 1..1
   * ^short = "Total number of matches found within this document."
   * ^definition = "Indicates the total number of matches identified by a full-text search within this document."
+
+
+Instance: DocumentReference-Full-Text-Search
+InstanceOf: SearchParameter
+Title: "search on the textual content of the represented document"
+Description: "Searches the textual content of the represented document. The search is performed against the content available via DocumentReference.content.attachment.url."
+Usage: #definition
+* url = "https://profiles.ihe.net/ITI/MHD/SearchParameter/DocumentReference-Full-Text-Search"
+* name = "Full-Text-Search"
+* status = #active
+* code = #full-text
+* type = #string
+* base[+] = #DocumentReference
+* multipleOr = false
+* multipleAnd = false
+* modifier[+] = #exact
