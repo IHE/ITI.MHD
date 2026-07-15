@@ -114,6 +114,7 @@ Section on new full text search option.
 
 If the Full-Text Search Option is supported, the `full-text` search parameter specifies terms or phrases used to search the textual content of the document available via `DocumentReference.content.attachment.url` in the documents managed by the Document Responder. The Document Responder must match the `full-text` search parameter in combination with any metadata-based search parameters defined in the same query (i.e. a document is considered a match only if it matches both the full-text search and the metadata-based filter parameters).
 
+The Full-Text Search is performed on the human-readable textual content of the document. Technical representations such as XML or JSON, markup elements, identifiers, codes and other content that is not presented to the reader are not considered searchable content. Text extraction using OCR is optional.
 
 The search rules for the [full-text search parameter](./SearchParameter-DocumentReference-Full-Text-Search.html) SHALL follow the [ODATA Search](https://docs.oasis-open.org/odata/odata/v4.0/cs01/part1-protocol/odata-v4.0-cs01-part1-protocol.html#_The_$search_System) specification with the following additions:
 
