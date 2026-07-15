@@ -114,13 +114,16 @@ Section on new full text search option.
 
 If the Full-Text Search Option is supported, the `full-text` search parameter specifies terms or phrases used to search the textual content of the document available via `DocumentReference.content.attachment.url` in the documents managed by the Document Responder. The Document Responder must match the `full-text` search parameter in combination with any metadata-based search parameters defined in the same query (i.e. a document is considered a match only if it matches both the full-text search and the metadata-based filter parameters).
 
-The Document Responder SHALL support the [full-text search parameter](./SearchParameter-DocumentReference-Full-Text-Search.html) for searching the textual content of the document available via `DocumentReference.content.attachment.url`. The search rules for this parameter SHALL follow the [ODATA Search](https://docs.oasis-open.org/odata/odata/v4.0/cs01/part1-protocol/odata-v4.0-cs01-part1-protocol.html#_The_$search_System)specification with the following additions:
+
+The search rules for the [full-text search parameter](./SearchParameter-DocumentReference-Full-Text-Search.html) SHALL follow the [ODATA Search](https://docs.oasis-open.org/odata/odata/v4.0/cs01/part1-protocol/odata-v4.0-cs01-part1-protocol.html#_The_$search_System) specification with the following additions:
 
 - Search terms SHALL be matched case-insensitively.
 - Search terms SHALL be matched at any position within a word (beginning, middle, or end).
 - Search expressions SHALL support at least a single level of bracket nesting.
 
-The Document Consumer must support at least a subset of the capabilities described above and may utilize metadata-based and content-based search parameters either independently or in combination.
+The Document Responder SHALL support the `full-text` search parameter as described above for searching the textual content of the document available via `DocumentReference.content.attachment.url`.
+
+The Document Consumer SHALL support constructing valid full-text queries as described above with the exception that it MAY support only a subset of valid queries. For example, it might only support searching on simple strings.
 
 The MHD profile does not prescribe how the Document Responder should implement full-text search. In many cases, the Document Responder maintains a search index that is updated with each new, updated or deleted document. Alternatively, full-text search may be performed ad hoc or delegated to a specialized system.
 
