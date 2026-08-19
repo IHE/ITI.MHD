@@ -106,10 +106,6 @@ This IHE extension on parameters defined as [IHE-TargetCommunityIdList](SearchPa
 **type**:
 This parameter, of type token, specifies the specific type of the DocumentReference resource or in Document Sharing nomenclature, the typeCode of the Document Entry. See [ITI TF-2x: Appendix Z.2](https://profiles.ihe.net/ITI/TF/Volume2/ch-Z.html#z.2-query-parameters) for additional constraints on the use of the token search parameter type.
 
-<div class="new-content">
-Section on new full text search option.
-</div>
-
 ###### 2:3.67.4.1.2.1.1 Full-Text Search Option
 
 If the Full-Text Search Option is supported, the `full-text` search parameter specifies terms or phrases used to search the textual content of the document available via `DocumentReference.content.attachment.url` in the documents managed by the Document Responder. The Document Responder must match the `full-text` search parameter in combination with any metadata-based search parameters defined in the same query (i.e. a document is considered a match only if it matches both the full-text search and the metadata-based filter parameters).
@@ -338,7 +334,7 @@ Informative note: When the Document Consumer retrieves the document using the Do
 
 Delayed Document Assembly is distinct from On-Demand Documents in that Delayed Document Assembly is a Documents that are static, clinician attested documents and the content of the document is identified prior to registration of the Document Entry. On-Demand Documents allows the content of the document to be identified at the time of receipt of the retrieval request (e.g., summary, or current). Delayed Document Assembly has been designed to be as transparent as possible to Document Consumer Actors. Document Consumers Actors may easily support Stable Documents whose assembly has been delayed just as if they were a regular Stable Document since the only constraint on Document Consumers brought by this Delayed Document Assembly Option is to support responses to queries with the presence of Stable Document Entries that have zero size and hash values.
 
-Delayed Document Assembly are indicated in the DocumentReference by the DocumentReference.content.attachment with an .size element of `0` (zero), and a .hash element with the fixed value `2jmj7l5rSw0yVb/vlWAYkK/YBwk=` (SHA1 hash of a zero length file). For more background on the [Delayed Document Assembly](https://profiles.ihe.net/ITI/TF/Volume1/ch-10.html#10.2.10). There is no need to declare a Delayed Document Assembly in MHD. 
+Delayed Document Assembly are indicated in the DocumentReference by the DocumentReference.content.attachment with an .size element of `0` (zero), and a .hash element with the fixed value `2jmj7l5rSw0yVb/vlWAYkK/YBwk=` (SHA1 hash of a zero length file). For more background on the [Delayed Document Assembly](https://profiles.ihe.net/ITI/TF/Volume1/ch-10.html#10.2.10). There is no need to declare a Delayed Document Assembly in MHD.
 
 Informative note: When the Document Consumer retrieves the document using the Document location, then the retrieved document actual size and hash is updated in the DocumentReference. In this way the Document Consumer may retrieve the updated DocumentReference after successful retrieval of the document to find the size and hash for content integrity validation.
 
