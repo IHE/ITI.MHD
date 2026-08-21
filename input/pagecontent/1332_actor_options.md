@@ -47,23 +47,24 @@ between options when applicable are specified in notes.
             <td><a href="#13326-iti-65-fhir-documents-publish-option">ITI-65 FHIR documents Publish</a></td>
         </tr>
         <tr>
-            <td rowspan='2'>Document Consumer</td>
+            <td rowspan='3'>Document Consumer</td>
             <td><a href="#13323-uncontained-reference-option">UnContained Reference</a></td>
             </tr>
             <tr>
-            <td><a href="#13327-target-communities-option">Target Communities</a></td>
-            <td><a href="#13327-full-text-search-option">Full-Text Search</a></td>
+                <td><a href="#13327-target-communities-option">Target Communities</a></td>
+            </tr>
+            <tr>
+                <td><a href="#13327-full-text-search-option">Full-Text Search</a></td>        
         </tr>
         <tr>
-            <td rowspan='3'>Document Responder</td>
+            <td rowspan='4'>Document Responder</td>
             <td><a href="#13322-xds-on-fhir-option">XDS on FHIR</a></td>
             </tr>
             <tr>
             <td><a href="#13323-uncontained-reference-option">UnContained Reference</a></td>
             </tr>
-            <tr>
-            <td><a href="#13327-target-communities-option">Target Communities</a></td>
-            <td><a href="#13327-full-text-search-option">Full-Text Search</a></td>
+            <tr><td><a href="#13327-target-communities-option">Target Communities</a></td></tr>
+            <tr><td><a href="#13327-full-text-search-option">Full-Text Search</a></td>
         </tr>
     </tbody>
 </table>

@@ -355,10 +355,6 @@ The Document Responder SHOULD populate the **homeCommunityId** extension when a 
 
 The Document Responder declaring the **Target Communities Option** shall support the [targetCommunityIdList](SearchParameter-IHE-TargetCommunityIdList.html) search parameter, and shall return an error when the homeCommunityId can not be fulfilled, See [XCA Target Communities Option](https://profiles.ihe.net/ITI/TF/Volume1/ch-18.html#18.2.6). The Document Consumer declaring the **Target Communities Option** MAY use this search parameter. Actors not declaring the **Target Communities Option** may support the search parameter. Support for the Search parameter shall be declared in the product/implementation CapabilityStatement.
 
-<div class="new-content">
-Section on new full text search option.
-</div>
-
 ###### 2:3.67.4.2.2.1.6 Full-Text Search Option
 
 The [Full-Text Search Match Snippet](./StructureDefinition-ihe-full-text-search-match-snippet.html) and the [Full-Text Search Match Total Hits](./StructureDefinition-ihe-full-text-search-match-total-hits.html) extensions are used in the context of the Full-Text Search Option to provide a more detailed representation of search results.

@@ -193,9 +193,6 @@ The Document Responder responds with SubmissionSet, Folder, and DocumentReferenc
 The following CapabilityStatements define the actor capabilities
 * [Document Responder](CapabilityStatement-IHE.MHD.DocumentResponder.html)
 * [Document Responder implementing Target Communities Option](CapabilityStatement-IHE.MHD.DocumentResponder.Target.html)
-<div class="new-content">
-New option introduced.
-</div> <!-- new-content marker -->
 * [Document Responder implementing Full-Text Search Option](CapabilityStatement-IHE.MHD.DocumentResponder.FullTextSearch.html)
 
 
