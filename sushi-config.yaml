@@ -8,10 +8,10 @@ status: active
 title: "Mobile access to Health Documents (MHD)"
 description: ImplementationGuide for IHE IT Infrastructure Technical Framework Supplement Mobile access to Health Documents (MHD)
 #date: 2024-05-23
-version: 4.2.5-comment
+version: 4.2.5
 # releaseLabel: ci-build
-releaselabel: ballot
-#releaseLabel: Trial-Implementation
+#releaselabel: ballot
+releaseLabel: Trial-Implementation
 publisher:
   - name: IHE IT Infrastructure Technical Committee
   - url: https://www.ihe.net/ihe_domains/it_infrastructure/
@@ -34,8 +34,8 @@ dependencies:
   ihe.formatcode.fhir:
     id: iheformatcodefhir
     uri: https://profiles.ihe.net/fhir/ihe.formatcode.fhir/ImplementationGuide/ihe.formatcode.fhir
-    version: 1.5.x
- 
+    version: 1.5.0
+
 parameters:  # see http://build.fhir.org/ig/FHIR/fhir-tools-ig/branches/master/index.html
   path-resource:
     - input/resources
@@ -92,25 +92,25 @@ pages:
     title: "3:4.5 FHIR Maps"
   testplan.md:
     title: "Test Plan"
-#    extension: 
+#    extension:
 #      - url: http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status
 #        valueCode: informative
   a_issues.md:
     title: "Issues"
-#    extension: 
+#    extension:
 #      - url: http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status
 #        valueCode: informative
   download.md:
     title: "Download and Analysis"
     generation: markdown
-      
+
 
 # ╭────────────────────────────────────────────menu.xml────────────────────────────────────────────╮
 # │  To use a provided ig-data/input/includes/menu.xml file, delete the "menu" property below.     │
 # ╰────────────────────────────────────────────────────────────────────────────────────────────────╯
 menu:
   MHD Home: index.html
-  Volume 1: 
+  Volume 1:
     Introduction: index.html
     "Actors and Transactions": 1331_actors_and_transactions.html
     "Actor Options": 1332_actor_options.html
