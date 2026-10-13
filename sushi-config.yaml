@@ -11,7 +11,7 @@ description: ImplementationGuide for IHE IT Infrastructure Technical Framework S
 version: 4.2.5
 # releaseLabel: ci-build
 #releaselabel: ballot
-releaseLabel: Trial-Implementation
+releaseLabel: trial-use
 publisher:
   - name: IHE IT Infrastructure Technical Committee
   - url: https://www.ihe.net/ihe_domains/it_infrastructure/
