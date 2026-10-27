@@ -1,12 +1,12 @@
 {
  "package-id" : "ihe.iti.mhd",
- "version" : "5.1.0",
- "path" : "https://profiles.ihe.net/ITI/MHD/5.1.0",
+ "version" : "5.1.1",
+ "path" : "https://profiles.ihe.net/ITI/MHD/5.1.1",
  "mode" : "working",
  "status" : "trial-use",
  "sequence": "FHIR R5",
- "desc" : "Trial-Implementation: Conversion of MHD to FHIR R5.",
- "descmd" : "Version 5.1.0\r\n- Conversion of MHD to FHIR R5",
+ "desc" : "Trial-Implementation: Full-Text Search Option.",
+ "descmd" : "Version 5.1.1\r\n- add Full-Text Search Option",
  "changes" : "a_issues.html"
 }
 
