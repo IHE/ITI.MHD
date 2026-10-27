@@ -8,9 +8,6 @@ The Coding provided (http://ihe.net/fhir/ihe.formatcode.fhir/CodeSystem/formatco
 # profile for MHD that is just structural and thus has no examples
 WARNING: StructureDefinition.where(url = 'https://profiles.ihe.net/ITI/MHD/StructureDefinition/IHE.MHD.List'): The Implementation Guide contains no examples for this profile
 
-# yes we know we are using non normative resources and valuesets
-MSG_DRAFT
-
 # The concept map is from a conceptual valueset from IHE, so there is no formal definition. not a problem the source checking isn't done
 The Source Code System urn:ihe:iti:2007:AssociationType is not fully defined and populated, and no sourceScope is specified, so the source code checking will not be performed
 
@@ -18,11 +15,7 @@ The Source Code System urn:ihe:iti:2007:AssociationType is not fully defined and
 The Source Code System urn:ietf:rfc:3986 is not fully defined and populated, and no sourceScope is specified, so the source code checking will not be performed
 
 # some examples are underpopulated, the full population is not important for the use-case being explained
-WARNING: Bundle/ex-fhir-document-bundle: Bundle.entry[4].resource: Best Practice Recommendation: In general, all observations should have a performer
-WARNING: Bundle/ex-fhir-document-bundle: Bundle.entry[4].resource: Best Practice Recommendation: In general, all observations should have an effective[x] ()
 Constraint failed: dom-6: 'A resource should have narrative for robust management (text.`div`.exists())' (defined in http://hl7.org/fhir/StructureDefinition/DomainResource) (Best Practice Recommendation)
-WARNING: Bundle/ex-comprehensiveProvideDocumentBundleDocument: Bundle.entry[2].resource.entry[4].resource: Best Practice Recommendation: In general, all observations should have a performer
-WARNING: Bundle/ex-comprehensiveProvideDocumentBundleDocument: Bundle.entry[2].resource.entry[4].resource: Best Practice Recommendation: In general, all observations should have an effective[x] ()
 
 # YES we want to point informatively at MHDS and NOT to have a dependency.
 The link 'https://profiles.ihe.net/ITI/MHDS' for "MHDS" cannot be resolved
@@ -30,11 +23,6 @@ The link 'https://profiles.ihe.net/ITI/MHDS/volume-1.html#150111-document-regist
 
 # YES we know some examples use old codes. That old code use is not important to the example use
 WARNING: Bundle/FindDocumentReferences: Bundle.entry[0].resource.context.facilityType.coding[0]: The concept '264358009' has a status of inactive and its use should be reviewed
-WARNING: Bundle/FindDocumentReferences: Bundle.entry[0].resource/*DocumentReference/50383ae5-49e5-4dea-b0e6-660cb9e7b91f*/.context.facilityType.coding[0]: The concept '264358009' has a status of inactive and its use should be reviewed
-
-
-# comes from core. Not anything we can document
-The extension http://hl7.org/fhir/StructureDefinition/elementdefinition-maxValueSet|5.2.0 is deprecated
 
 # these are all examples that are good enough
 Type_Specific_Checks_DT_URL_Resolve
@@ -42,38 +30,24 @@ Type_Specific_Checks_DT_URL_Resolve
 # borrowed Document Bundle has issues that we don't care about (note removed signature as that threw errors)
 WARNING: Parameters/ex-input-doc-bundle: Parameters.parameter[0].resource/*Bundle/ex-fhir-document-bundle*/.entry[4].resource: Best Practice Recommendation: In general, all observations should have a performer
 WARNING: Parameters/ex-input-doc-bundle: Parameters.parameter[0].resource/*Bundle/ex-fhir-document-bundle*/.entry[4].resource: Best Practice Recommendation: In general, all observations should have an effective[x] ()
-WARNING: Parameters/ex-input-doc-bundle: Parameters.parameter[0].resource/*Bundle/ex-fhir-document-bundle*/.entry[0].resource/*Composition/180f219f-97a8-486d-99d9-ed631fe4fc57*/: Constraint failed: dom-6: 'A resource should have narrative for robust management' (defined in http://hl7.org/fhir/StructureDefinition/DomainResource) (Best Practice Recommendation)
 All_observations_should_have_a_performer
 All_observations_should_have_an_effectiveDateTime_or_an_effectivePeriod
-WARNING: Bundle/ex-comprehensiveProvideDocumentBundleDocument: Bundle.entry[2].resource/*Bundle/ex-fhir-document-bundle*/.entry[1].resource/*Practitioner/fdoc-practitioner*/: Constraint failed: dom-6: 'A resource should have narrative for robust management' (defined in http://hl7.org/fhir/StructureDefinition/DomainResource) (Best Practice Recommendation)
-WARNING: Bundle/ex-comprehensiveProvideDocumentBundleDocument: Bundle.entry[2].resource/*Bundle/ex-fhir-document-bundle*/.entry[2].resource/*Patient/fdoc-patient*/: Constraint failed: dom-6: 'A resource should have narrative for robust management' (defined in http://hl7.org/fhir/StructureDefinition/DomainResource) (Best Practice Recommendation)
-WARNING: Bundle/ex-comprehensiveProvideDocumentBundleDocument: Bundle.entry[2].resource/*Bundle/ex-fhir-document-bundle*/.entry[3].resource/*Encounter/fdoc-encounter*/: Constraint failed: dom-6: 'A resource should have narrative for robust management' (defined in http://hl7.org/fhir/StructureDefinition/DomainResource) (Best Practice Recommendation)
-WARNING: Bundle/ex-comprehensiveProvideDocumentBundleDocument: Bundle.entry[2].resource.entry[4].resource/*Observation/fdoc-observation*/: Constraint failed: dom-6: 'A resource should have narrative for robust management' (defined in http://hl7.org/fhir/StructureDefinition/DomainResource) (Best Practice Recommendation)
-WARNING: Bundle/ex-comprehensiveProvideDocumentBundleDocument: Bundle.entry[2].resource.entry[5].resource/*MedicationRequest/fdoc-medicationrequest*/: Constraint failed: dom-6: 'A resource should have narrative for robust management' (defined in http://hl7.org/fhir/StructureDefinition/DomainResource) (Best Practice Recommendation)
-WARNING: Bundle/ex-comprehensiveProvideDocumentBundleDocument: Bundle.entry[2].resource.entry[6].resource/*MedicationStatement/fdoc-medicationstatement*/: Constraint failed: dom-6: 'A resource should have narrative for robust management' (defined in http://hl7.org/fhir/StructureDefinition/DomainResource) (Best Practice Recommendation)
-WARNING: Bundle/ex-comprehensiveProvideDocumentBundleDocument: Bundle.entry[2].resource.entry[7].resource/*AllergyIntolerance/fdoc-allergyintolerance*/: Constraint failed: dom-6: 'A resource should have narrative for robust management' (defined in http://hl7.org/fhir/StructureDefinition/DomainResource) (Best Practice Recommendation)
-WARNING: Parameters/ex-input-doc-bundle: Parameters.parameter[0].resource/*Bundle/ex-fhir-document-bundle*/.entry[1].resource/*Practitioner/fdoc-practitioner*/: Constraint failed: dom-6: 'A resource should have narrative for robust management' (defined in http://hl7.org/fhir/StructureDefinition/DomainResource) (Best Practice Recommendation)
-WARNING: Parameters/ex-input-doc-bundle: Parameters.parameter[0].resource/*Bundle/ex-fhir-document-bundle*/.entry[2].resource/*Patient/fdoc-patient*/: Constraint failed: dom-6: 'A resource should have narrative for robust management' (defined in http://hl7.org/fhir/StructureDefinition/DomainResource) (Best Practice Recommendation)
-WARNING: Parameters/ex-input-doc-bundle: Parameters.parameter[0].resource/*Bundle/ex-fhir-document-bundle*/.entry[3].resource/*Encounter/fdoc-encounter*/: Constraint failed: dom-6: 'A resource should have narrative for robust management' (defined in http://hl7.org/fhir/StructureDefinition/DomainResource) (Best Practice Recommendation)
-WARNING: Parameters/ex-input-doc-bundle: Parameters.parameter[0].resource/*Bundle/ex-fhir-document-bundle*/.entry[4].resource/*Observation/fdoc-observation*/: Constraint failed: dom-6: 'A resource should have narrative for robust management' (defined in http://hl7.org/fhir/StructureDefinition/DomainResource) (Best Practice Recommendation)
-WARNING: Parameters/ex-input-doc-bundle: Parameters.parameter[0].resource/*Bundle/ex-fhir-document-bundle*/.entry[5].resource/*MedicationRequest/fdoc-medicationrequest*/: Constraint failed: dom-6: 'A resource should have narrative for robust management' (defined in http://hl7.org/fhir/StructureDefinition/DomainResource) (Best Practice Recommendation)
-WARNING: Parameters/ex-input-doc-bundle: Parameters.parameter[0].resource/*Bundle/ex-fhir-document-bundle*/.entry[6].resource/*MedicationStatement/fdoc-medicationstatement*/: Constraint failed: dom-6: 'A resource should have narrative for robust management' (defined in http://hl7.org/fhir/StructureDefinition/DomainResource) (Best Practice Recommendation)
-WARNING: Parameters/ex-input-doc-bundle: Parameters.parameter[0].resource/*Bundle/ex-fhir-document-bundle*/.entry[7].resource/*AllergyIntolerance/fdoc-allergyintolerance*/: Constraint failed: dom-6: 'A resource should have narrative for robust management' (defined in http://hl7.org/fhir/StructureDefinition/DomainResource) (Best Practice Recommendation)
-
 
 # The IG intentionally uses markup-like markers in example string values to demonstrate highlighting of full-text search results.
 The string value contains text that looks like embedded HTML tags. If this content is rendered to HTML without appropriate post-processing, it may be a security risk
 
 # OID's don't need to be registered
-The resource CodeSystem/IHE.MHD.MHDIdentifierType should have an OID assigned to cater for possible use with OID based terminology systems e.g. CDA usage (OIDs are easy to assign - see https://build.fhir.org/ig/FHIR/fhir-tools-ig/CodeSystem-ig-parameters.html#ig-parameters-auto-oid-root)
-The resource CodeSystem/MHDlistTypes should have an OID assigned to cater for possible use with OID based terminology systems e.g. CDA usage (OIDs are easy to assign - see https://build.fhir.org/ig/FHIR/fhir-tools-ig/CodeSystem-ig-parameters.html#ig-parameters-auto-oid-root)
-The resource ValueSet/DocumentReferenceStats should have an OID assigned to cater for possible use with OID based terminology systems e.g. CDA usage (OIDs are easy to assign - see https://build.fhir.org/ig/FHIR/fhir-tools-ig/CodeSystem-ig-parameters.html#ig-parameters-auto-oid-root)
-The resource ValueSet/IHE.MHD.MHDIdentifierTypeVS should have an OID assigned to cater for possible use with OID based terminology systems e.g. CDA usage (OIDs are easy to assign - see https://build.fhir.org/ig/FHIR/fhir-tools-ig/CodeSystem-ig-parameters.html#ig-parameters-auto-oid-root)
-The resource ValueSet/MHDlistTypesVS should have an OID assigned to cater for possible use with OID based terminology systems e.g. CDA usage (OIDs are easy to assign - see https://build.fhir.org/ig/FHIR/fhir-tools-ig/CodeSystem-ig-parameters.html#ig-parameters-auto-oid-root)
-The resource ValueSet/MHDprovideFolderActions should have an OID assigned to cater for possible use with OID based terminology systems e.g. CDA usage (OIDs are easy to assign - see https://build.fhir.org/ig/FHIR/fhir-tools-ig/CodeSystem-ig-parameters.html#ig-parameters-auto-oid-root)
-The resource ValueSet/MHDprovidePatientActions should have an OID assigned to cater for possible use with OID based terminology systems e.g. CDA usage (OIDs are easy to assign - see https://build.fhir.org/ig/FHIR/fhir-tools-ig/CodeSystem-ig-parameters.html#ig-parameters-auto-oid-root)
+%should have an OID assigned to cater for possible use with OID based terminology systems%
 
 # just pointing to examples
 WARNING: DocumentReference/ex-DocumentReferenceComprehensive: DocumentReference.content[0].attachment: Error fetching the content: Attachment content cannot be checked because there was an error accesssing http://example.com/nowhere.txt: http://example.com/nowhere.txt
 WARNING: DocumentReference/ex-DocumentReferenceComprehensiveDelayedAssembly: DocumentReference.content[0].attachment: Error fetching the content: Attachment content cannot be checked because there was an error accesssing http://example.com/nowhere.txt: http://example.com/nowhere.txt
 WARNING: DocumentReference/ex-DocumentReferenceUnContainedFully: DocumentReference.content[0].attachment: Error fetching the content: Attachment content cannot be checked because there was an error accesssing http://example.com/nowhere.txt: http://example.com/nowhere.txt
+
+# ihe.fhir.template 1.0.0: the header contains <div id="project-nav"> twice and the footer has a stray </a>
+# (footer fixed in https://github.com/IHE/ihe-ig-template/pull/30, not yet released)
+The html source has duplicate element ids: project-nav. An id must be unique in a page - a link to one of these is ambiguous, and it is invalid HTML
+The html source is not well formed: Found "</a>" expecting "</span>" at line%
+
+# searchform.html is generated by the IG Publisher, not part of the MHD content
+%/output/searchform.html: The html source is not well formed%
