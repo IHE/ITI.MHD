@@ -1,5 +1,14 @@
 <div markdown="1" class="stu-note">
 
+### Significant changes in MHD Version 5.1.1
+
+- add **Full-Text Search Option** to the Find Document References [ITI-67] transaction, enabling Document Consumers to search the textual content of documents in addition to metadata-based filtering (aligned with MHD Version 4.2.5 for FHIR R4)
+- add [full-text](SearchParameter-DocumentReference-Full-Text-Search.html) search parameter with search semantics based on the [OData Search](https://docs.oasis-open.org/odata/odata/v4.0/cs01/part1-protocol/odata-v4.0-cs01-part1-protocol.html#_The_$search_System) specification (logical operators OR, AND, NOT, phrase searches, brackets)
+- add [Full-Text Search Match Snippet](StructureDefinition-ihe-full-text-search-match-snippet.html) and [Full-Text Search Match Total Hits](StructureDefinition-ihe-full-text-search-match-total-hits.html) extensions to convey match context and total number of matches in search results
+- add [Find Document References Response message profile](StructureDefinition-IHE.MHD.FindDocumentReferencesResponseMessageFullTextSearch.html) for the Full-Text Search Option, including a [response example](Bundle-ex-findDocumentReferencesResponseFullTextSearch.html)
+- add CapabilityStatements for [Document Consumer](CapabilityStatement-IHE.MHD.DocumentConsumer.FullTextSearch.html) and [Document Responder](CapabilityStatement-IHE.MHD.DocumentResponder.FullTextSearch.html) implementing the Full-Text Search Option
+- add guidance on searchable document content (related to [#280](https://github.com/IHE/ITI.MHD/issues/280))
+
 ### Significant changes in MHD Version 5.1.0
 
 - clarify xds hexBinary encoding and FHIR base64 encoding (CP-ITI-1325-02)
@@ -86,7 +95,7 @@ Version 4.2.0
 
 Please review the open issues and provide your response to the questions and statements.
 
-## Issues
+### Issues
 
 IHE welcomes [New Issues](https://github.com/IHE/ITI.MHD/issues/new/choose) from the GitHub community. 
 For those without GitHub access, issues may be submitted to the [Public Comment form](https://www.ihe.net/resources/public_comment/).
@@ -94,7 +103,7 @@ For those without GitHub access, issues may be submitted to the [Public Comment 
 As issues are submitted they will be managed on the [MHD GitHub Issues](https://github.com/IHE/ITI.MHD/issues), where discussion and workarounds may be found. These issues, when critical, will be processed using the normal [IHE Change Proposal](https://wiki.ihe.net/index.php/Category:CPs) management and balloting. 
 It is important to note that as soon as a Change Proposal is approved, it carries the same weight as a published Implementation Guide (i.e., it is testable at an [IHE Connectathon](https://www.ihe.net/participate/connectathon/) from the time it is approved, even if it will not be integrated until several months later).
 
-### Open Issues
+#### Open Issues
 These issues were known as part of the publication, and IHE invites comments. Comments can be submitted to [iticomments@googlegroups.com](mailto:iticomments@googlegroups.com) or may be submitted as comments to the specific GitHUB issue identified for that Open-Issue.
 
 - [MHD_063](https://github.com/IHE/ITI.MHD/issues/158): Should MHD defined CapabilityStatement requirements so that a client can determine that the server supports MHD and which MHD server actor? Today we do require servers to support metadata endpoint returning their CapabilityStatment, but do not require it to contain anything specifically. We could first require that the CapabilityStatment.implementationGuide be populated with MHD canonical IG URL. We could additionally require specific .transaction values for DocumentRecipient, and .rest.resource.supportedProfile for DocumentResponder. Might we need an extension in .transaction to be more specific for Document Recipient? Should a DocumentRecipient need to publish that it is capable of receiving a create/update on these .rest resources (which we only defined thru the transaction, not individually REST)? Might we add an extension on CapabilityStatement.implementationGuide to hold the actor name and options? 
@@ -108,7 +117,7 @@ These issues were known as part of the publication, and IHE invites comments. Co
 - [MHD_067](https://github.com/IHE/ITI.MHD/issues/109): Potential use of $docref operation from HL7 Implementation Guide. This operation is currently in US-Core, and is being added/moved to IPA. It is unclear how MHD would be able to use just this operation without being fully dependant upon all of IPA.
 - [MHD_068](https://github.com/IHE/ITI.MHD/issues/197): Document Source "replace" methodology to better support FHIR backends like MHDS.
  
-### Closed Issues
+#### Closed Issues
 These issues have been decided and documented in the publication.
 
 - Resolved in 4.0 (first IG build)

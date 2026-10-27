@@ -34,7 +34,7 @@ MHD is updated by [Internet User Authorization (IUA)](https://profiles.ihe.net/I
 
 </div>
 
-#### Organization of This Guide 
+### Organization of This Guide 
 
 This guide is organized into the following sections:
 
@@ -62,6 +62,6 @@ This guide is organized into the following sections:
 Click on any of the links above, see the [Table of Contents](toc.html), or
 if you are looking for a specific artifact, see the index of [Artifacts](artifacts.html).
 
-#### Must Support
+### Must Support
 
 MHD defines `Must Support` in StructureDefinition profiles as the element, when the minimal cardinality is zero, is **R2** `Required if Known`, as found in [Appendix Z](https://profiles.ihe.net/ITI/TF/Volume2/ch-Z.html#z.10-profiling-conventions-for-constraints-on-fhir). `Must Support` when the element minimal cardinality is not zero means **R**.

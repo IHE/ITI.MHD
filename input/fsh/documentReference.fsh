@@ -13,11 +13,14 @@ Description:    "A profile on the Parameters resource to update the superseded D
 * parameter[operation].part ^slicing.rules = #open
 * parameter[operation].part contains path 1..1 and type 1..1 and value 1..1
 * parameter[operation].part[type].name = "type"
-* parameter[operation].part[type].valueCode = #replace
+* parameter[operation].part[type].value[x] only code
+* parameter[operation].part[type].value[x] = #replace
 * parameter[operation].part[path].name = "path"
-* parameter[operation].part[path].valueString = "DocumentReference.status"
+* parameter[operation].part[path].value[x] only string
+* parameter[operation].part[path].value[x] = "DocumentReference.status"
 * parameter[operation].part[value].name = "value"
-* parameter[operation].part[value].valueCode = #superseded
+* parameter[operation].part[value].value[x] only code
+* parameter[operation].part[value].value[x] = #superseded
 
 // equivalent to MHD Minimal DocumentReference
 Profile:        MinimalDocumentReference
@@ -194,13 +197,13 @@ Usage: #definition
 * group.element[=].target.relationship = #equivalent
 * group.element[=].target.code = #replaces
 * group.element[+].code = #XFRM
-* group.element[=].target.relationship = #source-is-narrower-than-target
+* group.element[=].target.relationship = #equivalent
 * group.element[=].target.code = #transforms
 * group.element[+].code = #APND
 * group.element[=].target.relationship = #equivalent
 * group.element[=].target.code = #appends
 * group.element[+].code = #XFRM_RPLC
-* group.element[=].target.relationship = #equivalent
+* group.element[=].target.relationship = #source-is-broader-than-target
 * group.element[=].target.code = #replaces
 * group.element[=].target.comment = "An XDS Transform Replacement is both a document that replaces and transforms. The mapping here indicates Replace as that is the most specific change."
 * group.element[+].code = #signs
