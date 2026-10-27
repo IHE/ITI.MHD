@@ -8,7 +8,7 @@ so that deployment of mobile applications is more consistent and reusable.
 The transactions defined here leverage the document content- and format-agnostic metadata concepts
 from XDS but simplify them for access in constrained environments including mobile devices.
 
-This Continuous Build (Full-Text-Search branch) will appear http://build.fhir.org/ig/IHE/ITI.MHD/branches/Full-Text-Search/index.html
+This Continuous Build will appear http://build.fhir.org/ig/IHE/ITI.MHD/branches/master/index.html
 
 Formal Publication at http://profiles.ihe.net/ITI/MHD
 

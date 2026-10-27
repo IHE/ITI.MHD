@@ -13,11 +13,14 @@ Description:    "A profile on the Parameters resource to update the superseded D
 * parameter[operation].part ^slicing.rules = #open
 * parameter[operation].part contains path 1..1 and type 1..1 and value 1..1
 * parameter[operation].part[type].name = "type"
-* parameter[operation].part[type].valueCode = #replace
+* parameter[operation].part[type].value[x] only code
+* parameter[operation].part[type].value[x] = #replace
 * parameter[operation].part[path].name = "path"
-* parameter[operation].part[path].valueString = "DocumentReference.status"
+* parameter[operation].part[path].value[x] only string
+* parameter[operation].part[path].value[x] = "DocumentReference.status"
 * parameter[operation].part[value].name = "value"
-* parameter[operation].part[value].valueCode = #superseded
+* parameter[operation].part[value].value[x] only code
+* parameter[operation].part[value].value[x] = #superseded
 
 // equivalent to MHD Minimal DocumentReference
 Profile:        MinimalDocumentReference

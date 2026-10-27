@@ -12,7 +12,6 @@
   - [Simplified Publish \[ITI-105\]](ITI-105.html)
   - [Generate Metadata \[ITI-106\]](ITI-106.html)
 
-## 1:33.4 MHD Overview
 The MHD Profile enables sharing of patient documents to, or from, mobile or constrained devices. Other IHE profiles, chiefly Cross-Enterprise Document Sharing (XDS), describe sharing of patient document in less constrained environments, and many of the concepts from those profiles are applicable to the MHD environment. For more information on IHE Document Sharing, see [Health Information Exchange: Enabling Document Sharing Using IHE Profiles](https://profiles.ihe.net/ITI/HIE-Whitepaper/index.html) White Paper.
 
 ### 1:33.4.1 Concepts

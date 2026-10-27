@@ -54,7 +54,7 @@ between options when applicable are specified in notes.
                 <td><a href="#13327-target-communities-option">Target Communities</a></td>
             </tr>
             <tr>
-                <td><a href="#13327-full-text-search-option">Full-Text Search</a></td>        
+                <td><a href="#13328-full-text-search-option">Full-Text Search</a></td>        
         </tr>
         <tr>
             <td rowspan='4'>Document Responder</td>
@@ -64,7 +64,7 @@ between options when applicable are specified in notes.
             <td><a href="#13323-uncontained-reference-option">UnContained Reference</a></td>
             </tr>
             <tr><td><a href="#13327-target-communities-option">Target Communities</a></td></tr>
-            <tr><td><a href="#13327-full-text-search-option">Full-Text Search</a></td>
+            <tr><td><a href="#13328-full-text-search-option">Full-Text Search</a></td>
         </tr>
     </tbody>
 </table>
@@ -144,7 +144,7 @@ The Document Recipient will process the FHIR-Document accordingly to the persist
 
 The **Target Communities Option** adds support for homeCommunityId to the Document Responder and Document Consumer actors. Support includes populating the homeCommunityId when it is available and policy allows for the element to be populated. Document Responder SHALL support the search parameter, and the Document Consumer may use these search parameter.
 
-### 1:33.2.7 Full-Text Search Option
+### 1:33.2.8 Full-Text Search Option
 
 
 While ITI-67 already supports metadata-based filtering of documents, the **Full-Text Search Option** enables you to search the full text of documents as well. It enables simple word matching and advanced searches, such as combining words with logical operators (OR, AND, NOT) and phrase searches.

@@ -7,18 +7,18 @@ You can download:
 
 The source code for this Implementation Guide can be found on [IHE ITI.MHD Github Repo](https://github.com/IHE/ITI.MHD).
 
-#### Cross Version Analysis
+### Cross Version Analysis
 
 {% include cross-version-analysis.xhtml %}
 
-#### Dependency Table
+### Dependency Table
 
 {% include dependency-table.xhtml %}
 
-#### Globals Table
+### Globals Table
 
 {% include globals-table.xhtml %}
 
-#### IP Statements
+### IP Statements
 
 {% include ip-statements.xhtml %}
