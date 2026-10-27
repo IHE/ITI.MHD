@@ -9,18 +9,18 @@ The source code for this Implementation Guide can be found on [IHE ITI.MHD Githu
 
 This is FHIR R5 IG. Package for MHD requires specifying the MHD Version 5.x.x for FHIR R5 [ihe.iti.mhd](package.tgz).
 
-#### Cross Version Analysis
+### Cross Version Analysis
 
 {% include cross-version-analysis.xhtml %}
 
-#### Dependency Table
+### Dependency Table
 
 {% include dependency-table.xhtml %}
 
-#### Globals Table
+### Globals Table
 
 {% include globals-table.xhtml %}
 
-#### IP Statements
+### IP Statements
 
 {% include ip-statements.xhtml %}
