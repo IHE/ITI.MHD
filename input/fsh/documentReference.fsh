@@ -45,6 +45,7 @@ Description:    "A profile on the DocumentReference resource for MHD with minima
 * identifier[uniqueId] ^definition = "The unique identifier for the referenced Document which maps to the DocumentEntry.uniqueId in XDS. This is used to identify the document which is pointed at by the DocumentReference Resource, as opposed to the entryUUID element which identifies the DocumentReference Resource itself."
 * status 1..1
 * status from DocumentReferenceStats (required)
+* status ^short = "current | superseded"
 * docStatus 0..0
 * type 0..1 MS
 * category 0..1 MS
