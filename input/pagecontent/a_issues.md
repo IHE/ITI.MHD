@@ -1,5 +1,9 @@
 <div markdown="1" class="stu-note">
 
+### Significant changes in MHD Version 4.2.6
+
+- fix DocumentReference.status short description to list only the codes allowed by the bound ValueSet (current | superseded) (closes [#274](https://github.com/IHE/ITI.MHD/issues/274))
+
 ### Significant changes in MHD Version 4.2.5
 
 - add **Full-Text Search Option** to the Find Document References [ITI-67] transaction, enabling Document Consumers to search the textual content of documents in addition to metadata-based filtering
