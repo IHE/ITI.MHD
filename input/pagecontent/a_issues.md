@@ -7,6 +7,7 @@
 https://github.com/IHE/ITI.MHD/issues/261))
 - add homeCommunityId support on Document Responder and Document Consumer with Target Communities Option (CP-ITI-1326-02)
 - differentiate entryUUID vs uniqueID with Identifier.type rather than Identifier.use (CP-ITI-1328-01)
+- fix DocumentReference.status short description to list only the codes allowed by the bound ValueSet (current | superseded) (closes [#274](https://github.com/IHE/ITI.MHD/issues/274))
 - quality improvements and updated ig dependencies
 
 ### Significant changes in MHD Version 5.0.0
